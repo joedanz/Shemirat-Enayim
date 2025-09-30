@@ -1,0 +1,580 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import Alert from '../../components/Alert.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+	{ label: 'Home', href: '/' },
+	{ label: 'Protection Methods', href: '/methods' },
+	{ label: 'CleanBrowsing Tutorial', href: '/guides/cleanbrowsing-tutorial' }
+];
+---
+
+<GuideLayout
+	title="CleanBrowsing Configuration Guide"
+	description="Complete tutorial for setting up CleanBrowsing DNS filtering with free family filters or custom paid plans, including DNS-over-HTTPS and DNS-over-TLS configuration."
+	difficulty="beginner"
+	timeEstimate="20-30 minutes"
+	prerequisites={[
+		'Access to router admin panel OR device network settings',
+		'Internet connection',
+		'Email address (for paid plan only)',
+		'Basic understanding of DNS filtering concept'
+	]}
+>
+	<Breadcrumb slot="breadcrumb" items={breadcrumbItems} />
+
+	<section>
+		<h2>What is CleanBrowsing?</h2>
+		<p>
+			CleanBrowsing is a DNS-based content filtering service specifically designed for families and schools. Unlike general DNS services, CleanBrowsing was built from the ground up for content filtering, offering three free filter levels and paid custom options. This tutorial covers setup for all options, including modern encrypted DNS (DNS-over-HTTPS and DNS-over-TLS).
+		</p>
+
+		<Alert type="success">
+			<strong>Why CleanBrowsing?</strong> Purpose-built for families, excellent customer support, offers both free and affordable paid tiers, supports modern encrypted DNS protocols.
+		</Alert>
+	</section>
+
+	<section>
+		<h2>🎯 Choosing Your Filter Level</h2>
+
+		<div class="filter-options">
+			<div class="filter-card">
+				<h3>Security Filter (Free)</h3>
+				<p><strong>Best for:</strong> Basic malware protection, minimal content filtering</p>
+				<h4>Blocks:</h4>
+				<ul>
+					<li>Malware and phishing sites</li>
+					<li>Viruses and spyware</li>
+				</ul>
+				<h4>DNS Addresses:</h4>
+				<ul>
+					<li>Primary: <code>185.228.168.9</code></li>
+					<li>Secondary: <code>185.228.169.9</code></li>
+				</ul>
+			</div>
+
+			<div class="filter-card recommended">
+				<h3>Adult Filter (Free) - Recommended</h3>
+				<p><strong>Best for:</strong> Most families wanting basic content filtering</p>
+				<h4>Blocks:</h4>
+				<ul>
+					<li>Security threats (malware, phishing)</li>
+					<li>Adult content (pornography)</li>
+					<li>Proxy and VPN sites</li>
+				</ul>
+				<h4>DNS Addresses:</h4>
+				<ul>
+					<li>Primary: <code>185.228.168.10</code></li>
+					<li>Secondary: <code>185.228.169.11</code></li>
+				</ul>
+			</div>
+
+			<div class="filter-card">
+				<h3>Family Filter (Free)</h3>
+				<p><strong>Best for:</strong> Families with young children, stricter filtering</p>
+				<h4>Blocks:</h4>
+				<ul>
+					<li>Security threats</li>
+					<li>Adult content</li>
+					<li>Proxy/VPN sites</li>
+					<li>Mixed adult content</li>
+					<li>Abused TLDs</li>
+				</ul>
+				<h4>DNS Addresses:</h4>
+				<ul>
+					<li>Primary: <code>185.228.168.168</code></li>
+					<li>Secondary: <code>185.228.169.168</code></li>
+				</ul>
+			</div>
+
+			<div class="filter-card">
+				<h3>Custom Filter (Paid)</h3>
+				<p><strong>Cost:</strong> $5/month</p>
+				<p><strong>Best for:</strong> Want complete control, custom block/allow lists, detailed logs</p>
+				<h4>Features:</h4>
+				<ul>
+					<li>All free filter features</li>
+					<li>Custom allow/block lists</li>
+					<li>Choose specific categories to block</li>
+					<li>Detailed logging and analytics</li>
+					<li>Multiple filter profiles</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<h2>⚙️ Router-Level Setup (Protects Whole Network)</h2>
+
+		<h3>Step 1: Choose Your Filter</h3>
+		<p>Decide which filter level from above. For most families, start with <strong>Adult Filter</strong>.</p>
+
+		<h3>Step 2: Access Router Admin Panel</h3>
+		<ol>
+			<li>Open web browser</li>
+			<li>Type router IP address: Usually <code>192.168.1.1</code> or <code>192.168.0.1</code></li>
+			<li>Enter admin username and password (check router sticker if unknown)</li>
+		</ol>
+
+		<h3>Step 3: Find DNS Settings</h3>
+		<p>Location varies by router brand:</p>
+		<ul>
+			<li><strong>Netgear:</strong> Advanced → Setup → Internet Setup → DNS Servers</li>
+			<li><strong>TP-Link:</strong> Network → WAN → Primary/Secondary DNS</li>
+			<li><strong>Linksys:</strong> Connectivity → Internet Settings → Static DNS</li>
+			<li><strong>Asus:</strong> WAN → Internet Connection → DNS Server</li>
+			<li><strong>Google WiFi:</strong> Network & General → Advanced Networking → DNS</li>
+		</ul>
+
+		<h3>Step 4: Enter CleanBrowsing DNS Addresses</h3>
+		<p><strong>For Adult Filter (Recommended):</strong></p>
+		<div class="dns-highlight">
+			<p>Primary DNS: <code>185.228.168.10</code></p>
+			<p>Secondary DNS: <code>185.228.169.11</code></p>
+		</div>
+
+		<h3>Step 5: Save and Restart</h3>
+		<ol>
+			<li>Click "Save" or "Apply"</li>
+			<li>Reboot your router</li>
+			<li>Restart devices or disconnect/reconnect from WiFi</li>
+		</ol>
+
+		<h3>Step 6: Test It's Working</h3>
+		<ol>
+			<li>Visit a test site (appropriate test domain)</li>
+			<li>Should see CleanBrowsing block page</li>
+			<li>Test normal sites work fine</li>
+		</ol>
+	</section>
+
+	<section>
+		<h2>📱 Device-Level Setup</h2>
+
+		<h3>iPhone/iPad (iOS) - Standard DNS</h3>
+		<ol>
+			<li>Settings → WiFi</li>
+			<li>Tap (i) next to network name</li>
+			<li>Scroll down → Configure DNS</li>
+			<li>Tap "Manual"</li>
+			<li>Remove existing DNS servers (tap red minus)</li>
+			<li>Add Server: <code>185.228.168.10</code></li>
+			<li>Add Server: <code>185.228.169.11</code></li>
+			<li>Tap "Save"</li>
+		</ol>
+
+		<h3>Android - Private DNS (DNS-over-TLS) - Recommended</h3>
+		<p><strong>Android 9+</strong> supports encrypted DNS that works on cellular too:</p>
+		<ol>
+			<li>Settings → Network & Internet (or Connections)</li>
+			<li>Private DNS</li>
+			<li>Select "Private DNS provider hostname"</li>
+			<li>Enter based on filter level:
+				<ul>
+					<li><strong>Security Filter:</strong> <code>security-filter-dns.cleanbrowsing.org</code></li>
+					<li><strong>Adult Filter:</strong> <code>adult-filter-dns.cleanbrowsing.org</code></li>
+					<li><strong>Family Filter:</strong> <code>family-filter-dns.cleanbrowsing.org</code></li>
+				</ul>
+			</li>
+			<li>Tap "Save"</li>
+		</ol>
+
+		<Alert type="success">
+			<strong>Advantage:</strong> Android Private DNS works on WiFi AND cellular data, providing consistent protection everywhere!
+		</Alert>
+
+		<h3>Windows 10/11</h3>
+		<ol>
+			<li>Settings → Network & Internet</li>
+			<li>Click your connection (WiFi or Ethernet)</li>
+			<li>Click "Edit" next to IP assignment</li>
+			<li>Select "Manual" and enable IPv4</li>
+			<li>Preferred DNS: <code>185.228.168.10</code></li>
+			<li>Alternate DNS: <code>185.228.169.11</code></li>
+			<li>Click "Save"</li>
+		</ol>
+
+		<h3>macOS</h3>
+		<ol>
+			<li>System Settings (or System Preferences)</li>
+			<li>Network</li>
+			<li>Select connection → Details (or Advanced)</li>
+			<li>DNS tab</li>
+			<li>Click + button</li>
+			<li>Add: <code>185.228.168.10</code></li>
+			<li>Add: <code>185.228.169.11</code></li>
+			<li>Click OK, then Apply</li>
+		</ol>
+	</section>
+
+	<section>
+		<h2>🔒 DNS-over-HTTPS (DoH) Setup</h2>
+		<p>Modern encrypted DNS prevents ISPs from seeing which sites you visit. Requires browser or system configuration.</p>
+
+		<h3>Firefox Browser</h3>
+		<ol>
+			<li>Settings → Privacy & Security</li>
+			<li>Scroll to "DNS over HTTPS"</li>
+			<li>Enable "Use DNS over HTTPS"</li>
+			<li>Select "Custom"</li>
+			<li>Enter based on filter level:
+				<ul>
+					<li><strong>Security:</strong> <code>https://doh.cleanbrowsing.org/doh/security-filter/</code></li>
+					<li><strong>Adult:</strong> <code>https://doh.cleanbrowsing.org/doh/adult-filter/</code></li>
+					<li><strong>Family:</strong> <code>https://doh.cleanbrowsing.org/doh/family-filter/</code></li>
+				</ul>
+			</li>
+		</ol>
+
+		<h3>Windows 11 (System-Wide DoH)</h3>
+		<ol>
+			<li>Settings → Network & Internet</li>
+			<li>Your connection → Edit DNS settings</li>
+			<li>Manual → IPv4 ON</li>
+			<li>Preferred DNS: <code>185.228.168.10</code></li>
+			<li>DNS over HTTPS: On (automatic)</li>
+			<li>Save</li>
+		</ol>
+	</section>
+
+	<section>
+		<h2>💎 Paid Custom Plan Setup</h2>
+
+		<h3>When to Upgrade to Paid ($5/month)</h3>
+		<ul>
+			<li>Need to allow specific blocked sites</li>
+			<li>Want to block additional categories (social media, gaming, etc.)</li>
+			<li>Need detailed usage logs and analytics</li>
+			<li>Want multiple filter profiles (school vs home)</li>
+			<li>Manage multiple locations</li>
+		</ul>
+
+		<h3>Setup Process</h3>
+		<ol>
+			<li>Go to <a href="https://cleanbrowsing.org/pricing" target="_blank" rel="noopener">cleanbrowsing.org/pricing</a></li>
+			<li>Choose "Family" plan ($5/month or $54/year)</li>
+			<li>Create account with email</li>
+			<li>Complete payment</li>
+			<li>Log in to dashboard</li>
+			<li>Click "Add Filter"</li>
+			<li>Configure custom categories to block</li>
+			<li>Add allow/block lists</li>
+			<li>You'll receive unique DNS addresses for your custom filter</li>
+			<li>Use those addresses instead of the free filter addresses</li>
+		</ol>
+
+		<h3>Custom Features</h3>
+		<ul>
+			<li><strong>Block/Allow Lists:</strong> Add specific domains to always block or always allow</li>
+			<li><strong>Category Control:</strong> Enable/disable 20+ content categories</li>
+			<li><strong>Usage Logs:</strong> See what devices accessed, what was blocked</li>
+			<li><strong>Multiple Filters:</strong> Different settings for different networks/times</li>
+			<li><strong>SafeSearch Enforcement:</strong> Forces safe search on Google, Bing, YouTube</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>❓ Troubleshooting</h2>
+
+		<div class="troubleshooting">
+			<h3>Issue: Filtering not working</h3>
+			<ul>
+				<li>Verify DNS addresses entered correctly (easy to mistype)</li>
+				<li>Restart router after DNS change</li>
+				<li>Flush DNS cache on device or restart device</li>
+				<li>Check if device has custom DNS configured (overrides router)</li>
+				<li>Some devices cache DNS for hours - patience or restart</li>
+			</ul>
+		</div>
+
+		<div class="troubleshooting">
+			<h3>Issue: Legitimate sites blocked</h3>
+			<ul>
+				<li><strong>Free plan:</strong> Try less restrictive filter (Security instead of Family)</li>
+				<li><strong>Paid plan:</strong> Add site to allow list in dashboard</li>
+				<li>Report miscategorization to CleanBrowsing support</li>
+				<li>Consider if site actually has mixed content</li>
+			</ul>
+		</div>
+
+		<div class="troubleshooting">
+			<h3>Issue: Slow internet speeds</h3>
+			<ul>
+				<li>CleanBrowsing has servers worldwide - should be fast</li>
+				<li>Try alternate DNS addresses (secondary as primary)</li>
+				<li>Use DNS-over-TLS on Android for better performance</li>
+				<li>Check your actual internet speed (might not be DNS)</li>
+			</ul>
+		</div>
+
+		<div class="troubleshooting">
+			<h3>Issue: Works on WiFi but not cellular (mobile devices)</h3>
+			<ul>
+				<li><strong>Android:</strong> Use Private DNS (works on cellular)</li>
+				<li><strong>iOS:</strong> Need to configure DNS per network, or use DNS profile/VPN app</li>
+				<li>Consider mobile filtering app for iOS cellular protection</li>
+			</ul>
+		</div>
+	</section>
+
+	<section>
+		<h2>📋 Quick Reference</h2>
+
+		<div class="reference-box">
+			<h3>CleanBrowsing Free DNS Addresses</h3>
+
+			<h4>Security Filter</h4>
+			<p>Primary: <code>185.228.168.9</code> | Secondary: <code>185.228.169.9</code></p>
+
+			<h4>Adult Filter (Recommended)</h4>
+			<p>Primary: <code>185.228.168.10</code> | Secondary: <code>185.228.169.11</code></p>
+
+			<h4>Family Filter</h4>
+			<p>Primary: <code>185.228.168.168</code> | Secondary: <code>185.228.169.168</code></p>
+
+			<h3>DNS-over-TLS Hostnames (Android Private DNS)</h3>
+			<ul>
+				<li>Security: <code>security-filter-dns.cleanbrowsing.org</code></li>
+				<li>Adult: <code>adult-filter-dns.cleanbrowsing.org</code></li>
+				<li>Family: <code>family-filter-dns.cleanbrowsing.org</code></li>
+			</ul>
+
+			<h3>DNS-over-HTTPS URLs</h3>
+			<ul>
+				<li>Security: <code>https://doh.cleanbrowsing.org/doh/security-filter/</code></li>
+				<li>Adult: <code>https://doh.cleanbrowsing.org/doh/adult-filter/</code></li>
+				<li>Family: <code>https://doh.cleanbrowsing.org/doh/family-filter/</code></li>
+			</ul>
+		</div>
+	</section>
+
+	<section slot="next-steps">
+		<h2>🎯 Next Steps</h2>
+
+		<div class="next-steps-grid">
+			<a href="/guides/opendns-tutorial" class="next-step-card">
+				<h3>🌐 OpenDNS Tutorial</h3>
+				<p>Alternative DNS filtering with customization</p>
+			</a>
+
+			<a href="/guides/router-config" class="next-step-card">
+				<h3>🔧 Router Configuration</h3>
+				<p>Add time limits and device management</p>
+			</a>
+
+			<a href="/guides/dns-filtering" class="next-step-card">
+				<h3>📚 DNS Filtering Overview</h3>
+				<p>Understand how DNS filtering works</p>
+			</a>
+
+			<a href="/methods" class="next-step-card">
+				<h3>🛡️ All Protection Methods</h3>
+				<p>Explore other filtering solutions</p>
+			</a>
+		</div>
+
+		<Alert type="success">
+			<strong>Success!</strong> CleanBrowsing is now protecting your network. Remember: Combine with device parental controls and education for comprehensive protection.
+		</Alert>
+	</section>
+</GuideLayout>
+
+<style>
+	.filter-options {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-4);
+		margin: var(--space-6) 0;
+	}
+
+	@media (min-width: 768px) {
+		.filter-options {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	.filter-card {
+		background-color: var(--color-gray-50);
+		border: 2px solid var(--color-gray-300);
+		border-radius: var(--radius-lg);
+		padding: var(--space-5);
+	}
+
+	.filter-card.recommended {
+		border-color: var(--color-secondary-500);
+		border-width: 3px;
+		background-color: var(--color-secondary-50);
+	}
+
+	.filter-card h3 {
+		margin-top: 0;
+		margin-bottom: var(--space-2);
+		font-size: var(--text-lg);
+	}
+
+	.filter-card.recommended h3 {
+		color: var(--color-secondary-700);
+	}
+
+	.filter-card p {
+		margin-bottom: var(--space-3);
+		font-size: var(--text-sm);
+	}
+
+	.filter-card h4 {
+		color: var(--color-gray-800);
+		margin-top: var(--space-3);
+		margin-bottom: var(--space-2);
+		font-size: var(--text-base);
+	}
+
+	.filter-card ul {
+		padding-left: var(--space-5);
+		margin: 0;
+		font-size: var(--text-sm);
+	}
+
+	.filter-card li {
+		margin-bottom: var(--space-1);
+	}
+
+	.filter-card code {
+		font-family: var(--font-mono);
+		background-color: var(--color-primary-100);
+		padding: 0.125rem 0.5rem;
+		border-radius: var(--radius-base);
+		font-size: 0.9em;
+	}
+
+	.dns-highlight {
+		background-color: var(--color-secondary-100);
+		border: 2px solid var(--color-secondary-400);
+		border-radius: var(--radius-lg);
+		padding: var(--space-5);
+		margin: var(--space-4) 0;
+		text-align: center;
+	}
+
+	.dns-highlight code {
+		font-family: var(--font-mono);
+		font-size: var(--text-xl);
+		font-weight: 700;
+		color: var(--color-secondary-700);
+		background-color: white;
+		padding: var(--space-2) var(--space-4);
+		border-radius: var(--radius-base);
+		display: inline-block;
+	}
+
+	.troubleshooting {
+		background-color: #fef3c7;
+		border-left: 4px solid #f59e0b;
+		padding: var(--space-4);
+		margin-bottom: var(--space-4);
+		border-radius: var(--radius-base);
+	}
+
+	.troubleshooting h3 {
+		color: #92400e;
+		margin-top: 0;
+		margin-bottom: var(--space-2);
+	}
+
+	.troubleshooting ul {
+		padding-left: var(--space-5);
+		margin: 0;
+	}
+
+	.troubleshooting li {
+		margin-bottom: var(--space-2);
+		line-height: var(--leading-relaxed);
+	}
+
+	.reference-box {
+		background-color: var(--color-gray-50);
+		border: 3px solid var(--color-primary-600);
+		border-radius: var(--radius-lg);
+		padding: var(--space-6);
+		margin: var(--space-6) 0;
+	}
+
+	.reference-box h3 {
+		color: var(--color-primary-700);
+		margin-top: var(--space-5);
+		margin-bottom: var(--space-3);
+	}
+
+	.reference-box h3:first-child {
+		margin-top: 0;
+	}
+
+	.reference-box h4 {
+		color: var(--color-gray-800);
+		margin-top: var(--space-3);
+		margin-bottom: var(--space-2);
+	}
+
+	.reference-box p, .reference-box li {
+		font-size: var(--text-sm);
+	}
+
+	.reference-box code {
+		font-family: var(--font-mono);
+		background-color: var(--color-primary-100);
+		padding: 0.125rem 0.5rem;
+		border-radius: var(--radius-base);
+		font-weight: 600;
+	}
+
+	.reference-box ul {
+		padding-left: var(--space-5);
+		margin-bottom: var(--space-4);
+	}
+
+	.reference-box li {
+		margin-bottom: var(--space-2);
+	}
+
+	.next-steps-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-4);
+		margin: var(--space-6) 0;
+	}
+
+	@media (min-width: 768px) {
+		.next-steps-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	.next-step-card {
+		background-color: white;
+		border: 2px solid var(--color-gray-200);
+		border-radius: var(--radius-lg);
+		padding: var(--space-5);
+		text-decoration: none;
+		transition: all var(--transition-base);
+		display: block;
+	}
+
+	.next-step-card:hover {
+		border-color: var(--color-primary-400);
+		box-shadow: var(--shadow-lg);
+		transform: translateY(-2px);
+	}
+
+	.next-step-card h3 {
+		font-size: var(--text-lg);
+		color: var(--color-gray-900);
+		margin-top: 0;
+		margin-bottom: var(--space-2);
+	}
+
+	.next-step-card p {
+		color: var(--color-gray-600);
+		margin: 0;
+		font-size: var(--text-sm);
+	}
+</style>

@@ -1,0 +1,661 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import Alert from '../../components/Alert.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+	{ label: 'Home', href: '/' },
+	{ label: 'For Leaders', href: '/leaders' },
+	{ label: 'Public WiFi Setup', href: '/guides/public-wifi-setup' }
+];
+---
+
+<GuideLayout
+	title="Setting Up Filtered Public WiFi"
+	description="Enterprise-grade guide for religious institutions to deploy secure, filtered WiFi for communities, including hardware selection, DNS filtering, bandwidth management, and monitoring."
+	difficulty="advanced"
+	timeEstimate="45-60 minutes"
+	prerequisites={[
+		'Basic networking knowledge or IT support available',
+		'Budget for enterprise equipment ($500-$5000+)',
+		'Administrative access to network infrastructure',
+		'Clear filtering policy and acceptable use guidelines'
+	]}
+>
+	<Breadcrumb slot="breadcrumb" items={breadcrumbItems} />
+
+	<section>
+		<h2>Why This Guide Exists</h2>
+		<p>
+			Religious institutions - synagogues, churches, mosques, yeshivas, and community centers - increasingly provide WiFi for members. However, unfiltered public WiFi exposes visitors (including children) to inappropriate content and creates liability. This guide helps you deploy professional-grade filtered WiFi that protects your community while providing necessary internet access.
+		</p>
+
+		<Alert type="warning">
+			<strong>Important:</strong> This is an advanced technical guide. If your institution doesn't have IT expertise, consider hiring a network consultant for initial setup. Once configured, maintenance is straightforward.
+		</Alert>
+	</section>
+
+	<section>
+		<h2>🎯 Planning Your Network</h2>
+
+		<h3>Network Architecture Options</h3>
+		<div class="architecture-grid">
+			<div class="arch-card">
+				<h4>Option 1: Single Public Network</h4>
+				<p><strong>Best for:</strong> Small institutions (under 50 users)</p>
+				<ul>
+					<li>One SSID for all visitors</li>
+					<li>Same filtering for everyone</li>
+					<li>Simple to manage</li>
+					<li>Lower cost</li>
+				</ul>
+				<p><strong>Cons:</strong> Less flexibility, staff have same restrictions as guests</p>
+			</div>
+
+			<div class="arch-card">
+				<h4>Option 2: Multi-Tier Network (Recommended)</h4>
+				<p><strong>Best for:</strong> Medium to large institutions</p>
+				<ul>
+					<li><strong>Guest Network:</strong> Heavily filtered, password or no password</li>
+					<li><strong>Staff Network:</strong> Moderate filtering, requires credentials</li>
+					<li><strong>Admin Network:</strong> Minimal filtering, IT staff only</li>
+				</ul>
+				<p><strong>Pros:</strong> Flexibility, appropriate access levels</p>
+			</div>
+
+			<div class="arch-card">
+				<h4>Option 3: Captive Portal with Authentication</h4>
+				<p><strong>Best for:</strong> Large institutions, educational facilities</p>
+				<ul>
+					<li>Users see login page before internet access</li>
+					<li>Can require acceptance of acceptable use policy</li>
+					<li>Track who is using network (accountability)</li>
+					<li>Different filtering per user type</li>
+				</ul>
+				<p><strong>Cons:</strong> More complex, higher cost</p>
+			</div>
+		</div>
+
+		<h3>Coverage Planning</h3>
+		<ul>
+			<li><strong>Small (under 2,000 sq ft):</strong> 1-2 access points</li>
+			<li><strong>Medium (2,000-5,000 sq ft):</strong> 2-4 access points</li>
+			<li><strong>Large (5,000-10,000 sq ft):</strong> 4-8 access points</li>
+			<li><strong>Very large (10,000+ sq ft):</strong> Professional site survey recommended</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>🛒 Hardware Recommendations & Budget</h2>
+
+		<h3>Budget Tier ($500-$1,000) - Small Institution</h3>
+		<div class="hardware-option">
+			<h4>Router/Firewall:</h4>
+			<ul>
+				<li><strong>Ubiquiti EdgeRouter X</strong> ($60) - Basic but capable</li>
+				<li><strong>TP-Link ER605</strong> ($60) - Good for beginners</li>
+			</ul>
+
+			<h4>Access Points:</h4>
+			<ul>
+				<li><strong>TP-Link EAP225</strong> ($60 each x 2) - Reliable, good range</li>
+				<li><strong>Ubiquiti UniFi AC Lite</strong> ($79 each x 2) - Better management</li>
+			</ul>
+
+			<h4>Filtering:</h4>
+			<ul>
+				<li>Use <strong>free DNS filtering</strong> (OpenDNS Home, CleanBrowsing) - $0</li>
+			</ul>
+
+			<h4>Total: $500-$700</h4>
+		</div>
+
+		<h3>Mid-Range Tier ($1,500-$3,000) - Medium Institution (Recommended)</h3>
+		<div class="hardware-option">
+			<h4>Router/Firewall:</h4>
+			<ul>
+				<li><strong>Ubiquiti UniFi Dream Machine</strong> ($379) - All-in-one, easy management</li>
+				<li><strong>Firewalla Gold</strong> ($468) - Great UI, family-friendly</li>
+			</ul>
+
+			<h4>Access Points:</h4>
+			<ul>
+				<li><strong>Ubiquiti UniFi AC Pro</strong> ($149 each x 3-4) - Excellent performance</li>
+			</ul>
+
+			<h4>Filtering:</h4>
+			<ul>
+				<li><strong>NextDNS Pro</strong> ($20/year) - Custom filtering, detailed logs</li>
+				<li>OR <strong>CleanBrowsing Pro</strong> ($60/year) - Great for institutions</li>
+			</ul>
+
+			<h4>Total: $1,500-$2,500</h4>
+		</div>
+
+		<h3>Enterprise Tier ($5,000-$15,000+) - Large Institution</h3>
+		<div class="hardware-option">
+			<h4>Router/Firewall with Content Filtering:</h4>
+			<ul>
+				<li><strong>Fortinet FortiGate 60F</strong> ($1,500 + $500/year subscription) - Industry standard</li>
+				<li><strong>Sophos XG Firewall</strong> ($1,200 + $600/year) - Excellent reporting</li>
+				<li><strong>WatchGuard Firebox</strong> ($1,800 + $700/year) - Good for education</li>
+			</ul>
+
+			<h4>Access Points:</h4>
+			<ul>
+				<li><strong>Ubiquiti UniFi WiFi 6 Pro</strong> ($179 each x 6-10)</li>
+				<li><strong>Aruba Instant On AP22</strong> ($169 each x 6-10)</li>
+			</ul>
+
+			<h4>Management:</h4>
+			<ul>
+				<li><strong>UniFi Cloud Key</strong> ($199) - Centralized management</li>
+				<li>OR cloud-based management (included with many systems)</li>
+			</ul>
+
+			<h4>Total: $5,000-$15,000+ (depending on size)</h4>
+		</div>
+
+		<Alert type="info">
+			<strong>Professional Installation:</strong> Budget $500-$2,000 for professional installation and configuration if you don't have in-house IT expertise.
+		</Alert>
+	</section>
+
+	<section>
+		<h2>🌐 Filtering Approaches</h2>
+
+		<h3>Approach 1: DNS Filtering (Easiest, Recommended for Most)</h3>
+		<p>Configure your router to use filtering DNS servers. All devices automatically protected.</p>
+
+		<h4>Best DNS Services for Institutions:</h4>
+		<ul>
+			<li><strong>OpenDNS (Cisco Umbrella):</strong> Free basic, $20-50/year for reporting
+				<ul>
+					<li>Pros: Reliable, established, 65+ filtering categories</li>
+					<li>Cons: Free tier has limited customization</li>
+				</ul>
+			</li>
+			<li><strong>CleanBrowsing:</strong> Free basic, $5-15/month for custom
+				<ul>
+					<li>Pros: Designed for families/institutions, excellent support</li>
+					<li>Cons: Smaller company, less name recognition</li>
+				</ul>
+			</li>
+			<li><strong>NextDNS:</strong> Free 300k queries/month, then $2/month
+				<ul>
+					<li>Pros: Highly customizable, detailed analytics, modern</li>
+					<li>Cons: Requires more technical setup</li>
+				</ul>
+			</li>
+		</ul>
+
+		<p><em>See our <a href="/guides/dns-filtering">DNS Filtering Guide</a> and <a href="/guides/opendns-tutorial">OpenDNS Tutorial</a> for detailed setup.</em></p>
+
+		<h3>Approach 2: Firewall-Based Filtering (More Control)</h3>
+		<p>Enterprise firewalls with built-in content filtering (FortiGate, Sophos, WatchGuard).</p>
+
+		<h4>Advantages:</h4>
+		<ul>
+			<li>Cannot be bypassed by changing DNS</li>
+			<li>Deep packet inspection (sees encrypted traffic patterns)</li>
+			<li>Application control (block specific apps like TikTok)</li>
+			<li>Detailed reporting by user, category, and time</li>
+			<li>Bandwidth management per user/category</li>
+		</ul>
+
+		<h4>Disadvantages:</h4>
+		<ul>
+			<li>Higher cost ($1,500-$5,000+ plus annual subscriptions)</li>
+			<li>Requires technical expertise to configure</li>
+			<li>Ongoing maintenance and updates</li>
+		</ul>
+
+		<h3>Approach 3: Hybrid (DNS + Firewall Rules)</h3>
+		<p>Use DNS filtering as primary, add firewall rules to block VPNs and bypass methods.</p>
+	</section>
+
+	<section>
+		<h2>⚙️ Configuration Best Practices</h2>
+
+		<h3>Network Segmentation</h3>
+		<ul>
+			<li><strong>VLAN 10:</strong> Guest network (heavily filtered, isolated from internal resources)</li>
+			<li><strong>VLAN 20:</strong> Staff network (moderate filtering, access to printers/servers)</li>
+			<li><strong>VLAN 30:</strong> Admin network (minimal filtering, full access)</li>
+			<li><strong>VLAN 40:</strong> IoT devices (security cameras, smart devices - isolated)</li>
+		</ul>
+
+		<h3>Bandwidth Management (QoS)</h3>
+		<ul>
+			<li><strong>High priority:</strong> VoIP, video conferencing (for staff)</li>
+			<li><strong>Medium priority:</strong> Web browsing, email</li>
+			<li><strong>Low priority:</strong> Streaming video, file downloads</li>
+			<li><strong>Set per-user limits:</strong> 5-10 Mbps per guest to prevent one user consuming all bandwidth</li>
+		</ul>
+
+		<h3>WiFi Configuration</h3>
+		<ul>
+			<li><strong>SSID naming:</strong> "[Institution Name] - Guest" (clear and identifiable)</li>
+			<li><strong>Security:</strong> WPA3 (or WPA2 if devices don't support WPA3)</li>
+			<li><strong>Password:</strong> Strong but shareable (post publicly or rotate weekly)</li>
+			<li><strong>Band steering:</strong> Enable (pushes capable devices to 5GHz for less congestion)</li>
+			<li><strong>Client isolation:</strong> Enable on guest network (prevent guests from seeing each other)</li>
+		</ul>
+
+		<h3>Firewall Rules</h3>
+		<ul>
+			<li>Block known VPN services (to prevent filter bypass)</li>
+			<li>Block Tor exit nodes</li>
+			<li>Block proxy sites and anonymizers</li>
+			<li>Block peer-to-peer file sharing</li>
+			<li>Allow necessary services (email, web, video conferencing)</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>📊 Monitoring & Reporting</h2>
+
+		<h3>What to Monitor</h3>
+		<ul>
+			<li><strong>Bandwidth usage:</strong> Who's consuming the most? (identify issues)</li>
+			<li><strong>Blocked attempts:</strong> What categories are being blocked most?</li>
+			<li><strong>Top websites:</strong> What are people accessing?</li>
+			<li><strong>Number of users:</strong> Track peak times for capacity planning</li>
+			<li><strong>Incidents:</strong> Attempts to bypass filtering or access prohibited content</li>
+		</ul>
+
+		<h3>Reporting Tools</h3>
+		<ul>
+			<li><strong>OpenDNS Dashboard:</strong> Shows blocked requests, top domains, categories</li>
+			<li><strong>UniFi Controller:</strong> Real-time and historical network usage</li>
+			<li><strong>Firewall reports:</strong> FortiGate/Sophos have extensive built-in reports</li>
+			<li><strong>NextDNS Analytics:</strong> Beautiful, detailed query logs</li>
+		</ul>
+
+		<h3>Privacy Considerations</h3>
+		<ul>
+			<li>Most DNS services log domains, not full URLs (can't see specific pages)</li>
+			<li>HTTPS encrypts content, but domain is visible</li>
+			<li>Be transparent: Post privacy policy explaining monitoring level</li>
+			<li>Consider: Do you need to identify users, or just monitor aggregate traffic?</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>📋 Implementation Checklist</h2>
+
+		<div class="checklist-box">
+			<h3>Pre-Implementation</h3>
+			<ul>
+				<li>☐ Define filtering policy and acceptable use guidelines</li>
+				<li>☐ Get approval from leadership/board</li>
+				<li>☐ Determine budget</li>
+				<li>☐ Select hardware based on size and budget</li>
+				<li>☐ Decide: Professional installation or DIY?</li>
+				<li>☐ Choose filtering service (DNS or firewall-based)</li>
+			</ul>
+
+			<h3>Installation</h3>
+			<ul>
+				<li>☐ Install and configure router/firewall</li>
+				<li>☐ Set up DNS filtering or firewall content filtering</li>
+				<li>☐ Install and position access points</li>
+				<li>☐ Create separate SSIDs for guest/staff/admin (if applicable)</li>
+				<li>☐ Configure VLANs and network segmentation</li>
+				<li>☐ Set up bandwidth management (QoS)</li>
+				<li>☐ Enable firewall rules to block VPNs and proxies</li>
+			</ul>
+
+			<h3>Testing</h3>
+			<ul>
+				<li>☐ Test filtering with known inappropriate sites (should be blocked)</li>
+				<li>☐ Test legitimate sites (should work)</li>
+				<li>☐ Check WiFi coverage in all areas</li>
+				<li>☐ Test bandwidth under load (simulate many users)</li>
+				<li>☐ Verify guest network cannot access internal resources</li>
+				<li>☐ Test on multiple device types (iOS, Android, laptop)</li>
+			</ul>
+
+			<h3>Documentation</h3>
+			<ul>
+				<li>☐ Document network configuration (IP ranges, VLANs, passwords)</li>
+				<li>☐ Create acceptable use policy poster/handout</li>
+				<li>☐ Train staff on how to share WiFi password</li>
+				<li>☐ Create troubleshooting guide for common issues</li>
+				<li>☐ Establish contact for IT support</li>
+			</ul>
+
+			<h3>Launch</h3>
+			<ul>
+				<li>☐ Announce new WiFi availability</li>
+				<li>☐ Post acceptable use policy visibly</li>
+				<li>☐ Monitor closely for first week</li>
+				<li>☐ Collect feedback and adjust as needed</li>
+			</ul>
+		</div>
+	</section>
+
+	<section>
+		<h2>⚠️ Common Issues & Solutions</h2>
+
+		<div class="issue-solution">
+			<h3>Issue: Filtering is being bypassed</h3>
+			<p><strong>Causes:</strong> Users changing DNS settings, using VPNs, or proxy sites</p>
+			<p><strong>Solutions:</strong></p>
+			<ul>
+				<li>Block port 53 (DNS) outbound except to your chosen DNS servers</li>
+				<li>Block common VPN ports (1194, 1723, 4500, 500)</li>
+				<li>Use firewall-based filtering instead of DNS-only</li>
+				<li>Block known VPN/proxy domains</li>
+			</ul>
+		</div>
+
+		<div class="issue-solution">
+			<h3>Issue: Legitimate sites are blocked</h3>
+			<p><strong>Causes:</strong> Overly aggressive filtering, miscategorized sites</p>
+			<p><strong>Solutions:</strong></p>
+			<ul>
+				<li>Create whitelist for commonly needed sites</li>
+				<li>Review and adjust filtering categories (e.g., maybe "social media" is too broad)</li>
+				<li>Report miscategorized sites to DNS provider</li>
+				<li>Provide "request unblock" process for users</li>
+			</ul>
+		</div>
+
+		<div class="issue-solution">
+			<h3>Issue: WiFi is slow</h3>
+			<p><strong>Causes:</strong> Too many users, bandwidth limits, poor coverage</p>
+			<p><strong>Solutions:</strong></p>
+			<ul>
+				<li>Implement per-user bandwidth limits (prevent one user hogging)</li>
+				<li>Upgrade internet connection if consistently saturated</li>
+				<li>Add more access points to distribute load</li>
+				<li>Use 5GHz band for capable devices</li>
+				<li>Block bandwidth-heavy activities (video streaming, torrenting)</li>
+			</ul>
+		</div>
+
+		<div class="issue-solution">
+			<h3>Issue: Can't manage network remotely</h3>
+			<p><strong>Causes:</strong> No cloud management, firewall blocks remote access</p>
+			<p><strong>Solutions:</strong></p>
+			<ul>
+				<li>Use cloud-managed equipment (UniFi, Meraki)</li>
+				<li>Set up secure VPN for remote access</li>
+				<li>Enable remote management in firewall (with strong authentication)</li>
+			</ul>
+		</div>
+	</section>
+
+	<section>
+		<h2>📜 Sample Acceptable Use Policy</h2>
+
+		<div class="policy-box">
+			<h3>[Institution Name] Guest WiFi - Acceptable Use Policy</h3>
+
+			<p>We provide complimentary filtered internet access for our community. By using this network, you agree to:</p>
+
+			<h4>Acceptable Uses:</h4>
+			<ul>
+				<li>Email and communication</li>
+				<li>Educational research and learning</li>
+				<li>Work-related activities</li>
+				<li>Appropriate social media and entertainment</li>
+			</ul>
+
+			<h4>Prohibited Uses:</h4>
+			<ul>
+				<li>Accessing inappropriate, illegal, or offensive content</li>
+				<li>Attempting to bypass content filtering or security</li>
+				<li>Illegal file sharing or copyright violation</li>
+				<li>Hacking, port scanning, or network attacks</li>
+				<li>Excessive bandwidth consumption that impacts others</li>
+				<li>Commercial activities without permission</li>
+			</ul>
+
+			<h4>Monitoring & Privacy:</h4>
+			<p>We monitor network traffic for security and compliance. Domain names visited are logged but specific page content is not visible due to HTTPS encryption. We do not sell or share your data.</p>
+
+			<h4>No Expectation of Privacy:</h4>
+			<p>This is a shared public network. Do not transmit sensitive information without using additional security measures (VPN, HTTPS).</p>
+
+			<h4>Enforcement:</h4>
+			<p>Violations may result in immediate disconnection from the network and/or referral to appropriate authorities.</p>
+
+			<p><em>Questions? Contact: [IT Contact]</em></p>
+		</div>
+	</section>
+
+	<section slot="next-steps">
+		<h2>🎯 Next Steps & Related Guides</h2>
+
+		<div class="next-steps-grid">
+			<a href="/guides/computer-lab-management" class="next-step-card">
+				<h3>💻 Computer Lab Management</h3>
+				<p>Filtering and managing public computers and libraries</p>
+			</a>
+
+			<a href="/guides/policies-guidelines" class="next-step-card">
+				<h3>📋 Policies & Guidelines</h3>
+				<p>Sample acceptable use policies and procedures</p>
+			</a>
+
+			<a href="/guides/dns-filtering" class="next-step-card">
+				<h3>🌐 DNS Filtering Guide</h3>
+				<p>Detailed DNS filtering setup instructions</p>
+			</a>
+
+			<a href="/leaders" class="next-step-card">
+				<h3>👥 All Leader Resources</h3>
+				<p>Browse all guides for religious and community leaders</p>
+			</a>
+		</div>
+
+		<Alert type="success">
+			<strong>Remember:</strong> Start simple and scale up. A basic filtered network is better than waiting months to implement a perfect enterprise solution. You can always upgrade later as needs grow.
+		</Alert>
+	</section>
+</GuideLayout>
+
+<style>
+	.architecture-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-4);
+		margin: var(--space-6) 0;
+	}
+
+	@media (min-width: 768px) {
+		.architecture-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	.arch-card {
+		background-color: var(--color-gray-50);
+		border: 2px solid var(--color-primary-300);
+		border-radius: var(--radius-lg);
+		padding: var(--space-5);
+	}
+
+	.arch-card h4 {
+		color: var(--color-primary-700);
+		margin-top: 0;
+		margin-bottom: var(--space-2);
+		font-size: var(--text-lg);
+	}
+
+	.arch-card p {
+		font-size: var(--text-sm);
+		margin-bottom: var(--space-3);
+	}
+
+	.arch-card ul {
+		padding-left: var(--space-5);
+		margin-bottom: var(--space-3);
+		font-size: var(--text-sm);
+	}
+
+	.arch-card li {
+		margin-bottom: var(--space-1);
+	}
+
+	.hardware-option {
+		background-color: var(--color-secondary-50);
+		border: 2px solid var(--color-secondary-300);
+		border-radius: var(--radius-lg);
+		padding: var(--space-6);
+		margin-bottom: var(--space-6);
+	}
+
+	.hardware-option h4 {
+		color: var(--color-secondary-700);
+		margin-top: var(--space-4);
+		margin-bottom: var(--space-2);
+	}
+
+	.hardware-option ul {
+		padding-left: var(--space-5);
+		margin-bottom: var(--space-4);
+	}
+
+	.hardware-option li {
+		margin-bottom: var(--space-2);
+		line-height: var(--leading-relaxed);
+	}
+
+	.checklist-box {
+		background-color: var(--color-gray-50);
+		border: 3px solid var(--color-primary-500);
+		border-radius: var(--radius-lg);
+		padding: var(--space-6);
+		margin: var(--space-6) 0;
+	}
+
+	.checklist-box h3 {
+		color: var(--color-primary-700);
+		margin-top: var(--space-5);
+		margin-bottom: var(--space-3);
+	}
+
+	.checklist-box h3:first-child {
+		margin-top: 0;
+	}
+
+	.checklist-box ul {
+		list-style: none;
+		padding-left: 0;
+	}
+
+	.checklist-box li {
+		padding: var(--space-2);
+		margin-bottom: var(--space-2);
+		line-height: var(--leading-relaxed);
+	}
+
+	.issue-solution {
+		background-color: #fef3c7;
+		border-left: 4px solid #f59e0b;
+		padding: var(--space-5);
+		margin-bottom: var(--space-4);
+		border-radius: var(--radius-base);
+	}
+
+	.issue-solution h3 {
+		color: #92400e;
+		margin-top: 0;
+		margin-bottom: var(--space-2);
+	}
+
+	.issue-solution p {
+		margin-bottom: var(--space-2);
+	}
+
+	.issue-solution ul {
+		padding-left: var(--space-5);
+		margin: 0;
+	}
+
+	.issue-solution li {
+		margin-bottom: var(--space-1);
+		line-height: var(--leading-relaxed);
+	}
+
+	.policy-box {
+		background-color: var(--color-gray-50);
+		border: 3px solid var(--color-primary-600);
+		border-radius: var(--radius-lg);
+		padding: var(--space-6);
+		margin: var(--space-6) 0;
+	}
+
+	.policy-box h3 {
+		color: var(--color-primary-700);
+		text-align: center;
+		margin-top: 0;
+		margin-bottom: var(--space-5);
+	}
+
+	.policy-box h4 {
+		color: var(--color-gray-800);
+		margin-top: var(--space-5);
+		margin-bottom: var(--space-3);
+	}
+
+	.policy-box p {
+		margin-bottom: var(--space-3);
+		line-height: var(--leading-relaxed);
+	}
+
+	.policy-box ul {
+		padding-left: var(--space-5);
+		margin-bottom: var(--space-4);
+	}
+
+	.policy-box li {
+		margin-bottom: var(--space-2);
+		line-height: var(--leading-relaxed);
+	}
+
+	.next-steps-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-4);
+		margin: var(--space-6) 0;
+	}
+
+	@media (min-width: 768px) {
+		.next-steps-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	.next-step-card {
+		background-color: white;
+		border: 2px solid var(--color-gray-200);
+		border-radius: var(--radius-lg);
+		padding: var(--space-5);
+		text-decoration: none;
+		transition: all var(--transition-base);
+		display: block;
+	}
+
+	.next-step-card:hover {
+		border-color: var(--color-primary-400);
+		box-shadow: var(--shadow-lg);
+		transform: translateY(-2px);
+	}
+
+	.next-step-card h3 {
+		font-size: var(--text-lg);
+		color: var(--color-gray-900);
+		margin-top: 0;
+		margin-bottom: var(--space-2);
+	}
+
+	.next-step-card p {
+		color: var(--color-gray-600);
+		margin: 0;
+		font-size: var(--text-sm);
+	}
+</style>

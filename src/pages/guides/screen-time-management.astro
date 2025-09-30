@@ -1,0 +1,665 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import Alert from '../../components/Alert.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+	{ label: 'Home', href: '/' },
+	{ label: 'For Parents', href: '/parents' },
+	{ label: 'Screen Time Management', href: '/guides/screen-time-management' }
+];
+---
+
+<GuideLayout
+	title="Screen Time Management Strategies"
+	description="Practical, evidence-based strategies for setting healthy screen time limits, creating family media plans, and balancing digital and real-world activities."
+	difficulty="beginner"
+	timeEstimate="15-20 minutes"
+	prerequisites={[
+		'Awareness of current screen time in your household',
+		'Willingness to set and enforce boundaries',
+		'Understanding that parents must model good behavior'
+	]}
+>
+	<Breadcrumb slot="breadcrumb" items={breadcrumbItems} />
+
+	<section>
+		<h2>Why Screen Time Management Matters</h2>
+		<p>
+			Excessive screen time is linked to sleep problems, obesity, behavioral issues, academic decline, anxiety, depression, and reduced social skills. The average child spends 5-7 hours per day on screens (not including homework), far exceeding recommended limits. However, not all screen time is equal - educational content, video calls with family, and creative activities are different from mindless scrolling or violent games. The goal isn't to eliminate screens, but to create intentional, balanced use.
+		</p>
+
+		<Alert type="warning">
+			<strong>Important:</strong> Before setting limits for children, audit your own screen time. Children model what they see. If you're constantly on your phone, your rules will lack credibility.
+		</Alert>
+	</section>
+
+	<section>
+		<h2>📊 Recommended Screen Time Limits by Age</h2>
+		<p>Based on American Academy of Pediatrics (AAP) guidelines:</p>
+
+		<div class="guidelines-table">
+			<table>
+				<tr>
+					<th>Age</th>
+					<th>Recommended Limit</th>
+					<th>Notes</th>
+				</tr>
+				<tr>
+					<td><strong>Under 18 months</strong></td>
+					<td>No screen time (except video chat)</td>
+					<td>Critical brain development period</td>
+				</tr>
+				<tr>
+					<td><strong>18-24 months</strong></td>
+					<td>Limited, high-quality programming only</td>
+					<td>Co-view and discuss content</td>
+				</tr>
+				<tr>
+					<td><strong>2-5 years</strong></td>
+					<td>1 hour per day maximum</td>
+					<td>High-quality educational content, with parent present</td>
+				</tr>
+				<tr>
+					<td><strong>6-12 years</strong></td>
+					<td>1-2 hours per day</td>
+					<td>Prioritize homework, physical activity, sleep</td>
+				</tr>
+				<tr>
+					<td><strong>13-18 years</strong></td>
+					<td>2 hours recreational (not including homework)</td>
+					<td>Emphasize self-regulation and balance</td>
+				</tr>
+			</table>
+		</div>
+
+		<Alert type="info">
+			<strong>Context matters:</strong> These are recreational screen time limits. Educational screen time (homework, research) is separate. Video calling grandparents is different from YouTube browsing. Quality and context matter as much as quantity.
+		</Alert>
+	</section>
+
+	<section>
+		<h2>🎯 Quality vs. Quantity</h2>
+		<p>Not all screen time is created equal. Consider both time AND content:</p>
+
+		<div class="quality-grid">
+			<div class="quality-card positive">
+				<h3>✅ Higher Quality Screen Time</h3>
+				<ul>
+					<li>Educational content (Khan Academy, documentaries)</li>
+					<li>Creative activities (coding, digital art, music production)</li>
+					<li>Social connection (video calls with family/friends)</li>
+					<li>Reading ebooks</li>
+					<li>Homework and research</li>
+					<li>Learning new skills (language apps, tutorials)</li>
+					<li>Co-viewing and discussing with parents</li>
+				</ul>
+			</div>
+
+			<div class="quality-card negative">
+				<h3>⚠️ Lower Quality Screen Time</h3>
+				<ul>
+					<li>Mindless scrolling through social media</li>
+					<li>Binge-watching without purpose</li>
+					<li>Auto-play content consumption</li>
+					<li>Violent or inappropriate content</li>
+					<li>Advertising-heavy "free" games</li>
+					<li>Isolated, passive consumption</li>
+					<li>Late-night screen use affecting sleep</li>
+				</ul>
+			</div>
+		</div>
+
+		<p><strong>The 80/20 approach:</strong> Aim for 80% purposeful, high-quality screen time and 20% entertainment/relaxation. This creates balance without being overly restrictive.</p>
+	</section>
+
+	<section>
+		<h2>🏠 Creating Screen-Free Zones and Times</h2>
+
+		<h3>Screen-Free Zones (Where)</h3>
+		<ul>
+			<li><strong>Bedrooms:</strong> No devices in rooms overnight (affects sleep)</li>
+			<li><strong>Dining table:</strong> Family meals without screens</li>
+			<li><strong>Kitchen:</strong> During cooking and eating</li>
+			<li><strong>Car:</strong> Use drive time for conversation</li>
+			<li><strong>Bathroom:</strong> No phones in the bathroom</li>
+		</ul>
+
+		<h3>Screen-Free Times (When)</h3>
+		<ul>
+			<li><strong>First hour of morning:</strong> Start day without screens</li>
+			<li><strong>During meals:</strong> All family meals screen-free</li>
+			<li><strong>One hour before bed:</strong> Blue light affects sleep</li>
+			<li><strong>During homework:</strong> (except when needed for work)</li>
+			<li><strong>Family activities:</strong> Game night, outings, conversations</li>
+			<li><strong>One full day per week:</strong> "Tech Sabbath" or screen-free Sunday</li>
+		</ul>
+
+		<h3>Creating a "Device Parking Lot"</h3>
+		<ul>
+			<li>Designate a central location for charging devices overnight</li>
+			<li>Use a basket, drawer, or charging station in parent's room or common area</li>
+			<li>All devices (including parents') go there at bedtime</li>
+			<li>Buy alarm clocks so phones aren't needed in bedrooms</li>
+		</ul>
+
+		<Alert type="success">
+			<strong>Tip:</strong> Apply screen-free zones and times to the WHOLE family, including parents. This eliminates the "Why do you get to use your phone at dinner?" arguments.
+		</Alert>
+	</section>
+
+	<section>
+		<h2>⏰ Implementing Time Limits</h2>
+
+		<h3>Using Built-in Parental Controls</h3>
+		<ul>
+			<li><strong>iOS:</strong> <a href="/guides/ios-screen-time">Screen Time</a> - Set daily limits per app category, downtime schedules</li>
+			<li><strong>Android:</strong> <a href="/guides/android-family-link">Family Link</a> - App time limits, daily limit, bedtime schedule</li>
+			<li><strong>Windows:</strong> Microsoft Family Safety - Screen time limits, daily reports</li>
+			<li><strong>macOS:</strong> Screen Time - Similar to iOS</li>
+			<li><strong>Gaming consoles:</strong> PlayStation, Xbox, Switch all have time limit features</li>
+		</ul>
+
+		<h3>Token/Ticket System (for Younger Kids)</h3>
+		<ul>
+			<li>Give child daily "screen time tokens" (physical or visual)</li>
+			<li>Each token = 30 minutes of screen time</li>
+			<li>Child chooses when to "spend" tokens throughout the day</li>
+			<li>Teaches self-regulation and decision-making</li>
+			<li>Can earn extra tokens for chores or good behavior</li>
+		</ul>
+
+		<h3>Natural Consequences Approach (for Teens)</h3>
+		<ul>
+			<li>Set overall weekly screen time budget (e.g., 15 hours)</li>
+			<li>Teen manages their own time within that budget</li>
+			<li>If they blow through it in 3 days, no more for the week</li>
+			<li>Teaches time management and consequences</li>
+			<li>Requires maturity and trust</li>
+		</ul>
+
+		<h3>The "Earn It" System</h3>
+		<ul>
+			<li>Screen time is earned, not a right</li>
+			<li>Homework completed = unlocks screens</li>
+			<li>Chores done = screen time available</li>
+			<li>30 minutes of reading = 30 minutes of screens</li>
+			<li>30 minutes outside = 1 hour of gaming</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>📱 Managing Specific Scenarios</h2>
+
+		<h3>Homework on Devices</h3>
+		<ul>
+			<li>Use website blockers to allow only educational sites</li>
+			<li>Set device in common area during homework time</li>
+			<li>Use "Work Mode" browser extensions that limit distractions</li>
+			<li>Check in periodically - are they actually on task?</li>
+			<li>Set timer - homework shouldn't take 4 hours on a computer</li>
+		</ul>
+
+		<h3>Weekends vs. Weekdays</h3>
+		<ul>
+			<li>Weekdays: Stricter limits (1-2 hours after responsibilities)</li>
+			<li>Weekends: More flexible (2-3 hours), but not unlimited</li>
+			<li>Require at least 1 hour outdoors or physical activity first</li>
+			<li>Balance screen time with family activities</li>
+		</ul>
+
+		<h3>Summer and School Breaks</h3>
+		<ul>
+			<li>Don't let limits completely disappear</li>
+			<li>Create structure: "Screens available after lunch"</li>
+			<li>Enroll in camps, activities, sports to provide alternatives</li>
+			<li>Reading challenges or project goals before screen time</li>
+			<li>More flexibility but still boundaries</li>
+		</ul>
+
+		<h3>Social Pressure ("Everyone Else Gets To...")</h3>
+		<ul>
+			<li>"I'm sure it feels that way, but not everyone..."</li>
+			<li>"Different families have different rules"</li>
+			<li>"Our family values include balance"</li>
+			<li>Offer compromises: Friend can come over for limited screen time together</li>
+			<li>Stand firm - peer pressure isn't a reason to abandon limits</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>🌟 Providing Alternatives to Screens</h2>
+		<p>The key to reducing screen time is providing appealing alternatives:</p>
+
+		<h3>For Younger Children (5-10)</h3>
+		<ul>
+			<li>Arts and crafts supplies readily available</li>
+			<li>Board games and puzzles</li>
+			<li>Outdoor toys (bikes, balls, sidewalk chalk)</li>
+			<li>Building sets (Lego, blocks)</li>
+			<li>Books at their reading level</li>
+			<li>Musical instruments</li>
+			<li>Play dates with friends</li>
+			<li>Cooking/baking together</li>
+		</ul>
+
+		<h3>For Tweens (11-13)</h3>
+		<ul>
+			<li>Sports teams or lessons</li>
+			<li>Hobby supplies (art, music, crafts)</li>
+			<li>Books (series they love)</li>
+			<li>Volunteer opportunities</li>
+			<li>Part-time job (dog walking, babysitting)</li>
+			<li>Youth groups or clubs</li>
+			<li>Family game nights</li>
+		</ul>
+
+		<h3>For Teens (14+)</h3>
+		<ul>
+			<li>Driver's ed and driving practice</li>
+			<li>Part-time job</li>
+			<li>Exercise/gym membership</li>
+			<li>Social activities with friends</li>
+			<li>Passion projects (starting a business, podcast, blog)</li>
+			<li>Community service</li>
+			<li>Learning practical skills (cooking, car maintenance)</li>
+		</ul>
+
+		<Alert type="info">
+			<strong>Combat boredom:</strong> When kids say "I'm bored," resist the urge to hand them a screen. Boredom is healthy - it sparks creativity and imagination. Keep a "Boredom Buster" jar with activity ideas they can pull from.
+		</Alert>
+	</section>
+
+	<section>
+		<h2>👨‍👩‍👧 Creating a Family Media Plan</h2>
+
+		<div class="media-plan">
+			<h3>Our Family Media Plan Template</h3>
+
+			<h4>Screen Time Limits</h4>
+			<ul>
+				<li>Ages ___: ___ hours on weekdays, ___ hours on weekends</li>
+				<li>Homework/educational use: Not counted toward limit</li>
+				<li>Video calls with family: Not counted toward limit</li>
+			</ul>
+
+			<h4>Screen-Free Times</h4>
+			<ul>
+				<li>During all family meals</li>
+				<li>First ___ hour(s) after waking</li>
+				<li>___ hour(s) before bedtime</li>
+				<li>During [family activities/outings]</li>
+				<li>[Day of week] is screen-free day</li>
+			</ul>
+
+			<h4>Screen-Free Zones</h4>
+			<ul>
+				<li>All bedrooms</li>
+				<li>Kitchen and dining area</li>
+				<li>[Other areas]</li>
+			</ul>
+
+			<h4>Content Guidelines</h4>
+			<ul>
+				<li>Parent approval required for: [new apps, games, social media accounts]</li>
+				<li>Age-appropriate content only (follow ratings)</li>
+				<li>No violent/inappropriate content</li>
+				<li>Privacy settings must be on maximum</li>
+			</ul>
+
+			<h4>Device Rules</h4>
+			<ul>
+				<li>All devices charge in [location] overnight</li>
+				<li>Parent has passwords to all accounts</li>
+				<li>Devices can be checked at any time</li>
+				<li>Lost/stolen devices reported immediately</li>
+			</ul>
+
+			<h4>Parent Commitments</h4>
+			<ul>
+				<li>We will follow the same screen-free zones and times</li>
+				<li>We will model healthy device use</li>
+				<li>We will provide alternatives to screens</li>
+				<li>We will revisit this plan every [6 months]</li>
+			</ul>
+
+			<h4>Consequences for Violations</h4>
+			<ul>
+				<li>First time: Warning and reminder of rules</li>
+				<li>Second time: Loss of device for [duration]</li>
+				<li>Repeated violations: Extended loss and plan revision</li>
+			</ul>
+
+			<p><strong>Family signatures:</strong> ________________________</p>
+			<p><strong>Date:</strong> ___________ <strong>Review date:</strong> ___________</p>
+		</div>
+
+		<p><em>Create your custom plan at <a href="https://www.healthychildren.org/English/media/Pages/default.aspx" target="_blank" rel="noopener">HealthyChildren.org Family Media Plan Tool</a></em></p>
+	</section>
+
+	<section>
+		<h2>💡 Enforcement Strategies</h2>
+
+		<h3>Make Rules Clear and Consistent</h3>
+		<ul>
+			<li>Write down rules and post them visibly</li>
+			<li>Explain the "why" behind each rule</li>
+			<li>Apply rules consistently (same consequence every time)</li>
+			<li>Both parents must enforce same rules</li>
+		</ul>
+
+		<h3>Give Warnings Before Time is Up</h3>
+		<ul>
+			<li>"15 minutes left" warning prevents meltdowns</li>
+			<li>"5 minutes - save your game now"</li>
+			<li>Use timers that child can see</li>
+			<li>Don't interrupt mid-activity without warning</li>
+		</ul>
+
+		<h3>Follow Through on Consequences</h3>
+		<ul>
+			<li>If you threaten to take the device, do it</li>
+			<li>Don't make threats you won't enforce</li>
+			<li>Be calm and matter-of-fact, not angry</li>
+			<li>"You went over time, so the iPad is gone for 24 hours"</li>
+		</ul>
+
+		<h3>Use Technology to Enforce</h3>
+		<ul>
+			<li>Parental controls automatically enforce limits</li>
+			<li>Removes parent from being the "bad guy"</li>
+			<li>"The device says your time is up" vs. "I'm taking it away"</li>
+			<li>Less room for negotiation and arguing</li>
+		</ul>
+
+		<h3>Positive Reinforcement</h3>
+		<ul>
+			<li>Praise when they stop willingly</li>
+			<li>"I really appreciate you turning it off right away"</li>
+			<li>Extra time as reward for good behavior</li>
+			<li>Recognize when they self-regulate</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>⚠️ Common Mistakes to Avoid</h2>
+
+		<div class="mistakes-grid">
+			<div class="mistake-card">
+				<h3>❌ Using screens as babysitter</h3>
+				<p>Relying on screens every time you need a break teaches kids screens are for boredom</p>
+			</div>
+
+			<div class="mistake-card">
+				<h3>❌ No limits for parents</h3>
+				<p>"Do as I say, not as I do" doesn't work. Model the behavior you want</p>
+			</div>
+
+			<div class="mistake-card">
+				<h3>❌ Inconsistent enforcement</h3>
+				<p>Sometimes allowing exceptions undermines the entire system</p>
+			</div>
+
+			<div class="mistake-card">
+				<h3>❌ Using screens as reward/punishment only</h3>
+				<p>Makes screens seem more valuable than they are</p>
+			</div>
+
+			<div class="mistake-card">
+				<h3>❌ Setting rules without explanation</h3>
+				<p>Kids need to understand WHY, not just WHAT the rules are</p>
+			</div>
+
+			<div class="mistake-card">
+				<h3>❌ All-or-nothing approach</h3>
+				<p>Complete bans often backfire. Balance and guidance work better</p>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<h2>🚨 Signs Screen Time is a Problem</h2>
+
+		<h3>Watch For:</h3>
+		<ul>
+			<li>Angry or irritable when not on screens</li>
+			<li>Preoccupied with screens even when not using them</li>
+			<li>Losing interest in previously enjoyed activities</li>
+			<li>Declining academic performance</li>
+			<li>Sleep problems (staying up late, hard to wake)</li>
+			<li>Physical complaints (headaches, eye strain, wrist pain)</li>
+			<li>Secretive about screen use</li>
+			<li>Unable to reduce use even when trying</li>
+			<li>Lying about time spent on screens</li>
+			<li>Withdrawal from family and friends</li>
+		</ul>
+
+		<Alert type="error">
+			<strong>Screen addiction is real:</strong> If your child meets several of these criteria and it's affecting daily functioning, consult a mental health professional who specializes in technology addiction.
+		</Alert>
+	</section>
+
+	<section slot="next-steps">
+		<h2>🎯 Next Steps & Related Guides</h2>
+
+		<div class="next-steps-grid">
+			<a href="/guides/ios-screen-time" class="next-step-card">
+				<h3>📱 iOS Screen Time Setup</h3>
+				<p>Technical implementation of limits on iPhones and iPads</p>
+			</a>
+
+			<a href="/guides/android-family-link" class="next-step-card">
+				<h3>🤖 Android Family Link</h3>
+				<p>Configure time limits and controls on Android devices</p>
+			</a>
+
+			<a href="/guides/age-appropriate-internet" class="next-step-card">
+				<h3>🎯 Age-Appropriate Internet</h3>
+				<p>Stage-by-stage guide to introducing technology</p>
+			</a>
+
+			<a href="/guides/education-entertainment-balance" class="next-step-card">
+				<h3>📚 Education vs Entertainment</h3>
+				<p>Maximize learning while allowing recreation</p>
+			</a>
+		</div>
+
+		<Alert type="success">
+			<strong>Remember:</strong> The goal isn't to eliminate screens, but to create intentional, balanced use. Technology is a tool - it should enhance life, not dominate it.
+		</Alert>
+	</section>
+</GuideLayout>
+
+<style>
+	.guidelines-table {
+		overflow-x: auto;
+		margin: var(--space-6) 0;
+	}
+
+	.guidelines-table table {
+		width: 100%;
+		border-collapse: collapse;
+		background-color: white;
+		border-radius: var(--radius-lg);
+		overflow: hidden;
+		box-shadow: var(--shadow-md);
+	}
+
+	.guidelines-table th,
+	.guidelines-table td {
+		padding: var(--space-3);
+		text-align: left;
+		border-bottom: 1px solid var(--color-gray-200);
+	}
+
+	.guidelines-table th {
+		background-color: var(--color-primary-600);
+		color: white;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		font-size: var(--text-xs);
+	}
+
+	.guidelines-table tbody tr:last-child td {
+		border-bottom: none;
+	}
+
+	.quality-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-6);
+		margin: var(--space-6) 0;
+	}
+
+	@media (min-width: 768px) {
+		.quality-grid {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	.quality-card {
+		border-radius: var(--radius-lg);
+		padding: var(--space-6);
+	}
+
+	.quality-card.positive {
+		background-color: var(--color-secondary-50);
+		border: 2px solid var(--color-secondary-400);
+	}
+
+	.quality-card.negative {
+		background-color: #fef3c7;
+		border: 2px solid #f59e0b;
+	}
+
+	.quality-card h3 {
+		margin-top: 0;
+		margin-bottom: var(--space-4);
+	}
+
+	.quality-card.positive h3 {
+		color: var(--color-secondary-700);
+	}
+
+	.quality-card.negative h3 {
+		color: #92400e;
+	}
+
+	.quality-card ul {
+		margin: 0;
+		padding-left: var(--space-5);
+	}
+
+	.quality-card li {
+		margin-bottom: var(--space-2);
+		line-height: var(--leading-relaxed);
+	}
+
+	.media-plan {
+		background-color: var(--color-gray-50);
+		border: 3px solid var(--color-primary-500);
+		border-radius: var(--radius-lg);
+		padding: var(--space-6);
+		margin: var(--space-6) 0;
+	}
+
+	.media-plan h3 {
+		color: var(--color-primary-700);
+		text-align: center;
+		margin-top: 0;
+		margin-bottom: var(--space-5);
+	}
+
+	.media-plan h4 {
+		color: var(--color-gray-800);
+		margin-top: var(--space-5);
+		margin-bottom: var(--space-3);
+	}
+
+	.media-plan ul {
+		margin-bottom: var(--space-4);
+		padding-left: var(--space-5);
+	}
+
+	.media-plan li {
+		margin-bottom: var(--space-2);
+		line-height: var(--leading-relaxed);
+	}
+
+	.mistakes-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-4);
+		margin: var(--space-6) 0;
+	}
+
+	@media (min-width: 768px) {
+		.mistakes-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	.mistake-card {
+		background-color: #fef3c7;
+		border-left: 4px solid #f59e0b;
+		padding: var(--space-4);
+		border-radius: var(--radius-base);
+	}
+
+	.mistake-card h3 {
+		color: #92400e;
+		margin-top: 0;
+		margin-bottom: var(--space-2);
+		font-size: var(--text-base);
+	}
+
+	.mistake-card p {
+		margin: 0;
+		color: var(--color-gray-700);
+		font-size: var(--text-sm);
+		line-height: var(--leading-relaxed);
+	}
+
+	.next-steps-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-4);
+		margin: var(--space-6) 0;
+	}
+
+	@media (min-width: 768px) {
+		.next-steps-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	.next-step-card {
+		background-color: white;
+		border: 2px solid var(--color-gray-200);
+		border-radius: var(--radius-lg);
+		padding: var(--space-5);
+		text-decoration: none;
+		transition: all var(--transition-base);
+		display: block;
+	}
+
+	.next-step-card:hover {
+		border-color: var(--color-primary-400);
+		box-shadow: var(--shadow-lg);
+		transform: translateY(-2px);
+	}
+
+	.next-step-card h3 {
+		font-size: var(--text-lg);
+		color: var(--color-gray-900);
+		margin-top: 0;
+		margin-bottom: var(--space-2);
+	}
+
+	.next-step-card p {
+		color: var(--color-gray-600);
+		margin: 0;
+		font-size: var(--text-sm);
+	}
+</style>

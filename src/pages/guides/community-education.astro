@@ -1,0 +1,615 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import Alert from '../../components/Alert.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+	{ label: 'Home', href: '/' },
+	{ label: 'For Leaders', href: '/leaders' },
+	{ label: 'Community Education Programs', href: '/guides/community-education' }
+];
+---
+
+<GuideLayout
+	title="Community Education Programs"
+	description="Guide for religious leaders to create effective digital safety workshops and education programs for parents, teens, and children in their communities."
+	difficulty="intermediate"
+	timeEstimate="20-25 minutes"
+	prerequisites={[
+		'Understanding of digital safety issues',
+		'Ability to organize community events',
+		'Access to presentation space and equipment',
+		'Willingness to facilitate difficult conversations'
+	]}
+>
+	<Breadcrumb slot="breadcrumb" items={breadcrumbItems} />
+
+	<section>
+		<h2>Why Community Education Matters</h2>
+		<p>
+			Parents and families need guidance navigating digital challenges, but many don't know where to start. Religious institutions are uniquely positioned to provide education grounded in community values. Digital safety education builds awareness, equips families with practical tools, and creates a support network where parents don't feel alone. This guide helps you plan and deliver effective workshops that make a real difference.
+		</p>
+
+		<Alert type="success">
+			<strong>Key Principle:</strong> Effective education is practical, judgment-free, and ongoing - not one-time lectures. Focus on empowering families with actionable tools, not overwhelming them with fear.
+		</Alert>
+	</section>
+
+	<section>
+		<h2>🎯 Workshop Types & Audiences</h2>
+
+		<div class="workshop-grid">
+			<div class="workshop-card">
+				<h3>Parent Workshop: "Protecting Your Family Online"</h3>
+				<p><strong>Audience:</strong> Parents of children ages 5-18</p>
+				<p><strong>Duration:</strong> 90-120 minutes</p>
+				<p><strong>Format:</strong> Presentation + Q&A + hands-on practice</p>
+				<h4>Topics:</h4>
+				<ul>
+					<li>Age-appropriate internet introduction</li>
+					<li>Social media risks and safeguards</li>
+					<li>Setting up parental controls (demo)</li>
+					<li>Screen time management strategies</li>
+					<li>Having "the talk" about pornography</li>
+					<li>Cyberbullying recognition and response</li>
+					<li>Creating family media plans</li>
+				</ul>
+			</div>
+
+			<div class="workshop-card">
+				<h3>Teen Workshop: "Navigating Digital Life"</h3>
+				<p><strong>Audience:</strong> Teens ages 13-18</p>
+				<p><strong>Duration:</strong> 60-90 minutes</p>
+				<p><strong>Format:</strong> Interactive discussion, peer-led activities</p>
+				<h4>Topics:</h4>
+				<ul>
+					<li>Social media and mental health</li>
+					<li>Digital footprint and future consequences</li>
+					<li>Recognizing predatory behavior online</li>
+					<li>Cyberbullying - as victim, bully, or bystander</li>
+					<li>Sexting and legal consequences</li>
+					<li>Gaming addiction and healthy boundaries</li>
+					<li>Being an upstander, not a bystander</li>
+				</ul>
+			</div>
+
+			<div class="workshop-card">
+				<h3>Children's Workshop: "Being Safe Online"</h3>
+				<p><strong>Audience:</strong> Children ages 8-12</p>
+				<p><strong>Duration:</strong> 45-60 minutes</p>
+				<p><strong>Format:</strong> Age-appropriate activities, games, role-play</p>
+				<h4>Topics:</h4>
+				<ul>
+					<li>What is the internet? (basics)</li>
+					<li>Stranger danger online</li>
+					<li>What information to never share</li>
+					<li>How to recognize "something's not right"</li>
+					<li>Who to tell when you see something bad</li>
+					<li>Being kind online</li>
+					<li>Simple, memorable rules</li>
+				</ul>
+			</div>
+
+			<div class="workshop-card">
+				<h3>Educator/Leader Workshop: "Supporting Families"</h3>
+				<p><strong>Audience:</strong> Teachers, youth leaders, counselors</p>
+				<p><strong>Duration:</strong> 90 minutes</p>
+				<p><strong>Format:</strong> Training + resource sharing</p>
+				<h4>Topics:</h4>
+				<ul>
+					<li>Recognizing digital safety issues in children</li>
+					<li>Having conversations about concerns</li>
+					<li>Resources to share with parents</li>
+					<li>Creating safe digital environments</li>
+					<li>Mandatory reporting requirements</li>
+					<li>Supporting families through crises</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<h2>📋 Planning Your Workshop</h2>
+
+		<h3>3-4 Months Before</h3>
+		<ul>
+			<li>Choose topic and target audience</li>
+			<li>Select date and time (evenings or weekends work best for parents)</li>
+			<li>Book venue with A/V equipment</li>
+			<li>Decide: DIY or bring in expert speaker?</li>
+			<li>Set budget (if any)</li>
+		</ul>
+
+		<h3>2 Months Before</h3>
+		<ul>
+			<li>Confirm speaker (or finalize your own materials)</li>
+			<li>Create promotional materials (flyers, emails, social media)</li>
+			<li>Begin promoting to community</li>
+			<li>Set up registration (estimate attendance)</li>
+			<li>Order childcare if offering</li>
+		</ul>
+
+		<h3>1 Month Before</h3>
+		<ul>
+			<li>Finalize presentation content</li>
+			<li>Prepare handouts and takeaways</li>
+			<li>Arrange refreshments if providing</li>
+			<li>Test all A/V equipment</li>
+			<li>Send reminder emails to registered attendees</li>
+		</ul>
+
+		<h3>Week of Event</h3>
+		<ul>
+			<li>Final promotion push</li>
+			<li>Confirm speaker and logistics</li>
+			<li>Print all handouts</li>
+			<li>Prepare sign-in sheet and name tags</li>
+			<li>Set up room layout</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>🎤 Presentation Best Practices</h2>
+
+		<h3>Opening (10 minutes)</h3>
+		<ul>
+			<li><strong>Welcome & icebreaker:</strong> "Raise your hand if you've felt overwhelmed by technology"</li>
+			<li><strong>Set tone:</strong> This is a judgment-free zone</li>
+			<li><strong>Establish credibility:</strong> Why this matters to our community</li>
+			<li><strong>Preview agenda:</strong> What we'll cover today</li>
+			<li><strong>Ground rules:</strong> Questions welcome, confidentiality respected</li>
+		</ul>
+
+		<h3>Content Delivery (60-90 minutes)</h3>
+		<ul>
+			<li><strong>Balance fear with hope:</strong> Yes, there are risks. Here's how to manage them.</li>
+			<li><strong>Use real examples:</strong> Stories resonate (but maintain privacy)</li>
+			<li><strong>Interactive elements:</strong> Polls, discussion, Q&A breaks</li>
+			<li><strong>Practical demos:</strong> Show how to actually set up parental controls</li>
+			<li><strong>Respect diverse tech levels:</strong> Some parents are very tech-savvy, others aren't</li>
+			<li><strong>Cultural sensitivity:</strong> Respect various approaches and values</li>
+		</ul>
+
+		<h3>Hands-On Practice (20-30 minutes)</h3>
+		<ul>
+			<li>Bring your device stations: Parents practice setting up controls</li>
+			<li>Helpers circulate to assist</li>
+			<li>Provide step-by-step handouts</li>
+			<li>iOS station, Android station, Windows station</li>
+		</ul>
+
+		<h3>Q&A & Closing (15-20 minutes)</h3>
+		<ul>
+			<li>Open floor for questions</li>
+			<li>Provide contact info for follow-up</li>
+			<li>Distribute resource lists</li>
+			<li>Announce next event or support group</li>
+			<li>Feedback survey (QR code or paper)</li>
+		</ul>
+
+		<Alert type="info">
+			<strong>Pro tip:</strong> Record common questions during Q&A to inform future workshops and FAQ documents.
+		</Alert>
+	</section>
+
+	<section>
+		<h2>📊 Sample Workshop Outline</h2>
+
+		<div class="outline-box">
+			<h3>"Protecting Your Family Online" - 90-Minute Parent Workshop</h3>
+
+			<h4>Introduction (10 min)</h4>
+			<ul>
+				<li>Welcome and icebreaker poll: "What worries you most about kids online?"</li>
+				<li>Share statistics (but don't fear-monger)</li>
+				<li>Today's agenda overview</li>
+			</ul>
+
+			<h4>Section 1: Understanding the Digital Landscape (15 min)</h4>
+			<ul>
+				<li>What platforms are kids actually using? (Instagram, TikTok, Snapchat, Discord, Roblox)</li>
+				<li>What do kids do online? (beyond what parents think)</li>
+				<li>Why kids don't tell parents about problems</li>
+				<li>Creating open communication</li>
+			</ul>
+
+			<h4>Section 2: Top Risks & Warning Signs (15 min)</h4>
+			<ul>
+				<li>Cyberbullying</li>
+				<li>Predators and grooming</li>
+				<li>Inappropriate content</li>
+				<li>Screen addiction</li>
+				<li>Mental health impacts</li>
+				<li>Warning signs to watch for</li>
+			</ul>
+
+			<h4>Section 3: Practical Tools (20 min)</h4>
+			<ul>
+				<li>DNS filtering (show setup)</li>
+				<li>iOS Screen Time (demo)</li>
+				<li>Android Family Link (demo)</li>
+				<li>Gaming console parental controls</li>
+				<li>Which tools for which ages?</li>
+			</ul>
+
+			<h4>BREAK (5 min)</h4>
+
+			<h4>Section 4: The Human Side (15 min)</h4>
+			<ul>
+				<li>Having age-appropriate conversations</li>
+				<li>Talking about pornography (script provided)</li>
+				<li>Creating family media agreements</li>
+				<li>Balancing protection with trust</li>
+				<li>Modeling good behavior</li>
+			</ul>
+
+			<h4>Hands-On Practice (15 min)</h4>
+			<ul>
+				<li>Bring your phone/tablet stations</li>
+				<li>Volunteers help parents set up one control</li>
+				<li>Take home instruction sheets</li>
+			</ul>
+
+			<h4>Q&A & Resources (10 min)</h4>
+			<ul>
+				<li>Open questions</li>
+				<li>Resource handout distribution</li>
+				<li>Announce parent support group meetings</li>
+				<li>Feedback survey</li>
+			</ul>
+		</div>
+	</section>
+
+	<section>
+		<h2>🛠️ Resources & Materials</h2>
+
+		<h3>Essential Handouts to Prepare</h3>
+		<ul>
+			<li><strong>Quick Reference Guide:</strong> One-pager with top 10 tips</li>
+			<li><strong>Platform Safety Checklists:</strong> Instagram, TikTok, Snapchat settings</li>
+			<li><strong>Age-Appropriate Guidelines:</strong> What access at what age</li>
+			<li><strong>Conversation Starters:</strong> Scripts for difficult talks</li>
+			<li><strong>Resource List:</strong> Websites, books, support groups, local counselors</li>
+			<li><strong>Family Media Agreement Template:</strong> Ready to fill out</li>
+			<li><strong>Emergency Contacts:</strong> Crisis hotlines, reporting resources</li>
+		</ul>
+
+		<h3>Visual Aids</h3>
+		<ul>
+			<li>PowerPoint/Google Slides presentation</li>
+			<li>Live device demos (have backup screenshots if tech fails)</li>
+			<li>Infographics showing statistics</li>
+			<li>Comparison charts (filtering options, devices, etc.)</li>
+			<li>Sample screenshots of concerning content (age-appropriate)</li>
+		</ul>
+
+		<h3>Technology Needed</h3>
+		<ul>
+			<li>Projector or large screen</li>
+			<li>Laptop with HDMI connection</li>
+			<li>Microphone (for larger groups)</li>
+			<li>WiFi access (for live demos)</li>
+			<li>Extension cords and power strips</li>
+			<li>Sample devices (iPhone, Android, laptop) for demos</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>👥 Recruiting Speakers & Volunteers</h2>
+
+		<h3>Speaker Options</h3>
+		<ul>
+			<li><strong>DIY (You present):</strong>
+				<ul>
+					<li>Pros: Free, tailored to your community</li>
+					<li>Cons: Requires preparation time</li>
+					<li>Tip: Use this guide and our other resources</li>
+				</ul>
+			</li>
+			<li><strong>Professional Speaker:</strong>
+				<ul>
+					<li>Pros: Expertise, polished presentation</li>
+					<li>Cons: $500-2000+ fee</li>
+					<li>Search: Digital safety speakers, parenting educators</li>
+				</ul>
+			</li>
+			<li><strong>Local Expert (teacher, counselor, tech professional):</strong>
+				<ul>
+					<li>Pros: Free or low cost, community connection</li>
+					<li>Cons: May lack presentation experience</li>
+				</ul>
+			</li>
+			<li><strong>Law Enforcement:</strong>
+				<ul>
+					<li>Many police departments have digital safety officers</li>
+					<li>Often present for free</li>
+					<li>Brings credibility and real-world examples</li>
+				</ul>
+			</li>
+		</ul>
+
+		<h3>Volunteer Roles</h3>
+		<ul>
+			<li><strong>Tech helpers:</strong> Assist during hands-on sessions (need 3-5 for 50 people)</li>
+			<li><strong>Greeters:</strong> Welcome attendees, hand out materials</li>
+			<li><strong>Childcare:</strong> Watch kids during parent workshop</li>
+			<li><strong>A/V tech:</strong> Manage presentation technology</li>
+			<li><strong>Registration:</strong> Check-in, name tags</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>📣 Promotion Strategies</h2>
+
+		<h3>How to Fill the Room</h3>
+		<ul>
+			<li><strong>Announcements:</strong> Weekly services/meetings (4-6 weeks prior)</li>
+			<li><strong>Email blast:</strong> To entire community list</li>
+			<li><strong>Flyers:</strong> Post in building, bathrooms, bulletin boards</li>
+			<li><strong>Social media:</strong> Facebook events, Instagram stories</li>
+			<li><strong>Word of mouth:</strong> Ask leaders to personally invite families</li>
+			<li><strong>Partner organizations:</strong> Schools, youth groups cross-promote</li>
+			<li><strong>Compelling title:</strong> "Protecting Your Kids from Online Predators" gets more attendance than "Internet Safety Workshop"</li>
+		</ul>
+
+		<h3>Sample Promotional Copy</h3>
+		<div class="promo-box">
+			<p><strong>Subject: Is Your Child Safe Online? Free Parent Workshop</strong></p>
+			<p>📱 Did you know 75% of teens have experienced cyberbullying? Are you confident your child is protected from online predators?</p>
+			<p><strong>Join us for a FREE workshop:</strong> "Protecting Your Family Online"</p>
+			<p><strong>When:</strong> Tuesday, March 15th, 7-8:30pm<br>
+			<strong>Where:</strong> [Location]<br>
+			<strong>Who:</strong> All parents (childcare provided!)</p>
+			<p><strong>You'll learn:</strong></p>
+			<ul>
+				<li>✅ How to set up parental controls (hands-on help provided)</li>
+				<li>✅ Warning signs your child may be in danger</li>
+				<li>✅ Age-appropriate internet access guidelines</li>
+				<li>✅ How to have "the talk" about online dangers</li>
+			</ul>
+			<p><strong>Register:</strong> [Link] or call [Phone]</p>
+			<p><em>Light refreshments served. Free resource materials for all attendees.</em></p>
+		</div>
+	</section>
+
+	<section>
+		<h2>🔄 Ongoing Education (Beyond One Workshop)</h2>
+
+		<h3>Parent Support Groups</h3>
+		<ul>
+			<li>Monthly meetups for continued learning and support</li>
+			<li>Discuss new platforms, share experiences, troubleshoot together</li>
+			<li>Create WhatsApp/Signal group for quick questions</li>
+			<li>Less formal than workshops, more community support</li>
+		</ul>
+
+		<h3>Email Newsletter</h3>
+		<ul>
+			<li>Monthly digital safety tips</li>
+			<li>New platform warnings ("Have you heard of BeReal?")</li>
+			<li>Update on new risks and tools</li>
+			<li>Success stories from community</li>
+		</ul>
+
+		<h3>Resource Library</h3>
+		<ul>
+			<li>Dedicated shelf or website section</li>
+			<li>Books, printouts, device setup guides</li>
+			<li>Updated regularly</li>
+			<li>Accessible during office hours</li>
+		</ul>
+
+		<h3>Annual Refresher Workshops</h3>
+		<ul>
+			<li>Technology changes fast - annual updates needed</li>
+			<li>Advanced topics for those who attended basics</li>
+			<li>Different audiences each time (parents, then teens, then leaders)</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>📊 Measuring Success</h2>
+
+		<h3>Immediate Feedback</h3>
+		<ul>
+			<li>Post-event survey (paper or digital QR code)</li>
+			<li>Questions: What was most helpful? What else do you need? Would you recommend this?</li>
+			<li>Collect contact info for follow-up workshops</li>
+		</ul>
+
+		<h3>Long-Term Impact</h3>
+		<ul>
+			<li>Follow-up survey after 3 months: "Did you implement what you learned?"</li>
+			<li>Track attendance at subsequent workshops</li>
+			<li>Anecdotal feedback from community</li>
+			<li>Reduced incidents reported (if tracking)</li>
+		</ul>
+
+		<h3>Signs of Success</h3>
+		<ul>
+			<li>Parents approach you with questions (they trust you)</li>
+			<li>Parents share resources with each other</li>
+			<li>Teens voluntarily attend workshops</li>
+			<li>Community conversations shift from fear to empowerment</li>
+		</ul>
+	</section>
+
+	<section slot="next-steps">
+		<h2>🎯 Next Steps & Related Guides</h2>
+
+		<div class="next-steps-grid">
+			<a href="/guides/supporting-families" class="next-step-card">
+				<h3>🤝 Supporting Families</h3>
+				<p>Building ongoing support systems for digital safety</p>
+			</a>
+
+			<a href="/guides/policies-guidelines" class="next-step-card">
+				<h3>📋 Policies & Guidelines</h3>
+				<p>Sample policies to share with families</p>
+			</a>
+
+			<a href="/parents" class="next-step-card">
+				<h3>👨‍👩‍👧 Parent Resources</h3>
+				<p>All parent guides to reference for workshop content</p>
+			</a>
+
+			<a href="/leaders" class="next-step-card">
+				<h3>👥 All Leader Resources</h3>
+				<p>Browse all guides for religious and community leaders</p>
+			</a>
+		</div>
+
+		<Alert type="success">
+			<strong>Remember:</strong> You don't need to be a tech expert to lead workshops. Your role is facilitating community conversation and connecting families with resources. Start small, learn as you go, and build on success.
+		</Alert>
+	</section>
+</GuideLayout>
+
+<style>
+	.workshop-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-5);
+		margin: var(--space-6) 0;
+	}
+
+	@media (min-width: 768px) {
+		.workshop-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	.workshop-card {
+		background-color: var(--color-gray-50);
+		border: 2px solid var(--color-primary-300);
+		border-radius: var(--radius-lg);
+		padding: var(--space-5);
+	}
+
+	.workshop-card h3 {
+		color: var(--color-primary-700);
+		margin-top: 0;
+		margin-bottom: var(--space-3);
+		font-size: var(--text-lg);
+	}
+
+	.workshop-card p {
+		margin-bottom: var(--space-2);
+		font-size: var(--text-sm);
+	}
+
+	.workshop-card h4 {
+		color: var(--color-gray-800);
+		margin-top: var(--space-4);
+		margin-bottom: var(--space-2);
+		font-size: var(--text-base);
+	}
+
+	.workshop-card ul {
+		padding-left: var(--space-5);
+		margin: 0;
+		font-size: var(--text-sm);
+	}
+
+	.workshop-card li {
+		margin-bottom: var(--space-1);
+	}
+
+	.outline-box {
+		background-color: var(--color-gray-50);
+		border: 3px solid var(--color-primary-500);
+		border-radius: var(--radius-lg);
+		padding: var(--space-6);
+		margin: var(--space-6) 0;
+	}
+
+	.outline-box h3 {
+		color: var(--color-primary-700);
+		margin-top: 0;
+		margin-bottom: var(--space-5);
+		text-align: center;
+	}
+
+	.outline-box h4 {
+		color: var(--color-gray-800);
+		margin-top: var(--space-5);
+		margin-bottom: var(--space-2);
+	}
+
+	.outline-box ul {
+		padding-left: var(--space-5);
+		margin-bottom: var(--space-4);
+	}
+
+	.outline-box li {
+		margin-bottom: var(--space-1);
+		line-height: var(--leading-relaxed);
+	}
+
+	.promo-box {
+		background-color: var(--color-secondary-50);
+		border: 2px solid var(--color-secondary-400);
+		border-radius: var(--radius-lg);
+		padding: var(--space-5);
+		margin: var(--space-4) 0;
+	}
+
+	.promo-box p {
+		margin-bottom: var(--space-3);
+	}
+
+	.promo-box strong {
+		color: var(--color-secondary-700);
+	}
+
+	.promo-box ul {
+		padding-left: var(--space-5);
+		margin: var(--space-3) 0;
+	}
+
+	.promo-box li {
+		margin-bottom: var(--space-2);
+	}
+
+	.next-steps-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-4);
+		margin: var(--space-6) 0;
+	}
+
+	@media (min-width: 768px) {
+		.next-steps-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	.next-step-card {
+		background-color: white;
+		border: 2px solid var(--color-gray-200);
+		border-radius: var(--radius-lg);
+		padding: var(--space-5);
+		text-decoration: none;
+		transition: all var(--transition-base);
+		display: block;
+	}
+
+	.next-step-card:hover {
+		border-color: var(--color-primary-400);
+		box-shadow: var(--shadow-lg);
+		transform: translateY(-2px);
+	}
+
+	.next-step-card h3 {
+		font-size: var(--text-lg);
+		color: var(--color-gray-900);
+		margin-top: 0;
+		margin-bottom: var(--space-2);
+	}
+
+	.next-step-card p {
+		color: var(--color-gray-600);
+		margin: 0;
+		font-size: var(--text-sm);
+	}
+</style>

@@ -1,0 +1,696 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import Alert from '../../components/Alert.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+	{ label: 'Home', href: '/' },
+	{ label: 'For Parents', href: '/parents' },
+	{ label: 'Gaming Safety', href: '/guides/gaming-safety' }
+];
+---
+
+<GuideLayout
+	title="Gaming and Online Interaction Safety"
+	description="Comprehensive guide to keeping children safe while gaming online, including platform parental controls, chat safety, in-game purchases, and recognizing gaming addiction."
+	difficulty="intermediate"
+	timeEstimate="20-25 minutes"
+	prerequisites={[
+		'Understanding of which gaming platforms your child uses',
+		'Access to gaming accounts and parental control settings',
+		'Awareness of which games your child plays'
+	]}
+>
+	<Breadcrumb slot="breadcrumb" items={breadcrumbItems} />
+
+	<section>
+		<h2>Why Online Gaming Requires Special Attention</h2>
+		<p>
+			Online gaming is no longer a solitary activity - it's a social ecosystem where millions of players interact in real-time. While gaming can build problem-solving skills and friendships, it also creates risks: exposure to strangers, inappropriate language, predatory behavior, cyberbullying, addictive mechanics, and unexpected costs. Unlike social media where parents might see posts, gaming conversations happen in voice chat and disappear, making supervision more challenging.
+		</p>
+
+		<Alert type="info">
+			<strong>Key Fact:</strong> 75% of children ages 9-12 play online games. 41% of online gamers have experienced harassment while playing. Understanding the risks is essential for modern parenting.
+		</Alert>
+	</section>
+
+	<section>
+		<h2>🎮 Major Gaming Risks</h2>
+
+		<div class="risks-grid">
+			<div class="risk-card">
+				<h3>Stranger Danger & Predators</h3>
+				<p>Online games allow children to interact with strangers worldwide through text and voice chat. Predators use games to:</p>
+				<ul>
+					<li>Build trust through shared gameplay</li>
+					<li>Learn personal information</li>
+					<li>Groom children for exploitation</li>
+					<li>Request moving to private chat platforms</li>
+				</ul>
+			</div>
+
+			<div class="risk-card">
+				<h3>Inappropriate Content</h3>
+				<ul>
+					<li>Profanity and hate speech in voice/text chat</li>
+					<li>Sexual content and harassment</li>
+					<li>Violent or mature game content</li>
+					<li>User-generated content (skins, custom maps) with inappropriate themes</li>
+				</ul>
+			</div>
+
+			<div class="risk-card">
+				<h3>Cyberbullying & Toxicity</h3>
+				<ul>
+					<li>"Griefing" - intentionally ruining others' gameplay</li>
+					<li>Verbal abuse in competitive games</li>
+					<li>Exclusion from friend groups or teams</li>
+					<li>Doxxing - sharing personal information as retaliation</li>
+				</ul>
+			</div>
+
+			<div class="risk-card">
+				<h3>Financial Risks</h3>
+				<ul>
+					<li>In-app purchases without permission</li>
+					<li>Loot boxes (gambling-like mechanics)</li>
+					<li>Scams (fake "free V-Bucks" websites)</li>
+					<li>Account theft and selling</li>
+				</ul>
+			</div>
+
+			<div class="risk-card">
+				<h3>Addiction & Excessive Play</h3>
+				<ul>
+					<li>Games designed with addictive reward loops</li>
+					<li>"Just one more game" mentality</li>
+					<li>FOMO (fear of missing out) on limited-time events</li>
+					<li>Sleep deprivation, academic decline</li>
+				</ul>
+			</div>
+
+			<div class="risk-card">
+				<h3>Privacy & Data Collection</h3>
+				<ul>
+					<li>Games collecting personal data</li>
+					<li>Voice recordings stored by companies</li>
+					<li>Location tracking in AR games</li>
+					<li>Third-party data sharing</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<h2>📊 Understanding Game Ratings (ESRB)</h2>
+		<p>The Entertainment Software Rating Board (ESRB) rates games by age-appropriateness:</p>
+
+		<div class="ratings-table">
+			<table>
+				<tr>
+					<th>Rating</th>
+					<th>Age</th>
+					<th>Content</th>
+					<th>Examples</th>
+				</tr>
+				<tr>
+					<td><strong>EC</strong> (Early Childhood)</td>
+					<td>3+</td>
+					<td>Suitable for young children</td>
+					<td>PBS Kids Games</td>
+				</tr>
+				<tr>
+					<td><strong>E</strong> (Everyone)</td>
+					<td>6+</td>
+					<td>Mild cartoon violence</td>
+					<td>Minecraft, Animal Crossing</td>
+				</tr>
+				<tr>
+					<td><strong>E10+</strong> (Everyone 10+)</td>
+					<td>10+</td>
+					<td>More fantasy violence, mild language</td>
+					<td>Fortnite, Mario Kart</td>
+				</tr>
+				<tr>
+					<td><strong>T</strong> (Teen)</td>
+					<td>13+</td>
+					<td>Violence, suggestive themes, crude humor</td>
+					<td>Apex Legends, Valorant</td>
+				</tr>
+				<tr>
+					<td><strong>M</strong> (Mature)</td>
+					<td>17+</td>
+					<td>Intense violence, blood, sexual content, strong language</td>
+					<td>Call of Duty, Grand Theft Auto</td>
+				</tr>
+				<tr>
+					<td><strong>AO</strong> (Adults Only)</td>
+					<td>18+</td>
+					<td>Graphic sexual content, prolonged intense violence</td>
+					<td>Rare - most stores won't sell</td>
+				</tr>
+			</table>
+		</div>
+
+		<Alert type="warning">
+			<strong>Important:</strong> ESRB ratings only cover the game content itself, NOT online interactions. Games rated "E for Everyone" can still have toxic chat with strangers. Look for "Online Interactions Not Rated by the ESRB" disclaimer.
+		</Alert>
+	</section>
+
+	<section>
+		<h2>🎯 Popular Games & Specific Risks</h2>
+
+		<div class="game-card">
+			<h3>Roblox (Ages 9+)</h3>
+			<p><strong>What it is:</strong> User-generated gaming platform with millions of mini-games created by players.</p>
+
+			<h4>Specific Risks:</h4>
+			<ul>
+				<li>User-created content can include inappropriate themes</li>
+				<li>Chat with strangers (text and voice in some games)</li>
+				<li>Scams targeting kids (fake Robux generators)</li>
+				<li>Pressure to buy Robux (in-game currency)</li>
+				<li>Games that appear kid-friendly but have mature content</li>
+			</ul>
+
+			<h4>Safety Settings:</h4>
+			<ul>
+				<li>Account Settings → Privacy → Set to "Friends" for all options</li>
+				<li>Enable "Account Restrictions" for under-13 (limits to curated games)</li>
+				<li>Disable chat entirely or restrict to friends only</li>
+				<li>Set up Account PIN to prevent changes</li>
+				<li>Require parental approval for purchases</li>
+			</ul>
+		</div>
+
+		<div class="game-card">
+			<h3>Minecraft (Ages 8+)</h3>
+			<p><strong>What it is:</strong> Creative building and survival game, both single-player and multiplayer.</p>
+
+			<h4>Specific Risks:</h4>
+			<ul>
+				<li>Public servers with strangers and unmoderated chat</li>
+				<li>Inappropriate builds and skins created by users</li>
+				<li>Minecraft Realms subscriptions</li>
+				<li>Mods and downloads that could contain malware</li>
+			</ul>
+
+			<h4>Safety Settings:</h4>
+			<ul>
+				<li>Play in single-player mode or on family Realms only</li>
+				<li>Disable multiplayer in settings if needed</li>
+				<li>Only join servers you've researched and approved</li>
+				<li>Disable chat in server-side settings</li>
+				<li>Only download mods from trusted sources with parental supervision</li>
+			</ul>
+		</div>
+
+		<div class="game-card">
+			<h3>Fortnite (Ages 13+, rated T for Teen)</h3>
+			<p><strong>What it is:</strong> Battle royale shooter game (cartoon violence, no blood).</p>
+
+			<h4>Specific Risks:</h4>
+			<ul>
+				<li>Voice chat with teammates (often strangers)</li>
+				<li>Competitive toxicity and bullying</li>
+				<li>Addictive gameplay loops and FOMO events</li>
+				<li>V-Bucks purchases (in-game currency) and battle passes</li>
+				<li>Time-consuming to complete challenges</li>
+			</ul>
+
+			<h4>Safety Settings:</h4>
+			<ul>
+				<li>Settings → Account and Privacy → Make account private</li>
+				<li>Disable voice chat: Audio → Voice Chat → Off</li>
+				<li>Hide player names to reduce targeting</li>
+				<li>Enable "Require PIN for Purchases"</li>
+				<li>Set time limits (2-hour sessions drain attention)</li>
+			</ul>
+		</div>
+
+		<div class="game-card">
+			<h3>Among Us (Ages 10+)</h3>
+			<p><strong>What it is:</strong> Social deduction game played with 4-15 players.</p>
+
+			<h4>Specific Risks:</h4>
+			<ul>
+				<li>Text chat in public lobbies with strangers</li>
+				<li>Inappropriate usernames and chat messages</li>
+				<li>Accusations and social pressure</li>
+				<li>External voice chat on Discord (higher risk)</li>
+			</ul>
+
+			<h4>Safety Settings:</h4>
+			<ul>
+				<li>Play in private lobbies with known friends only</li>
+				<li>Use censored chat filter (but not foolproof)</li>
+				<li>Report inappropriate names and behavior</li>
+				<li>Disable guest mode to require account (creates accountability)</li>
+			</ul>
+		</div>
+	</section>
+
+	<section>
+		<h2>🛡️ Platform-Specific Parental Controls</h2>
+
+		<h3>PlayStation (PS4/PS5)</h3>
+		<ol>
+			<li>Create child account under Family Management</li>
+			<li>Set age-appropriate content restrictions</li>
+			<li>Restrict communication features (messages, voice chat)</li>
+			<li>Set spending limits and require purchase approval</li>
+			<li>Set playtime limits (daily/weekly)</li>
+			<li>View playtime reports</li>
+		</ol>
+		<p><em>See our complete <a href="/guides/gaming-consoles">Gaming Console Guide</a> for detailed setup.</em></p>
+
+		<h3>Xbox (Xbox One/Series X|S)</h3>
+		<ol>
+			<li>Create child account through Microsoft Family</li>
+			<li>Set content filters by age rating</li>
+			<li>Restrict multiplayer and communication</li>
+			<li>Approve friend requests</li>
+			<li>Set screen time schedules</li>
+			<li>Require approval for purchases</li>
+			<li>View activity reports</li>
+		</ol>
+
+		<h3>Nintendo Switch</h3>
+		<ol>
+			<li>Download "Nintendo Switch Parental Controls" app</li>
+			<li>Link to your console</li>
+			<li>Set play-time limits (alerts at time limit)</li>
+			<li>Restrict games by age rating</li>
+			<li>Disable screenshots/video sharing to social media</li>
+			<li>View play activity reports</li>
+		</ol>
+
+		<h3>PC/Steam</h3>
+		<ol>
+			<li>Enable Steam Family View</li>
+			<li>Create restricted PIN-protected access</li>
+			<li>Limit store access and mature content</li>
+			<li>Restrict community features (forums, chat)</li>
+			<li>Use Windows/Mac parental controls for time limits</li>
+			<li>Monitor friend lists regularly</li>
+		</ol>
+
+		<h3>Mobile Gaming (iOS/Android)</h3>
+		<ol>
+			<li>Use <a href="/guides/ios-screen-time">iOS Screen Time</a> or <a href="/guides/android-family-link">Android Family Link</a></li>
+			<li>Require approval before installing games</li>
+			<li>Disable in-app purchases or require password</li>
+			<li>Set app time limits</li>
+			<li>Review App Store/Play Store ratings before allowing</li>
+		</ol>
+	</section>
+
+	<section>
+		<h2>💬 Voice Chat Safety Rules</h2>
+		<p>Voice chat presents unique risks because conversations disappear and parents can't easily review them.</p>
+
+		<h3>For Younger Children (Under 13)</h3>
+		<ul>
+			<li><strong>Recommendation:</strong> Disable voice chat entirely</li>
+			<li>If allowing, only with known real-life friends</li>
+			<li>Headphones on speaker mode so you can hear conversations</li>
+			<li>Gaming in common areas where you can listen</li>
+		</ul>
+
+		<h3>For Teens (13+)</h3>
+		<ul>
+			<li>Party chat with friends only (not public lobbies)</li>
+			<li>Mute all except known friends</li>
+			<li>Never share personal information over voice chat</li>
+			<li>Report abusive players immediately</li>
+			<li>Don't engage with toxic players - mute them</li>
+		</ul>
+
+		<h3>Red Flags in Voice Chat</h3>
+		<ul>
+			<li>Adults asking personal questions (age, location, school)</li>
+			<li>Requests to move to private Discord server or other platform</li>
+			<li>Gift-giving or offers of free in-game items</li>
+			<li>Asking to keep friendship secret from parents</li>
+			<li>Sexual language or requests for pictures</li>
+		</ul>
+
+		<Alert type="error">
+			<strong>Warning:</strong> Many predators use voice chat in games to build trust with children before moving to private messaging platforms. Teach children to tell you immediately if anyone makes them uncomfortable.
+		</Alert>
+	</section>
+
+	<section>
+		<h2>💰 Managing In-Game Purchases</h2>
+
+		<h3>Types of In-Game Purchases</h3>
+		<ul>
+			<li><strong>Cosmetics:</strong> Character skins, outfits, emotes (no gameplay advantage)</li>
+			<li><strong>Currency:</strong> V-Bucks, Robux, etc. for buying items</li>
+			<li><strong>Battle Passes:</strong> Seasonal progression systems ($10-20 per season)</li>
+			<li><strong>Loot Boxes:</strong> Random rewards (gambling-like mechanics)</li>
+			<li><strong>Pay-to-Win:</strong> Items that give gameplay advantages</li>
+		</ul>
+
+		<h3>Protection Strategies</h3>
+		<ol>
+			<li><strong>Remove payment methods:</strong> Don't store credit cards on gaming accounts</li>
+			<li><strong>Use gift cards only:</strong> Limited, predetermined amount</li>
+			<li><strong>Require approval:</strong> Password/PIN for all purchases</li>
+			<li><strong>Set spending limits:</strong> Console features allow monthly limits</li>
+			<li><strong>Allowance system:</strong> "Earn" in-game currency through chores/good behavior</li>
+		</ol>
+
+		<h3>Teaching Financial Responsibility</h3>
+		<ul>
+			<li>Explain that free games make money through purchases (business model)</li>
+			<li>Discuss how games create FOMO with limited-time items</li>
+			<li>Compare virtual purchases to real-world value ($20 skin = 2 movie tickets)</li>
+			<li>Teach delayed gratification - wait 24 hours before buying</li>
+		</ul>
+
+		<Alert type="info">
+			<strong>Loot Box Warning:</strong> Many countries are considering loot boxes as gambling. They exploit children's developing brains with random rewards. Avoid games heavily focused on loot boxes.
+		</Alert>
+	</section>
+
+	<section>
+		<h2>⚠️ Recognizing Gaming Addiction</h2>
+
+		<h3>Warning Signs</h3>
+		<ul>
+			<li>Gaming is the only activity they want to do</li>
+			<li>Angry or irritable when not gaming</li>
+			<li>Lying about time spent gaming</li>
+			<li>Neglecting homework, chores, hygiene</li>
+			<li>Sleep deprivation (gaming late at night)</li>
+			<li>Withdrawal from family and real-life friends</li>
+			<li>Physical symptoms: headaches, eye strain, wrist pain</li>
+			<li>Can't stop even when wanting to</li>
+		</ul>
+
+		<h3>Healthy Gaming Guidelines</h3>
+		<ul>
+			<li><strong>Time limits:</strong> 1-2 hours on weekdays, 2-3 hours on weekends (not a right, a privilege)</li>
+			<li><strong>Breaks:</strong> 10-minute break every hour</li>
+			<li><strong>Balance:</strong> Gaming only after homework, chores, physical activity</li>
+			<li><strong>No gaming zones:</strong> Bedrooms, during meals, 1 hour before bed</li>
+			<li><strong>Game-free days:</strong> At least one day per week with no screens</li>
+		</ul>
+
+		<h3>If Addiction is Suspected</h3>
+		<ol>
+			<li>Talk to your child about concerns (non-confrontational)</li>
+			<li>Set clear limits and enforce consequences consistently</li>
+			<li>Offer alternative activities (sports, hobbies, social time)</li>
+			<li>Look for underlying issues (using gaming to escape anxiety, depression, bullying)</li>
+			<li>Seek professional help if behavior doesn't improve (therapist specializing in gaming addiction)</li>
+		</ol>
+	</section>
+
+	<section>
+		<h2>📋 Family Gaming Agreement</h2>
+
+		<div class="agreement-box">
+			<h3>Our Gaming Agreement</h3>
+
+			<h4>I agree to:</h4>
+			<ul>
+				<li>Follow time limits: [___] hours on school days, [___] hours on weekends</li>
+				<li>Only play games that my parents have approved</li>
+				<li>Keep my account information private (no sharing passwords)</li>
+				<li>Use voice chat only with real-life friends I know</li>
+				<li>Tell my parents immediately if someone makes me uncomfortable</li>
+				<li>Not give out personal information (name, address, school, age)</li>
+				<li>Be a good sport - no rage-quitting, bullying, or toxic behavior</li>
+				<li>Ask permission before making any purchases</li>
+				<li>Complete homework and chores before gaming</li>
+				<li>Stop playing when asked without arguing</li>
+			</ul>
+
+			<h4>My parents agree to:</h4>
+			<ul>
+				<li>Learn about the games I play and play with me sometimes</li>
+				<li>Give warnings before time is up (15-minute notice)</li>
+				<li>Consider my input when setting rules</li>
+				<li>Listen without anger if I report problems</li>
+				<li>Review rules together every [6 months] and adjust as I mature</li>
+			</ul>
+
+			<h4>Consequences for breaking rules:</h4>
+			<ul>
+				<li>First violation: Warning and discussion</li>
+				<li>Second violation: Loss of gaming for 24 hours</li>
+				<li>Repeated violations: Loss of gaming for a week</li>
+				<li>Serious violations (safety rules): Permanent loss of account/console</li>
+			</ul>
+
+			<p><strong>Child:</strong> _________________ Date: _________</p>
+			<p><strong>Parent:</strong> _________________ Date: _________</p>
+		</div>
+	</section>
+
+	<section>
+		<h2>💡 Tips for Parents</h2>
+
+		<h3>Be Involved</h3>
+		<ul>
+			<li>Play games with your child to understand what they experience</li>
+			<li>Ask about their favorite games and streamers</li>
+			<li>Watch them play periodically</li>
+			<li>Friend them on gaming platforms to see activity</li>
+		</ul>
+
+		<h3>Create Positive Gaming Culture</h3>
+		<ul>
+			<li>Recognize gaming as a legitimate hobby (not just "wasting time")</li>
+			<li>Celebrate achievements and creativity</li>
+			<li>Encourage educational and creative games</li>
+			<li>Host gaming sessions with their real-life friends</li>
+		</ul>
+
+		<h3>Model Good Behavior</h3>
+		<ul>
+			<li>Limit your own screen time</li>
+			<li>Don't use screens as babysitters</li>
+			<li>Put your phone away during family time</li>
+			<li>Show that you prioritize real-life over virtual</li>
+		</ul>
+	</section>
+
+	<section slot="next-steps">
+		<h2>🎯 Next Steps & Related Guides</h2>
+
+		<div class="next-steps-grid">
+			<a href="/guides/gaming-consoles" class="next-step-card">
+				<h3>🎮 Gaming Console Controls</h3>
+				<p>Detailed setup for PlayStation, Xbox, and Nintendo Switch</p>
+			</a>
+
+			<a href="/guides/screen-time-management" class="next-step-card">
+				<h3>⏰ Screen Time Management</h3>
+				<p>Strategies for setting and enforcing healthy time limits</p>
+			</a>
+
+			<a href="/guides/cyberbullying" class="next-step-card">
+				<h3>🛡️ Cyberbullying Prevention</h3>
+				<p>Respond to toxic behavior and bullying in games</p>
+			</a>
+
+			<a href="/parents" class="next-step-card">
+				<h3>👨‍👩‍👧 All Parent Resources</h3>
+				<p>Browse all guides and resources for parents</p>
+			</a>
+		</div>
+
+		<Alert type="success">
+			<strong>Remember:</strong> Gaming itself isn't harmful - it's how and how much it's used that matters. With proper boundaries and supervision, gaming can be a fun, creative, social experience that builds valuable skills.
+		</Alert>
+	</section>
+</GuideLayout>
+
+<style>
+	.risks-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-4);
+		margin: var(--space-6) 0;
+	}
+
+	@media (min-width: 768px) {
+		.risks-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.risks-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	.risk-card {
+		background-color: #fef3c7;
+		border-left: 4px solid #f59e0b;
+		padding: var(--space-4);
+		border-radius: var(--radius-base);
+	}
+
+	.risk-card h3 {
+		color: #92400e;
+		margin-top: 0;
+		margin-bottom: var(--space-3);
+		font-size: var(--text-lg);
+	}
+
+	.risk-card ul {
+		margin: 0;
+		padding-left: var(--space-5);
+	}
+
+	.risk-card li {
+		margin-bottom: var(--space-1);
+		line-height: var(--leading-relaxed);
+	}
+
+	.ratings-table {
+		overflow-x: auto;
+		margin: var(--space-6) 0;
+	}
+
+	.ratings-table table {
+		width: 100%;
+		border-collapse: collapse;
+		background-color: white;
+		border-radius: var(--radius-lg);
+		overflow: hidden;
+		box-shadow: var(--shadow-md);
+	}
+
+	.ratings-table th,
+	.ratings-table td {
+		padding: var(--space-3);
+		text-align: left;
+		border-bottom: 1px solid var(--color-gray-200);
+	}
+
+	.ratings-table th {
+		background-color: var(--color-primary-600);
+		color: white;
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		font-size: var(--text-xs);
+	}
+
+	.ratings-table tbody tr:last-child td {
+		border-bottom: none;
+	}
+
+	.game-card {
+		background-color: var(--color-gray-50);
+		border: 2px solid var(--color-secondary-300);
+		border-radius: var(--radius-lg);
+		padding: var(--space-6);
+		margin-bottom: var(--space-6);
+	}
+
+	.game-card h3 {
+		color: var(--color-secondary-700);
+		margin-top: 0;
+		font-size: var(--text-2xl);
+	}
+
+	.game-card h4 {
+		color: var(--color-gray-800);
+		margin-top: var(--space-4);
+		margin-bottom: var(--space-2);
+		font-size: var(--text-lg);
+	}
+
+	.game-card p {
+		margin-bottom: var(--space-3);
+	}
+
+	.game-card ul {
+		margin-bottom: var(--space-3);
+		padding-left: var(--space-5);
+	}
+
+	.game-card li {
+		margin-bottom: var(--space-1);
+		line-height: var(--leading-relaxed);
+	}
+
+	.agreement-box {
+		background-color: var(--color-gray-50);
+		border: 3px solid var(--color-primary-500);
+		border-radius: var(--radius-lg);
+		padding: var(--space-6);
+		margin: var(--space-6) 0;
+	}
+
+	.agreement-box h3 {
+		text-align: center;
+		color: var(--color-primary-700);
+		margin-top: 0;
+		margin-bottom: var(--space-5);
+	}
+
+	.agreement-box h4 {
+		color: var(--color-gray-800);
+		margin-top: var(--space-5);
+		margin-bottom: var(--space-3);
+	}
+
+	.agreement-box ul {
+		margin-bottom: var(--space-4);
+	}
+
+	.agreement-box li {
+		margin-bottom: var(--space-2);
+		line-height: var(--leading-relaxed);
+	}
+
+	.next-steps-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-4);
+		margin: var(--space-6) 0;
+	}
+
+	@media (min-width: 768px) {
+		.next-steps-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	.next-step-card {
+		background-color: white;
+		border: 2px solid var(--color-gray-200);
+		border-radius: var(--radius-lg);
+		padding: var(--space-5);
+		text-decoration: none;
+		transition: all var(--transition-base);
+		display: block;
+	}
+
+	.next-step-card:hover {
+		border-color: var(--color-primary-400);
+		box-shadow: var(--shadow-lg);
+		transform: translateY(-2px);
+	}
+
+	.next-step-card h3 {
+		font-size: var(--text-lg);
+		color: var(--color-gray-900);
+		margin-top: 0;
+		margin-bottom: var(--space-2);
+	}
+
+	.next-step-card p {
+		color: var(--color-gray-600);
+		margin: 0;
+		font-size: var(--text-sm);
+	}
+</style>
