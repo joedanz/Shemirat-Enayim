@@ -1,11 +1,195 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import Card from '../components/Card.astro';
+import Button from '../components/Button.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const currentPath = Astro.url.pathname;
 ---
 
 <Layout>
-	<Welcome />
+	<Header currentPath={currentPath} />
+
+	<Hero
+		title="Shemirat Enayim"
+		subtitle="Protection for the Eyes - Comprehensive resources for internet safety and content filtering"
+		ctaText="Get Started"
+		ctaHref="#get-started"
+	/>
+
+	<main>
+		<section class="intro-section">
+			<div class="container">
+				<div class="text-center">
+					<h2>Protect Your Family and Community</h2>
+					<p class="intro-text">
+						Access comprehensive guides, tools, and resources to implement effective content filtering
+						and internet safety measures for your home, school, or community.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<section id="get-started" class="features-section">
+			<div class="container">
+				<h2 class="section-title">Choose Your Path</h2>
+				<div class="cards-grid">
+					<Card
+						title="For Parents"
+						description="Learn how to protect your children online with age-appropriate filters, device controls, and family safety strategies."
+						href="/parents"
+						icon="👨‍👩‍👧‍👦"
+					/>
+					<Card
+						title="For Religious Leaders"
+						description="Set up filtered networks for your community, manage public access, and support families in their digital safety journey."
+						href="/leaders"
+						icon="🕍"
+					/>
+					<Card
+						title="For Individuals"
+						description="Take control of your digital environment with personal filtering solutions and accountability tools."
+						href="/individuals"
+						icon="🛡️"
+					/>
+				</div>
+			</div>
+		</section>
+
+		<section class="methods-section">
+			<div class="container">
+				<h2 class="section-title">Protection Methods</h2>
+				<div class="cards-grid">
+					<Card
+						title="DNS Filtering"
+						description="Network-level protection that filters content before it reaches your devices."
+						href="/methods"
+						icon="🌐"
+					/>
+					<Card
+						title="Device Controls"
+						description="Built-in parental controls and screen time management for all your devices."
+						href="/methods"
+						icon="📱"
+					/>
+					<Card
+						title="Software Solutions"
+						description="Specialized filtering software and accountability applications."
+						href="/methods"
+						icon="💻"
+					/>
+				</div>
+			</div>
+		</section>
+
+		<section class="cta-section">
+			<div class="container">
+				<div class="cta-content">
+					<h2>Ready to Get Started?</h2>
+					<p>Browse our comprehensive guides and find the right solution for your needs.</p>
+					<div class="cta-buttons">
+						<Button href="/methods" size="lg">View All Methods</Button>
+						<Button href="/resources" variant="outline" size="lg">Explore Resources</Button>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<Footer />
 </Layout>
+
+<style>
+	main {
+		flex: 1;
+	}
+
+	section {
+		padding: var(--space-16) 0;
+	}
+
+	.intro-section {
+		background-color: white;
+		border-bottom: 1px solid var(--color-gray-200);
+	}
+
+	.text-center {
+		text-align: center;
+		max-width: 48rem;
+		margin: 0 auto;
+	}
+
+	.intro-text {
+		font-size: var(--text-xl);
+		color: var(--color-gray-600);
+		line-height: var(--leading-relaxed);
+	}
+
+	.section-title {
+		text-align: center;
+		margin-bottom: var(--space-12);
+		color: var(--color-gray-900);
+	}
+
+	.cards-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-6);
+		margin-top: var(--space-8);
+	}
+
+	@media (min-width: 768px) {
+		.cards-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.cards-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	.features-section {
+		background-color: var(--color-gray-50);
+	}
+
+	.methods-section {
+		background-color: white;
+	}
+
+	.cta-section {
+		background: linear-gradient(
+			135deg,
+			var(--color-primary-600) 0%,
+			var(--color-primary-700) 100%
+		);
+		color: white;
+	}
+
+	.cta-content {
+		text-align: center;
+		max-width: 48rem;
+		margin: 0 auto;
+	}
+
+	.cta-content h2 {
+		color: white;
+		margin-bottom: var(--space-4);
+	}
+
+	.cta-content p {
+		font-size: var(--text-xl);
+		color: var(--color-primary-100);
+		margin-bottom: var(--space-8);
+	}
+
+	.cta-buttons {
+		display: flex;
+		gap: var(--space-4);
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+</style>

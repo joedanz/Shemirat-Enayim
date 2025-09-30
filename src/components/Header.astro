@@ -1,0 +1,245 @@
+---
+interface Props {
+	currentPath?: string;
+}
+
+const { currentPath = '/' } = Astro.props;
+
+const navItems = [
+	{ label: 'Parents', href: '/parents' },
+	{ label: 'Leaders', href: '/leaders' },
+	{ label: 'Individuals', href: '/individuals' },
+	{ label: 'Methods', href: '/methods' },
+	{ label: 'Resources', href: '/resources' }
+];
+
+function isActive(href: string) {
+	return currentPath === href || currentPath.startsWith(href + '/');
+}
+---
+
+<header>
+	<div class="container">
+		<div class="header-content">
+			<a href="/" class="logo">
+				<span class="logo-text">Shemirat Enayim</span>
+				<span class="logo-tagline">Protection for the Eyes</span>
+			</a>
+
+			<nav class="desktop-nav" aria-label="Main navigation">
+				<ul>
+					{navItems.map((item) => (
+						<li>
+							<a
+								href={item.href}
+								class:list={['nav-link', { active: isActive(item.href) }]}
+								aria-current={isActive(item.href) ? 'page' : undefined}
+							>
+								{item.label}
+							</a>
+						</li>
+					))}
+				</ul>
+			</nav>
+
+			<button class="mobile-menu-button" aria-label="Open menu" aria-expanded="false">
+				<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<line x1="3" y1="12" x2="21" y2="12"></line>
+					<line x1="3" y1="6" x2="21" y2="6"></line>
+					<line x1="3" y1="18" x2="21" y2="18"></line>
+				</svg>
+			</button>
+		</div>
+	</div>
+
+	<!-- Mobile menu (hidden by default, functionality to be added in Phase 2) -->
+	<nav class="mobile-nav" aria-label="Mobile navigation" hidden>
+		<ul>
+			{navItems.map((item) => (
+				<li>
+					<a
+						href={item.href}
+						class:list={['nav-link', { active: isActive(item.href) }]}
+						aria-current={isActive(item.href) ? 'page' : undefined}
+					>
+						{item.label}
+					</a>
+				</li>
+			))}
+		</ul>
+	</nav>
+</header>
+
+<style>
+	header {
+		background-color: white;
+		border-bottom: 1px solid var(--color-gray-200);
+		position: sticky;
+		top: 0;
+		z-index: var(--z-sticky);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.header-content {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: var(--space-4) 0;
+		gap: var(--space-6);
+	}
+
+	.logo {
+		display: flex;
+		flex-direction: column;
+		text-decoration: none;
+		color: var(--color-gray-900);
+		transition: opacity var(--transition-base);
+	}
+
+	.logo:hover {
+		opacity: 0.8;
+		text-decoration: none;
+	}
+
+	.logo-text {
+		font-size: var(--text-xl);
+		font-weight: 700;
+		line-height: var(--leading-tight);
+		color: var(--color-primary-600);
+	}
+
+	.logo-tagline {
+		font-size: var(--text-xs);
+		color: var(--color-gray-600);
+		font-style: italic;
+	}
+
+	/* Desktop Navigation */
+	.desktop-nav {
+		display: none;
+	}
+
+	@media (min-width: 768px) {
+		.desktop-nav {
+			display: block;
+			flex: 1;
+		}
+	}
+
+	.desktop-nav ul {
+		display: flex;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		gap: var(--space-2);
+		justify-content: flex-end;
+	}
+
+	.desktop-nav li {
+		margin: 0;
+	}
+
+	.nav-link {
+		display: block;
+		padding: var(--space-2) var(--space-4);
+		font-size: var(--text-base);
+		font-weight: 500;
+		color: var(--color-gray-700);
+		text-decoration: none;
+		border-radius: var(--radius-md);
+		transition: all var(--transition-base);
+	}
+
+	.nav-link:hover {
+		color: var(--color-primary-600);
+		background-color: var(--color-primary-50);
+		text-decoration: none;
+	}
+
+	.nav-link.active {
+		color: var(--color-primary-600);
+		background-color: var(--color-primary-100);
+		font-weight: 600;
+	}
+
+	/* Mobile Menu Button */
+	.mobile-menu-button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: var(--space-2);
+		background: none;
+		border: none;
+		color: var(--color-gray-700);
+		cursor: pointer;
+		border-radius: var(--radius-md);
+		transition: all var(--transition-base);
+	}
+
+	.mobile-menu-button:hover {
+		background-color: var(--color-gray-100);
+		color: var(--color-primary-600);
+	}
+
+	.mobile-menu-button:focus-visible {
+		outline: 2px solid var(--color-primary-500);
+		outline-offset: 2px;
+	}
+
+	@media (min-width: 768px) {
+		.mobile-menu-button {
+			display: none;
+		}
+	}
+
+	/* Mobile Navigation */
+	.mobile-nav {
+		display: block;
+		border-top: 1px solid var(--color-gray-200);
+		padding: var(--space-4) 0;
+	}
+
+	.mobile-nav[hidden] {
+		display: none;
+	}
+
+	@media (min-width: 768px) {
+		.mobile-nav {
+			display: none !important;
+		}
+	}
+
+	.mobile-nav ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-1);
+	}
+
+	.mobile-nav li {
+		margin: 0;
+	}
+
+	.mobile-nav .nav-link {
+		padding: var(--space-3) var(--space-4);
+		font-size: var(--text-lg);
+	}
+</style>
+
+<script>
+	// Mobile menu toggle functionality (to be enhanced in Phase 2)
+	document.addEventListener('DOMContentLoaded', () => {
+		const button = document.querySelector('.mobile-menu-button');
+		const mobileNav = document.querySelector('.mobile-nav');
+
+		if (button && mobileNav) {
+			button.addEventListener('click', () => {
+				const isExpanded = button.getAttribute('aria-expanded') === 'true';
+				button.setAttribute('aria-expanded', String(!isExpanded));
+				mobileNav.hidden = isExpanded;
+			});
+		}
+	});
+</script>
