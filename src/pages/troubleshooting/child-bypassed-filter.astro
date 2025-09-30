@@ -1,0 +1,684 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import Alert from '../../components/Alert.astro';
+import Accordion from '../../components/Accordion.astro';
+---
+
+<Layout
+	title="Troubleshooting: Child Bypassed Filter"
+	description="Discovered your child found a way around filtering. Learn common bypass methods and how to strengthen protection while rebuilding trust."
+>
+	<Breadcrumb />
+
+	<div class="guide-container">
+		<header class="guide-header">
+			<div class="difficulty-badge advanced">Advanced</div>
+			<h1>Child Bypassed Filter</h1>
+			<p class="subtitle">
+				Discovered your child found a way around filtering. Close common bypass methods and strengthen protection.
+			</p>
+			<div class="meta">
+				<span>⏱️ Time Required: 30-60 minutes</span>
+				<span>🔧 Difficulty: Advanced</span>
+			</div>
+		</header>
+
+		<Alert type="error">
+			<strong>First Priority: Have a conversation.</strong> Technical fixes matter less than addressing the motivation
+			and rebuilding trust. Punitive measures alone often backfire.
+		</Alert>
+
+		<section class="guide-section">
+			<h2>Step 1: Assess the Situation Calmly</h2>
+			<p>Before reacting, gather information:</p>
+
+			<h3>Questions to Answer:</h3>
+			<ul>
+				<li><strong>How did they bypass?</strong> (Device setting? App? Website?)</li>
+				<li><strong>What were they accessing?</strong> (Blocked games? Social media? Inappropriate content?)</li>
+				<li><strong>How long has this been happening?</strong> (One time? Weeks?)</li>
+				<li><strong>Did they know it was wrong?</strong> (Deliberate deception vs. exploring technology?)</li>
+				<li><strong>Why did they do it?</strong> (Curiosity? Peer pressure? Addiction? Research legitimate need?)</li>
+			</ul>
+
+			<div class="info-box">
+				<strong>Important Context:</strong>
+				<p>
+					Tech-savvy kids bypassing filters is common. It doesn't mean you're a bad parent or they're a bad kid.
+					It's an opportunity for growth and improved communication.
+				</p>
+			</div>
+		</section>
+
+		<section class="guide-section">
+			<h2>Step 2: Close the Bypass Method</h2>
+			<p>Identify how they bypassed filtering and close that loophole:</p>
+
+			<div class="accordion-list">
+				<Accordion title="Method 1: VPN Apps" defaultOpen={true}>
+					<h4>How It Works:</h4>
+					<p>VPN apps encrypt all traffic and route it through external servers, bypassing DNS filtering entirely.</p>
+
+					<h4>Signs of Use:</h4>
+					<ul>
+						<li>VPN icon in device status bar</li>
+						<li>Apps like NordVPN, ExpressVPN, free VPNs (Turbo VPN, Thunder VPN)</li>
+						<li>Browser extensions (Hola, Touch VPN)</li>
+					</ul>
+
+					<h4>How to Block:</h4>
+
+					<strong>iOS:</strong>
+					<ol>
+						<li>Settings → Screen Time → Content & Privacy Restrictions → Enable</li>
+						<li>Allowed Apps → Turn OFF "VPN & Device Management"</li>
+						<li>Removes ability to install/use VPN profiles</li>
+						<li>Check: Settings → General → VPN & Device Management (should be unavailable)</li>
+					</ol>
+
+					<strong>Android:</strong>
+					<ol>
+						<li>Family Link app (parent device)</li>
+						<li>Select child → Manage settings → Apps on Google Play</li>
+						<li>All apps require approval → Enable</li>
+						<li>Manually uninstall existing VPN apps</li>
+						<li>Alternatively: Settings → Apps → VPN app → Force stop → Disable</li>
+					</ol>
+
+					<strong>Windows:</strong>
+					<ol>
+						<li>Microsoft Family Safety online dashboard</li>
+						<li>Select child → Apps and games</li>
+						<li>Block specific VPN applications</li>
+						<li>Or: Use AppLocker (Windows Pro) to block VPN executables</li>
+					</ol>
+
+					<strong>Mac:</strong>
+					<ol>
+						<li>Screen Time → App Limits</li>
+						<li>Block VPN apps individually</li>
+						<li>Or: System Settings → Users & Groups → Remove admin rights (prevents VPN installation)</li>
+					</ol>
+
+					<strong>Router-Level (Best):</strong>
+					<ol>
+						<li>Router admin → Firewall or Security</li>
+						<li>Block VPN ports: 1194 (OpenVPN), 500/4500 (IPSec), 1723 (PPTP)</li>
+						<li>Block VPN protocols if router supports it</li>
+						<li>Use DNS filtering that includes VPN category blocking</li>
+					</ol>
+				</Accordion>
+
+				<Accordion title="Method 2: DNS Server Changes">
+					<h4>How It Works:</h4>
+					<p>Manually changing device DNS settings to 8.8.8.8 (Google) or 1.1.1.1 (Cloudflare) bypasses filtering DNS.</p>
+
+					<h4>How to Block:</h4>
+
+					<strong>Router-Level (Recommended):</strong>
+					<ol>
+						<li>Most consumer routers can't force DNS, but some can</li>
+						<li>Look for "DNS Relay," "DNS Proxy," or "Force DNS" option</li>
+						<li>ASUS AiProtection: Automatically forces router DNS</li>
+						<li>Advanced routers (pfSense): Use firewall rules to redirect all port 53 traffic</li>
+					</ol>
+
+					<strong>Device-Level:</strong>
+					<ul>
+						<li><strong>iOS:</strong> Configure DNS as "supervised device" (requires Apple Configurator)</li>
+						<li><strong>Android:</strong> Family Link doesn't prevent DNS changes - requires supervision</li>
+						<li><strong>Windows:</strong> Family Safety doesn't lock DNS - requires admin restrictions</li>
+					</ul>
+
+					<Alert type="warning">
+						Consumer-level tools struggle to prevent DNS changes. Layer additional protections (device controls,
+						monitoring software).
+					</Alert>
+				</Accordion>
+
+				<Accordion title="Method 3: Using Mobile Data Instead of WiFi">
+					<h4>How It Works:</h4>
+					<p>Turning off WiFi and using cellular data bypasses home network filtering.</p>
+
+					<h4>How to Block:</h4>
+
+					<strong>iOS:</strong>
+					<ol>
+						<li>Screen Time → Content & Privacy Restrictions</li>
+						<li>Allow Changes → Cellular Data Changes → Don't Allow</li>
+						<li>Prevents disabling WiFi or enabling cellular data</li>
+					</ol>
+
+					<strong>Android:</strong>
+					<ol>
+						<li>Family Link → Manage settings → Controls on Google Play</li>
+						<li>Require approval for all apps</li>
+						<li>Note: Can't directly prevent WiFi/data toggling</li>
+						<li>Alternative: Don't provide a phone with data plan</li>
+					</ol>
+
+					<strong>Carrier-Level Filtering:</strong>
+					<ul>
+						<li>Verizon Smart Family: $5/month, filters cellular data</li>
+						<li>AT&T Secure Family: $7.99/month, filters cellular data</li>
+						<li>T-Mobile FamilyMode: $10/month, filters cellular data</li>
+					</ul>
+				</Accordion>
+
+				<Accordion title="Method 4: Proxy Websites">
+					<h4>How It Works:</h4>
+					<p>Websites like HideMyAss, ProxySite, CroxyProxy act as intermediaries to access blocked sites.</p>
+
+					<h4>How to Block:</h4>
+					<ul>
+						<li>Most filtering DNS providers block known proxy sites</li>
+						<li>If using OpenDNS: Block "Proxy/Anonymizer" category</li>
+						<li>Check block logs to see which proxies were accessed, add to blocklist</li>
+						<li>Enable SafeSearch (prevents finding new proxy sites via Google)</li>
+						<li>Monitor software (Bark, Qustodio) alerts to proxy usage</li>
+					</ul>
+
+					<p>
+						<strong>Challenge:</strong> New proxy sites appear daily. DNS filtering + monitoring is most effective.
+					</p>
+				</Accordion>
+
+				<Accordion title="Method 5: Using Another Device">
+					<h4>How It Works:</h4>
+					<p>Using parent's laptop, sibling's tablet, or friend's phone to access content.</p>
+
+					<h4>How to Prevent:</h4>
+					<ul>
+						<li><strong>Physical security:</strong> Lock your devices, don't share passwords</li>
+						<li><strong>Filter all devices:</strong> Apply filtering to every device in home</li>
+						<li><strong>Guest network:</strong> Put visitor devices on separate filtered WiFi</li>
+						<li><strong>Account-level controls:</strong> Use Google SafeSearch enforcement, YouTube Restricted Mode locked to account</li>
+					</ul>
+				</Accordion>
+
+				<Accordion title="Method 6: Resetting Device to Factory Settings">
+					<h4>How It Works:</h4>
+					<p>Factory reset removes parental controls, filtering apps, and restrictions.</p>
+
+					<h4>How to Block:</h4>
+
+					<strong>iOS:</strong>
+					<ol>
+						<li>Screen Time → Content & Privacy Restrictions</li>
+						<li>Allow Changes → Account Changes → Don't Allow</li>
+						<li>This prevents signing out of iCloud (necessary for reset)</li>
+					</ol>
+
+					<strong>Android:</strong>
+					<ol>
+						<li>Family Link automatically prevents factory reset</li>
+						<li>Requires parent approval code to reset</li>
+					</ol>
+
+					<strong>Computers:</strong>
+					<ul>
+						<li>Remove admin rights (prevents system changes)</li>
+						<li>BIOS password (prevents booting from USB to bypass OS)</li>
+					</ul>
+				</Accordion>
+
+				<Accordion title="Method 7: Browser Incognito/Private Mode">
+					<h4>How It Works:</h4>
+					<p>Private browsing doesn't actually bypass filtering, but hides browser history from parents.</p>
+
+					<h4>Clarification:</h4>
+					<p>
+						Incognito mode does NOT bypass DNS filtering or parental controls. It only prevents local history storage.
+						If they're accessing blocked content in Incognito, another bypass method is in play.
+					</p>
+
+					<h4>How to Block (If Desired):</h4>
+					<ul>
+						<li><strong>iOS:</strong> Screen Time → Content & Privacy → Allowed Apps → Safari → Disable (use only managed browser)</li>
+						<li><strong>Android:</strong> Family Link → Chrome settings → Disable Incognito</li>
+						<li><strong>Alternatives:</strong> Use monitoring software that captures activity regardless of Incognito</li>
+					</ul>
+				</Accordion>
+
+				<Accordion title="Method 8: Using Someone Else's WiFi">
+					<h4>How It Works:</h4>
+					<p>Connecting to neighbor's WiFi, public WiFi, or friend's hotspot to avoid home filtering.</p>
+
+					<h4>How to Prevent:</h4>
+					<ul>
+						<li><strong>Device-level controls:</strong> iOS Screen Time and Android Family Link work on any network</li>
+						<li><strong>Filtering apps:</strong> Qustodio, Net Nanny, Bark filter on all connections</li>
+						<li><strong>DNS profiles:</strong> NextDNS or CleanBrowsing VPN profiles filter on any WiFi</li>
+						<li><strong>Physical supervision:</strong> Devices stay in common areas, not bedrooms</li>
+					</ul>
+
+					<Alert type="info">
+						This is why device-level controls are essential supplements to network filtering.
+					</Alert>
+				</Accordion>
+			</div>
+		</section>
+
+		<section class="guide-section">
+			<h2>Step 3: Strengthen Your Overall Protection</h2>
+			<p>One bypass reveals weaknesses. Implement layered protection:</p>
+
+			<h3>Layer 1: Network-Level (DNS)</h3>
+			<ul class="checklist">
+				<li>Use filtering DNS (OpenDNS, CleanBrowsing, Cloudflare Family)</li>
+				<li>Set on router, not just devices</li>
+				<li>Enable router firewall if available</li>
+				<li>Block VPN ports at router level</li>
+			</ul>
+
+			<h3>Layer 2: Device-Level (Built-in Controls)</h3>
+			<ul class="checklist">
+				<li>iOS Screen Time configured correctly</li>
+				<li>Android Family Link managed from parent device</li>
+				<li>Windows Family Safety enabled</li>
+				<li>macOS Screen Time active</li>
+				<li>Remove admin rights on computers</li>
+			</ul>
+
+			<h3>Layer 3: Software Monitoring (Optional but Recommended)</h3>
+			<ul class="checklist">
+				<li>Qustodio, Net Nanny, or Bark on key devices</li>
+				<li>Provides bypass attempt alerts</li>
+				<li>Works on any network</li>
+				<li>Can detect VPN usage</li>
+			</ul>
+
+			<h3>Layer 4: Physical/Behavioral Controls</h3>
+			<ul class="checklist">
+				<li>Devices charge in parent's room overnight</li>
+				<li>Screen time limits enforced</li>
+				<li>Devices used in common areas</li>
+				<li>Random spot-checks acceptable in family culture</li>
+			</ul>
+
+			<p>
+				<strong>Key Principle:</strong> If one layer fails, others catch the bypass. No single solution is perfect.
+			</p>
+		</section>
+
+		<section class="guide-section">
+			<h2>Step 4: Have the Conversation</h2>
+			<p>Technology alone won't solve this. Communication is essential:</p>
+
+			<h3>Goals of the Conversation:</h3>
+			<ol>
+				<li><strong>Understand motivations:</strong> Why did they bypass?</li>
+				<li><strong>Address root cause:</strong> Legitimate need? Addiction? Peer pressure?</li>
+				<li><strong>Rebuild trust:</strong> Acknowledge breach while maintaining relationship</li>
+				<li><strong>Set clear expectations:</strong> Rules about technology use</li>
+				<li><strong>Collaborative problem-solving:</strong> Can some restrictions be adjusted?</li>
+			</ol>
+
+			<h3>Conversation Framework:</h3>
+
+			<h4>1. Start Calm and Curious (Not Accusatory):</h4>
+			<p><em>"I noticed you've been able to access [X]. Can you help me understand how that happened?"</em></p>
+
+			<h4>2. Listen First:</h4>
+			<ul>
+				<li>Let them explain without interrupting</li>
+				<li>Ask open-ended questions</li>
+				<li>Try to understand their perspective</li>
+			</ul>
+
+			<h4>3. Acknowledge Valid Concerns:</h4>
+			<p>
+				<em>"I hear that you felt the blocking was too strict. Let's talk about what's reasonable."</em>
+			</p>
+
+			<h4>4. Explain Your Reasoning:</h4>
+			<ul>
+				<li>Why filtering exists (protection, not control)</li>
+				<li>Dangers you're trying to prevent (age-appropriate detail)</li>
+				<li>Difference between trust and wisdom (trust them, don't trust the internet)</li>
+			</ul>
+
+			<h4>5. Address Consequences:</h4>
+			<ul>
+				<li>Natural consequences (restored trust takes time)</li>
+				<li>Logical consequences (stricter monitoring temporarily)</li>
+				<li>Avoid overly punitive measures (confiscating for months often backfires)</li>
+			</ul>
+
+			<h4>6. Collaborate on Solutions:</h4>
+			<p><em>"How can we set this up so you have what you need but stay safe?"</em></p>
+			<ul>
+				<li>Are current filters too restrictive?</li>
+				<li>Is there a legitimate need not being met?</li>
+				<li>Can they earn back privileges through demonstrated responsibility?</li>
+			</ul>
+
+			<h4>7. Set Clear Boundaries Going Forward:</h4>
+			<ul>
+				<li>Write down agreed-upon rules</li>
+				<li>Clarify consequences for future bypasses</li>
+				<li>Create a process for requesting exceptions</li>
+				<li>Establish regular check-ins</li>
+			</ul>
+		</section>
+
+		<section class="guide-section">
+			<h2>Age-Appropriate Responses</h2>
+
+			<Accordion title="Ages 8-11: Focus on Protection">
+				<p>
+					At this age, bypassing is usually curiosity-driven. Response should be more protective than punitive.
+				</p>
+				<ul>
+					<li><strong>Conversation:</strong> Explain dangers simply; filters are like locked medicine cabinets</li>
+					<li><strong>Technical response:</strong> Close bypass method, possibly increase supervision</li>
+					<li><strong>Consequence:</strong> Brief restriction (a few days), then restoration with monitoring</li>
+					<li><strong>Growth opportunity:</strong> Teach how to ask when they need access to something</li>
+				</ul>
+			</Accordion>
+
+			<Accordion title="Ages 12-14: Balance Protection and Autonomy">
+				<p>
+					Middle schoolers test boundaries. Response should balance accountability with understanding.
+				</p>
+				<ul>
+					<li><strong>Conversation:</strong> Discuss online risks honestly; acknowledge desire for independence</li>
+					<li><strong>Technical response:</strong> Close bypass, review if restrictions are age-appropriate</li>
+					<li><strong>Consequence:</strong> Temporary increased monitoring, earn back trust through transparency</li>
+					<li><strong>Growth opportunity:</strong> Create system for requesting access or renegotiating rules</li>
+				</ul>
+			</Accordion>
+
+			<Accordion title="Ages 15-17: Transition to Accountability">
+				<p>
+					Older teens need preparation for adult freedom. Shift from control to accountability.
+				</p>
+				<ul>
+					<li><strong>Conversation:</strong> Address maturity and decision-making; discuss real-world consequences</li>
+					<li><strong>Technical response:</strong> Consider if oversight is appropriate for age or if adjustment needed</li>
+					<li><strong>Consequence:</strong> Focus on rebuilding trust rather than punishment</li>
+					<li><strong>Growth opportunity:</strong> Gradual transition to self-regulation with accountability partner</li>
+				</ul>
+				<p>
+					For 17-year-olds especially, consider: Is monitoring still appropriate, or is accountability software (Covenant Eyes) more respectful?
+				</p>
+			</Accordion>
+		</section>
+
+		<section class="guide-section">
+			<h2>When Professional Help Is Needed</h2>
+			<p>Some situations require more than technical fixes and family conversations:</p>
+
+			<h3>Red Flags:</h3>
+			<ul>
+				<li>Repeated bypasses despite consequences (compulsive behavior)</li>
+				<li>Accessing illegal content (violence, exploitation)</li>
+				<li>Signs of addiction (inability to control usage, withdrawal symptoms)</li>
+				<li>Drastic behavior changes (depression, anxiety, isolation)</li>
+				<li>Lying and deception extending beyond technology</li>
+				<li>Complete communication breakdown in family</li>
+			</ul>
+
+			<h3>Resources:</h3>
+			<ul>
+				<li><strong>Therapist specializing in teen technology issues</strong></li>
+				<li><strong>Certified counselor for internet addiction</strong> (CSAT, CMAT credentials)</li>
+				<li><strong>Family therapist</strong> if relationship is severely damaged</li>
+				<li><strong>School counselor</strong> for initial assessment and referrals</li>
+			</ul>
+
+			<p>
+				Don't hesitate to seek help. Addressing issues early prevents escalation.
+			</p>
+		</section>
+
+		<section class="guide-section">
+			<h2>Moving Forward</h2>
+
+			<h3>Short-Term (1-4 Weeks):</h3>
+			<ul class="checklist">
+				<li>Close identified bypass methods</li>
+				<li>Implement layered protection</li>
+				<li>Increase supervision temporarily</li>
+				<li>Have follow-up conversations</li>
+				<li>Monitor for additional bypass attempts</li>
+			</ul>
+
+			<h3>Long-Term (1-6 Months):</h3>
+			<ul class="checklist">
+				<li>Gradually reduce intensive monitoring as trust rebuilds</li>
+				<li>Revisit and adjust restrictions as appropriate</li>
+				<li>Maintain open communication</li>
+				<li>Celebrate successes and responsible behavior</li>
+				<li>Plan for age-appropriate transitions</li>
+			</ul>
+
+			<Alert type="success">
+				<strong>Remember:</strong> The goal isn't perfect control, but teaching wisdom and self-regulation.
+				Bypassing filters can be a growth opportunity if handled well.
+			</Alert>
+		</section>
+
+		<div class="related-guides">
+			<h2>Related Guides</h2>
+			<div class="related-grid">
+				<a href="/guides/age-appropriate-internet" class="related-card">
+					<h3>Age-Appropriate Internet Access</h3>
+					<p>Developmentally appropriate restrictions by age</p>
+				</a>
+				<a href="/troubleshooting/dns-not-working" class="related-card">
+					<h3>DNS Not Working</h3>
+					<p>Ensure filtering is properly configured</p>
+				</a>
+				<a href="/faq" class="related-card">
+					<h3>FAQ</h3>
+					<p>Common questions about bypass prevention</p>
+				</a>
+			</div>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.guide-container {
+		max-width: 900px;
+		margin: 0 auto;
+		padding: var(--space-8) var(--space-4);
+	}
+
+	.guide-header {
+		position: relative;
+		padding-bottom: var(--space-6);
+		border-bottom: 3px solid var(--color-primary-500);
+		margin-bottom: var(--space-8);
+	}
+
+	.difficulty-badge {
+		display: inline-block;
+		padding: var(--space-2) var(--space-4);
+		border-radius: var(--radius-full);
+		font-size: var(--text-sm);
+		font-weight: 600;
+		margin-bottom: var(--space-4);
+	}
+
+	.difficulty-badge.advanced {
+		background-color: #fee2e2;
+		color: #7f1d1d;
+	}
+
+	.guide-header h1 {
+		font-size: var(--text-4xl);
+		font-weight: 800;
+		color: var(--color-gray-900);
+		margin-bottom: var(--space-3);
+		line-height: var(--leading-tight);
+	}
+
+	.subtitle {
+		font-size: var(--text-xl);
+		color: var(--color-gray-600);
+		line-height: var(--leading-relaxed);
+		margin-bottom: var(--space-4);
+	}
+
+	.meta {
+		display: flex;
+		gap: var(--space-6);
+		flex-wrap: wrap;
+		font-size: var(--text-base);
+		color: var(--color-gray-600);
+	}
+
+	.guide-section {
+		margin-top: var(--space-10);
+	}
+
+	.guide-section h2 {
+		font-size: var(--text-3xl);
+		font-weight: 700;
+		color: var(--color-gray-900);
+		margin-bottom: var(--space-6);
+	}
+
+	.guide-section h3 {
+		font-size: var(--text-2xl);
+		font-weight: 600;
+		color: var(--color-gray-900);
+		margin-top: var(--space-6);
+		margin-bottom: var(--space-4);
+	}
+
+	.guide-section h4 {
+		font-size: var(--text-lg);
+		font-weight: 600;
+		color: var(--color-gray-800);
+		margin-top: var(--space-4);
+		margin-bottom: var(--space-3);
+	}
+
+	.guide-section p,
+	.guide-section li {
+		line-height: var(--leading-relaxed);
+		color: var(--color-gray-700);
+		margin-bottom: var(--space-3);
+	}
+
+	.guide-section ul,
+	.guide-section ol {
+		margin-left: var(--space-6);
+		margin-bottom: var(--space-4);
+	}
+
+	.guide-section li {
+		margin-bottom: var(--space-2);
+	}
+
+	.guide-section a {
+		color: var(--color-primary-600);
+		text-decoration: underline;
+	}
+
+	.guide-section a:hover {
+		color: var(--color-primary-700);
+	}
+
+	.info-box {
+		background-color: var(--color-primary-50);
+		border-left: 4px solid var(--color-primary-500);
+		padding: var(--space-4);
+		margin: var(--space-4) 0;
+		border-radius: var(--radius-base);
+	}
+
+	.info-box strong {
+		display: block;
+		color: var(--color-primary-900);
+		margin-bottom: var(--space-2);
+	}
+
+	.accordion-list {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-4);
+		margin-top: var(--space-6);
+	}
+
+	.checklist {
+		list-style: none;
+		margin-left: 0;
+	}
+
+	.checklist li {
+		padding-left: var(--space-6);
+		position: relative;
+	}
+
+	.checklist li:before {
+		content: '✓';
+		position: absolute;
+		left: 0;
+		color: var(--color-secondary-600);
+		font-weight: 700;
+	}
+
+	.related-guides {
+		margin-top: var(--space-12);
+		padding-top: var(--space-8);
+		border-top: 2px solid var(--color-gray-200);
+	}
+
+	.related-guides h2 {
+		font-size: var(--text-2xl);
+		font-weight: 700;
+		color: var(--color-gray-900);
+		margin-bottom: var(--space-6);
+	}
+
+	.related-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+		gap: var(--space-4);
+	}
+
+	.related-card {
+		display: block;
+		padding: var(--space-5);
+		background-color: var(--color-gray-50);
+		border: 1px solid var(--color-gray-200);
+		border-radius: var(--radius-lg);
+		text-decoration: none;
+		transition: all var(--transition-base);
+	}
+
+	.related-card:hover {
+		border-color: var(--color-primary-500);
+		background-color: var(--color-white);
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-lg);
+	}
+
+	.related-card h3 {
+		font-size: var(--text-lg);
+		font-weight: 600;
+		color: var(--color-gray-900);
+		margin: 0 0 var(--space-2) 0;
+	}
+
+	.related-card p {
+		font-size: var(--text-sm);
+		color: var(--color-gray-600);
+		margin: 0;
+	}
+
+	@media (max-width: 768px) {
+		.guide-header h1 {
+			font-size: var(--text-3xl);
+		}
+
+		.related-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+</style>

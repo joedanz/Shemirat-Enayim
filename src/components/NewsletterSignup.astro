@@ -1,0 +1,300 @@
+---
+interface Props {
+	variant?: 'inline' | 'card' | 'footer';
+	class?: string;
+}
+
+const { variant = 'inline', class: className = '' } = Astro.props;
+---
+
+<div class:list={['newsletter-signup', `newsletter-${variant}`, className]}>
+	<div class="newsletter-content">
+		{variant === 'card' && (
+			<div class="newsletter-icon">📬</div>
+		)}
+		<div class="newsletter-text">
+			<h3 class="newsletter-title">
+				{variant === 'footer' ? 'Stay Updated' : 'Get Monthly Updates'}
+			</h3>
+			<p class="newsletter-description">
+				{variant === 'footer'
+					? 'New guides, platform updates & online safety tips'
+					: 'New filtering guides, platform updates, and online safety tips delivered monthly.'}
+			</p>
+		</div>
+	</div>
+
+	<form class="newsletter-form" data-newsletter-form>
+		<div class="form-group">
+			<input
+				type="email"
+				name="email"
+				placeholder="your@email.com"
+				required
+				class="newsletter-input"
+				aria-label="Email address"
+			/>
+			<button type="submit" class="newsletter-button">
+				<span class="button-text">Subscribe</span>
+				<span class="button-icon">→</span>
+			</button>
+		</div>
+		<p class="newsletter-privacy">
+			We respect your privacy. Unsubscribe anytime. No spam.
+		</p>
+		<div class="newsletter-message" data-newsletter-message style="display: none;"></div>
+	</form>
+</div>
+
+<style>
+	.newsletter-signup {
+		width: 100%;
+	}
+
+	/* Inline variant */
+	.newsletter-inline {
+		background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-secondary-50) 100%);
+		padding: var(--space-8);
+		border-radius: var(--radius-xl);
+		border: 2px solid var(--color-primary-200);
+	}
+
+	/* Card variant */
+	.newsletter-card {
+		background: white;
+		padding: var(--space-8);
+		border-radius: var(--radius-xl);
+		border: 2px solid var(--color-gray-200);
+		box-shadow: var(--shadow-lg);
+		text-align: center;
+	}
+
+	/* Footer variant */
+	.newsletter-footer {
+		background: transparent;
+		padding: 0;
+	}
+
+	.newsletter-footer .newsletter-content {
+		margin-bottom: var(--space-4);
+	}
+
+	.newsletter-footer .newsletter-title {
+		font-size: var(--text-lg);
+		color: var(--color-white);
+	}
+
+	.newsletter-footer .newsletter-description {
+		font-size: var(--text-sm);
+		color: rgba(255, 255, 255, 0.8);
+	}
+
+	.newsletter-footer .newsletter-privacy {
+		color: rgba(255, 255, 255, 0.7);
+	}
+
+	/* Content */
+	.newsletter-content {
+		margin-bottom: var(--space-6);
+	}
+
+	.newsletter-icon {
+		font-size: 3rem;
+		margin-bottom: var(--space-4);
+	}
+
+	.newsletter-title {
+		font-size: var(--text-2xl);
+		font-weight: 700;
+		color: var(--color-gray-900);
+		margin: 0 0 var(--space-2) 0;
+	}
+
+	.newsletter-description {
+		font-size: var(--text-base);
+		color: var(--color-gray-600);
+		line-height: var(--leading-relaxed);
+		margin: 0;
+	}
+
+	/* Form */
+	.newsletter-form {
+		max-width: 500px;
+		margin: 0 auto;
+	}
+
+	.form-group {
+		display: flex;
+		gap: var(--space-2);
+	}
+
+	.newsletter-input {
+		flex: 1;
+		padding: var(--space-3) var(--space-4);
+		border: 2px solid var(--color-gray-300);
+		border-radius: var(--radius-lg);
+		font-size: var(--text-base);
+		transition: all var(--transition-base);
+	}
+
+	.newsletter-input:focus {
+		outline: none;
+		border-color: var(--color-primary-500);
+		box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+	}
+
+	.newsletter-button {
+		padding: var(--space-3) var(--space-5);
+		background-color: var(--color-primary-600);
+		color: white;
+		border: none;
+		border-radius: var(--radius-lg);
+		font-weight: 600;
+		cursor: pointer;
+		transition: all var(--transition-base);
+		display: flex;
+		align-items: center;
+		gap: var(--space-2);
+		white-space: nowrap;
+	}
+
+	.newsletter-button:hover:not(:disabled) {
+		background-color: var(--color-primary-700);
+		transform: translateY(-1px);
+		box-shadow: var(--shadow-lg);
+	}
+
+	.newsletter-button:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+	}
+
+	.newsletter-privacy {
+		font-size: var(--text-xs);
+		color: var(--color-gray-500);
+		text-align: center;
+		margin: var(--space-3) 0 0 0;
+	}
+
+	.newsletter-message {
+		margin-top: var(--space-3);
+		padding: var(--space-3);
+		border-radius: var(--radius-lg);
+		text-align: center;
+		font-size: var(--text-sm);
+		font-weight: 500;
+	}
+
+	.newsletter-message.success {
+		background-color: var(--color-secondary-50);
+		color: var(--color-secondary-900);
+		border: 1px solid var(--color-secondary-500);
+	}
+
+	.newsletter-message.error {
+		background-color: #fef2f2;
+		color: #7f1d1d;
+		border: 1px solid var(--color-error);
+	}
+
+	@media (max-width: 768px) {
+		.newsletter-inline,
+		.newsletter-card {
+			padding: var(--space-6);
+		}
+
+		.newsletter-title {
+			font-size: var(--text-xl);
+		}
+
+		.newsletter-description {
+			font-size: var(--text-sm);
+		}
+
+		.form-group {
+			flex-direction: column;
+		}
+
+		.newsletter-button {
+			width: 100%;
+			justify-content: center;
+		}
+
+		.button-text {
+			flex: 1;
+		}
+	}
+</style>
+
+<script>
+	// Newsletter form submission
+	function initNewsletterForms() {
+		const forms = document.querySelectorAll('[data-newsletter-form]');
+
+		forms.forEach((form) => {
+			form.addEventListener('submit', async (e) => {
+				e.preventDefault();
+
+				const formElement = form as HTMLFormElement;
+				const input = formElement.querySelector('input[type="email"]') as HTMLInputElement;
+				const button = formElement.querySelector('button[type="submit"]') as HTMLButtonElement;
+				const message = formElement.querySelector('[data-newsletter-message]') as HTMLElement;
+
+				const email = input.value.trim();
+
+				if (!email) return;
+
+				// Disable form
+				button.disabled = true;
+				button.innerHTML = '<span>Subscribing...</span>';
+
+				try {
+					// In production, this would call your email service API
+					// (e.g., Mailchimp, ConvertKit, Buttondown)
+					await new Promise(resolve => setTimeout(resolve, 1000));
+
+					// Simulate success
+					const success = true;
+
+					if (success) {
+						// Show success message
+						message.style.display = 'block';
+						message.className = 'newsletter-message success';
+						message.textContent = '✓ Success! Check your email to confirm your subscription.';
+
+						// Reset form
+						formElement.reset();
+
+						// Log to console (in production, this would go to your email service)
+						console.log('Newsletter subscription:', email);
+
+						// Hide message after 5 seconds
+						setTimeout(() => {
+							message.style.display = 'none';
+						}, 5000);
+					}
+				} catch (error) {
+					// Show error message
+					message.style.display = 'block';
+					message.className = 'newsletter-message error';
+					message.textContent = '✗ Something went wrong. Please try again.';
+
+					setTimeout(() => {
+						message.style.display = 'none';
+					}, 5000);
+				} finally {
+					// Re-enable button
+					button.disabled = false;
+					button.innerHTML = '<span class="button-text">Subscribe</span><span class="button-icon">→</span>';
+				}
+			});
+		});
+	}
+
+	// Initialize on page load
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', initNewsletterForms);
+	} else {
+		initNewsletterForms();
+	}
+</script>

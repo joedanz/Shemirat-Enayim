@@ -1,0 +1,182 @@
+---
+interface Props {
+	title: string;
+	defaultOpen?: boolean;
+	class?: string;
+}
+
+const {
+	title,
+	defaultOpen = false,
+	class: className = ''
+} = Astro.props;
+---
+
+<div class:list={['accordion', className]}>
+	<button
+		class="accordion-trigger"
+		type="button"
+		aria-expanded={defaultOpen}
+	>
+		<span class="accordion-title">{title}</span>
+		<svg
+			class="accordion-icon"
+			width="20"
+			height="20"
+			viewBox="0 0 20 20"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="2"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			aria-hidden="true"
+		>
+			<polyline points="6 9 12 15 18 9"></polyline>
+		</svg>
+	</button>
+	<div class="accordion-content" data-state={defaultOpen ? 'open' : 'closed'}>
+		<div class="accordion-content-inner">
+			<slot />
+		</div>
+	</div>
+</div>
+
+<style>
+	.accordion {
+		border: 1px solid var(--color-gray-200);
+		border-radius: var(--radius-lg);
+		background-color: var(--color-white);
+		transition: all var(--transition-base);
+	}
+
+	.accordion:hover {
+		border-color: var(--color-primary-300);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.accordion-trigger {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: var(--space-3);
+		padding: var(--space-4);
+		background: none;
+		border: none;
+		cursor: pointer;
+		text-align: left;
+		transition: all var(--transition-base);
+	}
+
+	.accordion-trigger:hover {
+		background-color: var(--color-gray-50);
+	}
+
+	.accordion-trigger:focus-visible {
+		outline: 2px solid var(--color-primary-500);
+		outline-offset: 2px;
+		background-color: var(--color-gray-50);
+	}
+
+	.accordion-title {
+		flex: 1;
+		font-weight: 600;
+		font-size: var(--text-lg);
+		color: var(--color-gray-900);
+		line-height: var(--leading-snug);
+	}
+
+	.accordion-icon {
+		flex-shrink: 0;
+		color: var(--color-primary-600);
+		transition: transform var(--transition-base);
+	}
+
+	.accordion-trigger[aria-expanded="true"] .accordion-icon {
+		transform: rotate(180deg);
+	}
+
+	.accordion-content {
+		overflow: hidden;
+		transition: all var(--transition-base);
+	}
+
+	.accordion-content[data-state="closed"] {
+		max-height: 0;
+		opacity: 0;
+	}
+
+	.accordion-content[data-state="open"] {
+		max-height: 2000px;
+		opacity: 1;
+	}
+
+	.accordion-content-inner {
+		padding: 0 var(--space-4) var(--space-4) var(--space-4);
+		color: var(--color-gray-700);
+		line-height: var(--leading-relaxed);
+	}
+
+	.accordion-content-inner :global(p:last-child) {
+		margin-bottom: 0;
+	}
+
+	.accordion-content-inner :global(ul),
+	.accordion-content-inner :global(ol) {
+		margin-left: var(--space-5);
+		margin-bottom: var(--space-3);
+	}
+
+	.accordion-content-inner :global(li) {
+		margin-bottom: var(--space-2);
+	}
+
+	.accordion-content-inner :global(a) {
+		color: var(--color-primary-600);
+		text-decoration: underline;
+		transition: color var(--transition-base);
+	}
+
+	.accordion-content-inner :global(a:hover) {
+		color: var(--color-primary-700);
+	}
+
+	.accordion-content-inner :global(code) {
+		background-color: var(--color-gray-100);
+		padding: 0.125rem 0.375rem;
+		border-radius: var(--radius-sm);
+		font-size: 0.875em;
+		font-family: 'Courier New', monospace;
+	}
+</style>
+
+<script>
+	// Accordion toggle functionality
+	function initAccordions() {
+		const accordions = document.querySelectorAll('.accordion');
+
+		accordions.forEach((accordion) => {
+			const trigger = accordion.querySelector('.accordion-trigger');
+			const content = accordion.querySelector('.accordion-content');
+
+			if (!trigger || !content) return;
+
+			trigger.addEventListener('click', () => {
+				const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+
+				// Toggle aria-expanded
+				trigger.setAttribute('aria-expanded', (!isExpanded).toString());
+
+				// Toggle data-state
+				content.setAttribute('data-state', isExpanded ? 'closed' : 'open');
+			});
+		});
+	}
+
+	// Initialize on DOM load
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', initAccordions);
+	} else {
+		initAccordions();
+	}
+</script>
