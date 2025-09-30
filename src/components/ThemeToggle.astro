@@ -1,0 +1,133 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+	class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<button
+	type="button"
+	class:list={['theme-toggle', className]}
+	data-theme-toggle
+	aria-label="Toggle high contrast mode"
+	title="Toggle high contrast mode"
+>
+	<span class="theme-label">High Contrast</span>
+	<div class="toggle-switch" data-toggle-switch>
+		<div class="toggle-thumb"></div>
+	</div>
+</button>
+
+<script>
+	// High contrast theme management
+	const THEME_KEY = 'shemirat-enayim-contrast';
+	const THEME_ATTR = 'data-contrast';
+
+	function getStoredTheme(): string | null {
+		try {
+			return localStorage.getItem(THEME_KEY);
+		} catch {
+			return null;
+		}
+	}
+
+	function setStoredTheme(theme: string): void {
+		try {
+			localStorage.setItem(THEME_KEY, theme);
+		} catch {
+			// localStorage not available
+		}
+	}
+
+	function applyTheme(theme: string): void {
+		document.documentElement.setAttribute(THEME_ATTR, theme);
+	}
+
+	function toggleTheme(): void {
+		const current = document.documentElement.getAttribute(THEME_ATTR) || 'normal';
+		const newTheme = current === 'high' ? 'normal' : 'high';
+		applyTheme(newTheme);
+		setStoredTheme(newTheme);
+	}
+
+	// Initialize theme on page load
+	const storedTheme = getStoredTheme();
+	if (storedTheme) {
+		applyTheme(storedTheme);
+	}
+
+	// Add click listener to toggle button
+	const toggleButton = document.querySelector('[data-theme-toggle]');
+	toggleButton?.addEventListener('click', toggleTheme);
+</script>
+
+<style>
+	.theme-toggle {
+		display: flex;
+		align-items: center;
+		gap: var(--space-3);
+		padding: var(--space-2) var(--space-3);
+		background: transparent;
+		border: 1px solid var(--color-gray-300);
+		border-radius: var(--radius-lg);
+		cursor: pointer;
+		font-size: var(--text-sm);
+		color: var(--color-gray-700);
+		transition: all var(--transition-base);
+	}
+
+	.theme-toggle:hover {
+		border-color: var(--color-primary-500);
+		background: var(--color-gray-50);
+	}
+
+	.theme-toggle:focus-visible {
+		outline: 2px solid var(--color-primary-500);
+		outline-offset: 2px;
+	}
+
+	.theme-label {
+		font-weight: 500;
+	}
+
+	.toggle-switch {
+		position: relative;
+		width: 40px;
+		height: 22px;
+		background-color: var(--color-gray-300);
+		border-radius: var(--radius-full);
+		transition: background-color var(--transition-base);
+	}
+
+	:global([data-contrast="high"]) .toggle-switch {
+		background-color: var(--color-primary-600);
+	}
+
+	.toggle-thumb {
+		position: absolute;
+		top: 2px;
+		left: 2px;
+		width: 18px;
+		height: 18px;
+		background-color: white;
+		border-radius: var(--radius-full);
+		transition: transform var(--transition-base);
+	}
+
+	:global([data-contrast="high"]) .toggle-thumb {
+		transform: translateX(18px);
+	}
+
+	/* High contrast mode adjustments for toggle */
+	:global([data-contrast="high"]) .theme-toggle {
+		border-color: var(--color-gray-900);
+		color: var(--color-gray-900);
+	}
+
+	:global([data-contrast="high"]) .theme-toggle:hover {
+		background: var(--color-gray-100);
+	}
+</style>

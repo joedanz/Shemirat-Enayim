@@ -1,0 +1,183 @@
+---
+interface Props {
+	class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+
+const stages = [
+	{ age: '0-5', title: 'No Devices', devices: 'Supervised screen time only', color: '#dcfce7', border: '#16a34a' },
+	{ age: '6-9', title: 'Shared Tablet', devices: 'Parent-controlled, filtered', color: '#dbeafe', border: '#2563eb' },
+	{ age: '10-12', title: 'Basic Phone', devices: 'Calls/texts, no internet', color: '#fef3c7', border: '#d97706' },
+	{ age: '13-15', title: 'Smartphone', devices: 'Filtered internet, monitored', color: '#fed7aa', border: '#ea580c' },
+	{ age: '16-18', title: 'More Freedom', devices: 'Accountability & trust-based', color: '#fecaca', border: '#dc2626' }
+];
+---
+
+<div class:list={['infographic', 'age-progression', className]}>
+	<h3 class="infographic-title">Age-Appropriate Device Progression</h3>
+	<p class="infographic-subtitle">Guidelines for introducing technology at each developmental stage</p>
+
+	<div class="timeline">
+		{stages.map((stage, index) => (
+			<div class="stage">
+				<div class="stage-connector" style={index === 0 ? 'visibility: hidden;' : ''}></div>
+				<div class="stage-content" style={`background: ${stage.color}; border-color: ${stage.border};`}>
+					<div class="stage-age" style={`color: ${stage.border};`}>{stage.age}</div>
+					<div class="stage-title">{stage.title}</div>
+					<div class="stage-devices">{stage.devices}</div>
+				</div>
+			</div>
+		))}
+	</div>
+
+	<div class="guidelines">
+		<h4>Key Principles:</h4>
+		<ul>
+			<li><strong>Start slow:</strong> Delay smartphone access as long as possible</li>
+			<li><strong>Earn trust:</strong> Progress based on responsibility, not just age</li>
+			<li><strong>Stay involved:</strong> Monitor and discuss internet use at every stage</li>
+			<li><strong>Filter everything:</strong> Every device should have appropriate protections</li>
+		</ul>
+	</div>
+</div>
+
+<style>
+	.infographic {
+		margin: var(--space-8) 0;
+		padding: var(--space-6);
+		background: white;
+		border: 1px solid var(--color-gray-200);
+		border-radius: var(--radius-xl);
+	}
+
+	.infographic-title {
+		font-size: var(--text-2xl);
+		font-weight: 700;
+		color: var(--color-gray-900);
+		text-align: center;
+		margin-bottom: var(--space-2);
+	}
+
+	.infographic-subtitle {
+		font-size: var(--text-base);
+		color: var(--color-gray-600);
+		text-align: center;
+		margin-bottom: var(--space-8);
+	}
+
+	.timeline {
+		display: flex;
+		gap: var(--space-2);
+		margin-bottom: var(--space-8);
+		overflow-x: auto;
+		padding: var(--space-4) 0;
+	}
+
+	@media (max-width: 768px) {
+		.timeline {
+			flex-direction: column;
+		}
+	}
+
+	.stage {
+		flex: 1;
+		min-width: 150px;
+		display: flex;
+		align-items: center;
+	}
+
+	.stage-connector {
+		width: 30px;
+		height: 3px;
+		background: var(--color-gray-300);
+		flex-shrink: 0;
+	}
+
+	@media (max-width: 768px) {
+		.stage-connector {
+			width: 3px;
+			height: 30px;
+			margin: 0 auto;
+		}
+	}
+
+	.stage-content {
+		flex: 1;
+		padding: var(--space-4);
+		border-radius: var(--radius-lg);
+		border: 3px solid;
+		text-align: center;
+		transition: transform var(--transition-base);
+	}
+
+	.stage-content:hover {
+		transform: translateY(-4px);
+	}
+
+	.stage-age {
+		font-size: var(--text-2xl);
+		font-weight: 800;
+		margin-bottom: var(--space-2);
+	}
+
+	.stage-title {
+		font-size: var(--text-lg);
+		font-weight: 700;
+		color: var(--color-gray-900);
+		margin-bottom: var(--space-2);
+	}
+
+	.stage-devices {
+		font-size: var(--text-sm);
+		color: var(--color-gray-700);
+		line-height: var(--leading-snug);
+	}
+
+	.guidelines {
+		background: var(--color-gray-50);
+		padding: var(--space-6);
+		border-radius: var(--radius-lg);
+		border: 1px solid var(--color-gray-200);
+	}
+
+	.guidelines h4 {
+		font-size: var(--text-lg);
+		font-weight: 700;
+		color: var(--color-gray-900);
+		margin-bottom: var(--space-4);
+	}
+
+	.guidelines ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.guidelines li {
+		padding: var(--space-2) 0;
+		padding-left: var(--space-6);
+		position: relative;
+		color: var(--color-gray-700);
+		line-height: var(--leading-relaxed);
+	}
+
+	.guidelines li::before {
+		content: '→';
+		position: absolute;
+		left: 0;
+		color: var(--color-primary-600);
+		font-weight: bold;
+	}
+
+	.guidelines strong {
+		color: var(--color-gray-900);
+	}
+
+	@media print {
+		.infographic {
+			page-break-inside: avoid;
+			border: 1px solid #ddd;
+		}
+	}
+</style>

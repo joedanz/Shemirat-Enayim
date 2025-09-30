@@ -11,5 +11,8 @@
   "dependencies": {
     "astro": "^5.14.1",
     "fuse.js": "^7.1.0"
+  },
+  "devDependencies": {
+    "@astrojs/sitemap": "^3.6.0"
   }
 }

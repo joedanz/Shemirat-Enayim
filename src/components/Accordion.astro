@@ -12,12 +12,8 @@ const {
 } = Astro.props;
 ---
 
-<div class:list={['accordion', className]}>
-	<button
-		class="accordion-trigger"
-		type="button"
-		aria-expanded={defaultOpen}
-	>
+<details class:list={['accordion', className]} open={defaultOpen}>
+	<summary class="accordion-trigger">
 		<span class="accordion-title">{title}</span>
 		<svg
 			class="accordion-icon"
@@ -33,13 +29,13 @@ const {
 		>
 			<polyline points="6 9 12 15 18 9"></polyline>
 		</svg>
-	</button>
-	<div class="accordion-content" data-state={defaultOpen ? 'open' : 'closed'}>
+	</summary>
+	<div class="accordion-content">
 		<div class="accordion-content-inner">
 			<slot />
 		</div>
 	</div>
-</div>
+</details>
 
 <style>
 	.accordion {
@@ -61,11 +57,18 @@ const {
 		justify-content: space-between;
 		gap: var(--space-3);
 		padding: var(--space-4);
-		background: none;
-		border: none;
 		cursor: pointer;
-		text-align: left;
+		list-style: none;
 		transition: all var(--transition-base);
+	}
+
+	/* Remove default marker */
+	.accordion-trigger::-webkit-details-marker {
+		display: none;
+	}
+
+	.accordion-trigger::marker {
+		display: none;
 	}
 
 	.accordion-trigger:hover {
@@ -92,23 +95,13 @@ const {
 		transition: transform var(--transition-base);
 	}
 
-	.accordion-trigger[aria-expanded="true"] .accordion-icon {
+	/* Rotate icon when details is open */
+	details[open] .accordion-icon {
 		transform: rotate(180deg);
 	}
 
 	.accordion-content {
 		overflow: hidden;
-		transition: all var(--transition-base);
-	}
-
-	.accordion-content[data-state="closed"] {
-		max-height: 0;
-		opacity: 0;
-	}
-
-	.accordion-content[data-state="open"] {
-		max-height: 2000px;
-		opacity: 1;
 	}
 
 	.accordion-content-inner {

@@ -74,11 +74,13 @@ const { stats, class: className = '' } = Astro.props;
 		color: var(--color-primary-600);
 		line-height: var(--leading-none);
 		margin-bottom: var(--space-2);
+		min-height: 3rem; /* Prevent CLS */
 	}
 
 	@media (min-width: 768px) {
 		.stat-value {
 			font-size: var(--text-6xl);
+			min-height: 3.75rem; /* Prevent CLS */
 		}
 	}
 

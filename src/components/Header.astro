@@ -1,5 +1,6 @@
 ---
 import SearchBar from './SearchBar.astro';
+import ThemeToggle from './ThemeToggle.astro';
 
 interface Props {
 	currentPath?: string;
@@ -84,7 +85,10 @@ function isActive(href: string) {
 				</ul>
 			</nav>
 
-			<SearchBar class="header-search" />
+			<div class="header-actions">
+				<ThemeToggle class="header-theme-toggle" />
+				<SearchBar class="header-search" />
+			</div>
 
 			<button class="mobile-menu-button" aria-label="Open menu" aria-expanded="false">
 				<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -193,11 +197,25 @@ function isActive(href: string) {
 	}
 
 	/* Header Search */
+	.header-actions {
+		display: flex;
+		align-items: center;
+		gap: var(--space-3);
+	}
+
+	.header-theme-toggle {
+		display: none;
+	}
+
 	.header-search {
 		display: none;
 	}
 
 	@media (min-width: 768px) {
+		.header-theme-toggle {
+			display: flex;
+		}
+
 		.header-search {
 			display: block;
 		}

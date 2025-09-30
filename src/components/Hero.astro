@@ -7,6 +7,7 @@ interface Props {
 	ctaText?: string;
 	ctaHref?: string;
 	image?: string;
+	imageAlt?: string;
 	align?: 'left' | 'center';
 	class?: string;
 }
@@ -17,6 +18,7 @@ const {
 	ctaText,
 	ctaHref,
 	image,
+	imageAlt = '',
 	align = 'center',
 	class: className = ''
 } = Astro.props;
@@ -42,7 +44,13 @@ const {
 			</div>
 			{image && (
 				<div class="hero-image">
-					<img src={image} alt="" loading="eager" />
+					<img
+						src={image}
+						alt={imageAlt}
+						loading="eager"
+						fetchpriority="high"
+						decoding="async"
+					/>
 				</div>
 			)}
 		</div>
@@ -155,6 +163,8 @@ const {
 		max-width: 100%;
 		border-radius: var(--radius-2xl);
 		box-shadow: var(--shadow-2xl);
+		aspect-ratio: 16 / 9; /* Prevent CLS */
+		object-fit: cover;
 	}
 
 	/* Center alignment with no image */

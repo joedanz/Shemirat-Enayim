@@ -23,6 +23,11 @@ const { class: className = '' } = Astro.props;
 			<span class="search-shortcut-key">K</span>
 		</kbd>
 	</button>
+	<noscript>
+		<div class="search-noscript">
+			Search requires JavaScript. Try browser search (Ctrl/Cmd+F) or browse our <a href="/resources">resources</a>.
+		</div>
+	</noscript>
 </div>
 
 <!-- Search Modal -->
@@ -123,6 +128,28 @@ const { class: className = '' } = Astro.props;
 		font-size: var(--text-xs);
 		font-family: sans-serif;
 		line-height: 1;
+	}
+
+	/* No JavaScript fallback */
+	.search-noscript {
+		position: absolute;
+		top: 100%;
+		right: 0;
+		margin-top: var(--space-2);
+		padding: var(--space-3) var(--space-4);
+		background: var(--color-warning);
+		color: #000;
+		border-radius: var(--radius-lg);
+		font-size: var(--text-sm);
+		white-space: nowrap;
+		box-shadow: var(--shadow-lg);
+		z-index: var(--z-popover);
+	}
+
+	.search-noscript a {
+		color: #000;
+		text-decoration: underline;
+		font-weight: 600;
 	}
 
 	/* Modal */
@@ -329,11 +356,11 @@ const { class: className = '' } = Astro.props;
 </style>
 
 <script>
-	import Fuse from 'fuse.js';
-
-	// Search data will be fetched from JSON file
-	let fuse: Fuse<any> | null = null;
+	// Lazy-loaded Fuse.js instance
+	let Fuse: any = null;
+	let fuse: any = null;
 	let searchData: any[] = [];
+	let searchInitialized = false;
 
 	// DOM elements
 	const modal = document.querySelector('[data-search-modal]') as HTMLElement;
@@ -344,9 +371,15 @@ const { class: className = '' } = Astro.props;
 
 	let selectedIndex = -1;
 
-	// Initialize search data
+	// Initialize search data (lazy-loaded)
 	async function initSearch() {
+		if (searchInitialized) return;
+		searchInitialized = true;
+
 		try {
+			// Dynamically import Fuse.js only when needed
+			const fuseModule = await import('fuse.js');
+			Fuse = fuseModule.default;
 			// Create search data from pages we know exist
 			searchData = [
 				// Main pages
@@ -407,10 +440,17 @@ const { class: className = '' } = Astro.props;
 	}
 
 	// Open modal
-	function openModal() {
+	async function openModal() {
 		modal.setAttribute('data-open', 'true');
 		input.focus();
 		document.body.style.overflow = 'hidden';
+
+		// Initialize search on first open (lazy loading)
+		if (!searchInitialized) {
+			results.innerHTML = '<div class="search-empty"><p>Loading search...</p></div>';
+			await initSearch();
+			results.innerHTML = '<div class="search-empty"><p>Start typing to search...</p></div>';
+		}
 	}
 
 	// Close modal
@@ -516,6 +556,5 @@ const { class: className = '' } = Astro.props;
 		}
 	});
 
-	// Initialize search on page load
-	initSearch();
+	// Search is now initialized lazily when the modal is first opened
 </script>
