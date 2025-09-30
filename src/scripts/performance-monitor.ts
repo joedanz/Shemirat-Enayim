@@ -4,7 +4,7 @@
  * Tracks Core Web Vitals and sends them to analytics
  * Uses the web-vitals library to capture:
  * - LCP (Largest Contentful Paint)
- * - FID (First Input Delay)
+ * - INP (Interaction to Next Paint) - replaces FID
  * - CLS (Cumulative Layout Shift)
  * - TTFB (Time to First Byte)
  * - FCP (First Contentful Paint)
@@ -12,7 +12,7 @@
  * Metrics are sent to Plausible Analytics as custom events
  */
 
-import { onLCP, onFID, onCLS, onTTFB, onFCP } from 'web-vitals';
+import { onLCP, onINP, onCLS, onTTFB, onFCP } from 'web-vitals';
 
 // Check if we're in production and analytics is enabled
 const isProduction = import.meta.env.PUBLIC_ENV === 'production';
@@ -57,10 +57,10 @@ export function initPerformanceMonitoring() {
     // Good: < 2.5s, Needs Improvement: < 4s, Poor: >= 4s
     onLCP(sendToAnalytics);
 
-    // First Input Delay (FID)
-    // Measures interactivity
-    // Good: < 100ms, Needs Improvement: < 300ms, Poor: >= 300ms
-    onFID(sendToAnalytics);
+    // Interaction to Next Paint (INP)
+    // Measures interactivity (replaces FID in Web Vitals v4+)
+    // Good: < 200ms, Needs Improvement: < 500ms, Poor: >= 500ms
+    onINP(sendToAnalytics);
 
     // Cumulative Layout Shift (CLS)
     // Measures visual stability
@@ -90,9 +90,9 @@ export const PERFORMANCE_THRESHOLDS = {
     good: 2500,
     needsImprovement: 4000,
   },
-  FID: {
-    good: 100,
-    needsImprovement: 300,
+  INP: {
+    good: 200,
+    needsImprovement: 500,
   },
   CLS: {
     good: 0.1,
