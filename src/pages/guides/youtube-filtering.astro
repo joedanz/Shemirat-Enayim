@@ -1,0 +1,836 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import Alert from '../../components/Alert.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+	{ label: 'Home', href: '/' },
+	{ label: 'Protection Methods', href: '/methods' },
+	{ label: 'YouTube Filtering', href: '/guides/youtube-filtering' }
+];
+---
+
+<GuideLayout
+	title="YouTube Filtering & Safety Guide"
+	description="Comprehensive guide to protecting children on YouTube using Restricted Mode, YouTube Kids, supervised accounts, and third-party tools."
+	difficulty="beginner"
+	timeEstimate="10-15 minutes"
+	prerequisites={[
+		'Google account (for supervised experiences)',
+		'Access to child\'s device or YouTube account'
+	]}
+>
+	<Breadcrumb slot="breadcrumb" items={breadcrumbItems} />
+
+	<section>
+		<h2>Why YouTube Needs Special Attention</h2>
+		<p>
+			YouTube is one of the most popular platforms for children and teens, with educational content, entertainment, and creative videos. However, it also contains inappropriate content, including violence, explicit language, mature themes, and misleading information.
+		</p>
+		<p>
+			YouTube's recommendation algorithm can quickly lead viewers from benign content to inappropriate material. That's why YouTube requires special filtering strategies beyond general web filtering.
+		</p>
+
+		<Alert type="warning">
+			<strong>Key Challenge:</strong> YouTube's vast content and AI recommendations make it difficult to fully control. A multi-layered approach combining YouTube's tools with supervision and communication is essential.
+		</Alert>
+	</section>
+
+	<section>
+		<h2>🎯 Choosing the Right Approach</h2>
+
+		<div class="approach-grid">
+			<div class="approach-card">
+				<h3>YouTube Kids (Ages 4-12)</h3>
+				<ul>
+					<li><strong>Age Range:</strong> Preschool to 12 years old</li>
+					<li><strong>Protection Level:</strong> Highest</li>
+					<li><strong>Content:</strong> Curated and age-appropriate only</li>
+					<li><strong>Recommendation:</strong> Best for young children</li>
+				</ul>
+			</div>
+
+			<div class="approach-card">
+				<h3>Supervised YouTube (Ages 9-17)</h3>
+				<ul>
+					<li><strong>Age Range:</strong> 9-17 years old</li>
+					<li><strong>Protection Level:</strong> High to Medium</li>
+					<li><strong>Content:</strong> Filtered but more variety than Kids</li>
+					<li><strong>Recommendation:</strong> Best for preteens/teens</li>
+				</ul>
+			</div>
+
+			<div class="approach-card">
+				<h3>Restricted Mode (All Ages)</h3>
+				<ul>
+					<li><strong>Age Range:</strong> Any age</li>
+					<li><strong>Protection Level:</strong> Medium</li>
+					<li><strong>Content:</strong> Filters mature content algorithmically</li>
+					<li><strong>Recommendation:</strong> Minimum baseline, combine with other methods</li>
+				</ul>
+			</div>
+
+			<div class="approach-card">
+				<h3>Complete Blocking (Optional)</h3>
+				<ul>
+					<li><strong>Age Range:</strong> Varies by family</li>
+					<li><strong>Protection Level:</strong> Total</li>
+					<li><strong>Content:</strong> No YouTube access</li>
+					<li><strong>Recommendation:</strong> For families prioritizing other activities</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<h2>👶 YouTube Kids (Recommended for Young Children)</h2>
+
+		<h3>What is YouTube Kids?</h3>
+		<p>
+			YouTube Kids is a separate app designed specifically for children, with content curated to be age-appropriate. It includes built-in parental controls and a simpler interface designed for kids.
+		</p>
+
+		<h3>Setting Up YouTube Kids</h3>
+		<ol>
+			<li>
+				<strong>Download YouTube Kids</strong>
+				<p>Available on iOS, Android, smart TVs, and game consoles. Search "YouTube Kids" in your app store.</p>
+			</li>
+			<li>
+				<strong>Open the app and select profile</strong>
+				<p>Choose whether you're a parent or child.</p>
+			</li>
+			<li>
+				<strong>Create a child profile</strong>
+				<p>Enter your child's name and age (affects content recommendations).</p>
+			</li>
+			<li>
+				<strong>Choose content level</strong>
+				<ul>
+					<li><strong>Preschool (Ages 4 & Under):</strong> Simple videos for youngest viewers</li>
+					<li><strong>Younger (Ages 5-8):</strong> Broader range including songs, cartoons, crafts</li>
+					<li><strong>Older (Ages 9-12):</strong> Additional music videos, gaming, vlogs for older kids</li>
+					<li><strong>Approved Content Only:</strong> You manually approve every video/channel</li>
+				</ul>
+			</li>
+			<li>
+				<strong>Set up parental controls</strong>
+				<p>Tap the lock icon (bottom right) and solve the multiplication problem or enter your custom passcode.</p>
+			</li>
+			<li>
+				<strong>Configure settings</strong>
+				<ul>
+					<li>Search: Enable or disable (disable for tighter control)</li>
+					<li>Sound effects: On or off</li>
+					<li>Background play: Allow or block</li>
+					<li>Autoplay: Enable or disable next video</li>
+				</ul>
+			</li>
+			<li>
+				<strong>Block specific videos or channels</strong>
+				<p>Tap ⋮ menu on any video → Block this video/channel. It won't appear again for that profile.</p>
+			</li>
+		</ol>
+
+		<Alert type="success">
+			<strong>Best Practice:</strong> For children under 8, use "Approved Content Only" mode and manually build a library of safe channels. This takes more time initially but provides maximum control.
+		</Alert>
+
+		<h3>Limitations of YouTube Kids</h3>
+		<ul>
+			<li>Not perfect—inappropriate content occasionally slips through</li>
+			<li>Some educational content may be missing</li>
+			<li>Children can request "mature" videos be unblocked</li>
+			<li>Requires separate app (children might try to access regular YouTube)</li>
+		</ul>
+
+		<Alert type="warning">
+			<strong>Important:</strong> Block or uninstall regular YouTube app when using YouTube Kids. Otherwise, children can simply open the main YouTube app to bypass restrictions.
+		</Alert>
+	</section>
+
+	<section>
+		<h2>🎓 Supervised YouTube Experience (Ages 9-17)</h2>
+
+		<h3>What is Supervised YouTube?</h3>
+		<p>
+			For children who've outgrown YouTube Kids but aren't ready for unrestricted YouTube, Google offers supervised experiences through Family Link. This provides access to a broader library while still filtering inappropriate content.
+		</p>
+
+		<h3>Setting Up Supervised YouTube</h3>
+		<ol>
+			<li>
+				<strong>Create a Google Account with Family Link</strong>
+				<p>Follow our <a href="/guides/android-family-link">Android Family Link guide</a> to create a supervised account for your child.</p>
+			</li>
+			<li>
+				<strong>Sign your child into YouTube</strong>
+				<p>On their device, open YouTube app or website and sign in with their supervised Google account.</p>
+			</li>
+			<li>
+				<strong>In Family Link, configure YouTube settings</strong>
+				<p>Open Family Link app → Your child → Settings → YouTube (or YouTube settings in content controls).</p>
+			</li>
+			<li>
+				<strong>Choose supervised experience level</strong>
+				<ul>
+					<li><strong>Explore:</strong> Generally appropriate for ages 9+. Broad variety but excludes mature content.</li>
+					<li><strong>Explore More:</strong> Generally appropriate for ages 13+. Even wider selection with some mature themes allowed.</li>
+				</ul>
+			</li>
+			<li>
+				<strong>Review additional settings</strong>
+				<ul>
+					<li>Search and watch history</li>
+					<li>Personalized ads (can disable)</li>
+					<li>Upload, post, comment capabilities (restricted by default)</li>
+				</ul>
+			</li>
+		</ol>
+
+		<h3>Features of Supervised YouTube</h3>
+		<ul>
+			<li>Content filtered to exclude mature material</li>
+			<li>Limited social features (can't comment or upload by default)</li>
+			<li>Parental visibility into watch history</li>
+			<li>Can't change settings without parent approval</li>
+			<li>Works across all devices where they're signed in</li>
+		</ul>
+
+		<Alert type="info">
+			<strong>Transitioning:</strong> Supervised YouTube works well for the transition from YouTube Kids to eventually regular YouTube as teens mature and demonstrate responsibility.
+		</Alert>
+	</section>
+
+	<section>
+		<h2>🔐 YouTube Restricted Mode</h2>
+
+		<h3>What is Restricted Mode?</h3>
+		<p>
+			Restricted Mode is YouTube's built-in filter that uses signals like video metadata, title, and AI analysis to screen out potentially mature content. It's not perfect, but it's a free option that takes seconds to enable.
+		</p>
+
+		<h3>Enabling Restricted Mode</h3>
+
+		<h4>On Desktop/Laptop</h4>
+		<ol>
+			<li>Go to <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">youtube.com</a></li>
+			<li>Click your profile picture (top right)</li>
+			<li>Click "Restricted Mode" at the bottom</li>
+			<li>Toggle "Activate Restricted Mode" on</li>
+		</ol>
+
+		<h4>On Mobile App (iOS/Android)</h4>
+		<ol>
+			<li>Open YouTube app</li>
+			<li>Tap your profile picture (top right)</li>
+			<li>Tap Settings → General</li>
+			<li>Toggle "Restricted Mode" on</li>
+		</ol>
+
+		<h4>On Smart TV/Gaming Console</h4>
+		<ol>
+			<li>Open YouTube app</li>
+			<li>Go to Settings (usually in sidebar menu)</li>
+			<li>Find "Restricted Mode" and turn it on</li>
+		</ol>
+
+		<h3>Locking Restricted Mode</h3>
+		<p>
+			Without locking, children can simply turn off Restricted Mode:
+		</p>
+
+		<h4>Browser-Level Locking (Limited)</h4>
+		<ol>
+			<li>After enabling Restricted Mode, click "Lock Restricted Mode on this browser"</li>
+			<li>Sign in to your Google account</li>
+			<li>Restricted Mode is now locked for that browser</li>
+		</ol>
+
+		<Alert type="warning">
+			<strong>Limitation:</strong> Browser-level locking only works in that specific browser. Children can use a different browser, private browsing, or clear cookies to bypass. Use supervised accounts or DNS filtering for true enforcement.
+		</Alert>
+
+		<h4>Network-Level Enforcement (Recommended)</h4>
+		<p>
+			Use DNS filtering services that force YouTube Restricted Mode:
+		</p>
+		<ul>
+			<li><strong>OpenDNS FamilyShield:</strong> Automatically enables Restricted Mode</li>
+			<li><strong>CleanBrowsing Family Filter:</strong> Forces Restricted Mode</li>
+			<li><strong>NextDNS:</strong> Can enable Restricted Mode enforcement in settings</li>
+		</ul>
+		<p>See our <a href="/guides/dns-filtering">DNS Filtering guide</a> for setup instructions.</p>
+	</section>
+
+	<section>
+		<h2>🚫 Blocking YouTube Completely</h2>
+
+		<p>
+			Some families choose to block YouTube entirely. This is a valid approach for young children or families prioritizing offline activities.
+		</p>
+
+		<h3>Device-Level Blocking</h3>
+		<ul>
+			<li><strong>iOS Screen Time:</strong> Settings → Screen Time → Content & Privacy Restrictions → Allowed Apps → Toggle YouTube off</li>
+			<li><strong>Android Family Link:</strong> Block YouTube app in app management</li>
+			<li><strong>Windows Family Safety:</strong> Block apps and websites including YouTube</li>
+			<li><strong>Router:</strong> Block youtube.com domain (affects all devices)</li>
+		</ul>
+
+		<h3>DNS-Level Blocking</h3>
+		<p>
+			Some DNS services allow complete YouTube blocking. However, this may affect legitimate educational uses. Consider:
+		</p>
+		<ul>
+			<li>Blocking during certain hours (bedtime, homework time)</li>
+			<li>Allowing YouTube only on supervised shared devices</li>
+			<li>Using YouTube only in browser with parental supervision</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>🛠️ Third-Party YouTube Control Tools</h2>
+
+		<div class="tools">
+			<div class="tool-card">
+				<h3>Browser Extensions</h3>
+				<p><strong>Tools like Video Blocker, BlockTube, unhook</strong></p>
+				<ul>
+					<li>Block specific channels or keywords</li>
+					<li>Hide recommendations and comments</li>
+					<li>Remove distracting elements</li>
+					<li>Create whitelist of allowed channels</li>
+				</ul>
+				<p><strong>Limitation:</strong> Only works in web browsers, not apps. Can be disabled if user has browser permissions.</p>
+			</div>
+
+			<div class="tool-card">
+				<h3>Parental Control Software</h3>
+				<p><strong>Options: Qustodio, Bark, Net Nanny, Circle</strong></p>
+				<ul>
+					<li>Monitor YouTube watch history</li>
+					<li>Alert on concerning content</li>
+					<li>Block YouTube on schedule</li>
+					<li>Set time limits for YouTube</li>
+					<li>Cross-platform protection</li>
+				</ul>
+				<p><strong>Cost:</strong> Typically $5-15/month</p>
+			</div>
+
+			<div class="tool-card">
+				<h3>Alternative Frontends</h3>
+				<p><strong>Tools: Invidious, FreeTube, NewPipe</strong></p>
+				<ul>
+					<li>Access YouTube without recommendations</li>
+					<li>No comments section</li>
+					<li>Subscription-based viewing only</li>
+					<li>Privacy-focused</li>
+				</ul>
+				<p><strong>Note:</strong> Requires technical setup. Best for older teens who can handle responsibility.</p>
+			</div>
+
+			<div class="tool-card">
+				<h3>Router-Level Scheduling</h3>
+				<p><strong>Use your router's parental controls</strong></p>
+				<ul>
+					<li>Block YouTube during homework hours</li>
+					<li>Limit to certain times of day</li>
+					<li>Weekend-only access</li>
+					<li>Device-specific rules</li>
+				</ul>
+				<p>See our <a href="/guides/router-config">Router Configuration guide</a></p>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<h2>👨‍👩‍👧 Best Practices & Family Guidelines</h2>
+
+		<div class="practices-grid">
+			<div class="practice-card">
+				<h3>🎯 Age-Appropriate Approach</h3>
+				<p><strong>Ages 4-8:</strong></p>
+				<ul>
+					<li>YouTube Kids only, "Approved Content Only" mode</li>
+					<li>Parent curates channel list</li>
+					<li>Watch together when possible</li>
+					<li>30-minute daily limit</li>
+				</ul>
+				<p><strong>Ages 9-12:</strong></p>
+				<ul>
+					<li>YouTube Kids "Older" or Supervised YouTube "Explore"</li>
+					<li>Regular check-ins on watch history</li>
+					<li>Discuss concerning content together</li>
+					<li>1-hour daily limit</li>
+				</ul>
+				<p><strong>Ages 13-17:</strong></p>
+				<ul>
+					<li>Supervised YouTube "Explore More" or Restricted Mode</li>
+					<li>More independence with accountability</li>
+					<li>Open communication about content</li>
+					<li>Focus on healthy balance vs rigid limits</li>
+				</ul>
+			</div>
+
+			<div class="practice-card">
+				<h3>🗣️ Communication Strategies</h3>
+				<ul>
+					<li>Explain <em>why</em> filtering exists, not just <em>that</em> it does</li>
+					<li>Watch YouTube together sometimes to understand their interests</li>
+					<li>Create a "safe channel" list collaboratively</li>
+					<li>Encourage them to report concerning content they encounter</li>
+					<li>Discuss critical thinking about online content</li>
+					<li>Praise good judgment when they self-regulate</li>
+				</ul>
+			</div>
+
+			<div class="practice-card">
+				<h3>🔍 Regular Monitoring</h3>
+				<ul>
+					<li>Review watch history weekly</li>
+					<li>Check subscribed channels monthly</li>
+					<li>Ask about favorite YouTubers</li>
+					<li>Watch a few videos they recommend</li>
+					<li>Set up email notifications for concerning content (if using monitoring tools)</li>
+					<li>Adjust restrictions as they demonstrate maturity</li>
+				</ul>
+			</div>
+
+			<div class="practice-card">
+				<h3>⚠️ Red Flags to Watch For</h3>
+				<ul>
+					<li>Obsessive watching or difficulty stopping</li>
+					<li>Hiding screens when you approach</li>
+					<li>Using inappropriate language learned from videos</li>
+					<li>Attempting to bypass restrictions repeatedly</li>
+					<li>Watching late at night (check time stamps)</li>
+					<li>Dramatic behavior changes after watching</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<h2>❓ Troubleshooting & Common Issues</h2>
+
+		<div class="troubleshooting">
+			<div class="issue-card">
+				<h3>Inappropriate content still appearing in YouTube Kids</h3>
+				<p><strong>Actions to take:</strong></p>
+				<ul>
+					<li>Report the video/channel immediately (tap ⋮ → Report)</li>
+					<li>Block the channel from appearing again</li>
+					<li>Consider switching to "Approved Content Only" mode</li>
+					<li>Remember: No automated system is perfect, which is why supervision matters</li>
+				</ul>
+			</div>
+
+			<div class="issue-card">
+				<h3>Child is using regular YouTube instead of Kids</h3>
+				<p><strong>Solutions:</strong></p>
+				<ul>
+					<li>Uninstall or block regular YouTube app on their device</li>
+					<li>Use Screen Time (iOS) or Family Link (Android) to block YouTube app</li>
+					<li>Set up DNS filtering to redirect youtube.com to restrictions</li>
+					<li>Have a conversation about the rules and why they exist</li>
+				</ul>
+			</div>
+
+			<div class="issue-card">
+				<h3>Restricted Mode keeps turning off</h3>
+				<p><strong>Why this happens:</strong></p>
+				<ul>
+					<li>Browser cookies were cleared</li>
+					<li>Using a different browser or private browsing</li>
+					<li>Child manually disabled it</li>
+				</ul>
+				<p><strong>Solutions:</strong></p>
+				<ul>
+					<li>Use supervised Google account (can't disable Restricted Mode)</li>
+					<li>Enable DNS-level Restricted Mode enforcement</li>
+					<li>Check browser extension isn't interfering</li>
+				</ul>
+			</div>
+
+			<div class="issue-card">
+				<h3>Can't access educational content with filters enabled</h3>
+				<p><strong>Solutions:</strong></p>
+				<ul>
+					<li>In YouTube Kids, add the specific educational channel to approved list</li>
+					<li>Use supervised YouTube "Explore More" level for older children</li>
+					<li>For legitimate educational videos, watch together or temporarily grant access</li>
+					<li>Report false positives to YouTube to improve filtering</li>
+				</ul>
+			</div>
+
+			<div class="issue-card">
+				<h3>Child watching on other people's devices</h3>
+				<p><strong>Approach:</strong></p>
+				<ul>
+					<li>This is the hardest scenario—you can't control others' devices</li>
+					<li>Communicate your family's YouTube rules to other parents/caregivers</li>
+					<li>Teach your child to make good choices independently</li>
+					<li>Focus on education and values rather than just technical controls</li>
+					<li>Check-in after playdates: "What videos did you watch at Sam's house?"</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<h2>⚖️ Pros & Cons of YouTube Safety Tools</h2>
+
+		<div class="comparison">
+			<div class="option">
+				<h3>YouTube Kids</h3>
+				<h4>✅ Pros</h4>
+				<ul>
+					<li>Free and official Google product</li>
+					<li>Best filtering for young children</li>
+					<li>Kid-friendly interface</li>
+					<li>Parental controls built-in</li>
+				</ul>
+				<h4>❌ Cons</h4>
+				<ul>
+					<li>Still not 100% effective</li>
+					<li>Children may outgrow it</li>
+					<li>Requires separate app (bypass risk)</li>
+					<li>Limited content compared to main YouTube</li>
+				</ul>
+			</div>
+
+			<div class="option">
+				<h3>Supervised YouTube</h3>
+				<h4>✅ Pros</h4>
+				<ul>
+					<li>More content than Kids</li>
+					<li>Can't be easily bypassed</li>
+					<li>Grows with child</li>
+					<li>Parental oversight of history</li>
+				</ul>
+				<h4>❌ Cons</h4>
+				<ul>
+					<li>Requires Google account setup</li>
+					<li>Still some inappropriate content</li>
+					<li>Children may resist supervision</li>
+					<li>Stops at age 18</li>
+				</ul>
+			</div>
+
+			<div class="option">
+				<h3>Restricted Mode</h3>
+				<h4>✅ Pros</h4>
+				<ul>
+					<li>Quick to enable</li>
+					<li>Works immediately</li>
+					<li>No account required</li>
+					<li>Available everywhere</li>
+				</ul>
+				<h4>❌ Cons</h4>
+				<ul>
+					<li>Least effective filtering</li>
+					<li>Easily disabled</li>
+					<li>Many false negatives</li>
+					<li>Should only be a backup layer</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section slot="next-steps">
+		<h2>🎯 Next Steps & Related Guides</h2>
+		<p>
+			YouTube protection works best as part of a comprehensive internet safety strategy:
+		</p>
+
+		<div class="next-steps-grid">
+			<a href="/guides/android-family-link" class="next-step-card">
+				<h3>🤖 Android Family Link</h3>
+				<p>Set up supervised Google accounts for YouTube and more</p>
+			</a>
+
+			<a href="/guides/dns-filtering" class="next-step-card">
+				<h3>🌐 DNS Filtering</h3>
+				<p>Enforce Restricted Mode at the network level automatically</p>
+			</a>
+
+			<a href="/guides/ios-screen-time" class="next-step-card">
+				<h3>📱 iOS Screen Time</h3>
+				<p>Block or limit YouTube on iPhones and iPads</p>
+			</a>
+
+			<a href="/guides/safe-search" class="next-step-card">
+				<h3>🔍 SafeSearch</h3>
+				<p>Filter search results across all search engines</p>
+			</a>
+		</div>
+
+		<Alert type="info">
+			<strong>Recommended Strategy:</strong> Use YouTube Kids/Supervised YouTube (appropriate filtering) + DNS enforcement (prevents bypass) + regular conversations (education) = balanced protection.
+		</Alert>
+	</section>
+</GuideLayout>
+
+<style>
+	.approach-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-4);
+		margin: var(--space-6) 0;
+	}
+
+	@media (min-width: 768px) {
+		.approach-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	.approach-card {
+		background-color: var(--color-gray-50);
+		border: 2px solid var(--color-primary-200);
+		border-radius: var(--radius-lg);
+		padding: var(--space-5);
+	}
+
+	.approach-card h3 {
+		color: var(--color-primary-700);
+		margin-top: 0;
+		margin-bottom: var(--space-3);
+	}
+
+	.approach-card ul {
+		margin: 0;
+		padding-left: var(--space-5);
+		list-style: none;
+	}
+
+	.approach-card li {
+		margin-bottom: var(--space-2);
+		line-height: var(--leading-relaxed);
+		position: relative;
+		padding-left: 0;
+	}
+
+	.approach-card li strong {
+		color: var(--color-gray-900);
+	}
+
+	.tools {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-6);
+		margin: var(--space-6) 0;
+	}
+
+	@media (min-width: 768px) {
+		.tools {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	.tool-card {
+		background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-secondary-50) 100%);
+		border: 2px solid var(--color-primary-200);
+		border-radius: var(--radius-lg);
+		padding: var(--space-5);
+	}
+
+	.tool-card h3 {
+		color: var(--color-primary-700);
+		margin-top: 0;
+		margin-bottom: var(--space-2);
+	}
+
+	.tool-card p {
+		font-size: var(--text-sm);
+		margin-bottom: var(--space-3);
+		color: var(--color-gray-700);
+	}
+
+	.tool-card ul {
+		margin-bottom: var(--space-3);
+		padding-left: var(--space-5);
+	}
+
+	.tool-card li {
+		margin-bottom: var(--space-1);
+		font-size: var(--text-sm);
+		line-height: var(--leading-relaxed);
+	}
+
+	.practices-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-6);
+		margin: var(--space-6) 0;
+	}
+
+	@media (min-width: 768px) {
+		.practices-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	.practice-card {
+		background-color: var(--color-gray-50);
+		border: 2px solid var(--color-secondary-200);
+		border-radius: var(--radius-lg);
+		padding: var(--space-5);
+	}
+
+	.practice-card h3 {
+		color: var(--color-secondary-700);
+		margin-top: 0;
+		margin-bottom: var(--space-3);
+	}
+
+	.practice-card p {
+		font-weight: 600;
+		margin-bottom: var(--space-2);
+		margin-top: var(--space-3);
+		color: var(--color-gray-800);
+	}
+
+	.practice-card p:first-of-type {
+		margin-top: 0;
+	}
+
+	.practice-card ul {
+		margin-bottom: var(--space-3);
+		padding-left: var(--space-5);
+	}
+
+	.practice-card ul:last-child {
+		margin-bottom: 0;
+	}
+
+	.practice-card li {
+		margin-bottom: var(--space-2);
+		line-height: var(--leading-relaxed);
+		font-size: var(--text-sm);
+	}
+
+	.troubleshooting {
+		display: grid;
+		gap: var(--space-4);
+		margin: var(--space-6) 0;
+	}
+
+	.issue-card {
+		background-color: var(--color-gray-50);
+		border-left: 4px solid var(--color-primary-500);
+		padding: var(--space-4);
+		border-radius: var(--radius-base);
+	}
+
+	.issue-card h3 {
+		font-size: var(--text-lg);
+		color: var(--color-gray-900);
+		margin-bottom: var(--space-2);
+		margin-top: 0;
+	}
+
+	.issue-card p, .issue-card ul {
+		margin-bottom: var(--space-2);
+		color: var(--color-gray-700);
+	}
+
+	.issue-card ul {
+		padding-left: var(--space-5);
+	}
+
+	.issue-card li {
+		margin-bottom: var(--space-1);
+	}
+
+	.comparison {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-6);
+		margin: var(--space-6) 0;
+	}
+
+	@media (min-width: 768px) {
+		.comparison {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	.option {
+		background-color: var(--color-gray-50);
+		border-radius: var(--radius-lg);
+		padding: var(--space-6);
+		border: 2px solid var(--color-gray-200);
+	}
+
+	.option h3 {
+		color: var(--color-primary-700);
+		margin-top: 0;
+		margin-bottom: var(--space-4);
+		text-align: center;
+	}
+
+	.option h4 {
+		font-size: var(--text-base);
+		margin-top: var(--space-4);
+		margin-bottom: var(--space-2);
+	}
+
+	.option h4:first-of-type {
+		margin-top: 0;
+	}
+
+	.option ul {
+		margin: 0 0 var(--space-3) 0;
+		padding-left: var(--space-5);
+	}
+
+	.option li {
+		margin-bottom: var(--space-1);
+		font-size: var(--text-sm);
+		line-height: var(--leading-relaxed);
+	}
+
+	.next-steps-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-4);
+		margin: var(--space-6) 0;
+	}
+
+	@media (min-width: 768px) {
+		.next-steps-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	.next-step-card {
+		background-color: white;
+		border: 2px solid var(--color-gray-200);
+		border-radius: var(--radius-lg);
+		padding: var(--space-5);
+		text-decoration: none;
+		transition: all var(--transition-base);
+		display: block;
+	}
+
+	.next-step-card:hover {
+		border-color: var(--color-primary-400);
+		box-shadow: var(--shadow-lg);
+		transform: translateY(-2px);
+	}
+
+	.next-step-card h3 {
+		font-size: var(--text-lg);
+		color: var(--color-gray-900);
+		margin-top: 0;
+		margin-bottom: var(--space-2);
+	}
+
+	.next-step-card p {
+		color: var(--color-gray-600);
+		margin: 0;
+		font-size: var(--text-sm);
+	}
+</style>

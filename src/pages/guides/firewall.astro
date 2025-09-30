@@ -1,0 +1,568 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import Alert from '../../components/Alert.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+
+const breadcrumbItems = [
+	{ label: 'Home', href: '/' },
+	{ label: 'Protection Methods', href: '/methods' },
+	{ label: 'Firewall Setup', href: '/guides/firewall' }
+];
+---
+
+<GuideLayout
+	title="Advanced Firewall Setup for Network Protection"
+	description="Advanced guide to using firewalls for granular network protection including hardware firewalls, pfSense, and software firewall configuration."
+	difficulty="advanced"
+	timeEstimate="1-2 hours"
+	prerequisites={[
+		'Strong technical background recommended',
+		'Understanding of networking concepts',
+		'Dedicated hardware (for pfSense/OPNsense) or existing router',
+		'Time for learning and configuration'
+	]}
+>
+	<Breadcrumb slot="breadcrumb" items={breadcrumbItems} />
+
+	<section>
+		<h2>Firewall-Based Protection Overview</h2>
+		<p>
+			Firewalls provide the most granular and powerful network-level control available. While routers offer basic parental controls, dedicated firewall solutions (hardware or software) enable advanced filtering, deep packet inspection, network segmentation, and virtually bypass-proof protection.
+		</p>
+
+		<Alert type="warning">
+			<strong>Advanced Level:</strong> This guide is for technically proficient users. Most families should start with simpler solutions like DNS filtering and router parental controls before considering firewall-based approaches.
+		</Alert>
+	</section>
+
+	<section>
+		<h2>🔥 Types of Firewalls</h2>
+
+		<div class="firewall-types">
+			<div class="type-card">
+				<h3>Hardware Firewalls</h3>
+				<p><strong>Examples:</strong> Dedicated firewall appliance, Firewalla, Protectli box with pfSense</p>
+				<ul>
+					<li>Separate physical device between modem and network</li>
+					<li>Most powerful and reliable</li>
+					<li>Can't be bypassed from client devices</li>
+					<li>Requires investment ($100-500+)</li>
+				</ul>
+				<p><strong>Best for:</strong> Tech-savvy families wanting maximum control</p>
+			</div>
+
+			<div class="type-card">
+				<h3>Software Firewalls (pfSense/OPNsense)</h3>
+				<p><strong>Free, open-source router/firewall OS</strong></p>
+				<ul>
+					<li>Install on old computer or dedicated hardware</li>
+					<li>Extremely powerful and flexible</li>
+					<li>Steep learning curve</li>
+					<li>Active community support</li>
+				</ul>
+				<p><strong>Best for:</strong> Technical users, home lab enthusiasts, ultimate control</p>
+			</div>
+
+			<div class="type-card">
+				<h3>Router-Based Firewalls</h3>
+				<p><strong>Built into existing router</strong></p>
+				<ul>
+					<li>Basic firewall features included</li>
+					<li>No additional hardware needed</li>
+					<li>Limited compared to dedicated solutions</li>
+					<li>Covered in our <a href="/guides/router-config">Router Configuration Guide</a></li>
+				</ul>
+				<p><strong>Best for:</strong> Most families (start here)</p>
+			</div>
+
+			<div class="type-card">
+				<h3>Host-Based Firewalls</h3>
+				<p><strong>Windows Defender, macOS Firewall, etc.</strong></p>
+				<ul>
+					<li>Runs on individual devices</li>
+					<li>Protects that device only</li>
+					<li>Can be disabled by user</li>
+					<li>Good as secondary layer</li>
+				</ul>
+				<p><strong>Best for:</strong> Additional device-level protection</p>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<h2>🛠️ pfSense/OPNsense Setup Overview</h2>
+
+		<Alert type="info">
+			<strong>Note:</strong> This is a high-level overview. Full pfSense setup requires multiple hours and technical knowledge. Consult official pfSense documentation for complete instructions.
+		</Alert>
+
+		<h3>Hardware Requirements</h3>
+		<ul>
+			<li>Dedicated computer (can be old PC or mini PC)</li>
+			<li>Minimum: 2 network ports (WAN and LAN)</li>
+			<li>2GB+ RAM recommended</li>
+			<li>8GB+ storage</li>
+		</ul>
+
+		<h3>Basic Setup Steps</h3>
+		<ol>
+			<li>Download pfSense or OPNsense ISO</li>
+			<li>Create bootable USB installer</li>
+			<li>Install on dedicated hardware</li>
+			<li>Configure WAN (internet) and LAN (network) interfaces</li>
+			<li>Access web interface (typically 192.168.1.1)</li>
+			<li>Complete setup wizard</li>
+			<li>Update to latest version</li>
+		</ol>
+
+		<h3>Key Configuration for Parental Controls</h3>
+
+		<h4>1. DNS Filtering</h4>
+		<ul>
+			<li>System → General Setup → DNS Servers</li>
+			<li>Add filtering DNS (CleanBrowsing, OpenDNS, etc.)</li>
+			<li>Enable DNS Resolver or DNS Forwarder</li>
+			<li>Force all clients to use firewall DNS (prevent bypass)</li>
+		</ul>
+
+		<h4>2. Firewall Rules by Device/Network</h4>
+		<ul>
+			<li>Create firewall rules per IP or subnet</li>
+			<li>Block specific ports (e.g., VPN ports to prevent bypassing)</li>
+			<li>Allow/deny specific websites or services</li>
+			<li>Schedule rules (time-based blocking)</li>
+		</ul>
+
+		<h4>3. Suricata/Snort (IDS/IPS)</h4>
+		<ul>
+			<li>Install Suricata package</li>
+			<li>Enable threat detection</li>
+			<li>Block malicious traffic automatically</li>
+			<li>Monitor for concerning patterns</li>
+		</ul>
+
+		<h4>4. pfBlockerNG</h4>
+		<ul>
+			<li>Powerful blocking package</li>
+			<li>Subscribe to threat feeds and blocklists</li>
+			<li>Block ads, trackers, malware, adult content</li>
+			<li>Custom whitelist/blacklist management</li>
+		</ul>
+
+		<h4>5. Squid Proxy + SquidGuard</h4>
+		<ul>
+			<li>Web proxy with content filtering</li>
+			<li>Category-based filtering (adult, social media, gaming, etc.)</li>
+			<li>URL blacklists and whitelists</li>
+			<li>HTTPS filtering (requires SSL interception setup)</li>
+		</ul>
+
+		<h4>6. Captive Portal</h4>
+		<ul>
+			<li>Require authentication before internet access</li>
+			<li>Different access policies per user</li>
+			<li>Time-based vouchers</li>
+			<li>Usage monitoring</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>🏷️ Network Segmentation Strategy</h2>
+
+		<h3>VLAN Setup for Family Networks</h3>
+
+		<div class="vlan-strategy">
+			<div class="vlan-card">
+				<h4>VLAN 1: Admin Network</h4>
+				<ul>
+					<li>Parent devices, servers, NAS</li>
+					<li>Full internet access</li>
+					<li>No filtering</li>
+					<li>Management access to firewall</li>
+				</ul>
+			</div>
+
+			<div class="vlan-card">
+				<h4>VLAN 10: Kids Network</h4>
+				<ul>
+					<li>Children's devices</li>
+					<li>Strict DNS filtering</li>
+					<li>Blocked VPN ports</li>
+					<li>Time-based access rules</li>
+					<li>No access to other VLANs</li>
+				</ul>
+			</div>
+
+			<div class="vlan-card">
+				<h4>VLAN 20: IoT/Smart Devices</h4>
+				<ul>
+					<li>Smart TVs, gaming consoles, IoT devices</li>
+					<li>Medium filtering</li>
+					<li>Isolated from other networks</li>
+					<li>Limited bandwidth</li>
+				</ul>
+			</div>
+
+			<div class="vlan-card">
+				<h4>VLAN 99: Guest Network</h4>
+				<ul>
+					<li>Visitor devices</li>
+					<li>Internet-only access</li>
+					<li>No LAN access</li>
+					<li>Bandwidth limits</li>
+				</ul>
+			</div>
+		</div>
+
+		<p><strong>Benefits:</strong></p>
+		<ul>
+			<li>Different rules for different networks</li>
+			<li>Enhanced security through isolation</li>
+			<li>Easier monitoring and management</li>
+			<li>Children can't access parent devices</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>🚫 Advanced Bypass Prevention</h2>
+
+		<h3>Blocking VPN and Proxy Services</h3>
+		<ul>
+			<li>Block common VPN ports (UDP 500, 4500, 1194; TCP 443 selectively, 1723)</li>
+			<li>Use pfBlockerNG to block known VPN/proxy IPs</li>
+			<li>Deep packet inspection (DPI) to detect VPN traffic</li>
+			<li>Block DNS-over-HTTPS (DoH) servers to prevent DNS bypass</li>
+		</ul>
+
+		<Alert type="warning">
+			<strong>Caution:</strong> Blocking VPNs may interfere with legitimate uses (work VPNs, privacy tools). Use targeted blocking for children's network only.
+		</Alert>
+
+		<h3>Preventing DNS Bypass</h3>
+		<ol>
+			<li>Create firewall rule: Block all outbound traffic to port 53 (DNS) except to firewall</li>
+			<li>Force all clients to use firewall's DNS resolver</li>
+			<li>Block DNS-over-HTTPS (DoH) domains (cloudflare-dns.com, dns.google, etc.)</li>
+			<li>Block DNS-over-TLS (DoT) port 853</li>
+		</ol>
+
+		<h3>MAC Address Filtering</h3>
+		<ul>
+			<li>Create whitelist of known devices</li>
+			<li>Block unknown MAC addresses</li>
+			<li>Prevents unauthorized devices from connecting</li>
+			<li>Note: MAC addresses can be spoofed (not foolproof)</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>⚖️ Pros & Cons</h2>
+
+		<div class="pros-cons">
+			<div class="pros">
+				<h3>✅ Advantages</h3>
+				<ul>
+					<li>Most powerful and comprehensive protection</li>
+					<li>Extremely difficult to bypass when configured properly</li>
+					<li>Granular control per device/network</li>
+					<li>Deep packet inspection</li>
+					<li>Network segmentation for security</li>
+					<li>Free software options (pfSense/OPNsense)</li>
+					<li>Detailed logging and monitoring</li>
+					<li>Can block VPNs and proxies</li>
+					<li>Professional-grade solution</li>
+				</ul>
+			</div>
+			<div class="cons">
+				<h3>❌ Limitations</h3>
+				<ul>
+					<li>Very steep learning curve</li>
+					<li>Time-intensive setup and maintenance</li>
+					<li>Requires dedicated hardware or powerful router</li>
+					<li>Can break legitimate services if misconfigured</li>
+					<li>Overkill for most families</li>
+					<li>Requires ongoing management</li>
+					<li>Family members may resist "enterprise" controls</li>
+					<li>Single point of failure (if firewall fails)</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<h2>🎯 Should You Use a Firewall?</h2>
+
+		<div class="decision-guide">
+			<div class="scenario">
+				<h3>✅ Good Fit If You:</h3>
+				<ul>
+					<li>Have strong networking knowledge</li>
+					<li>Enjoy tinkering with technology</li>
+					<li>Need maximum control and security</li>
+					<li>Have tech-savvy children who bypass simpler controls</li>
+					<li>Want to learn advanced networking</li>
+					<li>Need network segmentation for security</li>
+					<li>Have time for setup and maintenance</li>
+				</ul>
+			</div>
+
+			<div class="scenario">
+				<h3>❌ Not Recommended If You:</h3>
+				<ul>
+					<li>Are not technically inclined</li>
+					<li>Want quick, simple solution</li>
+					<li>Don't have spare hardware</li>
+					<li>Have young children (simpler solutions work fine)</li>
+					<li>Don't want to maintain complex system</li>
+					<li>Need vendor support</li>
+					<li>Want plug-and-play solution</li>
+				</ul>
+			</div>
+		</div>
+
+		<Alert type="info">
+			<strong>Recommendation:</strong> Start with simpler solutions (DNS filtering + device controls + router parental controls). Only move to firewall-based solutions if you have the technical ability and specific need for advanced features.
+		</Alert>
+	</section>
+
+	<section slot="next-steps">
+		<h2>🎯 Next Steps</h2>
+
+		<div class="next-steps-grid">
+			<a href="/guides/router-config" class="next-step-card">
+				<h3>🔐 Router Configuration</h3>
+				<p>Start with built-in router controls first</p>
+			</a>
+
+			<a href="/guides/dns-filtering" class="next-step-card">
+				<h3>🌐 DNS Filtering</h3>
+				<p>Effective and much simpler than firewalls</p>
+			</a>
+
+			<a href="/guides/guest-networks" class="next-step-card">
+				<h3>📡 Guest Networks</h3>
+				<p>Network segmentation without firewall complexity</p>
+			</a>
+
+			<a href="/methods" class="next-step-card">
+				<h3>📚 All Methods</h3>
+				<p>Explore simpler protection options first</p>
+			</a>
+		</div>
+
+		<Alert type="success">
+			<strong>Remember:</strong> The best internet safety solution is one you'll actually maintain. A simple, working system is better than a complex, abandoned one.
+		</Alert>
+	</section>
+</GuideLayout>
+
+<style>
+	.firewall-types {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-6);
+		margin: var(--space-6) 0;
+	}
+
+	@media (min-width: 768px) {
+		.firewall-types {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	.type-card {
+		background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-secondary-50) 100%);
+		border: 2px solid var(--color-primary-200);
+		border-radius: var(--radius-lg);
+		padding: var(--space-5);
+	}
+
+	.type-card h3 {
+		margin-top: 0;
+		margin-bottom: var(--space-2);
+		color: var(--color-primary-700);
+	}
+
+	.type-card p {
+		margin-bottom: var(--space-2);
+		line-height: var(--leading-relaxed);
+	}
+
+	.type-card ul {
+		margin: var(--space-2) 0;
+		padding-left: var(--space-5);
+	}
+
+	.type-card li {
+		margin-bottom: var(--space-1);
+		line-height: var(--leading-relaxed);
+	}
+
+	.vlan-strategy {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-4);
+		margin: var(--space-6) 0;
+	}
+
+	@media (min-width: 768px) {
+		.vlan-strategy {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	.vlan-card {
+		background-color: var(--color-gray-50);
+		border: 2px solid var(--color-secondary-200);
+		border-radius: var(--radius-lg);
+		padding: var(--space-4);
+	}
+
+	.vlan-card h4 {
+		margin-top: 0;
+		margin-bottom: var(--space-3);
+		color: var(--color-secondary-700);
+	}
+
+	.vlan-card ul {
+		margin: 0;
+		padding-left: var(--space-5);
+	}
+
+	.vlan-card li {
+		margin-bottom: var(--space-1);
+		font-size: var(--text-sm);
+		line-height: var(--leading-relaxed);
+	}
+
+	.decision-guide {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-6);
+		margin: var(--space-6) 0;
+	}
+
+	@media (min-width: 768px) {
+		.decision-guide {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	.scenario {
+		background-color: var(--color-gray-50);
+		border-radius: var(--radius-lg);
+		padding: var(--space-6);
+	}
+
+	.scenario:first-child {
+		border: 2px solid var(--color-secondary-300);
+	}
+
+	.scenario:last-child {
+		border: 2px solid #fbbf24;
+	}
+
+	.scenario h3 {
+		margin-top: 0;
+		margin-bottom: var(--space-4);
+	}
+
+	.scenario ul {
+		margin: 0;
+		padding-left: var(--space-5);
+	}
+
+	.scenario li {
+		margin-bottom: var(--space-2);
+		line-height: var(--leading-relaxed);
+	}
+
+	.pros-cons {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-6);
+		margin: var(--space-6) 0;
+	}
+
+	@media (min-width: 768px) {
+		.pros-cons {
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	.pros, .cons {
+		background-color: var(--color-gray-50);
+		border-radius: var(--radius-lg);
+		padding: var(--space-6);
+	}
+
+	.pros {
+		border: 2px solid var(--color-secondary-300);
+	}
+
+	.cons {
+		border: 2px solid #fbbf24;
+	}
+
+	.pros h3 {
+		color: var(--color-secondary-700);
+		margin-top: 0;
+	}
+
+	.cons h3 {
+		color: #92400e;
+		margin-top: 0;
+	}
+
+	.pros ul, .cons ul {
+		margin: 0;
+		padding-left: var(--space-5);
+	}
+
+	.pros li, .cons li {
+		margin-bottom: var(--space-2);
+		line-height: var(--leading-relaxed);
+	}
+
+	.next-steps-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-4);
+		margin: var(--space-6) 0;
+	}
+
+	@media (min-width: 768px) {
+		.next-steps-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	.next-step-card {
+		background-color: white;
+		border: 2px solid var(--color-gray-200);
+		border-radius: var(--radius-lg);
+		padding: var(--space-5);
+		text-decoration: none;
+		transition: all var(--transition-base);
+		display: block;
+	}
+
+	.next-step-card:hover {
+		border-color: var(--color-primary-400);
+		box-shadow: var(--shadow-lg);
+		transform: translateY(-2px);
+	}
+
+	.next-step-card h3 {
+		font-size: var(--text-lg);
+		color: var(--color-gray-900);
+		margin-top: 0;
+		margin-bottom: var(--space-2);
+	}
+
+	.next-step-card p {
+		color: var(--color-gray-600);
+		margin: 0;
+		font-size: var(--text-sm);
+	}
+</style>
