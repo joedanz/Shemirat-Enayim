@@ -43,12 +43,19 @@ const currentYear = new Date().getFullYear();
 					<li><a href="/about">About Us</a></li>
 					<li><a href="/contact">Contact</a></li>
 					<li><a href="/faq">FAQ</a></li>
+					<li><a href="/privacy">Privacy Policy</a></li>
+					<li><a href="/terms">Terms of Service</a></li>
 				</ul>
 			</div>
 		</div>
 
 		<div class="footer-bottom">
 			<p>&copy; {currentYear} Shemirat Enayim. All rights reserved.</p>
+			<p class="trademarks">
+				Product names and trademarks are property of their respective owners. iPhone, iPad, and macOS are trademarks of Apple Inc.
+				Windows and Xbox are trademarks of Microsoft Corporation. Android and Google are trademarks of Google LLC.
+				PlayStation is a trademark of Sony Interactive Entertainment. Nintendo and Switch are trademarks of Nintendo.
+			</p>
 		</div>
 	</div>
 </footer>
@@ -144,5 +151,15 @@ const currentYear = new Date().getFullYear();
 		color: var(--color-gray-500);
 		font-size: var(--text-sm);
 		margin: 0;
+	}
+
+	.footer-bottom .trademarks {
+		margin-top: var(--space-4);
+		font-size: var(--text-xs);
+		color: var(--color-gray-600);
+		line-height: var(--leading-relaxed);
+		max-width: 60rem;
+		margin-left: auto;
+		margin-right: auto;
 	}
 </style>
