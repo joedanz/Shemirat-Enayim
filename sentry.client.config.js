@@ -1,11 +1,14 @@
 import * as Sentry from '@sentry/astro';
 
-Sentry.init({
-	dsn: import.meta.env.PUBLIC_SENTRY_DSN,
-	environment: import.meta.env.PUBLIC_ENV || 'development',
+// Only initialize Sentry if DSN is configured
+const dsn = import.meta.env.PUBLIC_SENTRY_DSN;
+if (dsn) {
+	Sentry.init({
+		dsn,
+		environment: import.meta.env.PUBLIC_ENV || 'development',
 
-	// Only enable in production
-	enabled: import.meta.env.PUBLIC_ENV === 'production',
+		// Only enable in production
+		enabled: import.meta.env.PUBLIC_ENV === 'production',
 
 	// Performance Monitoring
 	tracesSampleRate: 1.0, // Capture 100% of transactions in production
@@ -45,4 +48,5 @@ Sentry.init({
 
 		return event;
 	},
-});
+	});
+}
