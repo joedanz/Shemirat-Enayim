@@ -11,6 +11,9 @@ interface Props {
 	timeEstimate?: string;
 	prerequisites?: string[];
 	image?: string;
+	// Analytics metadata
+	audience?: 'parents' | 'leaders' | 'individuals' | 'general';
+	category?: 'network' | 'device' | 'software' | 'education' | 'other';
 }
 
 const {
@@ -19,7 +22,9 @@ const {
 	difficulty = 'beginner',
 	timeEstimate,
 	prerequisites = [],
-	image
+	image,
+	audience = 'general',
+	category = 'other'
 } = Astro.props;
 
 const currentPath = Astro.url.pathname;
@@ -37,7 +42,14 @@ const difficultyColors = {
 };
 ---
 
-<Layout title={title} description={description} image={image}>
+<Layout
+	title={title}
+	description={description}
+	image={image}
+	pageType="guide"
+	audience={audience}
+	category={category}
+>
 	<Header currentPath={currentPath} />
 
 	<main class="guide-main">
@@ -102,6 +114,57 @@ const difficultyColors = {
 
 	<Footer />
 </Layout>
+
+<script>
+	import { trackScrollDepth, trackGuideComplete } from '../utils/analytics';
+
+	// Track scroll depth milestones
+	let scrollMilestones = {
+		25: false,
+		50: false,
+		75: false,
+		90: false
+	};
+
+	const guideName = document.title;
+	// Extract category from URL path (e.g., /guides/dns-filtering -> guides)
+	const pathParts = window.location.pathname.split('/');
+	const guideCategory = pathParts[1] || 'unknown';
+
+	function handleScroll() {
+		// Calculate scroll percentage
+		const windowHeight = window.innerHeight;
+		const documentHeight = document.documentElement.scrollHeight;
+		const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		const scrollPercentage = (scrollTop / (documentHeight - windowHeight)) * 100;
+
+		// Check and track milestones
+		Object.keys(scrollMilestones).forEach((milestone) => {
+			const milestoneNum = parseInt(milestone);
+			if (scrollPercentage >= milestoneNum && !scrollMilestones[milestoneNum]) {
+				scrollMilestones[milestoneNum] = true;
+				trackScrollDepth(guideName, milestoneNum);
+
+				// Track guide completion at 90%
+				if (milestoneNum === 90) {
+					trackGuideComplete(guideName, guideCategory);
+				}
+			}
+		});
+	}
+
+	// Add scroll listener with throttling
+	let scrollTimeout: number;
+	window.addEventListener('scroll', () => {
+		if (scrollTimeout) {
+			window.cancelAnimationFrame(scrollTimeout);
+		}
+		scrollTimeout = window.requestAnimationFrame(handleScroll);
+	});
+
+	// Initial check in case page loads already scrolled
+	handleScroll();
+</script>
 
 <style>
 	.guide-main {

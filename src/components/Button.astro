@@ -4,13 +4,20 @@ interface Props {
 	variant?: 'primary' | 'secondary' | 'outline';
 	size?: 'sm' | 'md' | 'lg';
 	class?: string;
+	// Analytics tracking props (optional)
+	trackEvent?: string; // Event name to track on click
+	trackLocation?: string; // Where the button is located (e.g., "hero", "guide-end")
+	trackType?: string; // Type of CTA (e.g., "download", "contact", "guide")
 }
 
 const {
 	href,
 	variant = 'primary',
 	size = 'md',
-	class: className = ''
+	class: className = '',
+	trackEvent,
+	trackLocation,
+	trackType
 } = Astro.props;
 
 const Tag = href ? 'a' : 'button';
@@ -19,9 +26,31 @@ const Tag = href ? 'a' : 'button';
 <Tag
 	href={href}
 	class:list={['btn', `btn-${variant}`, `btn-${size}`, className]}
+	data-track-event={trackEvent}
+	data-track-location={trackLocation}
+	data-track-type={trackType}
 >
 	<slot />
 </Tag>
+
+{(trackEvent || trackLocation || trackType) && (
+	<script>
+		import { trackCTAClick } from '../utils/analytics';
+
+		document.querySelectorAll('[data-track-event]').forEach(button => {
+			button.addEventListener('click', function() {
+				const eventName = this.getAttribute('data-track-event');
+				const location = this.getAttribute('data-track-location');
+				const type = this.getAttribute('data-track-type');
+				const text = this.textContent?.trim() || '';
+
+				if (eventName) {
+					trackCTAClick(text, location || 'unknown', type);
+				}
+			});
+		});
+	</script>
+)}
 
 <style>
 	.btn {

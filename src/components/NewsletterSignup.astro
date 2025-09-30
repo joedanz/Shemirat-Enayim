@@ -227,6 +227,8 @@ const { variant = 'inline', class: className = '' } = Astro.props;
 </style>
 
 <script>
+	import { trackNewsletterSignup } from '../utils/analytics';
+
 	// Newsletter form submission
 	function initNewsletterForms() {
 		const forms = document.querySelectorAll('[data-newsletter-form]');
@@ -239,6 +241,9 @@ const { variant = 'inline', class: className = '' } = Astro.props;
 				const input = formElement.querySelector('input[type="email"]') as HTMLInputElement;
 				const button = formElement.querySelector('button[type="submit"]') as HTMLButtonElement;
 				const message = formElement.querySelector('[data-newsletter-message]') as HTMLElement;
+
+				// Determine source from variant class
+				const variant = formElement.closest('[class*="newsletter-"]')?.className.match(/newsletter-(inline|card|footer)/)?.[1] || 'unknown';
 
 				const email = input.value.trim();
 
@@ -257,6 +262,9 @@ const { variant = 'inline', class: className = '' } = Astro.props;
 					const success = true;
 
 					if (success) {
+						// Track newsletter signup
+						trackNewsletterSignup(variant);
+
 						// Show success message
 						message.style.display = 'block';
 						message.className = 'newsletter-message success';

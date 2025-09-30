@@ -3,16 +3,28 @@ interface Props {
 	title?: string;
 	description?: string;
 	image?: string;
+	// Analytics metadata
+	pageType?: 'home' | 'guide' | 'resource' | 'support' | 'general';
+	audience?: 'parents' | 'leaders' | 'individuals' | 'general';
+	category?: 'network' | 'device' | 'software' | 'education' | 'other';
 }
 
 const {
 	title = 'Shemirat Enayim - Protection for the Eyes',
 	description = 'Comprehensive resources for parents, religious leaders, and individuals to protect their networks from inappropriate content through content filtering and internet safety solutions.',
-	image = '/og-image.svg'
+	image = '/og-image.svg',
+	pageType = 'general',
+	audience = 'general',
+	category = 'other'
 } = Astro.props;
 
 const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefined;
 const ogImageURL = Astro.site ? new URL(image, Astro.site) : undefined;
+
+// Analytics & Monitoring Configuration
+const isProduction = import.meta.env.PUBLIC_ENV === 'production';
+const plausibleDomain = import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN;
+const sentryDSN = import.meta.env.PUBLIC_SENTRY_DSN;
 ---
 
 <!doctype html>
@@ -52,14 +64,66 @@ const ogImageURL = Astro.site ? new URL(image, Astro.site) : undefined;
 
 		<!-- Theme Color -->
 		<meta name="theme-color" content="#2563eb" />
+
+		<!-- Plausible Analytics - Privacy-respecting analytics -->
+		{isProduction && plausibleDomain && (
+			<script defer data-domain={plausibleDomain} src="https://plausible.io/js/script.js"></script>
+		)}
+
+		<!-- Sentry Error Monitoring - Client-side error tracking -->
+		{isProduction && sentryDSN && (
+			<script>
+				window.sentryConfig = {
+					dsn: "{sentryDSN}",
+					environment: "production",
+					// Sample rate: 100% of errors
+					tracesSampleRate: 1.0,
+					// Capture unhandled rejections
+					integrations: [],
+				};
+			</script>
+		)}
 	</head>
-	<body>
+	<body
+		data-page-type={pageType}
+		data-audience={audience}
+		data-category={category}
+	>
 		<noscript>
 			<div style="background: #fef08a; border: 2px solid #ca8a04; padding: 1rem; text-align: center; font-weight: 600;">
 				⚠️ Some features require JavaScript. For the best experience, please enable JavaScript in your browser.
 			</div>
 		</noscript>
 		<slot />
+
+		<!-- Performance Monitoring - Core Web Vitals tracking -->
+		{isProduction && (
+			<script>
+				import { initPerformanceMonitoring } from '../scripts/performance-monitor';
+				// Initialize performance monitoring when page loads
+				initPerformanceMonitoring();
+			</script>
+		)}
+
+		<!-- Page metadata for analytics -->
+		<script>
+			// Send custom page properties to Plausible on pageview
+			const pageType = document.body.getAttribute('data-page-type');
+			const audience = document.body.getAttribute('data-audience');
+			const category = document.body.getAttribute('data-category');
+
+			// Plausible automatically tracks pageviews, but we can send custom properties
+			// by triggering a custom event with page data
+			if (typeof window.plausible === 'function') {
+				window.plausible('pageview', {
+					props: {
+						pageType,
+						audience,
+						category
+					}
+				});
+			}
+		</script>
 	</body>
 </html>
 

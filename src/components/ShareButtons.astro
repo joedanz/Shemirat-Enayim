@@ -240,9 +240,12 @@ const encodedDescription = encodeURIComponent(description);
 </style>
 
 <script>
+	import { trackShare, trackPrint } from '../utils/analytics';
+
 	// Copy link functionality
 	function initShareButtons() {
 		const copyButtons = document.querySelectorAll('[data-share-copy]');
+		const pageTitle = document.title;
 
 		copyButtons.forEach((button) => {
 			button.addEventListener('click', async () => {
@@ -251,6 +254,9 @@ const encodedDescription = encodeURIComponent(description);
 
 				try {
 					await navigator.clipboard.writeText(url);
+
+					// Track copy link event
+					trackShare('copy', pageTitle);
 
 					// Show success message
 					if (message) {
@@ -270,6 +276,9 @@ const encodedDescription = encodeURIComponent(description);
 
 					try {
 						document.execCommand('copy');
+						// Track copy link event
+						trackShare('copy', pageTitle);
+
 						if (message) {
 							message.style.display = 'block';
 							setTimeout(() => {
@@ -284,6 +293,25 @@ const encodedDescription = encodeURIComponent(description);
 					}
 				}
 			});
+		});
+
+		// Track social media shares
+		document.querySelectorAll('.share-email').forEach(btn => {
+			btn.addEventListener('click', () => trackShare('email', pageTitle));
+		});
+		document.querySelectorAll('.share-whatsapp').forEach(btn => {
+			btn.addEventListener('click', () => trackShare('whatsapp', pageTitle));
+		});
+		document.querySelectorAll('.share-facebook').forEach(btn => {
+			btn.addEventListener('click', () => trackShare('facebook', pageTitle));
+		});
+		document.querySelectorAll('.share-twitter').forEach(btn => {
+			btn.addEventListener('click', () => trackShare('twitter', pageTitle));
+		});
+
+		// Track print
+		document.querySelectorAll('.share-print').forEach(btn => {
+			btn.addEventListener('click', () => trackPrint(pageTitle, 'guide'));
 		});
 	}
 
