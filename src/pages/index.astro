@@ -5,8 +5,16 @@ import Footer from '../components/Footer.astro';
 import Hero from '../components/Hero.astro';
 import Card from '../components/Card.astro';
 import Button from '../components/Button.astro';
+import Stats from '../components/Stats.astro';
 
 const currentPath = Astro.url.pathname;
+
+const stats = [
+	{ value: '25+', label: 'Protection Methods', icon: '🛡️' },
+	{ value: '100%', label: 'Free Resources', icon: '📚' },
+	{ value: '3', label: 'Audience Types', icon: '👥' },
+	{ value: '24/7', label: 'Available Guidance', icon: '⏰' }
+];
 ---
 
 <Layout>
@@ -31,6 +39,8 @@ const currentPath = Astro.url.pathname;
 				</div>
 			</div>
 		</section>
+
+		<Stats stats={stats} />
 
 		<section id="get-started" class="features-section">
 			<div class="container">

@@ -1,0 +1,406 @@
+---
+import ContentLayout from '../layouts/ContentLayout.astro';
+import Card from '../components/Card.astro';
+import Button from '../components/Button.astro';
+import Alert from '../components/Alert.astro';
+---
+
+<ContentLayout
+	title="Resources for Individuals"
+	description="Take control of your digital environment with personal filtering solutions and accountability tools that support your internet safety goals."
+>
+	<Fragment slot="breadcrumb">
+		<ol>
+			<li><a href="/">Home</a></li>
+			<li>Individuals</li>
+		</ol>
+	</Fragment>
+
+	<Alert type="success">
+		<strong>Taking the first step is commendable.</strong> This page will help you implement practical
+		solutions to protect yourself online while respecting your autonomy.
+	</Alert>
+
+	<section>
+		<h2>Taking Control of Your Digital Environment</h2>
+		<p>
+			Whether you're looking to establish healthier internet habits, reduce exposure to inappropriate
+			content, or create accountability for yourself, you've taken an important first step. Personal
+			filtering and accountability aren't about restriction — they're about freedom: freedom from
+			compulsive behaviors, unwanted content, and digital distractions that don't align with your values.
+		</p>
+		<p>
+			This page provides practical, respectful guidance for individuals who want to take responsibility
+			for their digital wellbeing.
+		</p>
+	</section>
+
+	<section>
+		<h2>Why Personal Filtering Matters</h2>
+		<p>
+			Personal filtering and accountability serve several important purposes:
+		</p>
+		<ul>
+			<li><strong>Prevention:</strong> Reduces accidental exposure to unwanted content</li>
+			<li><strong>Support:</strong> Provides structure when willpower alone isn't enough</li>
+			<li><strong>Accountability:</strong> Creates healthy transparency with trusted individuals</li>
+			<li><strong>Peace of mind:</strong> Removes constant decision fatigue and temptation</li>
+			<li><strong>Values alignment:</strong> Helps your actions match your principles</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Choosing Your Approach</h2>
+		<p>
+			There are three main approaches to personal internet safety. Most people benefit from combining
+			multiple approaches:
+		</p>
+
+		<div class="approach-grid">
+			<div class="approach-card">
+				<h3>🛡️ Filtering</h3>
+				<p><strong>What it does:</strong> Blocks access to inappropriate content</p>
+				<p><strong>Best for:</strong> Prevention and removing temptation</p>
+				<p><strong>Examples:</strong> DNS filters, browser extensions, software filters</p>
+				<p><strong>Strength:</strong> Works passively in the background</p>
+			</div>
+
+			<div class="approach-card">
+				<h3>👁️ Accountability</h3>
+				<p><strong>What it does:</strong> Reports your internet activity to a trusted person</p>
+				<p><strong>Best for:</strong> Creating transparency and support</p>
+				<p><strong>Examples:</strong> Covenant Eyes, Accountable2You, Truple</p>
+				<p><strong>Strength:</strong> Adds relational component and support</p>
+			</div>
+
+			<div class="approach-card">
+				<h3>⏱️ Time/Access Limits</h3>
+				<p><strong>What it does:</strong> Restricts when or how long you can access certain content</p>
+				<p><strong>Best for:</strong> Managing usage time and breaking compulsive patterns</p>
+				<p><strong>Examples:</strong> Screen Time, Cold Turkey, Freedom</p>
+				<p><strong>Strength:</strong> Addresses overuse and time management</p>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<h2>Getting Started: Step-by-Step</h2>
+
+		<h3>Step 1: Assess Your Situation</h3>
+		<p>
+			Be honest with yourself about:
+		</p>
+		<ul>
+			<li>What devices do you use? (Phone, computer, tablet, gaming console)</li>
+			<li>Where do you struggle most? (Home, work, mobile)</li>
+			<li>What times are most challenging?</li>
+			<li>Do you need filtering, accountability, or both?</li>
+		</ul>
+
+		<h3>Step 2: Start with Quick Wins</h3>
+		<p>
+			Implement easy solutions first to build momentum:
+		</p>
+		<ol>
+			<li><strong>DNS filtering on home WiFi:</strong> 15 minutes to set up, protects all home devices</li>
+			<li><strong>Browser extensions:</strong> Install filtering extensions like BlockSite or StayFocusd</li>
+			<li><strong>Built-in controls:</strong> Enable Screen Time (iOS) or Digital Wellbeing (Android)</li>
+		</ol>
+
+		<h3>Step 3: Address Your Weakest Point</h3>
+		<p>
+			Most people have one device or situation where they struggle most:
+		</p>
+		<ul>
+			<li><strong>Smartphone struggles:</strong> Prioritize phone filtering and accountability apps</li>
+			<li><strong>Late-night browsing:</strong> Implement time restrictions or screen time limits</li>
+			<li><strong>Private browsing:</strong> Use software that blocks incognito mode</li>
+		</ul>
+
+		<h3>Step 4: Add Accountability</h3>
+		<p>
+			Consider adding an accountability partner or service:
+		</p>
+		<ul>
+			<li>Choose someone trustworthy who will be supportive but honest</li>
+			<li>Set up regular check-ins (weekly or bi-weekly)</li>
+			<li>Use accountability software that sends reports automatically</li>
+		</ul>
+
+		<h3>Step 5: Make It Difficult to Undo</h3>
+		<p>
+			The best filtering systems have accountability even for the settings:
+		</p>
+		<ul>
+			<li>Have an accountability partner hold admin passwords</li>
+			<li>Use services that require waiting periods to disable filtering</li>
+			<li>Set up notifications if filtering is disabled</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Recommended Solutions</h2>
+
+		<h3>For Basic Protection (Free Options)</h3>
+		<ul>
+			<li><strong>Network DNS:</strong> CleanBrowsing or OpenDNS (free, 15-minute setup)</li>
+			<li><strong>Browser:</strong> BlockSite, StayFocusd, or LeechBlock extensions</li>
+			<li><strong>Mobile:</strong> iOS Screen Time or Android Digital Wellbeing (built-in)</li>
+		</ul>
+
+		<h3>For Comprehensive Filtering ($)</h3>
+		<ul>
+			<li><strong>Computer:</strong> Qustodio, Net Nanny, or Covenant Eyes ($10-15/month)</li>
+			<li><strong>Mobile:</strong> Covenant Eyes, Accountable2You, or Truple ($10-15/month)</li>
+			<li><strong>Network:</strong> Circle Home Plus or Firewalla ($10-20/month or one-time purchase)</li>
+		</ul>
+
+		<h3>For Maximum Accountability</h3>
+		<ul>
+			<li><strong>Best overall:</strong> Covenant Eyes (filtering + accountability + AI detection)</li>
+			<li><strong>Alternative:</strong> Accountable2You (similar features, different pricing)</li>
+			<li><strong>Budget option:</strong> Truple (accountability without filtering)</li>
+		</ul>
+
+		<Alert type="info">
+			<strong>Pro tip:</strong> The most effective solution is layered protection. Combine network-level
+			DNS filtering (catches everything) with device-specific software (adds accountability).
+		</Alert>
+	</section>
+
+	<section>
+		<h2>Device-Specific Guidance</h2>
+
+		<h3>Smartphone Protection</h3>
+		<p>
+			Phones are often the hardest to protect because they're always with you:
+		</p>
+		<ul>
+			<li>Install accountability app (Covenant Eyes, Accountable2You)</li>
+			<li>Enable built-in parental controls (Screen Time or Digital Wellbeing)</li>
+			<li>Remove social media apps if they're problematic</li>
+			<li>Set time limits on browsers and app categories</li>
+			<li>Use grayscale mode to reduce phone appeal</li>
+		</ul>
+
+		<h3>Computer Protection</h3>
+		<ul>
+			<li>Set up admin account separate from daily user account</li>
+			<li>Install filtering software (Qustodio, Net Nanny, Cold Turkey)</li>
+			<li>Use browser extensions for additional protection</li>
+			<li>Configure DNS filtering at router level</li>
+			<li>Place computer in public area of home if possible</li>
+		</ul>
+
+		<h3>Tablet Protection</h3>
+		<ul>
+			<li>Enable guided access (iOS) or screen pinning (Android)</li>
+			<li>Set up as child device using family sharing</li>
+			<li>Install accountability software</li>
+			<li>Remove problematic apps</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Building Healthy Digital Habits</h2>
+		<p>
+			Technical solutions are important, but lasting change requires habit development:
+		</p>
+
+		<h3>Replace, Don't Just Restrict</h3>
+		<ul>
+			<li>When you block time on devices, plan alternative activities</li>
+			<li>Develop offline hobbies and interests</li>
+			<li>Invest in relationships and community</li>
+		</ul>
+
+		<h3>Understand Your Triggers</h3>
+		<ul>
+			<li>Notice when you're most vulnerable (bored, stressed, lonely)</li>
+			<li>Develop healthy responses to those emotional states</li>
+			<li>Remove environmental triggers when possible</li>
+		</ul>
+
+		<h3>Celebrate Progress</h3>
+		<ul>
+			<li>Track days or weeks of success</li>
+			<li>Share victories with your accountability partner</li>
+			<li>Be patient with yourself — change takes time</li>
+		</ul>
+
+		<h3>Seek Support When Needed</h3>
+		<ul>
+			<li>Consider counseling or therapy if struggles persist</li>
+			<li>Join support groups (online or in-person)</li>
+			<li>Be honest with trusted friends or mentors</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>Common Questions</h2>
+
+		<h3>What if I live with others who don't want filtering?</h3>
+		<p>
+			Focus on device-level solutions rather than network-wide filtering. Install filtering software
+			on your personal devices, use your own user account with restrictions, and consider a separate
+			filtered WiFi network just for your devices.
+		</p>
+
+		<h3>Can I trust accountability partners with my reports?</h3>
+		<p>
+			Choose accountability partners wisely. They should be mature, trustworthy, and supportive
+			rather than judgmental. Many people choose clergy, counselors, mentors, or close friends.
+			Some accountability services allow you to see what will be reported before it's sent.
+		</p>
+
+		<h3>What if I work in tech and need unrestricted access?</h3>
+		<p>
+			Set up separate work and personal environments. Use a work computer/account without filtering,
+			but protect your personal devices. Consider accountability software that allows work-related
+			access but monitors personal browsing.
+		</p>
+
+		<h3>How do I prevent myself from disabling my own filtering?</h3>
+		<p>
+			The most effective approach is having someone else control admin passwords. Alternatively,
+			use services with built-in accountability for setting changes, waiting periods before
+			disabling, or notifications when filtering is modified.
+		</p>
+	</section>
+
+	<section>
+		<div class="cta-box">
+			<h3>Ready to Get Started?</h3>
+			<p>
+				Browse our step-by-step guides to implement filtering and accountability on your devices.
+			</p>
+			<Button href="/methods" size="lg">View All Methods</Button>
+		</div>
+	</section>
+
+	<Fragment slot="sidebar">
+		<div class="sidebar-section">
+			<h3>Quick Start Checklist</h3>
+			<ul>
+				<li>Set up DNS filtering at home</li>
+				<li>Install browser extensions</li>
+				<li>Enable device controls</li>
+				<li>Choose accountability app</li>
+				<li>Find accountability partner</li>
+			</ul>
+		</div>
+
+		<div class="sidebar-section">
+			<h3>Popular Guides</h3>
+			<ul>
+				<li><a href="/guides/covenant-eyes">Covenant Eyes Setup</a></li>
+				<li><a href="/guides/dns-personal">Personal DNS Filtering</a></li>
+				<li><a href="/guides/iphone-restrictions">iPhone Restrictions</a></li>
+			</ul>
+		</div>
+
+		<div class="sidebar-section">
+			<h3>Additional Resources</h3>
+			<ul>
+				<li><a href="/resources#accountability">Accountability Apps Comparison</a></li>
+				<li><a href="/resources#support">Support Groups</a></li>
+				<li><a href="/faq">Frequently Asked Questions</a></li>
+			</ul>
+		</div>
+	</Fragment>
+</ContentLayout>
+
+<style>
+	section {
+		margin-bottom: var(--space-12);
+	}
+
+	section h2 {
+		margin-top: var(--space-8);
+		margin-bottom: var(--space-4);
+	}
+
+	section h3 {
+		margin-top: var(--space-6);
+		margin-bottom: var(--space-3);
+		color: var(--color-primary-600);
+	}
+
+	section p {
+		margin-bottom: var(--space-4);
+		line-height: var(--leading-relaxed);
+	}
+
+	section ul,
+	section ol {
+		margin-bottom: var(--space-6);
+	}
+
+	section li {
+		margin-bottom: var(--space-3);
+		line-height: var(--leading-relaxed);
+	}
+
+	.approach-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-6);
+		margin: var(--space-6) 0;
+	}
+
+	@media (min-width: 768px) {
+		.approach-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	.approach-card {
+		background-color: var(--color-gray-50);
+		padding: var(--space-6);
+		border-radius: var(--radius-lg);
+		border: 2px solid var(--color-primary-200);
+	}
+
+	.approach-card h3 {
+		font-size: var(--text-xl);
+		margin-top: 0;
+		margin-bottom: var(--space-4);
+		color: var(--color-gray-900);
+	}
+
+	.approach-card p {
+		font-size: var(--text-sm);
+		margin-bottom: var(--space-2);
+	}
+
+	.approach-card p strong {
+		color: var(--color-gray-900);
+		display: inline-block;
+		min-width: 80px;
+	}
+
+	.cta-box {
+		background: linear-gradient(
+			135deg,
+			var(--color-primary-50) 0%,
+			var(--color-secondary-50) 100%
+		);
+		padding: var(--space-8);
+		border-radius: var(--radius-xl);
+		text-align: center;
+		margin-top: var(--space-8);
+	}
+
+	.cta-box h3 {
+		font-size: var(--text-2xl);
+		margin-top: 0;
+		margin-bottom: var(--space-3);
+		color: var(--color-gray-900);
+	}
+
+	.cta-box p {
+		font-size: var(--text-lg);
+		margin-bottom: var(--space-6);
+		color: var(--color-gray-700);
+	}
+</style>

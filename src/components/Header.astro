@@ -5,12 +5,34 @@ interface Props {
 
 const { currentPath = '/' } = Astro.props;
 
-const navItems = [
+interface NavItem {
+	label: string;
+	href: string;
+	submenu?: { label: string; href: string }[];
+}
+
+const navItems: NavItem[] = [
 	{ label: 'Parents', href: '/parents' },
 	{ label: 'Leaders', href: '/leaders' },
 	{ label: 'Individuals', href: '/individuals' },
-	{ label: 'Methods', href: '/methods' },
-	{ label: 'Resources', href: '/resources' }
+	{
+		label: 'Methods',
+		href: '/methods',
+		submenu: [
+			{ label: 'Network-Level', href: '/methods#network' },
+			{ label: 'Device Controls', href: '/methods#devices' },
+			{ label: 'Software Solutions', href: '/methods#software' }
+		]
+	},
+	{
+		label: 'Resources',
+		href: '/resources',
+		submenu: [
+			{ label: 'Setup Guides', href: '/resources#guides' },
+			{ label: 'Recommended Tools', href: '/resources#tools' },
+			{ label: 'Glossary', href: '/resources#glossary' }
+		]
+	}
 ];
 
 function isActive(href: string) {
@@ -29,14 +51,32 @@ function isActive(href: string) {
 			<nav class="desktop-nav" aria-label="Main navigation">
 				<ul>
 					{navItems.map((item) => (
-						<li>
+						<li class={item.submenu ? 'has-submenu' : ''}>
 							<a
 								href={item.href}
 								class:list={['nav-link', { active: isActive(item.href) }]}
 								aria-current={isActive(item.href) ? 'page' : undefined}
+								aria-haspopup={item.submenu ? 'true' : undefined}
+								aria-expanded={item.submenu ? 'false' : undefined}
 							>
 								{item.label}
+								{item.submenu && (
+									<svg class="dropdown-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+										<polyline points="4 6 8 10 12 6"></polyline>
+									</svg>
+								)}
 							</a>
+							{item.submenu && (
+								<ul class="submenu">
+									{item.submenu.map((subitem) => (
+										<li>
+											<a href={subitem.href} class="submenu-link">
+												{subitem.label}
+											</a>
+										</li>
+									))}
+								</ul>
+							)}
 						</li>
 					))}
 				</ul>
@@ -52,11 +92,11 @@ function isActive(href: string) {
 		</div>
 	</div>
 
-	<!-- Mobile menu (hidden by default, functionality to be added in Phase 2) -->
+	<!-- Mobile menu -->
 	<nav class="mobile-nav" aria-label="Mobile navigation" hidden>
 		<ul>
 			{navItems.map((item) => (
-				<li>
+				<li class={item.submenu ? 'has-submenu' : ''}>
 					<a
 						href={item.href}
 						class:list={['nav-link', { active: isActive(item.href) }]}
@@ -64,6 +104,28 @@ function isActive(href: string) {
 					>
 						{item.label}
 					</a>
+					{item.submenu && (
+						<>
+							<button
+								class="mobile-submenu-toggle"
+								aria-label={`Toggle ${item.label} submenu`}
+								aria-expanded="false"
+							>
+								<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+									<polyline points="6 8 10 12 14 8"></polyline>
+								</svg>
+							</button>
+							<ul class="mobile-submenu" hidden>
+								{item.submenu.map((subitem) => (
+									<li>
+										<a href={subitem.href} class="submenu-link">
+											{subitem.label}
+										</a>
+									</li>
+								))}
+							</ul>
+						</>
+					)}
 				</li>
 			))}
 		</ul>
@@ -137,10 +199,13 @@ function isActive(href: string) {
 
 	.desktop-nav li {
 		margin: 0;
+		position: relative;
 	}
 
 	.nav-link {
-		display: block;
+		display: flex;
+		align-items: center;
+		gap: var(--space-1);
 		padding: var(--space-2) var(--space-4);
 		font-size: var(--text-base);
 		font-weight: 500;
@@ -160,6 +225,56 @@ function isActive(href: string) {
 		color: var(--color-primary-600);
 		background-color: var(--color-primary-100);
 		font-weight: 600;
+	}
+
+	.dropdown-icon {
+		transition: transform var(--transition-base);
+	}
+
+	.has-submenu[aria-expanded="true"] .dropdown-icon {
+		transform: rotate(180deg);
+	}
+
+	/* Dropdown Submenu */
+	.submenu {
+		display: none;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		min-width: 200px;
+		background-color: white;
+		border: 1px solid var(--color-gray-200);
+		border-radius: var(--radius-md);
+		box-shadow: var(--shadow-lg);
+		list-style: none;
+		padding: var(--space-2);
+		margin: var(--space-1) 0 0;
+		z-index: var(--z-dropdown);
+	}
+
+	.has-submenu:hover .submenu,
+	.has-submenu:focus-within .submenu {
+		display: block;
+	}
+
+	.submenu li {
+		margin: 0;
+	}
+
+	.submenu-link {
+		display: block;
+		padding: var(--space-2) var(--space-3);
+		color: var(--color-gray-700);
+		text-decoration: none;
+		border-radius: var(--radius-base);
+		font-size: var(--text-sm);
+		transition: all var(--transition-base);
+	}
+
+	.submenu-link:hover {
+		background-color: var(--color-primary-50);
+		color: var(--color-primary-600);
+		text-decoration: none;
 	}
 
 	/* Mobile Menu Button */
@@ -226,11 +341,73 @@ function isActive(href: string) {
 		padding: var(--space-3) var(--space-4);
 		font-size: var(--text-lg);
 	}
+
+	.mobile-nav .has-submenu {
+		position: relative;
+	}
+
+	.mobile-submenu-toggle {
+		position: absolute;
+		right: var(--space-4);
+		top: 50%;
+		transform: translateY(-50%);
+		background: none;
+		border: none;
+		padding: var(--space-2);
+		color: var(--color-gray-600);
+		cursor: pointer;
+		border-radius: var(--radius-base);
+		transition: all var(--transition-base);
+	}
+
+	.mobile-submenu-toggle:hover {
+		background-color: var(--color-gray-100);
+		color: var(--color-primary-600);
+	}
+
+	.mobile-submenu-toggle svg {
+		transition: transform var(--transition-base);
+	}
+
+	.mobile-submenu-toggle[aria-expanded="true"] svg {
+		transform: rotate(180deg);
+	}
+
+	.mobile-submenu {
+		list-style: none;
+		padding: 0 0 0 var(--space-8);
+		margin: var(--space-2) 0;
+		background-color: var(--color-gray-50);
+		border-radius: var(--radius-md);
+	}
+
+	.mobile-submenu[hidden] {
+		display: none;
+	}
+
+	.mobile-submenu li {
+		margin: 0;
+	}
+
+	.mobile-submenu .submenu-link {
+		display: block;
+		padding: var(--space-3) var(--space-4);
+		color: var(--color-gray-700);
+		text-decoration: none;
+		font-size: var(--text-base);
+		transition: all var(--transition-base);
+	}
+
+	.mobile-submenu .submenu-link:hover {
+		background-color: var(--color-primary-50);
+		color: var(--color-primary-600);
+		text-decoration: none;
+	}
 </style>
 
 <script>
-	// Mobile menu toggle functionality (to be enhanced in Phase 2)
 	document.addEventListener('DOMContentLoaded', () => {
+		// Mobile menu toggle
 		const button = document.querySelector('.mobile-menu-button');
 		const mobileNav = document.querySelector('.mobile-nav');
 
@@ -241,5 +418,19 @@ function isActive(href: string) {
 				mobileNav.hidden = isExpanded;
 			});
 		}
+
+		// Mobile submenu toggles
+		const submenuToggles = document.querySelectorAll('.mobile-submenu-toggle');
+		submenuToggles.forEach((toggle) => {
+			toggle.addEventListener('click', () => {
+				const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+				toggle.setAttribute('aria-expanded', String(!isExpanded));
+
+				const submenu = toggle.nextElementSibling as HTMLElement;
+				if (submenu && submenu.classList.contains('mobile-submenu')) {
+					submenu.hidden = isExpanded;
+				}
+			});
+		});
 	});
 </script>

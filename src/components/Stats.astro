@@ -1,0 +1,122 @@
+---
+interface Stat {
+	value: string;
+	label: string;
+	icon?: string;
+}
+
+interface Props {
+	stats: Stat[];
+	class?: string;
+}
+
+const { stats, class: className = '' } = Astro.props;
+---
+
+<section class:list={['stats-section', className]}>
+	<div class="container">
+		<div class="stats-grid">
+			{stats.map((stat) => (
+				<div class="stat-card">
+					{stat.icon && (
+						<div class="stat-icon" aria-hidden="true">
+							{stat.icon}
+						</div>
+					)}
+					<div class="stat-value">{stat.value}</div>
+					<div class="stat-label">{stat.label}</div>
+				</div>
+			))}
+		</div>
+	</div>
+</section>
+
+<style>
+	.stats-section {
+		padding: var(--space-16) 0;
+		background-color: white;
+		border-top: 1px solid var(--color-gray-200);
+		border-bottom: 1px solid var(--color-gray-200);
+	}
+
+	.stats-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-8);
+	}
+
+	@media (min-width: 640px) {
+		.stats-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.stats-grid {
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+
+	.stat-card {
+		text-align: center;
+		padding: var(--space-6);
+	}
+
+	.stat-icon {
+		font-size: var(--text-5xl);
+		margin-bottom: var(--space-3);
+		line-height: 1;
+	}
+
+	.stat-value {
+		font-size: var(--text-5xl);
+		font-weight: 800;
+		color: var(--color-primary-600);
+		line-height: var(--leading-none);
+		margin-bottom: var(--space-2);
+	}
+
+	@media (min-width: 768px) {
+		.stat-value {
+			font-size: var(--text-6xl);
+		}
+	}
+
+	.stat-label {
+		font-size: var(--text-lg);
+		color: var(--color-gray-700);
+		font-weight: 500;
+	}
+
+	/* Animation on viewport entry (optional) */
+	@media (prefers-reduced-motion: no-preference) {
+		.stat-card {
+			opacity: 0;
+			transform: translateY(20px);
+			animation: fadeInUp 0.6s ease-out forwards;
+		}
+
+		.stat-card:nth-child(1) {
+			animation-delay: 0.1s;
+		}
+
+		.stat-card:nth-child(2) {
+			animation-delay: 0.2s;
+		}
+
+		.stat-card:nth-child(3) {
+			animation-delay: 0.3s;
+		}
+
+		.stat-card:nth-child(4) {
+			animation-delay: 0.4s;
+		}
+
+		@keyframes fadeInUp {
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+	}
+</style>

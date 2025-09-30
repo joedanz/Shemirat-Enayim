@@ -1,0 +1,644 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Hero from '../components/Hero.astro';
+import Card from '../components/Card.astro';
+
+const currentPath = Astro.url.pathname;
+
+// Define all protection methods by category
+const methods = {
+	network: [
+		{
+			title: 'DNS Filtering',
+			description: 'Block inappropriate content at the network level using filtering DNS servers like OpenDNS, CleanBrowsing, or NextDNS.',
+			difficulty: 'Beginner',
+			time: '15-30 min',
+			href: '/guides/dns-filtering'
+		},
+		{
+			title: 'Router Configuration',
+			description: 'Configure your home router to implement filtering, access schedules, and device management.',
+			difficulty: 'Intermediate',
+			time: '30-60 min',
+			href: '/guides/router-config'
+		},
+		{
+			title: 'Firewall Setup',
+			description: 'Advanced network protection using hardware or software firewalls for granular control.',
+			difficulty: 'Advanced',
+			time: '1-2 hours',
+			href: '/guides/firewall'
+		},
+		{
+			title: 'Guest Networks',
+			description: 'Create separate, filtered WiFi networks for children or guests with different security levels.',
+			difficulty: 'Intermediate',
+			time: '20-30 min',
+			href: '/guides/guest-networks'
+		}
+	],
+	devices: [
+		{
+			title: 'iPhone & iPad Screen Time',
+			description: 'Use Apple\'s built-in Screen Time features to filter content, limit apps, and manage usage.',
+			difficulty: 'Beginner',
+			time: '15-20 min',
+			href: '/guides/ios-screen-time'
+		},
+		{
+			title: 'Android Digital Wellbeing',
+			description: 'Configure Android\'s native parental controls and Google Family Link for comprehensive protection.',
+			difficulty: 'Beginner',
+			time: '20-30 min',
+			href: '/guides/android-family-link'
+		},
+		{
+			title: 'Windows Family Safety',
+			description: 'Set up Microsoft Family Safety for content filtering, screen time, and activity reporting.',
+			difficulty: 'Beginner',
+			time: '20-30 min',
+			href: '/guides/windows-family'
+		},
+		{
+			title: 'macOS Parental Controls',
+			description: 'Enable Mac\'s built-in parental controls and Screen Time features for filtering and time management.',
+			difficulty: 'Beginner',
+			time: '15-25 min',
+			href: '/guides/macos-controls'
+		},
+		{
+			title: 'Gaming Consoles',
+			description: 'Configure parental controls on PlayStation, Xbox, Nintendo Switch, and other gaming systems.',
+			difficulty: 'Beginner',
+			time: '10-20 min',
+			href: '/guides/gaming-consoles'
+		},
+		{
+			title: 'Smart TV Protection',
+			description: 'Limit and filter content on smart TVs, streaming devices, and media players.',
+			difficulty: 'Intermediate',
+			time: '15-30 min',
+			href: '/guides/smart-tv'
+		}
+	],
+	software: [
+		{
+			title: 'Content Filtering Software',
+			description: 'Comprehensive filtering applications like Qustodio, Net Nanny, or Norton Family for multi-device protection.',
+			difficulty: 'Beginner',
+			time: '30-45 min',
+			href: '/guides/filtering-software'
+		},
+		{
+			title: 'Accountability Software',
+			description: 'Monitoring and accountability tools like Covenant Eyes, Accountable2You, or Truple for transparency.',
+			difficulty: 'Beginner',
+			time: '20-30 min',
+			href: '/guides/accountability-apps'
+		},
+		{
+			title: 'Browser Extensions',
+			description: 'Lightweight filtering and productivity extensions for Chrome, Firefox, Safari, and Edge.',
+			difficulty: 'Beginner',
+			time: '5-10 min',
+			href: '/guides/browser-extensions'
+		},
+		{
+			title: 'YouTube Restrictions',
+			description: 'Enable Restricted Mode, use YouTube Kids, or implement third-party YouTube filtering solutions.',
+			difficulty: 'Beginner',
+			time: '10-15 min',
+			href: '/guides/youtube-filtering'
+		},
+		{
+			title: 'Search Engine SafeSearch',
+			description: 'Enable SafeSearch on Google, Bing, DuckDuckGo, and other search engines.',
+			difficulty: 'Beginner',
+			time: '5-10 min',
+			href: '/guides/safe-search'
+		}
+	]
+};
+
+const difficultyColors: Record<string, string> = {
+	'Beginner': 'success',
+	'Intermediate': 'warning',
+	'Advanced': 'error'
+};
+---
+
+<Layout
+	title="Protection Methods - Shemirat Enayim"
+	description="Comprehensive guide to internet filtering and safety methods including DNS filtering, device controls, and software solutions."
+>
+	<Header currentPath={currentPath} />
+
+	<Hero
+		title="Protection Methods"
+		subtitle="Choose the right filtering and safety solutions for your needs"
+		align="center"
+	/>
+
+	<main class="methods-main">
+		<div class="container">
+			<section class="intro-section">
+				<p class="intro-text">
+					Internet safety works best with a layered approach. Combine network-level protection
+					(affects all devices) with device-specific controls (targeted protection) and software
+					solutions (additional features and accountability).
+				</p>
+			</section>
+
+			<!-- Network-Level Protection -->
+			<section id="network" class="methods-category">
+				<div class="category-header">
+					<div class="category-icon">🌐</div>
+					<div>
+						<h2>Network-Level Protection</h2>
+						<p class="category-description">
+							Filter content at the router or ISP level to protect all devices on your network.
+							Best for: Baseline protection, covering all family devices automatically.
+						</p>
+					</div>
+				</div>
+
+				<div class="methods-grid">
+					{methods.network.map((method) => (
+						<div class="method-card">
+							<h3><a href={method.href}>{method.title}</a></h3>
+							<p>{method.description}</p>
+							<div class="method-meta">
+								<span class={`difficulty ${difficultyColors[method.difficulty]}`}>
+									{method.difficulty}
+								</span>
+								<span class="time">⏱️ {method.time}</span>
+							</div>
+							<a href={method.href} class="method-link">View Guide →</a>
+						</div>
+					))}
+				</div>
+			</section>
+
+			<!-- Device-Level Protection -->
+			<section id="devices" class="methods-category">
+				<div class="category-header">
+					<div class="category-icon">📱</div>
+					<div>
+						<h2>Device-Level Controls</h2>
+						<p class="category-description">
+							Use built-in parental controls and features on phones, computers, and other devices.
+							Best for: Specific device protection, especially mobile devices that leave the house.
+						</p>
+					</div>
+				</div>
+
+				<div class="methods-grid">
+					{methods.devices.map((method) => (
+						<div class="method-card">
+							<h3><a href={method.href}>{method.title}</a></h3>
+							<p>{method.description}</p>
+							<div class="method-meta">
+								<span class={`difficulty ${difficultyColors[method.difficulty]}`}>
+									{method.difficulty}
+								</span>
+								<span class="time">⏱️ {method.time}</span>
+							</div>
+							<a href={method.href} class="method-link">View Guide →</a>
+						</div>
+					))}
+				</div>
+			</section>
+
+			<!-- Software Solutions -->
+			<section id="software" class="methods-category">
+				<div class="category-header">
+					<div class="category-icon">💻</div>
+					<div>
+						<h2>Software Solutions</h2>
+						<p class="category-description">
+							Third-party applications that provide filtering, monitoring, or accountability features.
+							Best for: Additional protection layers, accountability, and detailed reporting.
+						</p>
+					</div>
+				</div>
+
+				<div class="methods-grid">
+					{methods.software.map((method) => (
+						<div class="method-card">
+							<h3><a href={method.href}>{method.title}</a></h3>
+							<p>{method.description}</p>
+							<div class="method-meta">
+								<span class={`difficulty ${difficultyColors[method.difficulty]}`}>
+									{method.difficulty}
+								</span>
+								<span class="time">⏱️ {method.time}</span>
+							</div>
+							<a href={method.href} class="method-link">View Guide →</a>
+						</div>
+					))}
+				</div>
+			</section>
+
+			<!-- Recommended Combinations -->
+			<section class="combinations-section">
+				<h2>Recommended Combinations</h2>
+				<p>
+					For maximum effectiveness, combine multiple methods. Here are proven approaches:
+				</p>
+
+				<div class="combinations-grid">
+					<div class="combination-card">
+						<h3>🏠 Basic Family Protection</h3>
+						<ul>
+							<li><strong>Network:</strong> DNS filtering (OpenDNS or CleanBrowsing)</li>
+							<li><strong>Devices:</strong> Built-in parental controls on each device</li>
+						</ul>
+						<p class="combo-note">
+							<strong>Cost:</strong> Free | <strong>Time:</strong> 1-2 hours total
+						</p>
+					</div>
+
+					<div class="combination-card">
+						<h3>🛡️ Comprehensive Protection</h3>
+						<ul>
+							<li><strong>Network:</strong> DNS filtering + router-level controls</li>
+							<li><strong>Devices:</strong> Device parental controls</li>
+							<li><strong>Software:</strong> Filtering software (Qustodio or Net Nanny)</li>
+						</ul>
+						<p class="combo-note">
+							<strong>Cost:</strong> $10-15/month | <strong>Time:</strong> 3-4 hours setup
+						</p>
+					</div>
+
+					<div class="combination-card">
+						<h3>👤 Individual Accountability</h3>
+						<ul>
+							<li><strong>Network:</strong> Personal DNS filtering</li>
+							<li><strong>Devices:</strong> Self-imposed restrictions</li>
+							<li><strong>Software:</strong> Accountability app (Covenant Eyes or Accountable2You)</li>
+						</ul>
+						<p class="combo-note">
+							<strong>Cost:</strong> $10-15/month | <strong>Time:</strong> 1-2 hours setup
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- Comparison Table -->
+			<section class="comparison-section">
+				<h2>Quick Comparison: Network vs Device vs Software</h2>
+				<div class="comparison-table-wrapper">
+					<table class="comparison-table">
+						<thead>
+							<tr>
+								<th>Feature</th>
+								<th>Network-Level</th>
+								<th>Device-Level</th>
+								<th>Software</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Protects all devices</td>
+								<td class="check">✓</td>
+								<td class="cross">✗</td>
+								<td class="check">✓*</td>
+							</tr>
+							<tr>
+								<td>Works outside home</td>
+								<td class="cross">✗</td>
+								<td class="check">✓</td>
+								<td class="check">✓</td>
+							</tr>
+							<tr>
+								<td>Free options available</td>
+								<td class="check">✓</td>
+								<td class="check">✓</td>
+								<td class="partial">Limited</td>
+							</tr>
+							<tr>
+								<td>Easy to set up</td>
+								<td class="check">✓</td>
+								<td class="check">✓</td>
+								<td class="partial">Varies</td>
+							</tr>
+							<tr>
+								<td>Detailed reporting</td>
+								<td class="partial">Basic</td>
+								<td class="partial">Basic</td>
+								<td class="check">✓</td>
+							</tr>
+							<tr>
+								<td>Time management</td>
+								<td class="partial">Limited</td>
+								<td class="check">✓</td>
+								<td class="check">✓</td>
+							</tr>
+							<tr>
+								<td>App control</td>
+								<td class="cross">✗</td>
+								<td class="check">✓</td>
+								<td class="check">✓</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<p class="table-note">
+					* With multi-device license
+				</p>
+			</section>
+		</div>
+	</main>
+
+	<Footer />
+</Layout>
+
+<style>
+	.methods-main {
+		flex: 1;
+		padding: var(--space-8) 0;
+	}
+
+	.intro-section {
+		text-align: center;
+		max-width: 48rem;
+		margin: 0 auto var(--space-16);
+	}
+
+	.intro-text {
+		font-size: var(--text-xl);
+		color: var(--color-gray-700);
+		line-height: var(--leading-relaxed);
+	}
+
+	/* Category Sections */
+	.methods-category {
+		margin-bottom: var(--space-20);
+		scroll-margin-top: var(--space-20);
+	}
+
+	.category-header {
+		display: flex;
+		align-items: flex-start;
+		gap: var(--space-4);
+		margin-bottom: var(--space-8);
+	}
+
+	.category-icon {
+		font-size: var(--text-5xl);
+		line-height: 1;
+	}
+
+	.category-header h2 {
+		margin-bottom: var(--space-2);
+	}
+
+	.category-description {
+		font-size: var(--text-lg);
+		color: var(--color-gray-600);
+		line-height: var(--leading-relaxed);
+	}
+
+	/* Methods Grid */
+	.methods-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-6);
+	}
+
+	@media (min-width: 768px) {
+		.methods-grid {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.methods-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	.method-card {
+		background-color: white;
+		border: 2px solid var(--color-gray-200);
+		border-radius: var(--radius-xl);
+		padding: var(--space-6);
+		display: flex;
+		flex-direction: column;
+		transition: all var(--transition-base);
+	}
+
+	.method-card:hover {
+		border-color: var(--color-primary-300);
+		box-shadow: var(--shadow-lg);
+		transform: translateY(-2px);
+	}
+
+	.method-card h3 {
+		font-size: var(--text-xl);
+		margin-bottom: var(--space-3);
+	}
+
+	.method-card h3 a {
+		color: var(--color-gray-900);
+		text-decoration: none;
+	}
+
+	.method-card h3 a:hover {
+		color: var(--color-primary-600);
+	}
+
+	.method-card p {
+		flex: 1;
+		font-size: var(--text-base);
+		color: var(--color-gray-700);
+		line-height: var(--leading-relaxed);
+		margin-bottom: var(--space-4);
+	}
+
+	.method-meta {
+		display: flex;
+		gap: var(--space-3);
+		margin-bottom: var(--space-4);
+		flex-wrap: wrap;
+	}
+
+	.difficulty {
+		display: inline-block;
+		padding: var(--space-1) var(--space-3);
+		border-radius: var(--radius-full);
+		font-size: var(--text-xs);
+		font-weight: 600;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.difficulty.success {
+		background-color: var(--color-secondary-100);
+		color: var(--color-secondary-800);
+	}
+
+	.difficulty.warning {
+		background-color: #fef3c7;
+		color: #92400e;
+	}
+
+	.difficulty.error {
+		background-color: #fee2e2;
+		color: #7f1d1d;
+	}
+
+	.time {
+		display: inline-flex;
+		align-items: center;
+		gap: var(--space-1);
+		font-size: var(--text-sm);
+		color: var(--color-gray-600);
+	}
+
+	.method-link {
+		font-weight: 600;
+		color: var(--color-primary-600);
+		text-decoration: none;
+		transition: color var(--transition-base);
+	}
+
+	.method-link:hover {
+		color: var(--color-primary-700);
+	}
+
+	/* Combinations Section */
+	.combinations-section {
+		margin-bottom: var(--space-16);
+	}
+
+	.combinations-section h2 {
+		text-align: center;
+		margin-bottom: var(--space-4);
+	}
+
+	.combinations-section > p {
+		text-align: center;
+		font-size: var(--text-lg);
+		color: var(--color-gray-700);
+		margin-bottom: var(--space-8);
+	}
+
+	.combinations-grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-6);
+	}
+
+	@media (min-width: 768px) {
+		.combinations-grid {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	.combination-card {
+		background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-secondary-50) 100%);
+		border: 2px solid var(--color-primary-200);
+		border-radius: var(--radius-xl);
+		padding: var(--space-6);
+	}
+
+	.combination-card h3 {
+		font-size: var(--text-xl);
+		color: var(--color-gray-900);
+		margin-bottom: var(--space-4);
+	}
+
+	.combination-card ul {
+		margin-bottom: var(--space-4);
+		padding-left: var(--space-5);
+	}
+
+	.combination-card li {
+		margin-bottom: var(--space-2);
+		line-height: var(--leading-relaxed);
+	}
+
+	.combo-note {
+		font-size: var(--text-sm);
+		color: var(--color-gray-700);
+		padding-top: var(--space-3);
+		border-top: 1px solid var(--color-gray-300);
+		margin-bottom: 0;
+	}
+
+	/* Comparison Table */
+	.comparison-section h2 {
+		text-align: center;
+		margin-bottom: var(--space-8);
+	}
+
+	.comparison-table-wrapper {
+		overflow-x: auto;
+		margin-bottom: var(--space-4);
+	}
+
+	.comparison-table {
+		width: 100%;
+		border-collapse: collapse;
+		background-color: white;
+		border-radius: var(--radius-lg);
+		overflow: hidden;
+		box-shadow: var(--shadow-md);
+	}
+
+	.comparison-table th,
+	.comparison-table td {
+		padding: var(--space-4);
+		text-align: left;
+		border-bottom: 1px solid var(--color-gray-200);
+	}
+
+	.comparison-table th {
+		background-color: var(--color-primary-600);
+		color: white;
+		font-weight: 600;
+		font-size: var(--text-sm);
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+
+	.comparison-table tbody tr:last-child td {
+		border-bottom: none;
+	}
+
+	.comparison-table td {
+		font-size: var(--text-base);
+	}
+
+	.comparison-table td:first-child {
+		font-weight: 600;
+		color: var(--color-gray-900);
+	}
+
+	.comparison-table td.check {
+		color: var(--color-success);
+		font-size: var(--text-xl);
+		text-align: center;
+	}
+
+	.comparison-table td.cross {
+		color: var(--color-gray-400);
+		font-size: var(--text-xl);
+		text-align: center;
+	}
+
+	.comparison-table td.partial {
+		color: var(--color-gray-600);
+		font-size: var(--text-sm);
+		text-align: center;
+	}
+
+	.table-note {
+		font-size: var(--text-sm);
+		color: var(--color-gray-600);
+		font-style: italic;
+	}
+</style>

@@ -1,0 +1,340 @@
+---
+import ContentLayout from '../layouts/ContentLayout.astro';
+import Card from '../components/Card.astro';
+import Button from '../components/Button.astro';
+import Alert from '../components/Alert.astro';
+---
+
+<ContentLayout
+	title="Resources for Parents"
+	description="Comprehensive internet safety guidance for parents to protect their children online with age-appropriate filters and family strategies."
+>
+	<Fragment slot="breadcrumb">
+		<ol>
+			<li><a href="/">Home</a></li>
+			<li>Parents</li>
+		</ol>
+	</Fragment>
+
+	<Alert type="info">
+		<strong>New to internet safety?</strong> Start with our <a href="/guides/getting-started-parents">Getting Started Guide</a> for a step-by-step introduction.
+	</Alert>
+
+	<section>
+		<h2>Why Internet Safety Matters for Families</h2>
+		<p>
+			In today's digital world, children have unprecedented access to information and communication.
+			While technology offers incredible learning opportunities, it also presents risks that parents
+			need to understand and address.
+		</p>
+		<p>
+			Effective internet safety isn't just about blocking content — it's about creating a healthy
+			digital environment that combines technical protections with open communication, education,
+			and age-appropriate boundaries.
+		</p>
+	</section>
+
+	<section>
+		<h2>Getting Started: Your First Steps</h2>
+		<p>
+			Protecting your family online can feel overwhelming, but you don't have to do everything at once.
+			Start with these foundational steps:
+		</p>
+		<ol>
+			<li>
+				<strong>Assess your current situation:</strong> Make a list of all devices your children use —
+				phones, tablets, computers, gaming consoles, smart TVs.
+			</li>
+			<li>
+				<strong>Choose your protection strategy:</strong> Decide between network-level filtering (protects all devices),
+				device-level controls (protects specific devices), or a combination of both.
+			</li>
+			<li>
+				<strong>Start with the easiest wins:</strong> Enable built-in parental controls on devices and set up
+				basic DNS filtering on your home network.
+			</li>
+			<li>
+				<strong>Have age-appropriate conversations:</strong> Talk with your children about why these protections
+				exist and what healthy internet use looks like.
+			</li>
+			<li>
+				<strong>Review and adjust regularly:</strong> As your children grow and technology changes, revisit
+				your approach every few months.
+			</li>
+		</ol>
+	</section>
+
+	<section>
+		<h2>Protection by Age Group</h2>
+		<p>
+			Different ages require different approaches. Here's a general framework:
+		</p>
+
+		<div class="age-groups">
+			<div class="age-group">
+				<h3>Young Children (Ages 5-8)</h3>
+				<ul>
+					<li>Heavily restricted, curated content only</li>
+					<li>Direct supervision during all screen time</li>
+					<li>Kid-specific apps and platforms (YouTube Kids, PBS Kids)</li>
+					<li>No social media or messaging</li>
+					<li>Time limits: 1-2 hours per day maximum</li>
+				</ul>
+			</div>
+
+			<div class="age-group">
+				<h3>Preteens (Ages 9-12)</h3>
+				<ul>
+					<li>Filtered content with some educational freedom</li>
+					<li>Supervised social media (if any) with parental oversight</li>
+					<li>Check-ins before and after screen time</li>
+					<li>Gaming with age-appropriate ratings</li>
+					<li>Time limits: 2-3 hours per day with breaks</li>
+				</ul>
+			</div>
+
+			<div class="age-group">
+				<h3>Teenagers (Ages 13-17)</h3>
+				<ul>
+					<li>Filtered content with increased autonomy</li>
+					<li>Social media with clear expectations and boundaries</li>
+					<li>Open conversations about online risks and experiences</li>
+					<li>Accountability rather than just restriction</li>
+					<li>Flexible time limits based on responsibility</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<h2>Types of Protection</h2>
+		<p>
+			Modern internet safety requires a layered approach. Here are the main categories of protection:
+		</p>
+
+		<div class="protection-cards">
+			<Card
+				title="Network-Level Protection"
+				description="DNS filtering and router settings that protect all devices connected to your home WiFi."
+				href="/methods#network"
+			/>
+			<Card
+				title="Device Controls"
+				description="Built-in parental controls on phones, tablets, computers, and gaming consoles."
+				href="/methods#devices"
+			/>
+			<Card
+				title="Software Solutions"
+				description="Third-party filtering software and monitoring applications for additional protection."
+				href="/methods#software"
+			/>
+		</div>
+	</section>
+
+	<section>
+		<h2>Common Challenges and Solutions</h2>
+
+		<h3>Challenge: Kids bypassing filters</h3>
+		<p>
+			<strong>Solution:</strong> Use multiple layers of protection (network + device + app level).
+			Combine technical controls with conversations about why protections exist. Make bypassing
+			filters a serious family rule with clear consequences.
+		</p>
+
+		<h3>Challenge: Age-appropriate content varies by child</h3>
+		<p>
+			<strong>Solution:</strong> Create separate user profiles or accounts for each child with
+			age-appropriate settings. Many platforms (Windows, iOS, Android) support multiple child accounts
+			with different restriction levels.
+		</p>
+
+		<h3>Challenge: Balancing protection with trust</h3>
+		<p>
+			<strong>Solution:</strong> As children mature, gradually shift from restriction to accountability.
+			Use monitoring and accountability software that creates transparency rather than just blocking.
+			Have regular conversations about their online experiences.
+		</p>
+
+		<h3>Challenge: Different devices need different approaches</h3>
+		<p>
+			<strong>Solution:</strong> Start with network-level DNS filtering for baseline protection across
+			all devices. Then add device-specific controls for phones and tablets that leave the house.
+		</p>
+
+		<h3>Challenge: Keeping up with new apps and platforms</h3>
+		<p>
+			<strong>Solution:</strong> Establish a family rule that new apps must be approved before installation.
+			Use device management features to control app downloads. Stay informed through resources like
+			Common Sense Media.
+		</p>
+	</section>
+
+	<section>
+		<h2>Recommended Solutions for Parents</h2>
+		<p>
+			Based on ease of use, effectiveness, and family-friendliness, here are our top recommendations:
+		</p>
+
+		<h3>Best for Beginners</h3>
+		<ul>
+			<li><strong>DNS Filtering:</strong> CleanBrowsing or OpenDNS Family Shield (free, easy setup)</li>
+			<li><strong>iPhone/iPad:</strong> Built-in Screen Time controls</li>
+			<li><strong>Android:</strong> Google Family Link</li>
+			<li><strong>Windows:</strong> Microsoft Family Safety</li>
+		</ul>
+
+		<h3>Best Comprehensive Solution</h3>
+		<ul>
+			<li><strong>Network + Devices:</strong> Circle Home Plus or Bark</li>
+			<li>Provides filtering, time limits, and monitoring across all devices</li>
+			<li>Monthly subscription required but covers the whole family</li>
+		</ul>
+
+		<h3>Best for Maximum Protection</h3>
+		<ul>
+			<li>Combine DNS filtering (network level) + built-in device controls + monitoring software</li>
+			<li>Creates multiple layers that work together</li>
+			<li>More complex to set up but most effective</li>
+		</ul>
+
+		<div class="cta-box">
+			<h4>Ready to implement protection?</h4>
+			<p>Browse our step-by-step guides for your specific devices and needs.</p>
+			<Button href="/methods" size="lg">View All Protection Methods</Button>
+		</div>
+	</section>
+
+	<Fragment slot="sidebar">
+		<div class="sidebar-section">
+			<h3>Quick Links</h3>
+			<ul>
+				<li><a href="#getting-started">Getting Started</a></li>
+				<li><a href="#age-groups">Protection by Age</a></li>
+				<li><a href="#types">Types of Protection</a></li>
+				<li><a href="#challenges">Common Challenges</a></li>
+			</ul>
+		</div>
+
+		<div class="sidebar-section">
+			<h3>Popular Guides</h3>
+			<ul>
+				<li><a href="/guides/dns-setup">Setting Up DNS Filtering</a></li>
+				<li><a href="/guides/iphone-screen-time">iPhone Screen Time Setup</a></li>
+				<li><a href="/guides/android-family-link">Android Family Link</a></li>
+			</ul>
+		</div>
+
+		<div class="sidebar-section">
+			<h3>Need Help?</h3>
+			<p>
+				Can't find what you're looking for? Check our <a href="/faq">FAQ</a> or
+				<a href="/contact">contact us</a> for personalized guidance.
+			</p>
+		</div>
+	</Fragment>
+</ContentLayout>
+
+<style>
+	section {
+		margin-bottom: var(--space-12);
+	}
+
+	section h2 {
+		margin-top: var(--space-8);
+		margin-bottom: var(--space-4);
+	}
+
+	section h3 {
+		margin-top: var(--space-6);
+		margin-bottom: var(--space-3);
+		color: var(--color-primary-600);
+	}
+
+	section p {
+		margin-bottom: var(--space-4);
+		line-height: var(--leading-relaxed);
+	}
+
+	section ol,
+	section ul {
+		margin-bottom: var(--space-6);
+	}
+
+	section li {
+		margin-bottom: var(--space-3);
+		line-height: var(--leading-relaxed);
+	}
+
+	.age-groups {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-6);
+		margin: var(--space-6) 0;
+	}
+
+	@media (min-width: 768px) {
+		.age-groups {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	.age-group {
+		background-color: var(--color-gray-50);
+		padding: var(--space-6);
+		border-radius: var(--radius-lg);
+		border: 1px solid var(--color-gray-200);
+	}
+
+	.age-group h3 {
+		color: var(--color-primary-600);
+		font-size: var(--text-lg);
+		margin-top: 0;
+		margin-bottom: var(--space-4);
+	}
+
+	.age-group ul {
+		margin-bottom: 0;
+		padding-left: var(--space-5);
+	}
+
+	.age-group li {
+		font-size: var(--text-sm);
+		margin-bottom: var(--space-2);
+	}
+
+	.protection-cards {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-6);
+		margin: var(--space-6) 0;
+	}
+
+	@media (min-width: 768px) {
+		.protection-cards {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	.cta-box {
+		background: linear-gradient(
+			135deg,
+			var(--color-primary-50) 0%,
+			var(--color-secondary-50) 100%
+		);
+		padding: var(--space-8);
+		border-radius: var(--radius-xl);
+		text-align: center;
+		margin-top: var(--space-8);
+	}
+
+	.cta-box h4 {
+		font-size: var(--text-2xl);
+		margin-bottom: var(--space-3);
+	}
+
+	.cta-box p {
+		font-size: var(--text-lg);
+		margin-bottom: var(--space-6);
+		color: var(--color-gray-700);
+	}
+</style>
