@@ -1,7 +1,7 @@
 # Internet Safety Information Site - Development Plan
 
 ## Project Overview
-**Project Name:** Shemira Tenayim (Protection for Children)
+**Project Name:** Shemirat Enayim (Protection for the Eyes)
 **Purpose:** Provide comprehensive resources for parents, religious leaders, and individuals to protect their networks from inappropriate content
 **Target Audience:** Parents, religious leaders, educators, and individuals seeking content filtering solutions
 
