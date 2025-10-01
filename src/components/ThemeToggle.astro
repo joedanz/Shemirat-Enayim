@@ -1,6 +1,4 @@
 ---
-import Icon from './Icon.astro';
-
 interface Props {
 	class?: string;
 }
@@ -8,33 +6,72 @@ interface Props {
 const { class: className = '' } = Astro.props;
 ---
 
-<button
-	type="button"
-	class:list={['theme-toggle', className]}
-	data-theme-toggle
-	aria-label="Toggle high contrast mode"
-	title="Toggle high contrast mode"
->
-	<span class="theme-label">High Contrast</span>
-	<div class="toggle-switch" data-toggle-switch>
-		<div class="toggle-thumb"></div>
-	</div>
-</button>
+<div class:list={['theme-toggle', className]} data-theme-toggle>
+	<button
+		type="button"
+		class="theme-button"
+		data-theme="light"
+		aria-label="Light theme"
+		title="Light theme"
+	>
+		<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<circle cx="12" cy="12" r="5"></circle>
+			<line x1="12" y1="1" x2="12" y2="3"></line>
+			<line x1="12" y1="21" x2="12" y2="23"></line>
+			<line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+			<line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+			<line x1="1" y1="12" x2="3" y2="12"></line>
+			<line x1="21" y1="12" x2="23" y2="12"></line>
+			<line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+			<line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+		</svg>
+	</button>
+	<button
+		type="button"
+		class="theme-button"
+		data-theme="dark"
+		aria-label="Dark theme"
+		title="Dark theme"
+	>
+		<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+		</svg>
+	</button>
+	<button
+		type="button"
+		class="theme-button"
+		data-theme="system"
+		aria-label="System theme"
+		title="System theme"
+	>
+		<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+			<line x1="8" y1="21" x2="16" y2="21"></line>
+			<line x1="12" y1="17" x2="12" y2="21"></line>
+		</svg>
+	</button>
+</div>
 
 <script>
-	// High contrast theme management
-	const THEME_KEY = 'shemirat-enayim-contrast';
-	const THEME_ATTR = 'data-contrast';
+	// Theme management with light/dark/system support
+	const THEME_KEY = 'shemirat-enayim-theme';
+	const THEME_ATTR = 'data-theme';
 
-	function getStoredTheme(): string | null {
+	type Theme = 'light' | 'dark' | 'system';
+
+	function getStoredTheme(): Theme | null {
 		try {
-			return localStorage.getItem(THEME_KEY);
+			const stored = localStorage.getItem(THEME_KEY);
+			if (stored === 'light' || stored === 'dark' || stored === 'system') {
+				return stored;
+			}
+			return null;
 		} catch {
 			return null;
 		}
 	}
 
-	function setStoredTheme(theme: string): void {
+	function setStoredTheme(theme: Theme): void {
 		try {
 			localStorage.setItem(THEME_KEY, theme);
 		} catch {
@@ -42,92 +79,132 @@ const { class: className = '' } = Astro.props;
 		}
 	}
 
-	function applyTheme(theme: string): void {
-		document.documentElement.setAttribute(THEME_ATTR, theme);
+	function getSystemTheme(): 'light' | 'dark' {
+		if (typeof window !== 'undefined' && window.matchMedia) {
+			return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+		}
+		return 'light';
 	}
 
-	function toggleTheme(): void {
-		const current = document.documentElement.getAttribute(THEME_ATTR) || 'normal';
-		const newTheme = current === 'high' ? 'normal' : 'high';
-		applyTheme(newTheme);
-		setStoredTheme(newTheme);
+	function applyTheme(theme: Theme): void {
+		const effectiveTheme = theme === 'system' ? getSystemTheme() : theme;
+		document.documentElement.setAttribute(THEME_ATTR, effectiveTheme);
+
+		// Update active button state
+		document.querySelectorAll('[data-theme-toggle] .theme-button').forEach((button) => {
+			const btnTheme = button.getAttribute('data-theme');
+			if (btnTheme === theme) {
+				button.classList.add('active');
+			} else {
+				button.classList.remove('active');
+			}
+		});
 	}
 
-	// Initialize theme on page load
-	const storedTheme = getStoredTheme();
-	if (storedTheme) {
-		applyTheme(storedTheme);
+	function initTheme(): void {
+		const storedTheme = getStoredTheme();
+		const initialTheme = storedTheme || 'system';
+		applyTheme(initialTheme);
 	}
 
-	// Add click listener to toggle button
-	const toggleButton = document.querySelector('[data-theme-toggle]');
-	toggleButton?.addEventListener('click', toggleTheme);
+	function setupThemeButtons(): void {
+		document.querySelectorAll('[data-theme-toggle] .theme-button').forEach((button) => {
+			button.addEventListener('click', () => {
+				const theme = button.getAttribute('data-theme') as Theme;
+				if (theme) {
+					applyTheme(theme);
+					setStoredTheme(theme);
+				}
+			});
+		});
+	}
+
+	// Listen for system theme changes when in system mode
+	function watchSystemTheme(): void {
+		if (typeof window !== 'undefined' && window.matchMedia) {
+			const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+			mediaQuery.addEventListener('change', () => {
+				const currentTheme = getStoredTheme() || 'system';
+				if (currentTheme === 'system') {
+					applyTheme('system');
+				}
+			});
+		}
+	}
+
+	// Initialize on page load
+	document.addEventListener('DOMContentLoaded', () => {
+		initTheme();
+		setupThemeButtons();
+		watchSystemTheme();
+	});
+
+	// Re-initialize on Astro navigation
+	document.addEventListener('astro:page-load', () => {
+		initTheme();
+		setupThemeButtons();
+	});
 </script>
 
 <style>
 	.theme-toggle {
 		display: flex;
 		align-items: center;
-		gap: var(--space-3);
-		padding: var(--space-2) var(--space-3);
-		background: transparent;
-		border: 1px solid var(--color-gray-300);
+		gap: var(--space-1);
+		padding: var(--space-1);
+		background: var(--color-gray-100);
 		border-radius: var(--radius-lg);
+	}
+
+	.theme-button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		padding: var(--space-2);
+		background: transparent;
+		border: none;
+		border-radius: var(--radius-md);
 		cursor: pointer;
-		font-size: var(--text-sm);
-		color: var(--color-gray-700);
+		color: var(--color-gray-600);
 		transition: all var(--transition-base);
 	}
 
-	.theme-toggle:hover {
-		border-color: var(--color-primary-500);
-		background: var(--color-gray-50);
+	.theme-button:hover {
+		background: var(--color-gray-200);
+		color: var(--color-gray-900);
 	}
 
-	.theme-toggle:focus-visible {
+	.theme-button.active {
+		background: white;
+		color: var(--color-primary-600);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.theme-button:focus-visible {
 		outline: 2px solid var(--color-primary-500);
 		outline-offset: 2px;
 	}
 
-	.theme-label {
-		font-weight: 500;
+	.theme-button svg {
+		display: block;
 	}
 
-	.toggle-switch {
-		position: relative;
-		width: 40px;
-		height: 22px;
-		background-color: var(--color-gray-300);
-		border-radius: var(--radius-full);
-		transition: background-color var(--transition-base);
+	/* Dark theme adjustments */
+	:global([data-theme="dark"]) .theme-toggle {
+		background: var(--color-gray-800);
 	}
 
-	:global([data-contrast="high"]) .toggle-switch {
-		background-color: var(--color-primary-600);
+	:global([data-theme="dark"]) .theme-button {
+		color: var(--color-gray-400);
 	}
 
-	.toggle-thumb {
-		position: absolute;
-		top: 2px;
-		left: 2px;
-		width: 18px;
-		height: 18px;
-		background-color: white;
-		border-radius: var(--radius-full);
-		transition: transform var(--transition-base);
+	:global([data-theme="dark"]) .theme-button:hover {
+		background: var(--color-gray-700);
+		color: var(--color-gray-100);
 	}
 
-	:global([data-contrast="high"]) .toggle-thumb {
-		transform: translateX(18px);
-	}
-
-	/* High contrast mode adjustments for toggle */
-	:global([data-contrast="high"]) .theme-toggle {
-		border-color: var(--color-gray-900);
-		color: var(--color-gray-900);
-	}
-
-	:global([data-contrast="high"]) .theme-toggle:hover {
-		background: var(--color-gray-100);
+	:global([data-theme="dark"]) .theme-button.active {
+		background: var(--color-gray-900);
+		color: var(--color-primary-400);
 	}
 </style>
