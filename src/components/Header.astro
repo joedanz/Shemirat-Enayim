@@ -54,26 +54,24 @@ function isActive(href: string) {
 			<nav class="desktop-nav" aria-label="Main navigation">
 				<ul>
 					{navItems.map((item) => (
-						<li class={item.submenu ? 'has-submenu' : ''}>
+						<li class={item.submenu ? 'has-dropdown' : ''}>
 							<a
 								href={item.href}
 								class:list={['nav-link', { active: isActive(item.href) }]}
 								aria-current={isActive(item.href) ? 'page' : undefined}
-								aria-haspopup={item.submenu ? 'true' : undefined}
-								aria-expanded={item.submenu ? 'false' : undefined}
 							>
 								{item.label}
 								{item.submenu && (
-									<svg class="dropdown-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+									<svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 										<polyline points="4 6 8 10 12 6"></polyline>
 									</svg>
 								)}
 							</a>
 							{item.submenu && (
-								<ul class="submenu">
+								<ul class="dropdown">
 									{item.submenu.map((subitem) => (
 										<li>
-											<a href={subitem.href} class="submenu-link">
+											<a href={subitem.href} class="dropdown-link">
 												{subitem.label}
 											</a>
 										</li>
@@ -90,7 +88,7 @@ function isActive(href: string) {
 				<SearchBar class="header-search" />
 			</div>
 
-			<button class="mobile-menu-button" aria-label="Open menu" aria-expanded="false">
+			<button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
 				<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
 					<line x1="3" y1="12" x2="21" y2="12"></line>
 					<line x1="3" y1="6" x2="21" y2="6"></line>
@@ -104,7 +102,7 @@ function isActive(href: string) {
 	<nav class="mobile-nav" aria-label="Mobile navigation" hidden>
 		<ul>
 			{navItems.map((item) => (
-				<li class={item.submenu ? 'has-submenu' : ''}>
+				<li class={item.submenu ? 'has-dropdown' : ''}>
 					<a
 						href={item.href}
 						class:list={['nav-link', { active: isActive(item.href) }]}
@@ -115,7 +113,7 @@ function isActive(href: string) {
 					{item.submenu && (
 						<>
 							<button
-								class="mobile-submenu-toggle"
+								class="mobile-dropdown-toggle"
 								aria-label={`Toggle ${item.label} submenu`}
 								aria-expanded="false"
 							>
@@ -123,10 +121,10 @@ function isActive(href: string) {
 									<polyline points="6 8 10 12 14 8"></polyline>
 								</svg>
 							</button>
-							<ul class="mobile-submenu" hidden>
+							<ul class="mobile-dropdown" hidden>
 								{item.submenu.map((subitem) => (
 									<li>
-										<a href={subitem.href} class="submenu-link">
+										<a href={subitem.href} class="dropdown-link">
 											{subitem.label}
 										</a>
 									</li>
@@ -196,32 +194,7 @@ function isActive(href: string) {
 		}
 	}
 
-	/* Header Search */
-	.header-actions {
-		display: flex;
-		align-items: center;
-		gap: var(--space-3);
-	}
-
-	.header-theme-toggle {
-		display: none;
-	}
-
-	.header-search {
-		display: none;
-	}
-
-	@media (min-width: 768px) {
-		.header-theme-toggle {
-			display: flex;
-		}
-
-		.header-search {
-			display: block;
-		}
-	}
-
-	.desktop-nav ul {
+	.desktop-nav > ul {
 		display: flex;
 		list-style: none;
 		padding: 0;
@@ -230,7 +203,7 @@ function isActive(href: string) {
 		justify-content: flex-end;
 	}
 
-	.desktop-nav li {
+	.desktop-nav > ul > li {
 		margin: 0;
 		position: relative;
 	}
@@ -260,16 +233,12 @@ function isActive(href: string) {
 		font-weight: 600;
 	}
 
-	.dropdown-icon {
+	.chevron {
 		transition: transform var(--transition-base);
 	}
 
-	.has-submenu[aria-expanded="true"] .dropdown-icon {
-		transform: rotate(180deg);
-	}
-
-	/* Dropdown Submenu */
-	.submenu {
+	/* Dropdown Menus - HIDDEN BY DEFAULT */
+	.dropdown {
 		display: none;
 		position: absolute;
 		top: 100%;
@@ -285,16 +254,27 @@ function isActive(href: string) {
 		z-index: var(--z-dropdown);
 	}
 
-	.has-submenu:hover .submenu,
-	.has-submenu:focus-within .submenu {
+	.dropdown.show {
 		display: block;
+		animation: slideDown 0.2s ease forwards;
 	}
 
-	.submenu li {
+	@keyframes slideDown {
+		from {
+			opacity: 0;
+			transform: translateY(-10px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.dropdown li {
 		margin: 0;
 	}
 
-	.submenu-link {
+	.dropdown-link {
 		display: block;
 		padding: var(--space-2) var(--space-3);
 		color: var(--color-gray-700);
@@ -304,14 +284,39 @@ function isActive(href: string) {
 		transition: all var(--transition-base);
 	}
 
-	.submenu-link:hover {
+	.dropdown-link:hover {
 		background-color: var(--color-primary-50);
 		color: var(--color-primary-600);
 		text-decoration: none;
 	}
 
-	/* Mobile Menu Button */
-	.mobile-menu-button {
+	/* Header Actions */
+	.header-actions {
+		display: flex;
+		align-items: center;
+		gap: var(--space-3);
+	}
+
+	.header-theme-toggle {
+		display: none;
+	}
+
+	.header-search {
+		display: none;
+	}
+
+	@media (min-width: 768px) {
+		.header-theme-toggle {
+			display: flex;
+		}
+
+		.header-search {
+			display: block;
+		}
+	}
+
+	/* Mobile Menu Toggle */
+	.mobile-menu-toggle {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -324,18 +329,18 @@ function isActive(href: string) {
 		transition: all var(--transition-base);
 	}
 
-	.mobile-menu-button:hover {
+	.mobile-menu-toggle:hover {
 		background-color: var(--color-gray-100);
 		color: var(--color-primary-600);
 	}
 
-	.mobile-menu-button:focus-visible {
+	.mobile-menu-toggle:focus-visible {
 		outline: 2px solid var(--color-primary-500);
 		outline-offset: 2px;
 	}
 
 	@media (min-width: 768px) {
-		.mobile-menu-button {
+		.mobile-menu-toggle {
 			display: none;
 		}
 	}
@@ -375,11 +380,11 @@ function isActive(href: string) {
 		font-size: var(--text-lg);
 	}
 
-	.mobile-nav .has-submenu {
+	.mobile-nav .has-dropdown {
 		position: relative;
 	}
 
-	.mobile-submenu-toggle {
+	.mobile-dropdown-toggle {
 		position: absolute;
 		right: var(--space-4);
 		top: 50%;
@@ -393,20 +398,20 @@ function isActive(href: string) {
 		transition: all var(--transition-base);
 	}
 
-	.mobile-submenu-toggle:hover {
+	.mobile-dropdown-toggle:hover {
 		background-color: var(--color-gray-100);
 		color: var(--color-primary-600);
 	}
 
-	.mobile-submenu-toggle svg {
+	.mobile-dropdown-toggle svg {
 		transition: transform var(--transition-base);
 	}
 
-	.mobile-submenu-toggle[aria-expanded="true"] svg {
+	.mobile-dropdown-toggle[aria-expanded="true"] svg {
 		transform: rotate(180deg);
 	}
 
-	.mobile-submenu {
+	.mobile-dropdown {
 		list-style: none;
 		padding: 0 0 0 var(--space-8);
 		margin: var(--space-2) 0;
@@ -414,15 +419,15 @@ function isActive(href: string) {
 		border-radius: var(--radius-md);
 	}
 
-	.mobile-submenu[hidden] {
+	.mobile-dropdown[hidden] {
 		display: none;
 	}
 
-	.mobile-submenu li {
+	.mobile-dropdown li {
 		margin: 0;
 	}
 
-	.mobile-submenu .submenu-link {
+	.mobile-dropdown .dropdown-link {
 		display: block;
 		padding: var(--space-3) var(--space-4);
 		color: var(--color-gray-700);
@@ -431,7 +436,7 @@ function isActive(href: string) {
 		transition: all var(--transition-base);
 	}
 
-	.mobile-submenu .submenu-link:hover {
+	.mobile-dropdown .dropdown-link:hover {
 		background-color: var(--color-primary-50);
 		color: var(--color-primary-600);
 		text-decoration: none;
@@ -439,31 +444,80 @@ function isActive(href: string) {
 </style>
 
 <script>
-	document.addEventListener('DOMContentLoaded', () => {
-		// Mobile menu toggle
-		const button = document.querySelector('.mobile-menu-button');
+	// Desktop dropdown functionality
+	function initDesktopDropdowns() {
+		const dropdownItems = document.querySelectorAll('.desktop-nav .has-dropdown');
+
+		dropdownItems.forEach((item) => {
+			const link = item.querySelector('.nav-link');
+			const dropdown = item.querySelector('.dropdown');
+
+			if (!link || !dropdown) return;
+
+			// Click to toggle
+			link.addEventListener('click', (e) => {
+				e.preventDefault();
+
+				// Close all other dropdowns
+				document.querySelectorAll('.dropdown.show').forEach((dd) => {
+					if (dd !== dropdown) {
+						dd.classList.remove('show');
+					}
+				});
+
+				// Toggle this dropdown
+				dropdown.classList.toggle('show');
+			});
+		});
+
+		// Close dropdowns when clicking outside
+		document.addEventListener('click', (e) => {
+			const target = e.target as HTMLElement;
+			if (!target.closest('.has-dropdown')) {
+				document.querySelectorAll('.dropdown.show').forEach((dd) => {
+					dd.classList.remove('show');
+				});
+			}
+		});
+	}
+
+	// Mobile menu functionality
+	function initMobileMenu() {
+		const toggleButton = document.querySelector('.mobile-menu-toggle');
 		const mobileNav = document.querySelector('.mobile-nav');
 
-		if (button && mobileNav) {
-			button.addEventListener('click', () => {
-				const isExpanded = button.getAttribute('aria-expanded') === 'true';
-				button.setAttribute('aria-expanded', String(!isExpanded));
+		if (toggleButton && mobileNav) {
+			toggleButton.addEventListener('click', () => {
+				const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+				toggleButton.setAttribute('aria-expanded', String(!isExpanded));
 				mobileNav.hidden = isExpanded;
 			});
 		}
 
-		// Mobile submenu toggles
-		const submenuToggles = document.querySelectorAll('.mobile-submenu-toggle');
-		submenuToggles.forEach((toggle) => {
+		// Mobile dropdown toggles
+		const dropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+		dropdownToggles.forEach((toggle) => {
 			toggle.addEventListener('click', () => {
 				const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
 				toggle.setAttribute('aria-expanded', String(!isExpanded));
 
-				const submenu = toggle.nextElementSibling as HTMLElement;
-				if (submenu && submenu.classList.contains('mobile-submenu')) {
-					submenu.hidden = isExpanded;
+				const dropdown = toggle.nextElementSibling as HTMLElement;
+				if (dropdown && dropdown.classList.contains('mobile-dropdown')) {
+					dropdown.hidden = isExpanded;
 				}
 			});
 		});
+	}
+
+	// Initialize on page load
+	document.addEventListener('DOMContentLoaded', () => {
+		initDesktopDropdowns();
+		initMobileMenu();
+	});
+
+	// Re-initialize on navigation (for SPA-like behavior)
+	document.addEventListener('astro:page-load', () => {
+		initDesktopDropdowns();
+		initMobileMenu();
 	});
 </script>
