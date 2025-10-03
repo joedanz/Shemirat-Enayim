@@ -2,37 +2,45 @@
 import GuideLayout from '~/layouts/GuideLayout.astro';
 
 const metadata = {
-	title: 'Apple Screen Time: Complete Tutorial',
-	description: 'Set up comprehensive parental controls for iPhone, iPad, and Mac using Apple Screen Time, including app limits, content restrictions, downtime, and activity monitoring.',
+  title: 'Apple Screen Time: Complete Tutorial',
+  description:
+    'Set up comprehensive parental controls for iPhone, iPad, and Mac using Apple Screen Time, including app limits, content restrictions, downtime, and activity monitoring.',
 };
-
 ---
 
 <GuideLayout
-	metadata={metadata}
+  metadata={metadata}
   difficulty="beginner"
   timeEstimate="25-35 minutes"
   prerequisites={[
     'Apple ID for parent',
     'Apple ID for child (or create during setup)',
     'iPhone, iPad, or Mac running iOS 12+/macOS Catalina+',
-    'iCloud Family Sharing (set up during tutorial)'
+    'iCloud Family Sharing (set up during tutorial)',
   ]}
 >
   <section>
     <h2>⏰ What is Apple Screen Time?</h2>
 
-    <p>Apple Screen Time is a built-in feature on iPhone, iPad, and Mac that helps families manage device usage, set app limits, filter content, and monitor activity across all Apple devices.</p>
+    <p>
+      Apple Screen Time is a built-in feature on iPhone, iPad, and Mac that helps families manage device usage, set app
+      limits, filter content, and monitor activity across all Apple devices.
+    </p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
       <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
         <h3>📊 Screen Time Reports</h3>
-        <p>Detailed daily and weekly reports showing how much time is spent in each app, website visits, and device pickups.</p>
+        <p>
+          Detailed daily and weekly reports showing how much time is spent in each app, website visits, and device
+          pickups.
+        </p>
       </div>
 
       <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
         <h3>⏳ App Limits</h3>
-        <p>Set time limits for specific apps or app categories (Social Media, Games, Entertainment). Limits reset daily.</p>
+        <p>
+          Set time limits for specific apps or app categories (Social Media, Games, Entertainment). Limits reset daily.
+        </p>
       </div>
 
       <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
@@ -57,7 +65,8 @@ const metadata = {
     </div>
 
     <div class="alert alert-success">
-      <strong>Built-In & Free:</strong> Screen Time is included with iOS, iPadOS, and macOS at no additional cost. Works seamlessly across all Apple devices.
+      <strong>Built-In & Free:</strong> Screen Time is included with iOS, iPadOS, and macOS at no additional cost. Works
+      seamlessly across all Apple devices.
     </div>
   </section>
 
@@ -67,13 +76,15 @@ const metadata = {
     <h3>Create Family Group (Parent's Device)</h3>
 
     <ol>
-      <li>On parent's iPhone or iPad:
+      <li>
+        On parent's iPhone or iPad:
         <ul>
           <li>Go to <strong>Settings → [Your Name] → Family Sharing</strong></li>
           <li>Tap <strong>"Add Family Member"</strong></li>
         </ul>
       </li>
-      <li>Choose how to add child:
+      <li>
+        Choose how to add child:
         <ul>
           <li><strong>"Create a Child Account"</strong> (under 13) - Recommended</li>
           <li><strong>"Invite People"</strong> (13+ with existing Apple ID)</li>
@@ -91,7 +102,8 @@ const metadata = {
       <li>Review parental consent and privacy disclosure</li>
       <li>Verify parent account with security questions or payment method</li>
       <li>Enter child's name</li>
-      <li>Create child's Apple ID email:
+      <li>
+        Create child's Apple ID email:
         <ul>
           <li>Use suggested format: <code>childname@icloud.com</code></li>
           <li>Or enter custom email</li>
@@ -104,7 +116,8 @@ const metadata = {
     </ol>
 
     <div class="alert alert-info">
-      <strong>Write Down Credentials:</strong> Record child's Apple ID and password securely. You'll need this to sign them in on their devices.
+      <strong>Write Down Credentials:</strong> Record child's Apple ID and password securely. You'll need this to sign them
+      in on their devices.
     </div>
 
     <h3>Option B: Invite Existing Account (Ages 13+)</h3>
@@ -121,7 +134,8 @@ const metadata = {
     </ol>
 
     <div class="alert alert-warning">
-      <strong>Age 13+ Limitation:</strong> Teens can leave Family Sharing voluntarily. Communicate the importance of staying in the family group.
+      <strong>Age 13+ Limitation:</strong> Teens can leave Family Sharing voluntarily. Communicate the importance of staying
+      in the family group.
     </div>
   </section>
 
@@ -131,7 +145,8 @@ const metadata = {
     <h3>On Child's iPhone or iPad</h3>
 
     <ol>
-      <li>On child's device, sign in with child's Apple ID:
+      <li>
+        On child's device, sign in with child's Apple ID:
         <ul>
           <li><strong>Settings → Sign in to your iPhone</strong></li>
           <li>Enter child's Apple ID and password</li>
@@ -143,7 +158,8 @@ const metadata = {
       <li>Select <strong>"This is My Child's [iPhone/iPad]"</strong></li>
       <li>Follow prompts to set up Downtime and App Limits (can configure later)</li>
       <li>Tap <strong>"Content & Privacy"</strong> and enable restrictions</li>
-      <li>Create <strong>Screen Time Passcode</strong>:
+      <li>
+        Create <strong>Screen Time Passcode</strong>:
         <ul>
           <li>Enter a 4-digit passcode <strong>that child does not know</strong></li>
           <li>Verify passcode</li>
@@ -154,7 +170,8 @@ const metadata = {
     </ol>
 
     <div class="alert alert-warning">
-      <strong>Critical: Screen Time Passcode</strong> - Do NOT share this passcode with your child. It protects all restrictions. Without it, child can bypass limits. Store it securely!
+      <strong>Critical: Screen Time Passcode</strong> - Do NOT share this passcode with your child. It protects all restrictions.
+      Without it, child can bypass limits. Store it securely!
     </div>
 
     <h3>Manage from Parent's Device</h3>
@@ -180,13 +197,15 @@ const metadata = {
       <li>Go to <strong>Settings → Screen Time → [Child's Name]</strong></li>
       <li>Tap <strong>"Downtime"</strong></li>
       <li>Toggle <strong>"Downtime"</strong> ON</li>
-      <li>Choose schedule:
+      <li>
+        Choose schedule:
         <ul>
           <li><strong>"Every Day"</strong> - Same time daily</li>
           <li><strong>"Customize Days"</strong> - Different times for weekdays/weekends</li>
         </ul>
       </li>
-      <li>Set times:
+      <li>
+        Set times:
         <ul>
           <li><strong>From:</strong> When downtime starts (e.g., 8:00 PM)</li>
           <li><strong>To:</strong> When downtime ends (e.g., 7:00 AM next day)</li>
@@ -225,7 +244,8 @@ const metadata = {
     <ol>
       <li>In Downtime settings, tap <strong>"App Limits"</strong> (or scroll down)</li>
       <li>Or go to <strong>Settings → Screen Time → Always Allowed</strong></li>
-      <li>Choose apps accessible during downtime:
+      <li>
+        Choose apps accessible during downtime:
         <ul>
           <li><strong>Phone</strong> - Always allow (for emergencies)</li>
           <li><strong>Messages</strong> - Allow if needed for family communication</li>
@@ -240,7 +260,8 @@ const metadata = {
     </ol>
 
     <div class="alert alert-success">
-      <strong>Emergency Calls:</strong> Even during downtime, child can always make emergency calls (911, SOS) regardless of settings.
+      <strong>Emergency Calls:</strong> Even during downtime, child can always make emergency calls (911, SOS) regardless
+      of settings.
     </div>
   </section>
 
@@ -254,7 +275,8 @@ const metadata = {
     <ol>
       <li>Go to <strong>Settings → Screen Time → [Child's Name] → App Limits</strong></li>
       <li>Tap <strong>"Add Limit"</strong></li>
-      <li>Select app categories:
+      <li>
+        Select app categories:
         <ul>
           <li><strong>Social Networking</strong> (Instagram, TikTok, Snapchat)</li>
           <li><strong>Games</strong> (all games)</li>
@@ -265,7 +287,8 @@ const metadata = {
       </li>
       <li>Tap <strong>"Next"</strong></li>
       <li>Set time limit (hours and minutes)</li>
-      <li>Choose schedule:
+      <li>
+        Choose schedule:
         <ul>
           <li><strong>"Every Day"</strong> - Same limit daily</li>
           <li><strong>"Customize Days"</strong> - Different limits per day</li>
@@ -327,7 +350,8 @@ const metadata = {
     <ul>
       <li>App icon shows hourglass symbol</li>
       <li>Tapping app shows "Time Limit" message</li>
-      <li>Child can tap <strong>"Ask For More Time"</strong>:
+      <li>
+        Child can tap <strong>"Ask For More Time"</strong>:
         <ul>
           <li>Parent receives notification</li>
           <li>Parent can approve 15 min, 1 hour, or all day</li>
@@ -338,7 +362,8 @@ const metadata = {
     </ul>
 
     <div class="alert alert-info">
-      <strong>"One More Minute":</strong> When app limit is about to expire, child gets a 1-minute warning to save work or finish activity gracefully.
+      <strong>"One More Minute":</strong> When app limit is about to expire, child gets a 1-minute warning to save work or
+      finish activity gracefully.
     </div>
   </section>
 
@@ -358,7 +383,8 @@ const metadata = {
 
     <ol>
       <li>In Content & Privacy Restrictions, tap <strong>"iTunes & App Store Purchases"</strong></li>
-      <li>Set restrictions:
+      <li>
+        Set restrictions:
         <ul>
           <li><strong>"Installing Apps"</strong> → Don't Allow (child cannot install apps without approval)</li>
           <li><strong>"Deleting Apps"</strong> → Don't Allow (prevents child from removing monitoring apps)</li>
@@ -367,7 +393,10 @@ const metadata = {
       </li>
     </ol>
 
-    <p><strong>Alternative - Ask to Buy:</strong> In Family Sharing settings, enable "Ask to Buy" for child. Every purchase requires parent approval via notification.</p>
+    <p>
+      <strong>Alternative - Ask to Buy:</strong> In Family Sharing settings, enable "Ask to Buy" for child. Every purchase
+      requires parent approval via notification.
+    </p>
 
     <h3>Allowed Apps</h3>
 
@@ -375,9 +404,12 @@ const metadata = {
 
     <ol>
       <li>Tap <strong>"Allowed Apps"</strong></li>
-      <li>Toggle OFF apps you want to hide:
+      <li>
+        Toggle OFF apps you want to hide:
         <ul>
-          <li><strong>Safari</strong> - Disable to prevent web browsing (forces use of filtered browsers if installed)</li>
+          <li>
+            <strong>Safari</strong> - Disable to prevent web browsing (forces use of filtered browsers if installed)
+          </li>
           <li><strong>Camera</strong> - Disable to prevent photos/videos</li>
           <li><strong>FaceTime</strong> - Disable for young children</li>
           <li><strong>Podcasts</strong> - Can contain explicit content</li>
@@ -387,7 +419,8 @@ const metadata = {
     </ol>
 
     <div class="alert alert-warning">
-      <strong>Disabling Safari:</strong> If you disable Safari, child cannot browse the web unless you install an alternative browser. This can be useful to force content filtering.
+      <strong>Disabling Safari:</strong> If you disable Safari, child cannot browse the web unless you install an alternative
+      browser. This can be useful to force content filtering.
     </div>
 
     <h3>Content Restrictions</h3>
@@ -444,7 +477,8 @@ const metadata = {
 
     <ol>
       <li>In Content Restrictions, tap <strong>"Web Content"</strong></li>
-      <li>Choose filtering level:
+      <li>
+        Choose filtering level:
         <ul>
           <li><strong>"Unrestricted Access"</strong> - No filtering (not recommended)</li>
           <li><strong>"Limit Adult Websites"</strong> - Automatic filtering (recommended for ages 10-16)</li>
@@ -464,7 +498,8 @@ const metadata = {
     <ul>
       <li>Child can ONLY visit websites you explicitly approve</li>
       <li>Apple provides curated list of kid-friendly sites (PBS Kids, National Geographic Kids, etc.)</li>
-      <li>Add custom websites:
+      <li>
+        Add custom websites:
         <ul>
           <li>Tap <strong>"Add Website"</strong></li>
           <li>Enter URL and title</li>
@@ -474,13 +509,15 @@ const metadata = {
     </ul>
 
     <div class="alert alert-info">
-      <strong>Safari Only:</strong> Web content filtering only applies to Safari browser. Disable other browsers in "Allowed Apps" or use DNS filtering for comprehensive protection.
+      <strong>Safari Only:</strong> Web content filtering only applies to Safari browser. Disable other browsers in "Allowed
+      Apps" or use DNS filtering for comprehensive protection.
     </div>
 
     <h3>Siri Restrictions</h3>
 
     <ol>
-      <li>In Content Restrictions, configure Siri:
+      <li>
+        In Content Restrictions, configure Siri:
         <ul>
           <li><strong>"Web Search Content"</strong> → Don't Allow (prevents Siri from showing web results)</li>
           <li><strong>"Explicit Language"</strong> → Don't Allow (filters profanity)</li>
@@ -492,7 +529,8 @@ const metadata = {
 
     <ol>
       <li>In Content Restrictions, tap <strong>"Game Center"</strong></li>
-      <li>Set restrictions:
+      <li>
+        Set restrictions:
         <ul>
           <li><strong>"Multiplayer Games"</strong> → Don't Allow (prevents playing with strangers)</li>
           <li><strong>"Adding Friends"</strong> → Don't Allow</li>
@@ -543,7 +581,8 @@ const metadata = {
     </ol>
 
     <div class="alert alert-success">
-      <strong>Emergency Contacts:</strong> Contacts marked as "Emergency Contacts" are always reachable, even during downtime and regardless of communication limits.
+      <strong>Emergency Contacts:</strong> Contacts marked as "Emergency Contacts" are always reachable, even during downtime
+      and regardless of communication limits.
     </div>
   </section>
 
@@ -555,7 +594,8 @@ const metadata = {
     <ol>
       <li>On parent's device: <strong>Settings → Screen Time</strong></li>
       <li>Tap child's name</li>
-      <li>View comprehensive dashboard:
+      <li>
+        View comprehensive dashboard:
         <ul>
           <li><strong>Today/Last 7 Days</strong> - Toggle between daily and weekly view</li>
           <li><strong>Daily Average</strong> - Average screen time per day</li>
@@ -591,7 +631,8 @@ const metadata = {
     </ul>
 
     <div class="alert alert-info">
-      <strong>Weekly Summary:</strong> Every Sunday, Screen Time sends a notification summarizing the week's activity. Review with child to discuss habits.
+      <strong>Weekly Summary:</strong> Every Sunday, Screen Time sends a notification summarizing the week's activity. Review
+      with child to discuss habits.
     </div>
   </section>
 
@@ -617,7 +658,8 @@ const metadata = {
     <ul>
       <li><strong>App Limits:</strong> Apply to Mac apps (Xcode, Terminal, etc.)</li>
       <li><strong>Web Content:</strong> Filters Safari on Mac</li>
-      <li><strong>Privacy:</strong>
+      <li>
+        <strong>Privacy:</strong>
         <ul>
           <li>Prevent changes to privacy settings</li>
           <li>Lock location services</li>
@@ -638,7 +680,8 @@ const metadata = {
     </ul>
 
     <div class="alert alert-success">
-      <strong>Unified Limits:</strong> If you set "Games: 2 hours/day", child gets 2 hours total across iPhone, iPad, and Mac combined - not 2 hours per device.
+      <strong>Unified Limits:</strong> If you set "Games: 2 hours/day", child gets 2 hours total across iPhone, iPad, and
+      Mac combined - not 2 hours per device.
     </div>
   </section>
 
@@ -736,7 +779,11 @@ const metadata = {
       <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
         <h4>2️⃣ DNS Filtering</h4>
         <ul>
-          <li>Set up <a href="/guides/opendns-tutorial">OpenDNS</a> or <a href="/guides/cleanbrowsing-tutorial">CleanBrowsing</a></li>
+          <li>
+            Set up <a href="/guides/opendns-tutorial">OpenDNS</a> or <a href="/guides/cleanbrowsing-tutorial"
+              >CleanBrowsing</a
+            >
+          </li>
           <li>Configure on home router for network-wide protection</li>
           <li>Blocks inappropriate content across all apps and browsers</li>
           <li>Works even if child bypasses Screen Time</li>
@@ -811,47 +858,74 @@ const metadata = {
     <div class="faq">
       <div class="faq-item">
         <h4>Q: Can my child bypass Screen Time by factory resetting the device?</h4>
-        <p><strong>A:</strong> If child has device passcode, they could factory reset. However, Activation Lock prevents setup without parent's Apple ID. Set a device passcode they don't know, or use Guided Access mode for very young children.</p>
+        <p>
+          <strong>A:</strong> If child has device passcode, they could factory reset. However, Activation Lock prevents setup
+          without parent's Apple ID. Set a device passcode they don't know, or use Guided Access mode for very young children.
+        </p>
       </div>
 
       <div class="faq-item">
         <h4>Q: Do Screen Time limits apply across all devices or per device?</h4>
-        <p><strong>A:</strong> Across ALL devices. If you set "Games: 2 hours/day", child gets 2 hours total across iPhone + iPad + Mac combined. This is the default behavior when "Share Across Devices" is enabled.</p>
+        <p>
+          <strong>A:</strong> Across ALL devices. If you set "Games: 2 hours/day", child gets 2 hours total across iPhone
+          + iPad + Mac combined. This is the default behavior when "Share Across Devices" is enabled.
+        </p>
       </div>
 
       <div class="faq-item">
         <h4>Q: Can my child use a VPN to bypass web content filtering?</h4>
-        <p><strong>A:</strong> Yes, VPN apps can bypass Safari content filtering. Block VPN apps: Content & Privacy Restrictions → Allowed Apps → disable VPN apps. Use router-level DNS filtering for additional protection.</p>
+        <p>
+          <strong>A:</strong> Yes, VPN apps can bypass Safari content filtering. Block VPN apps: Content & Privacy Restrictions
+          → Allowed Apps → disable VPN apps. Use router-level DNS filtering for additional protection.
+        </p>
       </div>
 
       <div class="faq-item">
         <h4>Q: Will Screen Time work if my child doesn't have cellular service (WiFi-only iPad)?</h4>
-        <p><strong>A:</strong> Yes, Screen Time works on WiFi-only devices. Settings sync via iCloud over WiFi. Location tracking requires WiFi positioning (less accurate than GPS).</p>
+        <p>
+          <strong>A:</strong> Yes, Screen Time works on WiFi-only devices. Settings sync via iCloud over WiFi. Location tracking
+          requires WiFi positioning (less accurate than GPS).
+        </p>
       </div>
 
       <div class="faq-item">
         <h4>Q: Can I see my child's iMessages or FaceTime calls?</h4>
-        <p><strong>A:</strong> No, Screen Time does not provide access to message content or call logs. You can only see total time spent in Messages/FaceTime apps and restrict who they can contact.</p>
+        <p>
+          <strong>A:</strong> No, Screen Time does not provide access to message content or call logs. You can only see total
+          time spent in Messages/FaceTime apps and restrict who they can contact.
+        </p>
       </div>
 
       <div class="faq-item">
         <h4>Q: What happens when my child turns 13?</h4>
-        <p><strong>A:</strong> At age 13, child can create their own Apple ID independently. If using Family Sharing, they can choose to leave (but you'll be notified). Have conversations about continuing supervision voluntarily.</p>
+        <p>
+          <strong>A:</strong> At age 13, child can create their own Apple ID independently. If using Family Sharing, they
+          can choose to leave (but you'll be notified). Have conversations about continuing supervision voluntarily.
+        </p>
       </div>
 
       <div class="faq-item">
         <h4>Q: Does Screen Time drain battery?</h4>
-        <p><strong>A:</strong> Minimal impact. Screen Time tracking uses negligible battery. The main battery drain comes from actual app usage, which Screen Time helps reduce!</p>
+        <p>
+          <strong>A:</strong> Minimal impact. Screen Time tracking uses negligible battery. The main battery drain comes
+          from actual app usage, which Screen Time helps reduce!
+        </p>
       </div>
 
       <div class="faq-item">
         <h4>Q: Can I manage Screen Time from Android or Windows?</h4>
-        <p><strong>A:</strong> No. Screen Time can only be managed from iOS, iPadOS, or macOS devices. You need an Apple device to adjust settings remotely.</p>
+        <p>
+          <strong>A:</strong> No. Screen Time can only be managed from iOS, iPadOS, or macOS devices. You need an Apple device
+          to adjust settings remotely.
+        </p>
       </div>
 
       <div class="faq-item">
         <h4>Q: Is Screen Time completely free?</h4>
-        <p><strong>A:</strong> Yes, Screen Time is built into iOS, iPadOS, and macOS at no additional cost. No subscriptions or in-app purchases required.</p>
+        <p>
+          <strong>A:</strong> Yes, Screen Time is built into iOS, iPadOS, and macOS at no additional cost. No subscriptions
+          or in-app purchases required.
+        </p>
       </div>
     </div>
   </section>
@@ -860,26 +934,37 @@ const metadata = {
     <h2>🎯 Next Steps</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-      <a href="/guides/google-family-link-tutorial" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+      <a
+        href="/guides/google-family-link-tutorial"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
         <h3>📱 Google Family Link</h3>
         <p>Manage Android devices with comprehensive parental controls and screen time limits.</p>
       </a>
 
-      <a href="/guides/microsoft-family-accounts" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+      <a
+        href="/guides/microsoft-family-accounts"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
         <h3>🖥️ Microsoft Family Safety</h3>
         <p>Control Windows PCs, Xbox consoles, and track family locations.</p>
       </a>
 
-      <a href="/guides/opendns-tutorial" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+      <a
+        href="/guides/opendns-tutorial"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
         <h3>🛡️ Add DNS Filtering</h3>
         <p>Network-wide content filtering that works across all devices and browsers.</p>
       </a>
 
-      <a href="/guides/screen-time-management" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+      <a
+        href="/guides/screen-time-management"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
         <h3>⏰ Screen Time Strategies</h3>
         <p>Develop healthy screen time habits beyond technical controls.</p>
       </a>
     </div>
   </section>
 </GuideLayout>
-

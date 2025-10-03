@@ -2,416 +2,434 @@
 import GuideLayout from '~/layouts/GuideLayout.astro';
 
 const metadata = {
-	title: 'Educational vs. Entertainment Content Balance',
-	description: 'Practical strategies for maximizing educational screen time while allowing appropriate entertainment, with age-specific recommendations for quality content.',
+  title: 'Educational vs. Entertainment Content Balance',
+  description:
+    'Practical strategies for maximizing educational screen time while allowing appropriate entertainment, with age-specific recommendations for quality content.',
 };
-
 ---
 
 <GuideLayout
-	metadata={metadata}
-	difficulty="beginner"
-	timeEstimate="15 minutes"
-	prerequisites={[
-		'Understanding of your child\'s current screen time habits',
-		'Willingness to guide content choices',
-		'Recognition that not all educational content is equally valuable'
-	]}
+  metadata={metadata}
+  difficulty="beginner"
+  timeEstimate="15 minutes"
+  prerequisites={[
+    "Understanding of your child's current screen time habits",
+    'Willingness to guide content choices',
+    'Recognition that not all educational content is equally valuable',
+  ]}
 >
+  <Fragment slot="breadcrumb">
+    <li class="flex items-center">
+      <a href="/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"> Home </a>
+      <span class="mx-2 text-gray-500">/</span>
+    </li>
+    <li class="flex items-center">
+      <a href="/methods" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+        Protection Methods
+      </a>
+      <span class="mx-2 text-gray-500">/</span>
+    </li>
+    <li class="text-gray-700 dark:text-gray-300">Educational vs. Entertainment Content Balance</li>
+  </Fragment>
 
-	<Fragment slot="breadcrumb">
-		<li class="flex items-center">
-			<a href="/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
-				Home
-			</a>
-			<span class="mx-2 text-gray-500">/</span>
-		</li>
-		<li class="flex items-center">
-			<a href="/methods" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
-				Protection Methods
-			</a>
-			<span class="mx-2 text-gray-500">/</span>
-		</li>
-		<li class="text-gray-700 dark:text-gray-300">
-			Educational vs. Entertainment Content Balance
-		</li>
-	</Fragment>
+  <section>
+    <h2>Why Balance Matters</h2>
+    <p>
+      Not all screen time is equal. A child watching educational documentaries is having a vastly different experience
+      than mindlessly scrolling through viral videos. However, the line between "educational" and "entertainment" isn't
+      always clear, and purely educational content without enjoyment leads to resistance. The goal is finding balance:
+      leveraging screens for learning while allowing appropriate downtime and fun.
+    </p>
 
-	<section>
-		<h2>Why Balance Matters</h2>
-		<p>
-			Not all screen time is equal. A child watching educational documentaries is having a vastly different experience than mindlessly scrolling through viral videos. However, the line between "educational" and "entertainment" isn't always clear, and purely educational content without enjoyment leads to resistance. The goal is finding balance: leveraging screens for learning while allowing appropriate downtime and fun.
-		</p>
+    <div class="alert alert-info">
+      <strong>Key Insight:</strong> The best approach isn't banning entertainment entirely - it's using the 80/20 rule: 80%
+      purposeful/educational content, 20% pure entertainment. This creates balance without being overly restrictive.
+    </div>
+  </section>
 
-		<div class="alert alert-info">
-			<strong>Key Insight:</strong> The best approach isn't banning entertainment entirely - it's using the 80/20 rule: 80% purposeful/educational content, 20% pure entertainment. This creates balance without being overly restrictive.
-		</div>
-	</section>
+  <section>
+    <h2>📚 Defining Educational vs. Entertainment</h2>
 
-	<section>
-		<h2>📚 Defining Educational vs. Entertainment</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+      <div class="def-card educational">
+        <h3>✅ Educational Content</h3>
+        <h4>Teaches new skills or knowledge:</h4>
+        <ul>
+          <li>Documentaries and educational shows</li>
+          <li>Language learning apps (Duolingo, Rosetta Stone)</li>
+          <li>Math and reading platforms (Khan Academy, ABCmouse)</li>
+          <li>Coding tutorials and courses</li>
+          <li>How-to videos for real skills</li>
+          <li>News and current events (age-appropriate)</li>
+          <li>Educational YouTube channels (CrashCourse, Kurzgesagt, TED-Ed)</li>
+          <li>E-reading books</li>
+        </ul>
+      </div>
 
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-			<div class="def-card educational">
-				<h3>✅ Educational Content</h3>
-				<h4>Teaches new skills or knowledge:</h4>
-				<ul>
-					<li>Documentaries and educational shows</li>
-					<li>Language learning apps (Duolingo, Rosetta Stone)</li>
-					<li>Math and reading platforms (Khan Academy, ABCmouse)</li>
-					<li>Coding tutorials and courses</li>
-					<li>How-to videos for real skills</li>
-					<li>News and current events (age-appropriate)</li>
-					<li>Educational YouTube channels (CrashCourse, Kurzgesagt, TED-Ed)</li>
-					<li>E-reading books</li>
-				</ul>
-			</div>
+      <div class="def-card entertainment">
+        <h3>⚖️ Entertainment Content</h3>
+        <h4>Primarily for enjoyment/relaxation:</h4>
+        <ul>
+          <li>Movies and TV shows</li>
+          <li>Gaming for fun (not educational games)</li>
+          <li>Social media browsing</li>
+          <li>YouTube entertainment channels</li>
+          <li>TikTok and short-form video</li>
+          <li>Streaming services (Netflix, Disney+)</li>
+          <li>Music streaming</li>
+          <li>Chat with friends</li>
+        </ul>
+      </div>
 
-			<div class="def-card entertainment">
-				<h3>⚖️ Entertainment Content</h3>
-				<h4>Primarily for enjoyment/relaxation:</h4>
-				<ul>
-					<li>Movies and TV shows</li>
-					<li>Gaming for fun (not educational games)</li>
-					<li>Social media browsing</li>
-					<li>YouTube entertainment channels</li>
-					<li>TikTok and short-form video</li>
-					<li>Streaming services (Netflix, Disney+)</li>
-					<li>Music streaming</li>
-					<li>Chat with friends</li>
-				</ul>
-			</div>
+      <div class="def-card hybrid">
+        <h3>🎯 Hybrid (Both)</h3>
+        <h4>Blends learning and entertainment:</h4>
+        <ul>
+          <li>Minecraft (creative building = learning)</li>
+          <li>Strategy games (problem-solving)</li>
+          <li>Historical fiction shows</li>
+          <li>Nature documentaries with entertainment value</li>
+          <li>Creative apps (GarageBand, iMovie)</li>
+          <li>Edutainment content (Bill Nye, Magic School Bus)</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-			<div class="def-card hybrid">
-				<h3>🎯 Hybrid (Both)</h3>
-				<h4>Blends learning and entertainment:</h4>
-				<ul>
-					<li>Minecraft (creative building = learning)</li>
-					<li>Strategy games (problem-solving)</li>
-					<li>Historical fiction shows</li>
-					<li>Nature documentaries with entertainment value</li>
-					<li>Creative apps (GarageBand, iMovie)</li>
-					<li>Edutainment content (Bill Nye, Magic School Bus)</li>
-				</ul>
-			</div>
-		</div>
-	</section>
+  <section>
+    <h2>🎯 The 80/20 Approach</h2>
+    <p>Rather than rigid "educational only" rules, use the 80/20 framework:</p>
 
-	<section>
-		<h2>🎯 The 80/20 Approach</h2>
-		<p>Rather than rigid "educational only" rules, use the 80/20 framework:</p>
+    <ul>
+      <li><strong>80% Purposeful:</strong> Educational content, homework, creative projects, skill-building</li>
+      <li><strong>20% Entertainment:</strong> Relaxation, pure fun, social connection</li>
+    </ul>
 
-		<ul>
-			<li><strong>80% Purposeful:</strong> Educational content, homework, creative projects, skill-building</li>
-			<li><strong>20% Entertainment:</strong> Relaxation, pure fun, social connection</li>
-		</ul>
+    <h3>How to Implement</h3>
+    <ul>
+      <li>If child has 2 hours of screen time: 1h 36min educational/purposeful, 24min pure entertainment</li>
+      <li>In practice: Do homework and educational content first, then earn entertainment time</li>
+      <li>Weekly approach: Weekdays mostly educational, weekends allow more entertainment</li>
+    </ul>
 
-		<h3>How to Implement</h3>
-		<ul>
-			<li>If child has 2 hours of screen time: 1h 36min educational/purposeful, 24min pure entertainment</li>
-			<li>In practice: Do homework and educational content first, then earn entertainment time</li>
-			<li>Weekly approach: Weekdays mostly educational, weekends allow more entertainment</li>
-		</ul>
+    <h3>Making it Work</h3>
+    <ul>
+      <li><strong>Earn entertainment:</strong> "30 minutes of Khan Academy unlocks 30 minutes of YouTube"</li>
+      <li><strong>First things first:</strong> Educational content before pure entertainment</li>
+      <li><strong>Quality entertainment:</strong> Not all entertainment is equal - choose quality shows/games</li>
+      <li>
+        <strong>Flexibility:</strong> Bad day at school? Allow more entertainment. Struggling with a subject? More educational
+        focus
+      </li>
+    </ul>
 
-		<h3>Making it Work</h3>
-		<ul>
-			<li><strong>Earn entertainment:</strong> "30 minutes of Khan Academy unlocks 30 minutes of YouTube"</li>
-			<li><strong>First things first:</strong> Educational content before pure entertainment</li>
-			<li><strong>Quality entertainment:</strong> Not all entertainment is equal - choose quality shows/games</li>
-			<li><strong>Flexibility:</strong> Bad day at school? Allow more entertainment. Struggling with a subject? More educational focus</li>
-		</ul>
+    <div class="alert alert-success">
+      <strong>Pro tip:</strong> Frame educational content as "unlocking" entertainment. This creates positive association
+      rather than punishment feeling.
+    </div>
+  </section>
 
-		<div class="alert alert-success">
-			<strong>Pro tip:</strong> Frame educational content as "unlocking" entertainment. This creates positive association rather than punishment feeling.
-		</div>
-	</section>
+  <section>
+    <h2>📱 Age-Specific Recommendations</h2>
 
-	<section>
-		<h2>📱 Age-Specific Recommendations</h2>
+    <div class="age-section">
+      <h3>Ages 3-5: Preschool</h3>
 
-		<div class="age-section">
-			<h3>Ages 3-5: Preschool</h3>
+      <h4>Best Educational Content:</h4>
+      <ul>
+        <li><strong>PBS Kids</strong> - Free, ad-free, curriculum-based</li>
+        <li><strong>ABCmouse</strong> - Comprehensive early learning ($13/mo)</li>
+        <li><strong>Khan Academy Kids</strong> - Free, no ads, excellent quality</li>
+        <li><strong>Endless Alphabet/Numbers</strong> - Interactive learning games</li>
+        <li><strong>YouTube Kids</strong> (strict parental controls) - Storybots, Sesame Street</li>
+      </ul>
 
-			<h4>Best Educational Content:</h4>
-			<ul>
-				<li><strong>PBS Kids</strong> - Free, ad-free, curriculum-based</li>
-				<li><strong>ABCmouse</strong> - Comprehensive early learning ($13/mo)</li>
-				<li><strong>Khan Academy Kids</strong> - Free, no ads, excellent quality</li>
-				<li><strong>Endless Alphabet/Numbers</strong> - Interactive learning games</li>
-				<li><strong>YouTube Kids</strong> (strict parental controls) - Storybots, Sesame Street</li>
-			</ul>
+      <h4>Quality Entertainment:</h4>
+      <ul>
+        <li>Daniel Tiger's Neighborhood (social-emotional learning)</li>
+        <li>Bluey (positive family dynamics)</li>
+        <li>Octonauts (nature/science themes)</li>
+      </ul>
 
-			<h4>Quality Entertainment:</h4>
-			<ul>
-				<li>Daniel Tiger's Neighborhood (social-emotional learning)</li>
-				<li>Bluey (positive family dynamics)</li>
-				<li>Octonauts (nature/science themes)</li>
-			</ul>
+      <h4>Screen Time Split:</h4>
+      <ul>
+        <li>Max 1 hour total per day</li>
+        <li>90% educational at this age</li>
+        <li>All content co-viewed with parent</li>
+      </ul>
+    </div>
 
-			<h4>Screen Time Split:</h4>
-			<ul>
-				<li>Max 1 hour total per day</li>
-				<li>90% educational at this age</li>
-				<li>All content co-viewed with parent</li>
-			</ul>
-		</div>
+    <div class="age-section">
+      <h3>Ages 6-8: Early Elementary</h3>
 
-		<div class="age-section">
-			<h3>Ages 6-8: Early Elementary</h3>
+      <h4>Best Educational Content:</h4>
+      <ul>
+        <li><strong>Khan Academy</strong> - Math, reading, science (free)</li>
+        <li><strong>Prodigy Math</strong> - Game-based math learning</li>
+        <li><strong>Epic!</strong> - Digital library ($8/mo)</li>
+        <li><strong>Scratch</strong> - Visual coding platform (free)</li>
+        <li><strong>National Geographic Kids</strong> - Science and nature</li>
+        <li><strong>BrainPOP Jr.</strong> - Animated educational videos</li>
+      </ul>
 
-			<h4>Best Educational Content:</h4>
-			<ul>
-				<li><strong>Khan Academy</strong> - Math, reading, science (free)</li>
-				<li><strong>Prodigy Math</strong> - Game-based math learning</li>
-				<li><strong>Epic!</strong> - Digital library ($8/mo)</li>
-				<li><strong>Scratch</strong> - Visual coding platform (free)</li>
-				<li><strong>National Geographic Kids</strong> - Science and nature</li>
-				<li><strong>BrainPOP Jr.</strong> - Animated educational videos</li>
-			</ul>
+      <h4>Quality Entertainment:</h4>
+      <ul>
+        <li>Gravity Falls (problem-solving themes)</li>
+        <li>Carmen Sandiego (geography)</li>
+        <li>Wild Kratts (animal science)</li>
+      </ul>
 
-			<h4>Quality Entertainment:</h4>
-			<ul>
-				<li>Gravity Falls (problem-solving themes)</li>
-				<li>Carmen Sandiego (geography)</li>
-				<li>Wild Kratts (animal science)</li>
-			</ul>
+      <h4>Screen Time Split:</h4>
+      <ul>
+        <li>1-2 hours total per day</li>
+        <li>80% educational/purposeful</li>
+        <li>Can have brief unsupervised time with restrictions</li>
+      </ul>
+    </div>
 
-			<h4>Screen Time Split:</h4>
-			<ul>
-				<li>1-2 hours total per day</li>
-				<li>80% educational/purposeful</li>
-				<li>Can have brief unsupervised time with restrictions</li>
-			</ul>
-		</div>
+    <div class="age-section">
+      <h3>Ages 9-12: Late Elementary/Middle School</h3>
 
-		<div class="age-section">
-			<h3>Ages 9-12: Late Elementary/Middle School</h3>
+      <h4>Best Educational Content:</h4>
+      <ul>
+        <li><strong>Khan Academy</strong> - All subjects through high school</li>
+        <li><strong>Duolingo</strong> - Language learning</li>
+        <li><strong>Code.org / Codecademy</strong> - Programming</li>
+        <li><strong>CrashCourse (YouTube)</strong> - Science, history, literature</li>
+        <li><strong>TED-Ed</strong> - Thought-provoking educational videos</li>
+        <li><strong>Typing Club</strong> - Typing skills</li>
+      </ul>
 
-			<h4>Best Educational Content:</h4>
-			<ul>
-				<li><strong>Khan Academy</strong> - All subjects through high school</li>
-				<li><strong>Duolingo</strong> - Language learning</li>
-				<li><strong>Code.org / Codecademy</strong> - Programming</li>
-				<li><strong>CrashCourse (YouTube)</strong> - Science, history, literature</li>
-				<li><strong>TED-Ed</strong> - Thought-provoking educational videos</li>
-				<li><strong>Typing Club</strong> - Typing skills</li>
-			</ul>
+      <h4>Quality Entertainment:</h4>
+      <ul>
+        <li>Avatar: The Last Airbender (character development)</li>
+        <li>Minecraft (creative mode)</li>
+        <li>Strategy games (chess, Civilization)</li>
+      </ul>
 
-			<h4>Quality Entertainment:</h4>
-			<ul>
-				<li>Avatar: The Last Airbender (character development)</li>
-				<li>Minecraft (creative mode)</li>
-				<li>Strategy games (chess, Civilization)</li>
-			</ul>
+      <h4>Screen Time Split:</h4>
+      <ul>
+        <li>2-3 hours total per day</li>
+        <li>70-80% educational/purposeful</li>
+        <li>More independence but with monitoring</li>
+      </ul>
+    </div>
 
-			<h4>Screen Time Split:</h4>
-			<ul>
-				<li>2-3 hours total per day</li>
-				<li>70-80% educational/purposeful</li>
-				<li>More independence but with monitoring</li>
-			</ul>
-		</div>
+    <div class="age-section">
+      <h3>Ages 13-18: High School</h3>
 
-		<div class="age-section">
-			<h3>Ages 13-18: High School</h3>
+      <h4>Best Educational Content:</h4>
+      <ul>
+        <li><strong>Khan Academy</strong> - SAT prep, college-level courses</li>
+        <li><strong>Coursera / edX</strong> - College courses (many free)</li>
+        <li><strong>MIT OpenCourseWare</strong> - Free college lectures</li>
+        <li><strong>YouTube educational channels</strong> - CrashCourse, 3Blue1Brown, Vsauce</li>
+        <li><strong>LinkedIn Learning</strong> - Professional skills</li>
+        <li><strong>GitHub / Stack Overflow</strong> - Programming learning</li>
+      </ul>
 
-			<h4>Best Educational Content:</h4>
-			<ul>
-				<li><strong>Khan Academy</strong> - SAT prep, college-level courses</li>
-				<li><strong>Coursera / edX</strong> - College courses (many free)</li>
-				<li><strong>MIT OpenCourseWare</strong> - Free college lectures</li>
-				<li><strong>YouTube educational channels</strong> - CrashCourse, 3Blue1Brown, Vsauce</li>
-				<li><strong>LinkedIn Learning</strong> - Professional skills</li>
-				<li><strong>GitHub / Stack Overflow</strong> - Programming learning</li>
-			</ul>
+      <h4>Quality Entertainment:</h4>
+      <ul>
+        <li>Documentaries (Netflix, BBC)</li>
+        <li>Podcasts (educational or interest-based)</li>
+        <li>Creative pursuits (music production, video editing, digital art)</li>
+      </ul>
 
-			<h4>Quality Entertainment:</h4>
-			<ul>
-				<li>Documentaries (Netflix, BBC)</li>
-				<li>Podcasts (educational or interest-based)</li>
-				<li>Creative pursuits (music production, video editing, digital art)</li>
-			</ul>
+      <h4>Screen Time Split:</h4>
+      <ul>
+        <li>Varies (homework is screen-heavy at this age)</li>
+        <li>60-70% educational/purposeful</li>
+        <li>Emphasize self-regulation</li>
+      </ul>
+    </div>
+  </section>
 
-			<h4>Screen Time Split:</h4>
-			<ul>
-				<li>Varies (homework is screen-heavy at this age)</li>
-				<li>60-70% educational/purposeful</li>
-				<li>Emphasize self-regulation</li>
-			</ul>
-		</div>
-	</section>
+  <section>
+    <h2>🔍 Evaluating Content Quality</h2>
+    <p>Use these criteria to evaluate whether content is truly educational:</p>
 
-	<section>
-		<h2>🔍 Evaluating Content Quality</h2>
-		<p>Use these criteria to evaluate whether content is truly educational:</p>
+    <h3>Quality Educational Content:</h3>
+    <ul>
+      <li>✅ Age-appropriate and curriculum-aligned</li>
+      <li>✅ Teaches specific skills or knowledge</li>
+      <li>✅ Interactive and engaging (not just passive watching)</li>
+      <li>✅ No ads or minimal, appropriate ads</li>
+      <li>✅ Evidence-based and accurate information</li>
+      <li>✅ Encourages critical thinking</li>
+      <li>✅ Created by educators or experts</li>
+    </ul>
 
-		<h3>Quality Educational Content:</h3>
-		<ul>
-			<li>✅ Age-appropriate and curriculum-aligned</li>
-			<li>✅ Teaches specific skills or knowledge</li>
-			<li>✅ Interactive and engaging (not just passive watching)</li>
-			<li>✅ No ads or minimal, appropriate ads</li>
-			<li>✅ Evidence-based and accurate information</li>
-			<li>✅ Encourages critical thinking</li>
-			<li>✅ Created by educators or experts</li>
-		</ul>
+    <h3>Red Flags (Low-Quality "Edutainment"):</h3>
+    <ul>
+      <li>❌ Excessive ads or in-app purchases</li>
+      <li>❌ Auto-play to unrelated content</li>
+      <li>❌ Oversimplified or inaccurate information</li>
+      <li>❌ Focus on memorization over understanding</li>
+      <li>❌ Designed to maximize screen time, not learning</li>
+      <li>❌ Inappropriate themes disguised as "educational"</li>
+    </ul>
 
-		<h3>Red Flags (Low-Quality "Edutainment"):</h3>
-		<ul>
-			<li>❌ Excessive ads or in-app purchases</li>
-			<li>❌ Auto-play to unrelated content</li>
-			<li>❌ Oversimplified or inaccurate information</li>
-			<li>❌ Focus on memorization over understanding</li>
-			<li>❌ Designed to maximize screen time, not learning</li>
-			<li>❌ Inappropriate themes disguised as "educational"</li>
-		</ul>
+    <h3>Check Reviews & Ratings:</h3>
+    <ul>
+      <li><strong>Common Sense Media</strong> - Excellent resource for age-appropriate reviews</li>
+      <li><strong>Teacher/parent reviews</strong> - Real feedback from educators</li>
+      <li><strong>App Store educational rankings</strong> - Look for "Editors' Choice"</li>
+    </ul>
+  </section>
 
-		<h3>Check Reviews & Ratings:</h3>
-		<ul>
-			<li><strong>Common Sense Media</strong> - Excellent resource for age-appropriate reviews</li>
-			<li><strong>Teacher/parent reviews</strong> - Real feedback from educators</li>
-			<li><strong>App Store educational rankings</strong> - Look for "Editors' Choice"</li>
-		</ul>
-	</section>
+  <section>
+    <h2>💡 Making Educational Content Appealing</h2>
 
-	<section>
-		<h2>💡 Making Educational Content Appealing</h2>
+    <h3>Strategies to Increase Buy-In:</h3>
+    <ul>
+      <li><strong>Let them choose:</strong> "Pick 3 Khan Academy subjects you want to explore"</li>
+      <li><strong>Gamify it:</strong> Track progress, set goals, offer rewards</li>
+      <li><strong>Match interests:</strong> Love dinosaurs? Watch paleontology documentaries</li>
+      <li><strong>Make it social:</strong> Co-view and discuss together</li>
+      <li><strong>Show real-world application:</strong> "Learn coding to make your own game"</li>
+      <li><strong>Leverage YouTube:</strong> Educational channels can be as engaging as entertainment</li>
+      <li><strong>Creative projects:</strong> "Make a video documentary about your research"</li>
+    </ul>
 
-		<h3>Strategies to Increase Buy-In:</h3>
-		<ul>
-			<li><strong>Let them choose:</strong> "Pick 3 Khan Academy subjects you want to explore"</li>
-			<li><strong>Gamify it:</strong> Track progress, set goals, offer rewards</li>
-			<li><strong>Match interests:</strong> Love dinosaurs? Watch paleontology documentaries</li>
-			<li><strong>Make it social:</strong> Co-view and discuss together</li>
-			<li><strong>Show real-world application:</strong> "Learn coding to make your own game"</li>
-			<li><strong>Leverage YouTube:</strong> Educational channels can be as engaging as entertainment</li>
-			<li><strong>Creative projects:</strong> "Make a video documentary about your research"</li>
-		</ul>
+    <h3>Avoid These Mistakes:</h3>
+    <ul>
+      <li>❌ Using educational content as punishment</li>
+      <li>❌ Forcing boring, low-quality "educational" apps</li>
+      <li>❌ Never allowing any entertainment</li>
+      <li>❌ Lecturing about how "this is good for you"</li>
+    </ul>
+  </section>
 
-		<h3>Avoid These Mistakes:</h3>
-		<ul>
-			<li>❌ Using educational content as punishment</li>
-			<li>❌ Forcing boring, low-quality "educational" apps</li>
-			<li>❌ Never allowing any entertainment</li>
-			<li>❌ Lecturing about how "this is good for you"</li>
-		</ul>
-	</section>
+  <section>
+    <h2>📊 Tracking the Balance</h2>
 
-	<section>
-		<h2>📊 Tracking the Balance</h2>
+    <h3>Simple Tracking System:</h3>
+    <ol>
+      <li>Use built-in screen time reports (iOS/Android) to see what apps are used</li>
+      <li>Create categories: Educational, Hybrid, Entertainment</li>
+      <li>Review weekly: "Let's look at your screen time report together"</li>
+      <li>Discuss: "I see lots of YouTube - was that educational or entertainment?"</li>
+      <li>Adjust: "Next week, let's try more balanced mix"</li>
+    </ol>
 
-		<h3>Simple Tracking System:</h3>
-		<ol>
-			<li>Use built-in screen time reports (iOS/Android) to see what apps are used</li>
-			<li>Create categories: Educational, Hybrid, Entertainment</li>
-			<li>Review weekly: "Let's look at your screen time report together"</li>
-			<li>Discuss: "I see lots of YouTube - was that educational or entertainment?"</li>
-			<li>Adjust: "Next week, let's try more balanced mix"</li>
-		</ol>
+    <h3>Visual Tracking (for Younger Kids):</h3>
+    <ul>
+      <li>Use a chart with stickers: Green for educational, yellow for hybrid, red for entertainment</li>
+      <li>Goal: More green stickers than red each week</li>
+      <li>Reward meeting goals with special activity (not more screen time)</li>
+    </ul>
+  </section>
 
-		<h3>Visual Tracking (for Younger Kids):</h3>
-		<ul>
-			<li>Use a chart with stickers: Green for educational, yellow for hybrid, red for entertainment</li>
-			<li>Goal: More green stickers than red each week</li>
-			<li>Reward meeting goals with special activity (not more screen time)</li>
-		</ul>
-	</section>
+  <section>
+    <h2>🎮 Special Cases</h2>
 
-	<section>
-		<h2>🎮 Special Cases</h2>
+    <h3>What About Gaming?</h3>
+    <p>Games exist on a spectrum:</p>
+    <ul>
+      <li><strong>Educational:</strong> Prodigy Math, CodeCombat, DragonBox</li>
+      <li><strong>Educational-ish:</strong> Minecraft (creative mode), Civilization, Portal (problem-solving)</li>
+      <li><strong>Entertainment:</strong> Fortnite, Call of Duty, mobile games</li>
+    </ul>
+    <p>Apply 80/20 rule to gaming specifically if it's a major time investment.</p>
 
-		<h3>What About Gaming?</h3>
-		<p>Games exist on a spectrum:</p>
-		<ul>
-			<li><strong>Educational:</strong> Prodigy Math, CodeCombat, DragonBox</li>
-			<li><strong>Educational-ish:</strong> Minecraft (creative mode), Civilization, Portal (problem-solving)</li>
-			<li><strong>Entertainment:</strong> Fortnite, Call of Duty, mobile games</li>
-		</ul>
-		<p>Apply 80/20 rule to gaming specifically if it's a major time investment.</p>
+    <h3>What About Social Media?</h3>
+    <ul>
+      <li>Generally entertainment, but can be educational if following educational accounts</li>
+      <li>Curate feed: Follow science communicators, educational institutions, skill-share creators</li>
+      <li>Limit mindless scrolling, encourage purposeful use</li>
+    </ul>
 
-		<h3>What About Social Media?</h3>
-		<ul>
-			<li>Generally entertainment, but can be educational if following educational accounts</li>
-			<li>Curate feed: Follow science communicators, educational institutions, skill-share creators</li>
-			<li>Limit mindless scrolling, encourage purposeful use</li>
-		</ul>
+    <h3>What About YouTube?</h3>
+    <ul>
+      <li>100% depends on content</li>
+      <li>Review subscriptions together</li>
+      <li>Encourage educational channels: Mark Rober, Vsauce, Veritasium, SmarterEveryDay</li>
+      <li>Limit algorithm-driven browsing (auto-play leads to low-quality)</li>
+    </ul>
+  </section>
 
-		<h3>What About YouTube?</h3>
-		<ul>
-			<li>100% depends on content</li>
-			<li>Review subscriptions together</li>
-			<li>Encourage educational channels: Mark Rober, Vsauce, Veritasium, SmarterEveryDay</li>
-			<li>Limit algorithm-driven browsing (auto-play leads to low-quality)</li>
-		</ul>
-	</section>
+  <section>
+    <h2>📋 Sample Weekly Schedule</h2>
 
-	<section>
-		<h2>📋 Sample Weekly Schedule</h2>
+    <div class="schedule-box">
+      <h3>Middle School Student Example (2 hours/day screen time)</h3>
 
-		<div class="schedule-box">
-			<h3>Middle School Student Example (2 hours/day screen time)</h3>
+      <h4>Monday-Thursday (Weekdays)</h4>
+      <ul>
+        <li><strong>After school (3:30-5:00):</strong> Homework on device (doesn't count toward limit)</li>
+        <li>
+          <strong>5:00-6:00:</strong> 1 hour recreational screen time
+          <ul>
+            <li>First 45 minutes: Educational (Khan Academy, Duolingo, educational YouTube)</li>
+            <li>Final 15 minutes: Entertainment earned (gaming, social media, TV)</li>
+          </ul>
+        </li>
+        <li><strong>After dinner:</strong> Screen-free (family time, reading, hobbies)</li>
+      </ul>
 
-			<h4>Monday-Thursday (Weekdays)</h4>
-			<ul>
-				<li><strong>After school (3:30-5:00):</strong> Homework on device (doesn't count toward limit)</li>
-				<li><strong>5:00-6:00:</strong> 1 hour recreational screen time
-					<ul>
-						<li>First 45 minutes: Educational (Khan Academy, Duolingo, educational YouTube)</li>
-						<li>Final 15 minutes: Entertainment earned (gaming, social media, TV)</li>
-					</ul>
-				</li>
-				<li><strong>After dinner:</strong> Screen-free (family time, reading, hobbies)</li>
-			</ul>
+      <h4>Friday</h4>
+      <ul>
+        <li>Same as weekday, but 30 min entertainment if homework is done early</li>
+      </ul>
 
-			<h4>Friday</h4>
-			<ul>
-				<li>Same as weekday, but 30 min entertainment if homework is done early</li>
-			</ul>
+      <h4>Saturday-Sunday (Weekends)</h4>
+      <ul>
+        <li><strong>Morning:</strong> Chores and outdoor activity first</li>
+        <li>
+          <strong>Afternoon (1:00-3:30):</strong> 2.5 hours screen time
+          <ul>
+            <li>30 minutes: Educational content</li>
+            <li>2 hours: Free choice (entertainment/gaming/social)</li>
+          </ul>
+        </li>
+        <li><strong>Evening:</strong> Family activity or friend time</li>
+      </ul>
 
-			<h4>Saturday-Sunday (Weekends)</h4>
-			<ul>
-				<li><strong>Morning:</strong> Chores and outdoor activity first</li>
-				<li><strong>Afternoon (1:00-3:30):</strong> 2.5 hours screen time
-					<ul>
-						<li>30 minutes: Educational content</li>
-						<li>2 hours: Free choice (entertainment/gaming/social)</li>
-					</ul>
-				</li>
-				<li><strong>Evening:</strong> Family activity or friend time</li>
-			</ul>
+      <p><em>Total weekly: ~14 hours screen time, roughly 65% educational/purposeful, 35% entertainment</em></p>
+    </div>
+  </section>
 
-			<p><em>Total weekly: ~14 hours screen time, roughly 65% educational/purposeful, 35% entertainment</em></p>
-		</div>
-	</section>
+  <section slot="next-steps">
+    <h2>🎯 Next Steps & Related Guides</h2>
 
-	<section slot="next-steps">
-		<h2>🎯 Next Steps & Related Guides</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+      <a
+        href="/guides/screen-time-management"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
+        <h3>⏰ Screen Time Management</h3>
+        <p>Overall strategies for healthy screen time limits</p>
+      </a>
 
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-			<a href="/guides/screen-time-management" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>⏰ Screen Time Management</h3>
-				<p>Overall strategies for healthy screen time limits</p>
-			</a>
+      <a
+        href="/guides/age-appropriate-internet"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
+        <h3>🎯 Age-Appropriate Internet</h3>
+        <p>What content and access is appropriate at each age</p>
+      </a>
 
-			<a href="/guides/age-appropriate-internet" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>🎯 Age-Appropriate Internet</h3>
-				<p>What content and access is appropriate at each age</p>
-			</a>
+      <a
+        href="/guides/ios-screen-time"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
+        <h3>📱 iOS Screen Time</h3>
+        <p>Set app category limits to enforce educational balance</p>
+      </a>
 
-			<a href="/guides/ios-screen-time" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>📱 iOS Screen Time</h3>
-				<p>Set app category limits to enforce educational balance</p>
-			</a>
+      <a
+        href="/parents"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
+        <h3>👨‍👩‍👧 All Parent Resources</h3>
+        <p>Browse all guides and resources for parents</p>
+      </a>
+    </div>
 
-			<a href="/parents" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>👨‍👩‍👧 All Parent Resources</h3>
-				<p>Browse all guides and resources for parents</p>
-			</a>
-		</div>
-
-		<div class="alert alert-success">
-			<strong>Remember:</strong> Perfect balance is impossible and unnecessary. The goal is creating overall patterns that prioritize learning while allowing fun. Some days will be more entertainment-heavy, and that's okay - look at the weekly or monthly average.
-		</div>
-	</section>
+    <div class="alert alert-success">
+      <strong>Remember:</strong> Perfect balance is impossible and unnecessary. The goal is creating overall patterns that
+      prioritize learning while allowing fun. Some days will be more entertainment-heavy, and that's okay - look at the weekly
+      or monthly average.
+    </div>
+  </section>
 </GuideLayout>
-

@@ -3,7 +3,8 @@ import GuideLayout from '~/layouts/GuideLayout.astro';
 
 const metadata = {
   title: 'Browser Extensions for Filtering & Productivity',
-  description: 'Guide to browser extensions that provide content filtering, distraction blocking, and productivity features for safer web browsing.',
+  description:
+    'Guide to browser extensions that provide content filtering, distraction blocking, and productivity features for safer web browsing.',
 };
 ---
 
@@ -14,14 +15,12 @@ const metadata = {
   prerequisites={[
     'Chrome, Firefox, Edge, or Safari browser',
     'Ability to install extensions',
-    'Admin access to prevent extension removal (recommended)'
+    'Admin access to prevent extension removal (recommended)',
   ]}
 >
   <Fragment slot="breadcrumb">
     <li class="flex items-center">
-      <a href="/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
-        Home
-      </a>
+      <a href="/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"> Home </a>
       <span class="mx-2 text-gray-500">/</span>
     </li>
     <li class="flex items-center">
@@ -30,19 +29,20 @@ const metadata = {
       </a>
       <span class="mx-2 text-gray-500">/</span>
     </li>
-    <li class="text-gray-700 dark:text-gray-300">
-      Browser Extensions
-    </li>
+    <li class="text-gray-700 dark:text-gray-300">Browser Extensions</li>
   </Fragment>
 
   <section>
     <h2>Browser Extensions for Safety</h2>
     <p>
-      Browser extensions are lightweight add-ons that enhance your web browser with additional features. For internet safety, extensions can block inappropriate content, remove distractions, enforce time limits, and provide accountability.
+      Browser extensions are lightweight add-ons that enhance your web browser with additional features. For internet
+      safety, extensions can block inappropriate content, remove distractions, enforce time limits, and provide
+      accountability.
     </p>
 
     <div class="alert alert-warning">
-      <strong>Important Limitation:</strong> Browser extensions only work in that specific browser and can be disabled if the user has permission. Use them as an additional layer, not as your only protection method.
+      <strong>Important Limitation:</strong> Browser extensions only work in that specific browser and can be disabled if
+      the user has permission. Use them as an additional layer, not as your only protection method.
     </div>
   </section>
 
@@ -228,7 +228,8 @@ const metadata = {
     </ul>
 
     <div class="alert alert-warning">
-      <strong>Limitation:</strong> Tech-savvy users can often bypass browser extensions. Use multiple layers of protection and don't rely solely on extensions for serious filtering needs.
+      <strong>Limitation:</strong> Tech-savvy users can often bypass browser extensions. Use multiple layers of protection
+      and don't rely solely on extensions for serious filtering needs.
     </div>
   </section>
 
@@ -267,29 +268,44 @@ const metadata = {
     <h2>Next Steps</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-      <a href="/guides/dns-filtering" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+      <a
+        href="/guides/dns-filtering"
+        class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5"
+      >
         <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">DNS Filtering</h3>
         <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Add browser-independent network-level protection</p>
       </a>
 
-      <a href="/guides/filtering-software" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+      <a
+        href="/guides/filtering-software"
+        class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5"
+      >
         <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">Filtering Software</h3>
-        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Comprehensive cross-browser and cross-device protection</p>
+        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">
+          Comprehensive cross-browser and cross-device protection
+        </p>
       </a>
 
-      <a href="/guides/ios-screen-time" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+      <a
+        href="/guides/ios-screen-time"
+        class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5"
+      >
         <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">Device Controls</h3>
         <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">System-level controls that can't be bypassed</p>
       </a>
 
-      <a href="/guides/accountability-apps" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+      <a
+        href="/guides/accountability-apps"
+        class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5"
+      >
         <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">Accountability Software</h3>
         <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Monitoring and transparency for older teens/adults</p>
       </a>
     </div>
 
     <div class="alert alert-info">
-      <strong>Best Use:</strong> Browser extensions work great for personal productivity and as an additional layer. For comprehensive child protection, combine with DNS filtering and device-level controls.
+      <strong>Best Use:</strong> Browser extensions work great for personal productivity and as an additional layer. For
+      comprehensive child protection, combine with DNS filtering and device-level controls.
     </div>
   </Fragment>
 </GuideLayout>

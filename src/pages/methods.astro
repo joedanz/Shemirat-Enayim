@@ -5,14 +5,16 @@ import Features from '~/components/widgets/Features.astro';
 
 const metadata = {
   title: 'Protection Methods',
-  description: 'Comprehensive guide to internet filtering and safety methods including DNS filtering, device controls, and software solutions.',
+  description:
+    'Comprehensive guide to internet filtering and safety methods including DNS filtering, device controls, and software solutions.',
 };
 
 // Define all protection methods by category
 const networkMethods = [
   {
     title: 'DNS Filtering',
-    description: 'Block inappropriate content at the network level using filtering DNS servers like OpenDNS, CleanBrowsing, or NextDNS.',
+    description:
+      'Block inappropriate content at the network level using filtering DNS servers like OpenDNS, CleanBrowsing, or NextDNS.',
     difficulty: 'Beginner',
     time: '15-30 min',
     href: '/guides/dns-filtering',
@@ -98,7 +100,8 @@ const deviceMethods = [
 const softwareMethods = [
   {
     title: 'Content Filtering Software',
-    description: 'Comprehensive filtering applications like Qustodio, Net Nanny, or Norton Family for multi-device protection.',
+    description:
+      'Comprehensive filtering applications like Qustodio, Net Nanny, or Norton Family for multi-device protection.',
     difficulty: 'Beginner',
     time: '30-45 min',
     href: '/guides/filtering-software',
@@ -148,11 +151,12 @@ const softwareMethods = [
 
   <!-- Intro paragraph **************** -->
   <div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-    <div class="max-w-4xl mx-auto bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-950/20 dark:to-green-950/20 rounded-xl p-8 border border-blue-100 dark:border-blue-900/30">
+    <div
+      class="max-w-4xl mx-auto bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-950/20 dark:to-green-950/20 rounded-xl p-8 border border-blue-100 dark:border-blue-900/30"
+    >
       <p class="text-xl text-center text-gray-700 dark:text-gray-300 m-0">
-        Internet safety works best with a layered approach. Combine network-level protection
-        (affects all devices) with device-specific controls (targeted protection) and software
-        solutions (additional features and accountability).
+        Internet safety works best with a layered approach. Combine network-level protection (affects all devices) with
+        device-specific controls (targeted protection) and software solutions (additional features and accountability).
       </p>
     </div>
   </div>
@@ -171,8 +175,8 @@ const softwareMethods = [
             method.difficulty === 'Beginner'
               ? 'bg-green-100 text-green-800'
               : method.difficulty === 'Intermediate'
-              ? 'bg-yellow-100 text-yellow-800'
-              : 'bg-red-100 text-red-800'
+                ? 'bg-yellow-100 text-yellow-800'
+                : 'bg-red-100 text-red-800'
           }">${method.difficulty}</span>
           <span class="text-sm text-gray-600">⏱️ ${method.time}</span>
         </div>
@@ -203,8 +207,8 @@ const softwareMethods = [
             method.difficulty === 'Beginner'
               ? 'bg-green-100 text-green-800'
               : method.difficulty === 'Intermediate'
-              ? 'bg-yellow-100 text-yellow-800'
-              : 'bg-red-100 text-red-800'
+                ? 'bg-yellow-100 text-yellow-800'
+                : 'bg-red-100 text-red-800'
           }">${method.difficulty}</span>
           <span class="text-sm text-gray-600">⏱️ ${method.time}</span>
         </div>
@@ -231,8 +235,8 @@ const softwareMethods = [
             method.difficulty === 'Beginner'
               ? 'bg-green-100 text-green-800'
               : method.difficulty === 'Intermediate'
-              ? 'bg-yellow-100 text-yellow-800'
-              : 'bg-red-100 text-red-800'
+                ? 'bg-yellow-100 text-yellow-800'
+                : 'bg-red-100 text-red-800'
           }">${method.difficulty}</span>
           <span class="text-sm text-gray-600">⏱️ ${method.time}</span>
         </div>
@@ -261,49 +265,49 @@ const softwareMethods = [
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Basic Family Protection -->
-        <div class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 border-2 border-blue-200 dark:border-blue-800 rounded-xl p-6">
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
-            🏠 Basic Family Protection
-          </h3>
-          <ul class="space-y-2 mb-4 text-gray-700 dark:text-gray-300">
-            <li><strong>Network:</strong> DNS filtering (OpenDNS or CleanBrowsing)</li>
-            <li><strong>Devices:</strong> Built-in parental controls on each device</li>
-          </ul>
-          <p class="text-sm text-gray-700 dark:text-gray-300 pt-3 border-t border-gray-300 dark:border-gray-700">
-            <strong>Cost:</strong> Free | <strong>Time:</strong> 1-2 hours total
-          </p>
-        </div>
+      <!-- Basic Family Protection -->
+      <div
+        class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 border-2 border-blue-200 dark:border-blue-800 rounded-xl p-6"
+      >
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">🏠 Basic Family Protection</h3>
+        <ul class="space-y-2 mb-4 text-gray-700 dark:text-gray-300">
+          <li><strong>Network:</strong> DNS filtering (OpenDNS or CleanBrowsing)</li>
+          <li><strong>Devices:</strong> Built-in parental controls on each device</li>
+        </ul>
+        <p class="text-sm text-gray-700 dark:text-gray-300 pt-3 border-t border-gray-300 dark:border-gray-700">
+          <strong>Cost:</strong> Free | <strong>Time:</strong> 1-2 hours total
+        </p>
+      </div>
 
-        <!-- Comprehensive Protection -->
-        <div class="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border-2 border-blue-200 dark:border-blue-800 rounded-xl p-6">
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
-            🛡️ Comprehensive Protection
-          </h3>
-          <ul class="space-y-2 mb-4 text-gray-700 dark:text-gray-300">
-            <li><strong>Network:</strong> DNS filtering + router-level controls</li>
-            <li><strong>Devices:</strong> Device parental controls</li>
-            <li><strong>Software:</strong> Filtering software (Qustodio or Net Nanny)</li>
-          </ul>
-          <p class="text-sm text-gray-700 dark:text-gray-300 pt-3 border-t border-gray-300 dark:border-gray-700">
-            <strong>Cost:</strong> $10-15/month | <strong>Time:</strong> 3-4 hours setup
-          </p>
-        </div>
+      <!-- Comprehensive Protection -->
+      <div
+        class="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border-2 border-blue-200 dark:border-blue-800 rounded-xl p-6"
+      >
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">🛡️ Comprehensive Protection</h3>
+        <ul class="space-y-2 mb-4 text-gray-700 dark:text-gray-300">
+          <li><strong>Network:</strong> DNS filtering + router-level controls</li>
+          <li><strong>Devices:</strong> Device parental controls</li>
+          <li><strong>Software:</strong> Filtering software (Qustodio or Net Nanny)</li>
+        </ul>
+        <p class="text-sm text-gray-700 dark:text-gray-300 pt-3 border-t border-gray-300 dark:border-gray-700">
+          <strong>Cost:</strong> $10-15/month | <strong>Time:</strong> 3-4 hours setup
+        </p>
+      </div>
 
-        <!-- Individual Accountability -->
-        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 border-2 border-blue-200 dark:border-blue-800 rounded-xl p-6">
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
-            👤 Individual Accountability
-          </h3>
-          <ul class="space-y-2 mb-4 text-gray-700 dark:text-gray-300">
-            <li><strong>Network:</strong> Personal DNS filtering</li>
-            <li><strong>Devices:</strong> Self-imposed restrictions</li>
-            <li><strong>Software:</strong> Accountability app (Covenant Eyes or Accountable2You)</li>
-          </ul>
-          <p class="text-sm text-gray-700 dark:text-gray-300 pt-3 border-t border-gray-300 dark:border-gray-700">
-            <strong>Cost:</strong> $10-15/month | <strong>Time:</strong> 1-2 hours setup
-          </p>
-        </div>
+      <!-- Individual Accountability -->
+      <div
+        class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 border-2 border-blue-200 dark:border-blue-800 rounded-xl p-6"
+      >
+        <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">👤 Individual Accountability</h3>
+        <ul class="space-y-2 mb-4 text-gray-700 dark:text-gray-300">
+          <li><strong>Network:</strong> Personal DNS filtering</li>
+          <li><strong>Devices:</strong> Self-imposed restrictions</li>
+          <li><strong>Software:</strong> Accountability app (Covenant Eyes or Accountable2You)</li>
+        </ul>
+        <p class="text-sm text-gray-700 dark:text-gray-300 pt-3 border-t border-gray-300 dark:border-gray-700">
+          <strong>Cost:</strong> $10-15/month | <strong>Time:</strong> 1-2 hours setup
+        </p>
+      </div>
     </div>
   </section>
 
@@ -314,64 +318,62 @@ const softwareMethods = [
     </h2>
 
     <div class="overflow-x-auto">
-        <table class="w-full bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-          <thead>
-            <tr class="bg-blue-600 text-white">
-              <th class="px-4 py-3 text-left text-sm font-semibold uppercase tracking-wider">Feature</th>
-              <th class="px-4 py-3 text-left text-sm font-semibold uppercase tracking-wider">Network-Level</th>
-              <th class="px-4 py-3 text-left text-sm font-semibold uppercase tracking-wider">Device-Level</th>
-              <th class="px-4 py-3 text-left text-sm font-semibold uppercase tracking-wider">Software</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
-            <tr>
-              <td class="px-4 py-3 font-semibold text-gray-900 dark:text-white">Protects all devices</td>
-              <td class="px-4 py-3 text-center text-green-600 dark:text-green-400 text-xl">✓</td>
-              <td class="px-4 py-3 text-center text-gray-400 dark:text-gray-500 text-xl">✗</td>
-              <td class="px-4 py-3 text-center text-gray-600 dark:text-gray-300">✓*</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-semibold text-gray-900 dark:text-white">Works outside home</td>
-              <td class="px-4 py-3 text-center text-gray-400 dark:text-gray-500 text-xl">✗</td>
-              <td class="px-4 py-3 text-center text-green-600 dark:text-green-400 text-xl">✓</td>
-              <td class="px-4 py-3 text-center text-green-600 dark:text-green-400 text-xl">✓</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-semibold text-gray-900 dark:text-white">Free options available</td>
-              <td class="px-4 py-3 text-center text-green-600 dark:text-green-400 text-xl">✓</td>
-              <td class="px-4 py-3 text-center text-green-600 dark:text-green-400 text-xl">✓</td>
-              <td class="px-4 py-3 text-center text-gray-600 dark:text-gray-300">Limited</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-semibold text-gray-900 dark:text-white">Easy to set up</td>
-              <td class="px-4 py-3 text-center text-green-600 dark:text-green-400 text-xl">✓</td>
-              <td class="px-4 py-3 text-center text-green-600 dark:text-green-400 text-xl">✓</td>
-              <td class="px-4 py-3 text-center text-gray-600 dark:text-gray-300">Varies</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-semibold text-gray-900 dark:text-white">Detailed reporting</td>
-              <td class="px-4 py-3 text-center text-gray-600 dark:text-gray-300">Basic</td>
-              <td class="px-4 py-3 text-center text-gray-600 dark:text-gray-300">Basic</td>
-              <td class="px-4 py-3 text-center text-green-600 dark:text-green-400 text-xl">✓</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-semibold text-gray-900 dark:text-white">Time management</td>
-              <td class="px-4 py-3 text-center text-gray-600 dark:text-gray-300">Limited</td>
-              <td class="px-4 py-3 text-center text-green-600 dark:text-green-400 text-xl">✓</td>
-              <td class="px-4 py-3 text-center text-green-600 dark:text-green-400 text-xl">✓</td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 font-semibold text-gray-900 dark:text-white">App control</td>
-              <td class="px-4 py-3 text-center text-gray-400 dark:text-gray-500 text-xl">✗</td>
-              <td class="px-4 py-3 text-center text-green-600 dark:text-green-400 text-xl">✓</td>
-              <td class="px-4 py-3 text-center text-green-600 dark:text-green-400 text-xl">✓</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <table class="w-full bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+        <thead>
+          <tr class="bg-blue-600 text-white">
+            <th class="px-4 py-3 text-left text-sm font-semibold uppercase tracking-wider">Feature</th>
+            <th class="px-4 py-3 text-left text-sm font-semibold uppercase tracking-wider">Network-Level</th>
+            <th class="px-4 py-3 text-left text-sm font-semibold uppercase tracking-wider">Device-Level</th>
+            <th class="px-4 py-3 text-left text-sm font-semibold uppercase tracking-wider">Software</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+          <tr>
+            <td class="px-4 py-3 font-semibold text-gray-900 dark:text-white">Protects all devices</td>
+            <td class="px-4 py-3 text-center text-green-600 dark:text-green-400 text-xl">✓</td>
+            <td class="px-4 py-3 text-center text-gray-400 dark:text-gray-500 text-xl">✗</td>
+            <td class="px-4 py-3 text-center text-gray-600 dark:text-gray-300">✓*</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-gray-900 dark:text-white">Works outside home</td>
+            <td class="px-4 py-3 text-center text-gray-400 dark:text-gray-500 text-xl">✗</td>
+            <td class="px-4 py-3 text-center text-green-600 dark:text-green-400 text-xl">✓</td>
+            <td class="px-4 py-3 text-center text-green-600 dark:text-green-400 text-xl">✓</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-gray-900 dark:text-white">Free options available</td>
+            <td class="px-4 py-3 text-center text-green-600 dark:text-green-400 text-xl">✓</td>
+            <td class="px-4 py-3 text-center text-green-600 dark:text-green-400 text-xl">✓</td>
+            <td class="px-4 py-3 text-center text-gray-600 dark:text-gray-300">Limited</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-gray-900 dark:text-white">Easy to set up</td>
+            <td class="px-4 py-3 text-center text-green-600 dark:text-green-400 text-xl">✓</td>
+            <td class="px-4 py-3 text-center text-green-600 dark:text-green-400 text-xl">✓</td>
+            <td class="px-4 py-3 text-center text-gray-600 dark:text-gray-300">Varies</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-gray-900 dark:text-white">Detailed reporting</td>
+            <td class="px-4 py-3 text-center text-gray-600 dark:text-gray-300">Basic</td>
+            <td class="px-4 py-3 text-center text-gray-600 dark:text-gray-300">Basic</td>
+            <td class="px-4 py-3 text-center text-green-600 dark:text-green-400 text-xl">✓</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-gray-900 dark:text-white">Time management</td>
+            <td class="px-4 py-3 text-center text-gray-600 dark:text-gray-300">Limited</td>
+            <td class="px-4 py-3 text-center text-green-600 dark:text-green-400 text-xl">✓</td>
+            <td class="px-4 py-3 text-center text-green-600 dark:text-green-400 text-xl">✓</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-gray-900 dark:text-white">App control</td>
+            <td class="px-4 py-3 text-center text-gray-400 dark:text-gray-500 text-xl">✗</td>
+            <td class="px-4 py-3 text-center text-green-600 dark:text-green-400 text-xl">✓</td>
+            <td class="px-4 py-3 text-center text-green-600 dark:text-green-400 text-xl">✓</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-    <p class="text-sm text-gray-600 dark:text-gray-400 italic mt-4">
-      * With multi-device license
-    </p>
+    <p class="text-sm text-gray-600 dark:text-gray-400 italic mt-4">* With multi-device license</p>
   </section>
 </Layout>

@@ -5,6 +5,7 @@ This document explains how to set up analytics and error monitoring for the Shem
 ## Overview
 
 The site uses:
+
 - **Plausible Analytics** - Privacy-respecting website analytics (no cookies, GDPR-compliant)
 - **Sentry** - Error monitoring and performance tracking
 - **Web Vitals** - Core Web Vitals monitoring (sent to Plausible)
@@ -12,6 +13,7 @@ The site uses:
 ## Phase 7 Completion Status
 
 ✅ **Completed (10/12 tasks):**
+
 1. Set up Plausible Analytics infrastructure ✓
 2. Set up Sentry Error Monitoring infrastructure ✓
 3. Create analytics utility helper (src/utils/analytics.ts) ✓
@@ -23,9 +25,7 @@ The site uses:
 9. Create .env.example with configuration ✓
 10. Create analytics setup documentation ✓
 
-⏳ **Remaining (2/12 tasks):**
-11. Set up Plausible and Sentry accounts + configure environment
-12. Update plan.md to mark Phase 7 as complete
+⏳ **Remaining (2/12 tasks):** 11. Set up Plausible and Sentry accounts + configure environment 12. Update plan.md to mark Phase 7 as complete
 
 ---
 
@@ -50,6 +50,7 @@ The site uses:
 
 1. Create a `.env` file in your project root (copy from `.env.example`)
 2. Add your domain:
+
 ```bash
 PUBLIC_PLAUSIBLE_DOMAIN=shemiratenayim.org
 PUBLIC_ENV=production
@@ -117,6 +118,7 @@ In your Plausible dashboard:
 ### Step 3: Get Your DSN
 
 After creating the project, Sentry will show you a DSN (Data Source Name). It looks like:
+
 ```
 https://abc123def456@o000000.ingest.sentry.io/0000000
 ```
@@ -172,10 +174,12 @@ SENTRY_PROJECT=shemiratenayim
 Here's what's being tracked automatically:
 
 ### Pageviews
+
 - Automatic tracking of all page visits
 - Custom properties: `pageType`, `audience`, `category`
 
 ### Custom Events
+
 1. **Guide Complete** - When user scrolls to 90% of a guide
    - Props: `guide`, `category`
 
@@ -268,6 +272,7 @@ Before marking Phase 7 complete, test:
 When deploying to production:
 
 1. **Set Environment Variables** in your hosting platform:
+
    ```bash
    PUBLIC_ENV=production
    PUBLIC_PLAUSIBLE_DOMAIN=shemiratenayim.org
@@ -294,12 +299,14 @@ When deploying to production:
 Both Plausible and Sentry are privacy-respecting:
 
 ✅ **Plausible:**
+
 - No cookies
 - No personal data collection
 - GDPR, CCPA, PECR compliant
 - All data stored in EU
 
 ✅ **Sentry:**
+
 - Only collects error data and stack traces
 - No PII in error reports
 - Can be configured for data scrubbing
@@ -312,11 +319,13 @@ Both Plausible and Sentry are privacy-respecting:
 ## 8. Cost Estimate
 
 ### Plausible
+
 - **Growth Plan**: $9/month (up to 10k visitors/month)
 - **Business Plan**: $19/month (up to 100k visitors/month)
 - **Enterprise**: Custom pricing for higher volume
 
 ### Sentry
+
 - **Free Tier**: 5,000 errors/month, 10k performance units/month
 - **Team Plan**: $26/month for 50k errors/month
 - Most sites stay within free tier
@@ -351,6 +360,7 @@ After completing setup:
 - **Analytics Utils**: See `src/utils/analytics.ts` for all tracking functions
 
 For questions about implementation, check the code comments in:
+
 - `src/layouts/Layout.astro` - Main analytics setup
 - `src/utils/analytics.ts` - Tracking utility functions
 - `src/scripts/performance-monitor.ts` - Web Vitals tracking

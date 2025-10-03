@@ -97,7 +97,7 @@ export default defineConfig({
       rollupOptions: {
         output: {
           manualChunks: {
-            'search': ['fuse.js'],
+            search: ['fuse.js'],
           },
         },
       },

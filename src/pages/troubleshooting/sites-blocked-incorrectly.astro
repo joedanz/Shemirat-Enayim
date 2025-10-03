@@ -6,413 +6,538 @@ import Accordion from '../../components/Accordion.astro';
 ---
 
 <Layout
-	title="Troubleshooting: Legitimate Sites Being Blocked"
-	description="Fix false positives where important websites are blocked incorrectly. Learn how to whitelist sites and adjust filter sensitivity."
+  title="Troubleshooting: Legitimate Sites Being Blocked"
+  description="Fix false positives where important websites are blocked incorrectly. Learn how to whitelist sites and adjust filter sensitivity."
 >
-	<Breadcrumb />
+  <Breadcrumb />
 
-	<div class="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-		<header class="pb-6 border-b-4 border-blue-600 dark:border-blue-500 mb-8">
-			<div class="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-100">
-				Beginner
-			</div>
-			<h1 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-3 leading-tight">
-				Legitimate Sites Being Blocked
-			</h1>
-			<p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-				Important websites are being blocked incorrectly (false positives). Learn how to whitelist sites and adjust filtering.
-			</p>
-			<div class="flex gap-6 flex-wrap text-base text-gray-600 dark:text-gray-400">
-				<span>⏱️ Time Required: 5-15 minutes</span>
-				<span>🔧 Difficulty: Beginner</span>
-			</div>
-		</header>
+  <div class="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+    <header class="pb-6 border-b-4 border-blue-600 dark:border-blue-500 mb-8">
+      <div
+        class="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-4 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-100"
+      >
+        Beginner
+      </div>
+      <h1 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-3 leading-tight">
+        Legitimate Sites Being Blocked
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+        Important websites are being blocked incorrectly (false positives). Learn how to whitelist sites and adjust
+        filtering.
+      </p>
+      <div class="flex gap-6 flex-wrap text-base text-gray-600 dark:text-gray-400">
+        <span>⏱️ Time Required: 5-15 minutes</span>
+        <span>🔧 Difficulty: Beginner</span>
+      </div>
+    </header>
 
-		<Alert type="warning">
-			<strong>Before Unblocking:</strong> Verify the site is actually legitimate. Malicious sites often use trustworthy-looking names.
-			Check the URL carefully for misspellings.
-		</Alert>
+    <Alert type="warning">
+      <strong>Before Unblocking:</strong> Verify the site is actually legitimate. Malicious sites often use trustworthy-looking
+      names. Check the URL carefully for misspellings.
+    </Alert>
 
-		<section class="mt-10">
-			<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Common False Positives</h2>
-			<p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">These legitimate sites are frequently blocked by overly aggressive filtering:</p>
+    <section class="mt-10">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Common False Positives</h2>
+      <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">
+        These legitimate sites are frequently blocked by overly aggressive filtering:
+      </p>
 
-			<ul class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-				<li class="mb-2"><strong>Healthcare:</strong> Medical information sites, pharmacy portals</li>
-				<li class="mb-2"><strong>Education:</strong> School websites, online learning platforms</li>
-				<li class="mb-2"><strong>Finance:</strong> Banks, investment platforms, cryptocurrency exchanges</li>
-				<li class="mb-2"><strong>Government:</strong> Tax portals, DMV, social services</li>
-				<li class="mb-2"><strong>Shopping:</strong> Clothing retailers (sometimes blocked due to model photos)</li>
-				<li class="mb-2"><strong>Cloud storage:</strong> Google Drive, Dropbox, OneDrive sharing links</li>
-				<li class="mb-2"><strong>Forums:</strong> Reddit, Quora, Stack Overflow (user-generated content)</li>
-			</ul>
+      <ul class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+        <li class="mb-2"><strong>Healthcare:</strong> Medical information sites, pharmacy portals</li>
+        <li class="mb-2"><strong>Education:</strong> School websites, online learning platforms</li>
+        <li class="mb-2"><strong>Finance:</strong> Banks, investment platforms, cryptocurrency exchanges</li>
+        <li class="mb-2"><strong>Government:</strong> Tax portals, DMV, social services</li>
+        <li class="mb-2"><strong>Shopping:</strong> Clothing retailers (sometimes blocked due to model photos)</li>
+        <li class="mb-2"><strong>Cloud storage:</strong> Google Drive, Dropbox, OneDrive sharing links</li>
+        <li class="mb-2"><strong>Forums:</strong> Reddit, Quora, Stack Overflow (user-generated content)</li>
+      </ul>
 
-			<p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">
-				False positives occur because filtering uses category-based blocking. A site might be classified in a blocked category
-				even if it has legitimate uses.
-			</p>
-		</section>
+      <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">
+        False positives occur because filtering uses category-based blocking. A site might be classified in a blocked
+        category even if it has legitimate uses.
+      </p>
+    </section>
 
-		<section class="mt-10">
-			<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Solutions by Filtering Method</h2>
+    <section class="mt-10">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Solutions by Filtering Method</h2>
 
-			<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6 mb-6">
-				<h3 class="flex items-center gap-3 text-2xl font-semibold text-gray-900 dark:text-white mt-0 mb-4">
-					<span class="inline-flex items-center justify-center w-10 h-10 bg-blue-600 dark:bg-blue-500 text-white rounded-full font-bold text-xl">1</span>
-					OpenDNS Filtering
-				</h3>
+      <div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6 mb-6">
+        <h3 class="flex items-center gap-3 text-2xl font-semibold text-gray-900 dark:text-white mt-0 mb-4">
+          <span
+            class="inline-flex items-center justify-center w-10 h-10 bg-blue-600 dark:bg-blue-500 text-white rounded-full font-bold text-xl"
+            >1</span
+          >
+          OpenDNS Filtering
+        </h3>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">Option A: Whitelist Individual Sites</h4>
-				<ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-					<li class="mb-2">Log into your OpenDNS account at <strong>dashboard.opendns.com</strong></li>
-					<li class="mb-2">Select your network configuration</li>
-					<li class="mb-2">Navigate to <strong>Web Content Filtering</strong></li>
-					<li class="mb-2">Scroll to bottom: <strong>"Manage Individual Domains"</strong></li>
-					<li class="mb-2">Under <strong>"Always Allow"</strong>, add the domain</li>
-					<li class="mb-2">Example: Add <code class="bg-gray-900 dark:bg-gray-950 text-green-300 px-1.5 py-0.5 rounded text-sm font-mono">reddit.com</code> if needed for schoolwork</li>
-					<li class="mb-2">Click <strong>"Add Domain"</strong></li>
-					<li class="mb-2">Wait 3-5 minutes for changes to propagate</li>
-				</ol>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">
+          Option A: Whitelist Individual Sites
+        </h4>
+        <ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+          <li class="mb-2">Log into your OpenDNS account at <strong>dashboard.opendns.com</strong></li>
+          <li class="mb-2">Select your network configuration</li>
+          <li class="mb-2">Navigate to <strong>Web Content Filtering</strong></li>
+          <li class="mb-2">Scroll to bottom: <strong>"Manage Individual Domains"</strong></li>
+          <li class="mb-2">Under <strong>"Always Allow"</strong>, add the domain</li>
+          <li class="mb-2">
+            Example: Add <code
+              class="bg-gray-900 dark:bg-gray-950 text-green-300 px-1.5 py-0.5 rounded text-sm font-mono"
+              >reddit.com</code
+            > if needed for schoolwork
+          </li>
+          <li class="mb-2">Click <strong>"Add Domain"</strong></li>
+          <li class="mb-2">Wait 3-5 minutes for changes to propagate</li>
+        </ol>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">Option B: Adjust Category Sensitivity</h4>
-				<ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-					<li class="mb-2">Dashboard → <strong>Web Content Filtering</strong></li>
-					<li class="mb-2">Review blocked categories</li>
-					<li class="mb-2">Uncheck categories that are blocking too broadly</li>
-					<li class="mb-2">Example: If educational sites are blocked, uncheck "Forums/Bulletin Boards"</li>
-					<li class="mb-2">Save changes</li>
-				</ol>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">
+          Option B: Adjust Category Sensitivity
+        </h4>
+        <ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+          <li class="mb-2">Dashboard → <strong>Web Content Filtering</strong></li>
+          <li class="mb-2">Review blocked categories</li>
+          <li class="mb-2">Uncheck categories that are blocking too broadly</li>
+          <li class="mb-2">Example: If educational sites are blocked, uncheck "Forums/Bulletin Boards"</li>
+          <li class="mb-2">Save changes</li>
+        </ol>
 
-				<Alert type="info">
-					<strong>Note:</strong> OpenDNS FamilyShield (free version) cannot be customized. Upgrade to OpenDNS Home
-					(free with signup) for whitelist control.
-				</Alert>
-			</div>
+        <Alert type="info">
+          <strong>Note:</strong> OpenDNS FamilyShield (free version) cannot be customized. Upgrade to OpenDNS Home (free
+          with signup) for whitelist control.
+        </Alert>
+      </div>
 
-			<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6 mb-6">
-				<h3 class="flex items-center gap-3 text-2xl font-semibold text-gray-900 dark:text-white mt-0 mb-4">
-					<span class="inline-flex items-center justify-center w-10 h-10 bg-blue-600 dark:bg-blue-500 text-white rounded-full font-bold text-xl">2</span>
-					CleanBrowsing Filtering
-				</h3>
+      <div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6 mb-6">
+        <h3 class="flex items-center gap-3 text-2xl font-semibold text-gray-900 dark:text-white mt-0 mb-4">
+          <span
+            class="inline-flex items-center justify-center w-10 h-10 bg-blue-600 dark:bg-blue-500 text-white rounded-full font-bold text-xl"
+            >2</span
+          >
+          CleanBrowsing Filtering
+        </h3>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">Free Filters (No Customization):</h4>
-				<p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">CleanBrowsing's free filters cannot be customized. Options:</p>
-				<ul class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-					<li class="mb-2"><strong>Switch filter levels:</strong> Use "Adult" filter instead of "Family" filter (less restrictive)</li>
-					<li class="mb-2"><strong>Upgrade to paid:</strong> $5/month for custom whitelists</li>
-					<li class="mb-2"><strong>Device-specific bypass:</strong> Change DNS on specific devices only</li>
-				</ul>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">
+          Free Filters (No Customization):
+        </h4>
+        <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">
+          CleanBrowsing's free filters cannot be customized. Options:
+        </p>
+        <ul class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+          <li class="mb-2">
+            <strong>Switch filter levels:</strong> Use "Adult" filter instead of "Family" filter (less restrictive)
+          </li>
+          <li class="mb-2"><strong>Upgrade to paid:</strong> $5/month for custom whitelists</li>
+          <li class="mb-2"><strong>Device-specific bypass:</strong> Change DNS on specific devices only</li>
+        </ul>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">Paid Plan Whitelisting:</h4>
-				<ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-					<li class="mb-2">Log into CleanBrowsing dashboard</li>
-					<li class="mb-2">Select your filter profile</li>
-					<li class="mb-2">Navigate to <strong>"Allowed Domains"</strong></li>
-					<li class="mb-2">Add domain to allow list</li>
-					<li class="mb-2">Can use wildcards: <code class="bg-gray-900 dark:bg-gray-950 text-green-300 px-1.5 py-0.5 rounded text-sm font-mono">*.example.com</code> allows all subdomains</li>
-					<li class="mb-2">Save and wait 2-3 minutes</li>
-				</ol>
-			</div>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">Paid Plan Whitelisting:</h4>
+        <ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+          <li class="mb-2">Log into CleanBrowsing dashboard</li>
+          <li class="mb-2">Select your filter profile</li>
+          <li class="mb-2">Navigate to <strong>"Allowed Domains"</strong></li>
+          <li class="mb-2">Add domain to allow list</li>
+          <li class="mb-2">
+            Can use wildcards: <code
+              class="bg-gray-900 dark:bg-gray-950 text-green-300 px-1.5 py-0.5 rounded text-sm font-mono"
+              >*.example.com</code
+            > allows all subdomains
+          </li>
+          <li class="mb-2">Save and wait 2-3 minutes</li>
+        </ol>
+      </div>
 
-			<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6 mb-6">
-				<h3 class="flex items-center gap-3 text-2xl font-semibold text-gray-900 dark:text-white mt-0 mb-4">
-					<span class="inline-flex items-center justify-center w-10 h-10 bg-blue-600 dark:bg-blue-500 text-white rounded-full font-bold text-xl">3</span>
-					Router Parental Controls
-				</h3>
+      <div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6 mb-6">
+        <h3 class="flex items-center gap-3 text-2xl font-semibold text-gray-900 dark:text-white mt-0 mb-4">
+          <span
+            class="inline-flex items-center justify-center w-10 h-10 bg-blue-600 dark:bg-blue-500 text-white rounded-full font-bold text-xl"
+            >3</span
+          >
+          Router Parental Controls
+        </h3>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">Most Routers:</h4>
-				<ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-					<li class="mb-2">Log into router admin panel</li>
-					<li class="mb-2">Navigate to <strong>Parental Controls</strong> or <strong>Security</strong></li>
-					<li class="mb-2">Find <strong>"Allowed Sites"</strong>, <strong>"Whitelist"</strong>, or <strong>"Exceptions"</strong></li>
-					<li class="mb-2">Add the domain</li>
-					<li class="mb-2">Apply changes and reboot router if necessary</li>
-				</ol>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">Most Routers:</h4>
+        <ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+          <li class="mb-2">Log into router admin panel</li>
+          <li class="mb-2">Navigate to <strong>Parental Controls</strong> or <strong>Security</strong></li>
+          <li class="mb-2">
+            Find <strong>"Allowed Sites"</strong>, <strong>"Whitelist"</strong>, or <strong>"Exceptions"</strong>
+          </li>
+          <li class="mb-2">Add the domain</li>
+          <li class="mb-2">Apply changes and reboot router if necessary</li>
+        </ol>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">ASUS Routers:</h4>
-				<ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-					<li class="mb-2">AiProtection → Parental Controls</li>
-					<li class="mb-2">Select profile</li>
-					<li class="mb-2">Content Filter → <strong>"URL Filter Exception"</strong></li>
-					<li class="mb-2">Add allowed domain</li>
-				</ol>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">ASUS Routers:</h4>
+        <ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+          <li class="mb-2">AiProtection → Parental Controls</li>
+          <li class="mb-2">Select profile</li>
+          <li class="mb-2">Content Filter → <strong>"URL Filter Exception"</strong></li>
+          <li class="mb-2">Add allowed domain</li>
+        </ol>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">Netgear Routers:</h4>
-				<ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-					<li class="mb-2">Security → Parental Controls</li>
-					<li class="mb-2">Click managed device</li>
-					<li class="mb-2"><strong>"Always Allow"</strong> section</li>
-					<li class="mb-2">Add website</li>
-				</ol>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">Netgear Routers:</h4>
+        <ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+          <li class="mb-2">Security → Parental Controls</li>
+          <li class="mb-2">Click managed device</li>
+          <li class="mb-2"><strong>"Always Allow"</strong> section</li>
+          <li class="mb-2">Add website</li>
+        </ol>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">TP-Link Routers:</h4>
-				<ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-					<li class="mb-2">HomeCare → Parental Controls</li>
-					<li class="mb-2">Select profile</li>
-					<li class="mb-2">Insights → <strong>"Whitelisted"</strong></li>
-					<li class="mb-2">Add site</li>
-				</ol>
-			</div>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">TP-Link Routers:</h4>
+        <ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+          <li class="mb-2">HomeCare → Parental Controls</li>
+          <li class="mb-2">Select profile</li>
+          <li class="mb-2">Insights → <strong>"Whitelisted"</strong></li>
+          <li class="mb-2">Add site</li>
+        </ol>
+      </div>
 
-			<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6 mb-6">
-				<h3 class="flex items-center gap-3 text-2xl font-semibold text-gray-900 dark:text-white mt-0 mb-4">
-					<span class="inline-flex items-center justify-center w-10 h-10 bg-blue-600 dark:bg-blue-500 text-white rounded-full font-bold text-xl">4</span>
-					Software Filtering (Qustodio, Net Nanny, etc.)
-				</h3>
+      <div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6 mb-6">
+        <h3 class="flex items-center gap-3 text-2xl font-semibold text-gray-900 dark:text-white mt-0 mb-4">
+          <span
+            class="inline-flex items-center justify-center w-10 h-10 bg-blue-600 dark:bg-blue-500 text-white rounded-full font-bold text-xl"
+            >4</span
+          >
+          Software Filtering (Qustodio, Net Nanny, etc.)
+        </h3>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">Qustodio:</h4>
-				<ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-					<li class="mb-2">Log into family portal at <strong>family.qustodio.com</strong></li>
-					<li class="mb-2">Select child's profile</li>
-					<li class="mb-2"><strong>Rules</strong> → <strong>Web Filtering</strong></li>
-					<li class="mb-2">Scroll to <strong>"Exceptions"</strong></li>
-					<li class="mb-2"><strong>"Always allow these sites"</strong> → Add domain</li>
-					<li class="mb-2">Changes apply immediately</li>
-				</ol>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">Qustodio:</h4>
+        <ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+          <li class="mb-2">Log into family portal at <strong>family.qustodio.com</strong></li>
+          <li class="mb-2">Select child's profile</li>
+          <li class="mb-2"><strong>Rules</strong> → <strong>Web Filtering</strong></li>
+          <li class="mb-2">Scroll to <strong>"Exceptions"</strong></li>
+          <li class="mb-2"><strong>"Always allow these sites"</strong> → Add domain</li>
+          <li class="mb-2">Changes apply immediately</li>
+        </ol>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">Net Nanny:</h4>
-				<ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-					<li class="mb-2">Log into online dashboard</li>
-					<li class="mb-2">Select family member</li>
-					<li class="mb-2"><strong>Web Settings</strong> → <strong>"Allow List"</strong></li>
-					<li class="mb-2">Add website</li>
-					<li class="mb-2">Can allow temporarily or permanently</li>
-				</ol>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">Net Nanny:</h4>
+        <ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+          <li class="mb-2">Log into online dashboard</li>
+          <li class="mb-2">Select family member</li>
+          <li class="mb-2"><strong>Web Settings</strong> → <strong>"Allow List"</strong></li>
+          <li class="mb-2">Add website</li>
+          <li class="mb-2">Can allow temporarily or permanently</li>
+        </ol>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">Bark:</h4>
-				<ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-					<li class="mb-2">Bark app or dashboard</li>
-					<li class="mb-2">Child's profile → <strong>Screen Time</strong></li>
-					<li class="mb-2"><strong>Website Rules</strong> → <strong>"Allowed Websites"</strong></li>
-					<li class="mb-2">Add site</li>
-				</ol>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">Bark:</h4>
+        <ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+          <li class="mb-2">Bark app or dashboard</li>
+          <li class="mb-2">Child's profile → <strong>Screen Time</strong></li>
+          <li class="mb-2"><strong>Website Rules</strong> → <strong>"Allowed Websites"</strong></li>
+          <li class="mb-2">Add site</li>
+        </ol>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">Circle:</h4>
-				<ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-					<li class="mb-2">Circle app</li>
-					<li class="mb-2">Select profile</li>
-					<li class="mb-2"><strong>Filter Level</strong> → <strong>"Custom"</strong></li>
-					<li class="mb-2"><strong>"Allowed Sites"</strong> → Add domain</li>
-				</ol>
-			</div>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">Circle:</h4>
+        <ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+          <li class="mb-2">Circle app</li>
+          <li class="mb-2">Select profile</li>
+          <li class="mb-2"><strong>Filter Level</strong> → <strong>"Custom"</strong></li>
+          <li class="mb-2"><strong>"Allowed Sites"</strong> → Add domain</li>
+        </ol>
+      </div>
 
-			<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6 mb-6">
-				<h3 class="flex items-center gap-3 text-2xl font-semibold text-gray-900 dark:text-white mt-0 mb-4">
-					<span class="inline-flex items-center justify-center w-10 h-10 bg-blue-600 dark:bg-blue-500 text-white rounded-full font-bold text-xl">5</span>
-					Device-Level Controls
-				</h3>
+      <div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6 mb-6">
+        <h3 class="flex items-center gap-3 text-2xl font-semibold text-gray-900 dark:text-white mt-0 mb-4">
+          <span
+            class="inline-flex items-center justify-center w-10 h-10 bg-blue-600 dark:bg-blue-500 text-white rounded-full font-bold text-xl"
+            >5</span
+          >
+          Device-Level Controls
+        </h3>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">iOS Screen Time:</h4>
-				<ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-					<li class="mb-2">Settings → Screen Time → Select child/device</li>
-					<li class="mb-2"><strong>Content & Privacy Restrictions</strong> → <strong>Content Restrictions</strong></li>
-					<li class="mb-2"><strong>Web Content</strong> → <strong>"Allowed Websites Only"</strong> or <strong>"Limit Adult Websites"</strong></li>
-					<li class="mb-2">Under <strong>"Always Allow"</strong> section, tap <strong>Add Website</strong></li>
-					<li class="mb-2">Enter site name and URL</li>
-					<li class="mb-2">Done</li>
-				</ol>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">iOS Screen Time:</h4>
+        <ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+          <li class="mb-2">Settings → Screen Time → Select child/device</li>
+          <li class="mb-2"><strong>Content & Privacy Restrictions</strong> → <strong>Content Restrictions</strong></li>
+          <li class="mb-2">
+            <strong>Web Content</strong> → <strong>"Allowed Websites Only"</strong> or <strong
+              >"Limit Adult Websites"</strong
+            >
+          </li>
+          <li class="mb-2">Under <strong>"Always Allow"</strong> section, tap <strong>Add Website</strong></li>
+          <li class="mb-2">Enter site name and URL</li>
+          <li class="mb-2">Done</li>
+        </ol>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">Android Family Link:</h4>
-				<ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-					<li class="mb-2">Family Link app on parent device</li>
-					<li class="mb-2">Select child</li>
-					<li class="mb-2"><strong>Manage Settings</strong> → <strong>Filters on Google Chrome</strong></li>
-					<li class="mb-2"><strong>Manage Sites</strong> → <strong>Approved</strong></li>
-					<li class="mb-2">Add website</li>
-				</ol>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">Android Family Link:</h4>
+        <ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+          <li class="mb-2">Family Link app on parent device</li>
+          <li class="mb-2">Select child</li>
+          <li class="mb-2"><strong>Manage Settings</strong> → <strong>Filters on Google Chrome</strong></li>
+          <li class="mb-2"><strong>Manage Sites</strong> → <strong>Approved</strong></li>
+          <li class="mb-2">Add website</li>
+        </ol>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">Windows Family Safety:</h4>
-				<ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-					<li class="mb-2">Visit <strong>account.microsoft.com/family</strong></li>
-					<li class="mb-2">Select family member</li>
-					<li class="mb-2"><strong>Content Restrictions</strong> → <strong>Web Browsing</strong></li>
-					<li class="mb-2">Under <strong>"Always allow these"</strong></li>
-					<li class="mb-2">Add URL</li>
-				</ol>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">Windows Family Safety:</h4>
+        <ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+          <li class="mb-2">Visit <strong>account.microsoft.com/family</strong></li>
+          <li class="mb-2">Select family member</li>
+          <li class="mb-2"><strong>Content Restrictions</strong> → <strong>Web Browsing</strong></li>
+          <li class="mb-2">Under <strong>"Always allow these"</strong></li>
+          <li class="mb-2">Add URL</li>
+        </ol>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">macOS Screen Time:</h4>
-				<ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-					<li class="mb-2">System Settings → Screen Time</li>
-					<li class="mb-2">Select user</li>
-					<li class="mb-2"><strong>Content & Privacy</strong> → <strong>Web Content</strong></li>
-					<li class="mb-2"><strong>Allowed Websites Only</strong> → Add <strong>+</strong></li>
-					<li class="mb-2">Enter site details</li>
-				</ol>
-			</div>
-		</section>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-4 mb-3">macOS Screen Time:</h4>
+        <ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+          <li class="mb-2">System Settings → Screen Time</li>
+          <li class="mb-2">Select user</li>
+          <li class="mb-2"><strong>Content & Privacy</strong> → <strong>Web Content</strong></li>
+          <li class="mb-2"><strong>Allowed Websites Only</strong> → Add <strong>+</strong></li>
+          <li class="mb-2">Enter site details</li>
+        </ol>
+      </div>
+    </section>
 
-		<section class="mt-10">
-			<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Temporary Access Solutions</h2>
-			<p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">When permanent whitelisting isn't appropriate but temporary access is needed:</p>
+    <section class="mt-10">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Temporary Access Solutions</h2>
+      <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">
+        When permanent whitelisting isn't appropriate but temporary access is needed:
+      </p>
 
-			<div class="flex flex-col gap-4 mt-6">
-				<Accordion title="Timed Whitelist (Preferred)">
-					<p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">Some systems support temporary exceptions:</p>
-					<ul class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-						<li class="mb-2"><strong>Net Nanny:</strong> "Allow for 1 hour" button when site is blocked</li>
-						<li class="mb-2"><strong>Bark:</strong> Can approve individual site access requests</li>
-						<li class="mb-2"><strong>Qustodio:</strong> "Pause Protection" for 5-60 minutes</li>
-					</ul>
-					<p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">After time expires, filtering automatically resumes.</p>
-				</Accordion>
+      <div class="flex flex-col gap-4 mt-6">
+        <Accordion title="Timed Whitelist (Preferred)">
+          <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">
+            Some systems support temporary exceptions:
+          </p>
+          <ul class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+            <li class="mb-2"><strong>Net Nanny:</strong> "Allow for 1 hour" button when site is blocked</li>
+            <li class="mb-2"><strong>Bark:</strong> Can approve individual site access requests</li>
+            <li class="mb-2"><strong>Qustodio:</strong> "Pause Protection" for 5-60 minutes</li>
+          </ul>
+          <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">
+            After time expires, filtering automatically resumes.
+          </p>
+        </Accordion>
 
-				<Accordion title="Supervised Browsing">
-					<p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">Unblock temporarily while supervising:</p>
-					<ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-						<li class="mb-2">Disable filtering temporarily</li>
-						<li class="mb-2">Sit with child while they access needed content</li>
-						<li class="mb-2">Re-enable filtering when done</li>
-					</ol>
-					<p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">Appropriate for school projects requiring research on sensitive topics.</p>
-				</Accordion>
+        <Accordion title="Supervised Browsing">
+          <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">Unblock temporarily while supervising:</p>
+          <ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+            <li class="mb-2">Disable filtering temporarily</li>
+            <li class="mb-2">Sit with child while they access needed content</li>
+            <li class="mb-2">Re-enable filtering when done</li>
+          </ol>
+          <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">
+            Appropriate for school projects requiring research on sensitive topics.
+          </p>
+        </Accordion>
 
-				<Accordion title="Alternative Device">
-					<p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">Use an unfiltered device for specific tasks:</p>
-					<ul class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-						<li class="mb-2">Parent's phone or laptop (supervised)</li>
-						<li class="mb-2">School chromebook (school's filtering only)</li>
-						<li class="mb-2">Public library computer</li>
-					</ul>
-					<p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">Maintains filtering on child's personal devices.</p>
-				</Accordion>
+        <Accordion title="Alternative Device">
+          <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">
+            Use an unfiltered device for specific tasks:
+          </p>
+          <ul class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+            <li class="mb-2">Parent's phone or laptop (supervised)</li>
+            <li class="mb-2">School chromebook (school's filtering only)</li>
+            <li class="mb-2">Public library computer</li>
+          </ul>
+          <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">
+            Maintains filtering on child's personal devices.
+          </p>
+        </Accordion>
 
-				<Accordion title="Request System">
-					<p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">Teach kids to request access:</p>
-					<ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-						<li class="mb-2">Child encounters blocked site</li>
-						<li class="mb-2">Takes screenshot or notes URL</li>
-						<li class="mb-2">Asks parent to review</li>
-						<li class="mb-2">Parent decides whether to whitelist</li>
-					</ol>
-					<p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">Builds communication and trust while maintaining protection.</p>
-				</Accordion>
-			</div>
-		</section>
+        <Accordion title="Request System">
+          <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">Teach kids to request access:</p>
+          <ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+            <li class="mb-2">Child encounters blocked site</li>
+            <li class="mb-2">Takes screenshot or notes URL</li>
+            <li class="mb-2">Asks parent to review</li>
+            <li class="mb-2">Parent decides whether to whitelist</li>
+          </ol>
+          <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">
+            Builds communication and trust while maintaining protection.
+          </p>
+        </Accordion>
+      </div>
+    </section>
 
-		<section class="mt-10">
-			<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Decision Framework: To Unblock or Not?</h2>
+    <section class="mt-10">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Decision Framework: To Unblock or Not?</h2>
 
-			<h3 class="text-2xl font-semibold text-gray-900 dark:text-white mt-6 mb-4">✅ Unblock If:</h3>
-			<ul class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-				<li class="mb-2">Required for school/work</li>
-				<li class="mb-2">Clearly legitimate business/service</li>
-				<li class="mb-2">False positive due to broad category blocking</li>
-				<li class="mb-2">Age-appropriate content for your child</li>
-				<li class="mb-2">Reputable source (government, major brand, educational institution)</li>
-			</ul>
+      <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mt-6 mb-4">✅ Unblock If:</h3>
+      <ul class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+        <li class="mb-2">Required for school/work</li>
+        <li class="mb-2">Clearly legitimate business/service</li>
+        <li class="mb-2">False positive due to broad category blocking</li>
+        <li class="mb-2">Age-appropriate content for your child</li>
+        <li class="mb-2">Reputable source (government, major brand, educational institution)</li>
+      </ul>
 
-			<h3 class="text-2xl font-semibold text-gray-900 dark:text-white mt-6 mb-4">⚠️ Proceed Cautiously If:</h3>
-			<ul class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-				<li class="mb-2">User-generated content site (can contain anything)</li>
-				<li class="mb-2">Social media platform</li>
-				<li class="mb-2">Anonymous forum or imageboard</li>
-				<li class="mb-2">Dating or relationship advice site</li>
-				<li class="mb-2">Site discussing mature topics (even educationally)</li>
-			</ul>
-			<p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3"><em>Consider: Supervised access only, not permanent whitelist</em></p>
+      <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mt-6 mb-4">⚠️ Proceed Cautiously If:</h3>
+      <ul class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+        <li class="mb-2">User-generated content site (can contain anything)</li>
+        <li class="mb-2">Social media platform</li>
+        <li class="mb-2">Anonymous forum or imageboard</li>
+        <li class="mb-2">Dating or relationship advice site</li>
+        <li class="mb-2">Site discussing mature topics (even educationally)</li>
+      </ul>
+      <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">
+        <em>Consider: Supervised access only, not permanent whitelist</em>
+      </p>
 
-			<h3 class="text-2xl font-semibold text-gray-900 dark:text-white mt-6 mb-4">❌ Don't Unblock If:</h3>
-			<ul class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-				<li class="mb-2">You're unsure what the site contains</li>
-				<li class="mb-2">URL looks suspicious or misspelled</li>
-				<li class="mb-2">Child can't articulate a legitimate reason</li>
-				<li class="mb-2">Site bypasses or discusses bypassing filters</li>
-				<li class="mb-2">Proxy site, VPN service, or "unblock" tool</li>
-			</ul>
-		</section>
+      <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mt-6 mb-4">❌ Don't Unblock If:</h3>
+      <ul class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+        <li class="mb-2">You're unsure what the site contains</li>
+        <li class="mb-2">URL looks suspicious or misspelled</li>
+        <li class="mb-2">Child can't articulate a legitimate reason</li>
+        <li class="mb-2">Site bypasses or discusses bypassing filters</li>
+        <li class="mb-2">Proxy site, VPN service, or "unblock" tool</li>
+      </ul>
+    </section>
 
-		<section class="mt-10">
-			<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Common Scenarios</h2>
+    <section class="mt-10">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Common Scenarios</h2>
 
-			<Accordion title="Reddit blocked but needed for homework">
-				<p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3"><strong>Problem:</strong> Teacher assigned research on specific subreddit, but Reddit is blocked.</p>
-				<p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3"><strong>Solutions:</strong></p>
-				<ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-					<li class="mb-2"><strong>Best:</strong> Supervised access on parent's device</li>
-					<li class="mb-2"><strong>Alternative:</strong> Whitelist specific subreddit only (if filtering supports subdomain/path filtering)</li>
-					<li class="mb-2"><strong>Option 3:</strong> Contact teacher about alternative assignment</li>
-				</ol>
-				<Alert type="warning">
-					Don't whitelist all of Reddit - it contains unmoderated content. Specific subreddits only.
-				</Alert>
-			</Accordion>
+      <Accordion title="Reddit blocked but needed for homework">
+        <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">
+          <strong>Problem:</strong> Teacher assigned research on specific subreddit, but Reddit is blocked.
+        </p>
+        <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3"><strong>Solutions:</strong></p>
+        <ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+          <li class="mb-2"><strong>Best:</strong> Supervised access on parent's device</li>
+          <li class="mb-2">
+            <strong>Alternative:</strong> Whitelist specific subreddit only (if filtering supports subdomain/path filtering)
+          </li>
+          <li class="mb-2"><strong>Option 3:</strong> Contact teacher about alternative assignment</li>
+        </ol>
+        <Alert type="warning">
+          Don't whitelist all of Reddit - it contains unmoderated content. Specific subreddits only.
+        </Alert>
+      </Accordion>
 
-			<Accordion title="Bank website blocked">
-				<p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3"><strong>Problem:</strong> Online banking site flagged as financial/commerce.</p>
-				<p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3"><strong>Solution:</strong> Always whitelist legitimate financial institutions:</p>
-				<ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-					<li class="mb-2">Verify URL is correct (beware of phishing)</li>
-					<li class="mb-2">Add to permanent whitelist</li>
-					<li class="mb-2">Add both www and non-www versions</li>
-					<li class="mb-2">Consider whitelisting entire financial category if using DNS filtering</li>
-				</ol>
-			</Accordion>
+      <Accordion title="Bank website blocked">
+        <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">
+          <strong>Problem:</strong> Online banking site flagged as financial/commerce.
+        </p>
+        <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">
+          <strong>Solution:</strong> Always whitelist legitimate financial institutions:
+        </p>
+        <ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+          <li class="mb-2">Verify URL is correct (beware of phishing)</li>
+          <li class="mb-2">Add to permanent whitelist</li>
+          <li class="mb-2">Add both www and non-www versions</li>
+          <li class="mb-2">Consider whitelisting entire financial category if using DNS filtering</li>
+        </ol>
+      </Accordion>
 
-			<Accordion title="Online shopping sites blocked">
-				<p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3"><strong>Problem:</strong> Clothing/shoe retailers blocked due to model photos.</p>
-				<p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3"><strong>Assessment needed:</strong></p>
-				<ul class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-					<li class="mb-2"><strong>Major retailers (Target, Old Navy, etc.):</strong> Usually safe to whitelist</li>
-					<li class="mb-2"><strong>Fashion sites with revealing images:</strong> Supervise first</li>
-					<li class="mb-2"><strong>Victoria's Secret, lingerie sites:</strong> Age-dependent decision</li>
-				</ul>
-				<p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">Consider: Is online shopping necessary, or can child shop in-store?</p>
-			</Accordion>
+      <Accordion title="Online shopping sites blocked">
+        <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">
+          <strong>Problem:</strong> Clothing/shoe retailers blocked due to model photos.
+        </p>
+        <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3"><strong>Assessment needed:</strong></p>
+        <ul class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+          <li class="mb-2"><strong>Major retailers (Target, Old Navy, etc.):</strong> Usually safe to whitelist</li>
+          <li class="mb-2"><strong>Fashion sites with revealing images:</strong> Supervise first</li>
+          <li class="mb-2"><strong>Victoria's Secret, lingerie sites:</strong> Age-dependent decision</li>
+        </ul>
+        <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">
+          Consider: Is online shopping necessary, or can child shop in-store?
+        </p>
+      </Accordion>
 
-			<Accordion title="Educational sites about health/anatomy">
-				<p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3"><strong>Problem:</strong> Age-appropriate health education sites blocked.</p>
-				<p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3"><strong>Legitimate sites to consider whitelisting:</strong></p>
-				<ul class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-					<li class="mb-2">KidsHealth.org</li>
-					<li class="mb-2">TeensHealth.org</li>
-					<li class="mb-2">Planned Parenthood educational resources (age-dependent)</li>
-					<li class="mb-2">Mayo Clinic, WebMD</li>
-					<li class="mb-2">Approved school health curriculum sites</li>
-				</ul>
-				<p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">Better to provide accurate health information than force kids to unsafe sources.</p>
-			</Accordion>
+      <Accordion title="Educational sites about health/anatomy">
+        <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">
+          <strong>Problem:</strong> Age-appropriate health education sites blocked.
+        </p>
+        <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">
+          <strong>Legitimate sites to consider whitelisting:</strong>
+        </p>
+        <ul class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+          <li class="mb-2">KidsHealth.org</li>
+          <li class="mb-2">TeensHealth.org</li>
+          <li class="mb-2">Planned Parenthood educational resources (age-dependent)</li>
+          <li class="mb-2">Mayo Clinic, WebMD</li>
+          <li class="mb-2">Approved school health curriculum sites</li>
+        </ul>
+        <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">
+          Better to provide accurate health information than force kids to unsafe sources.
+        </p>
+      </Accordion>
 
-			<Accordion title="YouTube blocked but need specific educational video">
-				<p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3"><strong>Problem:</strong> YouTube entirely blocked, but teacher assigned a specific video.</p>
-				<p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3"><strong>Solutions:</strong></p>
-				<ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
-					<li class="mb-2"><strong>Best:</strong> Use YouTube Kids or Restricted Mode with supervised access</li>
-					<li class="mb-2"><strong>Alternative:</strong> Parent downloads video, watches together</li>
-					<li class="mb-2"><strong>Last resort:</strong> Temporarily disable filtering, watch video, re-enable</li>
-				</ol>
-				<p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">See our <a href="/guides/youtube-filtering" class="text-blue-600 dark:text-blue-400 underline hover:text-blue-700 dark:hover:text-blue-300">YouTube filtering guide</a> for better long-term solutions.</p>
-			</Accordion>
-		</section>
+      <Accordion title="YouTube blocked but need specific educational video">
+        <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">
+          <strong>Problem:</strong> YouTube entirely blocked, but teacher assigned a specific video.
+        </p>
+        <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3"><strong>Solutions:</strong></p>
+        <ol class="ml-6 mb-4 text-gray-700 dark:text-gray-300">
+          <li class="mb-2"><strong>Best:</strong> Use YouTube Kids or Restricted Mode with supervised access</li>
+          <li class="mb-2"><strong>Alternative:</strong> Parent downloads video, watches together</li>
+          <li class="mb-2"><strong>Last resort:</strong> Temporarily disable filtering, watch video, re-enable</li>
+        </ol>
+        <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">
+          See our <a
+            href="/guides/youtube-filtering"
+            class="text-blue-600 dark:text-blue-400 underline hover:text-blue-700 dark:hover:text-blue-300"
+            >YouTube filtering guide</a
+          > for better long-term solutions.
+        </p>
+      </Accordion>
+    </section>
 
-		<section class="mt-10">
-			<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Prevention Tips</h2>
-			<ul class="list-none ml-0 text-gray-700 dark:text-gray-300">
-				<li class="pl-6 relative mb-2 before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:text-green-400 before:font-bold">Pre-whitelist common legitimate sites before issues arise</li>
-				<li class="pl-6 relative mb-2 before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:text-green-400 before:font-bold">Create a family process for requesting site access</li>
-				<li class="pl-6 relative mb-2 before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:text-green-400 before:font-bold">Review block logs weekly to catch false positives early</li>
-				<li class="pl-6 relative mb-2 before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:text-green-400 before:font-bold">Document all whitelisted sites and reasons</li>
-				<li class="pl-6 relative mb-2 before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:text-green-400 before:font-bold">Use least restrictive filter level that still provides protection</li>
-				<li class="pl-6 relative mb-2 before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:text-green-400 before:font-bold">Consider age-appropriate filter adjustments as kids mature</li>
-				<li class="pl-6 relative mb-2 before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:text-green-400 before:font-bold">Teach kids to ask before trying to bypass filters</li>
-			</ul>
-		</section>
+    <section class="mt-10">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Prevention Tips</h2>
+      <ul class="list-none ml-0 text-gray-700 dark:text-gray-300">
+        <li
+          class="pl-6 relative mb-2 before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:text-green-400 before:font-bold"
+        >
+          Pre-whitelist common legitimate sites before issues arise
+        </li>
+        <li
+          class="pl-6 relative mb-2 before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:text-green-400 before:font-bold"
+        >
+          Create a family process for requesting site access
+        </li>
+        <li
+          class="pl-6 relative mb-2 before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:text-green-400 before:font-bold"
+        >
+          Review block logs weekly to catch false positives early
+        </li>
+        <li
+          class="pl-6 relative mb-2 before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:text-green-400 before:font-bold"
+        >
+          Document all whitelisted sites and reasons
+        </li>
+        <li
+          class="pl-6 relative mb-2 before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:text-green-400 before:font-bold"
+        >
+          Use least restrictive filter level that still provides protection
+        </li>
+        <li
+          class="pl-6 relative mb-2 before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:text-green-400 before:font-bold"
+        >
+          Consider age-appropriate filter adjustments as kids mature
+        </li>
+        <li
+          class="pl-6 relative mb-2 before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:text-green-400 before:font-bold"
+        >
+          Teach kids to ask before trying to bypass filters
+        </li>
+      </ul>
+    </section>
 
-		<div class="mt-12 pt-8 border-t-2 border-gray-200 dark:border-gray-700">
-			<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Related Guides</h2>
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-				<a href="/troubleshooting/child-bypassed-filter" class="block p-5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg no-underline transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-white dark:hover:bg-gray-700 hover:-translate-y-0.5 hover:shadow-lg">
-					<h3 class="text-lg font-semibold text-gray-900 dark:text-white m-0 mb-2">Child Bypassed Filter</h3>
-					<p class="text-sm text-gray-600 dark:text-gray-400 m-0">What to do when filters are circumvented</p>
-				</a>
-				<a href="/guides/dns-filtering" class="block p-5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg no-underline transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-white dark:hover:bg-gray-700 hover:-translate-y-0.5 hover:shadow-lg">
-					<h3 class="text-lg font-semibold text-gray-900 dark:text-white m-0 mb-2">DNS Filtering Setup</h3>
-					<p class="text-sm text-gray-600 dark:text-gray-400 m-0">Configure filtering with appropriate sensitivity</p>
-				</a>
-				<a href="/faq" class="block p-5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg no-underline transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-white dark:hover:bg-gray-700 hover:-translate-y-0.5 hover:shadow-lg">
-					<h3 class="text-lg font-semibold text-gray-900 dark:text-white m-0 mb-2">Frequently Asked Questions</h3>
-					<p class="text-sm text-gray-600 dark:text-gray-400 m-0">More filtering questions answered</p>
-				</a>
-			</div>
-		</div>
-	</div>
+    <div class="mt-12 pt-8 border-t-2 border-gray-200 dark:border-gray-700">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Related Guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a
+          href="/troubleshooting/child-bypassed-filter"
+          class="block p-5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg no-underline transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-white dark:hover:bg-gray-700 hover:-translate-y-0.5 hover:shadow-lg"
+        >
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white m-0 mb-2">Child Bypassed Filter</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 m-0">What to do when filters are circumvented</p>
+        </a>
+        <a
+          href="/guides/dns-filtering"
+          class="block p-5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg no-underline transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-white dark:hover:bg-gray-700 hover:-translate-y-0.5 hover:shadow-lg"
+        >
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white m-0 mb-2">DNS Filtering Setup</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 m-0">Configure filtering with appropriate sensitivity</p>
+        </a>
+        <a
+          href="/faq"
+          class="block p-5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg no-underline transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-white dark:hover:bg-gray-700 hover:-translate-y-0.5 hover:shadow-lg"
+        >
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white m-0 mb-2">Frequently Asked Questions</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 m-0">More filtering questions answered</p>
+        </a>
+      </div>
+    </div>
+  </div>
 </Layout>

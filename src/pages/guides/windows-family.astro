@@ -3,7 +3,8 @@ import GuideLayout from '~/layouts/GuideLayout.astro';
 
 const metadata = {
   title: 'Windows Family Safety Setup Guide',
-  description: 'Complete guide to Microsoft Family Safety parental controls on Windows 10/11 including content filtering, screen time, and activity monitoring.',
+  description:
+    'Complete guide to Microsoft Family Safety parental controls on Windows 10/11 including content filtering, screen time, and activity monitoring.',
 };
 ---
 
@@ -15,14 +16,12 @@ const metadata = {
     'Windows 10 or Windows 11 PC',
     'Microsoft account for parent',
     'Internet connection',
-    'Administrator access to the computer'
+    'Administrator access to the computer',
   ]}
 >
   <Fragment slot="breadcrumb">
     <li class="flex items-center">
-      <a href="/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
-        Home
-      </a>
+      <a href="/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"> Home </a>
       <span class="mx-2 text-gray-500">/</span>
     </li>
     <li class="flex items-center">
@@ -31,22 +30,27 @@ const metadata = {
       </a>
       <span class="mx-2 text-gray-500">/</span>
     </li>
-    <li class="text-gray-700 dark:text-gray-300">
-      Windows Family Safety
-    </li>
+    <li class="text-gray-700 dark:text-gray-300">Windows Family Safety</li>
   </Fragment>
 
   <section>
     <h2>What is Microsoft Family Safety?</h2>
     <p>
-      Microsoft Family Safety is a free parental control system built into Windows 10 and 11. It provides comprehensive controls including web filtering, app and game restrictions, screen time limits, location tracking, and detailed activity reports. Best of all, it's completely free and integrates seamlessly with Windows and Microsoft services.
+      Microsoft Family Safety is a free parental control system built into Windows 10 and 11. It provides comprehensive
+      controls including web filtering, app and game restrictions, screen time limits, location tracking, and detailed
+      activity reports. Best of all, it's completely free and integrates seamlessly with Windows and Microsoft services.
     </p>
     <p>
-      You can manage Family Safety from any device through the Family Safety app (Android/iOS) or the web portal at <a href="https://family.microsoft.com" target="_blank" rel="noopener noreferrer">family.microsoft.com</a>.
+      You can manage Family Safety from any device through the Family Safety app (Android/iOS) or the web portal at <a
+        href="https://family.microsoft.com"
+        target="_blank"
+        rel="noopener noreferrer">family.microsoft.com</a
+      >.
     </p>
 
     <div class="alert alert-success">
-      <strong>Best for:</strong> Families with Windows PCs, Xbox consoles, comprehensive free parental controls, integration with Microsoft ecosystem.
+      <strong>Best for:</strong> Families with Windows PCs, Xbox consoles, comprehensive free parental controls, integration
+      with Microsoft ecosystem.
     </div>
   </section>
 
@@ -57,7 +61,11 @@ const metadata = {
     <ol>
       <li>
         <strong>Visit family.microsoft.com</strong>
-        <p>Open a web browser and go to <a href="https://family.microsoft.com" target="_blank" rel="noopener noreferrer">family.microsoft.com</a></p>
+        <p>
+          Open a web browser and go to <a href="https://family.microsoft.com" target="_blank" rel="noopener noreferrer"
+            >family.microsoft.com</a
+          >
+        </p>
       </li>
       <li>
         <strong>Sign in with your Microsoft account</strong>
@@ -82,7 +90,8 @@ const metadata = {
     </ol>
 
     <div class="alert alert-info">
-      <strong>Child Account Requirements:</strong> Children under 13 (or applicable age in your region) require parental consent. Microsoft will verify you're an adult during account creation.
+      <strong>Child Account Requirements:</strong> Children under 13 (or applicable age in your region) require parental
+      consent. Microsoft will verify you're an adult during account creation.
     </div>
   </section>
 
@@ -118,7 +127,8 @@ const metadata = {
     </ol>
 
     <div class="alert alert-warning">
-      <strong>Important:</strong> Don't give the child an Administrator account. Use a Standard User account so they can't change Family Safety settings or install unauthorized software.
+      <strong>Important:</strong> Don't give the child an Administrator account. Use a Standard User account so they can't
+      change Family Safety settings or install unauthorized software.
     </div>
   </section>
 
@@ -127,10 +137,13 @@ const metadata = {
 
     <h3>Enable Web Filtering</h3>
     <ol>
-      <li>Go to <a href="https://family.microsoft.com" target="_blank" rel="noopener noreferrer">family.microsoft.com</a></li>
+      <li>
+        Go to <a href="https://family.microsoft.com" target="_blank" rel="noopener noreferrer">family.microsoft.com</a>
+      </li>
       <li>Click your child's name</li>
       <li>Click "Content filters"</li>
-      <li>Under "Web and search":
+      <li>
+        Under "Web and search":
         <ul>
           <li>Toggle "Filter inappropriate websites and searches" to ON</li>
           <li>Choose "Use Microsoft Edge only" (recommended for better filtering)</li>
@@ -141,7 +154,8 @@ const metadata = {
 
     <h3>SafeSearch Enforcement</h3>
     <p>
-      When web filtering is enabled, SafeSearch is automatically enforced on Bing, Google, and other search engines when using Microsoft Edge.
+      When web filtering is enabled, SafeSearch is automatically enforced on Bing, Google, and other search engines when
+      using Microsoft Edge.
     </p>
 
     <h3>Managing Website Lists</h3>
@@ -151,7 +165,10 @@ const metadata = {
     </ul>
 
     <div class="alert alert-info">
-      <strong>Edge vs Other Browsers:</strong> Web filtering works best in Microsoft Edge. Consider blocking installation of other browsers for comprehensive protection. Alternatively, use <a href="/guides/dns-filtering">DNS filtering</a> for browser-independent protection.
+      <strong>Edge vs Other Browsers:</strong> Web filtering works best in Microsoft Edge. Consider blocking installation
+      of other browsers for comprehensive protection. Alternatively, use <a href="/guides/dns-filtering"
+        >DNS filtering</a
+      > for browser-independent protection.
     </div>
   </section>
 
@@ -162,7 +179,8 @@ const metadata = {
     <ol>
       <li>In family.microsoft.com, select your child</li>
       <li>Click "Apps and games"</li>
-      <li>Set age-appropriate content ratings:
+      <li>
+        Set age-appropriate content ratings:
         <ul>
           <li><strong>Apps & Games:</strong> 3+, 7+, 12+, 16+, or Adults only</li>
           <li><strong>Media:</strong> Set ratings for movies, TV, music, and books</li>
@@ -180,7 +198,8 @@ const metadata = {
     </ul>
 
     <div class="alert alert-warning">
-      <strong>Microsoft Store Only:</strong> App blocking works for Microsoft Store apps. Desktop programs (like Chrome.exe) can be blocked using additional methods. Consider using a Standard User account to prevent unauthorized installations.
+      <strong>Microsoft Store Only:</strong> App blocking works for Microsoft Store apps. Desktop programs (like Chrome.exe)
+      can be blocked using additional methods. Consider using a Standard User account to prevent unauthorized installations.
     </div>
   </section>
 
@@ -192,7 +211,8 @@ const metadata = {
       <li>In family.microsoft.com, select your child</li>
       <li>Click "Screen time"</li>
       <li>Toggle "Use one schedule for all devices" or customize per device</li>
-      <li>For each day of the week:
+      <li>
+        For each day of the week:
         <ul>
           <li>Set maximum hours of use (e.g., 3 hours on school days, 5 hours on weekends)</li>
           <li>Set time ranges when the device can be used (e.g., 6 AM to 9 PM)</li>
@@ -203,7 +223,8 @@ const metadata = {
 
     <h3>Device-Specific Schedules</h3>
     <p>
-      If your child uses multiple devices (PC, Xbox, phone), you can set different limits for each, or use one unified schedule across all devices.
+      If your child uses multiple devices (PC, Xbox, phone), you can set different limits for each, or use one unified
+      schedule across all devices.
     </p>
 
     <h3>Adding Bonus Time</h3>
@@ -214,7 +235,8 @@ const metadata = {
     </ul>
 
     <div class="alert alert-info">
-      <strong>Tip:</strong> Be flexible with screen time for homework or educational activities. Consider adding educational apps to an "always allowed" list if supported.
+      <strong>Tip:</strong> Be flexible with screen time for homework or educational activities. Consider adding educational
+      apps to an "always allowed" list if supported.
     </div>
   </section>
 
@@ -225,7 +247,8 @@ const metadata = {
     <ol>
       <li>Go to family.microsoft.com or open Family Safety app</li>
       <li>Select your child</li>
-      <li>View the dashboard showing:
+      <li>
+        View the dashboard showing:
         <ul>
           <li><strong>Screen time:</strong> Total time on each device</li>
           <li><strong>Web browsing:</strong> Most visited sites</li>
@@ -243,7 +266,8 @@ const metadata = {
     </ul>
 
     <div class="alert alert-success">
-      <strong>Privacy Balance:</strong> Use activity reports as conversation starters, not surveillance tools. Discuss online safety and decision-making with your child regularly.
+      <strong>Privacy Balance:</strong> Use activity reports as conversation starters, not surveillance tools. Discuss online
+      safety and decision-making with your child regularly.
     </div>
   </section>
 
@@ -265,9 +289,7 @@ const metadata = {
   <section>
     <h2>🎮 Xbox & Microsoft Services</h2>
 
-    <p>
-      Family Safety extends to Xbox consoles, providing consistent protection across devices:
-    </p>
+    <p>Family Safety extends to Xbox consoles, providing consistent protection across devices:</p>
 
     <ul>
       <li>Screen time limits apply to Xbox gaming</li>
@@ -288,16 +310,23 @@ const metadata = {
     <div class="grid gap-4 my-6">
       <div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 dark:border-blue-400 p-4 rounded">
         <h3 class="text-lg text-gray-900 dark:text-white mb-2 mt-0">Web filtering not working in Chrome/Firefox</h3>
-        <p class="mb-0 text-gray-700 dark:text-gray-300"><strong>Solution:</strong> Web filtering only works reliably in Microsoft Edge. Either block other browsers using app restrictions, or implement <a href="/guides/dns-filtering">DNS filtering</a> for browser-independent protection.</p>
+        <p class="mb-0 text-gray-700 dark:text-gray-300">
+          <strong>Solution:</strong> Web filtering only works reliably in Microsoft Edge. Either block other browsers using
+          app restrictions, or implement <a href="/guides/dns-filtering">DNS filtering</a> for browser-independent protection.
+        </p>
       </div>
 
       <div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 dark:border-blue-400 p-4 rounded">
-        <h3 class="text-lg text-gray-900 dark:text-white mb-2 mt-0">Child bypassed limits by creating new Windows account</h3>
+        <h3 class="text-lg text-gray-900 dark:text-white mb-2 mt-0">
+          Child bypassed limits by creating new Windows account
+        </h3>
         <p class="text-gray-700 dark:text-gray-300 font-semibold">Prevention:</p>
         <ul class="pl-5 mt-2 text-gray-700 dark:text-gray-300">
           <li class="mb-1">Don't give child admin privileges</li>
           <li class="mb-1">Password-protect your admin account</li>
-          <li class="mb-1">Regularly check if new accounts were created (Settings → Accounts → Family & other users)</li>
+          <li class="mb-1">
+            Regularly check if new accounts were created (Settings → Accounts → Family & other users)
+          </li>
           <li class="mb-1">Have a conversation about respecting family rules</li>
         </ul>
       </div>
@@ -315,7 +344,10 @@ const metadata = {
 
       <div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 dark:border-blue-400 p-4 rounded">
         <h3 class="text-lg text-gray-900 dark:text-white mb-2 mt-0">Legitimate website being blocked</h3>
-        <p class="mb-0 text-gray-700 dark:text-gray-300"><strong>Solution:</strong> Add the site to "Always allowed" list in Content filters → Web and search → Always allowed. This overrides automatic filtering.</p>
+        <p class="mb-0 text-gray-700 dark:text-gray-300">
+          <strong>Solution:</strong> Add the site to "Always allowed" list in Content filters → Web and search → Always allowed.
+          This overrides automatic filtering.
+        </p>
       </div>
 
       <div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 dark:border-blue-400 p-4 rounded">
@@ -371,34 +403,47 @@ const metadata = {
 
   <Fragment slot="footer">
     <h2>🎯 Next Steps & Related Guides</h2>
-    <p>
-      Microsoft Family Safety provides excellent Windows protection, but works best combined with other methods:
-    </p>
+    <p>Microsoft Family Safety provides excellent Windows protection, but works best combined with other methods:</p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-      <a href="/guides/dns-filtering" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+      <a
+        href="/guides/dns-filtering"
+        class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5"
+      >
         <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">🌐 DNS Filtering</h3>
-        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Add network-level filtering that works in all browsers</p>
+        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">
+          Add network-level filtering that works in all browsers
+        </p>
       </a>
 
-      <a href="/guides/ios-screen-time" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+      <a
+        href="/guides/ios-screen-time"
+        class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5"
+      >
         <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">📱 iOS Screen Time</h3>
         <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Protect iPhones and iPads in your household</p>
       </a>
 
-      <a href="/guides/android-family-link" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+      <a
+        href="/guides/android-family-link"
+        class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5"
+      >
         <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">🤖 Android Family Link</h3>
         <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Manage Android devices with similar controls</p>
       </a>
 
-      <a href="/guides/gaming-consoles" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+      <a
+        href="/guides/gaming-consoles"
+        class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5"
+      >
         <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">🎮 Gaming Consoles</h3>
         <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Extend protection to Xbox and other gaming systems</p>
       </a>
     </div>
 
     <div class="alert alert-info">
-      <strong>Complete Protection:</strong> Combine Family Safety (Windows controls) + DNS filtering (all browsers) + regular communication (education) for the most effective approach.
+      <strong>Complete Protection:</strong> Combine Family Safety (Windows controls) + DNS filtering (all browsers) + regular
+      communication (education) for the most effective approach.
     </div>
   </Fragment>
 </GuideLayout>

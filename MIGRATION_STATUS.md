@@ -38,6 +38,7 @@
 ## Project Statistics
 
 ### Original Site (Before Migration)
+
 - **Pages**: 57 total
 - **Guides**: 33 detailed tutorials
 - **Components**: 20+ custom components
@@ -48,6 +49,7 @@
 - **Completion**: 91% production-ready
 
 ### AstroWind Template
+
 - **Framework**: Astro 5.0 + Tailwind CSS
 - **Components**: Blog-focused with landing page components
 - **Dependencies**: 29+ (significant increase)
@@ -62,6 +64,7 @@
 ### Pending Tasks
 
 #### 2.1: Configure AstroWind
+
 - [ ] Edit `src/config.yaml`:
   - Site name: "Shemirat Enayim"
   - Site title: "Protection for the Eyes"
@@ -72,11 +75,13 @@
   - Analytics: Configure Plausible domain
 
 #### 2.2: Install Additional Dependencies
+
 - [ ] `npm install fuse.js` (for search)
 - [ ] `npm install @sentry/astro` (error tracking)
 - [ ] `npm install web-vitals` (performance monitoring)
 
 #### 2.3: Migrate Astro Configuration
+
 - [ ] Copy optimization settings from original `astro.config.mjs`
 - [ ] Configure Sentry integration
 - [ ] Set up sitemap
@@ -93,6 +98,7 @@
 ## Phase 3: Component Migration (Planned: October 5-8, 2025)
 
 ### Priority 1 Components (Required)
+
 - [ ] Header.astro → Tailwind navigation with dropdowns
 - [ ] Footer.astro → Tailwind footer with links
 - [ ] Hero.astro → Use/adapt AstroWind's Hero
@@ -100,6 +106,7 @@
 - [ ] Button.astro → Tailwind button variants
 
 ### Priority 2 Components (Core Features)
+
 - [ ] SearchBar.astro → Integrate fuse.js with Tailwind modal
 - [ ] ThemeToggle.astro → Adapt AstroWind's theme system
 - [ ] Breadcrumb.astro → Tailwind breadcrumb component
@@ -107,6 +114,7 @@
 - [ ] Accordion.astro → Tailwind accordion (or HeadlessUI)
 
 ### Priority 3 Components (Nice-to-have)
+
 - [ ] TableOfContents.astro
 - [ ] ShareButtons.astro
 - [ ] NewsletterSignup.astro
@@ -120,13 +128,16 @@
 ## Phase 4: Page Migration (Planned: October 9-16, 2025)
 
 ### Strategy
+
 Convert from .astro pages with CSS variables to:
+
 - **Option A**: .astro pages with Tailwind classes
 - **Option B**: MDX files in `src/content/` (recommended for guides)
 
 ### Pages to Migrate (57 total)
 
 #### Critical (Priority 1)
+
 - [ ] Homepage (`/`)
 - [ ] Parents (`/parents`)
 - [ ] Leaders/Organizations (`/leaders`)
@@ -134,7 +145,9 @@ Convert from .astro pages with CSS variables to:
 - [ ] Methods catalog (`/methods`)
 
 #### Guides (Priority 2) - Convert to MDX
+
 33 guide pages to convert:
+
 - [ ] Network-level (4 guides)
 - [ ] Device-level (6 guides)
 - [ ] Software solutions (5 guides)
@@ -143,6 +156,7 @@ Convert from .astro pages with CSS variables to:
 - [ ] Technical tutorials (6 guides)
 
 #### Support & Legal (Priority 3)
+
 - [ ] FAQ (`/faq`)
 - [ ] Resources (`/resources`, `/resources/emergency`)
 - [ ] Troubleshooting hub + 5 guides
@@ -162,6 +176,7 @@ Convert from .astro pages with CSS variables to:
 ## Phase 5: Features Integration (Planned: October 17-19, 2025)
 
 ### 5.1: Search Functionality
+
 - [ ] Create Tailwind search modal
 - [ ] Integrate fuse.js
 - [ ] Build search index for all 57 pages
@@ -169,6 +184,7 @@ Convert from .astro pages with CSS variables to:
 - [ ] Test fuzzy matching
 
 ### 5.2: Analytics Migration
+
 - [ ] Configure Plausible in config.yaml
 - [ ] Set up Sentry error tracking
 - [ ] Integrate Web Vitals
@@ -176,6 +192,7 @@ Convert from .astro pages with CSS variables to:
 - [ ] Verify analytics dashboard
 
 ### 5.3: Forms
+
 - [ ] Contact form with Tailwind styling
 - [ ] Feedback form with rating system
 - [ ] Newsletter signup
@@ -183,6 +200,7 @@ Convert from .astro pages with CSS variables to:
 - [ ] Error/success messages
 
 ### 5.4: SEO & Performance
+
 - [ ] Migrate all meta descriptions
 - [ ] Update Open Graph images
 - [ ] Configure sitemap.xml
@@ -196,6 +214,7 @@ Convert from .astro pages with CSS variables to:
 ## Phase 6: Testing & QA (Planned: October 20-21, 2025)
 
 ### Cross-Browser Testing
+
 - [ ] Chrome/Edge (Chromium)
 - [ ] Firefox
 - [ ] Safari (macOS)
@@ -203,6 +222,7 @@ Convert from .astro pages with CSS variables to:
 - [ ] Mobile: Chrome Android
 
 ### Functionality Testing
+
 - [ ] All 57 pages load correctly
 - [ ] Navigation links work
 - [ ] Search functionality
@@ -212,6 +232,7 @@ Convert from .astro pages with CSS variables to:
 - [ ] Share buttons
 
 ### Accessibility Testing
+
 - [ ] Keyboard navigation
 - [ ] Screen reader (VoiceOver/NVDA)
 - [ ] Color contrast (WCAG AA)
@@ -219,6 +240,7 @@ Convert from .astro pages with CSS variables to:
 - [ ] ARIA labels
 
 ### Performance Testing
+
 - [ ] Lighthouse audits (target 90+)
 - [ ] Core Web Vitals (LCP, FID, CLS)
 - [ ] PageSpeed Insights
@@ -232,6 +254,7 @@ Convert from .astro pages with CSS variables to:
 ## Phase 7: Deployment (Planned: October 22-23, 2025)
 
 ### Pre-Deployment
+
 - [ ] Final content review
 - [ ] Link checking (all 57 pages)
 - [ ] SEO verification
@@ -239,12 +262,14 @@ Convert from .astro pages with CSS variables to:
 - [ ] Environment variables setup
 
 ### Deploy to Staging
+
 - [ ] Deploy to Netlify preview
 - [ ] Test on staging URL
 - [ ] Run final QA
 - [ ] Get approval
 
 ### Production Deployment
+
 - [ ] Deploy to production
 - [ ] Update DNS if needed
 - [ ] Monitor analytics
@@ -252,6 +277,7 @@ Convert from .astro pages with CSS variables to:
 - [ ] Fix critical issues
 
 ### Post-Launch
+
 - [ ] Monitor first 24 hours
 - [ ] Check analytics data
 - [ ] Review error logs
@@ -264,18 +290,19 @@ Convert from .astro pages with CSS variables to:
 
 ## Overall Timeline
 
-| Phase | Days | Hours | Status |
-|-------|------|-------|--------|
-| 1. Backup & Setup | 1 | 8 | ✅ Complete |
-| 2. Foundation | 2 | 16 | Pending |
-| 3. Components | 4 | 32 | Pending |
-| 4. Pages (57) | 8 | 64 | Pending |
-| 5. Features | 3 | 24 | Pending |
-| 6. Testing & QA | 2 | 16 | Pending |
-| 7. Deployment | 1 | 8 | Pending |
-| **TOTAL** | **21** | **168** | **5% Complete** |
+| Phase             | Days   | Hours   | Status          |
+| ----------------- | ------ | ------- | --------------- |
+| 1. Backup & Setup | 1      | 8       | ✅ Complete     |
+| 2. Foundation     | 2      | 16      | Pending         |
+| 3. Components     | 4      | 32      | Pending         |
+| 4. Pages (57)     | 8      | 64      | Pending         |
+| 5. Features       | 3      | 24      | Pending         |
+| 6. Testing & QA   | 2      | 16      | Pending         |
+| 7. Deployment     | 1      | 8       | Pending         |
+| **TOTAL**         | **21** | **168** | **5% Complete** |
 
 ### Working Schedule
+
 - **4 hours/day**: ~6 weeks (42 days)
 - **8 hours/day**: ~3 weeks (21 days)
 - **Full-time (8hrs/day)**: Target completion October 23, 2025
@@ -285,17 +312,20 @@ Convert from .astro pages with CSS variables to:
 ## Risks & Mitigation
 
 ### High-Risk Items
+
 ⚠️ **Scope Creep**: May take longer than 21 days
-   → Mitigation: Strict prioritization, cut non-essentials
+→ Mitigation: Strict prioritization, cut non-essentials
 
 ⚠️ **Component Complexity**: Custom components may be hard to replicate
-   → Mitigation: Use AstroWind's components where possible
+→ Mitigation: Use AstroWind's components where possible
 
 ⚠️ **Content Migration Errors**: 57 pages is a lot to convert
-   → Mitigation: Automated scripts, careful testing
+→ Mitigation: Automated scripts, careful testing
 
 ### Recovery Plan
+
 If migration fails:
+
 1. Checkout backup branch: `git checkout backup-before-astrowind-migration`
 2. Or restore from archive: `tar -xzf shemiratenayim-backup-20251002.tar.gz`
 3. Original site is 100% intact and functional
@@ -305,12 +335,14 @@ If migration fails:
 ## Key Decisions
 
 ### ✅ Decided
+
 1. Use MDX for guide pages (easier to maintain)
 2. Tailwind CSS for all styling (replace CSS variables)
 3. Keep same URL structure (SEO preservation)
 4. AstroWind's dark mode system (better than custom)
 
 ### ❓ To Decide
+
 1. Keep or replace search implementation?
 2. Use AstroWind's analytics or custom Plausible?
 3. Blog functionality - completely disable or keep for future?
@@ -321,6 +353,7 @@ If migration fails:
 ## Daily Progress Log
 
 ### October 2, 2025 - Phase 1 Complete ✅
+
 - [x] Created backup branch `backup-before-astrowind-migration`
 - [x] Created 54MB tarball archive
 - [x] Documented CSS variables → Tailwind mapping
@@ -334,6 +367,7 @@ If migration fails:
 ---
 
 ## Notes
+
 - Original project: 91% complete, production-ready
 - This migration essentially restarts from 0%
 - Timeline is aggressive but achievable with full-time focus
@@ -341,7 +375,9 @@ If migration fails:
 - Consider hybrid approach if timeline becomes unrealistic
 
 ## Alternative Approach
+
 If full migration proves too time-consuming:
+
 - Keep current codebase
 - Add Tailwind alongside CSS variables
 - Cherry-pick AstroWind components

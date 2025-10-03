@@ -2,477 +2,502 @@
 import GuideLayout from '~/layouts/GuideLayout.astro';
 
 const metadata = {
-	title: 'Age-Appropriate Internet Introduction',
-	description: 'A comprehensive guide to introducing children to the internet safely at each developmental stage, from preschool through high school.',
+  title: 'Age-Appropriate Internet Introduction',
+  description:
+    'A comprehensive guide to introducing children to the internet safely at each developmental stage, from preschool through high school.',
 };
-
 ---
 
 <GuideLayout
-	metadata={metadata}
-	difficulty="beginner"
-	timeEstimate="15-20 minutes"
-	prerequisites={[
-		'Willingness to have ongoing conversations about internet safety',
-		'Ability to supervise and monitor device usage',
-		'Understanding that this is a gradual, multi-year process'
-	]}
+  metadata={metadata}
+  difficulty="beginner"
+  timeEstimate="15-20 minutes"
+  prerequisites={[
+    'Willingness to have ongoing conversations about internet safety',
+    'Ability to supervise and monitor device usage',
+    'Understanding that this is a gradual, multi-year process',
+  ]}
 >
-
-	<Fragment slot="breadcrumb">
-		<li class="flex items-center">
-			<a href="/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
-				Home
-			</a>
-			<span class="mx-2 text-gray-500">/</span>
-		</li>
-		<li class="flex items-center">
-			<a href="/methods" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
-				Protection Methods
-			</a>
-			<span class="mx-2 text-gray-500">/</span>
-		</li>
-		<li class="text-gray-700 dark:text-gray-300">
-			Age-Appropriate Internet Introduction
-		</li>
-	</Fragment>
-
-	<section>
-		<h2>Why Age-Appropriate Matters</h2>
-		<p>
-			Just as you wouldn't hand car keys to a 10-year-old, children need age-appropriate access to the internet. Their cognitive development, emotional maturity, and ability to understand consequences vary dramatically across childhood. A staged approach builds digital literacy while protecting them from content and situations they're not ready to handle.
-		</p>
-
-		<div class="alert alert-success">
-			<strong>Key Principle:</strong> Start with maximum supervision and simple devices, gradually expanding access and independence as your child demonstrates responsibility and maturity.
-		</div>
-	</section>
-
-	<section>
-		<h2>📊 Developmental Stages Overview</h2>
-
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>Ages 3-5: Preschool</h3>
-				<p><strong>Cognitive Stage:</strong> Concrete thinking, learning cause and effect</p>
-				<p><strong>Attention Span:</strong> 5-15 minutes</p>
-				<p><strong>Understanding:</strong> Cannot distinguish real from pretend online</p>
-			</div>
-
-			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>Ages 6-8: Early Elementary</h3>
-				<p><strong>Cognitive Stage:</strong> Beginning logical thinking, rule-following</p>
-				<p><strong>Attention Span:</strong> 10-20 minutes</p>
-				<p><strong>Understanding:</strong> Starting to understand internet is public</p>
-			</div>
-
-			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>Ages 9-11: Late Elementary</h3>
-				<p><strong>Cognitive Stage:</strong> Concrete operational, peer awareness growing</p>
-				<p><strong>Attention Span:</strong> 20-30 minutes</p>
-				<p><strong>Understanding:</strong> Grasps privacy concepts, wants independence</p>
-			</div>
-
-			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>Ages 12-14: Middle School</h3>
-				<p><strong>Cognitive Stage:</strong> Beginning abstract thinking, intense peer focus</p>
-				<p><strong>Attention Span:</strong> Variable (30-60 min)</p>
-				<p><strong>Understanding:</strong> Understands but may not apply good judgment</p>
-			</div>
-
-			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>Ages 15-17: High School</h3>
-				<p><strong>Cognitive Stage:</strong> Abstract thinking, future orientation developing</p>
-				<p><strong>Attention Span:</strong> Extended focus possible</p>
-				<p><strong>Understanding:</strong> Capable but still learning consequences</p>
-			</div>
-		</div>
-	</section>
-
-	<section>
-		<h2>🎯 Ages 3-5: Preschool Years</h2>
-
-		<h3>Recommended Approach</h3>
-		<ul>
-			<li><strong>Device:</strong> Shared family tablet only, never in child's room</li>
-			<li><strong>Supervision:</strong> Always sitting together, parent controls the device</li>
-			<li><strong>Content:</strong> Curated apps only (PBS Kids, Khan Academy Kids, etc.)</li>
-			<li><strong>Time Limit:</strong> 15-30 minutes per day maximum</li>
-		</ul>
-
-		<h3>What to Introduce</h3>
-		<ul>
-			<li>High-quality educational apps with no ads</li>
-			<li>Offline-only games or apps without internet access</li>
-			<li>Video content: Pre-downloaded educational shows</li>
-			<li>Creative apps: Drawing, music, basic puzzles</li>
-		</ul>
-
-		<h3>Important Guardrails</h3>
-		<ul>
-			<li>No YouTube (not even YouTube Kids yet - too unpredictable)</li>
-			<li>No web browser access</li>
-			<li>No app store access (parent installs everything)</li>
-			<li>Turn off all in-app purchases</li>
-			<li>Airplane mode or WiFi off when possible</li>
-		</ul>
-
-		<h3>Conversations to Have</h3>
-		<ul>
-			<li>"We use screens together as a family"</li>
-			<li>"If you see something scary, tell Mommy or Daddy right away"</li>
-			<li>"Tablets are for learning and fun, not for all day"</li>
-		</ul>
-
-		<div class="alert alert-warning">
-			<strong>Warning:</strong> At this age, children cannot distinguish between ads, recommendations, and content. Even "kids" platforms can expose them to inappropriate content through algorithms.
-		</div>
-	</section>
-
-	<section>
-		<h2>🎮 Ages 6-8: Early Elementary</h2>
-
-		<h3>Recommended Approach</h3>
-		<ul>
-			<li><strong>Device:</strong> Shared family tablet or computer, possibly first smartphone (heavily locked down)</li>
-			<li><strong>Supervision:</strong> Same room, frequent check-ins, can have brief independence</li>
-			<li><strong>Content:</strong> Pre-approved apps and websites, gradual expansion</li>
-			<li><strong>Time Limit:</strong> 30-60 minutes per day screen time (recreational)</li>
-		</ul>
-
-		<h3>What to Introduce</h3>
-		<ul>
-			<li>Educational websites with parental guidance (National Geographic Kids, Funbrain)</li>
-			<li>YouTube Kids (with restricted mode and parent-approved channels only)</li>
-			<li>Simple multiplayer games (no chat features enabled)</li>
-			<li>Video calls with family members (supervised)</li>
-			<li>Basic research skills for homework (with parent help)</li>
-		</ul>
-
-		<h3>Protection Methods to Implement</h3>
-		<ul>
-			<li><a href="/guides/dns-filtering">DNS filtering</a> at router level</li>
-			<li><a href="/guides/ios-screen-time">iOS Screen Time</a> or <a href="/guides/android-family-link">Android Family Link</a></li>
-			<li>Browser safe search enabled</li>
-			<li>App approval required before installing</li>
-			<li>Location sharing enabled on devices</li>
-		</ul>
-
-		<h3>Conversations to Have</h3>
-		<ul>
-			<li>"Never share personal information (real name, school, address) online"</li>
-			<li>"Tell us if someone online asks you questions or wants to be friends"</li>
-			<li>"Everything you do online is not private - people can see it"</li>
-			<li>"If something makes you uncomfortable, it's not your fault - come tell us"</li>
-		</ul>
-
-		<h3>Red Flags at This Age</h3>
-		<ul>
-			<li>Secretive behavior around devices</li>
-			<li>Quickly switching screens when you approach</li>
-			<li>Asking about people you don't know</li>
-			<li>Nightmares or anxiety after screen time</li>
-		</ul>
-	</section>
-
-	<section>
-		<h2>🌐 Ages 9-11: Late Elementary</h2>
-
-		<h3>Recommended Approach</h3>
-		<ul>
-			<li><strong>Device:</strong> Own tablet or basic smartphone, shared family computer access</li>
-			<li><strong>Supervision:</strong> Periodic check-ins, devices stay in common areas</li>
-			<li><strong>Content:</strong> Approved apps/sites, limited social media exposure</li>
-			<li><strong>Time Limit:</strong> 1-2 hours per day, with regular screen-free days</li>
-		</ul>
-
-		<h3>What to Introduce</h3>
-		<ul>
-			<li>Messaging apps (limited to family and known friends, parent has access)</li>
-			<li>YouTube with parent-approved channels and restricted mode</li>
-			<li>Minecraft, Roblox (with chat disabled or heavily monitored)</li>
-			<li>Google Docs/Office for schoolwork</li>
-			<li>Basic research skills with filtered search</li>
-			<li>Email account (parent has password, monitors regularly)</li>
-		</ul>
-
-		<h3>Still NOT Ready For</h3>
-		<ul>
-			<li>Social media accounts (Instagram, TikTok, Snapchat - all require age 13+)</li>
-			<li>Unmonitored messaging apps</li>
-			<li>Gaming voice chat with strangers</li>
-			<li>Their own laptop with unfiltered internet</li>
-			<li>Smartphone with data plan</li>
-		</ul>
-
-		<h3>Protection Methods to Implement</h3>
-		<ul>
-			<li>All methods from ages 6-8, plus:</li>
-			<li><a href="/guides/gaming-consoles">Gaming console parental controls</a></li>
-			<li>Messaging app monitoring (parent can view messages)</li>
-			<li>Friend list approval for games/apps</li>
-			<li>Regular device checks (weekly)</li>
-		</ul>
-
-		<h3>Conversations to Have</h3>
-		<ul>
-			<li>"Why age limits exist on apps and games"</li>
-			<li>"What to do if someone online makes you uncomfortable or asks for pictures"</li>
-			<li>"Understanding that 'delete' doesn't mean 'gone forever'"</li>
-			<li>"Online reputation starts now - colleges and employers can find things"</li>
-			<li>"We're monitoring not because we don't trust you, but to keep you safe while you learn"</li>
-		</ul>
-
-		<h3>Red Flags at This Age</h3>
-		<ul>
-			<li>Creating accounts you didn't approve</li>
-			<li>Communicating with adults you don't know</li>
-			<li>Staying up late on devices</li>
-			<li>Defensive when asked about online activities</li>
-			<li>Exposure to mature content (through friends' devices)</li>
-		</ul>
-
-		<div class="alert alert-info">
-			<strong>Critical Age:</strong> This is when peer pressure intensifies. Many friends will have unrestricted access. Your child needs to understand WHY you have rules, not just WHAT the rules are.
-		</div>
-	</section>
-
-	<section>
-		<h2>📱 Ages 12-14: Middle School</h2>
-
-		<h3>Recommended Approach</h3>
-		<ul>
-			<li><strong>Device:</strong> Smartphone (with monitoring), own computer (filtered), tablet</li>
-			<li><strong>Supervision:</strong> Regular check-ins, transparency tools, devices charged in parents' room overnight</li>
-			<li><strong>Content:</strong> Gradual introduction to social media with heavy guardrails</li>
-			<li><strong>Time Limit:</strong> 2-3 hours per day (not including homework), no phones after 9pm</li>
-		</ul>
-
-		<h3>What to Introduce (Carefully)</h3>
-		<ul>
-			<li>First social media account (start with one platform, parent follows/friends)</li>
-			<li>Group chats with known friends</li>
-			<li>YouTube with parent-approved subscriptions</li>
-			<li>Music streaming (with explicit content filter)</li>
-			<li>Online research for school (with accountability software)</li>
-			<li>Email for school and communication</li>
-		</ul>
-
-		<h3>Social Media Readiness Checklist</h3>
-		<p>Before allowing first social media account, your child should be able to:</p>
-		<ul>
-			<li>Explain what information should stay private</li>
-			<li>Identify potential risks (predators, cyberbullying, reputation damage)</li>
-			<li>Commit to keeping account settings on private</li>
-			<li>Agree to parent following/friending and regular check-ins</li>
-			<li>Understand that inappropriate posts will result in account removal</li>
-			<li>Know how to block, report, and come to you with problems</li>
-		</ul>
-
-		<h3>Protection Methods to Implement</h3>
-		<ul>
-			<li>All previous methods, plus:</li>
-			<li><a href="/guides/filtering-software">Comprehensive filtering software</a> with reporting</li>
-			<li><a href="/guides/accountability-apps">Accountability software</a> (for older teens who want it)</li>
-			<li>Social media privacy settings locked down</li>
-			<li>Location tracking enabled</li>
-			<li>Regular (monthly) full device reviews together</li>
-		</ul>
-
-		<h3>Conversations to Have</h3>
-		<ul>
-			<li><a href="/guides/social-media-safety">Social media safety</a> (platform-specific)</li>
-			<li><a href="/guides/cyberbullying">Cyberbullying</a> - both as victim and as bystander</li>
-			<li>"Sexting" - legal consequences and reputation damage</li>
-			<li>Digital footprint and future implications</li>
-			<li>How algorithms work and why they're designed to be addictive</li>
-			<li>Pornography - why it's harmful, what to do if exposed</li>
-		</ul>
-
-		<h3>Red Flags at This Age</h3>
-		<ul>
-			<li>Secret accounts or apps hidden in folders</li>
-			<li>Using VPNs to bypass filters</li>
-			<li>Dramatic personality changes</li>
-			<li>Withdrawal from family activities</li>
-			<li>Sleep deprivation (phone use at night)</li>
-			<li>Anxiety about being without phone</li>
-			<li>Receiving messages/calls from unknown numbers</li>
-		</ul>
-
-		<div class="alert alert-warning">
-			<strong>High-Risk Period:</strong> This is statistically when most first-time exposure to inappropriate content happens, often through friends' devices. Maintain open communication and regular check-ins.
-		</div>
-	</section>
-
-	<section>
-		<h2>🎓 Ages 15-17: High School</h2>
-
-		<h3>Recommended Approach</h3>
-		<ul>
-			<li><strong>Device:</strong> Smartphone, laptop, tablet - earned through demonstrated responsibility</li>
-			<li><strong>Supervision:</strong> Trust-but-verify, periodic check-ins, accountability focus</li>
-			<li><strong>Content:</strong> Most content allowed, with agreed-upon boundaries</li>
-			<li><strong>Time Limit:</strong> Self-management with family agreements, reasonable limits</li>
-		</ul>
-
-		<h3>Transitioning to Independence</h3>
-		<ul>
-			<li>Shift from "parental controls" to "accountability tools"</li>
-			<li>Have teen participate in choosing protection methods</li>
-			<li>Emphasize personal responsibility and character</li>
-			<li>Prepare for college/adulthoodwhen you won't be monitoring</li>
-			<li>Maintain some guardrails but with more privacy</li>
-		</ul>
-
-		<h3>What They Should Learn Before 18</h3>
-		<ul>
-			<li>How to recognize and resist addictive design</li>
-			<li>Time management and self-imposed limits</li>
-			<li>Critical evaluation of online information</li>
-			<li>Digital citizenship and online ethics</li>
-			<li>Protecting their own privacy and security</li>
-			<li>How to support friends dealing with online issues</li>
-			<li>Career implications of social media presence</li>
-		</ul>
-
-		<h3>Protection Methods to Implement</h3>
-		<ul>
-			<li>Transition to consent-based accountability tools</li>
-			<li>Network-level filtering (affects whole family)</li>
-			<li>Focus on education over restriction</li>
-			<li>Browser extensions they choose to help them</li>
-			<li>Regular conversations instead of secret monitoring</li>
-		</ul>
-
-		<h3>Conversations to Have</h3>
-		<ul>
-			<li>Long-term consequences of online behavior</li>
-			<li>Healthy relationships and dating app risks</li>
-			<li>Pornography addiction and recovery</li>
-			<li>Preparing for college internet access</li>
-			<li>"What will you do when we're not here to monitor?"</li>
-			<li>How to help friends who are struggling</li>
-		</ul>
-
-		<h3>Red Flags at This Age</h3>
-		<ul>
-			<li>Signs of addiction (can't function without phone)</li>
-			<li>Deception about online activities</li>
-			<li>Romantic relationships with people they've never met in person</li>
-			<li>Gambling or spending money online without permission</li>
-			<li>Academic decline due to internet use</li>
-			<li>Seeking help from online strangers instead of trusted adults</li>
-		</ul>
-
-		<div class="alert alert-info">
-			<strong>Goal:</strong> By 18, your child should be making wise digital decisions independently, not just following rules. The final years at home are for practicing self-governance with a safety net.
-		</div>
-	</section>
-
-	<section>
-		<h2>📋 Sample Family Media Agreement</h2>
-		<p>Create a written agreement that outlines expectations and consequences. Tailor it to your child's age.</p>
-
-		<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-			<h3>Our Family Media Agreement</h3>
-
-			<h4>I will:</h4>
-			<ul>
-				<li>Keep my phone/tablet charged in [parent's room] overnight</li>
-				<li>Follow time limits we agree on</li>
-				<li>Keep my passwords shared with my parents</li>
-				<li>Tell my parents right away if I see something inappropriate or someone makes me uncomfortable</li>
-				<li>Never share personal information without permission</li>
-				<li>Be kind in my online interactions - no cyberbullying</li>
-				<li>Think before I post - is it kind, true, and necessary?</li>
-			</ul>
-
-			<h4>My parents will:</h4>
-			<ul>
-				<li>Respect my privacy while keeping me safe</li>
-				<li>Listen without anger if I tell them about problems</li>
-				<li>Help me learn to use technology responsibly</li>
-				<li>Follow similar rules themselves (modeling good behavior)</li>
-				<li>Review these rules together with me every [6 months]</li>
-			</ul>
-
-			<h4>Consequences for breaking rules:</h4>
-			<ul>
-				<li>First time: [Warning and discussion]</li>
-				<li>Second time: [Loss of device for 24 hours]</li>
-				<li>Serious violation: [Loss of device for a week, possible permanent restriction]</li>
-			</ul>
-
-			<p><strong>Signed:</strong> _________________ Date: _________</p>
-			<p><strong>Parent:</strong> _________________ Date: _________</p>
-		</div>
-	</section>
-
-	<section>
-		<h2>⚠️ Common Mistakes to Avoid</h2>
-
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>❌ Giving full access too early</h3>
-				<p>"Everyone else has it" is not a good reason. Trust your parental instincts about your child's maturity level.</p>
-			</div>
-
-			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>❌ Using monitoring as punishment</h3>
-				<p>Monitoring should be positioned as safety and learning, not as distrust or punishment.</p>
-			</div>
-
-			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>❌ Having "the talk" only once</h3>
-				<p>Internet safety requires ongoing conversations as technology and maturity evolve.</p>
-			</div>
-
-			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>❌ Parents not modeling good behavior</h3>
-				<p>If you're on your phone during dinner, your rules will have no credibility.</p>
-			</div>
-
-			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>❌ Making it only about "don'ts"</h3>
-				<p>Also teach the positive potential of technology - learning, creating, connecting positively.</p>
-			</div>
-
-			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>❌ Assuming they're too young to be exposed</h3>
-				<p>Exposure often happens through friends' devices. Better to educate than assume they won't encounter it.</p>
-			</div>
-		</div>
-	</section>
-
-	<section slot="next-steps">
-		<h2>🎯 Next Steps & Related Guides</h2>
-
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-			<a href="/guides/screen-time-management" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>⏰ Screen Time Management</h3>
-				<p>Practical strategies for setting and enforcing screen time limits</p>
-			</a>
-
-			<a href="/guides/social-media-safety" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>📱 Social Media Safety</h3>
-				<p>Platform-specific guides for keeping teens safe on social media</p>
-			</a>
-
-			<a href="/guides/cyberbullying" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>🛡️ Cyberbullying Prevention</h3>
-				<p>Recognize signs and respond effectively to cyberbullying</p>
-			</a>
-
-			<a href="/parents" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>👨‍👩‍👧 All Parent Resources</h3>
-				<p>Browse all guides and resources for parents</p>
-			</a>
-		</div>
-
-		<div class="alert alert-success">
-			<strong>Remember:</strong> Every child develops at their own pace. These are guidelines, not strict rules. Adjust based on your child's demonstrated maturity and your family values.
-		</div>
-	</section>
+  <Fragment slot="breadcrumb">
+    <li class="flex items-center">
+      <a href="/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"> Home </a>
+      <span class="mx-2 text-gray-500">/</span>
+    </li>
+    <li class="flex items-center">
+      <a href="/methods" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+        Protection Methods
+      </a>
+      <span class="mx-2 text-gray-500">/</span>
+    </li>
+    <li class="text-gray-700 dark:text-gray-300">Age-Appropriate Internet Introduction</li>
+  </Fragment>
+
+  <section>
+    <h2>Why Age-Appropriate Matters</h2>
+    <p>
+      Just as you wouldn't hand car keys to a 10-year-old, children need age-appropriate access to the internet. Their
+      cognitive development, emotional maturity, and ability to understand consequences vary dramatically across
+      childhood. A staged approach builds digital literacy while protecting them from content and situations they're not
+      ready to handle.
+    </p>
+
+    <div class="alert alert-success">
+      <strong>Key Principle:</strong> Start with maximum supervision and simple devices, gradually expanding access and independence
+      as your child demonstrates responsibility and maturity.
+    </div>
+  </section>
+
+  <section>
+    <h2>📊 Developmental Stages Overview</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>Ages 3-5: Preschool</h3>
+        <p><strong>Cognitive Stage:</strong> Concrete thinking, learning cause and effect</p>
+        <p><strong>Attention Span:</strong> 5-15 minutes</p>
+        <p><strong>Understanding:</strong> Cannot distinguish real from pretend online</p>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>Ages 6-8: Early Elementary</h3>
+        <p><strong>Cognitive Stage:</strong> Beginning logical thinking, rule-following</p>
+        <p><strong>Attention Span:</strong> 10-20 minutes</p>
+        <p><strong>Understanding:</strong> Starting to understand internet is public</p>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>Ages 9-11: Late Elementary</h3>
+        <p><strong>Cognitive Stage:</strong> Concrete operational, peer awareness growing</p>
+        <p><strong>Attention Span:</strong> 20-30 minutes</p>
+        <p><strong>Understanding:</strong> Grasps privacy concepts, wants independence</p>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>Ages 12-14: Middle School</h3>
+        <p><strong>Cognitive Stage:</strong> Beginning abstract thinking, intense peer focus</p>
+        <p><strong>Attention Span:</strong> Variable (30-60 min)</p>
+        <p><strong>Understanding:</strong> Understands but may not apply good judgment</p>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>Ages 15-17: High School</h3>
+        <p><strong>Cognitive Stage:</strong> Abstract thinking, future orientation developing</p>
+        <p><strong>Attention Span:</strong> Extended focus possible</p>
+        <p><strong>Understanding:</strong> Capable but still learning consequences</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🎯 Ages 3-5: Preschool Years</h2>
+
+    <h3>Recommended Approach</h3>
+    <ul>
+      <li><strong>Device:</strong> Shared family tablet only, never in child's room</li>
+      <li><strong>Supervision:</strong> Always sitting together, parent controls the device</li>
+      <li><strong>Content:</strong> Curated apps only (PBS Kids, Khan Academy Kids, etc.)</li>
+      <li><strong>Time Limit:</strong> 15-30 minutes per day maximum</li>
+    </ul>
+
+    <h3>What to Introduce</h3>
+    <ul>
+      <li>High-quality educational apps with no ads</li>
+      <li>Offline-only games or apps without internet access</li>
+      <li>Video content: Pre-downloaded educational shows</li>
+      <li>Creative apps: Drawing, music, basic puzzles</li>
+    </ul>
+
+    <h3>Important Guardrails</h3>
+    <ul>
+      <li>No YouTube (not even YouTube Kids yet - too unpredictable)</li>
+      <li>No web browser access</li>
+      <li>No app store access (parent installs everything)</li>
+      <li>Turn off all in-app purchases</li>
+      <li>Airplane mode or WiFi off when possible</li>
+    </ul>
+
+    <h3>Conversations to Have</h3>
+    <ul>
+      <li>"We use screens together as a family"</li>
+      <li>"If you see something scary, tell Mommy or Daddy right away"</li>
+      <li>"Tablets are for learning and fun, not for all day"</li>
+    </ul>
+
+    <div class="alert alert-warning">
+      <strong>Warning:</strong> At this age, children cannot distinguish between ads, recommendations, and content. Even
+      "kids" platforms can expose them to inappropriate content through algorithms.
+    </div>
+  </section>
+
+  <section>
+    <h2>🎮 Ages 6-8: Early Elementary</h2>
+
+    <h3>Recommended Approach</h3>
+    <ul>
+      <li>
+        <strong>Device:</strong> Shared family tablet or computer, possibly first smartphone (heavily locked down)
+      </li>
+      <li><strong>Supervision:</strong> Same room, frequent check-ins, can have brief independence</li>
+      <li><strong>Content:</strong> Pre-approved apps and websites, gradual expansion</li>
+      <li><strong>Time Limit:</strong> 30-60 minutes per day screen time (recreational)</li>
+    </ul>
+
+    <h3>What to Introduce</h3>
+    <ul>
+      <li>Educational websites with parental guidance (National Geographic Kids, Funbrain)</li>
+      <li>YouTube Kids (with restricted mode and parent-approved channels only)</li>
+      <li>Simple multiplayer games (no chat features enabled)</li>
+      <li>Video calls with family members (supervised)</li>
+      <li>Basic research skills for homework (with parent help)</li>
+    </ul>
+
+    <h3>Protection Methods to Implement</h3>
+    <ul>
+      <li><a href="/guides/dns-filtering">DNS filtering</a> at router level</li>
+      <li>
+        <a href="/guides/ios-screen-time">iOS Screen Time</a> or <a href="/guides/android-family-link"
+          >Android Family Link</a
+        >
+      </li>
+      <li>Browser safe search enabled</li>
+      <li>App approval required before installing</li>
+      <li>Location sharing enabled on devices</li>
+    </ul>
+
+    <h3>Conversations to Have</h3>
+    <ul>
+      <li>"Never share personal information (real name, school, address) online"</li>
+      <li>"Tell us if someone online asks you questions or wants to be friends"</li>
+      <li>"Everything you do online is not private - people can see it"</li>
+      <li>"If something makes you uncomfortable, it's not your fault - come tell us"</li>
+    </ul>
+
+    <h3>Red Flags at This Age</h3>
+    <ul>
+      <li>Secretive behavior around devices</li>
+      <li>Quickly switching screens when you approach</li>
+      <li>Asking about people you don't know</li>
+      <li>Nightmares or anxiety after screen time</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🌐 Ages 9-11: Late Elementary</h2>
+
+    <h3>Recommended Approach</h3>
+    <ul>
+      <li><strong>Device:</strong> Own tablet or basic smartphone, shared family computer access</li>
+      <li><strong>Supervision:</strong> Periodic check-ins, devices stay in common areas</li>
+      <li><strong>Content:</strong> Approved apps/sites, limited social media exposure</li>
+      <li><strong>Time Limit:</strong> 1-2 hours per day, with regular screen-free days</li>
+    </ul>
+
+    <h3>What to Introduce</h3>
+    <ul>
+      <li>Messaging apps (limited to family and known friends, parent has access)</li>
+      <li>YouTube with parent-approved channels and restricted mode</li>
+      <li>Minecraft, Roblox (with chat disabled or heavily monitored)</li>
+      <li>Google Docs/Office for schoolwork</li>
+      <li>Basic research skills with filtered search</li>
+      <li>Email account (parent has password, monitors regularly)</li>
+    </ul>
+
+    <h3>Still NOT Ready For</h3>
+    <ul>
+      <li>Social media accounts (Instagram, TikTok, Snapchat - all require age 13+)</li>
+      <li>Unmonitored messaging apps</li>
+      <li>Gaming voice chat with strangers</li>
+      <li>Their own laptop with unfiltered internet</li>
+      <li>Smartphone with data plan</li>
+    </ul>
+
+    <h3>Protection Methods to Implement</h3>
+    <ul>
+      <li>All methods from ages 6-8, plus:</li>
+      <li><a href="/guides/gaming-consoles">Gaming console parental controls</a></li>
+      <li>Messaging app monitoring (parent can view messages)</li>
+      <li>Friend list approval for games/apps</li>
+      <li>Regular device checks (weekly)</li>
+    </ul>
+
+    <h3>Conversations to Have</h3>
+    <ul>
+      <li>"Why age limits exist on apps and games"</li>
+      <li>"What to do if someone online makes you uncomfortable or asks for pictures"</li>
+      <li>"Understanding that 'delete' doesn't mean 'gone forever'"</li>
+      <li>"Online reputation starts now - colleges and employers can find things"</li>
+      <li>"We're monitoring not because we don't trust you, but to keep you safe while you learn"</li>
+    </ul>
+
+    <h3>Red Flags at This Age</h3>
+    <ul>
+      <li>Creating accounts you didn't approve</li>
+      <li>Communicating with adults you don't know</li>
+      <li>Staying up late on devices</li>
+      <li>Defensive when asked about online activities</li>
+      <li>Exposure to mature content (through friends' devices)</li>
+    </ul>
+
+    <div class="alert alert-info">
+      <strong>Critical Age:</strong> This is when peer pressure intensifies. Many friends will have unrestricted access.
+      Your child needs to understand WHY you have rules, not just WHAT the rules are.
+    </div>
+  </section>
+
+  <section>
+    <h2>📱 Ages 12-14: Middle School</h2>
+
+    <h3>Recommended Approach</h3>
+    <ul>
+      <li><strong>Device:</strong> Smartphone (with monitoring), own computer (filtered), tablet</li>
+      <li>
+        <strong>Supervision:</strong> Regular check-ins, transparency tools, devices charged in parents' room overnight
+      </li>
+      <li><strong>Content:</strong> Gradual introduction to social media with heavy guardrails</li>
+      <li><strong>Time Limit:</strong> 2-3 hours per day (not including homework), no phones after 9pm</li>
+    </ul>
+
+    <h3>What to Introduce (Carefully)</h3>
+    <ul>
+      <li>First social media account (start with one platform, parent follows/friends)</li>
+      <li>Group chats with known friends</li>
+      <li>YouTube with parent-approved subscriptions</li>
+      <li>Music streaming (with explicit content filter)</li>
+      <li>Online research for school (with accountability software)</li>
+      <li>Email for school and communication</li>
+    </ul>
+
+    <h3>Social Media Readiness Checklist</h3>
+    <p>Before allowing first social media account, your child should be able to:</p>
+    <ul>
+      <li>Explain what information should stay private</li>
+      <li>Identify potential risks (predators, cyberbullying, reputation damage)</li>
+      <li>Commit to keeping account settings on private</li>
+      <li>Agree to parent following/friending and regular check-ins</li>
+      <li>Understand that inappropriate posts will result in account removal</li>
+      <li>Know how to block, report, and come to you with problems</li>
+    </ul>
+
+    <h3>Protection Methods to Implement</h3>
+    <ul>
+      <li>All previous methods, plus:</li>
+      <li><a href="/guides/filtering-software">Comprehensive filtering software</a> with reporting</li>
+      <li><a href="/guides/accountability-apps">Accountability software</a> (for older teens who want it)</li>
+      <li>Social media privacy settings locked down</li>
+      <li>Location tracking enabled</li>
+      <li>Regular (monthly) full device reviews together</li>
+    </ul>
+
+    <h3>Conversations to Have</h3>
+    <ul>
+      <li><a href="/guides/social-media-safety">Social media safety</a> (platform-specific)</li>
+      <li><a href="/guides/cyberbullying">Cyberbullying</a> - both as victim and as bystander</li>
+      <li>"Sexting" - legal consequences and reputation damage</li>
+      <li>Digital footprint and future implications</li>
+      <li>How algorithms work and why they're designed to be addictive</li>
+      <li>Pornography - why it's harmful, what to do if exposed</li>
+    </ul>
+
+    <h3>Red Flags at This Age</h3>
+    <ul>
+      <li>Secret accounts or apps hidden in folders</li>
+      <li>Using VPNs to bypass filters</li>
+      <li>Dramatic personality changes</li>
+      <li>Withdrawal from family activities</li>
+      <li>Sleep deprivation (phone use at night)</li>
+      <li>Anxiety about being without phone</li>
+      <li>Receiving messages/calls from unknown numbers</li>
+    </ul>
+
+    <div class="alert alert-warning">
+      <strong>High-Risk Period:</strong> This is statistically when most first-time exposure to inappropriate content happens,
+      often through friends' devices. Maintain open communication and regular check-ins.
+    </div>
+  </section>
+
+  <section>
+    <h2>🎓 Ages 15-17: High School</h2>
+
+    <h3>Recommended Approach</h3>
+    <ul>
+      <li><strong>Device:</strong> Smartphone, laptop, tablet - earned through demonstrated responsibility</li>
+      <li><strong>Supervision:</strong> Trust-but-verify, periodic check-ins, accountability focus</li>
+      <li><strong>Content:</strong> Most content allowed, with agreed-upon boundaries</li>
+      <li><strong>Time Limit:</strong> Self-management with family agreements, reasonable limits</li>
+    </ul>
+
+    <h3>Transitioning to Independence</h3>
+    <ul>
+      <li>Shift from "parental controls" to "accountability tools"</li>
+      <li>Have teen participate in choosing protection methods</li>
+      <li>Emphasize personal responsibility and character</li>
+      <li>Prepare for college/adulthoodwhen you won't be monitoring</li>
+      <li>Maintain some guardrails but with more privacy</li>
+    </ul>
+
+    <h3>What They Should Learn Before 18</h3>
+    <ul>
+      <li>How to recognize and resist addictive design</li>
+      <li>Time management and self-imposed limits</li>
+      <li>Critical evaluation of online information</li>
+      <li>Digital citizenship and online ethics</li>
+      <li>Protecting their own privacy and security</li>
+      <li>How to support friends dealing with online issues</li>
+      <li>Career implications of social media presence</li>
+    </ul>
+
+    <h3>Protection Methods to Implement</h3>
+    <ul>
+      <li>Transition to consent-based accountability tools</li>
+      <li>Network-level filtering (affects whole family)</li>
+      <li>Focus on education over restriction</li>
+      <li>Browser extensions they choose to help them</li>
+      <li>Regular conversations instead of secret monitoring</li>
+    </ul>
+
+    <h3>Conversations to Have</h3>
+    <ul>
+      <li>Long-term consequences of online behavior</li>
+      <li>Healthy relationships and dating app risks</li>
+      <li>Pornography addiction and recovery</li>
+      <li>Preparing for college internet access</li>
+      <li>"What will you do when we're not here to monitor?"</li>
+      <li>How to help friends who are struggling</li>
+    </ul>
+
+    <h3>Red Flags at This Age</h3>
+    <ul>
+      <li>Signs of addiction (can't function without phone)</li>
+      <li>Deception about online activities</li>
+      <li>Romantic relationships with people they've never met in person</li>
+      <li>Gambling or spending money online without permission</li>
+      <li>Academic decline due to internet use</li>
+      <li>Seeking help from online strangers instead of trusted adults</li>
+    </ul>
+
+    <div class="alert alert-info">
+      <strong>Goal:</strong> By 18, your child should be making wise digital decisions independently, not just following
+      rules. The final years at home are for practicing self-governance with a safety net.
+    </div>
+  </section>
+
+  <section>
+    <h2>📋 Sample Family Media Agreement</h2>
+    <p>Create a written agreement that outlines expectations and consequences. Tailor it to your child's age.</p>
+
+    <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+      <h3>Our Family Media Agreement</h3>
+
+      <h4>I will:</h4>
+      <ul>
+        <li>Keep my phone/tablet charged in [parent's room] overnight</li>
+        <li>Follow time limits we agree on</li>
+        <li>Keep my passwords shared with my parents</li>
+        <li>Tell my parents right away if I see something inappropriate or someone makes me uncomfortable</li>
+        <li>Never share personal information without permission</li>
+        <li>Be kind in my online interactions - no cyberbullying</li>
+        <li>Think before I post - is it kind, true, and necessary?</li>
+      </ul>
+
+      <h4>My parents will:</h4>
+      <ul>
+        <li>Respect my privacy while keeping me safe</li>
+        <li>Listen without anger if I tell them about problems</li>
+        <li>Help me learn to use technology responsibly</li>
+        <li>Follow similar rules themselves (modeling good behavior)</li>
+        <li>Review these rules together with me every [6 months]</li>
+      </ul>
+
+      <h4>Consequences for breaking rules:</h4>
+      <ul>
+        <li>First time: [Warning and discussion]</li>
+        <li>Second time: [Loss of device for 24 hours]</li>
+        <li>Serious violation: [Loss of device for a week, possible permanent restriction]</li>
+      </ul>
+
+      <p><strong>Signed:</strong> _________________ Date: _________</p>
+      <p><strong>Parent:</strong> _________________ Date: _________</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>⚠️ Common Mistakes to Avoid</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>❌ Giving full access too early</h3>
+        <p>
+          "Everyone else has it" is not a good reason. Trust your parental instincts about your child's maturity level.
+        </p>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>❌ Using monitoring as punishment</h3>
+        <p>Monitoring should be positioned as safety and learning, not as distrust or punishment.</p>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>❌ Having "the talk" only once</h3>
+        <p>Internet safety requires ongoing conversations as technology and maturity evolve.</p>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>❌ Parents not modeling good behavior</h3>
+        <p>If you're on your phone during dinner, your rules will have no credibility.</p>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>❌ Making it only about "don'ts"</h3>
+        <p>Also teach the positive potential of technology - learning, creating, connecting positively.</p>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>❌ Assuming they're too young to be exposed</h3>
+        <p>Exposure often happens through friends' devices. Better to educate than assume they won't encounter it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section slot="next-steps">
+    <h2>🎯 Next Steps & Related Guides</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+      <a
+        href="/guides/screen-time-management"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
+        <h3>⏰ Screen Time Management</h3>
+        <p>Practical strategies for setting and enforcing screen time limits</p>
+      </a>
+
+      <a
+        href="/guides/social-media-safety"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
+        <h3>📱 Social Media Safety</h3>
+        <p>Platform-specific guides for keeping teens safe on social media</p>
+      </a>
+
+      <a
+        href="/guides/cyberbullying"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
+        <h3>🛡️ Cyberbullying Prevention</h3>
+        <p>Recognize signs and respond effectively to cyberbullying</p>
+      </a>
+
+      <a
+        href="/parents"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
+        <h3>👨‍👩‍👧 All Parent Resources</h3>
+        <p>Browse all guides and resources for parents</p>
+      </a>
+    </div>
+
+    <div class="alert alert-success">
+      <strong>Remember:</strong> Every child develops at their own pace. These are guidelines, not strict rules. Adjust based
+      on your child's demonstrated maturity and your family values.
+    </div>
+  </section>
 </GuideLayout>
-

@@ -3,7 +3,8 @@ import GuideLayout from '~/layouts/GuideLayout.astro';
 
 const metadata = {
   title: 'macOS Parental Controls Setup Guide',
-  description: 'Complete guide to setting up Screen Time and parental controls on Mac computers to protect children with content filtering and usage limits.',
+  description:
+    'Complete guide to setting up Screen Time and parental controls on Mac computers to protect children with content filtering and usage limits.',
 };
 ---
 
@@ -14,14 +15,12 @@ const metadata = {
   prerequisites={[
     'Mac running macOS Catalina (10.15) or later',
     'Administrator access to the Mac',
-    'Apple ID (optional but recommended)'
+    'Apple ID (optional but recommended)',
   ]}
 >
   <Fragment slot="breadcrumb">
     <li class="flex items-center">
-      <a href="/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
-        Home
-      </a>
+      <a href="/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"> Home </a>
       <span class="mx-2 text-gray-500">/</span>
     </li>
     <li class="flex items-center">
@@ -30,22 +29,24 @@ const metadata = {
       </a>
       <span class="mx-2 text-gray-500">/</span>
     </li>
-    <li class="text-gray-700 dark:text-gray-300">
-      macOS Parental Controls
-    </li>
+    <li class="text-gray-700 dark:text-gray-300">macOS Parental Controls</li>
   </Fragment>
 
   <section>
     <h2>macOS Parental Controls Overview</h2>
     <p>
-      macOS includes powerful built-in parental controls through Screen Time (macOS Catalina and later) or the legacy Parental Controls system (older versions). These free tools allow you to filter content, limit apps, manage screen time, and monitor usage on your child's Mac.
+      macOS includes powerful built-in parental controls through Screen Time (macOS Catalina and later) or the legacy
+      Parental Controls system (older versions). These free tools allow you to filter content, limit apps, manage screen
+      time, and monitor usage on your child's Mac.
     </p>
     <p>
-      Screen Time on Mac integrates with iOS/iPadOS Screen Time, allowing unified management across all Apple devices in your family.
+      Screen Time on Mac integrates with iOS/iPadOS Screen Time, allowing unified management across all Apple devices in
+      your family.
     </p>
 
     <div class="alert alert-success">
-      <strong>Best for:</strong> Families with Macs, Apple ecosystem users, free comprehensive controls, unified management with iOS devices.
+      <strong>Best for:</strong> Families with Macs, Apple ecosystem users, free comprehensive controls, unified management
+      with iOS devices.
     </div>
   </section>
 
@@ -65,7 +66,8 @@ const metadata = {
     </ol>
 
     <div class="alert alert-warning">
-      <strong>Important:</strong> Never give a child an Administrator account. Standard accounts prevent them from installing software, changing system settings, or disabling parental controls.
+      <strong>Important:</strong> Never give a child an Administrator account. Standard accounts prevent them from installing
+      software, changing system settings, or disabling parental controls.
     </div>
 
     <h3>Step 2: Enable Parental Controls</h3>
@@ -142,7 +144,8 @@ const metadata = {
     </ul>
 
     <div class="alert alert-info">
-      <strong>Recommendation:</strong> Use "Limit Adult Websites" and add educational sites to the allowed list. For young children, consider "Allowed Websites Only."
+      <strong>Recommendation:</strong> Use "Limit Adult Websites" and add educational sites to the allowed list. For young
+      children, consider "Allowed Websites Only."
     </div>
 
     <h3>Siri</h3>
@@ -174,7 +177,8 @@ const metadata = {
     <ol>
       <li>System Preferences → Parental Controls</li>
       <li>Select child's account</li>
-      <li>Configure tabs:
+      <li>
+        Configure tabs:
         <ul>
           <li><strong>Apps:</strong> Limit which apps can be used, set age ratings</li>
           <li><strong>Web:</strong> Website restrictions</li>
@@ -217,7 +221,8 @@ const metadata = {
     <h3>Viewing Usage</h3>
     <ol>
       <li>Open Screen Time in System Settings</li>
-      <li>View dashboard showing:
+      <li>
+        View dashboard showing:
         <ul>
           <li>Total screen time and daily average</li>
           <li>Most used apps</li>
@@ -239,16 +244,26 @@ const metadata = {
     <h2>🔧 Best Practices</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-      <div class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5">
+      <div
+        class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5"
+      >
         <h3 class="mt-0 mb-3 text-gray-900 dark:text-white">🎯 Age-Appropriate Settings</h3>
         <ul class="m-0 pl-5">
-          <li class="mb-2 leading-relaxed"><strong>Ages 5-8:</strong> Allowed websites only, limited apps, 1-2 hour limits</li>
-          <li class="mb-2 leading-relaxed"><strong>Ages 9-12:</strong> Limit adult websites, app limits, 2-3 hour daily limit</li>
-          <li class="mb-2 leading-relaxed"><strong>Ages 13+:</strong> Automatic filtering, focus on downtime and balance</li>
+          <li class="mb-2 leading-relaxed">
+            <strong>Ages 5-8:</strong> Allowed websites only, limited apps, 1-2 hour limits
+          </li>
+          <li class="mb-2 leading-relaxed">
+            <strong>Ages 9-12:</strong> Limit adult websites, app limits, 2-3 hour daily limit
+          </li>
+          <li class="mb-2 leading-relaxed">
+            <strong>Ages 13+:</strong> Automatic filtering, focus on downtime and balance
+          </li>
         </ul>
       </div>
 
-      <div class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5">
+      <div
+        class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5"
+      >
         <h3 class="mt-0 mb-3 text-gray-900 dark:text-white">🛡️ Security Measures</h3>
         <ul class="m-0 pl-5">
           <li class="mb-2 leading-relaxed">Password-protect your admin account</li>
@@ -259,7 +274,9 @@ const metadata = {
         </ul>
       </div>
 
-      <div class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5">
+      <div
+        class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5"
+      >
         <h3 class="mt-0 mb-3 text-gray-900 dark:text-white">🗣️ Communication</h3>
         <ul class="m-0 pl-5">
           <li class="mb-2 leading-relaxed">Explain why limits exist</li>
@@ -270,10 +287,14 @@ const metadata = {
         </ul>
       </div>
 
-      <div class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5">
+      <div
+        class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5"
+      >
         <h3 class="mt-0 mb-3 text-gray-900 dark:text-white">⚙️ Technical Tips</h3>
         <ul class="m-0 pl-5">
-          <li class="mb-2 leading-relaxed">Combine with <a href="/guides/dns-filtering">DNS filtering</a> for browser-independent protection</li>
+          <li class="mb-2 leading-relaxed">
+            Combine with <a href="/guides/dns-filtering">DNS filtering</a> for browser-independent protection
+          </li>
           <li class="mb-2 leading-relaxed">Consider disabling Guest User account</li>
           <li class="mb-2 leading-relaxed">Block or monitor third-party browsers</li>
           <li class="mb-2 leading-relaxed">Use Fast User Switching for easy account changes</li>
@@ -288,7 +309,9 @@ const metadata = {
 
     <div class="grid gap-4 my-6">
       <div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 dark:border-blue-400 p-4 rounded">
-        <h3 class="text-lg text-gray-900 dark:text-white mb-2 mt-0">Child using another user account or Guest account</h3>
+        <h3 class="text-lg text-gray-900 dark:text-white mb-2 mt-0">
+          Child using another user account or Guest account
+        </h3>
         <p class="text-gray-700 dark:text-gray-300 font-semibold">Solutions:</p>
         <ul class="pl-5 mt-2 text-gray-700 dark:text-gray-300">
           <li class="mb-1">Disable Guest User: System Settings → Users & Groups → Turn off Guest User</li>
@@ -311,7 +334,10 @@ const metadata = {
 
       <div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 dark:border-blue-400 p-4 rounded">
         <h3 class="text-lg text-gray-900 dark:text-white mb-2 mt-0">Legitimate educational sites being blocked</h3>
-        <p class="mb-0 text-gray-700 dark:text-gray-300"><strong>Solution:</strong> Add sites to "Always Allow" list in Content & Privacy → Web Content. You can also temporarily grant access or adjust filtering level.</p>
+        <p class="mb-0 text-gray-700 dark:text-gray-300">
+          <strong>Solution:</strong> Add sites to "Always Allow" list in Content & Privacy → Web Content. You can also temporarily
+          grant access or adjust filtering level.
+        </p>
       </div>
 
       <div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 dark:border-blue-400 p-4 rounded">
@@ -364,22 +390,34 @@ const metadata = {
     <h2>🎯 Next Steps</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-      <a href="/guides/dns-filtering" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+      <a
+        href="/guides/dns-filtering"
+        class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5"
+      >
         <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">🌐 DNS Filtering</h3>
         <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Add network-level filtering for all browsers</p>
       </a>
 
-      <a href="/guides/ios-screen-time" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+      <a
+        href="/guides/ios-screen-time"
+        class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5"
+      >
         <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">📱 iOS Screen Time</h3>
         <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Unified Screen Time across Mac, iPhone, and iPad</p>
       </a>
 
-      <a href="/guides/filtering-software" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+      <a
+        href="/guides/filtering-software"
+        class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5"
+      >
         <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">💻 Filtering Software</h3>
         <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Advanced monitoring and cross-platform protection</p>
       </a>
 
-      <a href="/guides/router-config" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+      <a
+        href="/guides/router-config"
+        class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5"
+      >
         <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">🔐 Router Configuration</h3>
         <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Network-wide scheduling and device management</p>
       </a>

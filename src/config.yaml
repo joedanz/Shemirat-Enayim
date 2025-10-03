@@ -11,7 +11,7 @@ metadata:
   title:
     default: Shemirat Einayim
     template: '%s — Shemirat Einayim'
-  description: "Comprehensive guides for internet safety, content filtering, and digital protection for families and communities. Learn about DNS filtering, parental controls, and effective methods to create safer digital environments."
+  description: 'Comprehensive guides for internet safety, content filtering, and digital protection for families and communities. Learn about DNS filtering, parental controls, and effective methods to create safer digital environments.'
   robots:
     index: true
     follow: true

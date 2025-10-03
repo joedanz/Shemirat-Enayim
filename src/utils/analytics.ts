@@ -7,6 +7,13 @@
  * Note: These functions will only work in browser context (client-side)
  */
 
+// Extend Window interface to include plausible
+declare global {
+  interface Window {
+    plausible?: (eventName: string, options?: { props?: Record<string, string | number | boolean> }) => void;
+  }
+}
+
 // Check if analytics is available and enabled
 const isAnalyticsEnabled = (): boolean => {
   if (typeof window === 'undefined') return false;
@@ -16,7 +23,7 @@ const isAnalyticsEnabled = (): boolean => {
   if (env !== 'production') return false;
 
   // Check if Plausible is loaded
-  return typeof (window as any).plausible === 'function';
+  return typeof window.plausible === 'function';
 };
 
 /**
@@ -29,7 +36,7 @@ export function trackEvent(eventName: string, props?: Record<string, string | nu
   if (!isAnalyticsEnabled()) return;
 
   try {
-    (window as any).plausible(eventName, { props });
+    window.plausible?.(eventName, { props });
   } catch (error) {
     console.error('Analytics tracking error:', error);
   }

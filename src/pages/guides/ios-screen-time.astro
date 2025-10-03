@@ -3,7 +3,8 @@ import GuideLayout from '~/layouts/GuideLayout.astro';
 
 const metadata = {
   title: 'iPhone & iPad Screen Time Setup Guide',
-  description: 'Complete guide to setting up Apple Screen Time and Content & Privacy Restrictions to protect children on iOS and iPadOS devices.',
+  description:
+    'Complete guide to setting up Apple Screen Time and Content & Privacy Restrictions to protect children on iOS and iPadOS devices.',
 };
 ---
 
@@ -13,15 +14,13 @@ const metadata = {
   timeEstimate="15-20 minutes"
   prerequisites={[
     'iPhone or iPad running iOS 12 or later',
-    'Access to the child\'s device',
-    'Apple ID (optional but recommended for Family Sharing)'
+    "Access to the child's device",
+    'Apple ID (optional but recommended for Family Sharing)',
   ]}
 >
   <Fragment slot="breadcrumb">
     <li class="flex items-center">
-      <a href="/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
-        Home
-      </a>
+      <a href="/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"> Home </a>
       <span class="mx-2 text-gray-500">/</span>
     </li>
     <li class="flex items-center">
@@ -30,22 +29,24 @@ const metadata = {
       </a>
       <span class="mx-2 text-gray-500">/</span>
     </li>
-    <li class="text-gray-700 dark:text-gray-300">
-      iOS Screen Time
-    </li>
+    <li class="text-gray-700 dark:text-gray-300">iOS Screen Time</li>
   </Fragment>
 
   <section>
     <h2>What is Screen Time?</h2>
     <p>
-      Screen Time is Apple's built-in parental control and digital wellbeing system for iPhone and iPad. It provides comprehensive controls over content, apps, screen time limits, and privacy settings. Best of all, it's completely free and deeply integrated into iOS and iPadOS.
+      Screen Time is Apple's built-in parental control and digital wellbeing system for iPhone and iPad. It provides
+      comprehensive controls over content, apps, screen time limits, and privacy settings. Best of all, it's completely
+      free and deeply integrated into iOS and iPadOS.
     </p>
     <p>
-      You can set up Screen Time directly on a child's device, or manage it remotely from your own iPhone or iPad using Family Sharing. The latter is recommended as it prevents children from changing settings.
+      You can set up Screen Time directly on a child's device, or manage it remotely from your own iPhone or iPad using
+      Family Sharing. The latter is recommended as it prevents children from changing settings.
     </p>
 
     <div class="alert alert-success">
-      <strong>Best for:</strong> Parents with children who have iPhones or iPads, families already in the Apple ecosystem, comprehensive free parental controls.
+      <strong>Best for:</strong> Parents with children who have iPhones or iPads, families already in the Apple ecosystem,
+      comprehensive free parental controls.
     </div>
   </section>
 
@@ -56,24 +57,37 @@ const metadata = {
       <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6">
         <h3 class="text-blue-700 dark:text-blue-400 mt-0 mb-4">Method 1: Direct Setup (Local Device)</h3>
         <ul class="m-0 pl-5">
-          <li class="mb-2 leading-relaxed"><strong>Pros:</strong> Quick setup, works immediately, no Apple ID required</li>
-          <li class="mb-2 leading-relaxed"><strong>Cons:</strong> Can be changed by child with passcode, requires physical device access to manage</li>
-          <li class="mb-2 leading-relaxed"><strong>Best for:</strong> Younger children, devices that stay at home, temporary/testing setup</li>
+          <li class="mb-2 leading-relaxed">
+            <strong>Pros:</strong> Quick setup, works immediately, no Apple ID required
+          </li>
+          <li class="mb-2 leading-relaxed">
+            <strong>Cons:</strong> Can be changed by child with passcode, requires physical device access to manage
+          </li>
+          <li class="mb-2 leading-relaxed">
+            <strong>Best for:</strong> Younger children, devices that stay at home, temporary/testing setup
+          </li>
         </ul>
       </div>
 
       <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6">
         <h3 class="text-blue-700 dark:text-blue-400 mt-0 mb-4">Method 2: Family Sharing (Recommended)</h3>
         <ul class="m-0 pl-5">
-          <li class="mb-2 leading-relaxed"><strong>Pros:</strong> Manage from your device, more secure, better for multiple children, purchase sharing</li>
-          <li class="mb-2 leading-relaxed"><strong>Cons:</strong> Requires Apple IDs for everyone, slightly more setup time</li>
-          <li class="mb-2 leading-relaxed"><strong>Best for:</strong> Most families, teens with their own devices, comprehensive management</li>
+          <li class="mb-2 leading-relaxed">
+            <strong>Pros:</strong> Manage from your device, more secure, better for multiple children, purchase sharing
+          </li>
+          <li class="mb-2 leading-relaxed">
+            <strong>Cons:</strong> Requires Apple IDs for everyone, slightly more setup time
+          </li>
+          <li class="mb-2 leading-relaxed">
+            <strong>Best for:</strong> Most families, teens with their own devices, comprehensive management
+          </li>
         </ul>
       </div>
     </div>
 
     <div class="alert alert-info">
-      <strong>Recommendation:</strong> Use Family Sharing (Method 2) for children aged 8+. Use direct setup (Method 1) for younger children or shared family devices.
+      <strong>Recommendation:</strong> Use Family Sharing (Method 2) for children aged 8+. Use direct setup (Method 1) for
+      younger children or shared family devices.
     </div>
   </section>
 
@@ -92,7 +106,10 @@ const metadata = {
       </li>
       <li>
         <strong>Choose "This is My Child's iPhone/iPad"</strong>
-        <p>This enables all parental control features. Don't choose "This is My iPhone" as it's designed for personal use.</p>
+        <p>
+          This enables all parental control features. Don't choose "This is My iPhone" as it's designed for personal
+          use.
+        </p>
       </li>
       <li>
         <strong>Set up Downtime (optional but recommended)</strong>
@@ -108,12 +125,16 @@ const metadata = {
       </li>
       <li>
         <strong>Create a Screen Time Passcode</strong>
-        <p>Create a 4-digit passcode that's different from the device unlock code. Write this down securely—it's required to change settings.</p>
+        <p>
+          Create a 4-digit passcode that's different from the device unlock code. Write this down securely—it's required
+          to change settings.
+        </p>
       </li>
     </ol>
 
     <div class="alert alert-warning">
-      <strong>Critical:</strong> Write down your Screen Time passcode in a safe place. If you forget it, you'll need to erase the device to reset it.
+      <strong>Critical:</strong> Write down your Screen Time passcode in a safe place. If you forget it, you'll need to erase
+      the device to reset it.
     </div>
   </section>
 
@@ -181,14 +202,17 @@ const metadata = {
     </ol>
 
     <div class="alert alert-success">
-      <strong>Done!</strong> You can now manage Screen Time settings for your child from your own device under Settings → Family → [Child's Name] → Screen Time.
+      <strong>Done!</strong> You can now manage Screen Time settings for your child from your own device under Settings →
+      Family → [Child's Name] → Screen Time.
     </div>
   </section>
 
   <section>
     <h2>🔒 Content & Privacy Restrictions (Essential)</h2>
     <p>
-      This is where the actual filtering and protection happens. Navigate to: <strong>Settings → Screen Time → Content & Privacy Restrictions</strong>
+      This is where the actual filtering and protection happens. Navigate to: <strong
+        >Settings → Screen Time → Content & Privacy Restrictions</strong
+      >
     </p>
 
     <h3>Enable Restrictions</h3>
@@ -221,7 +245,8 @@ const metadata = {
     </ul>
 
     <div class="alert alert-warning">
-      <strong>Important:</strong> If you disable Safari, consider the child's educational needs. You can enable "Allowed Websites Only" in Content Restrictions instead.
+      <strong>Important:</strong> If you disable Safari, consider the child's educational needs. You can enable "Allowed
+      Websites Only" in Content Restrictions instead.
     </div>
 
     <h3>Content Restrictions (Critical Section)</h3>
@@ -229,12 +254,15 @@ const metadata = {
     <h4>Web Content</h4>
     <ul>
       <li><strong>Unrestricted Access:</strong> No filtering (not recommended for children)</li>
-      <li><strong>Limit Adult Websites:</strong> Automatic filtering with ability to add specific allowed/blocked sites</li>
+      <li>
+        <strong>Limit Adult Websites:</strong> Automatic filtering with ability to add specific allowed/blocked sites
+      </li>
       <li><strong>Allowed Websites Only:</strong> Whitelist-only mode, most restrictive</li>
     </ul>
 
     <div class="alert alert-info">
-      <strong>Recommendation:</strong> Use "Limit Adult Websites" for most children. Add educational sites to the allowed list and problematic sites to the blocked list.
+      <strong>Recommendation:</strong> Use "Limit Adult Websites" for most children. Add educational sites to the allowed
+      list and problematic sites to the blocked list.
     </div>
 
     <h4>Apps</h4>
@@ -285,7 +313,8 @@ const metadata = {
     </ul>
 
     <div class="alert alert-warning">
-      <strong>Critical Security:</strong> Set "Cellular Data Changes" and "Background App Activities" to "Don't Allow" to prevent VPN and workaround apps.
+      <strong>Critical Security:</strong> Set "Cellular Data Changes" and "Background App Activities" to "Don't Allow" to
+      prevent VPN and workaround apps.
     </div>
   </section>
 
@@ -336,7 +365,8 @@ const metadata = {
     <h2>📊 Viewing Reports & Activity</h2>
     <ol>
       <li>Open Settings → Screen Time</li>
-      <li>View the dashboard showing:
+      <li>
+        View the dashboard showing:
         <ul>
           <li>Total screen time today and daily average</li>
           <li>Most used apps and categories</li>
@@ -349,7 +379,8 @@ const metadata = {
     </ol>
 
     <div class="alert alert-info">
-      <strong>Discussion Tool:</strong> Use Screen Time reports as a starting point for conversations about digital habits and healthy device use.
+      <strong>Discussion Tool:</strong> Use Screen Time reports as a starting point for conversations about digital habits
+      and healthy device use.
     </div>
   </section>
 
@@ -357,16 +388,26 @@ const metadata = {
     <h2>🔧 Tips & Best Practices</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-      <div class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5">
+      <div
+        class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5"
+      >
         <h3 class="mt-0 mb-3 text-gray-900 dark:text-white">🎯 Age-Appropriate Settings</h3>
         <ul class="m-0 pl-5">
-          <li class="mb-2 leading-relaxed"><strong>Ages 5-8:</strong> Limit adult websites, allow only approved apps, 1-2 hours screen time</li>
-          <li class="mb-2 leading-relaxed"><strong>Ages 9-12:</strong> Limit adult websites with exceptions, 12+ apps, 2-3 hours screen time</li>
-          <li class="mb-2 leading-relaxed"><strong>Ages 13-17:</strong> Automatic filtering, 17+ apps based on maturity, focus on Downtime and balance</li>
+          <li class="mb-2 leading-relaxed">
+            <strong>Ages 5-8:</strong> Limit adult websites, allow only approved apps, 1-2 hours screen time
+          </li>
+          <li class="mb-2 leading-relaxed">
+            <strong>Ages 9-12:</strong> Limit adult websites with exceptions, 12+ apps, 2-3 hours screen time
+          </li>
+          <li class="mb-2 leading-relaxed">
+            <strong>Ages 13-17:</strong> Automatic filtering, 17+ apps based on maturity, focus on Downtime and balance
+          </li>
         </ul>
       </div>
 
-      <div class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5">
+      <div
+        class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5"
+      >
         <h3 class="mt-0 mb-3 text-gray-900 dark:text-white">🗣️ Communication is Key</h3>
         <ul class="m-0 pl-5">
           <li class="mb-2 leading-relaxed">Explain why limits exist</li>
@@ -377,7 +418,9 @@ const metadata = {
         </ul>
       </div>
 
-      <div class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5">
+      <div
+        class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5"
+      >
         <h3 class="mt-0 mb-3 text-gray-900 dark:text-white">🔐 Security Measures</h3>
         <ul class="m-0 pl-5">
           <li class="mb-2 leading-relaxed">Use a unique Screen Time passcode</li>
@@ -388,7 +431,9 @@ const metadata = {
         </ul>
       </div>
 
-      <div class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5">
+      <div
+        class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5"
+      >
         <h3 class="mt-0 mb-3 text-gray-900 dark:text-white">⚙️ Regular Maintenance</h3>
         <ul class="m-0 pl-5">
           <li class="mb-2 leading-relaxed">Review activity reports weekly</li>
@@ -421,7 +466,10 @@ const metadata = {
         <h3 class="text-lg text-gray-900 dark:text-white mb-2 mt-0">Forgot Screen Time passcode</h3>
         <p class="text-gray-700 dark:text-gray-300"><strong>Solutions:</strong></p>
         <ul class="pl-5 mt-2 text-gray-700 dark:text-gray-300">
-          <li class="mb-1">iOS 13.4+: Use Apple ID password to reset (Settings → Screen Time → Change Screen Time Passcode → Forgot Passcode?)</li>
+          <li class="mb-1">
+            iOS 13.4+: Use Apple ID password to reset (Settings → Screen Time → Change Screen Time Passcode → Forgot
+            Passcode?)
+          </li>
           <li class="mb-1">Older iOS: May require device erase and restore from backup (time-consuming)</li>
           <li class="mb-1"><strong>Prevention:</strong> Store passcode in password manager or secure location</li>
         </ul>
@@ -441,11 +489,16 @@ const metadata = {
 
       <div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 dark:border-blue-400 p-4 rounded">
         <h3 class="text-lg text-gray-900 dark:text-white mb-2 mt-0">Legitimate educational sites are blocked</h3>
-        <p class="mb-0 text-gray-700 dark:text-gray-300"><strong>Solution:</strong> Go to Settings → Screen Time → Content & Privacy Restrictions → Content Restrictions → Web Content. Under "Never Allow" section, add problematic sites to "Always Allow" list instead.</p>
+        <p class="mb-0 text-gray-700 dark:text-gray-300">
+          <strong>Solution:</strong> Go to Settings → Screen Time → Content & Privacy Restrictions → Content Restrictions
+          → Web Content. Under "Never Allow" section, add problematic sites to "Always Allow" list instead.
+        </p>
       </div>
 
       <div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 dark:border-blue-400 p-4 rounded">
-        <h3 class="text-lg text-gray-900 dark:text-white mb-2 mt-0">Time limit reached but child needs device for homework</h3>
+        <h3 class="text-lg text-gray-900 dark:text-white mb-2 mt-0">
+          Time limit reached but child needs device for homework
+        </h3>
         <p class="text-gray-700 dark:text-gray-300"><strong>Solutions:</strong></p>
         <ul class="pl-5 mt-2 text-gray-700 dark:text-gray-300">
           <li class="mb-1">Add educational apps to "Always Allowed" list</li>
@@ -495,34 +548,49 @@ const metadata = {
 
   <Fragment slot="footer">
     <h2>🎯 Next Steps & Related Guides</h2>
-    <p>
-      iOS Screen Time provides excellent built-in protection, but works best combined with other methods:
-    </p>
+    <p>iOS Screen Time provides excellent built-in protection, but works best combined with other methods:</p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-      <a href="/guides/dns-filtering" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+      <a
+        href="/guides/dns-filtering"
+        class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5"
+      >
         <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">🌐 DNS Filtering</h3>
         <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Add network-level filtering for home WiFi protection</p>
       </a>
 
-      <a href="/guides/android-family-link" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+      <a
+        href="/guides/android-family-link"
+        class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5"
+      >
         <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">🤖 Android Family Link</h3>
-        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Similar parental controls for Android devices in your family</p>
+        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">
+          Similar parental controls for Android devices in your family
+        </p>
       </a>
 
-      <a href="/guides/macos-controls" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+      <a
+        href="/guides/macos-controls"
+        class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5"
+      >
         <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">💻 macOS Parental Controls</h3>
         <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Extend protection to Mac computers in your home</p>
       </a>
 
-      <a href="/guides/filtering-software" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+      <a
+        href="/guides/filtering-software"
+        class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5"
+      >
         <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">🛡️ Filtering Software</h3>
-        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Add advanced monitoring and cross-platform protection</p>
+        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">
+          Add advanced monitoring and cross-platform protection
+        </p>
       </a>
     </div>
 
     <div class="alert alert-info">
-      <strong>Layered Protection:</strong> Combine Screen Time (device controls) + DNS filtering (network protection) + family conversations (education) for the most effective approach.
+      <strong>Layered Protection:</strong> Combine Screen Time (device controls) + DNS filtering (network protection) + family
+      conversations (education) for the most effective approach.
     </div>
   </Fragment>
 </GuideLayout>

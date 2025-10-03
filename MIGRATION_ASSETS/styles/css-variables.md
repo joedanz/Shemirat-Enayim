@@ -5,6 +5,7 @@ This document maps the original CSS custom properties to Tailwind CSS configurat
 ## Colors
 
 ### Primary (Sky Blue)
+
 ```js
 // tailwind.config.js
 colors: {
@@ -24,6 +25,7 @@ colors: {
 ```
 
 ### Secondary (Green)
+
 ```js
 secondary: {
   50:  '#f0fdf4',
@@ -40,9 +42,11 @@ secondary: {
 ```
 
 ### Neutrals (Gray)
+
 **Note**: These match Tailwind's default `gray` scale exactly.
 
 ### Semantic Colors
+
 ```js
 colors: {
   success: '#22c55e',  // green-500
@@ -55,6 +59,7 @@ colors: {
 ## Typography
 
 ### Font Families
+
 ```js
 fontFamily: {
   sans: ['-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif'],
@@ -64,6 +69,7 @@ fontFamily: {
 ```
 
 ### Font Sizes (Custom larger scale)
+
 ```js
 fontSize: {
   xs:   '0.75rem',   // 12px
@@ -81,6 +87,7 @@ fontSize: {
 ```
 
 ### Line Heights
+
 ```js
 lineHeight: {
   none: '1',
@@ -95,6 +102,7 @@ lineHeight: {
 ## Spacing
 
 Uses Tailwind's default spacing scale (matches exactly):
+
 - 0, 1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 20, 24
 
 ## Border Radius
@@ -158,7 +166,7 @@ export default {
     extend: {
       colors: {
         primary: {
-          50:  '#f0f9ff',
+          50: '#f0f9ff',
           100: '#e0f2fe',
           200: '#bae6fd',
           300: '#7dd3fc',
@@ -170,7 +178,7 @@ export default {
           900: '#0c4a6e',
         },
         secondary: {
-          50:  '#f0fdf4',
+          50: '#f0fdf4',
           100: '#dcfce7',
           200: '#bbf7d0',
           300: '#86efac',
@@ -210,13 +218,14 @@ export default {
     },
   },
   plugins: [],
-  darkMode: 'class',  // Use class-based dark mode
-}
+  darkMode: 'class', // Use class-based dark mode
+};
 ```
 
 ## Usage Examples
 
 ### Before (CSS Variables)
+
 ```html
 <div class="card">
   <h2 style="color: var(--color-primary-600)">Title</h2>
@@ -225,6 +234,7 @@ export default {
 ```
 
 ### After (Tailwind)
+
 ```html
 <div class="rounded-2xl bg-white p-8 shadow-sm">
   <h2 class="text-2xl font-bold text-primary-600">Title</h2>
@@ -235,16 +245,16 @@ export default {
 ## Dark Mode
 
 ### Before
+
 ```css
-[data-theme="dark"] {
+[data-theme='dark'] {
   background-color: var(--color-gray-900);
   color: var(--color-gray-50);
 }
 ```
 
 ### After
+
 ```html
-<div class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-50">
-  Content
-</div>
+<div class="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-50">Content</div>
 ```

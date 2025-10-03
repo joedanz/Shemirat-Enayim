@@ -2,14 +2,14 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
-import Content from '~/components/widgets/Content.astro';
 import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
   title: 'Resources for Organizations',
-  description: 'Comprehensive guidance for organizations and community administrators to implement filtered networks and support members in digital safety.',
+  description:
+    'Comprehensive guidance for organizations and community administrators to implement filtered networks and support members in digital safety.',
 };
 ---
 
@@ -21,16 +21,17 @@ const metadata = {
     </Fragment>
 
     <Fragment slot="subtitle">
-      Comprehensive guidance for community administrators to implement filtered networks and support members in digital safety.
+      Comprehensive guidance for community administrators to implement filtered networks and support members in digital
+      safety.
     </Fragment>
   </Hero>
 
   <!-- Note Widget ******************* -->
   <Note>
-    <Fragment slot="title">
-      Setting up a filtered network for your community?
-    </Fragment>
-    Start with our <a href="/guides/public-wifi-setup" class="text-blue-600 hover:underline">Community WiFi Setup Guide</a>.
+    <Fragment slot="title"> Setting up a filtered network for your community? </Fragment>
+    Start with our <a href="/guides/public-wifi-setup" class="text-blue-600 hover:underline"
+      >Community WiFi Setup Guide</a
+    >.
   </Note>
 
   <!-- Content Section **************** -->
@@ -40,14 +41,13 @@ const metadata = {
         Your Role in Community Digital Safety
       </h2>
       <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
-        As a community organization, you play a vital role in creating safe digital
-        environments for your members and supporting families in their internet safety journey.
-        Whether managing a synagogue, school, community center, or study hall, implementing appropriate
-        filtering and providing guidance can make a significant difference.
+        As a community organization, you play a vital role in creating safe digital environments for your members and
+        supporting families in their internet safety journey. Whether managing a synagogue, school, community center, or
+        study hall, implementing appropriate filtering and providing guidance can make a significant difference.
       </p>
       <p class="text-lg text-gray-700 dark:text-gray-300">
-        This page provides practical resources for setting up filtered networks, managing shared computer
-        spaces, and supporting your members with their home internet safety needs.
+        This page provides practical resources for setting up filtered networks, managing shared computer spaces, and
+        supporting your members with their home internet safety needs.
       </p>
     </div>
   </section>
@@ -111,8 +111,8 @@ const metadata = {
         <li>• Supports families who may not have filtering at home</li>
       </ul>
       <p class="mt-6 text-lg text-gray-700 dark:text-gray-300">
-        <strong>Recommendation:</strong> Start with DNS filtering for immediate protection, then consider
-        upgrading as your needs grow.
+        <strong>Recommendation:</strong> Start with DNS filtering for immediate protection, then consider upgrading as your
+        needs grow.
       </p>
     </div>
   </section>
@@ -221,16 +221,16 @@ const metadata = {
         <div>
           <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-2">Whitelist Approach</h3>
           <p class="text-gray-700 dark:text-gray-300">
-            For environments with young children or high-security needs, allow only approved websites.
-            More restrictive but requires ongoing maintenance of allowed sites.
+            For environments with young children or high-security needs, allow only approved websites. More restrictive
+            but requires ongoing maintenance of allowed sites.
           </p>
         </div>
 
         <div>
           <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-2">Blacklist Approach</h3>
           <p class="text-gray-700 dark:text-gray-300">
-            Block known problematic categories and sites while allowing general access.
-            Less restrictive but requires good filtering technology.
+            Block known problematic categories and sites while allowing general access. Less restrictive but requires
+            good filtering technology.
           </p>
         </div>
 
@@ -248,8 +248,8 @@ const metadata = {
 
         <div class="bg-yellow-50 dark:bg-yellow-900/50 border-l-4 border-yellow-400 dark:border-yellow-500 p-4 rounded">
           <p class="text-yellow-800 dark:text-yellow-100">
-            <strong>Important:</strong> Consult with your organization's leadership to ensure
-            your filtering approach aligns with your community's values and standards.
+            <strong>Important:</strong> Consult with your organization's leadership to ensure your filtering approach aligns
+            with your community's values and standards.
           </p>
         </div>
       </div>
@@ -265,7 +265,9 @@ const metadata = {
 
       <div class="space-y-6">
         <div>
-          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-3">Best for Small Communities (Budget-Friendly)</h3>
+          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-3">
+            Best for Small Communities (Budget-Friendly)
+          </h3>
           <ul class="space-y-2 text-gray-700 dark:text-gray-300">
             <li><strong>DNS Filtering:</strong> CleanBrowsing or OpenDNS</li>
             <li><strong>Cost:</strong> Free or $10/month</li>
@@ -274,7 +276,9 @@ const metadata = {
         </div>
 
         <div>
-          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-3">Best for Medium Communities (Balanced)</h3>
+          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-3">
+            Best for Medium Communities (Balanced)
+          </h3>
           <ul class="space-y-2 text-gray-700 dark:text-gray-300">
             <li><strong>Hardware:</strong> Firewalla Purple or Untangle</li>
             <li><strong>Cost:</strong> $300-500 one-time + optional subscription</li>
@@ -283,7 +287,9 @@ const metadata = {
         </div>
 
         <div>
-          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-3">Best for Large Institutions (Comprehensive)</h3>
+          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-3">
+            Best for Large Institutions (Comprehensive)
+          </h3>
           <ul class="space-y-2 text-gray-700 dark:text-gray-300">
             <li><strong>Enterprise:</strong> Cisco Umbrella, Lightspeed, or ContentKeeper</li>
             <li><strong>Cost:</strong> $100-300/month depending on size</li>
@@ -309,12 +315,8 @@ const metadata = {
       },
     ]}
   >
-    <Fragment slot="title">
-      Ready to implement filtering for your community?
-    </Fragment>
+    <Fragment slot="title"> Ready to implement filtering for your community? </Fragment>
 
-    <Fragment slot="subtitle">
-      Explore our detailed setup guides and technical documentation to get started.
-    </Fragment>
+    <Fragment slot="subtitle"> Explore our detailed setup guides and technical documentation to get started. </Fragment>
   </CallToAction>
 </Layout>

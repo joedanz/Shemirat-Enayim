@@ -33,6 +33,7 @@ MIGRATION_ASSETS/
 ## Key Features to Preserve
 
 ### Components
+
 - [x] Search functionality (fuse.js)
 - [x] Theme toggle (light/dark/system)
 - [x] Navigation with dropdowns
@@ -43,6 +44,7 @@ MIGRATION_ASSETS/
 - [x] Custom infographics
 
 ### Functionality
+
 - [x] Analytics (Plausible, Sentry, Web Vitals)
 - [x] Contact form
 - [x] Feedback form
@@ -51,6 +53,7 @@ MIGRATION_ASSETS/
 - [x] Accessibility features
 
 ### Content Structure
+
 - Homepage with hero and feature sections
 - Three main audiences: Parents, Organizations, Individuals
 - Methods catalog page

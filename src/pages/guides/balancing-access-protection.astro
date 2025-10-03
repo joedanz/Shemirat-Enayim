@@ -2,383 +2,419 @@
 import GuideLayout from '~/layouts/GuideLayout.astro';
 
 const metadata = {
-	title: 'Balancing Access with Protection',
-	description: 'Strategic guide for religious leaders on finding the right balance between providing internet access and maintaining appropriate protections for their communities.',
+  title: 'Balancing Access with Protection',
+  description:
+    'Strategic guide for religious leaders on finding the right balance between providing internet access and maintaining appropriate protections for their communities.',
 };
-
 ---
 
 <GuideLayout
-	metadata={metadata}
-	difficulty="intermediate"
-	timeEstimate="20 minutes"
-	prerequisites={[
-		'Understanding of your community\'s needs',
-		'Awareness of digital safety risks',
-		'Willingness to make difficult decisions',
-		'Input from diverse stakeholders'
-	]}
+  metadata={metadata}
+  difficulty="intermediate"
+  timeEstimate="20 minutes"
+  prerequisites={[
+    "Understanding of your community's needs",
+    'Awareness of digital safety risks',
+    'Willingness to make difficult decisions',
+    'Input from diverse stakeholders',
+  ]}
 >
+  <Fragment slot="breadcrumb">
+    <li class="flex items-center">
+      <a href="/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"> Home </a>
+      <span class="mx-2 text-gray-500">/</span>
+    </li>
+    <li class="flex items-center">
+      <a href="/methods" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+        Protection Methods
+      </a>
+      <span class="mx-2 text-gray-500">/</span>
+    </li>
+    <li class="text-gray-700 dark:text-gray-300">Balancing Access with Protection</li>
+  </Fragment>
 
-	<Fragment slot="breadcrumb">
-		<li class="flex items-center">
-			<a href="/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
-				Home
-			</a>
-			<span class="mx-2 text-gray-500">/</span>
-		</li>
-		<li class="flex items-center">
-			<a href="/methods" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
-				Protection Methods
-			</a>
-			<span class="mx-2 text-gray-500">/</span>
-		</li>
-		<li class="text-gray-700 dark:text-gray-300">
-			Balancing Access with Protection
-		</li>
-	</Fragment>
+  <section>
+    <h2>The Central Challenge</h2>
+    <p>
+      Religious institutions face a fundamental tension: internet access is increasingly essential for education, job
+      searching, and connecting with resources, yet unrestricted access exposes community members (especially children)
+      to significant risks. Too little protection creates danger and liability. Too much restriction frustrates users
+      and limits beneficial uses. This guide helps you find the appropriate balance for your specific community.
+    </p>
 
-	<section>
-		<h2>The Central Challenge</h2>
-		<p>
-			Religious institutions face a fundamental tension: internet access is increasingly essential for education, job searching, and connecting with resources, yet unrestricted access exposes community members (especially children) to significant risks. Too little protection creates danger and liability. Too much restriction frustrates users and limits beneficial uses. This guide helps you find the appropriate balance for your specific community.
-		</p>
+    <div class="alert alert-info">
+      <strong>Key Insight:</strong> There is no one-size-fits-all answer. The right balance depends on your community demographics,
+      resources, values, and risk tolerance. What works for a youth center differs from a senior center or mixed-use facility.
+    </div>
+  </section>
 
-		<div class="alert alert-info">
-			<strong>Key Insight:</strong> There is no one-size-fits-all answer. The right balance depends on your community demographics, resources, values, and risk tolerance. What works for a youth center differs from a senior center or mixed-use facility.
-		</div>
-	</section>
+  <section>
+    <h2>⚖️ Understanding the Spectrum</h2>
 
-	<section>
-		<h2>⚖️ Understanding the Spectrum</h2>
+    <div class="spectrum">
+      <div class="spectrum-option">
+        <h3>🔓 Minimal Protection</h3>
+        <p><strong>Approach:</strong> Open internet, voluntary filtering, honor system</p>
+        <h4>Appropriate for:</h4>
+        <ul>
+          <li>Adult-only facilities</li>
+          <li>Highly educated user base</li>
+          <li>Low liability tolerance acceptable</li>
+          <li>Limited resources for management</li>
+        </ul>
+        <h4>Risks:</h4>
+        <ul>
+          <li>Exposure to inappropriate content</li>
+          <li>Potential legal liability</li>
+          <li>Malware and security issues</li>
+          <li>Reputation damage</li>
+        </ul>
+      </div>
 
-		<div class="spectrum">
-			<div class="spectrum-option">
-				<h3>🔓 Minimal Protection</h3>
-				<p><strong>Approach:</strong> Open internet, voluntary filtering, honor system</p>
-				<h4>Appropriate for:</h4>
-				<ul>
-					<li>Adult-only facilities</li>
-					<li>Highly educated user base</li>
-					<li>Low liability tolerance acceptable</li>
-					<li>Limited resources for management</li>
-				</ul>
-				<h4>Risks:</h4>
-				<ul>
-					<li>Exposure to inappropriate content</li>
-					<li>Potential legal liability</li>
-					<li>Malware and security issues</li>
-					<li>Reputation damage</li>
-				</ul>
-			</div>
+      <div class="spectrum-option recommended">
+        <h3>⚖️ Balanced Protection (Recommended for Most)</h3>
+        <p><strong>Approach:</strong> Network-level filtering + acceptable use policy + monitoring</p>
+        <h4>Appropriate for:</h4>
+        <ul>
+          <li>Mixed-age communities</li>
+          <li>General purpose facilities</li>
+          <li>Moderate resources</li>
+          <li>Most religious institutions</li>
+        </ul>
+        <h4>Benefits:</h4>
+        <ul>
+          <li>Blocks major threats automatically</li>
+          <li>Allows legitimate educational/work use</li>
+          <li>Reasonable liability protection</li>
+          <li>Not overly restrictive</li>
+        </ul>
+      </div>
 
-			<div class="spectrum-option recommended">
-				<h3>⚖️ Balanced Protection (Recommended for Most)</h3>
-				<p><strong>Approach:</strong> Network-level filtering + acceptable use policy + monitoring</p>
-				<h4>Appropriate for:</h4>
-				<ul>
-					<li>Mixed-age communities</li>
-					<li>General purpose facilities</li>
-					<li>Moderate resources</li>
-					<li>Most religious institutions</li>
-				</ul>
-				<h4>Benefits:</h4>
-				<ul>
-					<li>Blocks major threats automatically</li>
-					<li>Allows legitimate educational/work use</li>
-					<li>Reasonable liability protection</li>
-					<li>Not overly restrictive</li>
-				</ul>
-			</div>
+      <div class="spectrum-option">
+        <h3>🔒 Maximum Protection</h3>
+        <p><strong>Approach:</strong> Whitelist-only, heavily filtered, monitored, time limits</p>
+        <h4>Appropriate for:</h4>
+        <ul>
+          <li>Children-only facilities</li>
+          <li>High-risk populations</li>
+          <li>Very conservative values</li>
+          <li>Resources for intensive management</li>
+        </ul>
+        <h4>Challenges:</h4>
+        <ul>
+          <li>May block legitimate content</li>
+          <li>Frustrating for adult users</li>
+          <li>High maintenance burden</li>
+          <li>May push users to unfiltered alternatives</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-			<div class="spectrum-option">
-				<h3>🔒 Maximum Protection</h3>
-				<p><strong>Approach:</strong> Whitelist-only, heavily filtered, monitored, time limits</p>
-				<h4>Appropriate for:</h4>
-				<ul>
-					<li>Children-only facilities</li>
-					<li>High-risk populations</li>
-					<li>Very conservative values</li>
-					<li>Resources for intensive management</li>
-				</ul>
-				<h4>Challenges:</h4>
-				<ul>
-					<li>May block legitimate content</li>
-					<li>Frustrating for adult users</li>
-					<li>High maintenance burden</li>
-					<li>May push users to unfiltered alternatives</li>
-				</ul>
-			</div>
-		</div>
-	</section>
+  <section>
+    <h2>🎯 Risk Assessment Framework</h2>
+    <p>Use this framework to determine the appropriate protection level for your institution:</p>
 
-	<section>
-		<h2>🎯 Risk Assessment Framework</h2>
-		<p>Use this framework to determine the appropriate protection level for your institution:</p>
+    <h3>Question 1: Who Are Your Users?</h3>
+    <ul>
+      <li><strong>Primarily children (under 13):</strong> High protection needed</li>
+      <li><strong>Teens (13-17):</strong> Moderate-high protection</li>
+      <li><strong>Adults only:</strong> Moderate protection</li>
+      <li><strong>Seniors:</strong> Moderate protection (different risks)</li>
+      <li><strong>Mixed ages:</strong> Default to protecting youngest users</li>
+    </ul>
 
-		<h3>Question 1: Who Are Your Users?</h3>
-		<ul>
-			<li><strong>Primarily children (under 13):</strong> High protection needed</li>
-			<li><strong>Teens (13-17):</strong> Moderate-high protection</li>
-			<li><strong>Adults only:</strong> Moderate protection</li>
-			<li><strong>Seniors:</strong> Moderate protection (different risks)</li>
-			<li><strong>Mixed ages:</strong> Default to protecting youngest users</li>
-		</ul>
+    <h3>Question 2: What Are Primary Use Cases?</h3>
+    <ul>
+      <li><strong>Homework/research:</strong> Need broad access with safety</li>
+      <li><strong>Job searching:</strong> Need broad access including employment sites</li>
+      <li><strong>Entertainment/social:</strong> Can be more restrictive</li>
+      <li><strong>Email/communication:</strong> Moderate filtering sufficient</li>
+      <li><strong>Religious learning:</strong> Can customize filters to allow religious content</li>
+    </ul>
 
-		<h3>Question 2: What Are Primary Use Cases?</h3>
-		<ul>
-			<li><strong>Homework/research:</strong> Need broad access with safety</li>
-			<li><strong>Job searching:</strong> Need broad access including employment sites</li>
-			<li><strong>Entertainment/social:</strong> Can be more restrictive</li>
-			<li><strong>Email/communication:</strong> Moderate filtering sufficient</li>
-			<li><strong>Religious learning:</strong> Can customize filters to allow religious content</li>
-		</ul>
+    <h3>Question 3: What Is Your Risk Tolerance?</h3>
+    <ul>
+      <li><strong>Low:</strong> Cannot accept any incidents → Maximum protection</li>
+      <li><strong>Moderate:</strong> Willing to accept rare false negatives → Balanced protection</li>
+      <li><strong>Higher:</strong> Trust users, focus on education → Minimal protection</li>
+    </ul>
 
-		<h3>Question 3: What Is Your Risk Tolerance?</h3>
-		<ul>
-			<li><strong>Low:</strong> Cannot accept any incidents → Maximum protection</li>
-			<li><strong>Moderate:</strong> Willing to accept rare false negatives → Balanced protection</li>
-			<li><strong>Higher:</strong> Trust users, focus on education → Minimal protection</li>
-		</ul>
+    <h3>Question 4: What Resources Do You Have?</h3>
+    <ul>
+      <li><strong>No IT staff:</strong> Simple, automated solutions</li>
+      <li><strong>Part-time IT:</strong> Moderate complexity acceptable</li>
+      <li><strong>Full-time IT:</strong> Can implement sophisticated systems</li>
+      <li><strong>Limited budget:</strong> Free DNS filtering + education</li>
+      <li><strong>Adequate budget:</strong> Professional solutions available</li>
+    </ul>
 
-		<h3>Question 4: What Resources Do You Have?</h3>
-		<ul>
-			<li><strong>No IT staff:</strong> Simple, automated solutions</li>
-			<li><strong>Part-time IT:</strong> Moderate complexity acceptable</li>
-			<li><strong>Full-time IT:</strong> Can implement sophisticated systems</li>
-			<li><strong>Limited budget:</strong> Free DNS filtering + education</li>
-			<li><strong>Adequate budget:</strong> Professional solutions available</li>
-		</ul>
+    <div class="recommendation-box">
+      <h3>Recommendation Formula</h3>
+      <p>
+        If (Children present) AND (Limited IT resources) AND (Moderate budget):<br />
+        → <strong>Network DNS filtering + Public computer time limits + Basic monitoring</strong>
+      </p>
 
-		<div class="recommendation-box">
-			<h3>Recommendation Formula</h3>
-			<p>If (Children present) AND (Limited IT resources) AND (Moderate budget):<br>
-			→ <strong>Network DNS filtering + Public computer time limits + Basic monitoring</strong></p>
+      <p>
+        If (Adults only) AND (Adequate IT) AND (Low risk tolerance):<br />
+        → <strong>Firewall-based filtering + Acceptable use policy + Incident procedures</strong>
+      </p>
 
-			<p>If (Adults only) AND (Adequate IT) AND (Low risk tolerance):<br>
-			→ <strong>Firewall-based filtering + Acceptable use policy + Incident procedures</strong></p>
+      <p>
+        If (Mixed ages) AND (No IT) AND (Very limited budget):<br />
+        → <strong>Free DNS filtering + Posted policies + Honor system</strong>
+      </p>
+    </div>
+  </section>
 
-			<p>If (Mixed ages) AND (No IT) AND (Very limited budget):<br>
-			→ <strong>Free DNS filtering + Posted policies + Honor system</strong></p>
-		</div>
-	</section>
+  <section>
+    <h2>🤔 Common Dilemmas & Solutions</h2>
 
-	<section>
-		<h2>🤔 Common Dilemmas & Solutions</h2>
+    <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+      <h3>Dilemma: "Adults complain filtering is too restrictive"</h3>
+      <h4>Context:</h4>
+      <p>Your filtering blocks job search sites, health information, or news sites that adults need.</p>
+      <h4>Solutions:</h4>
+      <ul>
+        <li><strong>Tiered networks:</strong> Adult network (moderate filtering) + Kids network (heavy filtering)</li>
+        <li><strong>Whitelist process:</strong> Allow users to request unblocking of legitimate sites</li>
+        <li><strong>Review filter categories:</strong> Are you blocking too broadly?</li>
+        <li><strong>Time-based:</strong> During school hours (heavy filtering), evenings (moderate)</li>
+        <li>
+          <strong>Communication:</strong> Explain why filtering exists, show you're responsive to legitimate needs
+        </li>
+      </ul>
+    </div>
 
-		<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-			<h3>Dilemma: "Adults complain filtering is too restrictive"</h3>
-			<h4>Context:</h4>
-			<p>Your filtering blocks job search sites, health information, or news sites that adults need.</p>
-			<h4>Solutions:</h4>
-			<ul>
-				<li><strong>Tiered networks:</strong> Adult network (moderate filtering) + Kids network (heavy filtering)</li>
-				<li><strong>Whitelist process:</strong> Allow users to request unblocking of legitimate sites</li>
-				<li><strong>Review filter categories:</strong> Are you blocking too broadly?</li>
-				<li><strong>Time-based:</strong> During school hours (heavy filtering), evenings (moderate)</li>
-				<li><strong>Communication:</strong> Explain why filtering exists, show you're responsive to legitimate needs</li>
-			</ul>
-		</div>
+    <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+      <h3>Dilemma: "Teens bypass filters with VPNs"</h3>
+      <h4>Context:</h4>
+      <p>Tech-savvy users install VPN apps to circumvent filtering.</p>
+      <h4>Solutions:</h4>
+      <ul>
+        <li><strong>Block VPN ports at firewall:</strong> Prevents most VPN connections</li>
+        <li><strong>Whitelist-only apps:</strong> On lab computers, only allow approved software</li>
+        <li><strong>Education:</strong> Explain *why* filtering exists, not just *what* is blocked</li>
+        <li><strong>Consequences:</strong> Clear policy that bypass attempts result in loss of access</li>
+        <li><strong>Accept imperfection:</strong> No system is foolproof; focus on protecting most users</li>
+      </ul>
+    </div>
 
-		<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-			<h3>Dilemma: "Teens bypass filters with VPNs"</h3>
-			<h4>Context:</h4>
-			<p>Tech-savvy users install VPN apps to circumvent filtering.</p>
-			<h4>Solutions:</h4>
-			<ul>
-				<li><strong>Block VPN ports at firewall:</strong> Prevents most VPN connections</li>
-				<li><strong>Whitelist-only apps:</strong> On lab computers, only allow approved software</li>
-				<li><strong>Education:</strong> Explain *why* filtering exists, not just *what* is blocked</li>
-				<li><strong>Consequences:</strong> Clear policy that bypass attempts result in loss of access</li>
-				<li><strong>Accept imperfection:</strong> No system is foolproof; focus on protecting most users</li>
-			</ul>
-		</div>
+    <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+      <h3>Dilemma: "Parents want no filtering for their teens"</h3>
+      <h4>Context:</h4>
+      <p>Some parents don't want restrictions on their teenagers.</p>
+      <h4>Solutions:</h4>
+      <ul>
+        <li><strong>Explain institutional policy:</strong> Protecting all users, liability concerns</li>
+        <li>
+          <strong>Offer opt-out:</strong> Their teen can use personal device (not your network) or not use internet at facility
+        </li>
+        <li>
+          <strong>Compromise:</strong> Lighter filtering for teens with parental consent (if technically feasible)
+        </li>
+        <li><strong>Stand firm:</strong> You're not obligated to provide unfiltered internet</li>
+        <li><strong>Alternative:</strong> Supervised "homework help" sessions with less restrictive access</li>
+      </ul>
+    </div>
 
-		<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-			<h3>Dilemma: "Parents want no filtering for their teens"</h3>
-			<h4>Context:</h4>
-			<p>Some parents don't want restrictions on their teenagers.</p>
-			<h4>Solutions:</h4>
-			<ul>
-				<li><strong>Explain institutional policy:</strong> Protecting all users, liability concerns</li>
-				<li><strong>Offer opt-out:</strong> Their teen can use personal device (not your network) or not use internet at facility</li>
-				<li><strong>Compromise:</strong> Lighter filtering for teens with parental consent (if technically feasible)</li>
-				<li><strong>Stand firm:</strong> You're not obligated to provide unfiltered internet</li>
-				<li><strong>Alternative:</strong> Supervised "homework help" sessions with less restrictive access</li>
-			</ul>
-		</div>
+    <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+      <h3>Dilemma: "Legitimate educational content is blocked"</h3>
+      <h4>Context:</h4>
+      <p>Health education, history, art sites incorrectly flagged as inappropriate.</p>
+      <h4>Solutions:</h4>
+      <ul>
+        <li><strong>Review and whitelist:</strong> Specific educational domains can be whitelisted</li>
+        <li><strong>Adjust categories:</strong> Unblock "health" category but keep "adult content" blocked</li>
+        <li>
+          <strong>Supervised access:</strong> Teacher/staff can temporarily disable filtering for specific sessions
+        </li>
+        <li><strong>Report miscategorization:</strong> DNS providers will reclassify legitimate sites</li>
+        <li><strong>Educational account:</strong> Give educators less restrictive access</li>
+      </ul>
+    </div>
 
-		<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-			<h3>Dilemma: "Legitimate educational content is blocked"</h3>
-			<h4>Context:</h4>
-			<p>Health education, history, art sites incorrectly flagged as inappropriate.</p>
-			<h4>Solutions:</h4>
-			<ul>
-				<li><strong>Review and whitelist:</strong> Specific educational domains can be whitelisted</li>
-				<li><strong>Adjust categories:</strong> Unblock "health" category but keep "adult content" blocked</li>
-				<li><strong>Supervised access:</strong> Teacher/staff can temporarily disable filtering for specific sessions</li>
-				<li><strong>Report miscategorization:</strong> DNS providers will reclassify legitimate sites</li>
-				<li><strong>Educational account:</strong> Give educators less restrictive access</li>
-			</ul>
-		</div>
+    <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+      <h3>Dilemma: "We can't afford filtering software"</h3>
+      <h4>Context:</h4>
+      <p>Budget constraints limit what you can implement.</p>
+      <h4>Solutions:</h4>
+      <ul>
+        <li><strong>Free DNS filtering:</strong> OpenDNS, CleanBrowsing, Cloudflare for Families ($0)</li>
+        <li><strong>Grant funding:</strong> Many organizations offer tech grants to nonprofits</li>
+        <li><strong>Volunteer IT:</strong> Community members with tech skills</li>
+        <li><strong>Phase implementation:</strong> Start with free options, upgrade as budget allows</li>
+        <li><strong>Partner with library:</strong> Share resources or refer users to library computers</li>
+        <li><strong>Focus on education:</strong> If you can't filter, at least educate</li>
+      </ul>
+    </div>
+  </section>
 
-		<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-			<h3>Dilemma: "We can't afford filtering software"</h3>
-			<h4>Context:</h4>
-			<p>Budget constraints limit what you can implement.</p>
-			<h4>Solutions:</h4>
-			<ul>
-				<li><strong>Free DNS filtering:</strong> OpenDNS, CleanBrowsing, Cloudflare for Families ($0)</li>
-				<li><strong>Grant funding:</strong> Many organizations offer tech grants to nonprofits</li>
-				<li><strong>Volunteer IT:</strong> Community members with tech skills</li>
-				<li><strong>Phase implementation:</strong> Start with free options, upgrade as budget allows</li>
-				<li><strong>Partner with library:</strong> Share resources or refer users to library computers</li>
-				<li><strong>Focus on education:</strong> If you can't filter, at least educate</li>
-			</ul>
-		</div>
-	</section>
+  <section>
+    <h2>📊 Decision-Making Process</h2>
 
-	<section>
-		<h2>📊 Decision-Making Process</h2>
+    <h3>Step 1: Gather Input (2-4 weeks)</h3>
+    <ul>
+      <li>Survey community needs and concerns</li>
+      <li>Meet with parents, teachers, teens, seniors</li>
+      <li>Consult with IT professionals</li>
+      <li>Review legal requirements (CIPA for schools, state laws)</li>
+      <li>Assess current usage patterns</li>
+    </ul>
 
-		<h3>Step 1: Gather Input (2-4 weeks)</h3>
-		<ul>
-			<li>Survey community needs and concerns</li>
-			<li>Meet with parents, teachers, teens, seniors</li>
-			<li>Consult with IT professionals</li>
-			<li>Review legal requirements (CIPA for schools, state laws)</li>
-			<li>Assess current usage patterns</li>
-		</ul>
+    <h3>Step 2: Research Options (1-2 weeks)</h3>
+    <ul>
+      <li>Investigate filtering technologies (see our <a href="/guides/public-wifi-setup">WiFi Setup Guide</a>)</li>
+      <li>Get quotes from vendors</li>
+      <li>Talk to other institutions about what works</li>
+      <li>Pilot test if possible</li>
+    </ul>
 
-		<h3>Step 2: Research Options (1-2 weeks)</h3>
-		<ul>
-			<li>Investigate filtering technologies (see our <a href="/guides/public-wifi-setup">WiFi Setup Guide</a>)</li>
-			<li>Get quotes from vendors</li>
-			<li>Talk to other institutions about what works</li>
-			<li>Pilot test if possible</li>
-		</ul>
+    <h3>Step 3: Develop Proposal (1 week)</h3>
+    <ul>
+      <li>Recommend specific approach and technology</li>
+      <li>Include cost analysis (setup + ongoing)</li>
+      <li>Draft acceptable use policy</li>
+      <li>Outline implementation timeline</li>
+      <li>Identify success metrics</li>
+    </ul>
 
-		<h3>Step 3: Develop Proposal (1 week)</h3>
-		<ul>
-			<li>Recommend specific approach and technology</li>
-			<li>Include cost analysis (setup + ongoing)</li>
-			<li>Draft acceptable use policy</li>
-			<li>Outline implementation timeline</li>
-			<li>Identify success metrics</li>
-		</ul>
+    <h3>Step 4: Approve & Communicate (2-3 weeks)</h3>
+    <ul>
+      <li>Present to leadership/board</li>
+      <li>Revise based on feedback</li>
+      <li>Get official approval</li>
+      <li>Announce to community</li>
+      <li>Explain rationale and process for feedback</li>
+    </ul>
 
-		<h3>Step 4: Approve & Communicate (2-3 weeks)</h3>
-		<ul>
-			<li>Present to leadership/board</li>
-			<li>Revise based on feedback</li>
-			<li>Get official approval</li>
-			<li>Announce to community</li>
-			<li>Explain rationale and process for feedback</li>
-		</ul>
+    <h3>Step 5: Implement & Adjust (Ongoing)</h3>
+    <ul>
+      <li>Deploy filtering (see our technical guides)</li>
+      <li>Monitor first 30 days closely</li>
+      <li>Collect feedback</li>
+      <li>Adjust filtering categories as needed</li>
+      <li>Quarterly review of effectiveness</li>
+      <li>Annual full policy review</li>
+    </ul>
+  </section>
 
-		<h3>Step 5: Implement & Adjust (Ongoing)</h3>
-		<ul>
-			<li>Deploy filtering (see our technical guides)</li>
-			<li>Monitor first 30 days closely</li>
-			<li>Collect feedback</li>
-			<li>Adjust filtering categories as needed</li>
-			<li>Quarterly review of effectiveness</li>
-			<li>Annual full policy review</li>
-		</ul>
-	</section>
+  <section>
+    <h2>💡 Principles for Finding Balance</h2>
 
-	<section>
-		<h2>💡 Principles for Finding Balance</h2>
+    <h3>1. Start Conservative, Loosen Gradually</h3>
+    <p>
+      It's easier to remove restrictions than to add them after users expect open access. Begin with heavier filtering
+      and adjust based on actual needs.
+    </p>
 
-		<h3>1. Start Conservative, Loosen Gradually</h3>
-		<p>It's easier to remove restrictions than to add them after users expect open access. Begin with heavier filtering and adjust based on actual needs.</p>
+    <h3>2. Be Transparent</h3>
+    <p>
+      Explain what filtering is in place and why. Hidden restrictions breed distrust; transparency builds understanding.
+    </p>
 
-		<h3>2. Be Transparent</h3>
-		<p>Explain what filtering is in place and why. Hidden restrictions breed distrust; transparency builds understanding.</p>
+    <h3>3. Responsive to Legitimate Needs</h3>
+    <p>Create a process for requesting access to blocked but legitimate sites. Show you're listening.</p>
 
-		<h3>3. Responsive to Legitimate Needs</h3>
-		<p>Create a process for requesting access to blocked but legitimate sites. Show you're listening.</p>
+    <h3>4. Layer Your Approach</h3>
+    <p>Technology + Policy + Education + Supervision. Don't rely on filtering alone.</p>
 
-		<h3>4. Layer Your Approach</h3>
-		<p>Technology + Policy + Education + Supervision. Don't rely on filtering alone.</p>
+    <h3>5. Prioritize Children</h3>
+    <p>When in doubt, err on the side of protecting minors. Adult inconvenience is preferable to child harm.</p>
 
-		<h3>5. Prioritize Children</h3>
-		<p>When in doubt, err on the side of protecting minors. Adult inconvenience is preferable to child harm.</p>
+    <h3>6. Accept Imperfection</h3>
+    <p>
+      No system is perfect. Some inappropriate content will slip through, some legitimate content will be blocked.
+      That's okay - aim for "good enough."
+    </p>
 
-		<h3>6. Accept Imperfection</h3>
-		<p>No system is perfect. Some inappropriate content will slip through, some legitimate content will be blocked. That's okay - aim for "good enough."</p>
+    <h3>7. Review and Adjust</h3>
+    <p>Technology and user needs evolve. What works today may need adjustment in 6 months.</p>
 
-		<h3>7. Review and Adjust</h3>
-		<p>Technology and user needs evolve. What works today may need adjustment in 6 months.</p>
+    <h3>8. Communicate Values</h3>
+    <p>
+      Frame filtering as expression of community values, not just fear-based control. "We provide this service in a way
+      that reflects who we are."
+    </p>
+  </section>
 
-		<h3>8. Communicate Values</h3>
-		<p>Frame filtering as expression of community values, not just fear-based control. "We provide this service in a way that reflects who we are."</p>
-	</section>
+  <section>
+    <h2>✅ Self-Assessment Checklist</h2>
 
-	<section>
-		<h2>✅ Self-Assessment Checklist</h2>
+    <div class="assessment-box">
+      <h3>Is Your Balance Right?</h3>
 
-		<div class="assessment-box">
-			<h3>Is Your Balance Right?</h3>
+      <h4>Signs You're Too Restrictive:</h4>
+      <ul>
+        <li>☐ Frequent complaints from adult users</li>
+        <li>☐ Legitimate educational sites consistently blocked</li>
+        <li>☐ People stop using your internet entirely</li>
+        <li>☐ Excessive whitelist requests</li>
+        <li>☐ Users find workarounds (personal hotspots, VPNs)</li>
+      </ul>
 
-			<h4>Signs You're Too Restrictive:</h4>
-			<ul>
-				<li>☐ Frequent complaints from adult users</li>
-				<li>☐ Legitimate educational sites consistently blocked</li>
-				<li>☐ People stop using your internet entirely</li>
-				<li>☐ Excessive whitelist requests</li>
-				<li>☐ Users find workarounds (personal hotspots, VPNs)</li>
-			</ul>
+      <h4>Signs You're Not Restrictive Enough:</h4>
+      <ul>
+        <li>☐ Children accessing inappropriate content</li>
+        <li>☐ Parents expressing concerns about safety</li>
+        <li>☐ Frequent incidents requiring intervention</li>
+        <li>☐ Staff uncomfortable with what they observe</li>
+        <li>☐ Reputation concerns</li>
+      </ul>
 
-			<h4>Signs You're Not Restrictive Enough:</h4>
-			<ul>
-				<li>☐ Children accessing inappropriate content</li>
-				<li>☐ Parents expressing concerns about safety</li>
-				<li>☐ Frequent incidents requiring intervention</li>
-				<li>☐ Staff uncomfortable with what they observe</li>
-				<li>☐ Reputation concerns</li>
-			</ul>
+      <h4>Signs You've Found Good Balance:</h4>
+      <ul>
+        <li>✅ Occasional legitimate site blocked, but easy to resolve</li>
+        <li>✅ No major incidents of inappropriate access</li>
+        <li>✅ Users generally satisfied</li>
+        <li>✅ Filtering "invisible" to most users (it just works)</li>
+        <li>✅ Leadership comfortable with liability level</li>
+        <li>✅ Few bypass attempts</li>
+      </ul>
+    </div>
+  </section>
 
-			<h4>Signs You've Found Good Balance:</h4>
-			<ul>
-				<li>✅ Occasional legitimate site blocked, but easy to resolve</li>
-				<li>✅ No major incidents of inappropriate access</li>
-				<li>✅ Users generally satisfied</li>
-				<li>✅ Filtering "invisible" to most users (it just works)</li>
-				<li>✅ Leadership comfortable with liability level</li>
-				<li>✅ Few bypass attempts</li>
-			</ul>
-		</div>
-	</section>
+  <section slot="next-steps">
+    <h2>🎯 Next Steps & Related Guides</h2>
 
-	<section slot="next-steps">
-		<h2>🎯 Next Steps & Related Guides</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+      <a
+        href="/guides/public-wifi-setup"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
+        <h3>📡 Public WiFi Setup</h3>
+        <p>Technical implementation of filtering solutions</p>
+      </a>
 
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-			<a href="/guides/public-wifi-setup" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>📡 Public WiFi Setup</h3>
-				<p>Technical implementation of filtering solutions</p>
-			</a>
+      <a
+        href="/guides/policies-guidelines"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
+        <h3>📋 Policies & Guidelines</h3>
+        <p>Create clear policies that reflect your balance decisions</p>
+      </a>
 
-			<a href="/guides/policies-guidelines" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>📋 Policies & Guidelines</h3>
-				<p>Create clear policies that reflect your balance decisions</p>
-			</a>
+      <a
+        href="/guides/community-education"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
+        <h3>📚 Community Education</h3>
+        <p>Help community understand and support your approach</p>
+      </a>
 
-			<a href="/guides/community-education" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>📚 Community Education</h3>
-				<p>Help community understand and support your approach</p>
-			</a>
+      <a
+        href="/leaders"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
+        <h3>👥 All Leader Resources</h3>
+        <p>Browse all guides for religious and community leaders</p>
+      </a>
+    </div>
 
-			<a href="/leaders" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>👥 All Leader Resources</h3>
-				<p>Browse all guides for religious and community leaders</p>
-			</a>
-		</div>
-
-		<div class="alert alert-success">
-			<strong>Remember:</strong> The "perfect" balance doesn't exist. Aim for "good enough" - protecting the vulnerable while serving the community. You can always adjust as you learn what works for your specific context.
-		</div>
-	</section>
+    <div class="alert alert-success">
+      <strong>Remember:</strong> The "perfect" balance doesn't exist. Aim for "good enough" - protecting the vulnerable while
+      serving the community. You can always adjust as you learn what works for your specific context.
+    </div>
+  </section>
 </GuideLayout>
-

@@ -42,53 +42,62 @@ const difficultyClasses = {
 
       <!-- Meta Information -->
       <div class="flex flex-wrap items-center gap-3 mb-4">
-        <span class={`inline-flex items-center px-3 py-1 text-sm font-semibold rounded-full uppercase tracking-wide ${difficultyClasses[difficulty]}`}>
+        <span
+          class={`inline-flex items-center px-3 py-1 text-sm font-semibold rounded-full uppercase tracking-wide ${difficultyClasses[difficulty]}`}
+        >
           {difficultyLabels[difficulty]}
         </span>
-        {timeEstimate && (
-          <span class="inline-flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
-            <svg
-              width="16"
-              height="16"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <circle cx="8" cy="8" r="7"></circle>
-              <polyline points="8 4 8 8 10 10"></polyline>
-            </svg>
-            {timeEstimate}
-          </span>
-        )}
+        {
+          timeEstimate && (
+            <span class="inline-flex items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+              <svg
+                width="16"
+                height="16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="8" cy="8" r="7" />
+                <polyline points="8 4 8 8 10 10" />
+              </svg>
+              {timeEstimate}
+            </span>
+          )
+        }
       </div>
 
       <!-- Description -->
-      {metadata.description && (
-        <p class="text-xl text-gray-700 dark:text-gray-300 font-medium leading-relaxed mb-6">
-          {metadata.description}
-        </p>
-      )}
+      {
+        metadata.description && (
+          <p class="text-xl text-gray-700 dark:text-gray-300 font-medium leading-relaxed mb-6">
+            {metadata.description}
+          </p>
+        )
+      }
 
       <!-- Prerequisites -->
-      {prerequisites.length > 0 && (
-        <div class="bg-blue-50 dark:bg-blue-900/50 border-l-4 border-blue-400 dark:border-blue-500 p-4 rounded">
-          <p class="font-semibold text-blue-800 dark:text-blue-100 mb-2">Prerequisites:</p>
-          <ul class="space-y-1 text-blue-700 dark:text-blue-200">
-            {prerequisites.map((prereq) => (
-              <li class="flex items-start gap-2">
-                <span class="mt-1">•</span>
-                <span>{prereq}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
+      {
+        prerequisites.length > 0 && (
+          <div class="bg-blue-50 dark:bg-blue-900/50 border-l-4 border-blue-400 dark:border-blue-500 p-4 rounded">
+            <p class="font-semibold text-blue-800 dark:text-blue-100 mb-2">Prerequisites:</p>
+            <ul class="space-y-1 text-blue-700 dark:text-blue-200">
+              {prerequisites.map((prereq) => (
+                <li class="flex items-start gap-2">
+                  <span class="mt-1">•</span>
+                  <span>{prereq}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )
+      }
     </header>
 
     <!-- Guide Content -->
-    <div class="prose prose-lg dark:prose-invert max-w-none
+    <div
+      class="prose prose-lg dark:prose-invert max-w-none
       prose-headings:font-bold
       prose-h2:text-3xl prose-h2:mt-12 prose-h2:mb-4 prose-h2:pt-4 prose-h2:border-t prose-h2:border-gray-200 dark:prose-h2:border-gray-700
       prose-h3:text-2xl prose-h3:mt-8 prose-h3:mb-3 prose-h3:text-blue-600 dark:prose-h3:text-blue-400
@@ -109,11 +118,13 @@ const difficultyClasses = {
     </div>
 
     <!-- Footer / Next Steps -->
-    {Astro.slots.has('footer') && (
-      <footer class="mt-12 pt-8 border-t-2 border-gray-200 dark:border-gray-700">
-        <slot name="footer" />
-      </footer>
-    )}
+    {
+      Astro.slots.has('footer') && (
+        <footer class="mt-12 pt-8 border-t-2 border-gray-200 dark:border-gray-700">
+          <slot name="footer" />
+        </footer>
+      )
+    }
   </article>
 
   <!-- Custom styles for ordered lists with step numbers -->

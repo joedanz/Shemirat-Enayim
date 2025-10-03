@@ -9,6 +9,7 @@
 ## ✅ Phase 1: Setup Complete
 
 ### Completed Tasks
+
 - ✅ Created new branch `fresh-astrowind-setup`
 - ✅ Backed up existing site to `OLD_SITE_BACKUP/`
 - ✅ Installed fresh AstroWind template from https://github.com/arthelokyo/astrowind
@@ -16,6 +17,7 @@
 - ✅ Verified dev server works at `localhost:4321`
 
 ### Backup Locations
+
 1. **Git branch**: `backup-before-astrowind-migration` (previous backup)
 2. **Directory**: `OLD_SITE_BACKUP/` (current site, 81 Astro files)
 3. **Archive**: `/Users/danziger/code/shemiratenayim-backup-20251002.tar.gz`
@@ -25,6 +27,7 @@
 ## 📋 Content Inventory (From OLD_SITE_BACKUP)
 
 ### Pages (57 total)
+
 ```
 Core Pages (5):
 ├── index.astro (Homepage)
@@ -103,6 +106,7 @@ Support & Legal (10):
 ```
 
 ### Components (20)
+
 ```
 UI Components:
 ├── Header.astro
@@ -130,6 +134,7 @@ UI Components:
 ```
 
 ### Layouts (3)
+
 ```
 ├── Layout.astro (Base layout)
 ├── GuideLayout.astro (For guides)
@@ -137,6 +142,7 @@ UI Components:
 ```
 
 ### Utils/Scripts (2)
+
 ```
 ├── utils/analytics.ts
 └── scripts/performance-monitor.ts
@@ -147,7 +153,9 @@ UI Components:
 ## 🎯 Phase 2: Configuration (Day 1 - October 3)
 
 ### 2.1: Configure AstroWind Base Settings
+
 Edit `src/config.yaml`:
+
 ```yaml
 site:
   name: Shemirat Enayim
@@ -159,7 +167,7 @@ metadata:
   title:
     default: Shemirat Enayim
     template: '%s — Shemirat Enayim'
-  description: "Comprehensive guides for internet safety, content filtering, and digital protection for families and communities."
+  description: 'Comprehensive guides for internet safety, content filtering, and digital protection for families and communities.'
   robots:
     index: true
     follow: true
@@ -169,13 +177,14 @@ metadata:
 
 apps:
   blog:
-    isEnabled: false  # ← DISABLE BLOG
+    isEnabled: false # ← DISABLE BLOG
 
 ui:
   theme: 'system'
 ```
 
 ### 2.2: Install Additional Dependencies
+
 ```bash
 npm install fuse.js           # Search functionality
 npm install @sentry/astro     # Error tracking (optional)
@@ -183,7 +192,9 @@ npm install web-vitals        # Performance monitoring (optional)
 ```
 
 ### 2.3: Update astro.config.ts
+
 Add configurations from old `astro.config.mjs`:
+
 - Sitemap generation
 - Build optimizations
 - Performance settings
@@ -195,9 +206,11 @@ Add configurations from old `astro.config.mjs`:
 ## 🧩 Phase 3: Component Migration (Days 2-3 - October 4-5)
 
 ### Strategy
+
 AstroWind already has many components. Compare and adapt rather than rebuild from scratch.
 
 ### Priority 1: Core Layout Components (Day 2)
+
 - [ ] **Header**: Adapt AstroWind's Header widget with custom navigation
   - Source: `OLD_SITE_BACKUP/src/components/Header.astro`
   - Target: `src/components/widgets/Header.astro` (modify existing)
@@ -214,6 +227,7 @@ AstroWind already has many components. Compare and adapt rather than rebuild fro
   - Content Layout: Adapt for simple content pages
 
 ### Priority 2: Feature Components (Day 3)
+
 - [ ] **SearchBar**: Integrate fuse.js for full-text search
   - Build Tailwind modal
   - Index all pages
@@ -229,6 +243,7 @@ AstroWind already has many components. Compare and adapt rather than rebuild fro
   - `src/components/ui/Button.astro` (already exists)
 
 ### Priority 3: Custom Components (If time permits)
+
 - [ ] TableOfContents
 - [ ] ShareButtons
 - [ ] Accordion
@@ -242,13 +257,16 @@ AstroWind already has many components. Compare and adapt rather than rebuild fro
 ## 📄 Phase 4: Page Migration (Days 4-9 - October 6-11)
 
 ### Strategy: Progressive Migration
+
 Convert pages in order of importance. Each page:
+
 1. Copy content from old page
 2. Convert CSS variables to Tailwind classes
 3. Update imports to use new components
 4. Test layout and functionality
 
 ### Day 4: Core Pages (5 pages)
+
 - [ ] Homepage (`index.astro`)
 - [ ] Parents page
 - [ ] Leaders page
@@ -258,7 +276,9 @@ Convert pages in order of importance. Each page:
 **Time**: 8 hours (1.5 hrs/page)
 
 ### Days 5-6: Priority Guides (12 pages)
+
 Top guides based on traffic/importance:
+
 - [ ] DNS Filtering
 - [ ] iOS Screen Time
 - [ ] Android Family Link
@@ -275,10 +295,12 @@ Top guides based on traffic/importance:
 **Time**: 16 hours (1.3 hrs/page)
 
 ### Days 7-8: Remaining Guides (21 pages)
+
 All other guides from the backup
 **Time**: 16 hours
 
 ### Day 9: Support & Legal Pages (13 pages)
+
 - [ ] FAQ
 - [ ] About
 - [ ] Contact
@@ -300,6 +322,7 @@ All other guides from the backup
 ## ⚡ Phase 5: Features & Functionality (Days 10-11 - October 12-13)
 
 ### 5.1: Search Implementation
+
 - [ ] Create search index (all 57 pages)
 - [ ] Build search modal with Tailwind
 - [ ] Integrate fuse.js fuzzy matching
@@ -307,6 +330,7 @@ All other guides from the backup
 - [ ] Test search relevance
 
 ### 5.2: Forms
+
 - [ ] Contact form
 - [ ] Feedback form with ratings
 - [ ] Newsletter signup (if needed)
@@ -314,18 +338,21 @@ All other guides from the backup
 - [ ] Success/error states
 
 ### 5.3: Navigation
+
 - [ ] Dropdown menus for guides
 - [ ] Breadcrumbs on all pages
 - [ ] Mobile menu
 - [ ] Footer links
 
 ### 5.4: SEO & Meta
+
 - [ ] Update all meta descriptions
 - [ ] Open Graph images
 - [ ] Sitemap configuration
 - [ ] Robots.txt
 
 ### 5.5: Analytics (Optional)
+
 - [ ] Plausible integration
 - [ ] Sentry error tracking
 - [ ] Web Vitals monitoring
@@ -337,6 +364,7 @@ All other guides from the backup
 ## 🧪 Phase 6: Testing & QA (Days 12-13 - October 14-15)
 
 ### Cross-Browser Testing
+
 - [ ] Chrome/Edge
 - [ ] Firefox
 - [ ] Safari
@@ -344,6 +372,7 @@ All other guides from the backup
 - [ ] Chrome Mobile (Android)
 
 ### Functionality Testing
+
 - [ ] All 57 pages load
 - [ ] Navigation works
 - [ ] Search works
@@ -353,6 +382,7 @@ All other guides from the backup
 - [ ] Print styles (printables)
 
 ### Accessibility
+
 - [ ] Keyboard navigation
 - [ ] Screen reader testing
 - [ ] Color contrast
@@ -360,6 +390,7 @@ All other guides from the backup
 - [ ] ARIA labels
 
 ### Performance
+
 - [ ] Lighthouse scores (target 90+)
 - [ ] Core Web Vitals
 - [ ] PageSpeed Insights
@@ -373,23 +404,27 @@ All other guides from the backup
 ## 🚀 Phase 7: Deployment (Day 14 - October 16)
 
 ### Pre-Deployment
+
 - [ ] Final content review
 - [ ] Link checking
 - [ ] SEO verification
 - [ ] Analytics testing
 
 ### Staging Deployment
+
 - [ ] Deploy to Netlify preview
 - [ ] Full QA on staging
 - [ ] Get approvals
 
 ### Production
+
 - [ ] Deploy to production
 - [ ] Monitor analytics
 - [ ] Watch for errors
 - [ ] Performance monitoring
 
 ### Post-Launch (24-48 hours)
+
 - [ ] Monitor analytics
 - [ ] Check error logs
 - [ ] Performance metrics
@@ -401,18 +436,19 @@ All other guides from the backup
 
 ## 📊 Timeline Summary
 
-| Phase | Days | Hours | Status |
-|-------|------|-------|--------|
-| 1. Setup | 0.5 | 4 | ✅ Complete |
-| 2. Configuration | 0.5 | 4 | Pending |
-| 3. Components | 2 | 16 | Pending |
-| 4. Pages (57) | 6 | 48 | Pending |
-| 5. Features | 2 | 16 | Pending |
-| 6. Testing | 2 | 16 | Pending |
-| 7. Deployment | 1 | 8 | Pending |
-| **TOTAL** | **14** | **112** | **4% Complete** |
+| Phase            | Days   | Hours   | Status          |
+| ---------------- | ------ | ------- | --------------- |
+| 1. Setup         | 0.5    | 4       | ✅ Complete     |
+| 2. Configuration | 0.5    | 4       | Pending         |
+| 3. Components    | 2      | 16      | Pending         |
+| 4. Pages (57)    | 6      | 48      | Pending         |
+| 5. Features      | 2      | 16      | Pending         |
+| 6. Testing       | 2      | 16      | Pending         |
+| 7. Deployment    | 1      | 8       | Pending         |
+| **TOTAL**        | **14** | **112** | **4% Complete** |
 
 ### Work Schedule Options
+
 - **Full-time (8 hrs/day)**: 14 days → Completion October 16, 2025
 - **Part-time (4 hrs/day)**: 28 days → Completion October 30, 2025
 - **Weekend only (16 hrs/week)**: 7 weeks → Completion November 21, 2025
@@ -424,6 +460,7 @@ All other guides from the backup
 Reference the mapping in `MIGRATION_ASSETS/styles/css-variables.md` for converting old styles to Tailwind classes.
 
 ### Common Conversions
+
 ```css
 /* Old CSS Variables */
 --primary-color: #2563eb → bg-blue-600 text-blue-600
@@ -460,6 +497,7 @@ For each page in `OLD_SITE_BACKUP/src/pages/`:
 ### Example: Converting a Guide Page
 
 **Before** (`OLD_SITE_BACKUP/src/pages/guides/dns-filtering.astro`):
+
 ```astro
 ---
 import GuideLayout from '../../layouts/GuideLayout.astro';
@@ -483,6 +521,7 @@ import Alert from '../../components/Alert.astro';
 ```
 
 **After** (`src/pages/guides/dns-filtering.astro`):
+
 ```astro
 ---
 import PageLayout from '~/layouts/PageLayout.astro';
@@ -490,7 +529,7 @@ import Note from '~/components/widgets/Note.astro';
 import Content from '~/components/widgets/Content.astro';
 ---
 
-<PageLayout metadata={{ title: "DNS Filtering Guide" }}>
+<PageLayout metadata={{ title: 'DNS Filtering Guide' }}>
   <div class="bg-gray-50 p-8 rounded-lg">
     <Note>DNS filtering is effective...</Note>
     <Content>...</Content>
@@ -503,6 +542,7 @@ import Content from '~/components/widgets/Content.astro';
 ## ⚠️ Risks & Mitigation
 
 ### High-Risk Items
+
 1. **⚠️ Time Estimates**: 14 days is aggressive
    - **Mitigation**: Prioritize core pages, defer nice-to-haves
 
@@ -516,7 +556,9 @@ import Content from '~/components/widgets/Content.astro';
    - **Mitigation**: Keep same URL structure, 301 redirects if needed
 
 ### Recovery Plan
+
 If migration fails or takes too long:
+
 1. `git checkout backup-before-astrowind-migration`
 2. Or restore from archive: `tar -xzf shemiratenayim-backup-20251002.tar.gz`
 3. Original site is 100% intact
@@ -526,6 +568,7 @@ If migration fails or takes too long:
 ## 🎯 Success Criteria
 
 ### Must-Have (MVP)
+
 - ✅ All 57 pages migrated and functional
 - ✅ Navigation works (header, footer, menus)
 - ✅ Mobile responsive
@@ -536,6 +579,7 @@ If migration fails or takes too long:
 - ✅ All links work (no 404s)
 
 ### Nice-to-Have
+
 - 📊 Advanced analytics (Plausible, Sentry)
 - 📊 Full accessibility (WCAG AA)
 - 📊 Perfect Lighthouse (95+)

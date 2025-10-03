@@ -6,367 +6,483 @@ import Accordion from '../../components/Accordion.astro';
 ---
 
 <Layout
-	title="Troubleshooting: Internet Slowdown After Filtering"
-	description="Fix internet speed issues caused by content filtering. Learn how to identify bottlenecks and optimize DNS filtering performance."
+  title="Troubleshooting: Internet Slowdown After Filtering"
+  description="Fix internet speed issues caused by content filtering. Learn how to identify bottlenecks and optimize DNS filtering performance."
 >
-	<Breadcrumb />
+  <Breadcrumb />
 
-	<div class="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-		<header class="relative pb-6 border-b-4 border-blue-600 dark:border-blue-500 mb-8">
-			<div class="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-4 bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-100">Intermediate</div>
-			<h1 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-3 leading-tight">Internet Slowdown After Filtering</h1>
-			<p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
-				Your connection feels sluggish after implementing filtering. Let's identify and fix performance bottlenecks.
-			</p>
-			<div class="flex gap-6 flex-wrap text-base text-gray-600 dark:text-gray-400">
-				<span>⏱️ Time Required: 15-30 minutes</span>
-				<span>🔧 Difficulty: Intermediate</span>
-			</div>
-		</header>
+  <div class="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+    <header class="relative pb-6 border-b-4 border-blue-600 dark:border-blue-500 mb-8">
+      <div
+        class="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-4 bg-amber-100 dark:bg-amber-900 text-amber-800 dark:text-amber-100"
+      >
+        Intermediate
+      </div>
+      <h1 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-3 leading-tight">
+        Internet Slowdown After Filtering
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-4">
+        Your connection feels sluggish after implementing filtering. Let's identify and fix performance bottlenecks.
+      </p>
+      <div class="flex gap-6 flex-wrap text-base text-gray-600 dark:text-gray-400">
+        <span>⏱️ Time Required: 15-30 minutes</span>
+        <span>🔧 Difficulty: Intermediate</span>
+      </div>
+    </header>
 
-		<Alert type="info">
-			<strong>Reality Check:</strong> Properly configured DNS filtering adds only 1-5ms latency (imperceptible).
-			If you're experiencing significant slowdowns, something else is wrong.
-		</Alert>
+    <Alert type="info">
+      <strong>Reality Check:</strong> Properly configured DNS filtering adds only 1-5ms latency (imperceptible). If you're
+      experiencing significant slowdowns, something else is wrong.
+    </Alert>
 
-		<section class="mt-10">
-			<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">First: Baseline Your Speed</h2>
-			<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">Before troubleshooting, measure your actual speeds:</p>
+    <section class="mt-10">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">First: Baseline Your Speed</h2>
+      <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+        Before troubleshooting, measure your actual speeds:
+      </p>
 
-			<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6 mb-6">
-				<h3 class="flex items-center gap-3 text-2xl font-semibold text-gray-900 dark:text-white mt-0 mb-4"><span class="inline-flex items-center justify-center w-10 h-10 bg-blue-600 dark:bg-blue-500 text-white rounded-full font-bold text-xl">1</span> Run Speed Tests</h3>
-				<ol class="ml-6 mb-4 list-decimal text-gray-700 dark:text-gray-300 space-y-2">
-					<li>Temporarily disable filtering (change DNS back to automatic)</li>
-					<li>Visit <strong>fast.com</strong> or <strong>speedtest.net</strong></li>
-					<li>Record: Download, Upload, Ping/Latency</li>
-					<li>Re-enable filtering (restore DNS settings)</li>
-					<li>Run the same test again</li>
-					<li>Compare results</li>
-				</ol>
+      <div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6 mb-6">
+        <h3 class="flex items-center gap-3 text-2xl font-semibold text-gray-900 dark:text-white mt-0 mb-4">
+          <span
+            class="inline-flex items-center justify-center w-10 h-10 bg-blue-600 dark:bg-blue-500 text-white rounded-full font-bold text-xl"
+            >1</span
+          > Run Speed Tests
+        </h3>
+        <ol class="ml-6 mb-4 list-decimal text-gray-700 dark:text-gray-300 space-y-2">
+          <li>Temporarily disable filtering (change DNS back to automatic)</li>
+          <li>Visit <strong>fast.com</strong> or <strong>speedtest.net</strong></li>
+          <li>Record: Download, Upload, Ping/Latency</li>
+          <li>Re-enable filtering (restore DNS settings)</li>
+          <li>Run the same test again</li>
+          <li>Compare results</li>
+        </ol>
 
-				<div class="bg-blue-50 dark:bg-blue-950 border-l-4 border-blue-500 p-4 my-4 rounded">
-					<strong class="block text-blue-900 dark:text-blue-100 mb-2">What's Normal:</strong>
-					<ul class="ml-4 mb-0 text-gray-700 dark:text-gray-300 space-y-1">
-						<li><strong>Ping increase:</strong> 1-5ms is normal, 10-20ms is acceptable</li>
-						<li><strong>Download/Upload:</strong> Should see no change (0-2% variation)</li>
-						<li><strong>Red flag:</strong> Ping increase &gt;50ms or speed drop &gt;10%</li>
-					</ul>
-				</div>
-			</div>
+        <div class="bg-blue-50 dark:bg-blue-950 border-l-4 border-blue-500 p-4 my-4 rounded">
+          <strong class="block text-blue-900 dark:text-blue-100 mb-2">What's Normal:</strong>
+          <ul class="ml-4 mb-0 text-gray-700 dark:text-gray-300 space-y-1">
+            <li><strong>Ping increase:</strong> 1-5ms is normal, 10-20ms is acceptable</li>
+            <li><strong>Download/Upload:</strong> Should see no change (0-2% variation)</li>
+            <li><strong>Red flag:</strong> Ping increase &gt;50ms or speed drop &gt;10%</li>
+          </ul>
+        </div>
+      </div>
 
-			<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6 mb-6">
-				<h3 class="flex items-center gap-3 text-2xl font-semibold text-gray-900 dark:text-white mt-0 mb-4"><span class="inline-flex items-center justify-center w-10 h-10 bg-blue-600 dark:bg-blue-500 text-white rounded-full font-bold text-xl">2</span> Identify the Cause</h3>
-				<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">Most slowdowns have nothing to do with filtering. Common culprits:</p>
+      <div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6 mb-6">
+        <h3 class="flex items-center gap-3 text-2xl font-semibold text-gray-900 dark:text-white mt-0 mb-4">
+          <span
+            class="inline-flex items-center justify-center w-10 h-10 bg-blue-600 dark:bg-blue-500 text-white rounded-full font-bold text-xl"
+            >2</span
+          > Identify the Cause
+        </h3>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+          Most slowdowns have nothing to do with filtering. Common culprits:
+        </p>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Network Congestion (Not Filtering)</h4>
-				<ul class="ml-6 mb-4 list-disc text-gray-700 dark:text-gray-300 space-y-2">
-					<li>Too many devices connected simultaneously</li>
-					<li>Someone streaming 4K video or gaming</li>
-					<li>Background updates/backups running</li>
-					<li><strong>Test:</strong> Disconnect other devices. Speed improve? Not filtering's fault.</li>
-				</ul>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">
+          Network Congestion (Not Filtering)
+        </h4>
+        <ul class="ml-6 mb-4 list-disc text-gray-700 dark:text-gray-300 space-y-2">
+          <li>Too many devices connected simultaneously</li>
+          <li>Someone streaming 4K video or gaming</li>
+          <li>Background updates/backups running</li>
+          <li><strong>Test:</strong> Disconnect other devices. Speed improve? Not filtering's fault.</li>
+        </ul>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">ISP Issues (Not Filtering)</h4>
-				<ul class="ml-6 mb-4 list-disc text-gray-700 dark:text-gray-300 space-y-2">
-					<li>ISP-side congestion during peak hours</li>
-					<li>Service outages or degradation</li>
-					<li>Oversubscribed neighborhood network</li>
-					<li><strong>Test:</strong> Disable filtering. Still slow? Call ISP.</li>
-				</ul>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">ISP Issues (Not Filtering)</h4>
+        <ul class="ml-6 mb-4 list-disc text-gray-700 dark:text-gray-300 space-y-2">
+          <li>ISP-side congestion during peak hours</li>
+          <li>Service outages or degradation</li>
+          <li>Oversubscribed neighborhood network</li>
+          <li><strong>Test:</strong> Disable filtering. Still slow? Call ISP.</li>
+        </ul>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Router Problems (Not Filtering)</h4>
-				<ul class="ml-6 mb-4 list-disc text-gray-700 dark:text-gray-300 space-y-2">
-					<li>Old router can't handle your internet speed</li>
-					<li>Router overheating or failing</li>
-					<li>Outdated firmware with bugs</li>
-					<li><strong>Test:</strong> Connect computer directly to modem with Ethernet. Faster? Router issue.</li>
-				</ul>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">
+          Router Problems (Not Filtering)
+        </h4>
+        <ul class="ml-6 mb-4 list-disc text-gray-700 dark:text-gray-300 space-y-2">
+          <li>Old router can't handle your internet speed</li>
+          <li>Router overheating or failing</li>
+          <li>Outdated firmware with bugs</li>
+          <li><strong>Test:</strong> Connect computer directly to modem with Ethernet. Faster? Router issue.</li>
+        </ul>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Actual Filtering Issues (Rare)</h4>
-				<ul class="ml-6 mb-4 list-disc text-gray-700 dark:text-gray-300 space-y-2">
-					<li>Distant DNS server location</li>
-					<li>DNS server overloaded/having issues</li>
-					<li>Too many DNS lookups (misconfiguration)</li>
-				</ul>
-			</div>
-		</section>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Actual Filtering Issues (Rare)</h4>
+        <ul class="ml-6 mb-4 list-disc text-gray-700 dark:text-gray-300 space-y-2">
+          <li>Distant DNS server location</li>
+          <li>DNS server overloaded/having issues</li>
+          <li>Too many DNS lookups (misconfiguration)</li>
+        </ul>
+      </div>
+    </section>
 
-		<section class="mt-10">
-			<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Solutions by Cause</h2>
+    <section class="mt-10">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Solutions by Cause</h2>
 
-			<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6 mb-6">
-				<h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">If It's Actually DNS Filtering:</h3>
+      <div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6 mb-6">
+        <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">If It's Actually DNS Filtering:</h3>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Switch to Faster DNS Servers</h4>
-				<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">Different providers have different server locations:</p>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Switch to Faster DNS Servers</h4>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+          Different providers have different server locations:
+        </p>
 
-				<div class="overflow-x-auto my-6">
-					<table class="w-full border-collapse text-sm">
-						<thead class="bg-blue-100 dark:bg-blue-900">
-							<tr>
-								<th class="p-3 text-left border border-gray-200 dark:border-gray-700 font-semibold text-blue-900 dark:text-blue-100">Provider</th>
-								<th class="p-3 text-left border border-gray-200 dark:border-gray-700 font-semibold text-blue-900 dark:text-blue-100">Avg Latency</th>
-								<th class="p-3 text-left border border-gray-200 dark:border-gray-700 font-semibold text-blue-900 dark:text-blue-100">Server Locations</th>
-								<th class="p-3 text-left border border-gray-200 dark:border-gray-700 font-semibold text-blue-900 dark:text-blue-100">Status</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr class="hover:bg-gray-50 dark:hover:bg-gray-700">
-								<td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">Cloudflare Family</td>
-								<td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">12ms</td>
-								<td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">275+ cities worldwide</td>
-								<td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">Fastest</td>
-							</tr>
-							<tr class="hover:bg-gray-50 dark:hover:bg-gray-700">
-								<td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">CleanBrowsing</td>
-								<td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">18ms</td>
-								<td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">Global anycast network</td>
-								<td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">Fast</td>
-							</tr>
-							<tr class="hover:bg-gray-50 dark:hover:bg-gray-700">
-								<td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">OpenDNS</td>
-								<td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">22ms</td>
-								<td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">25+ data centers</td>
-								<td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">Good</td>
-							</tr>
-							<tr class="hover:bg-gray-50 dark:hover:bg-gray-700">
-								<td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">Quad9 Family</td>
-								<td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">25ms</td>
-								<td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">150+ locations</td>
-								<td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">Good</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+        <div class="overflow-x-auto my-6">
+          <table class="w-full border-collapse text-sm">
+            <thead class="bg-blue-100 dark:bg-blue-900">
+              <tr>
+                <th
+                  class="p-3 text-left border border-gray-200 dark:border-gray-700 font-semibold text-blue-900 dark:text-blue-100"
+                  >Provider</th
+                >
+                <th
+                  class="p-3 text-left border border-gray-200 dark:border-gray-700 font-semibold text-blue-900 dark:text-blue-100"
+                  >Avg Latency</th
+                >
+                <th
+                  class="p-3 text-left border border-gray-200 dark:border-gray-700 font-semibold text-blue-900 dark:text-blue-100"
+                  >Server Locations</th
+                >
+                <th
+                  class="p-3 text-left border border-gray-200 dark:border-gray-700 font-semibold text-blue-900 dark:text-blue-100"
+                  >Status</th
+                >
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="hover:bg-gray-50 dark:hover:bg-gray-700">
+                <td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300"
+                  >Cloudflare Family</td
+                >
+                <td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">12ms</td>
+                <td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300"
+                  >275+ cities worldwide</td
+                >
+                <td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">Fastest</td
+                >
+              </tr>
+              <tr class="hover:bg-gray-50 dark:hover:bg-gray-700">
+                <td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300"
+                  >CleanBrowsing</td
+                >
+                <td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">18ms</td>
+                <td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300"
+                  >Global anycast network</td
+                >
+                <td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">Fast</td>
+              </tr>
+              <tr class="hover:bg-gray-50 dark:hover:bg-gray-700">
+                <td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">OpenDNS</td
+                >
+                <td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">22ms</td>
+                <td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300"
+                  >25+ data centers</td
+                >
+                <td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">Good</td>
+              </tr>
+              <tr class="hover:bg-gray-50 dark:hover:bg-gray-700">
+                <td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300"
+                  >Quad9 Family</td
+                >
+                <td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">25ms</td>
+                <td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300"
+                  >150+ locations</td
+                >
+                <td class="p-3 border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300">Good</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
-				<Alert type="info">
-					Try switching to <strong>Cloudflare for Families (1.1.1.3 / 1.0.0.3)</strong> for maximum speed
-					with filtering.
-				</Alert>
+        <Alert type="info">
+          Try switching to <strong>Cloudflare for Families (1.1.1.3 / 1.0.0.3)</strong> for maximum speed with filtering.
+        </Alert>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Use DNS Caching</h4>
-				<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">Reduce repeated lookups by enabling DNS caching on your router:</p>
-				<ol class="ml-6 mb-4 list-decimal text-gray-700 dark:text-gray-300 space-y-2">
-					<li>Log into router admin panel</li>
-					<li>Look for "DNS Proxy" or "DNS Caching" option</li>
-					<li>Enable it if available</li>
-					<li>Set cache time to 3600 seconds (1 hour)</li>
-				</ol>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Use DNS Caching</h4>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+          Reduce repeated lookups by enabling DNS caching on your router:
+        </p>
+        <ol class="ml-6 mb-4 list-decimal text-gray-700 dark:text-gray-300 space-y-2">
+          <li>Log into router admin panel</li>
+          <li>Look for "DNS Proxy" or "DNS Caching" option</li>
+          <li>Enable it if available</li>
+          <li>Set cache time to 3600 seconds (1 hour)</li>
+        </ol>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Optimize DNS Configuration</h4>
-				<ol class="ml-6 mb-4 list-decimal text-gray-700 dark:text-gray-300 space-y-2">
-					<li>Use only 2 DNS servers (primary + secondary), not 3-4</li>
-					<li>Choose servers from same provider (don't mix OpenDNS + CleanBrowsing)</li>
-					<li>Test individual servers and use the fastest one as primary</li>
-				</ol>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Optimize DNS Configuration</h4>
+        <ol class="ml-6 mb-4 list-decimal text-gray-700 dark:text-gray-300 space-y-2">
+          <li>Use only 2 DNS servers (primary + secondary), not 3-4</li>
+          <li>Choose servers from same provider (don't mix OpenDNS + CleanBrowsing)</li>
+          <li>Test individual servers and use the fastest one as primary</li>
+        </ol>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Test Server Latency</h4>
-				<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">Find which DNS server is fastest from your location:</p>
-				<pre class="bg-gray-900 dark:bg-gray-950 text-green-300 p-4 rounded overflow-x-auto my-4"><code>ping 208.67.222.123
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Test Server Latency</h4>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+          Find which DNS server is fastest from your location:
+        </p>
+        <pre
+          class="bg-gray-900 dark:bg-gray-950 text-green-300 p-4 rounded overflow-x-auto my-4"><code>ping 208.67.222.123
 ping 185.228.168.168
 ping 1.1.1.3</code></pre>
-				<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">Use the one with lowest ping time as your primary DNS.</p>
-			</div>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+          Use the one with lowest ping time as your primary DNS.
+        </p>
+      </div>
 
-			<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6 mb-6">
-				<h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">If It's Router-Related:</h3>
+      <div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6 mb-6">
+        <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">If It's Router-Related:</h3>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Update Router Firmware</h4>
-				<ol class="ml-6 mb-4 list-decimal text-gray-700 dark:text-gray-300 space-y-2">
-					<li>Log into router admin</li>
-					<li>Navigate to System or Administration</li>
-					<li>Check for firmware updates</li>
-					<li>Update if available (improves performance + security)</li>
-				</ol>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Update Router Firmware</h4>
+        <ol class="ml-6 mb-4 list-decimal text-gray-700 dark:text-gray-300 space-y-2">
+          <li>Log into router admin</li>
+          <li>Navigate to System or Administration</li>
+          <li>Check for firmware updates</li>
+          <li>Update if available (improves performance + security)</li>
+        </ol>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Restart Router Properly</h4>
-				<ol class="ml-6 mb-4 list-decimal text-gray-700 dark:text-gray-300 space-y-2">
-					<li>Unplug router AND modem from power</li>
-					<li>Wait 30 seconds</li>
-					<li>Plug in modem, wait for all lights to stabilize (2 min)</li>
-					<li>Plug in router, wait for all lights to stabilize (2 min)</li>
-					<li>Test speeds again</li>
-				</ol>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Restart Router Properly</h4>
+        <ol class="ml-6 mb-4 list-decimal text-gray-700 dark:text-gray-300 space-y-2">
+          <li>Unplug router AND modem from power</li>
+          <li>Wait 30 seconds</li>
+          <li>Plug in modem, wait for all lights to stabilize (2 min)</li>
+          <li>Plug in router, wait for all lights to stabilize (2 min)</li>
+          <li>Test speeds again</li>
+        </ol>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Check Router Resources</h4>
-				<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">Some routers show resource usage:</p>
-				<ul class="ml-6 mb-4 list-disc text-gray-700 dark:text-gray-300 space-y-2">
-					<li>CPU usage &gt;80%? Too many devices or old router</li>
-					<li>Memory &gt;90%? Reboot router or upgrade</li>
-					<li>Check temperature - overheating causes slowdowns</li>
-				</ul>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Check Router Resources</h4>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">Some routers show resource usage:</p>
+        <ul class="ml-6 mb-4 list-disc text-gray-700 dark:text-gray-300 space-y-2">
+          <li>CPU usage &gt;80%? Too many devices or old router</li>
+          <li>Memory &gt;90%? Reboot router or upgrade</li>
+          <li>Check temperature - overheating causes slowdowns</li>
+        </ul>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Upgrade Router (If Necessary)</h4>
-				<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">Signs you need a new router:</p>
-				<ul class="ml-6 mb-4 list-disc text-gray-700 dark:text-gray-300 space-y-2">
-					<li>Router is 5+ years old</li>
-					<li>Your internet speed exceeds router's rated speed</li>
-					<li>You have 15+ connected devices</li>
-					<li>Router doesn't support AC or AX WiFi standards</li>
-				</ul>
-				<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-					Recommended: <strong>$80-150 router</strong> with AC1900+ or AX1800+ for most homes.
-					See our <a href="/guides/router-config" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline">router recommendations</a>.
-				</p>
-			</div>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Upgrade Router (If Necessary)</h4>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">Signs you need a new router:</p>
+        <ul class="ml-6 mb-4 list-disc text-gray-700 dark:text-gray-300 space-y-2">
+          <li>Router is 5+ years old</li>
+          <li>Your internet speed exceeds router's rated speed</li>
+          <li>You have 15+ connected devices</li>
+          <li>Router doesn't support AC or AX WiFi standards</li>
+        </ul>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+          Recommended: <strong>$80-150 router</strong> with AC1900+ or AX1800+ for most homes. See our <a
+            href="/guides/router-config"
+            class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline"
+            >router recommendations</a
+          >.
+        </p>
+      </div>
 
-			<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6 mb-6">
-				<h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">If It's Software Filtering (Not DNS):</h3>
+      <div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6 mb-6">
+        <h3 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">If It's Software Filtering (Not DNS):</h3>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Filtering Software Can Impact Performance</h4>
-				<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">Software like Qustodio, Net Nanny, Bark runs on each device:</p>
-				<ul class="ml-6 mb-4 list-disc text-gray-700 dark:text-gray-300 space-y-2">
-					<li>Uses 1-5% CPU constantly</li>
-					<li>Can slow older devices significantly</li>
-					<li>May conflict with other security software</li>
-				</ul>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">
+          Filtering Software Can Impact Performance
+        </h4>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+          Software like Qustodio, Net Nanny, Bark runs on each device:
+        </p>
+        <ul class="ml-6 mb-4 list-disc text-gray-700 dark:text-gray-300 space-y-2">
+          <li>Uses 1-5% CPU constantly</li>
+          <li>Can slow older devices significantly</li>
+          <li>May conflict with other security software</li>
+        </ul>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Optimization Steps:</h4>
-				<ol class="ml-6 mb-4 list-decimal text-gray-700 dark:text-gray-300 space-y-2">
-					<li><strong>Update software:</strong> Newer versions are more efficient</li>
-					<li><strong>Reduce monitoring frequency:</strong> Check settings for "scan interval"</li>
-					<li><strong>Exclude trusted sites:</strong> Add known-safe sites to whitelist</li>
-					<li><strong>Uninstall conflicting software:</strong> Don't run multiple antivirus/filtering apps</li>
-				</ol>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Optimization Steps:</h4>
+        <ol class="ml-6 mb-4 list-decimal text-gray-700 dark:text-gray-300 space-y-2">
+          <li><strong>Update software:</strong> Newer versions are more efficient</li>
+          <li><strong>Reduce monitoring frequency:</strong> Check settings for "scan interval"</li>
+          <li><strong>Exclude trusted sites:</strong> Add known-safe sites to whitelist</li>
+          <li><strong>Uninstall conflicting software:</strong> Don't run multiple antivirus/filtering apps</li>
+        </ol>
 
-				<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Consider Hybrid Approach:</h4>
-				<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">Reduce software filtering load:</p>
-				<ul class="ml-6 mb-4 list-disc text-gray-700 dark:text-gray-300 space-y-2">
-					<li>Use DNS filtering for network-wide blocking</li>
-					<li>Reserve software filtering only for critical devices</li>
-					<li>Use built-in device controls (Screen Time, Family Link) instead of 3rd-party apps</li>
-				</ul>
-			</div>
-		</section>
+        <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Consider Hybrid Approach:</h4>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">Reduce software filtering load:</p>
+        <ul class="ml-6 mb-4 list-disc text-gray-700 dark:text-gray-300 space-y-2">
+          <li>Use DNS filtering for network-wide blocking</li>
+          <li>Reserve software filtering only for critical devices</li>
+          <li>Use built-in device controls (Screen Time, Family Link) instead of 3rd-party apps</li>
+        </ul>
+      </div>
+    </section>
 
-		<section class="mt-10">
-			<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Advanced Optimizations</h2>
+    <section class="mt-10">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Advanced Optimizations</h2>
 
-			<Accordion title="Enable DNS over TLS (DoT) for Speed">
-				<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-					Paradoxically, encrypted DNS can be faster because it prevents ISP interference:
-				</p>
-				<ol class="ml-6 mb-4 list-decimal text-gray-700 dark:text-gray-300 space-y-2">
-					<li>Check if your router supports DoT (advanced routers only)</li>
-					<li>Configure with your filtering provider's DoT address</li>
-					<li>Example - CleanBrowsing DoT: <code class="bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-sm font-mono">family-filter-dns.cleanbrowsing.org</code></li>
-					<li>Can reduce latency by 5-15ms if ISP was interfering</li>
-				</ol>
-				<Alert type="warning">
-					Not all routers support this. Don't use DoH (DNS over HTTPS) as it bypasses filtering.
-				</Alert>
-			</Accordion>
+      <Accordion title="Enable DNS over TLS (DoT) for Speed">
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+          Paradoxically, encrypted DNS can be faster because it prevents ISP interference:
+        </p>
+        <ol class="ml-6 mb-4 list-decimal text-gray-700 dark:text-gray-300 space-y-2">
+          <li>Check if your router supports DoT (advanced routers only)</li>
+          <li>Configure with your filtering provider's DoT address</li>
+          <li>
+            Example - CleanBrowsing DoT: <code
+              class="bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-sm font-mono"
+              >family-filter-dns.cleanbrowsing.org</code
+            >
+          </li>
+          <li>Can reduce latency by 5-15ms if ISP was interfering</li>
+        </ol>
+        <Alert type="warning">
+          Not all routers support this. Don't use DoH (DNS over HTTPS) as it bypasses filtering.
+        </Alert>
+      </Accordion>
 
-			<Accordion title="Use Local DNS Resolver (Pi-hole)">
-				<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-					Advanced users can run a local DNS server that caches aggressively:
-				</p>
-				<ul class="ml-6 mb-4 list-disc text-gray-700 dark:text-gray-300 space-y-2">
-					<li><strong>Pi-hole:</strong> Runs on Raspberry Pi ($35), caches all DNS locally</li>
-					<li>First lookup: normal speed</li>
-					<li>Subsequent lookups: &lt;1ms (instant)</li>
-					<li>Bonus: Blocks ads network-wide</li>
-				</ul>
-				<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-					Pi-hole can forward to filtering DNS providers for content blocking.
-					See <a href="/guides/firewall" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline">advanced filtering guide</a>.
-				</p>
-			</Accordion>
+      <Accordion title="Use Local DNS Resolver (Pi-hole)">
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+          Advanced users can run a local DNS server that caches aggressively:
+        </p>
+        <ul class="ml-6 mb-4 list-disc text-gray-700 dark:text-gray-300 space-y-2">
+          <li><strong>Pi-hole:</strong> Runs on Raspberry Pi ($35), caches all DNS locally</li>
+          <li>First lookup: normal speed</li>
+          <li>Subsequent lookups: &lt;1ms (instant)</li>
+          <li>Bonus: Blocks ads network-wide</li>
+        </ul>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+          Pi-hole can forward to filtering DNS providers for content blocking. See <a
+            href="/guides/firewall"
+            class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 underline"
+            >advanced filtering guide</a
+          >.
+        </p>
+      </Accordion>
 
-			<Accordion title="Configure Quality of Service (QoS)">
-				<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-					Prioritize important traffic over background tasks:
-				</p>
-				<ol class="ml-6 mb-4 list-decimal text-gray-700 dark:text-gray-300 space-y-2">
-					<li>Router admin → QoS or Traffic Management</li>
-					<li>Enable QoS</li>
-					<li>Prioritize: VoIP calls, video calls, gaming</li>
-					<li>Deprioritize: Downloads, updates, file transfers</li>
-				</ol>
-				<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">This won't fix slow speeds, but makes important tasks feel faster.</p>
-			</Accordion>
+      <Accordion title="Configure Quality of Service (QoS)">
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+          Prioritize important traffic over background tasks:
+        </p>
+        <ol class="ml-6 mb-4 list-decimal text-gray-700 dark:text-gray-300 space-y-2">
+          <li>Router admin → QoS or Traffic Management</li>
+          <li>Enable QoS</li>
+          <li>Prioritize: VoIP calls, video calls, gaming</li>
+          <li>Deprioritize: Downloads, updates, file transfers</li>
+        </ol>
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+          This won't fix slow speeds, but makes important tasks feel faster.
+        </p>
+      </Accordion>
 
-			<Accordion title="Separate WiFi Networks by Speed">
-				<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-					Older devices on WiFi 4 (802.11n) slow down the entire network:
-				</p>
-				<ol class="ml-6 mb-4 list-decimal text-gray-700 dark:text-gray-300 space-y-2">
-					<li>Create two WiFi networks: one 5GHz only, one 2.4GHz</li>
-					<li>Put fast devices on 5GHz network</li>
-					<li>Put IoT/old devices on 2.4GHz network</li>
-					<li>Apply filtering DNS to both</li>
-				</ol>
-			</Accordion>
+      <Accordion title="Separate WiFi Networks by Speed">
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+          Older devices on WiFi 4 (802.11n) slow down the entire network:
+        </p>
+        <ol class="ml-6 mb-4 list-decimal text-gray-700 dark:text-gray-300 space-y-2">
+          <li>Create two WiFi networks: one 5GHz only, one 2.4GHz</li>
+          <li>Put fast devices on 5GHz network</li>
+          <li>Put IoT/old devices on 2.4GHz network</li>
+          <li>Apply filtering DNS to both</li>
+        </ol>
+      </Accordion>
 
-			<Accordion title="Monitor Bandwidth Hogs">
-				<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-					Identify which devices/apps consume most bandwidth:
-				</p>
-				<ul class="ml-6 mb-4 list-disc text-gray-700 dark:text-gray-300 space-y-2">
-					<li>Router admin may show per-device usage</li>
-					<li>Use GlassWire (Windows) or Little Snitch (Mac) on computers</li>
-					<li>Common culprits: Steam downloads, iCloud backup, Windows updates</li>
-					<li>Schedule heavy downloads for off-peak hours</li>
-				</ul>
-			</Accordion>
-		</section>
+      <Accordion title="Monitor Bandwidth Hogs">
+        <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+          Identify which devices/apps consume most bandwidth:
+        </p>
+        <ul class="ml-6 mb-4 list-disc text-gray-700 dark:text-gray-300 space-y-2">
+          <li>Router admin may show per-device usage</li>
+          <li>Use GlassWire (Windows) or Little Snitch (Mac) on computers</li>
+          <li>Common culprits: Steam downloads, iCloud backup, Windows updates</li>
+          <li>Schedule heavy downloads for off-peak hours</li>
+        </ul>
+      </Accordion>
+    </section>
 
-		<section class="mt-10">
-			<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">When It's Not Fixable</h2>
-			<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">Sometimes slowdowns have no solution except upgrading:</p>
+    <section class="mt-10">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">When It's Not Fixable</h2>
+      <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+        Sometimes slowdowns have no solution except upgrading:
+      </p>
 
-			<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Your Internet Plan Is Too Slow</h4>
-			<ul class="ml-6 mb-4 list-disc text-gray-700 dark:text-gray-300 space-y-2">
-				<li>Modern households need 100+ Mbps for 4+ people</li>
-				<li>Streaming 4K needs 25 Mbps per stream</li>
-				<li>Video calls need 5-10 Mbps upload</li>
-				<li><strong>Solution:</strong> Upgrade internet plan with ISP</li>
-			</ul>
+      <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Your Internet Plan Is Too Slow</h4>
+      <ul class="ml-6 mb-4 list-disc text-gray-700 dark:text-gray-300 space-y-2">
+        <li>Modern households need 100+ Mbps for 4+ people</li>
+        <li>Streaming 4K needs 25 Mbps per stream</li>
+        <li>Video calls need 5-10 Mbps upload</li>
+        <li><strong>Solution:</strong> Upgrade internet plan with ISP</li>
+      </ul>
 
-			<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">You Have Too Many Devices</h4>
-			<ul class="ml-6 mb-4 list-disc text-gray-700 dark:text-gray-300 space-y-2">
-				<li>Budget routers handle 10-15 devices maximum</li>
-				<li>Each smart home device adds load</li>
-				<li><strong>Solution:</strong> Upgrade to business-grade router or mesh system</li>
-			</ul>
+      <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">You Have Too Many Devices</h4>
+      <ul class="ml-6 mb-4 list-disc text-gray-700 dark:text-gray-300 space-y-2">
+        <li>Budget routers handle 10-15 devices maximum</li>
+        <li>Each smart home device adds load</li>
+        <li><strong>Solution:</strong> Upgrade to business-grade router or mesh system</li>
+      </ul>
 
-			<h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Your House Is Too Large</h4>
-			<ul class="ml-6 mb-4 list-disc text-gray-700 dark:text-gray-300 space-y-2">
-				<li>Single router struggles beyond 2,000 sq ft</li>
-				<li>Weak WiFi signal = slow speeds</li>
-				<li><strong>Solution:</strong> Mesh WiFi system (Eero, Google WiFi, Orbi)</li>
-			</ul>
-		</section>
+      <h4 class="text-lg font-semibold text-gray-800 dark:text-gray-200 mt-6 mb-3">Your House Is Too Large</h4>
+      <ul class="ml-6 mb-4 list-disc text-gray-700 dark:text-gray-300 space-y-2">
+        <li>Single router struggles beyond 2,000 sq ft</li>
+        <li>Weak WiFi signal = slow speeds</li>
+        <li><strong>Solution:</strong> Mesh WiFi system (Eero, Google WiFi, Orbi)</li>
+      </ul>
+    </section>
 
-		<section class="mt-10">
-			<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Prevention Checklist</h2>
-			<ul class="list-none ml-0 space-y-2">
-				<li class="pl-6 relative text-gray-700 dark:text-gray-300 leading-relaxed before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:before:text-green-400 before:font-bold">Use fastest filtering DNS provider for your location (test with ping)</li>
-				<li class="pl-6 relative text-gray-700 dark:text-gray-300 leading-relaxed before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:before:text-green-400 before:font-bold">Keep router firmware updated</li>
-				<li class="pl-6 relative text-gray-700 dark:text-gray-300 leading-relaxed before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:before:text-green-400 before:font-bold">Reboot router monthly (set calendar reminder)</li>
-				<li class="pl-6 relative text-gray-700 dark:text-gray-300 leading-relaxed before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:before:text-green-400 before:font-bold">Don't run multiple security/filtering apps on same device</li>
-				<li class="pl-6 relative text-gray-700 dark:text-gray-300 leading-relaxed before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:before:text-green-400 before:font-bold">Use Ethernet for desktop computers and gaming consoles</li>
-				<li class="pl-6 relative text-gray-700 dark:text-gray-300 leading-relaxed before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:before:text-green-400 before:font-bold">Position router centrally, elevated, away from interference</li>
-				<li class="pl-6 relative text-gray-700 dark:text-gray-300 leading-relaxed before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:before:text-green-400 before:font-bold">Upgrade router every 3-4 years</li>
-			</ul>
-		</section>
+    <section class="mt-10">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">Prevention Checklist</h2>
+      <ul class="list-none ml-0 space-y-2">
+        <li
+          class="pl-6 relative text-gray-700 dark:text-gray-300 leading-relaxed before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:before:text-green-400 before:font-bold"
+        >
+          Use fastest filtering DNS provider for your location (test with ping)
+        </li>
+        <li
+          class="pl-6 relative text-gray-700 dark:text-gray-300 leading-relaxed before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:before:text-green-400 before:font-bold"
+        >
+          Keep router firmware updated
+        </li>
+        <li
+          class="pl-6 relative text-gray-700 dark:text-gray-300 leading-relaxed before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:before:text-green-400 before:font-bold"
+        >
+          Reboot router monthly (set calendar reminder)
+        </li>
+        <li
+          class="pl-6 relative text-gray-700 dark:text-gray-300 leading-relaxed before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:before:text-green-400 before:font-bold"
+        >
+          Don't run multiple security/filtering apps on same device
+        </li>
+        <li
+          class="pl-6 relative text-gray-700 dark:text-gray-300 leading-relaxed before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:before:text-green-400 before:font-bold"
+        >
+          Use Ethernet for desktop computers and gaming consoles
+        </li>
+        <li
+          class="pl-6 relative text-gray-700 dark:text-gray-300 leading-relaxed before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:before:text-green-400 before:font-bold"
+        >
+          Position router centrally, elevated, away from interference
+        </li>
+        <li
+          class="pl-6 relative text-gray-700 dark:text-gray-300 leading-relaxed before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:before:text-green-400 before:font-bold"
+        >
+          Upgrade router every 3-4 years
+        </li>
+      </ul>
+    </section>
 
-		<div class="mt-12 pt-8 border-t-2 border-gray-200 dark:border-gray-700">
-			<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Related Guides</h2>
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-				<a href="/troubleshooting/dns-not-working" class="block p-5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg no-underline transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-white dark:hover:bg-gray-700 hover:-translate-y-0.5 hover:shadow-lg">
-					<h3 class="text-lg font-semibold text-gray-900 dark:text-white m-0 mb-2">DNS Not Working</h3>
-					<p class="text-sm text-gray-600 dark:text-gray-400 m-0">Fix DNS filtering that isn't taking effect</p>
-				</a>
-				<a href="/guides/router-config" class="block p-5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg no-underline transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-white dark:hover:bg-gray-700 hover:-translate-y-0.5 hover:shadow-lg">
-					<h3 class="text-lg font-semibold text-gray-900 dark:text-white m-0 mb-2">Router Configuration</h3>
-					<p class="text-sm text-gray-600 dark:text-gray-400 m-0">Optimize router settings for performance</p>
-				</a>
-				<a href="/guides/dns-filtering" class="block p-5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg no-underline transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-white dark:hover:bg-gray-700 hover:-translate-y-0.5 hover:shadow-lg">
-					<h3 class="text-lg font-semibold text-gray-900 dark:text-white m-0 mb-2">DNS Filtering Setup</h3>
-					<p class="text-sm text-gray-600 dark:text-gray-400 m-0">Configure DNS filtering correctly from the start</p>
-				</a>
-			</div>
-		</div>
-	</div>
+    <div class="mt-12 pt-8 border-t-2 border-gray-200 dark:border-gray-700">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Related Guides</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a
+          href="/troubleshooting/dns-not-working"
+          class="block p-5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg no-underline transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-white dark:hover:bg-gray-700 hover:-translate-y-0.5 hover:shadow-lg"
+        >
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white m-0 mb-2">DNS Not Working</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 m-0">Fix DNS filtering that isn't taking effect</p>
+        </a>
+        <a
+          href="/guides/router-config"
+          class="block p-5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg no-underline transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-white dark:hover:bg-gray-700 hover:-translate-y-0.5 hover:shadow-lg"
+        >
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white m-0 mb-2">Router Configuration</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 m-0">Optimize router settings for performance</p>
+        </a>
+        <a
+          href="/guides/dns-filtering"
+          class="block p-5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg no-underline transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:bg-white dark:hover:bg-gray-700 hover:-translate-y-0.5 hover:shadow-lg"
+        >
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white m-0 mb-2">DNS Filtering Setup</h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400 m-0">Configure DNS filtering correctly from the start</p>
+        </a>
+      </div>
+    </div>
+  </div>
 </Layout>

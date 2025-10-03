@@ -12,7 +12,14 @@
  * Metrics are sent to Plausible Analytics as custom events
  */
 
-import { onLCP, onINP, onCLS, onTTFB, onFCP } from 'web-vitals';
+import { onLCP, onINP, onCLS, onTTFB, onFCP, type Metric } from 'web-vitals';
+
+// Extend Window interface to include plausible
+declare global {
+  interface Window {
+    plausible?: (eventName: string, options?: { props?: Record<string, string | number | boolean> }) => void;
+  }
+}
 
 // Check if we're in production and analytics is enabled
 const isProduction = import.meta.env.PUBLIC_ENV === 'production';
@@ -20,8 +27,8 @@ const isProduction = import.meta.env.PUBLIC_ENV === 'production';
 /**
  * Send performance metric to analytics
  */
-function sendToAnalytics(metric: any) {
-  if (!isProduction || typeof (window as any).plausible !== 'function') {
+function sendToAnalytics(metric: Metric) {
+  if (!isProduction || typeof window.plausible !== 'function') {
     return;
   }
 
@@ -32,14 +39,14 @@ function sendToAnalytics(metric: any) {
   const value = Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value);
 
   try {
-    (window as any).plausible('Web Vitals', {
+    window.plausible?.('Web Vitals', {
       props: {
         metric: metric.name,
         value: value,
         rating: rating,
         // Include page path for debugging
         page: window.location.pathname,
-      }
+      },
     });
   } catch (error) {
     console.error('Error sending performance metric:', error);
@@ -76,7 +83,6 @@ export function initPerformanceMonitoring() {
     // Measures perceived loading speed
     // Good: < 1.8s, Needs Improvement: < 3s, Poor: >= 3s
     onFCP(sendToAnalytics);
-
   } catch (error) {
     console.error('Performance monitoring initialization error:', error);
   }

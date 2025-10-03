@@ -6,104 +6,130 @@ import Hero from '../../components/Hero.astro';
 import Alert from '../../components/Alert.astro';
 
 const printables = [
-	{
-		title: 'DNS Server Quick Reference',
-		description: 'Wallet-sized card with DNS server addresses for major filtering providers',
-		href: '/printables/dns-servers',
-		icon: '🔢',
-		size: '3.5" x 2"'
-	},
-	{
-		title: 'Router Admin Login Card',
-		description: 'Common default router credentials and admin URLs',
-		href: '/printables/router-credentials',
-		icon: '🔐',
-		size: '3.5" x 2"'
-	},
-	{
-		title: 'Age-Appropriate Screen Time Limits',
-		description: 'AAP-recommended screen time by age group',
-		href: '/printables/screen-time-limits',
-		icon: '⏰',
-		size: '5" x 7"'
-	},
-	{
-		title: 'Cyberbullying Warning Signs',
-		description: 'Checklist of behavioral red flags for parents',
-		href: '/printables/cyberbullying-warning-signs',
-		icon: '⚠️',
-		size: '8.5" x 11"'
-	},
-	{
-		title: 'Safe Search Quick Enable',
-		description: 'Step-by-step instructions for enabling SafeSearch on all major search engines',
-		href: '/printables/safe-search-guide',
-		icon: '🔍',
-		size: '8.5" x 11"'
-	}
+  {
+    title: 'DNS Server Quick Reference',
+    description: 'Wallet-sized card with DNS server addresses for major filtering providers',
+    href: '/printables/dns-servers',
+    icon: '🔢',
+    size: '3.5" x 2"',
+  },
+  {
+    title: 'Router Admin Login Card',
+    description: 'Common default router credentials and admin URLs',
+    href: '/printables/router-credentials',
+    icon: '🔐',
+    size: '3.5" x 2"',
+  },
+  {
+    title: 'Age-Appropriate Screen Time Limits',
+    description: 'AAP-recommended screen time by age group',
+    href: '/printables/screen-time-limits',
+    icon: '⏰',
+    size: '5" x 7"',
+  },
+  {
+    title: 'Cyberbullying Warning Signs',
+    description: 'Checklist of behavioral red flags for parents',
+    href: '/printables/cyberbullying-warning-signs',
+    icon: '⚠️',
+    size: '8.5" x 11"',
+  },
+  {
+    title: 'Safe Search Quick Enable',
+    description: 'Step-by-step instructions for enabling SafeSearch on all major search engines',
+    href: '/printables/safe-search-guide',
+    icon: '🔍',
+    size: '8.5" x 11"',
+  },
 ];
 ---
 
 <Layout
-	title="Printable Quick-Reference Cards"
-	description="Download and print helpful reference cards for internet filtering, parental controls, and online safety."
+  title="Printable Quick-Reference Cards"
+  description="Download and print helpful reference cards for internet filtering, parental controls, and online safety."
 >
-	<Breadcrumb />
+  <Breadcrumb />
 
-	<Hero
-		title="Printable Quick-Reference Cards"
-		subtitle="Download and print these helpful reference cards for easy access to important information."
-	/>
+  <Hero
+    title="Printable Quick-Reference Cards"
+    subtitle="Download and print these helpful reference cards for easy access to important information."
+  />
 
-	<div class="max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-		<Alert type="info">
-			<strong>Printing Tips:</strong> Use your browser's print function (Ctrl+P / Cmd+P) and select "Print to PDF" to save,
-			or print directly on cardstock for best results.
-		</Alert>
+  <div class="max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+    <Alert type="info">
+      <strong>Printing Tips:</strong> Use your browser's print function (Ctrl+P / Cmd+P) and select "Print to PDF" to save,
+      or print directly on cardstock for best results.
+    </Alert>
 
-		<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-			{printables.map((printable) => (
-				<Card
-					title={printable.title}
-					href={printable.href}
-					class="printable-card"
-				>
-					<div class="text-5xl mb-3">{printable.icon}</div>
-					<p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">{printable.description}</p>
-					<div class="flex gap-3 text-sm text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700 pt-3">
-						<span class="font-medium">📄 {printable.size}</span>
-					</div>
-				</Card>
-			))}
-		</section>
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+      {
+        printables.map((printable) => (
+          <Card title={printable.title} href={printable.href} class="printable-card">
+            <div class="text-5xl mb-3">{printable.icon}</div>
+            <p class="text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">{printable.description}</p>
+            <div class="flex gap-3 text-sm text-gray-500 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700 pt-3">
+              <span class="font-medium">📄 {printable.size}</span>
+            </div>
+          </Card>
+        ))
+      }
+    </section>
 
-		<section class="mt-16 p-10 bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-950 dark:to-green-950 rounded-xl">
-			<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">How to Use These Cards</h2>
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-				<div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
-					<h3 class="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-3">1. Print</h3>
-					<p class="text-gray-600 dark:text-gray-300 leading-relaxed">Click any card above, then use Ctrl+P (Cmd+P on Mac) to print. Choose "Print to PDF" to save digitally.</p>
-				</div>
-				<div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
-					<h3 class="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-3">2. Cut</h3>
-					<p class="text-gray-600 dark:text-gray-300 leading-relaxed">For wallet-sized cards (3.5" x 2"), cut along the marked borders. Consider laminating for durability.</p>
-				</div>
-				<div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
-					<h3 class="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-3">3. Store</h3>
-					<p class="text-gray-600 dark:text-gray-300 leading-relaxed">Keep cards in your wallet, attach to router, or post near computers as quick references.</p>
-				</div>
-			</div>
-		</section>
+    <section
+      class="mt-16 p-10 bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-950 dark:to-green-950 rounded-xl"
+    >
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">How to Use These Cards</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+          <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-3">1. Print</h3>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            Click any card above, then use Ctrl+P (Cmd+P on Mac) to print. Choose "Print to PDF" to save digitally.
+          </p>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+          <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-3">2. Cut</h3>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            For wallet-sized cards (3.5" x 2"), cut along the marked borders. Consider laminating for durability.
+          </p>
+        </div>
+        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm">
+          <h3 class="text-xl font-semibold text-blue-600 dark:text-blue-400 mb-3">3. Store</h3>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            Keep cards in your wallet, attach to router, or post near computers as quick references.
+          </p>
+        </div>
+      </div>
+    </section>
 
-		<section class="mt-12">
-			<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Best Printing Practices</h2>
-			<ul class="list-none ml-0 space-y-3 text-gray-700 dark:text-gray-300">
-				<li class="pl-6 relative before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:before:text-green-400 before:font-bold"><strong>Paper:</strong> Use heavyweight cardstock (110lb+) for wallet cards</li>
-				<li class="pl-6 relative before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:before:text-green-400 before:font-bold"><strong>Lamination:</strong> Laminate frequently-used cards to prevent wear</li>
-				<li class="pl-6 relative before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:before:text-green-400 before:font-bold"><strong>Color vs. B&W:</strong> All cards print clearly in black & white</li>
-				<li class="pl-6 relative before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:before:text-green-400 before:font-bold"><strong>Margins:</strong> Ensure printer margins are set to minimum for proper sizing</li>
-				<li class="pl-6 relative before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:before:text-green-400 before:font-bold"><strong>Multiple copies:</strong> Print extras to share with family members or friends</li>
-			</ul>
-		</section>
-	</div>
+    <section class="mt-12">
+      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">Best Printing Practices</h2>
+      <ul class="list-none ml-0 space-y-3 text-gray-700 dark:text-gray-300">
+        <li
+          class="pl-6 relative before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:before:text-green-400 before:font-bold"
+        >
+          <strong>Paper:</strong> Use heavyweight cardstock (110lb+) for wallet cards
+        </li>
+        <li
+          class="pl-6 relative before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:before:text-green-400 before:font-bold"
+        >
+          <strong>Lamination:</strong> Laminate frequently-used cards to prevent wear
+        </li>
+        <li
+          class="pl-6 relative before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:before:text-green-400 before:font-bold"
+        >
+          <strong>Color vs. B&W:</strong> All cards print clearly in black & white
+        </li>
+        <li
+          class="pl-6 relative before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:before:text-green-400 before:font-bold"
+        >
+          <strong>Margins:</strong> Ensure printer margins are set to minimum for proper sizing
+        </li>
+        <li
+          class="pl-6 relative before:content-['✓'] before:absolute before:left-0 before:text-green-600 dark:before:text-green-400 before:font-bold"
+        >
+          <strong>Multiple copies:</strong> Print extras to share with family members or friends
+        </li>
+      </ul>
+    </section>
+  </div>
 </Layout>

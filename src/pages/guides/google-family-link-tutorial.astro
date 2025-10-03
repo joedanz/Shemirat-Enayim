@@ -2,38 +2,46 @@
 import GuideLayout from '~/layouts/GuideLayout.astro';
 
 const metadata = {
-	title: 'Google Family Link: Complete Tutorial',
-	description: 'Set up comprehensive parental controls for Android devices and Chromebooks using Google Family Link, including screen time limits, app restrictions, content filtering, and location tracking.',
+  title: 'Google Family Link: Complete Tutorial',
+  description:
+    'Set up comprehensive parental controls for Android devices and Chromebooks using Google Family Link, including screen time limits, app restrictions, content filtering, and location tracking.',
 };
-
 ---
 
 <GuideLayout
-	metadata={metadata}
+  metadata={metadata}
   difficulty="beginner"
   timeEstimate="20-30 minutes"
   prerequisites={[
     'Google account for parent',
     'Google account or email for child',
     'Android device (5.0+) or Chromebook for child',
-    'Family Link app for parent (iOS or Android)'
+    'Family Link app for parent (iOS or Android)',
   ]}
 >
-
   <section>
     <h2>📱 What is Google Family Link?</h2>
 
-    <p>Google Family Link is a free service that lets parents manage their children's Android devices, Chromebooks, and Google accounts. It provides comprehensive parental controls for the Google ecosystem.</p>
+    <p>
+      Google Family Link is a free service that lets parents manage their children's Android devices, Chromebooks, and
+      Google accounts. It provides comprehensive parental controls for the Google ecosystem.
+    </p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
       <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
         <h3>⏰ Screen Time Management</h3>
-        <p>Set daily limits, schedule bedtime/downtime, and remotely lock devices. View detailed screen time reports by app.</p>
+        <p>
+          Set daily limits, schedule bedtime/downtime, and remotely lock devices. View detailed screen time reports by
+          app.
+        </p>
       </div>
 
       <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
         <h3>🛡️ App Management</h3>
-        <p>Approve or block app downloads from Google Play. Set age-appropriate content ratings. Hide or lock specific apps.</p>
+        <p>
+          Approve or block app downloads from Google Play. Set age-appropriate content ratings. Hide or lock specific
+          apps.
+        </p>
       </div>
 
       <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
@@ -58,7 +66,8 @@ const metadata = {
     </div>
 
     <div class="alert alert-success">
-      <strong>Free Service:</strong> Google Family Link is completely free with any Google account. No subscription or hidden costs.
+      <strong>Free Service:</strong> Google Family Link is completely free with any Google account. No subscription or hidden
+      costs.
     </div>
   </section>
 
@@ -68,7 +77,8 @@ const metadata = {
     <h3>Parent Device Setup</h3>
 
     <ol>
-      <li><strong>Download Family Link for Parents:</strong>
+      <li>
+        <strong>Download Family Link for Parents:</strong>
         <ul>
           <li><strong>Android:</strong> Google Play Store → Search "Family Link for parents"</li>
           <li><strong>iOS:</strong> App Store → Search "Google Family Link for parents"</li>
@@ -80,7 +90,8 @@ const metadata = {
     </ol>
 
     <div class="alert alert-info">
-      <strong>Web Management:</strong> You can also manage family settings at <code>families.google.com</code> from any computer, but initial setup requires the mobile app.
+      <strong>Web Management:</strong> You can also manage family settings at <code>families.google.com</code> from any computer,
+      but initial setup requires the mobile app.
     </div>
   </section>
 
@@ -95,7 +106,8 @@ const metadata = {
       <li>In Family Link parent app, tap <strong>"+"</strong> (bottom right)</li>
       <li>Select <strong>"Add supervision"</strong></li>
       <li>Have child's device nearby</li>
-      <li>On <strong>child's device:</strong>
+      <li>
+        On <strong>child's device:</strong>
         <ul>
           <li>Go to <strong>Settings → Google → Parental controls</strong></li>
           <li>Or tap notification from Family Link</li>
@@ -109,7 +121,8 @@ const metadata = {
     </ol>
 
     <div class="alert alert-warning">
-      <strong>Age 13+ Limitation:</strong> Children 13 and older can remove supervision at any time. You'll be notified if they do, but cannot prevent it. For younger children, use Option B to create a supervised account.
+      <strong>Age 13+ Limitation:</strong> Children 13 and older can remove supervision at any time. You'll be notified if
+      they do, but cannot prevent it. For younger children, use Option B to create a supervised account.
     </div>
 
     <h3>Option B: Create New Supervised Account (Under 13)</h3>
@@ -121,7 +134,8 @@ const metadata = {
       <li>Select <strong>"Create account"</strong></li>
       <li>Enter child's name</li>
       <li>Enter child's birthdate (this determines supervision level and cannot be changed later)</li>
-      <li>Create child's email address:
+      <li>
+        Create child's email address:
         <ul>
           <li>Choose from suggested addresses (@gmail.com)</li>
           <li>Or create custom address</li>
@@ -133,7 +147,10 @@ const metadata = {
     </ol>
 
     <div class="account-tip">
-      <p><strong>💡 Pro Tip:</strong> Write down child's email and password. Store securely. You'll need this to sign them in on devices.</p>
+      <p>
+        <strong>💡 Pro Tip:</strong> Write down child's email and password. Store securely. You'll need this to sign them
+        in on devices.
+      </p>
     </div>
   </section>
 
@@ -161,12 +178,15 @@ const metadata = {
 
     <ol>
       <li><strong>Backup important data</strong> (photos, contacts, etc.)</li>
-      <li>On child's device, go to <strong>Settings → System → Reset options → Erase all data (factory reset)</strong></li>
+      <li>
+        On child's device, go to <strong>Settings → System → Reset options → Erase all data (factory reset)</strong>
+      </li>
       <li>After reset, follow "New Device Setup" above</li>
     </ol>
 
     <div class="alert alert-warning">
-      <strong>Factory Reset Required:</strong> Adding Family Link supervision to an existing Android device typically requires a factory reset. Backup data first!
+      <strong>Factory Reset Required:</strong> Adding Family Link supervision to an existing Android device typically requires
+      a factory reset. Backup data first!
     </div>
 
     <h3>Alternative: Add Google Account Without Reset</h3>
@@ -193,7 +213,8 @@ const metadata = {
       <li>Tap child's profile</li>
       <li>Tap <strong>"Controls"</strong></li>
       <li>Tap <strong>"Daily limit"</strong></li>
-      <li>Set limit for each day:
+      <li>
+        Set limit for each day:
         <ul>
           <li>Toggle <strong>"Set a daily limit"</strong> ON</li>
           <li>Choose hours and minutes (e.g., 2 hours)</li>
@@ -243,7 +264,8 @@ const metadata = {
       <li>Toggle <strong>"Set downtime"</strong> ON</li>
       <li>Set start time (e.g., 8:00 PM)</li>
       <li>Set end time (e.g., 7:00 AM)</li>
-      <li>Choose which apps are allowed during downtime:
+      <li>
+        Choose which apps are allowed during downtime:
         <ul>
           <li><strong>Calls only</strong> (phone and messages only)</li>
           <li><strong>Selected apps</strong> (choose specific apps like alarm clock)</li>
@@ -288,9 +310,12 @@ const metadata = {
     <ol>
       <li>In child's profile → <strong>Controls</strong></li>
       <li>Tap <strong>"Google Play"</strong></li>
-      <li>Under <strong>"Require approval for"</strong>:
+      <li>
+        Under <strong>"Require approval for"</strong>:
         <ul>
-          <li><strong>"All content"</strong> - Approve every app, game, movie, book (recommended for young children)</li>
+          <li>
+            <strong>"All content"</strong> - Approve every app, game, movie, book (recommended for young children)
+          </li>
           <li><strong>"In-app purchases"</strong> - Approve spending only</li>
           <li><strong>"Content above rating"</strong> - Only approve apps above chosen age rating</li>
         </ul>
@@ -313,7 +338,8 @@ const metadata = {
     <ol>
       <li>In child's profile → <strong>Controls → Google Play</strong></li>
       <li>Tap <strong>"Content ratings"</strong></li>
-      <li>Set maximum rating for each category:
+      <li>
+        Set maximum rating for each category:
         <ul>
           <li><strong>Apps & Games:</strong> Everyone, Everyone 10+, Teen, Mature 17+</li>
           <li><strong>Movies:</strong> G, PG, PG-13, R, NC-17</li>
@@ -369,7 +395,8 @@ const metadata = {
     <ol>
       <li>In child's profile, tap <strong>"App activity"</strong></li>
       <li>See list of installed apps</li>
-      <li>Tap any app to:
+      <li>
+        Tap any app to:
         <ul>
           <li><strong>"Block app"</strong> - Hides app icon, child cannot open</li>
           <li><strong>"Set timer"</strong> - Limit usage (e.g., TikTok: 30 min/day)</li>
@@ -381,7 +408,9 @@ const metadata = {
     <div class="recommended-actions">
       <h4>Common App Management:</h4>
       <ul>
-        <li><strong>Block:</strong> VPN apps (can bypass filtering), alternative app stores, web browsers other than Chrome</li>
+        <li>
+          <strong>Block:</strong> VPN apps (can bypass filtering), alternative app stores, web browsers other than Chrome
+        </li>
         <li><strong>Time Limit:</strong> Social media (TikTok, Instagram), games (Roblox, Minecraft), YouTube</li>
         <li><strong>Always Allow:</strong> Khan Academy, Duolingo, Google Classroom, educational apps</li>
       </ul>
@@ -396,7 +425,8 @@ const metadata = {
     <ol>
       <li>In child's profile → <strong>Controls</strong></li>
       <li>Tap <strong>"Filters on Google Chrome"</strong></li>
-      <li>Choose filtering level:
+      <li>
+        Choose filtering level:
         <ul>
           <li><strong>"Try to block mature sites"</strong> - Automatic filtering (recommended for ages 8-13)</li>
           <li><strong>"Only allow certain sites"</strong> - Whitelist mode (best for young children under 8)</li>
@@ -418,7 +448,8 @@ const metadata = {
     </ol>
 
     <div class="alert alert-warning">
-      <strong>Chrome Only:</strong> Content filtering only applies to Google Chrome. Block other browsers (Firefox, Opera, Edge) in app restrictions to prevent bypass.
+      <strong>Chrome Only:</strong> Content filtering only applies to Google Chrome. Block other browsers (Firefox, Opera,
+      Edge) in app restrictions to prevent bypass.
     </div>
 
     <h3>SafeSearch Enforcement</h3>
@@ -435,11 +466,14 @@ const metadata = {
     <ol>
       <li>In child's profile → <strong>Controls</strong></li>
       <li>Tap <strong>"YouTube"</strong> (or "YouTube Kids")</li>
-      <li>Choose YouTube experience:
+      <li>
+        Choose YouTube experience:
         <ul>
           <li><strong>"YouTube Kids"</strong> (ages 3-12) - Highly curated, kid-friendly content only</li>
           <li><strong>"Supervised YouTube: Explore"</strong> (ages 9+) - Broader content, filters mature topics</li>
-          <li><strong>"Supervised YouTube: Explore More"</strong> (ages 13+) - Almost all content except explicit material</li>
+          <li>
+            <strong>"Supervised YouTube: Explore More"</strong> (ages 13+) - Almost all content except explicit material
+          </li>
           <li><strong>"Most of YouTube"</strong> (teens) - Full YouTube with some restrictions</li>
         </ul>
       </li>
@@ -469,7 +503,8 @@ const metadata = {
     </div>
 
     <div class="alert alert-info">
-      <strong>YouTube Activity:</strong> If you enable YouTube tracking, you can see videos your child watches in the Family Link activity reports.
+      <strong>YouTube Activity:</strong> If you enable YouTube tracking, you can see videos your child watches in the Family
+      Link activity reports.
     </div>
   </section>
 
@@ -482,7 +517,8 @@ const metadata = {
       <li>In child's profile → <strong>Controls</strong></li>
       <li>Tap <strong>"Location"</strong></li>
       <li>Toggle <strong>"Location sharing"</strong> ON</li>
-      <li>Ensure child's device:
+      <li>
+        Ensure child's device:
         <ul>
           <li>Has location services enabled (Settings → Location → ON)</li>
           <li>Is signed in to Google account</li>
@@ -498,7 +534,8 @@ const metadata = {
       <li>Tap child's profile</li>
       <li>Tap <strong>"Location"</strong></li>
       <li>See device location on map in real-time</li>
-      <li>Tap device name to:
+      <li>
+        Tap device name to:
         <ul>
           <li>Play sound (helps find device if lost nearby)</li>
           <li>View location history</li>
@@ -513,7 +550,8 @@ const metadata = {
     <ol>
       <li>In Family Link parent app → child's profile → <strong>Location</strong></li>
       <li>Tap <strong>"Set up alerts"</strong></li>
-      <li>Choose location:
+      <li>
+        Choose location:
         <ul>
           <li>Home (set home address)</li>
           <li>School</li>
@@ -521,7 +559,8 @@ const metadata = {
           <li>Custom location</li>
         </ul>
       </li>
-      <li>Set notification preferences:
+      <li>
+        Set notification preferences:
         <ul>
           <li>Alert when child arrives</li>
           <li>Alert when child leaves</li>
@@ -530,7 +569,8 @@ const metadata = {
     </ol>
 
     <div class="alert alert-info">
-      <strong>Battery Impact:</strong> Location tracking uses GPS and can drain battery. Child's device should be charged nightly. Consider enabling battery saver mode.
+      <strong>Battery Impact:</strong> Location tracking uses GPS and can drain battery. Child's device should be charged
+      nightly. Consider enabling battery saver mode.
     </div>
   </section>
 
@@ -543,7 +583,8 @@ const metadata = {
       <li>Open Family Link parent app</li>
       <li>Tap child's profile</li>
       <li>Tap <strong>"Activity"</strong></li>
-      <li>View comprehensive report:
+      <li>
+        View comprehensive report:
         <ul>
           <li><strong>Screen time:</strong> Total daily/weekly time by device</li>
           <li><strong>App activity:</strong> Time spent in each app</li>
@@ -592,7 +633,8 @@ const metadata = {
     </div>
 
     <div class="alert alert-success">
-      <strong>Transparency:</strong> Children can see that their activity is being tracked. Google recommends open communication about monitoring with your child.
+      <strong>Transparency:</strong> Children can see that their activity is being tracked. Google recommends open communication
+      about monitoring with your child.
     </div>
   </section>
 
@@ -606,7 +648,8 @@ const metadata = {
     <ol>
       <li>In child's profile → <strong>Controls</strong></li>
       <li>Tap <strong>"Android apps → App permissions"</strong></li>
-      <li>Set permissions:
+      <li>
+        Set permissions:
         <ul>
           <li><strong>Location:</strong> Allow/deny location access for apps</li>
           <li><strong>Camera:</strong> Control camera access</li>
@@ -620,7 +663,8 @@ const metadata = {
 
     <ol>
       <li>In child's profile → <strong>Settings</strong></li>
-      <li>Configure:
+      <li>
+        Configure:
         <ul>
           <li><strong>"Account info"</strong> - View child's email, birthdate, change password</li>
           <li><strong>"Controls on Google services"</strong> - Manage YouTube, Search, Assistant settings</li>
@@ -739,8 +783,13 @@ const metadata = {
     <p>Google Family Link only filters Chrome browsing. Add network-level filtering for comprehensive protection:</p>
 
     <ul>
-      <li><strong><a href="/guides/opendns-tutorial">Set up OpenDNS</a></strong> - Free DNS filtering for entire home network</li>
-      <li><strong><a href="/guides/cleanbrowsing-tutorial">Set up CleanBrowsing</a></strong> - Alternative DNS filtering with family presets</li>
+      <li>
+        <strong><a href="/guides/opendns-tutorial">Set up OpenDNS</a></strong> - Free DNS filtering for entire home network
+      </li>
+      <li>
+        <strong><a href="/guides/cleanbrowsing-tutorial">Set up CleanBrowsing</a></strong> - Alternative DNS filtering with
+        family presets
+      </li>
     </ul>
 
     <p>DNS filtering blocks inappropriate content across:</p>
@@ -755,7 +804,10 @@ const metadata = {
 
     <ul>
       <li><strong>Secure Device PIN:</strong> Set PIN/pattern that child doesn't know (prevents Settings access)</li>
-      <li><strong>Developer Options:</strong> Ensure "Developer options" is disabled (Settings → System → About → tap "Build number" 7 times to reveal; then disable)</li>
+      <li>
+        <strong>Developer Options:</strong> Ensure "Developer options" is disabled (Settings → System → About → tap "Build
+        number" 7 times to reveal; then disable)
+      </li>
       <li><strong>Supervised Areas:</strong> Keep devices in common areas (living room, kitchen) during use</li>
       <li><strong>Nightly Charging Station:</strong> Collect devices at bedtime, charge in parent's room</li>
     </ul>
@@ -770,7 +822,8 @@ const metadata = {
     </ul>
 
     <div class="alert alert-success">
-      <strong>Layered Security:</strong> Google Family Link + DNS filtering + physical supervision + open communication = comprehensive protection.
+      <strong>Layered Security:</strong> Google Family Link + DNS filtering + physical supervision + open communication =
+      comprehensive protection.
     </div>
   </section>
 
@@ -780,47 +833,74 @@ const metadata = {
     <div class="faq">
       <div class="faq-item">
         <h4>Q: Can my child (age 13+) remove Family Link supervision?</h4>
-        <p><strong>A:</strong> Yes, if they're 13 or older. They can stop supervision from their device (you'll be notified). For children under 13 with supervised accounts, they cannot remove supervision until they turn 13.</p>
+        <p>
+          <strong>A:</strong> Yes, if they're 13 or older. They can stop supervision from their device (you'll be notified).
+          For children under 13 with supervised accounts, they cannot remove supervision until they turn 13.
+        </p>
       </div>
 
       <div class="faq-item">
         <h4>Q: Does Family Link work on iPhone/iPad?</h4>
-        <p><strong>A:</strong> No. Family Link only manages Android devices and Chromebooks. For iOS devices, use <a href="/guides/apple-screen-time-tutorial">Apple Screen Time</a> instead. Parents can use the Family Link app on iOS to manage their child's Android devices.</p>
+        <p>
+          <strong>A:</strong> No. Family Link only manages Android devices and Chromebooks. For iOS devices, use <a
+            href="/guides/apple-screen-time-tutorial">Apple Screen Time</a
+          > instead. Parents can use the Family Link app on iOS to manage their child's Android devices.
+        </p>
       </div>
 
       <div class="faq-item">
         <h4>Q: Can I see my child's text messages or phone calls?</h4>
-        <p><strong>A:</strong> No. Family Link does not provide access to SMS content, call logs, or in-app messages (Snapchat, WhatsApp, etc.). It only tracks app usage time and Chrome browsing.</p>
+        <p>
+          <strong>A:</strong> No. Family Link does not provide access to SMS content, call logs, or in-app messages (Snapchat,
+          WhatsApp, etc.). It only tracks app usage time and Chrome browsing.
+        </p>
       </div>
 
       <div class="faq-item">
         <h4>Q: What happens when my child turns 13?</h4>
-        <p><strong>A:</strong> They can choose to remove supervision themselves. Google will notify you 30 days before their 13th birthday. You can discuss continuing supervision with them (voluntary).</p>
+        <p>
+          <strong>A:</strong> They can choose to remove supervision themselves. Google will notify you 30 days before their
+          13th birthday. You can discuss continuing supervision with them (voluntary).
+        </p>
       </div>
 
       <div class="faq-item">
         <h4>Q: Can my child use a VPN to bypass restrictions?</h4>
-        <p><strong>A:</strong> VPN apps can bypass content filtering and location tracking. Block VPN apps in app management. Use router-level DNS filtering (OpenDNS/CleanBrowsing) to prevent VPN bypass.</p>
+        <p>
+          <strong>A:</strong> VPN apps can bypass content filtering and location tracking. Block VPN apps in app management.
+          Use router-level DNS filtering (OpenDNS/CleanBrowsing) to prevent VPN bypass.
+        </p>
       </div>
 
       <div class="faq-item">
         <h4>Q: Does Family Link drain my child's battery?</h4>
-        <p><strong>A:</strong> Minimal impact. Location tracking uses GPS, which can drain battery if constantly active. Ensure device is charged nightly. Most features (screen time, app management) have negligible battery impact.</p>
+        <p>
+          <strong>A:</strong> Minimal impact. Location tracking uses GPS, which can drain battery if constantly active. Ensure
+          device is charged nightly. Most features (screen time, app management) have negligible battery impact.
+        </p>
       </div>
 
       <div class="faq-item">
         <h4>Q: Can I manage Family Link from a computer?</h4>
-        <p><strong>A:</strong> Yes! Go to <code>families.google.com</code> to view activity, manage settings, approve apps, and lock devices from any web browser. Initial setup requires the mobile app.</p>
+        <p>
+          <strong>A:</strong> Yes! Go to <code>families.google.com</code> to view activity, manage settings, approve apps,
+          and lock devices from any web browser. Initial setup requires the mobile app.
+        </p>
       </div>
 
       <div class="faq-item">
         <h4>Q: My child's school requires apps blocked by content ratings. What do I do?</h4>
-        <p><strong>A:</strong> Manually approve the app: Family Link app → child's profile → Google Play → find the app → tap "Allow". This overrides content ratings for that specific app.</p>
+        <p>
+          <strong>A:</strong> Manually approve the app: Family Link app → child's profile → Google Play → find the app →
+          tap "Allow". This overrides content ratings for that specific app.
+        </p>
       </div>
 
       <div class="faq-item">
         <h4>Q: Is Google Family Link really free?</h4>
-        <p><strong>A:</strong> Yes, completely free with any Google account. No premium tier, subscriptions, or hidden costs.</p>
+        <p>
+          <strong>A:</strong> Yes, completely free with any Google account. No premium tier, subscriptions, or hidden costs.
+        </p>
       </div>
     </div>
   </section>
@@ -829,26 +909,37 @@ const metadata = {
     <h2>🎯 Next Steps</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-      <a href="/guides/apple-screen-time-tutorial" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+      <a
+        href="/guides/apple-screen-time-tutorial"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
         <h3>🍎 Apple Screen Time</h3>
         <p>Set up parental controls for iPhone, iPad, and Mac devices.</p>
       </a>
 
-      <a href="/guides/microsoft-family-accounts" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+      <a
+        href="/guides/microsoft-family-accounts"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
         <h3>🖥️ Microsoft Family Safety</h3>
         <p>Manage Windows PCs, Xbox consoles, and track family locations.</p>
       </a>
 
-      <a href="/guides/opendns-tutorial" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+      <a
+        href="/guides/opendns-tutorial"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
         <h3>🛡️ Add DNS Filtering</h3>
         <p>Network-wide content filtering that works across all devices and browsers.</p>
       </a>
 
-      <a href="/guides/social-media-safety" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+      <a
+        href="/guides/social-media-safety"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
         <h3>📱 Social Media Safety</h3>
         <p>Learn how to configure privacy settings on popular social platforms.</p>
       </a>
     </div>
   </section>
 </GuideLayout>
-

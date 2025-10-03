@@ -3,7 +3,8 @@ import GuideLayout from '~/layouts/GuideLayout.astro';
 
 const metadata = {
   title: 'Router Configuration for Parental Controls',
-  description: 'Learn to configure your home router for network-wide parental controls including scheduling, device management, and access restrictions.',
+  description:
+    'Learn to configure your home router for network-wide parental controls including scheduling, device management, and access restrictions.',
 };
 ---
 
@@ -15,14 +16,12 @@ const metadata = {
     'Access to your router admin panel',
     'Router admin username and password',
     'Basic understanding of your network setup',
-    'List of devices to manage (MAC addresses helpful)'
+    'List of devices to manage (MAC addresses helpful)',
   ]}
 >
   <Fragment slot="breadcrumb">
     <li class="flex items-center">
-      <a href="/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
-        Home
-      </a>
+      <a href="/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"> Home </a>
       <span class="mx-2 text-gray-500">/</span>
     </li>
     <li class="flex items-center">
@@ -31,19 +30,20 @@ const metadata = {
       </a>
       <span class="mx-2 text-gray-500">/</span>
     </li>
-    <li class="text-gray-700 dark:text-gray-300">
-      Router Configuration
-    </li>
+    <li class="text-gray-700 dark:text-gray-300">Router Configuration</li>
   </Fragment>
 
   <section>
     <h2>Why Configure Your Router?</h2>
     <p>
-      Your router is the gateway to the internet for every device in your home. By configuring parental controls at the router level, you can enforce restrictions network-wide without configuring each device individually. This provides a powerful baseline of protection that's harder to bypass.
+      Your router is the gateway to the internet for every device in your home. By configuring parental controls at the
+      router level, you can enforce restrictions network-wide without configuring each device individually. This
+      provides a powerful baseline of protection that's harder to bypass.
     </p>
 
     <div class="alert alert-success">
-      <strong>Best for:</strong> Network-wide protection, time-based controls, device management, backup layer to device-level controls.
+      <strong>Best for:</strong> Network-wide protection, time-based controls, device management, backup layer to device-level
+      controls.
     </div>
   </section>
 
@@ -63,7 +63,8 @@ const metadata = {
       <li>Open a web browser</li>
       <li>Type the router's IP address in the address bar</li>
       <li>Enter admin username and password</li>
-      <li>Common defaults (if you haven't changed them):
+      <li>
+        Common defaults (if you haven't changed them):
         <ul>
           <li>admin/admin</li>
           <li>admin/password</li>
@@ -74,7 +75,8 @@ const metadata = {
     </ol>
 
     <div class="alert alert-warning">
-      <strong>Security Reminder:</strong> If you're still using the default admin password, change it immediately! Default passwords are publicly known and a security risk.
+      <strong>Security Reminder:</strong> If you're still using the default admin password, change it immediately! Default
+      passwords are publicly known and a security risk.
     </div>
   </section>
 
@@ -95,7 +97,8 @@ const metadata = {
     <ol>
       <li>Enable access control or parental controls</li>
       <li>Select devices to manage (by name or MAC address)</li>
-      <li>Set allowed internet access times:
+      <li>
+        Set allowed internet access times:
         <ul>
           <li>Weekdays: e.g., 6 AM-8 AM, 4 PM-8 PM</li>
           <li>Weekends: e.g., 8 AM-9 PM</li>
@@ -106,7 +109,8 @@ const metadata = {
     </ol>
 
     <div class="alert alert-info">
-      <strong>Strategy:</strong> Block during homework time (e.g., 4-6 PM), late night (9 PM+), and early morning. Allow access for legitimate use during appropriate hours.
+      <strong>Strategy:</strong> Block during homework time (e.g., 4-6 PM), late night (9 PM+), and early morning. Allow
+      access for legitimate use during appropriate hours.
     </div>
   </section>
 
@@ -117,7 +121,8 @@ const metadata = {
     <ol>
       <li>Find "Connected Devices", "Device List", or "DHCP Client List"</li>
       <li>View all devices currently connected to your network</li>
-      <li>Identify each device:
+      <li>
+        Identify each device:
         <ul>
           <li>Check device name (often shows up automatically)</li>
           <li>Match MAC addresses (Settings → About on phones/tablets)</li>
@@ -149,7 +154,9 @@ const metadata = {
 
     <h3>Why Configure DNS on Router?</h3>
     <p>
-      Configuring filtering DNS servers at the router level protects all devices automatically. See our <a href="/guides/dns-filtering">DNS Filtering Guide</a> for detailed DNS provider information.
+      Configuring filtering DNS servers at the router level protects all devices automatically. See our <a
+        href="/guides/dns-filtering">DNS Filtering Guide</a
+      > for detailed DNS provider information.
     </p>
 
     <h3>Changing Router DNS</h3>
@@ -157,7 +164,8 @@ const metadata = {
       <li>Find "Internet", "WAN", or "Network Settings" section</li>
       <li>Look for "DNS" or "DNS Server" settings</li>
       <li>Change from "Automatic" or "ISP" to "Manual" or "Custom"</li>
-      <li>Enter filtering DNS addresses (e.g., CleanBrowsing Family Filter):
+      <li>
+        Enter filtering DNS addresses (e.g., CleanBrowsing Family Filter):
         <ul>
           <li>Primary: 185.228.168.168</li>
           <li>Secondary: 185.228.169.168</li>
@@ -168,7 +176,8 @@ const metadata = {
     </ol>
 
     <div class="alert alert-success">
-      <strong>Benefit:</strong> DNS filtering at the router protects all devices—computers, phones, tablets, gaming consoles, smart TVs—automatically.
+      <strong>Benefit:</strong> DNS filtering at the router protects all devices—computers, phones, tablets, gaming consoles,
+      smart TVs—automatically.
     </div>
   </section>
 
@@ -182,7 +191,9 @@ const metadata = {
           <li class="mb-1 text-sm leading-relaxed">Advanced parental controls built-in</li>
           <li class="mb-1 text-sm leading-relaxed">App and website filtering</li>
           <li class="mb-1 text-sm leading-relaxed">Time limits and rewards</li>
-          <li class="mb-1 text-sm leading-relaxed">Location: Advanced → Disney Circle or netgear.com/landings/circle</li>
+          <li class="mb-1 text-sm leading-relaxed">
+            Location: Advanced → Disney Circle or netgear.com/landings/circle
+          </li>
         </ul>
       </div>
 
@@ -280,7 +291,9 @@ const metadata = {
       <ul class="m-0 pl-2 list-none">
         <li class="mb-3 text-base leading-relaxed pl-2">✓ Change default admin username and password</li>
         <li class="mb-3 text-base leading-relaxed pl-2">✓ Update router firmware to latest version</li>
-        <li class="mb-3 text-base leading-relaxed pl-2">✓ Disable WPS (WiFi Protected Setup) - security vulnerability</li>
+        <li class="mb-3 text-base leading-relaxed pl-2">
+          ✓ Disable WPS (WiFi Protected Setup) - security vulnerability
+        </li>
         <li class="mb-3 text-base leading-relaxed pl-2">✓ Use WPA3 or WPA2 encryption (not WEP or WPA)</li>
         <li class="mb-3 text-base leading-relaxed pl-2">✓ Create strong WiFi password (12+ characters)</li>
         <li class="mb-3 text-base leading-relaxed pl-2">✓ Disable remote management unless needed</li>
@@ -292,7 +305,8 @@ const metadata = {
     </div>
 
     <div class="alert alert-warning">
-      <strong>Security is Essential:</strong> An insecure router defeats parental controls. Children (or neighbors) can access admin panel and disable restrictions if not properly secured.
+      <strong>Security is Essential:</strong> An insecure router defeats parental controls. Children (or neighbors) can access
+      admin panel and disable restrictions if not properly secured.
     </div>
   </section>
 
@@ -384,29 +398,46 @@ const metadata = {
     <h2>🎯 Next Steps</h2>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
-      <a href="/guides/dns-filtering" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+      <a
+        href="/guides/dns-filtering"
+        class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5"
+      >
         <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">🌐 DNS Filtering</h3>
-        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Configure DNS filtering at router level for content protection</p>
+        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">
+          Configure DNS filtering at router level for content protection
+        </p>
       </a>
 
-      <a href="/guides/guest-networks" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+      <a
+        href="/guides/guest-networks"
+        class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5"
+      >
         <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">📡 Guest Networks</h3>
         <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Create filtered WiFi networks for children's devices</p>
       </a>
 
-      <a href="/guides/ios-screen-time" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+      <a
+        href="/guides/ios-screen-time"
+        class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5"
+      >
         <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">📱 Device Controls</h3>
         <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Add device-level protection for mobile devices</p>
       </a>
 
-      <a href="/guides/firewall" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+      <a
+        href="/guides/firewall"
+        class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5"
+      >
         <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">🔥 Advanced Firewall</h3>
-        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">More advanced network protection for tech-savvy families</p>
+        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">
+          More advanced network protection for tech-savvy families
+        </p>
       </a>
     </div>
 
     <div class="alert alert-info">
-      <strong>Layered Approach:</strong> Router controls (time management) + DNS filtering (content blocking) + device controls (mobile protection) = comprehensive coverage.
+      <strong>Layered Approach:</strong> Router controls (time management) + DNS filtering (content blocking) + device controls
+      (mobile protection) = comprehensive coverage.
     </div>
   </Fragment>
 </GuideLayout>

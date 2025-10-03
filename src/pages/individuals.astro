@@ -2,7 +2,6 @@
 import Layout from '~/layouts/PageLayout.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Note from '~/components/widgets/Note.astro';
-import Content from '~/components/widgets/Content.astro';
 import Features from '~/components/widgets/Features.astro';
 import Steps from '~/components/widgets/Steps.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
@@ -10,7 +9,8 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 
 const metadata = {
   title: 'Resources for Individuals',
-  description: 'Take control of your digital environment with personal filtering solutions and accountability tools that support your internet safety goals.',
+  description:
+    'Take control of your digital environment with personal filtering solutions and accountability tools that support your internet safety goals.',
 };
 ---
 
@@ -28,9 +28,7 @@ const metadata = {
 
   <!-- Note Widget ******************* -->
   <Note>
-    <Fragment slot="title">
-      Taking the first step is commendable
-    </Fragment>
+    <Fragment slot="title"> Taking the first step is commendable </Fragment>
     This page will help you implement practical solutions to protect yourself online while respecting your autonomy.
   </Note>
 
@@ -41,14 +39,14 @@ const metadata = {
         Taking Control of Your Digital Environment
       </h2>
       <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
-        Whether you're looking to establish healthier internet habits, reduce exposure to inappropriate
-        content, or create accountability for yourself, you've taken an important first step. Personal
-        filtering and accountability aren't about restriction — they're about freedom: freedom from
-        compulsive behaviors, unwanted content, and digital distractions that don't align with your values.
+        Whether you're looking to establish healthier internet habits, reduce exposure to inappropriate content, or
+        create accountability for yourself, you've taken an important first step. Personal filtering and accountability
+        aren't about restriction — they're about freedom: freedom from compulsive behaviors, unwanted content, and
+        digital distractions that don't align with your values.
       </p>
       <p class="text-lg text-gray-700 dark:text-gray-300">
-        This page provides practical, respectful guidance for individuals who want to take responsibility
-        for their digital wellbeing.
+        This page provides practical, respectful guidance for individuals who want to take responsibility for their
+        digital wellbeing.
       </p>
     </div>
   </section>
@@ -65,7 +63,7 @@ const metadata = {
       },
       {
         title: 'Support',
-        description: 'Provides structure when willpower alone isn\'t enough',
+        description: "Provides structure when willpower alone isn't enough",
         icon: 'tabler:lifebuoy',
       },
       {
@@ -199,9 +197,7 @@ const metadata = {
   <!-- Content Section **************** -->
   <section class="px-4 py-8 sm:px-6 mx-auto lg:px-8 lg:py-12 max-w-6xl bg-blue-50 dark:bg-transparent">
     <div>
-      <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-6">
-        Recommended Solutions
-      </h2>
+      <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-6">Recommended Solutions</h2>
 
       <div class="space-y-6">
         <div>
@@ -233,8 +229,8 @@ const metadata = {
 
         <div class="bg-blue-50 dark:bg-blue-900/50 border-l-4 border-blue-400 dark:border-blue-500 p-4 rounded mt-6">
           <p class="text-blue-800 dark:text-blue-100">
-            <strong>Pro tip:</strong> The most effective solution is layered protection. Combine network-level
-            DNS filtering (catches everything) with device-specific software (adds accountability).
+            <strong>Pro tip:</strong> The most effective solution is layered protection. Combine network-level DNS filtering
+            (catches everything) with device-specific software (adds accountability).
           </p>
         </div>
       </div>
@@ -244,9 +240,7 @@ const metadata = {
   <!-- Content Section **************** -->
   <section class="px-4 py-8 sm:px-6 mx-auto lg:px-8 lg:py-12 max-w-6xl">
     <div>
-      <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-6">
-        Device-Specific Guidance
-      </h2>
+      <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-6">Device-Specific Guidance</h2>
 
       <div class="space-y-6">
         <div>
@@ -342,14 +336,14 @@ const metadata = {
     title="Common Questions"
     items={[
       {
-        title: 'What if I live with others who don\'t want filtering?',
+        title: "What if I live with others who don't want filtering?",
         description:
           'Focus on device-level solutions rather than network-wide filtering. Install filtering software on your personal devices, use your own user account with restrictions, and consider a separate filtered WiFi network just for your devices.',
       },
       {
         title: 'Can I trust accountability partners with my reports?',
         description:
-          'Choose accountability partners wisely. They should be mature, trustworthy, and supportive rather than judgmental. Many people choose clergy, counselors, mentors, or close friends. Some accountability services allow you to see what will be reported before it\'s sent.',
+          "Choose accountability partners wisely. They should be mature, trustworthy, and supportive rather than judgmental. Many people choose clergy, counselors, mentors, or close friends. Some accountability services allow you to see what will be reported before it's sent.",
       },
       {
         title: 'What if I work in tech and need unrestricted access?',
@@ -379,9 +373,7 @@ const metadata = {
       },
     ]}
   >
-    <Fragment slot="title">
-      Ready to Get Started?
-    </Fragment>
+    <Fragment slot="title"> Ready to Get Started? </Fragment>
 
     <Fragment slot="subtitle">
       Browse our step-by-step guides to implement filtering and accountability on your devices.

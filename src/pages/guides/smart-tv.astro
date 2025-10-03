@@ -2,343 +2,360 @@
 import GuideLayout from '~/layouts/GuideLayout.astro';
 
 const metadata = {
-	title: 'Smart TV & Streaming Device Protection',
-	description: 'Guide to setting up parental controls and content filtering on smart TVs and streaming devices including Roku, Apple TV, Fire TV, and more.',
+  title: 'Smart TV & Streaming Device Protection',
+  description:
+    'Guide to setting up parental controls and content filtering on smart TVs and streaming devices including Roku, Apple TV, Fire TV, and more.',
 };
-
 ---
 
 <GuideLayout
-	metadata={metadata}
-	difficulty="intermediate"
-	timeEstimate="15-30 minutes"
-	prerequisites={[
-		'Smart TV or streaming device',
-		'Account credentials for streaming services',
-		'Access to TV settings or device admin'
-	]}
+  metadata={metadata}
+  difficulty="intermediate"
+  timeEstimate="15-30 minutes"
+  prerequisites={[
+    'Smart TV or streaming device',
+    'Account credentials for streaming services',
+    'Access to TV settings or device admin',
+  ]}
 >
+  <Fragment slot="breadcrumb">
+    <li class="flex items-center">
+      <a href="/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"> Home </a>
+      <span class="mx-2 text-gray-500">/</span>
+    </li>
+    <li class="flex items-center">
+      <a href="/methods" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+        Protection Methods
+      </a>
+      <span class="mx-2 text-gray-500">/</span>
+    </li>
+    <li class="text-gray-700 dark:text-gray-300">Smart TV & Streaming Device Protection</li>
+  </Fragment>
 
-	<Fragment slot="breadcrumb">
-		<li class="flex items-center">
-			<a href="/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
-				Home
-			</a>
-			<span class="mx-2 text-gray-500">/</span>
-		</li>
-		<li class="flex items-center">
-			<a href="/methods" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
-				Protection Methods
-			</a>
-			<span class="mx-2 text-gray-500">/</span>
-		</li>
-		<li class="text-gray-700 dark:text-gray-300">
-			Smart TV & Streaming Device Protection
-		</li>
-	</Fragment>
+  <section>
+    <h2>Smart TV Protection Challenges</h2>
+    <p>
+      Smart TVs and streaming devices present unique challenges. They often have web browsers, app stores, and direct
+      access to streaming services—all potential sources of inappropriate content. Unlike phones or computers, TVs are
+      typically in shared family spaces, requiring careful balance between filtering and usability.
+    </p>
 
-	<section>
-		<h2>Smart TV Protection Challenges</h2>
-		<p>
-			Smart TVs and streaming devices present unique challenges. They often have web browsers, app stores, and direct access to streaming services—all potential sources of inappropriate content. Unlike phones or computers, TVs are typically in shared family spaces, requiring careful balance between filtering and usability.
-		</p>
+    <div class="alert alert-warning">
+      <strong>Key Challenge:</strong> Smart TVs have limited built-in parental controls. Most protection must come from streaming
+      service settings, network-level filtering, or physical placement strategies.
+    </div>
+  </section>
 
-		<div class="alert alert-warning">
-			<strong>Key Challenge:</strong> Smart TVs have limited built-in parental controls. Most protection must come from streaming service settings, network-level filtering, or physical placement strategies.
-		</div>
-	</section>
+  <section>
+    <h2>📺 Platform-Specific Controls</h2>
 
-	<section>
-		<h2>📺 Platform-Specific Controls</h2>
+    <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+      <h3>Roku</h3>
+      <h4>Setting Up Parental Controls</h4>
+      <ol>
+        <li>Press Home → Settings → Parental controls</li>
+        <li>Create a 4-digit PIN</li>
+        <li>
+          Enable:
+          <ul>
+            <li>Require PIN to add channels</li>
+            <li>Require PIN to make purchases</li>
+            <li>Enable content ratings (TV and Movie ratings)</li>
+          </ul>
+        </li>
+        <li>Set rating limits (e.g., TV-14, PG-13)</li>
+      </ol>
 
-		<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-			<h3>Roku</h3>
-			<h4>Setting Up Parental Controls</h4>
-			<ol>
-				<li>Press Home → Settings → Parental controls</li>
-				<li>Create a 4-digit PIN</li>
-				<li>Enable:
-					<ul>
-						<li>Require PIN to add channels</li>
-						<li>Require PIN to make purchases</li>
-						<li>Enable content ratings (TV and Movie ratings)</li>
-					</ul>
-				</li>
-				<li>Set rating limits (e.g., TV-14, PG-13)</li>
-			</ol>
+      <h4>Additional Protection</h4>
+      <ul>
+        <li>Block specific channels in channel list</li>
+        <li>Create kids' profiles in streaming apps (Netflix Kids, Disney+, etc.)</li>
+        <li>Use Roku Kids & Family category for approved content only</li>
+        <li>Disable screen mirroring to prevent unfiltered casting</li>
+      </ul>
+    </div>
 
-			<h4>Additional Protection</h4>
-			<ul>
-				<li>Block specific channels in channel list</li>
-				<li>Create kids' profiles in streaming apps (Netflix Kids, Disney+, etc.)</li>
-				<li>Use Roku Kids & Family category for approved content only</li>
-				<li>Disable screen mirroring to prevent unfiltered casting</li>
-			</ul>
-		</div>
+    <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+      <h3>Apple TV</h3>
+      <h4>Restrictions Setup</h4>
+      <ol>
+        <li>Settings → General → Restrictions</li>
+        <li>Turn on Restrictions and create passcode</li>
+        <li>
+          Configure:
+          <ul>
+            <li>Apps (hide specific apps like YouTube, Safari)</li>
+            <li>iTunes Store (disable or restrict by rating)</li>
+            <li>Content Ratings (Movies, TV, Music, Apps)</li>
+            <li>Game Center (disable multiplayer if needed)</li>
+          </ul>
+        </li>
+      </ol>
 
-		<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-			<h3>Apple TV</h3>
-			<h4>Restrictions Setup</h4>
-			<ol>
-				<li>Settings → General → Restrictions</li>
-				<li>Turn on Restrictions and create passcode</li>
-				<li>Configure:
-					<ul>
-						<li>Apps (hide specific apps like YouTube, Safari)</li>
-						<li>iTunes Store (disable or restrict by rating)</li>
-						<li>Content Ratings (Movies, TV, Music, Apps)</li>
-						<li>Game Center (disable multiplayer if needed)</li>
-					</ul>
-				</li>
-			</ol>
+      <h4>Best Practices</h4>
+      <ul>
+        <li>Set appropriate age ratings for all content types</li>
+        <li>Hide web browser and App Store if needed</li>
+        <li>Use Screen Time integration with Apple Family Sharing</li>
+        <li>Create separate user profiles for children</li>
+      </ul>
+    </div>
 
-			<h4>Best Practices</h4>
-			<ul>
-				<li>Set appropriate age ratings for all content types</li>
-				<li>Hide web browser and App Store if needed</li>
-				<li>Use Screen Time integration with Apple Family Sharing</li>
-				<li>Create separate user profiles for children</li>
-			</ul>
-		</div>
+    <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+      <h3>Amazon Fire TV / Fire Stick</h3>
+      <h4>Parental Control Setup</h4>
+      <ol>
+        <li>Settings → Preferences → Parental Controls</li>
+        <li>Turn on Parental Controls and create PIN</li>
+        <li>
+          Enable:
+          <ul>
+            <li>Restrict Purchases</li>
+            <li>Restrict Prime Video content by rating</li>
+            <li>Restrict App Launch</li>
+          </ul>
+        </li>
+        <li>Set viewing restrictions (G, PG, PG-13, etc.)</li>
+      </ol>
 
-		<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-			<h3>Amazon Fire TV / Fire Stick</h3>
-			<h4>Parental Control Setup</h4>
-			<ol>
-				<li>Settings → Preferences → Parental Controls</li>
-				<li>Turn on Parental Controls and create PIN</li>
-				<li>Enable:
-					<ul>
-						<li>Restrict Purchases</li>
-						<li>Restrict Prime Video content by rating</li>
-						<li>Restrict App Launch</li>
-					</ul>
-				</li>
-				<li>Set viewing restrictions (G, PG, PG-13, etc.)</li>
-			</ol>
+      <h4>Amazon Kids+ (FreeTime)</h4>
+      <ul>
+        <li>Built-in kids mode with curated content</li>
+        <li>Time limits and bedtime settings</li>
+        <li>Educational goals before entertainment</li>
+        <li>Subscription required ($5/month)</li>
+      </ul>
+    </div>
 
-			<h4>Amazon Kids+ (FreeTime)</h4>
-			<ul>
-				<li>Built-in kids mode with curated content</li>
-				<li>Time limits and bedtime settings</li>
-				<li>Educational goals before entertainment</li>
-				<li>Subscription required ($5/month)</li>
-			</ul>
-		</div>
+    <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+      <h3>Samsung/LG/Sony Smart TVs</h3>
+      <h4>General Steps (varies by model)</h4>
+      <ol>
+        <li>Settings → General → System Manager (or Security)</li>
+        <li>Look for "Parental Lock" or "Content Restriction"</li>
+        <li>Create PIN code</li>
+        <li>
+          Enable:
+          <ul>
+            <li>Rating restrictions (TV and movies)</li>
+            <li>App lock (block specific apps)</li>
+            <li>Channel lock (block TV channels)</li>
+          </ul>
+        </li>
+      </ol>
 
-		<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-			<h3>Samsung/LG/Sony Smart TVs</h3>
-			<h4>General Steps (varies by model)</h4>
-			<ol>
-				<li>Settings → General → System Manager (or Security)</li>
-				<li>Look for "Parental Lock" or "Content Restriction"</li>
-				<li>Create PIN code</li>
-				<li>Enable:
-					<ul>
-						<li>Rating restrictions (TV and movies)</li>
-						<li>App lock (block specific apps)</li>
-						<li>Channel lock (block TV channels)</li>
-					</ul>
-				</li>
-			</ol>
+      <div class="alert alert-info">
+        <strong>Note:</strong> Built-in TV parental controls are often limited. Focus on streaming app settings and network-level
+        filtering instead.
+      </div>
+    </div>
 
-			<div class="alert alert-info">
-				<strong>Note:</strong> Built-in TV parental controls are often limited. Focus on streaming app settings and network-level filtering instead.
-			</div>
-		</div>
+    <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+      <h3>Google/Android TV & Chromecast</h3>
+      <h4>Setup</h4>
+      <ol>
+        <li>Settings → Privacy → Create restricted profile</li>
+        <li>Or use Google Family Link for child's Google account</li>
+        <li>Control which apps are accessible</li>
+        <li>Set content ratings in Google Play</li>
+      </ol>
 
-		<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-			<h3>Google/Android TV & Chromecast</h3>
-			<h4>Setup</h4>
-			<ol>
-				<li>Settings → Privacy → Create restricted profile</li>
-				<li>Or use Google Family Link for child's Google account</li>
-				<li>Control which apps are accessible</li>
-				<li>Set content ratings in Google Play</li>
-			</ol>
+      <h4>Chromecast Specific</h4>
+      <ul>
+        <li>Limited parental controls (relies on casting device)</li>
+        <li>Use network-level DNS filtering</li>
+        <li>Control what can be cast from phone/tablet</li>
+      </ul>
+    </div>
+  </section>
 
-			<h4>Chromecast Specific</h4>
-			<ul>
-				<li>Limited parental controls (relies on casting device)</li>
-				<li>Use network-level DNS filtering</li>
-				<li>Control what can be cast from phone/tablet</li>
-			</ul>
-		</div>
-	</section>
+  <section>
+    <h2>📱 Streaming Service Controls</h2>
 
-	<section>
-		<h2>📱 Streaming Service Controls</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>Netflix</h3>
+        <ul>
+          <li>Create Kids profile (automatic filtering)</li>
+          <li>Set maturity ratings per profile</li>
+          <li>PIN protect mature content</li>
+          <li>Disable autoplay of previews</li>
+          <li>Manage via netflix.com/account</li>
+        </ul>
+      </div>
 
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>Netflix</h3>
-				<ul>
-					<li>Create Kids profile (automatic filtering)</li>
-					<li>Set maturity ratings per profile</li>
-					<li>PIN protect mature content</li>
-					<li>Disable autoplay of previews</li>
-					<li>Manage via netflix.com/account</li>
-				</ul>
-			</div>
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>Disney+</h3>
+        <ul>
+          <li>Kids Profile (automatic filtering)</li>
+          <li>Set content rating per profile (G, PG, etc.)</li>
+          <li>PIN for mature content</li>
+          <li>GroupWatch parental supervision</li>
+        </ul>
+      </div>
 
-			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>Disney+</h3>
-				<ul>
-					<li>Kids Profile (automatic filtering)</li>
-					<li>Set content rating per profile (G, PG, etc.)</li>
-					<li>PIN for mature content</li>
-					<li>GroupWatch parental supervision</li>
-				</ul>
-			</div>
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>YouTube</h3>
+        <ul>
+          <li>Use YouTube Kids app instead of regular YouTube</li>
+          <li>Enable Restricted Mode</li>
+          <li>Sign in with supervised Google account</li>
+          <li>See our <a href="/guides/youtube-filtering">YouTube Filtering Guide</a></li>
+        </ul>
+      </div>
 
-			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>YouTube</h3>
-				<ul>
-					<li>Use YouTube Kids app instead of regular YouTube</li>
-					<li>Enable Restricted Mode</li>
-					<li>Sign in with supervised Google account</li>
-					<li>See our <a href="/guides/youtube-filtering">YouTube Filtering Guide</a></li>
-				</ul>
-			</div>
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>Hulu</h3>
+        <ul>
+          <li>Create Kids Profile</li>
+          <li>Set maturity ratings per profile</li>
+          <li>PIN protect adult content</li>
+          <li>Manage via hulu.com</li>
+        </ul>
+      </div>
 
-			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>Hulu</h3>
-				<ul>
-					<li>Create Kids Profile</li>
-					<li>Set maturity ratings per profile</li>
-					<li>PIN protect adult content</li>
-					<li>Manage via hulu.com</li>
-				</ul>
-			</div>
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>HBO Max</h3>
+        <ul>
+          <li>Kids profile available</li>
+          <li>Set content rating limits</li>
+          <li>PIN for mature content</li>
+        </ul>
+      </div>
 
-			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>HBO Max</h3>
-				<ul>
-					<li>Kids profile available</li>
-					<li>Set content rating limits</li>
-					<li>PIN for mature content</li>
-				</ul>
-			</div>
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>Amazon Prime Video</h3>
+        <ul>
+          <li>Viewing restrictions by age</li>
+          <li>Purchase PIN</li>
+          <li>Create profiles for kids</li>
+          <li>Prime Video Kids section</li>
+        </ul>
+      </div>
+    </div>
 
-			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>Amazon Prime Video</h3>
-				<ul>
-					<li>Viewing restrictions by age</li>
-					<li>Purchase PIN</li>
-					<li>Create profiles for kids</li>
-					<li>Prime Video Kids section</li>
-				</ul>
-			</div>
-		</div>
+    <div class="alert alert-success">
+      <strong>Universal Strategy:</strong> Always create separate kids' profiles on streaming services and set appropriate
+      maturity ratings. PIN-protect your adult profile.
+    </div>
+  </section>
 
-		<div class="alert alert-success">
-			<strong>Universal Strategy:</strong> Always create separate kids' profiles on streaming services and set appropriate maturity ratings. PIN-protect your adult profile.
-		</div>
-	</section>
+  <section>
+    <h2>🌐 Network-Level Protection</h2>
 
-	<section>
-		<h2>🌐 Network-Level Protection</h2>
+    <h3>DNS Filtering for Smart TVs</h3>
+    <p>The most effective smart TV protection:</p>
+    <ol>
+      <li>Configure filtering DNS at <a href="/guides/router-config">router level</a> (protects all TVs)</li>
+      <li>
+        Or configure DNS on each smart TV:
+        <ul>
+          <li>Settings → Network → Configure DNS</li>
+          <li>Change from Automatic to Manual</li>
+          <li>Enter filtering DNS (e.g., CleanBrowsing: 185.228.168.168)</li>
+        </ul>
+      </li>
+      <li>Blocks inappropriate content and enforces SafeSearch</li>
+    </ol>
 
-		<h3>DNS Filtering for Smart TVs</h3>
-		<p>The most effective smart TV protection:</p>
-		<ol>
-			<li>Configure filtering DNS at <a href="/guides/router-config">router level</a> (protects all TVs)</li>
-			<li>Or configure DNS on each smart TV:
-				<ul>
-					<li>Settings → Network → Configure DNS</li>
-					<li>Change from Automatic to Manual</li>
-					<li>Enter filtering DNS (e.g., CleanBrowsing: 185.228.168.168)</li>
-				</ul>
-			</li>
-			<li>Blocks inappropriate content and enforces SafeSearch</li>
-		</ol>
+    <h3>Guest Network for TVs</h3>
+    <ul>
+      <li>Create separate WiFi network for smart TVs</li>
+      <li>Apply stricter filtering to TV network</li>
+      <li>Schedule network off-times for bedtime</li>
+      <li>See our <a href="/guides/guest-networks">Guest Networks Guide</a></li>
+    </ul>
+  </section>
 
-		<h3>Guest Network for TVs</h3>
-		<ul>
-			<li>Create separate WiFi network for smart TVs</li>
-			<li>Apply stricter filtering to TV network</li>
-			<li>Schedule network off-times for bedtime</li>
-			<li>See our <a href="/guides/guest-networks">Guest Networks Guide</a></li>
-		</ul>
-	</section>
+  <section>
+    <h2>🔒 Physical & Behavioral Controls</h2>
 
-	<section>
-		<h2>🔒 Physical & Behavioral Controls</h2>
+    <h3>TV Placement Strategies</h3>
+    <ul>
+      <li><strong>Common areas only:</strong> No TVs in bedrooms</li>
+      <li><strong>Screen visibility:</strong> Position where parents can see</li>
+      <li><strong>Remove remotes:</strong> Store remote when TV shouldn't be used</li>
+      <li><strong>Power strip control:</strong> Turn off at power strip during bedtime</li>
+    </ul>
 
-		<h3>TV Placement Strategies</h3>
-		<ul>
-			<li><strong>Common areas only:</strong> No TVs in bedrooms</li>
-			<li><strong>Screen visibility:</strong> Position where parents can see</li>
-			<li><strong>Remove remotes:</strong> Store remote when TV shouldn't be used</li>
-			<li><strong>Power strip control:</strong> Turn off at power strip during bedtime</li>
-		</ul>
+    <h3>Family Viewing Guidelines</h3>
+    <ul>
+      <li>Co-viewing policy for young children</li>
+      <li>Discuss content age-appropriateness</li>
+      <li>No TV during meals or homework</li>
+      <li>Set daily screen time limits</li>
+      <li>Create family movie night traditions</li>
+    </ul>
+  </section>
 
-		<h3>Family Viewing Guidelines</h3>
-		<ul>
-			<li>Co-viewing policy for young children</li>
-			<li>Discuss content age-appropriateness</li>
-			<li>No TV during meals or homework</li>
-			<li>Set daily screen time limits</li>
-			<li>Create family movie night traditions</li>
-		</ul>
-	</section>
+  <section>
+    <h2>⚖️ Pros & Cons</h2>
 
-	<section>
-		<h2>⚖️ Pros & Cons</h2>
+    <div class="pros-cons">
+      <div class="pros">
+        <h3>✅ What Works</h3>
+        <ul>
+          <li>Streaming service kids profiles (very effective)</li>
+          <li>Network-level DNS filtering (catches everything)</li>
+          <li>PIN protection for purchases and adult content</li>
+          <li>Physical placement in common areas</li>
+          <li>Dedicated kids streaming apps (YouTube Kids, Disney+)</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h3>❌ Challenges</h3>
+        <ul>
+          <li>Limited built-in TV controls</li>
+          <li>Difficult to block web browsers</li>
+          <li>App stores often unrestricted</li>
+          <li>Screen mirroring bypasses controls</li>
+          <li>Shared family device (harder to lock down)</li>
+          <li>Must configure each streaming service separately</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-		<div class="pros-cons">
-			<div class="pros">
-				<h3>✅ What Works</h3>
-				<ul>
-					<li>Streaming service kids profiles (very effective)</li>
-					<li>Network-level DNS filtering (catches everything)</li>
-					<li>PIN protection for purchases and adult content</li>
-					<li>Physical placement in common areas</li>
-					<li>Dedicated kids streaming apps (YouTube Kids, Disney+)</li>
-				</ul>
-			</div>
-			<div class="cons">
-				<h3>❌ Challenges</h3>
-				<ul>
-					<li>Limited built-in TV controls</li>
-					<li>Difficult to block web browsers</li>
-					<li>App stores often unrestricted</li>
-					<li>Screen mirroring bypasses controls</li>
-					<li>Shared family device (harder to lock down)</li>
-					<li>Must configure each streaming service separately</li>
-				</ul>
-			</div>
-		</div>
-	</section>
+  <section slot="next-steps">
+    <h2>🎯 Next Steps</h2>
 
-	<section slot="next-steps">
-		<h2>🎯 Next Steps</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+      <a
+        href="/guides/dns-filtering"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
+        <h3>🌐 DNS Filtering</h3>
+        <p>Most effective protection for smart TVs</p>
+      </a>
 
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-			<a href="/guides/dns-filtering" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>🌐 DNS Filtering</h3>
-				<p>Most effective protection for smart TVs</p>
-			</a>
+      <a
+        href="/guides/guest-networks"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
+        <h3>📡 Guest Networks</h3>
+        <p>Create separate WiFi for filtered devices</p>
+      </a>
 
-			<a href="/guides/guest-networks" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>📡 Guest Networks</h3>
-				<p>Create separate WiFi for filtered devices</p>
-			</a>
+      <a
+        href="/guides/youtube-filtering"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
+        <h3>📺 YouTube Filtering</h3>
+        <p>Protect against YouTube on smart TVs</p>
+      </a>
 
-			<a href="/guides/youtube-filtering" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>📺 YouTube Filtering</h3>
-				<p>Protect against YouTube on smart TVs</p>
-			</a>
+      <a
+        href="/guides/router-config"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
+        <h3>🔐 Router Controls</h3>
+        <p>Schedule and manage TV internet access</p>
+      </a>
+    </div>
 
-			<a href="/guides/router-config" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>🔐 Router Controls</h3>
-				<p>Schedule and manage TV internet access</p>
-			</a>
-		</div>
-
-		<div class="alert alert-info">
-			<strong>Best Strategy:</strong> Kids profiles on streaming services + DNS filtering + common area placement + family viewing guidelines = balanced smart TV protection.
-		</div>
-	</section>
+    <div class="alert alert-info">
+      <strong>Best Strategy:</strong> Kids profiles on streaming services + DNS filtering + common area placement + family
+      viewing guidelines = balanced smart TV protection.
+    </div>
+  </section>
 </GuideLayout>
-

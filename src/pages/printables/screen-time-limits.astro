@@ -3,215 +3,283 @@ import Layout from '../../layouts/Layout.astro';
 ---
 
 <Layout
-	title="Age-Appropriate Screen Time Limits - Printable"
-	description="AAP-recommended screen time limits by age group - print and post as a family reference"
+  title="Age-Appropriate Screen Time Limits - Printable"
+  description="AAP-recommended screen time limits by age group - print and post as a family reference"
 >
-	<div class="no-print bg-gray-100 dark:bg-gray-900 p-4 sticky top-0 z-50 shadow-sm">
-		<div class="max-w-6xl mx-auto flex justify-between items-center gap-4">
-			<a href="/printables" class="text-blue-600 dark:text-blue-400 no-underline font-medium hover:underline">← Back to Printables</a>
-			<button onclick="window.print()" class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white border-0 px-5 py-3 rounded-lg font-semibold cursor-pointer transition-all duration-200 hover:-translate-y-px">🖨️ Print This Guide</button>
-		</div>
-	</div>
+  <div class="no-print bg-gray-100 dark:bg-gray-900 p-4 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-6xl mx-auto flex justify-between items-center gap-4">
+      <a href="/printables" class="text-blue-600 dark:text-blue-400 no-underline font-medium hover:underline"
+        >← Back to Printables</a
+      >
+      <button
+        onclick="window.print()"
+        class="bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 text-white border-0 px-5 py-3 rounded-lg font-semibold cursor-pointer transition-all duration-200 hover:-translate-y-px"
+        >🖨️ Print This Guide</button
+      >
+    </div>
+  </div>
 
-	<div class="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-		<div class="bg-white dark:bg-gray-800 p-8 shadow-lg">
-			<header class="text-center border-b-[3px] border-blue-600 dark:border-blue-500 pb-4 mb-8">
-				<h1 class="text-3xl font-extrabold text-gray-900 dark:text-white mb-2">Age-Appropriate Screen Time Limits</h1>
-				<p class="text-base text-gray-600 dark:text-gray-300 m-0">Based on American Academy of Pediatrics (AAP) Recommendations</p>
-			</header>
+  <div class="max-w-4xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+    <div class="bg-white dark:bg-gray-800 p-8 shadow-lg">
+      <header class="text-center border-b-[3px] border-blue-600 dark:border-blue-500 pb-4 mb-8">
+        <h1 class="text-3xl font-extrabold text-gray-900 dark:text-white mb-2">Age-Appropriate Screen Time Limits</h1>
+        <p class="text-base text-gray-600 dark:text-gray-300 m-0">
+          Based on American Academy of Pediatrics (AAP) Recommendations
+        </p>
+      </header>
 
-			<div class="flex flex-col gap-6 mb-8">
-				<div class="border-2 border-gray-300 dark:border-gray-600 rounded-lg p-5 bg-white dark:bg-gray-800">
-					<div class="flex justify-between items-center mb-4 pb-3 border-b border-gray-200 dark:border-gray-700">
-						<h2 class="text-xl font-bold text-gray-900 dark:text-white m-0">Under 18 Months</h2>
-						<div class="bg-blue-600 dark:bg-blue-500 text-white px-4 py-2 rounded-full font-bold text-base">0 min/day</div>
-					</div>
-					<div>
-						<h3 class="text-base font-semibold text-gray-800 dark:text-gray-200 mb-2">Guidelines:</h3>
-						<ul class="m-0 pl-6">
-							<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">No screen time except video chatting with family</li>
-							<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Focus on physical play and face-to-face interaction</li>
-							<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Read books, sing songs, explore environment</li>
-						</ul>
-					</div>
-				</div>
+      <div class="flex flex-col gap-6 mb-8">
+        <div class="border-2 border-gray-300 dark:border-gray-600 rounded-lg p-5 bg-white dark:bg-gray-800">
+          <div class="flex justify-between items-center mb-4 pb-3 border-b border-gray-200 dark:border-gray-700">
+            <h2 class="text-xl font-bold text-gray-900 dark:text-white m-0">Under 18 Months</h2>
+            <div class="bg-blue-600 dark:bg-blue-500 text-white px-4 py-2 rounded-full font-bold text-base">
+              0 min/day
+            </div>
+          </div>
+          <div>
+            <h3 class="text-base font-semibold text-gray-800 dark:text-gray-200 mb-2">Guidelines:</h3>
+            <ul class="m-0 pl-6">
+              <li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+                No screen time except video chatting with family
+              </li>
+              <li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+                Focus on physical play and face-to-face interaction
+              </li>
+              <li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+                Read books, sing songs, explore environment
+              </li>
+            </ul>
+          </div>
+        </div>
 
-				<div class="border-2 border-gray-300 dark:border-gray-600 rounded-lg p-5 bg-white dark:bg-gray-800">
-					<div class="flex justify-between items-center mb-4 pb-3 border-b border-gray-200 dark:border-gray-700">
-						<h2 class="text-xl font-bold text-gray-900 dark:text-white m-0">Ages 18-24 Months</h2>
-						<div class="bg-blue-600 dark:bg-blue-500 text-white px-4 py-2 rounded-full font-bold text-base">Minimal</div>
-					</div>
-					<div>
-						<h3 class="text-base font-semibold text-gray-800 dark:text-gray-200 mb-2">Guidelines:</h3>
-						<ul class="m-0 pl-6">
-							<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Only high-quality programming if any screen time</li>
-							<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Watch together and help understand content</li>
-							<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Avoid solo screen time</li>
-							<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Prioritize physical and creative play</li>
-						</ul>
-					</div>
-				</div>
+        <div class="border-2 border-gray-300 dark:border-gray-600 rounded-lg p-5 bg-white dark:bg-gray-800">
+          <div class="flex justify-between items-center mb-4 pb-3 border-b border-gray-200 dark:border-gray-700">
+            <h2 class="text-xl font-bold text-gray-900 dark:text-white m-0">Ages 18-24 Months</h2>
+            <div class="bg-blue-600 dark:bg-blue-500 text-white px-4 py-2 rounded-full font-bold text-base">
+              Minimal
+            </div>
+          </div>
+          <div>
+            <h3 class="text-base font-semibold text-gray-800 dark:text-gray-200 mb-2">Guidelines:</h3>
+            <ul class="m-0 pl-6">
+              <li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+                Only high-quality programming if any screen time
+              </li>
+              <li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+                Watch together and help understand content
+              </li>
+              <li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Avoid solo screen time</li>
+              <li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+                Prioritize physical and creative play
+              </li>
+            </ul>
+          </div>
+        </div>
 
-				<div class="border-2 border-gray-300 dark:border-gray-600 rounded-lg p-5 bg-white dark:bg-gray-800">
-					<div class="flex justify-between items-center mb-4 pb-3 border-b border-gray-200 dark:border-gray-700">
-						<h2 class="text-xl font-bold text-gray-900 dark:text-white m-0">Ages 2-5</h2>
-						<div class="bg-blue-600 dark:bg-blue-500 text-white px-4 py-2 rounded-full font-bold text-base">1 hour/day</div>
-					</div>
-					<div>
-						<h3 class="text-base font-semibold text-gray-800 dark:text-gray-200 mb-2">Guidelines:</h3>
-						<ul class="m-0 pl-6">
-							<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Maximum 1 hour of high-quality programming</li>
-							<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Co-view to help understand and apply learning</li>
-							<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Choose educational content (PBS Kids, Sesame Street)</li>
-							<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">No screens during meals or 1 hour before bed</li>
-							<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Keep devices out of bedrooms</li>
-						</ul>
-					</div>
-				</div>
+        <div class="border-2 border-gray-300 dark:border-gray-600 rounded-lg p-5 bg-white dark:bg-gray-800">
+          <div class="flex justify-between items-center mb-4 pb-3 border-b border-gray-200 dark:border-gray-700">
+            <h2 class="text-xl font-bold text-gray-900 dark:text-white m-0">Ages 2-5</h2>
+            <div class="bg-blue-600 dark:bg-blue-500 text-white px-4 py-2 rounded-full font-bold text-base">
+              1 hour/day
+            </div>
+          </div>
+          <div>
+            <h3 class="text-base font-semibold text-gray-800 dark:text-gray-200 mb-2">Guidelines:</h3>
+            <ul class="m-0 pl-6">
+              <li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+                Maximum 1 hour of high-quality programming
+              </li>
+              <li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+                Co-view to help understand and apply learning
+              </li>
+              <li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+                Choose educational content (PBS Kids, Sesame Street)
+              </li>
+              <li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+                No screens during meals or 1 hour before bed
+              </li>
+              <li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Keep devices out of bedrooms</li>
+            </ul>
+          </div>
+        </div>
 
-				<div class="border-2 border-gray-300 dark:border-gray-600 rounded-lg p-5 bg-white dark:bg-gray-800">
-					<div class="flex justify-between items-center mb-4 pb-3 border-b border-gray-200 dark:border-gray-700">
-						<h2 class="text-xl font-bold text-gray-900 dark:text-white m-0">Ages 6-12</h2>
-						<div class="bg-blue-600 dark:bg-blue-500 text-white px-4 py-2 rounded-full font-bold text-base">1-2 hours/day</div>
-					</div>
-					<div>
-						<h3 class="text-base font-semibold text-gray-800 dark:text-gray-200 mb-2">Guidelines:</h3>
-						<ul class="m-0 pl-6">
-							<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">1-2 hours of recreational screen time</li>
-							<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Homework/educational use doesn't count toward limit</li>
-							<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Enforce screen-free zones (dining table, bedrooms)</li>
-							<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Balance screen time with physical activity</li>
-							<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Monitor content and online interactions</li>
-							<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Teach digital citizenship and online safety</li>
-						</ul>
-					</div>
-				</div>
+        <div class="border-2 border-gray-300 dark:border-gray-600 rounded-lg p-5 bg-white dark:bg-gray-800">
+          <div class="flex justify-between items-center mb-4 pb-3 border-b border-gray-200 dark:border-gray-700">
+            <h2 class="text-xl font-bold text-gray-900 dark:text-white m-0">Ages 6-12</h2>
+            <div class="bg-blue-600 dark:bg-blue-500 text-white px-4 py-2 rounded-full font-bold text-base">
+              1-2 hours/day
+            </div>
+          </div>
+          <div>
+            <h3 class="text-base font-semibold text-gray-800 dark:text-gray-200 mb-2">Guidelines:</h3>
+            <ul class="m-0 pl-6">
+              <li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+                1-2 hours of recreational screen time
+              </li>
+              <li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+                Homework/educational use doesn't count toward limit
+              </li>
+              <li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+                Enforce screen-free zones (dining table, bedrooms)
+              </li>
+              <li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+                Balance screen time with physical activity
+              </li>
+              <li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+                Monitor content and online interactions
+              </li>
+              <li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+                Teach digital citizenship and online safety
+              </li>
+            </ul>
+          </div>
+        </div>
 
-				<div class="border-2 border-gray-300 dark:border-gray-600 rounded-lg p-5 bg-white dark:bg-gray-800">
-					<div class="flex justify-between items-center mb-4 pb-3 border-b border-gray-200 dark:border-gray-700">
-						<h2 class="text-xl font-bold text-gray-900 dark:text-white m-0">Ages 13-18</h2>
-						<div class="bg-blue-600 dark:bg-blue-500 text-white px-4 py-2 rounded-full font-bold text-base">2 hours/day*</div>
-					</div>
-					<div>
-						<h3 class="text-base font-semibold text-gray-800 dark:text-gray-200 mb-2">Guidelines:</h3>
-						<ul class="m-0 pl-6">
-							<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">~2 hours recreational screen time (more flexibility)</li>
-							<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Prioritize quality over quantity</li>
-							<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Encourage breaks every 30-60 minutes</li>
-							<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Screen-free times: meals, family time, homework</li>
-							<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Monitor social media for mental health impact</li>
-							<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Gradually increase autonomy with demonstrated maturity</li>
-						</ul>
-						<p class="text-sm italic text-gray-600 dark:text-gray-400 mt-3">*Adjust based on individual needs and responsibilities</p>
-					</div>
-				</div>
-			</div>
+        <div class="border-2 border-gray-300 dark:border-gray-600 rounded-lg p-5 bg-white dark:bg-gray-800">
+          <div class="flex justify-between items-center mb-4 pb-3 border-b border-gray-200 dark:border-gray-700">
+            <h2 class="text-xl font-bold text-gray-900 dark:text-white m-0">Ages 13-18</h2>
+            <div class="bg-blue-600 dark:bg-blue-500 text-white px-4 py-2 rounded-full font-bold text-base">
+              2 hours/day*
+            </div>
+          </div>
+          <div>
+            <h3 class="text-base font-semibold text-gray-800 dark:text-gray-200 mb-2">Guidelines:</h3>
+            <ul class="m-0 pl-6">
+              <li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+                ~2 hours recreational screen time (more flexibility)
+              </li>
+              <li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Prioritize quality over quantity</li>
+              <li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+                Encourage breaks every 30-60 minutes
+              </li>
+              <li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+                Screen-free times: meals, family time, homework
+              </li>
+              <li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+                Monitor social media for mental health impact
+              </li>
+              <li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+                Gradually increase autonomy with demonstrated maturity
+              </li>
+            </ul>
+            <p class="text-sm italic text-gray-600 dark:text-gray-400 mt-3">
+              *Adjust based on individual needs and responsibilities
+            </p>
+          </div>
+        </div>
+      </div>
 
-			<div class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-950 dark:to-green-950 p-6 rounded-lg mb-8 page-break-inside-avoid">
-				<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Quality vs. Quantity</h2>
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-					<div class="bg-white dark:bg-gray-800 p-5 rounded-lg">
-						<h3 class="text-lg font-bold text-green-700 dark:text-green-400 mb-3">✅ High-Quality Screen Time</h3>
-						<ul class="m-0 pl-6">
-							<li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Educational apps and games</li>
-							<li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Video calls with family/friends</li>
-							<li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Creative projects (coding, video editing)</li>
-							<li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Co-viewing educational content</li>
-							<li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Reading ebooks together</li>
-						</ul>
-					</div>
-					<div class="bg-white dark:bg-gray-800 p-5 rounded-lg">
-						<h3 class="text-lg font-bold text-red-700 dark:text-red-400 mb-3">❌ Low-Quality Screen Time</h3>
-						<ul class="m-0 pl-6">
-							<li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Mindless scrolling on social media</li>
-							<li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Autoplay video binges</li>
-							<li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Addictive mobile games</li>
-							<li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Passive entertainment without engagement</li>
-							<li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Violent or age-inappropriate content</li>
-						</ul>
-					</div>
-				</div>
-			</div>
+      <div
+        class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-950 dark:to-green-950 p-6 rounded-lg mb-8 page-break-inside-avoid"
+      >
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Quality vs. Quantity</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="bg-white dark:bg-gray-800 p-5 rounded-lg">
+            <h3 class="text-lg font-bold text-green-700 dark:text-green-400 mb-3">✅ High-Quality Screen Time</h3>
+            <ul class="m-0 pl-6">
+              <li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Educational apps and games</li>
+              <li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Video calls with family/friends</li>
+              <li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Creative projects (coding, video editing)</li>
+              <li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Co-viewing educational content</li>
+              <li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Reading ebooks together</li>
+            </ul>
+          </div>
+          <div class="bg-white dark:bg-gray-800 p-5 rounded-lg">
+            <h3 class="text-lg font-bold text-red-700 dark:text-red-400 mb-3">❌ Low-Quality Screen Time</h3>
+            <ul class="m-0 pl-6">
+              <li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Mindless scrolling on social media</li>
+              <li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Autoplay video binges</li>
+              <li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Addictive mobile games</li>
+              <li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Passive entertainment without engagement</li>
+              <li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Violent or age-inappropriate content</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-			<div class="mb-8">
-				<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Implementation Tips</h2>
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-					<div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg border border-gray-200 dark:border-gray-600">
-						<h3 class="text-base font-semibold text-blue-600 dark:text-blue-400 mb-3">Set Clear Rules</h3>
-						<ul class="m-0 pl-6">
-							<li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Write down screen time rules</li>
-							<li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Post in visible location</li>
-							<li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Apply consistently</li>
-							<li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Include all family members</li>
-						</ul>
-					</div>
-					<div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg border border-gray-200 dark:border-gray-600">
-						<h3 class="text-base font-semibold text-blue-600 dark:text-blue-400 mb-3">Use Built-In Controls</h3>
-						<ul class="m-0 pl-6">
-							<li class="mb-2 text-sm text-gray-700 dark:text-gray-300">iOS Screen Time</li>
-							<li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Android Family Link</li>
-							<li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Windows Family Safety</li>
-							<li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Router scheduling</li>
-						</ul>
-					</div>
-					<div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg border border-gray-200 dark:border-gray-600">
-						<h3 class="text-base font-semibold text-blue-600 dark:text-blue-400 mb-3">Create Screen-Free Zones</h3>
-						<ul class="m-0 pl-6">
-							<li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Dining table (always)</li>
-							<li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Bedrooms (overnight)</li>
-							<li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Car rides (except long trips)</li>
-							<li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Family game night</li>
-						</ul>
-					</div>
-				</div>
-			</div>
+      <div class="mb-8">
+        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Implementation Tips</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg border border-gray-200 dark:border-gray-600">
+            <h3 class="text-base font-semibold text-blue-600 dark:text-blue-400 mb-3">Set Clear Rules</h3>
+            <ul class="m-0 pl-6">
+              <li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Write down screen time rules</li>
+              <li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Post in visible location</li>
+              <li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Apply consistently</li>
+              <li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Include all family members</li>
+            </ul>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg border border-gray-200 dark:border-gray-600">
+            <h3 class="text-base font-semibold text-blue-600 dark:text-blue-400 mb-3">Use Built-In Controls</h3>
+            <ul class="m-0 pl-6">
+              <li class="mb-2 text-sm text-gray-700 dark:text-gray-300">iOS Screen Time</li>
+              <li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Android Family Link</li>
+              <li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Windows Family Safety</li>
+              <li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Router scheduling</li>
+            </ul>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-700 p-4 rounded-lg border border-gray-200 dark:border-gray-600">
+            <h3 class="text-base font-semibold text-blue-600 dark:text-blue-400 mb-3">Create Screen-Free Zones</h3>
+            <ul class="m-0 pl-6">
+              <li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Dining table (always)</li>
+              <li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Bedrooms (overnight)</li>
+              <li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Car rides (except long trips)</li>
+              <li class="mb-2 text-sm text-gray-700 dark:text-gray-300">Family game night</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
-			<footer class="text-center border-t-2 border-gray-300 dark:border-gray-600 pt-4">
-				<p class="text-sm text-gray-600 dark:text-gray-300 my-2"><strong>ShemiratEnayim.org</strong> • For more guidance, visit <strong>/guides/screen-time-management</strong></p>
-				<p class="text-xs italic text-gray-600 dark:text-gray-400">Guidelines adapted from AAP recommendations. Adjust based on your family's needs and values.</p>
-			</footer>
-		</div>
-	</div>
+      <footer class="text-center border-t-2 border-gray-300 dark:border-gray-600 pt-4">
+        <p class="text-sm text-gray-600 dark:text-gray-300 my-2">
+          <strong>ShemiratEnayim.org</strong> • For more guidance, visit <strong>/guides/screen-time-management</strong>
+        </p>
+        <p class="text-xs italic text-gray-600 dark:text-gray-400">
+          Guidelines adapted from AAP recommendations. Adjust based on your family's needs and values.
+        </p>
+      </footer>
+    </div>
+  </div>
 </Layout>
 
 <style>
-	@media print {
-		* {
-			-webkit-print-color-adjust: exact;
-			print-color-adjust: exact;
-		}
+  @media print {
+    * {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
 
-		.no-print {
-			display: none !important;
-		}
+    .no-print {
+      display: none !important;
+    }
 
-		.max-w-4xl {
-			max-width: none;
-			padding: 0;
-		}
+    .max-w-4xl {
+      max-width: none;
+      padding: 0;
+    }
 
-		.bg-white {
-			box-shadow: none;
-			padding: 0.5in;
-		}
+    .bg-white {
+      box-shadow: none;
+      padding: 0.5in;
+    }
 
-		.border-2 {
-			page-break-inside: avoid;
-		}
+    .border-2 {
+      page-break-inside: avoid;
+    }
 
-		.page-break-inside-avoid {
-			page-break-inside: avoid;
-		}
+    .page-break-inside-avoid {
+      page-break-inside: avoid;
+    }
 
-		@page {
-			size: letter;
-			margin: 0.5in;
-		}
-	}
+    @page {
+      size: letter;
+      margin: 0.5in;
+    }
+  }
 
-	@media screen and (max-width: 768px) {
-		.grid-cols-1 {
-			grid-template-columns: 1fr;
-		}
-	}
+  @media screen and (max-width: 768px) {
+    .grid-cols-1 {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>

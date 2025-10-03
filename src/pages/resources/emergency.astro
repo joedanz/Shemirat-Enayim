@@ -5,385 +5,697 @@ import Alert from '../../components/Alert.astro';
 ---
 
 <Layout
-	title="Emergency Contact Resources"
-	description="Critical crisis hotlines, cyberbullying resources, exploitation reporting, and mental health support for immediate help."
+  title="Emergency Contact Resources"
+  description="Critical crisis hotlines, cyberbullying resources, exploitation reporting, and mental health support for immediate help."
 >
-	<Breadcrumb />
+  <Breadcrumb />
 
-	<div class="max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
-		<header class="text-center mb-8">
-			<div class="inline-block bg-gradient-to-r from-red-600 to-red-800 dark:from-red-600 dark:to-red-800 text-white px-5 py-2 rounded-full font-bold text-sm uppercase tracking-wider mb-4 animate-pulse">🚨 EMERGENCY RESOURCES</div>
-			<h1 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-3">Immediate Help & Support</h1>
-			<p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
-				If you or someone you know is in crisis or needs immediate help, these resources are available 24/7.
-			</p>
-		</header>
+  <div class="max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+    <header class="text-center mb-8">
+      <div
+        class="inline-block bg-gradient-to-r from-red-600 to-red-800 dark:from-red-600 dark:to-red-800 text-white px-5 py-2 rounded-full font-bold text-sm uppercase tracking-wider mb-4 animate-pulse"
+      >
+        🚨 EMERGENCY RESOURCES
+      </div>
+      <h1 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-3">Immediate Help & Support</h1>
+      <p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+        If you or someone you know is in crisis or needs immediate help, these resources are available 24/7.
+      </p>
+    </header>
 
-		<Alert type="error">
-			<strong>Life-Threatening Emergency:</strong> If you or someone else is in immediate danger, call 911 or your local emergency number immediately.
-		</Alert>
+    <Alert type="error">
+      <strong>Life-Threatening Emergency:</strong> If you or someone else is in immediate danger, call 911 or your local
+      emergency number immediately.
+    </Alert>
 
-		<section class="mt-12">
-			<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">🆘 Crisis Hotlines</h2>
-			<p class="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-				Free, confidential support available 24/7. You don't have to face a crisis alone.
-			</p>
+    <section class="mt-12">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">🆘 Crisis Hotlines</h2>
+      <p class="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+        Free, confidential support available 24/7. You don't have to face a crisis alone.
+      </p>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-				<div class="bg-white dark:bg-gray-800 border-2 border-red-500 dark:border-red-600 rounded-xl p-6 transition-all duration-200 hover:border-red-600 dark:hover:border-red-500 hover:shadow-xl hover:-translate-y-0.5 bg-gradient-to-br from-red-50 to-white dark:from-red-950 dark:to-gray-800">
-					<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">National Suicide Prevention Lifeline</h3>
-					<div class="flex flex-col gap-2 mb-4">
-						<a href="tel:988" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">Call: 988</a>
-						<a href="sms:988" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">Text: 988</a>
-						<a href="https://988lifeline.org/chat" target="_blank" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">Chat: 988lifeline.org</a>
-					</div>
-					<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-						24/7 crisis support for suicide prevention and mental health emergencies. Confidential and free.
-					</p>
-					<div class="text-sm text-gray-500 dark:text-gray-400 italic">Available in English & Spanish</div>
-				</div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div
+          class="bg-white dark:bg-gray-800 border-2 border-red-500 dark:border-red-600 rounded-xl p-6 transition-all duration-200 hover:border-red-600 dark:hover:border-red-500 hover:shadow-xl hover:-translate-y-0.5 bg-gradient-to-br from-red-50 to-white dark:from-red-950 dark:to-gray-800"
+        >
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">National Suicide Prevention Lifeline</h3>
+          <div class="flex flex-col gap-2 mb-4">
+            <a
+              href="tel:988"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >Call: 988</a
+            >
+            <a
+              href="sms:988"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >Text: 988</a
+            >
+            <a
+              href="https://988lifeline.org/chat"
+              target="_blank"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >Chat: 988lifeline.org</a
+            >
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+            24/7 crisis support for suicide prevention and mental health emergencies. Confidential and free.
+          </p>
+          <div class="text-sm text-gray-500 dark:text-gray-400 italic">Available in English & Spanish</div>
+        </div>
 
-				<div class="bg-white dark:bg-gray-800 border-2 border-red-500 dark:border-red-600 rounded-xl p-6 transition-all duration-200 hover:border-red-600 dark:hover:border-red-500 hover:shadow-xl hover:-translate-y-0.5 bg-gradient-to-br from-red-50 to-white dark:from-red-950 dark:to-gray-800">
-					<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Crisis Text Line</h3>
-					<div class="flex flex-col gap-2 mb-4">
-						<a href="sms:741741" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">Text HOME to 741741</a>
-					</div>
-					<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-						24/7 crisis support via text message. Connect with a trained crisis counselor in minutes.
-					</p>
-					<div class="text-sm text-gray-500 dark:text-gray-400 italic">Available in English & Spanish (text HOLA to 741741)</div>
-				</div>
+        <div
+          class="bg-white dark:bg-gray-800 border-2 border-red-500 dark:border-red-600 rounded-xl p-6 transition-all duration-200 hover:border-red-600 dark:hover:border-red-500 hover:shadow-xl hover:-translate-y-0.5 bg-gradient-to-br from-red-50 to-white dark:from-red-950 dark:to-gray-800"
+        >
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Crisis Text Line</h3>
+          <div class="flex flex-col gap-2 mb-4">
+            <a
+              href="sms:741741"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >Text HOME to 741741</a
+            >
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+            24/7 crisis support via text message. Connect with a trained crisis counselor in minutes.
+          </p>
+          <div class="text-sm text-gray-500 dark:text-gray-400 italic">
+            Available in English & Spanish (text HOLA to 741741)
+          </div>
+        </div>
 
-				<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5">
-					<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">SAMHSA National Helpline</h3>
-					<div class="flex flex-col gap-2 mb-4">
-						<a href="tel:1-800-662-4357" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">1-800-662-HELP (4357)</a>
-					</div>
-					<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-						Substance Abuse and Mental Health Services Administration. 24/7 treatment referral and information service.
-					</p>
-				</div>
+        <div
+          class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5"
+        >
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">SAMHSA National Helpline</h3>
+          <div class="flex flex-col gap-2 mb-4">
+            <a
+              href="tel:1-800-662-4357"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >1-800-662-HELP (4357)</a
+            >
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+            Substance Abuse and Mental Health Services Administration. 24/7 treatment referral and information service.
+          </p>
+        </div>
 
-				<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5">
-					<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Teen Line</h3>
-					<div class="flex flex-col gap-2 mb-4">
-						<a href="tel:1-800-852-8336" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">1-800-TLC-TEEN (1-800-852-8336)</a>
-						<a href="sms:839863" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">Text TEEN to 839863</a>
-					</div>
-					<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-						Teens helping teens. Call 6pm-10pm PT or text anytime. Operated by teen volunteers under adult supervision.
-					</p>
-				</div>
+        <div
+          class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5"
+        >
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Teen Line</h3>
+          <div class="flex flex-col gap-2 mb-4">
+            <a
+              href="tel:1-800-852-8336"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >1-800-TLC-TEEN (1-800-852-8336)</a
+            >
+            <a
+              href="sms:839863"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >Text TEEN to 839863</a
+            >
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+            Teens helping teens. Call 6pm-10pm PT or text anytime. Operated by teen volunteers under adult supervision.
+          </p>
+        </div>
 
-				<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5">
-					<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">The Trevor Project (LGBTQ+ Youth)</h3>
-					<div class="flex flex-col gap-2 mb-4">
-						<a href="tel:1-866-488-7386" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">1-866-488-7386</a>
-						<a href="sms:678678" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">Text START to 678678</a>
-						<a href="https://www.thetrevorproject.org/get-help" target="_blank" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">Chat: thetrevorproject.org</a>
-					</div>
-					<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-						Crisis intervention and suicide prevention services for LGBTQ+ young people under 25.
-					</p>
-				</div>
+        <div
+          class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5"
+        >
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">The Trevor Project (LGBTQ+ Youth)</h3>
+          <div class="flex flex-col gap-2 mb-4">
+            <a
+              href="tel:1-866-488-7386"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >1-866-488-7386</a
+            >
+            <a
+              href="sms:678678"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >Text START to 678678</a
+            >
+            <a
+              href="https://www.thetrevorproject.org/get-help"
+              target="_blank"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >Chat: thetrevorproject.org</a
+            >
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+            Crisis intervention and suicide prevention services for LGBTQ+ young people under 25.
+          </p>
+        </div>
 
-				<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5">
-					<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Veterans Crisis Line</h3>
-					<div class="flex flex-col gap-2 mb-4">
-						<a href="tel:988" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">Call: 988, Press 1</a>
-						<a href="sms:838255" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">Text: 838255</a>
-						<a href="https://www.veteranscrisisline.net/get-help-now/chat" target="_blank" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">Chat: veteranscrisisline.net</a>
-					</div>
-					<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-						24/7 confidential support for veterans, service members, National Guard, Reserve, and their families.
-					</p>
-				</div>
-			</div>
-		</section>
+        <div
+          class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5"
+        >
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Veterans Crisis Line</h3>
+          <div class="flex flex-col gap-2 mb-4">
+            <a
+              href="tel:988"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >Call: 988, Press 1</a
+            >
+            <a
+              href="sms:838255"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >Text: 838255</a
+            >
+            <a
+              href="https://www.veteranscrisisline.net/get-help-now/chat"
+              target="_blank"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >Chat: veteranscrisisline.net</a
+            >
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+            24/7 confidential support for veterans, service members, National Guard, Reserve, and their families.
+          </p>
+        </div>
+      </div>
+    </section>
 
-		<section class="mt-12">
-			<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">🛡️ Cyberbullying & Online Harassment</h2>
-			<p class="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-				Resources for victims of online bullying, harassment, or threats.
-			</p>
+    <section class="mt-12">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">🛡️ Cyberbullying & Online Harassment</h2>
+      <p class="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+        Resources for victims of online bullying, harassment, or threats.
+      </p>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-				<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5">
-					<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">StopBullying.gov</h3>
-					<div class="flex flex-col gap-2 mb-4">
-						<a href="https://www.stopbullying.gov" target="_blank" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">stopbullying.gov</a>
-					</div>
-					<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-						Federal government resource with information on preventing and responding to bullying, including cyberbullying.
-					</p>
-				</div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div
+          class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5"
+        >
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">StopBullying.gov</h3>
+          <div class="flex flex-col gap-2 mb-4">
+            <a
+              href="https://www.stopbullying.gov"
+              target="_blank"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >stopbullying.gov</a
+            >
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+            Federal government resource with information on preventing and responding to bullying, including
+            cyberbullying.
+          </p>
+        </div>
 
-				<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5">
-					<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Cyberbullying Research Center</h3>
-					<div class="flex flex-col gap-2 mb-4">
-						<a href="https://cyberbullying.org" target="_blank" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">cyberbullying.org</a>
-					</div>
-					<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-						Research, resources, and tools for parents, educators, and teens dealing with cyberbullying.
-					</p>
-				</div>
+        <div
+          class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5"
+        >
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Cyberbullying Research Center</h3>
+          <div class="flex flex-col gap-2 mb-4">
+            <a
+              href="https://cyberbullying.org"
+              target="_blank"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >cyberbullying.org</a
+            >
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+            Research, resources, and tools for parents, educators, and teens dealing with cyberbullying.
+          </p>
+        </div>
 
-				<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5">
-					<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">PACER's National Bullying Prevention Center</h3>
-					<div class="flex flex-col gap-2 mb-4">
-						<a href="tel:1-888-248-0822" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">1-888-248-0822</a>
-						<a href="https://www.pacer.org/bullying" target="_blank" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">pacer.org/bullying</a>
-					</div>
-					<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-						Resources, toolkits, and support for students, parents, and educators addressing bullying.
-					</p>
-				</div>
+        <div
+          class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5"
+        >
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
+            PACER's National Bullying Prevention Center
+          </h3>
+          <div class="flex flex-col gap-2 mb-4">
+            <a
+              href="tel:1-888-248-0822"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >1-888-248-0822</a
+            >
+            <a
+              href="https://www.pacer.org/bullying"
+              target="_blank"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >pacer.org/bullying</a
+            >
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+            Resources, toolkits, and support for students, parents, and educators addressing bullying.
+          </p>
+        </div>
 
-				<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5">
-					<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Cyber Civil Rights Initiative</h3>
-					<div class="flex flex-col gap-2 mb-4">
-						<a href="https://cybercivilrights.org" target="_blank" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">cybercivilrights.org</a>
-					</div>
-					<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-						24/7 crisis helpline for victims of nonconsensual pornography (revenge porn) and online harassment.
-					</p>
-				</div>
-			</div>
-		</section>
+        <div
+          class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5"
+        >
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Cyber Civil Rights Initiative</h3>
+          <div class="flex flex-col gap-2 mb-4">
+            <a
+              href="https://cybercivilrights.org"
+              target="_blank"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >cybercivilrights.org</a
+            >
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+            24/7 crisis helpline for victims of nonconsensual pornography (revenge porn) and online harassment.
+          </p>
+        </div>
+      </div>
+    </section>
 
-		<section class="mt-12">
-			<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">🚔 Reporting Exploitation & Illegal Content</h2>
-			<p class="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-				Report child exploitation, trafficking, or illegal online content to law enforcement.
-			</p>
+    <section class="mt-12">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">🚔 Reporting Exploitation & Illegal Content</h2>
+      <p class="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+        Report child exploitation, trafficking, or illegal online content to law enforcement.
+      </p>
 
-			<Alert type="warning">
-				<strong>Important:</strong> Do not confront suspected predators yourself. Report to authorities immediately.
-			</Alert>
+      <Alert type="warning">
+        <strong>Important:</strong> Do not confront suspected predators yourself. Report to authorities immediately.
+      </Alert>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-				<div class="bg-white dark:bg-gray-800 border-2 border-red-500 dark:border-red-600 rounded-xl p-6 transition-all duration-200 hover:border-red-600 dark:hover:border-red-500 hover:shadow-xl hover:-translate-y-0.5 bg-gradient-to-br from-red-50 to-white dark:from-red-950 dark:to-gray-800">
-					<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">National Center for Missing & Exploited Children</h3>
-					<div class="flex flex-col gap-2 mb-4">
-						<a href="tel:1-800-843-5678" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">1-800-THE-LOST (1-800-843-5678)</a>
-						<a href="https://www.cybertipline.org" target="_blank" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">Report Online: CyberTipline.org</a>
-					</div>
-					<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-						Report child sexual exploitation, online enticement, child sex trafficking. CyberTipline reports go directly to law enforcement.
-					</p>
-				</div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+        <div
+          class="bg-white dark:bg-gray-800 border-2 border-red-500 dark:border-red-600 rounded-xl p-6 transition-all duration-200 hover:border-red-600 dark:hover:border-red-500 hover:shadow-xl hover:-translate-y-0.5 bg-gradient-to-br from-red-50 to-white dark:from-red-950 dark:to-gray-800"
+        >
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
+            National Center for Missing & Exploited Children
+          </h3>
+          <div class="flex flex-col gap-2 mb-4">
+            <a
+              href="tel:1-800-843-5678"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >1-800-THE-LOST (1-800-843-5678)</a
+            >
+            <a
+              href="https://www.cybertipline.org"
+              target="_blank"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >Report Online: CyberTipline.org</a
+            >
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+            Report child sexual exploitation, online enticement, child sex trafficking. CyberTipline reports go directly
+            to law enforcement.
+          </p>
+        </div>
 
-				<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5">
-					<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">FBI Internet Crime Complaint Center (IC3)</h3>
-					<div class="flex flex-col gap-2 mb-4">
-						<a href="https://www.ic3.gov" target="_blank" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">ic3.gov</a>
-					</div>
-					<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-						Report internet crimes including online predators, sextortion, and cyber threats.
-					</p>
-				</div>
+        <div
+          class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5"
+        >
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
+            FBI Internet Crime Complaint Center (IC3)
+          </h3>
+          <div class="flex flex-col gap-2 mb-4">
+            <a
+              href="https://www.ic3.gov"
+              target="_blank"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >ic3.gov</a
+            >
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+            Report internet crimes including online predators, sextortion, and cyber threats.
+          </p>
+        </div>
 
-				<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5">
-					<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">FBI Tips</h3>
-					<div class="flex flex-col gap-2 mb-4">
-						<a href="tel:1-800-225-5324" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">1-800-CALL-FBI (1-800-225-5324)</a>
-						<a href="https://tips.fbi.gov" target="_blank" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">tips.fbi.gov</a>
-					</div>
-					<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-						Report threats, crimes, or suspicious activity to the FBI.
-					</p>
-				</div>
+        <div
+          class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5"
+        >
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">FBI Tips</h3>
+          <div class="flex flex-col gap-2 mb-4">
+            <a
+              href="tel:1-800-225-5324"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >1-800-CALL-FBI (1-800-225-5324)</a
+            >
+            <a
+              href="https://tips.fbi.gov"
+              target="_blank"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >tips.fbi.gov</a
+            >
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+            Report threats, crimes, or suspicious activity to the FBI.
+          </p>
+        </div>
 
-				<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5">
-					<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">National Human Trafficking Hotline</h3>
-					<div class="flex flex-col gap-2 mb-4">
-						<a href="tel:1-888-373-7888" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">1-888-373-7888</a>
-						<a href="sms:233733" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">Text: 233733 (BEFREE)</a>
-					</div>
-					<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-						24/7 confidential hotline to report human trafficking and connect victims with services.
-					</p>
-				</div>
-			</div>
-		</section>
+        <div
+          class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5"
+        >
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">National Human Trafficking Hotline</h3>
+          <div class="flex flex-col gap-2 mb-4">
+            <a
+              href="tel:1-888-373-7888"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >1-888-373-7888</a
+            >
+            <a
+              href="sms:233733"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >Text: 233733 (BEFREE)</a
+            >
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+            24/7 confidential hotline to report human trafficking and connect victims with services.
+          </p>
+        </div>
+      </div>
+    </section>
 
-		<section class="mt-12">
-			<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">🧠 Mental Health Support</h2>
-			<p class="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-				Professional mental health resources for anxiety, depression, and other concerns.
-			</p>
+    <section class="mt-12">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">🧠 Mental Health Support</h2>
+      <p class="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+        Professional mental health resources for anxiety, depression, and other concerns.
+      </p>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-				<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5">
-					<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">NAMI (National Alliance on Mental Illness)</h3>
-					<div class="flex flex-col gap-2 mb-4">
-						<a href="tel:1-800-950-6264" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">1-800-950-NAMI (6264)</a>
-						<a href="sms:62640" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">Text NAMI to 62640</a>
-						<a href="https://www.nami.org" target="_blank" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">nami.org</a>
-					</div>
-					<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-						Information, resources, and support for mental health conditions. Monday-Friday, 10am-10pm ET.
-					</p>
-				</div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div
+          class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5"
+        >
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
+            NAMI (National Alliance on Mental Illness)
+          </h3>
+          <div class="flex flex-col gap-2 mb-4">
+            <a
+              href="tel:1-800-950-6264"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >1-800-950-NAMI (6264)</a
+            >
+            <a
+              href="sms:62640"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >Text NAMI to 62640</a
+            >
+            <a
+              href="https://www.nami.org"
+              target="_blank"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >nami.org</a
+            >
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+            Information, resources, and support for mental health conditions. Monday-Friday, 10am-10pm ET.
+          </p>
+        </div>
 
-				<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5">
-					<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Psychology Today Therapist Finder</h3>
-					<div class="flex flex-col gap-2 mb-4">
-						<a href="https://www.psychologytoday.com/us/therapists" target="_blank" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">psychologytoday.com/us/therapists</a>
-					</div>
-					<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-						Search for therapists, psychiatrists, and treatment centers by location and specialty, including technology/internet addiction specialists.
-					</p>
-				</div>
+        <div
+          class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5"
+        >
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Psychology Today Therapist Finder</h3>
+          <div class="flex flex-col gap-2 mb-4">
+            <a
+              href="https://www.psychologytoday.com/us/therapists"
+              target="_blank"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >psychologytoday.com/us/therapists</a
+            >
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+            Search for therapists, psychiatrists, and treatment centers by location and specialty, including
+            technology/internet addiction specialists.
+          </p>
+        </div>
 
-				<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5">
-					<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">SMART Recovery</h3>
-					<div class="flex flex-col gap-2 mb-4">
-						<a href="https://www.smartrecovery.org" target="_blank" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">smartrecovery.org</a>
-					</div>
-					<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-						Science-based addiction recovery support, including online meetings for technology/internet addiction.
-					</p>
-				</div>
+        <div
+          class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5"
+        >
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">SMART Recovery</h3>
+          <div class="flex flex-col gap-2 mb-4">
+            <a
+              href="https://www.smartrecovery.org"
+              target="_blank"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >smartrecovery.org</a
+            >
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+            Science-based addiction recovery support, including online meetings for technology/internet addiction.
+          </p>
+        </div>
 
-				<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5">
-					<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Internet & Tech Addiction Anonymous (ITAA)</h3>
-					<div class="flex flex-col gap-2 mb-4">
-						<a href="https://internetaddictsanonymous.org" target="_blank" class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105">internetaddictsanonymous.org</a>
-					</div>
-					<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-						12-step fellowship for those recovering from internet and technology addiction. Free online and in-person meetings.
-					</p>
-				</div>
-			</div>
-		</section>
+        <div
+          class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5"
+        >
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
+            Internet & Tech Addiction Anonymous (ITAA)
+          </h3>
+          <div class="flex flex-col gap-2 mb-4">
+            <a
+              href="https://internetaddictsanonymous.org"
+              target="_blank"
+              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
+              >internetaddictsanonymous.org</a
+            >
+          </div>
+          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+            12-step fellowship for those recovering from internet and technology addiction. Free online and in-person
+            meetings.
+          </p>
+        </div>
+      </div>
+    </section>
 
-		<section class="mt-12">
-			<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">📱 Platform-Specific Abuse Reporting</h2>
-			<p class="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-				Report abuse, harassment, or inappropriate content directly to social media platforms.
-			</p>
+    <section class="mt-12">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">📱 Platform-Specific Abuse Reporting</h2>
+      <p class="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+        Report abuse, harassment, or inappropriate content directly to social media platforms.
+      </p>
 
-			<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-				<div class="bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg p-5 text-center transition-all duration-200 hover:bg-white dark:hover:bg-gray-600 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg">
-					<h3 class="text-base font-semibold text-gray-900 dark:text-white mb-3">Facebook/Instagram</h3>
-					<a href="https://www.facebook.com/help/181495968648557" target="_blank" class="text-blue-600 dark:text-blue-400 no-underline font-medium hover:underline">Report Abuse →</a>
-				</div>
-				<div class="bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg p-5 text-center transition-all duration-200 hover:bg-white dark:hover:bg-gray-600 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg">
-					<h3 class="text-base font-semibold text-gray-900 dark:text-white mb-3">Twitter/X</h3>
-					<a href="https://help.twitter.com/en/safety-and-security/report-abusive-behavior" target="_blank" class="text-blue-600 dark:text-blue-400 no-underline font-medium hover:underline">Report Abuse →</a>
-				</div>
-				<div class="bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg p-5 text-center transition-all duration-200 hover:bg-white dark:hover:bg-gray-600 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg">
-					<h3 class="text-base font-semibold text-gray-900 dark:text-white mb-3">TikTok</h3>
-					<a href="https://support.tiktok.com/en/safety-hc/report-a-problem" target="_blank" class="text-blue-600 dark:text-blue-400 no-underline font-medium hover:underline">Report Abuse →</a>
-				</div>
-				<div class="bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg p-5 text-center transition-all duration-200 hover:bg-white dark:hover:bg-gray-600 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg">
-					<h3 class="text-base font-semibold text-gray-900 dark:text-white mb-3">Snapchat</h3>
-					<a href="https://support.snapchat.com/en-US/i-need-help" target="_blank" class="text-blue-600 dark:text-blue-400 no-underline font-medium hover:underline">Report Abuse →</a>
-				</div>
-				<div class="bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg p-5 text-center transition-all duration-200 hover:bg-white dark:hover:bg-gray-600 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg">
-					<h3 class="text-base font-semibold text-gray-900 dark:text-white mb-3">YouTube</h3>
-					<a href="https://support.google.com/youtube/answer/2802027" target="_blank" class="text-blue-600 dark:text-blue-400 no-underline font-medium hover:underline">Report Abuse →</a>
-				</div>
-				<div class="bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg p-5 text-center transition-all duration-200 hover:bg-white dark:hover:bg-gray-600 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg">
-					<h3 class="text-base font-semibold text-gray-900 dark:text-white mb-3">Discord</h3>
-					<a href="https://support.discord.com/hc/en-us/articles/360000291932" target="_blank" class="text-blue-600 dark:text-blue-400 no-underline font-medium hover:underline">Report Abuse →</a>
-				</div>
-				<div class="bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg p-5 text-center transition-all duration-200 hover:bg-white dark:hover:bg-gray-600 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg">
-					<h3 class="text-base font-semibold text-gray-900 dark:text-white mb-3">Twitch</h3>
-					<a href="https://safety.twitch.tv" target="_blank" class="text-blue-600 dark:text-blue-400 no-underline font-medium hover:underline">Report Abuse →</a>
-				</div>
-				<div class="bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg p-5 text-center transition-all duration-200 hover:bg-white dark:hover:bg-gray-600 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg">
-					<h3 class="text-base font-semibold text-gray-900 dark:text-white mb-3">Reddit</h3>
-					<a href="https://www.reddit.com/report" target="_blank" class="text-blue-600 dark:text-blue-400 no-underline font-medium hover:underline">Report Abuse →</a>
-				</div>
-			</div>
-		</section>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div
+          class="bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg p-5 text-center transition-all duration-200 hover:bg-white dark:hover:bg-gray-600 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg"
+        >
+          <h3 class="text-base font-semibold text-gray-900 dark:text-white mb-3">Facebook/Instagram</h3>
+          <a
+            href="https://www.facebook.com/help/181495968648557"
+            target="_blank"
+            class="text-blue-600 dark:text-blue-400 no-underline font-medium hover:underline">Report Abuse →</a
+          >
+        </div>
+        <div
+          class="bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg p-5 text-center transition-all duration-200 hover:bg-white dark:hover:bg-gray-600 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg"
+        >
+          <h3 class="text-base font-semibold text-gray-900 dark:text-white mb-3">Twitter/X</h3>
+          <a
+            href="https://help.twitter.com/en/safety-and-security/report-abusive-behavior"
+            target="_blank"
+            class="text-blue-600 dark:text-blue-400 no-underline font-medium hover:underline">Report Abuse →</a
+          >
+        </div>
+        <div
+          class="bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg p-5 text-center transition-all duration-200 hover:bg-white dark:hover:bg-gray-600 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg"
+        >
+          <h3 class="text-base font-semibold text-gray-900 dark:text-white mb-3">TikTok</h3>
+          <a
+            href="https://support.tiktok.com/en/safety-hc/report-a-problem"
+            target="_blank"
+            class="text-blue-600 dark:text-blue-400 no-underline font-medium hover:underline">Report Abuse →</a
+          >
+        </div>
+        <div
+          class="bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg p-5 text-center transition-all duration-200 hover:bg-white dark:hover:bg-gray-600 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg"
+        >
+          <h3 class="text-base font-semibold text-gray-900 dark:text-white mb-3">Snapchat</h3>
+          <a
+            href="https://support.snapchat.com/en-US/i-need-help"
+            target="_blank"
+            class="text-blue-600 dark:text-blue-400 no-underline font-medium hover:underline">Report Abuse →</a
+          >
+        </div>
+        <div
+          class="bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg p-5 text-center transition-all duration-200 hover:bg-white dark:hover:bg-gray-600 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg"
+        >
+          <h3 class="text-base font-semibold text-gray-900 dark:text-white mb-3">YouTube</h3>
+          <a
+            href="https://support.google.com/youtube/answer/2802027"
+            target="_blank"
+            class="text-blue-600 dark:text-blue-400 no-underline font-medium hover:underline">Report Abuse →</a
+          >
+        </div>
+        <div
+          class="bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg p-5 text-center transition-all duration-200 hover:bg-white dark:hover:bg-gray-600 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg"
+        >
+          <h3 class="text-base font-semibold text-gray-900 dark:text-white mb-3">Discord</h3>
+          <a
+            href="https://support.discord.com/hc/en-us/articles/360000291932"
+            target="_blank"
+            class="text-blue-600 dark:text-blue-400 no-underline font-medium hover:underline">Report Abuse →</a
+          >
+        </div>
+        <div
+          class="bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg p-5 text-center transition-all duration-200 hover:bg-white dark:hover:bg-gray-600 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg"
+        >
+          <h3 class="text-base font-semibold text-gray-900 dark:text-white mb-3">Twitch</h3>
+          <a
+            href="https://safety.twitch.tv"
+            target="_blank"
+            class="text-blue-600 dark:text-blue-400 no-underline font-medium hover:underline">Report Abuse →</a
+          >
+        </div>
+        <div
+          class="bg-gray-50 dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded-lg p-5 text-center transition-all duration-200 hover:bg-white dark:hover:bg-gray-600 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-lg"
+        >
+          <h3 class="text-base font-semibold text-gray-900 dark:text-white mb-3">Reddit</h3>
+          <a
+            href="https://www.reddit.com/report"
+            target="_blank"
+            class="text-blue-600 dark:text-blue-400 no-underline font-medium hover:underline">Report Abuse →</a
+          >
+        </div>
+      </div>
+    </section>
 
-		<section class="mt-12">
-			<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">🌍 International Resources</h2>
-			<p class="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-				Crisis support resources for countries outside the United States.
-			</p>
+    <section class="mt-12">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">🌍 International Resources</h2>
+      <p class="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
+        Crisis support resources for countries outside the United States.
+      </p>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-				<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5">
-					<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Canada</h3>
-					<ul class="list-none p-0 m-0">
-						<li class="mb-2 text-gray-700 dark:text-gray-300"><strong>Crisis Services Canada:</strong> <a href="tel:1-833-456-4566" class="text-blue-600 dark:text-blue-400 no-underline hover:underline">1-833-456-4566</a></li>
-						<li class="mb-2 text-gray-700 dark:text-gray-300"><strong>Kids Help Phone:</strong> <a href="tel:1-800-668-6868" class="text-blue-600 dark:text-blue-400 no-underline hover:underline">1-800-668-6868</a> or text CONNECT to 686868</li>
-						<li class="mb-2 text-gray-700 dark:text-gray-300"><strong>Cybertip.ca:</strong> <a href="https://www.cybertip.ca" target="_blank" class="text-blue-600 dark:text-blue-400 no-underline hover:underline">cybertip.ca</a> (report child exploitation)</li>
-					</ul>
-				</div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div
+          class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5"
+        >
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Canada</h3>
+          <ul class="list-none p-0 m-0">
+            <li class="mb-2 text-gray-700 dark:text-gray-300">
+              <strong>Crisis Services Canada:</strong>
+              <a href="tel:1-833-456-4566" class="text-blue-600 dark:text-blue-400 no-underline hover:underline"
+                >1-833-456-4566</a
+              >
+            </li>
+            <li class="mb-2 text-gray-700 dark:text-gray-300">
+              <strong>Kids Help Phone:</strong>
+              <a href="tel:1-800-668-6868" class="text-blue-600 dark:text-blue-400 no-underline hover:underline"
+                >1-800-668-6868</a
+              > or text CONNECT to 686868
+            </li>
+            <li class="mb-2 text-gray-700 dark:text-gray-300">
+              <strong>Cybertip.ca:</strong>
+              <a
+                href="https://www.cybertip.ca"
+                target="_blank"
+                class="text-blue-600 dark:text-blue-400 no-underline hover:underline">cybertip.ca</a
+              > (report child exploitation)
+            </li>
+          </ul>
+        </div>
 
-				<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5">
-					<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">United Kingdom</h3>
-					<ul class="list-none p-0 m-0">
-						<li class="mb-2 text-gray-700 dark:text-gray-300"><strong>Samaritans:</strong> 116 123</li>
-						<li class="mb-2 text-gray-700 dark:text-gray-300"><strong>Childline:</strong> 0800 1111</li>
-						<li class="mb-2 text-gray-700 dark:text-gray-300"><strong>CEOP:</strong> <a href="https://www.ceop.police.uk/Safety-Centre" target="_blank" class="text-blue-600 dark:text-blue-400 no-underline hover:underline">ceop.police.uk</a> (child exploitation)</li>
-					</ul>
-				</div>
+        <div
+          class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5"
+        >
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">United Kingdom</h3>
+          <ul class="list-none p-0 m-0">
+            <li class="mb-2 text-gray-700 dark:text-gray-300"><strong>Samaritans:</strong> 116 123</li>
+            <li class="mb-2 text-gray-700 dark:text-gray-300"><strong>Childline:</strong> 0800 1111</li>
+            <li class="mb-2 text-gray-700 dark:text-gray-300">
+              <strong>CEOP:</strong>
+              <a
+                href="https://www.ceop.police.uk/Safety-Centre"
+                target="_blank"
+                class="text-blue-600 dark:text-blue-400 no-underline hover:underline">ceop.police.uk</a
+              > (child exploitation)
+            </li>
+          </ul>
+        </div>
 
-				<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5">
-					<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Australia</h3>
-					<ul class="list-none p-0 m-0">
-						<li class="mb-2 text-gray-700 dark:text-gray-300"><strong>Lifeline:</strong> 13 11 14</li>
-						<li class="mb-2 text-gray-700 dark:text-gray-300"><strong>Kids Helpline:</strong> 1800 55 1800</li>
-						<li class="mb-2 text-gray-700 dark:text-gray-300"><strong>eSafety Commissioner:</strong> <a href="https://www.esafety.gov.au" target="_blank" class="text-blue-600 dark:text-blue-400 no-underline hover:underline">esafety.gov.au</a></li>
-					</ul>
-				</div>
+        <div
+          class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5"
+        >
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Australia</h3>
+          <ul class="list-none p-0 m-0">
+            <li class="mb-2 text-gray-700 dark:text-gray-300"><strong>Lifeline:</strong> 13 11 14</li>
+            <li class="mb-2 text-gray-700 dark:text-gray-300"><strong>Kids Helpline:</strong> 1800 55 1800</li>
+            <li class="mb-2 text-gray-700 dark:text-gray-300">
+              <strong>eSafety Commissioner:</strong>
+              <a
+                href="https://www.esafety.gov.au"
+                target="_blank"
+                class="text-blue-600 dark:text-blue-400 no-underline hover:underline">esafety.gov.au</a
+              >
+            </li>
+          </ul>
+        </div>
 
-				<div class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5">
-					<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Israel</h3>
-					<ul class="list-none p-0 m-0">
-						<li class="mb-2 text-gray-700 dark:text-gray-300"><strong>ERAN (Emotional First Aid):</strong> 1201</li>
-						<li class="mb-2 text-gray-700 dark:text-gray-300"><strong>SAHAR (24/7 hotline):</strong> *2-6-2-6</li>
-						<li class="mb-2 text-gray-700 dark:text-gray-300"><strong>Israel Police Cyber Unit:</strong> <a href="https://www.gov.il/en/Departments/Units/lahav_433_cyber_unit" target="_blank" class="text-blue-600 dark:text-blue-400 no-underline hover:underline">Report Cyber Crimes</a></li>
-					</ul>
-				</div>
-			</div>
-		</section>
+        <div
+          class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5"
+        >
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Israel</h3>
+          <ul class="list-none p-0 m-0">
+            <li class="mb-2 text-gray-700 dark:text-gray-300"><strong>ERAN (Emotional First Aid):</strong> 1201</li>
+            <li class="mb-2 text-gray-700 dark:text-gray-300"><strong>SAHAR (24/7 hotline):</strong> *2-6-2-6</li>
+            <li class="mb-2 text-gray-700 dark:text-gray-300">
+              <strong>Israel Police Cyber Unit:</strong>
+              <a
+                href="https://www.gov.il/en/Departments/Units/lahav_433_cyber_unit"
+                target="_blank"
+                class="text-blue-600 dark:text-blue-400 no-underline hover:underline">Report Cyber Crimes</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-		<section class="bg-green-50 dark:bg-green-950 p-8 rounded-xl mt-12">
-			<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">📝 Documenting Incidents</h2>
-			<p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">If you're experiencing cyberbullying, harassment, or online threats:</p>
-			<ul class="ml-8 mb-4 text-gray-700 dark:text-gray-300">
-				<li class="mb-3 leading-relaxed"><strong>Screenshot everything:</strong> Capture messages, posts, profiles, URLs with timestamps</li>
-				<li class="mb-3 leading-relaxed"><strong>Don't delete:</strong> Keep records even if content is disturbing</li>
-				<li class="mb-3 leading-relaxed"><strong>Record details:</strong> Date, time, platform, usernames, what happened</li>
-				<li class="mb-3 leading-relaxed"><strong>Report first, block second:</strong> Block after reporting to preserve evidence</li>
-				<li class="mb-3 leading-relaxed"><strong>Tell a trusted adult:</strong> Don't handle serious situations alone</li>
-			</ul>
-			<p class="leading-relaxed text-gray-700 dark:text-gray-300">See our <a href="/guides/cyberbullying" class="text-blue-600 dark:text-blue-400 underline hover:text-blue-700 dark:hover:text-blue-300">complete cyberbullying response guide</a> for detailed documentation instructions.</p>
-		</section>
+    <section class="bg-green-50 dark:bg-green-950 p-8 rounded-xl mt-12">
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">📝 Documenting Incidents</h2>
+      <p class="leading-relaxed text-gray-700 dark:text-gray-300 mb-3">
+        If you're experiencing cyberbullying, harassment, or online threats:
+      </p>
+      <ul class="ml-8 mb-4 text-gray-700 dark:text-gray-300">
+        <li class="mb-3 leading-relaxed">
+          <strong>Screenshot everything:</strong> Capture messages, posts, profiles, URLs with timestamps
+        </li>
+        <li class="mb-3 leading-relaxed"><strong>Don't delete:</strong> Keep records even if content is disturbing</li>
+        <li class="mb-3 leading-relaxed">
+          <strong>Record details:</strong> Date, time, platform, usernames, what happened
+        </li>
+        <li class="mb-3 leading-relaxed">
+          <strong>Report first, block second:</strong> Block after reporting to preserve evidence
+        </li>
+        <li class="mb-3 leading-relaxed">
+          <strong>Tell a trusted adult:</strong> Don't handle serious situations alone
+        </li>
+      </ul>
+      <p class="leading-relaxed text-gray-700 dark:text-gray-300">
+        See our <a
+          href="/guides/cyberbullying"
+          class="text-blue-600 dark:text-blue-400 underline hover:text-blue-700 dark:hover:text-blue-300"
+          >complete cyberbullying response guide</a
+        > for detailed documentation instructions.
+      </p>
+    </section>
 
-		<section class="text-center bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-950 dark:to-green-950 p-10 rounded-xl mt-12">
-			<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">💙 You're Not Alone</h2>
-			<p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4 max-w-3xl mx-auto">
-				Whether you're dealing with a crisis, online harassment, mental health concerns, or just need someone to talk to,
-				help is available. These resources are confidential, free, and staffed by trained professionals who care.
-			</p>
-			<p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
-				<strong>It's okay to ask for help.</strong> Reaching out is a sign of strength, not weakness.
-			</p>
-		</section>
-	</div>
+    <section
+      class="text-center bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-950 dark:to-green-950 p-10 rounded-xl mt-12"
+    >
+      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">💙 You're Not Alone</h2>
+      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4 max-w-3xl mx-auto">
+        Whether you're dealing with a crisis, online harassment, mental health concerns, or just need someone to talk
+        to, help is available. These resources are confidential, free, and staffed by trained professionals who care.
+      </p>
+      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed max-w-3xl mx-auto">
+        <strong>It's okay to ask for help.</strong> Reaching out is a sign of strength, not weakness.
+      </p>
+    </section>
+  </div>
 </Layout>
 
 <style>
-	@keyframes pulse {
-		0%, 100% { opacity: 1; }
-		50% { opacity: 0.8; }
-	}
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
 
-	.animate-pulse {
-		animation: pulse 2s infinite;
-	}
+  .animate-pulse {
+    animation: pulse 2s infinite;
+  }
 
-	@media (max-width: 768px) {
-		.grid-cols-2 {
-			grid-template-columns: 1fr;
-		}
-	}
+  @media (max-width: 768px) {
+    .grid-cols-2 {
+      grid-template-columns: 1fr;
+    }
+  }
 </style>

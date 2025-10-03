@@ -2,343 +2,361 @@
 import GuideLayout from '~/layouts/GuideLayout.astro';
 
 const metadata = {
-	title: 'Gaming Console Parental Controls',
-	description: 'Complete guide to setting up parental controls on PlayStation, Xbox, Nintendo Switch, and other gaming consoles to manage content, time, and spending.',
+  title: 'Gaming Console Parental Controls',
+  description:
+    'Complete guide to setting up parental controls on PlayStation, Xbox, Nintendo Switch, and other gaming consoles to manage content, time, and spending.',
 };
-
 ---
 
 <GuideLayout
-	metadata={metadata}
-	difficulty="beginner"
-	timeEstimate="10-20 minutes per console"
-	prerequisites={[
-		'Gaming console (PlayStation, Xbox, Nintendo Switch)',
-		'Account credentials',
-		'Email address for family accounts'
-	]}
+  metadata={metadata}
+  difficulty="beginner"
+  timeEstimate="10-20 minutes per console"
+  prerequisites={[
+    'Gaming console (PlayStation, Xbox, Nintendo Switch)',
+    'Account credentials',
+    'Email address for family accounts',
+  ]}
 >
+  <Fragment slot="breadcrumb">
+    <li class="flex items-center">
+      <a href="/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"> Home </a>
+      <span class="mx-2 text-gray-500">/</span>
+    </li>
+    <li class="flex items-center">
+      <a href="/methods" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+        Protection Methods
+      </a>
+      <span class="mx-2 text-gray-500">/</span>
+    </li>
+    <li class="text-gray-700 dark:text-gray-300">Gaming Console Parental Controls</li>
+  </Fragment>
 
-	<Fragment slot="breadcrumb">
-		<li class="flex items-center">
-			<a href="/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
-				Home
-			</a>
-			<span class="mx-2 text-gray-500">/</span>
-		</li>
-		<li class="flex items-center">
-			<a href="/methods" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
-				Protection Methods
-			</a>
-			<span class="mx-2 text-gray-500">/</span>
-		</li>
-		<li class="text-gray-700 dark:text-gray-300">
-			Gaming Console Parental Controls
-		</li>
-	</Fragment>
+  <section>
+    <h2>Why Gaming Consoles Need Special Attention</h2>
+    <p>
+      Modern gaming consoles are more than just gaming devices—they're full entertainment systems with web browsers,
+      social features, video streaming, and online multiplayer. Without proper controls, children can encounter
+      inappropriate content, excessive spending, or concerning interactions with strangers.
+    </p>
 
-	<section>
-		<h2>Why Gaming Consoles Need Special Attention</h2>
-		<p>
-			Modern gaming consoles are more than just gaming devices—they're full entertainment systems with web browsers, social features, video streaming, and online multiplayer. Without proper controls, children can encounter inappropriate content, excessive spending, or concerning interactions with strangers.
-		</p>
+    <div class="alert alert-warning">
+      <strong>Online Gaming Risks:</strong> Voice chat, text messaging, user-generated content, in-game purchases, and contact
+      with strangers all require parental oversight.
+    </div>
+  </section>
 
-		<div class="alert alert-warning">
-			<strong>Online Gaming Risks:</strong> Voice chat, text messaging, user-generated content, in-game purchases, and contact with strangers all require parental oversight.
-		</div>
-	</section>
+  <section>
+    <h2>🎮 PlayStation 5 & PlayStation 4</h2>
 
-	<section>
-		<h2>🎮 PlayStation 5 & PlayStation 4</h2>
+    <h3>Setting Up Family Management</h3>
+    <ol>
+      <li>Create a PlayStation Network account for yourself (parent)</li>
+      <li>On PS5: Settings → Family and Parental Controls → Family Management</li>
+      <li>On PS4: Settings → Parental Controls/Family Management</li>
+      <li>Add family members (children)</li>
+      <li>For children under 18, parental controls are automatically applied</li>
+    </ol>
 
-		<h3>Setting Up Family Management</h3>
-		<ol>
-			<li>Create a PlayStation Network account for yourself (parent)</li>
-			<li>On PS5: Settings → Family and Parental Controls → Family Management</li>
-			<li>On PS4: Settings → Parental Controls/Family Management</li>
-			<li>Add family members (children)</li>
-			<li>For children under 18, parental controls are automatically applied</li>
-		</ol>
+    <h3>Key Parental Control Features</h3>
 
-		<h3>Key Parental Control Features</h3>
+    <h4>Age Ratings & Content Restrictions</h4>
+    <ul>
+      <li>Set maximum age rating for games (E, E10+, T, M, AO)</li>
+      <li>Restrict Blu-ray/DVD viewing by rating</li>
+      <li>Block web browser access</li>
+      <li>Restrict VR content by age</li>
+    </ul>
 
-		<h4>Age Ratings & Content Restrictions</h4>
-		<ul>
-			<li>Set maximum age rating for games (E, E10+, T, M, AO)</li>
-			<li>Restrict Blu-ray/DVD viewing by rating</li>
-			<li>Block web browser access</li>
-			<li>Restrict VR content by age</li>
-		</ul>
+    <h4>Communication & Social Features</h4>
+    <ul>
+      <li>Limit who can communicate with child (friends only, no one)</li>
+      <li>Block messaging and voice chat</li>
+      <li>Restrict sharing content/screenshots</li>
+      <li>Control who can view child's profile</li>
+      <li>Disable user-generated content viewing</li>
+    </ul>
 
-		<h4>Communication & Social Features</h4>
-		<ul>
-			<li>Limit who can communicate with child (friends only, no one)</li>
-			<li>Block messaging and voice chat</li>
-			<li>Restrict sharing content/screenshots</li>
-			<li>Control who can view child's profile</li>
-			<li>Disable user-generated content viewing</li>
-		</ul>
+    <h4>Spending Controls</h4>
+    <ul>
+      <li>Set monthly spending limits</li>
+      <li>Require password for purchases</li>
+      <li>Receive notifications for purchase requests</li>
+      <li>Control PlayStation Store access</li>
+    </ul>
 
-		<h4>Spending Controls</h4>
-		<ul>
-			<li>Set monthly spending limits</li>
-			<li>Require password for purchases</li>
-			<li>Receive notifications for purchase requests</li>
-			<li>Control PlayStation Store access</li>
-		</ul>
+    <h4>Playing Time Management</h4>
+    <ul>
+      <li>Set daily playtime limits (PS5)</li>
+      <li>Schedule allowed play times</li>
+      <li>Restrict playing during bedtime/school hours</li>
+    </ul>
 
-		<h4>Playing Time Management</h4>
-		<ul>
-			<li>Set daily playtime limits (PS5)</li>
-			<li>Schedule allowed play times</li>
-			<li>Restrict playing during bedtime/school hours</li>
-		</ul>
+    <h3>Additional Tips</h3>
+    <ul>
+      <li>Use PS App for remote management</li>
+      <li>Review play history and friend lists regularly</li>
+      <li>Manage through account.sony.com</li>
+      <li>Consider disabling PlayStation Plus for younger children (no online multiplayer)</li>
+    </ul>
+  </section>
 
-		<h3>Additional Tips</h3>
-		<ul>
-			<li>Use PS App for remote management</li>
-			<li>Review play history and friend lists regularly</li>
-			<li>Manage through account.sony.com</li>
-			<li>Consider disabling PlayStation Plus for younger children (no online multiplayer)</li>
-		</ul>
-	</section>
+  <section>
+    <h2>🟢 Xbox Series X|S & Xbox One</h2>
 
-	<section>
-		<h2>🟢 Xbox Series X|S & Xbox One</h2>
+    <h3>Setting Up Microsoft Family</h3>
+    <ol>
+      <li>
+        Create a Microsoft Family group at <a
+          href="https://account.microsoft.com/family"
+          target="_blank"
+          rel="noopener noreferrer">account.microsoft.com/family</a
+        >
+      </li>
+      <li>Add child to family (creates child Microsoft account)</li>
+      <li>Child signs in to Xbox with their Microsoft account</li>
+      <li>Parental controls automatically apply based on age</li>
+    </ol>
 
-		<h3>Setting Up Microsoft Family</h3>
-		<ol>
-			<li>Create a Microsoft Family group at <a href="https://account.microsoft.com/family" target="_blank" rel="noopener noreferrer">account.microsoft.com/family</a></li>
-			<li>Add child to family (creates child Microsoft account)</li>
-			<li>Child signs in to Xbox with their Microsoft account</li>
-			<li>Parental controls automatically apply based on age</li>
-		</ol>
+    <div class="alert alert-success">
+      <strong>Integration Benefit:</strong> Xbox parental controls integrate with Windows Family Safety and mobile devices
+      for unified management.
+    </div>
 
-		<div class="alert alert-success">
-			<strong>Integration Benefit:</strong> Xbox parental controls integrate with Windows Family Safety and mobile devices for unified management.
-		</div>
+    <h3>Key Features</h3>
 
-		<h3>Key Features</h3>
+    <h4>Content Filters</h4>
+    <ul>
+      <li>Set age ratings for games (E, E10+, T, M)</li>
+      <li>Restrict apps and media by rating</li>
+      <li>Block specific games or apps</li>
+      <li>Filter inappropriate content in Microsoft Edge</li>
+    </ul>
 
-		<h4>Content Filters</h4>
-		<ul>
-			<li>Set age ratings for games (E, E10+, T, M)</li>
-			<li>Restrict apps and media by rating</li>
-			<li>Block specific games or apps</li>
-			<li>Filter inappropriate content in Microsoft Edge</li>
-		</ul>
+    <h4>Screen Time</h4>
+    <ul>
+      <li>Set daily time limits</li>
+      <li>Schedule gaming hours</li>
+      <li>Different limits for weekdays/weekends</li>
+      <li>Grant bonus time remotely</li>
+    </ul>
 
-		<h4>Screen Time</h4>
-		<ul>
-			<li>Set daily time limits</li>
-			<li>Schedule gaming hours</li>
-			<li>Different limits for weekdays/weekends</li>
-			<li>Grant bonus time remotely</li>
-		</ul>
+    <h4>Social & Multiplayer</h4>
+    <ul>
+      <li>Control who child can communicate with</li>
+      <li>Block voice and text chat</li>
+      <li>Restrict joining multiplayer games</li>
+      <li>Approve friend requests</li>
+      <li>Control sharing of game clips</li>
+    </ul>
 
-		<h4>Social & Multiplayer</h4>
-		<ul>
-			<li>Control who child can communicate with</li>
-			<li>Block voice and text chat</li>
-			<li>Restrict joining multiplayer games</li>
-			<li>Approve friend requests</li>
-			<li>Control sharing of game clips</li>
-		</ul>
+    <h4>Purchase Management</h4>
+    <ul>
+      <li>Require approval for all purchases</li>
+      <li>Set spending limits</li>
+      <li>View purchase history</li>
+      <li>Manage subscriptions (Game Pass, etc.)</li>
+    </ul>
 
-		<h4>Purchase Management</h4>
-		<ul>
-			<li>Require approval for all purchases</li>
-			<li>Set spending limits</li>
-			<li>View purchase history</li>
-			<li>Manage subscriptions (Game Pass, etc.)</li>
-		</ul>
+    <h3>Xbox Family Settings App</h3>
+    <p>Download the Xbox Family Settings mobile app for:</p>
+    <ul>
+      <li>Quick access to controls</li>
+      <li>Real-time activity monitoring</li>
+      <li>Weekly reports</li>
+      <li>Approve requests on-the-go</li>
+    </ul>
+  </section>
 
-		<h3>Xbox Family Settings App</h3>
-		<p>Download the Xbox Family Settings mobile app for:</p>
-		<ul>
-			<li>Quick access to controls</li>
-			<li>Real-time activity monitoring</li>
-			<li>Weekly reports</li>
-			<li>Approve requests on-the-go</li>
-		</ul>
-	</section>
+  <section>
+    <h2>🔴 Nintendo Switch</h2>
 
-	<section>
-		<h2>🔴 Nintendo Switch</h2>
+    <h3>Nintendo Switch Parental Controls App (Required)</h3>
+    <ol>
+      <li>Download "Nintendo Switch Parental Controls" app (iOS/Android)</li>
+      <li>Open app and follow setup wizard</li>
+      <li>Link app to Nintendo Switch using displayed code</li>
+      <li>Configure restrictions in the mobile app</li>
+    </ol>
 
-		<h3>Nintendo Switch Parental Controls App (Required)</h3>
-		<ol>
-			<li>Download "Nintendo Switch Parental Controls" app (iOS/Android)</li>
-			<li>Open app and follow setup wizard</li>
-			<li>Link app to Nintendo Switch using displayed code</li>
-			<li>Configure restrictions in the mobile app</li>
-		</ol>
+    <div class="alert alert-info">
+      <strong>Note:</strong> Unlike PlayStation and Xbox, Switch requires a mobile app for most parental controls. Basic
+      restrictions can be set on the console, but the app is highly recommended.
+    </div>
 
-		<div class="alert alert-info">
-			<strong>Note:</strong> Unlike PlayStation and Xbox, Switch requires a mobile app for most parental controls. Basic restrictions can be set on the console, but the app is highly recommended.
-		</div>
+    <h3>Key Features</h3>
 
-		<h3>Key Features</h3>
+    <h4>Play-Time Limit</h4>
+    <ul>
+      <li>Set daily time limit (e.g., 3 hours)</li>
+      <li>Soft limit (alarm) or strict limit (pause game)</li>
+      <li>Bedtime alarm</li>
+      <li>View play history and statistics</li>
+    </ul>
 
-		<h4>Play-Time Limit</h4>
-		<ul>
-			<li>Set daily time limit (e.g., 3 hours)</li>
-			<li>Soft limit (alarm) or strict limit (pause game)</li>
-			<li>Bedtime alarm</li>
-			<li>View play history and statistics</li>
-		</ul>
+    <h4>Restriction Level</h4>
+    <ul>
+      <li>Pre-set levels: Child, Pre-Teen, Teen, Young Adult, Adult, Custom</li>
+      <li>Restrict by ESRB ratings</li>
+      <li>Block screenshots/video capture</li>
+      <li>Restrict social media sharing</li>
+      <li>Disable communication features</li>
+    </ul>
 
-		<h4>Restriction Level</h4>
-		<ul>
-			<li>Pre-set levels: Child, Pre-Teen, Teen, Young Adult, Adult, Custom</li>
-			<li>Restrict by ESRB ratings</li>
-			<li>Block screenshots/video capture</li>
-			<li>Restrict social media sharing</li>
-			<li>Disable communication features</li>
-		</ul>
+    <h4>Spending Controls</h4>
+    <ul>
+      <li>Require password for eShop purchases</li>
+      <li>Disable eShop entirely</li>
+      <li>Set up supervised account for kids under 13</li>
+    </ul>
 
-		<h4>Spending Controls</h4>
-		<ul>
-			<li>Require password for eShop purchases</li>
-			<li>Disable eShop entirely</li>
-			<li>Set up supervised account for kids under 13</li>
-		</ul>
+    <h3>Console-Level PIN</h3>
+    <ul>
+      <li>Set PIN on console itself (Settings → Parental Controls)</li>
+      <li>Prevents bypassing app controls</li>
+      <li>Required to change restriction settings</li>
+    </ul>
+  </section>
 
-		<h3>Console-Level PIN</h3>
-		<ul>
-			<li>Set PIN on console itself (Settings → Parental Controls)</li>
-			<li>Prevents bypassing app controls</li>
-			<li>Required to change restriction settings</li>
-		</ul>
-	</section>
+  <section>
+    <h2>🔵 Other Consoles & Devices</h2>
 
-	<section>
-		<h2>🔵 Other Consoles & Devices</h2>
+    <h3>Steam Deck</h3>
+    <ul>
+      <li>Create Family View in Steam</li>
+      <li>Set PIN to restrict content</li>
+      <li>Limit store access and communities</li>
+      <li>Filter by game ratings</li>
+    </ul>
 
-		<h3>Steam Deck</h3>
-		<ul>
-			<li>Create Family View in Steam</li>
-			<li>Set PIN to restrict content</li>
-			<li>Limit store access and communities</li>
-			<li>Filter by game ratings</li>
-		</ul>
+    <h3>Retro/Older Consoles (Wii, PS3, Xbox 360)</h3>
+    <ul>
+      <li>Basic parental controls in system settings</li>
+      <li>Consider physical placement (common area)</li>
+      <li>Network-level controls via router/DNS</li>
+      <li>Many lack modern parental control features</li>
+    </ul>
+  </section>
 
-		<h3>Retro/Older Consoles (Wii, PS3, Xbox 360)</h3>
-		<ul>
-			<li>Basic parental controls in system settings</li>
-			<li>Consider physical placement (common area)</li>
-			<li>Network-level controls via router/DNS</li>
-			<li>Many lack modern parental control features</li>
-		</ul>
-	</section>
+  <section>
+    <h2>🎯 Best Practices</h2>
 
-	<section>
-		<h2>🎯 Best Practices</h2>
+    <div class="best-practices">
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>🎮 Game Selection</h3>
+        <ul>
+          <li>Review ESRB ratings (E, E10+, T, M, AO)</li>
+          <li>Read detailed content descriptors</li>
+          <li>Watch gameplay videos before purchase</li>
+          <li>Check user reviews for content concerns</li>
+          <li>Use Common Sense Media for detailed reviews</li>
+        </ul>
+      </div>
 
-		<div class="best-practices">
-			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>🎮 Game Selection</h3>
-				<ul>
-					<li>Review ESRB ratings (E, E10+, T, M, AO)</li>
-					<li>Read detailed content descriptors</li>
-					<li>Watch gameplay videos before purchase</li>
-					<li>Check user reviews for content concerns</li>
-					<li>Use Common Sense Media for detailed reviews</li>
-				</ul>
-			</div>
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>👥 Online Safety</h3>
+        <ul>
+          <li>Disable voice/text chat for young children</li>
+          <li>Use "friends only" communication for older kids</li>
+          <li>Teach not to share personal information</li>
+          <li>Discuss online stranger danger</li>
+          <li>Monitor friend lists regularly</li>
+          <li>Report inappropriate behavior</li>
+        </ul>
+      </div>
 
-			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>👥 Online Safety</h3>
-				<ul>
-					<li>Disable voice/text chat for young children</li>
-					<li>Use "friends only" communication for older kids</li>
-					<li>Teach not to share personal information</li>
-					<li>Discuss online stranger danger</li>
-					<li>Monitor friend lists regularly</li>
-					<li>Report inappropriate behavior</li>
-				</ul>
-			</div>
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>💰 Spending Control</h3>
+        <ul>
+          <li>Never save payment methods on child accounts</li>
+          <li>Use prepaid cards for controlled spending</li>
+          <li>Discuss in-game purchases and loot boxes</li>
+          <li>Review monthly statements</li>
+          <li>Teach digital financial responsibility</li>
+        </ul>
+      </div>
 
-			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>💰 Spending Control</h3>
-				<ul>
-					<li>Never save payment methods on child accounts</li>
-					<li>Use prepaid cards for controlled spending</li>
-					<li>Discuss in-game purchases and loot boxes</li>
-					<li>Review monthly statements</li>
-					<li>Teach digital financial responsibility</li>
-				</ul>
-			</div>
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>⏰ Time Management</h3>
+        <ul>
+          <li>Set consistent daily limits</li>
+          <li>Schedule gaming after homework/chores</li>
+          <li>No gaming 1 hour before bedtime</li>
+          <li>Weekend flexibility with limits</li>
+          <li>Use gaming as privilege, not right</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>⏰ Time Management</h3>
-				<ul>
-					<li>Set consistent daily limits</li>
-					<li>Schedule gaming after homework/chores</li>
-					<li>No gaming 1 hour before bedtime</li>
-					<li>Weekend flexibility with limits</li>
-					<li>Use gaming as privilege, not right</li>
-				</ul>
-			</div>
-		</div>
-	</section>
+  <section>
+    <h2>⚖️ Pros & Cons</h2>
 
-	<section>
-		<h2>⚖️ Pros & Cons</h2>
+    <div class="pros-cons">
+      <div class="pros">
+        <h3>✅ Advantages</h3>
+        <ul>
+          <li>Built-in, free parental controls</li>
+          <li>Comprehensive feature sets</li>
+          <li>Remote management via apps</li>
+          <li>Activity reports and insights</li>
+          <li>Integration with family accounts</li>
+          <li>Regular updates from manufacturers</li>
+        </ul>
+      </div>
+      <div class="cons">
+        <h3>❌ Limitations</h3>
+        <ul>
+          <li>Varies significantly by console</li>
+          <li>Can be bypassed with guest accounts (if allowed)</li>
+          <li>Doesn't control all third-party content</li>
+          <li>Limited filtering of user-generated content</li>
+          <li>Requires ongoing monitoring and adjustment</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-		<div class="pros-cons">
-			<div class="pros">
-				<h3>✅ Advantages</h3>
-				<ul>
-					<li>Built-in, free parental controls</li>
-					<li>Comprehensive feature sets</li>
-					<li>Remote management via apps</li>
-					<li>Activity reports and insights</li>
-					<li>Integration with family accounts</li>
-					<li>Regular updates from manufacturers</li>
-				</ul>
-			</div>
-			<div class="cons">
-				<h3>❌ Limitations</h3>
-				<ul>
-					<li>Varies significantly by console</li>
-					<li>Can be bypassed with guest accounts (if allowed)</li>
-					<li>Doesn't control all third-party content</li>
-					<li>Limited filtering of user-generated content</li>
-					<li>Requires ongoing monitoring and adjustment</li>
-				</ul>
-			</div>
-		</div>
-	</section>
+  <section slot="next-steps">
+    <h2>🎯 Next Steps</h2>
 
-	<section slot="next-steps">
-		<h2>🎯 Next Steps</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+      <a
+        href="/guides/windows-family"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
+        <h3>🖥️ Windows Family Safety</h3>
+        <p>Xbox integrates with Windows parental controls</p>
+      </a>
 
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
-			<a href="/guides/windows-family" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>🖥️ Windows Family Safety</h3>
-				<p>Xbox integrates with Windows parental controls</p>
-			</a>
+      <a
+        href="/guides/router-config"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
+        <h3>🔐 Router Controls</h3>
+        <p>Add network-level time management</p>
+      </a>
 
-			<a href="/guides/router-config" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>🔐 Router Controls</h3>
-				<p>Add network-level time management</p>
-			</a>
+      <a
+        href="/guides/dns-filtering"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
+        <h3>🌐 DNS Filtering</h3>
+        <p>Block inappropriate content at network level</p>
+      </a>
 
-			<a href="/guides/dns-filtering" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>🌐 DNS Filtering</h3>
-				<p>Block inappropriate content at network level</p>
-			</a>
+      <a
+        href="/methods"
+        class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6"
+      >
+        <h3>📚 All Methods</h3>
+        <p>Explore other protection methods</p>
+      </a>
+    </div>
 
-			<a href="/methods" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
-				<h3>📚 All Methods</h3>
-				<p>Explore other protection methods</p>
-			</a>
-		</div>
-
-		<div class="alert alert-info">
-			<strong>Layered Protection:</strong> Combine console parental controls + router time limits + DNS filtering + regular conversations for comprehensive gaming safety.
-		</div>
-	</section>
+    <div class="alert alert-info">
+      <strong>Layered Protection:</strong> Combine console parental controls + router time limits + DNS filtering + regular
+      conversations for comprehensive gaming safety.
+    </div>
+  </section>
 </GuideLayout>
-
