@@ -1,0 +1,295 @@
+---
+import GuideLayout from '~/layouts/GuideLayout.astro';
+
+const metadata = {
+  title: 'Browser Extensions for Filtering & Productivity — Shemirat Enayim',
+  description: 'Guide to browser extensions that provide content filtering, distraction blocking, and productivity features for safer web browsing.',
+};
+---
+
+<GuideLayout
+  metadata={metadata}
+  difficulty="beginner"
+  timeEstimate="5-10 minutes per extension"
+  prerequisites={[
+    'Chrome, Firefox, Edge, or Safari browser',
+    'Ability to install extensions',
+    'Admin access to prevent extension removal (recommended)'
+  ]}
+>
+  <Fragment slot="breadcrumb">
+    <li class="flex items-center">
+      <a href="/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+        Home
+      </a>
+      <span class="mx-2 text-gray-500">/</span>
+    </li>
+    <li class="flex items-center">
+      <a href="/methods" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+        Protection Methods
+      </a>
+      <span class="mx-2 text-gray-500">/</span>
+    </li>
+    <li class="text-gray-700 dark:text-gray-300">
+      Browser Extensions
+    </li>
+  </Fragment>
+
+  <section>
+    <h2>Browser Extensions for Safety</h2>
+    <p>
+      Browser extensions are lightweight add-ons that enhance your web browser with additional features. For internet safety, extensions can block inappropriate content, remove distractions, enforce time limits, and provide accountability.
+    </p>
+
+    <div class="alert alert-warning">
+      <strong>Important Limitation:</strong> Browser extensions only work in that specific browser and can be disabled if the user has permission. Use them as an additional layer, not as your only protection method.
+    </div>
+  </section>
+
+  <section>
+    <h2>Content Filtering Extensions</h2>
+
+    <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5 mb-6">
+      <h3 class="text-blue-700 dark:text-blue-400 mt-0 mb-2">BlockSite</h3>
+      <p><strong>Available for:</strong> Chrome, Firefox, Edge</p>
+      <p><strong>Cost:</strong> Free with premium options ($5/month)</p>
+      <p><strong>Features:</strong></p>
+      <ul>
+        <li>Block specific websites and apps</li>
+        <li>Adult content filtering</li>
+        <li>Scheduling (block during work/study hours)</li>
+        <li>Focus mode to prevent distractions</li>
+        <li>Password protection</li>
+        <li>Sync across devices (premium)</li>
+      </ul>
+      <p><strong>Best for:</strong> Blocking specific distracting sites, time-based blocking</p>
+    </div>
+
+    <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5 mb-6">
+      <h3 class="text-blue-700 dark:text-blue-400 mt-0 mb-2">WebFilter Pro</h3>
+      <p><strong>Available for:</strong> Chrome</p>
+      <p><strong>Cost:</strong> Free</p>
+      <p><strong>Features:</strong></p>
+      <ul>
+        <li>Category-based website filtering</li>
+        <li>Custom blacklists and whitelists</li>
+        <li>Password protection</li>
+        <li>Block by keywords in URL</li>
+      </ul>
+      <p><strong>Best for:</strong> Simple, free category filtering</p>
+    </div>
+
+    <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5 mb-6">
+      <h3 class="text-blue-700 dark:text-blue-400 mt-0 mb-2">SafeSurf</h3>
+      <p><strong>Available for:</strong> Chrome</p>
+      <p><strong>Cost:</strong> Free</p>
+      <p><strong>Features:</strong></p>
+      <ul>
+        <li>Adult content blocking</li>
+        <li>Safe search enforcement</li>
+        <li>YouTube restricted mode</li>
+        <li>Password protected settings</li>
+      </ul>
+      <p><strong>Best for:</strong> Basic free protection for families</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Time Management & Productivity Extensions</h2>
+
+    <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5 mb-6">
+      <h3 class="text-blue-700 dark:text-blue-400 mt-0 mb-2">Stay Focused</h3>
+      <p><strong>Available for:</strong> Chrome</p>
+      <p><strong>Cost:</strong> Free</p>
+      <p><strong>Features:</strong></p>
+      <ul>
+        <li>Block sites after reaching time limit</li>
+        <li>Schedule blocking for specific days/times</li>
+        <li>Nuclear option (blocks sites for hours)</li>
+        <li>Require typing long phrases to unblock</li>
+      </ul>
+      <p><strong>Best for:</strong> Self-control, productivity, studying</p>
+    </div>
+
+    <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5 mb-6">
+      <h3 class="text-blue-700 dark:text-blue-400 mt-0 mb-2">LeechBlock NG</h3>
+      <p><strong>Available for:</strong> Firefox, Chrome, Edge</p>
+      <p><strong>Cost:</strong> Free and open source</p>
+      <p><strong>Features:</strong></p>
+      <ul>
+        <li>Up to 30 custom block sets</li>
+        <li>Time-based blocking with schedules</li>
+        <li>Time limits per day/hour</li>
+        <li>Delay before accessing sites</li>
+        <li>Password protection and lockdown mode</li>
+        <li>Highly customizable</li>
+      </ul>
+      <p><strong>Best for:</strong> Power users, flexible scheduling, open source preference</p>
+    </div>
+
+    <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5 mb-6">
+      <h3 class="text-blue-700 dark:text-blue-400 mt-0 mb-2">Cold Turkey Micromanager</h3>
+      <p><strong>Available for:</strong> Chrome (requires desktop app)</p>
+      <p><strong>Cost:</strong> Free (Pro version $39 one-time)</p>
+      <p><strong>Features:</strong></p>
+      <ul>
+        <li>Very difficult to bypass</li>
+        <li>Block websites, apps, and even your entire computer</li>
+        <li>Schedule blocks in advance</li>
+        <li>Frozen Turkey mode (blocks can't be disabled early)</li>
+      </ul>
+      <p><strong>Best for:</strong> Serious procrastination problems, exam prep</p>
+    </div>
+
+    <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5 mb-6">
+      <h3 class="text-blue-700 dark:text-blue-400 mt-0 mb-2">Freedom</h3>
+      <p><strong>Available for:</strong> All browsers (desktop/mobile app)</p>
+      <p><strong>Cost:</strong> $40/year</p>
+      <p><strong>Features:</strong></p>
+      <ul>
+        <li>Cross-device blocking (computer + phone)</li>
+        <li>Website and app blocking</li>
+        <li>Locked mode (can't disable during session)</li>
+        <li>Recurring schedules</li>
+      </ul>
+      <p><strong>Best for:</strong> Cross-platform needs, mobile + desktop</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>YouTube-Specific Extensions</h2>
+
+    <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5 mb-6">
+      <h3 class="text-blue-700 dark:text-blue-400 mt-0 mb-2">Video Blocker</h3>
+      <p><strong>Available for:</strong> Chrome, Firefox</p>
+      <p><strong>Cost:</strong> Free</p>
+      <p><strong>Features:</strong></p>
+      <ul>
+        <li>Block YouTube channels</li>
+        <li>Block videos by keyword</li>
+        <li>Hide recommendations sidebar</li>
+      </ul>
+    </div>
+
+    <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5 mb-6">
+      <h3 class="text-blue-700 dark:text-blue-400 mt-0 mb-2">Unhook</h3>
+      <p><strong>Available for:</strong> Chrome, Firefox</p>
+      <p><strong>Cost:</strong> Free</p>
+      <p><strong>Features:</strong></p>
+      <ul>
+        <li>Remove YouTube recommendations</li>
+        <li>Hide comments, trending, homepage feed</li>
+        <li>Keep search functional</li>
+        <li>Reduces rabbit-hole browsing</li>
+      </ul>
+    </div>
+
+    <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5 mb-6">
+      <h3 class="text-blue-700 dark:text-blue-400 mt-0 mb-2">DF YouTube</h3>
+      <p><strong>Available for:</strong> Chrome, Firefox</p>
+      <p><strong>Cost:</strong> Free</p>
+      <p><strong>Features:</strong></p>
+      <ul>
+        <li>Remove distracting YouTube elements</li>
+        <li>Hide comments, related videos, trending</li>
+        <li>Customizable which elements to hide</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Preventing Extension Removal</h2>
+
+    <h3>Chrome (Managed by Organization)</h3>
+    <ol>
+      <li>Use Chrome Enterprise or Family Link supervised account</li>
+      <li>Extensions installed by admin can't be removed by user</li>
+      <li>Requires Google Workspace or Family Link setup</li>
+    </ol>
+
+    <h3>Firefox</h3>
+    <ul>
+      <li>Limited options to prevent removal</li>
+      <li>Consider blocking Firefox installation if child uses managed Chrome</li>
+    </ul>
+
+    <h3>Password-Protected Extensions</h3>
+    <ul>
+      <li>Many extensions offer password protection</li>
+      <li>Prevents disabling without password</li>
+      <li>Not foolproof (can be bypassed by removing extension)</li>
+    </ul>
+
+    <h3>System-Level Blocking</h3>
+    <ul>
+      <li>Use device-level parental controls to prevent browser changes</li>
+      <li>Standard user accounts (not administrator) prevent installations</li>
+      <li>Combine with <a href="/guides/dns-filtering">DNS filtering</a> as backup</li>
+    </ul>
+
+    <div class="alert alert-warning">
+      <strong>Limitation:</strong> Tech-savvy users can often bypass browser extensions. Use multiple layers of protection and don't rely solely on extensions for serious filtering needs.
+    </div>
+  </section>
+
+  <section>
+    <h2>Pros & Cons</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-green-300 dark:border-green-700 rounded-lg p-6">
+        <h3 class="text-green-700 dark:text-green-400 mt-0">Advantages</h3>
+        <ul class="m-0 pl-5">
+          <li class="mb-2">Quick and easy to install</li>
+          <li class="mb-2">Many free options available</li>
+          <li class="mb-2">Lightweight (minimal performance impact)</li>
+          <li class="mb-2">Highly customizable</li>
+          <li class="mb-2">Good for productivity and focus</li>
+          <li class="mb-2">No system-wide changes needed</li>
+          <li class="mb-2">Easy to try different options</li>
+        </ul>
+      </div>
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-yellow-300 dark:border-yellow-700 rounded-lg p-6">
+        <h3 class="text-yellow-800 dark:text-yellow-400 mt-0">Limitations</h3>
+        <ul class="m-0 pl-5">
+          <li class="mb-2">Only works in one browser</li>
+          <li class="mb-2">Can be easily disabled or removed</li>
+          <li class="mb-2">Doesn't work in apps or other browsers</li>
+          <li class="mb-2">Not suitable as sole protection method</li>
+          <li class="mb-2">No mobile protection (usually)</li>
+          <li class="mb-2">Can be bypassed with private browsing (sometimes)</li>
+          <li class="mb-2">Requires separate setup per browser/device</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <Fragment slot="footer">
+    <h2>Next Steps</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+      <a href="/guides/dns-filtering" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+        <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">DNS Filtering</h3>
+        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Add browser-independent network-level protection</p>
+      </a>
+
+      <a href="/guides/filtering-software" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+        <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">Filtering Software</h3>
+        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Comprehensive cross-browser and cross-device protection</p>
+      </a>
+
+      <a href="/guides/ios-screen-time" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+        <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">Device Controls</h3>
+        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">System-level controls that can't be bypassed</p>
+      </a>
+
+      <a href="/guides/accountability-apps" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+        <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">Accountability Software</h3>
+        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Monitoring and transparency for older teens/adults</p>
+      </a>
+    </div>
+
+    <div class="alert alert-info">
+      <strong>Best Use:</strong> Browser extensions work great for personal productivity and as an additional layer. For comprehensive child protection, combine with DNS filtering and device-level controls.
+    </div>
+  </Fragment>
+</GuideLayout>

@@ -1,0 +1,643 @@
+---
+import GuideLayout from '~/layouts/GuideLayout.astro';
+
+const metadata = {
+	title: 'Router Firmware Updates: Security & Performance — Shemirat Enayim',
+	description: 'Learn how to safely update your router firmware to maintain security, fix bugs, and ensure your DNS filtering and parental controls work properly.',
+};
+
+---
+
+<GuideLayout
+	metadata={metadata}
+  difficulty="intermediate"
+  timeEstimate="30-60 minutes"
+  prerequisites={[
+    'Administrative access to your router',
+    'Router model number',
+    'Computer connected to your network',
+    'Patience (updates take 5-15 minutes)'
+  ]}
+>
+  <Breadcrumb slot="breadcrumb" items={breadcrumbItems} />
+
+  <section>
+    <h2>🛡️ Why Firmware Updates Matter</h2>
+
+    <p>Router firmware is the operating system that runs your router. Keeping it updated is crucial for:</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>🔒 Security Patches</h3>
+        <p>Firmware updates fix vulnerabilities that could allow attackers to compromise your network, bypass parental controls, or steal data.</p>
+        <p><strong>Example:</strong> Many routers had vulnerabilities allowing DNS settings to be changed remotely, defeating OpenDNS/CleanBrowsing filtering.</p>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>🐛 Bug Fixes</h3>
+        <p>Updates resolve issues like dropped connections, slow speeds, or features that don't work properly.</p>
+        <p><strong>Example:</strong> Some older firmware versions prevented proper DNS filtering or caused device access restrictions to fail.</p>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>✨ New Features</h3>
+        <p>Manufacturers add features like improved parental controls, better guest network options, or WPA3 encryption support.</p>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>⚡ Performance</h3>
+        <p>Updates can improve WiFi performance, range, and stability for better family internet experience.</p>
+      </div>
+    </div>
+
+    <div class="alert alert-warning">
+      <strong>Update Regularly:</strong> Check for firmware updates every 3-6 months, or immediately when security vulnerabilities are announced.
+    </div>
+  </section>
+
+  <section>
+    <h2>📋 Before You Begin</h2>
+
+    <h3>Preparation Checklist</h3>
+    <ul>
+      <li><strong>Find Your Router Information:</strong>
+        <ul>
+          <li>Manufacturer and model number (usually on label on bottom/back)</li>
+          <li>Current firmware version (found in router admin panel)</li>
+          <li>Hardware version if applicable (some models have v1, v2, etc.)</li>
+        </ul>
+      </li>
+      <li><strong>Backup Your Configuration:</strong> Most routers allow you to save your settings to a file before updating</li>
+      <li><strong>Document Custom Settings:</strong> Write down:
+        <ul>
+          <li>WiFi network names (SSIDs) and passwords</li>
+          <li>DNS settings (OpenDNS, CleanBrowsing addresses)</li>
+          <li>Port forwarding rules</li>
+          <li>Parental control settings</li>
+          <li>Static IP assignments</li>
+        </ul>
+      </li>
+      <li><strong>Use Wired Connection:</strong> Connect your computer to the router with an Ethernet cable during the update (never update over WiFi)</li>
+      <li><strong>Set Aside Time:</strong> Updates take 5-15 minutes; don't interrupt the process</li>
+    </ul>
+
+    <div class="alert alert-warning">
+      <strong>Never Interrupt an Update:</strong> Powering off the router during a firmware update can permanently damage it ("brick" it), requiring replacement.
+    </div>
+  </section>
+
+  <section>
+    <h2>🔍 Checking Your Current Firmware</h2>
+
+    <h3>Step 1: Access Router Admin Panel</h3>
+
+    <div class="router-access">
+      <p><strong>Common Router Admin Addresses:</strong></p>
+      <ul>
+        <li><code>192.168.1.1</code> (most common)</li>
+        <li><code>192.168.0.1</code> (TP-Link, D-Link)</li>
+        <li><code>192.168.1.254</code> (some ISP routers)</li>
+        <li><code>10.0.0.1</code> (some Xfinity routers)</li>
+        <li><code>routerlogin.net</code> (Netgear)</li>
+        <li><code>tplinkwifi.net</code> (TP-Link)</li>
+      </ul>
+
+      <p>Type the address in your web browser and log in with admin credentials (check router label if you haven't changed them).</p>
+    </div>
+
+    <h3>Step 2: Find Firmware Version</h3>
+
+    <p>Location varies by manufacturer:</p>
+
+    <div class="brand-instructions">
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h4>Netgear</h4>
+        <p><strong>Advanced → Administration → Router Update</strong></p>
+        <p>Or: <strong>Basic → Router Information</strong></p>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h4>TP-Link</h4>
+        <p><strong>Advanced → System Tools → Firmware Upgrade</strong></p>
+        <p>Or: <strong>Status</strong> (shows current version)</p>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h4>Asus</h4>
+        <p><strong>Administration → Firmware Upgrade</strong></p>
+        <p>Router will automatically check for updates</p>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h4>Linksys</h4>
+        <p><strong>Connectivity → Router Firmware Update</strong></p>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h4>D-Link</h4>
+        <p><strong>Management → Update Software</strong></p>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h4>Google Nest WiFi</h4>
+        <p>Updates automatically; check in Google Home app under device settings</p>
+      </div>
+    </div>
+
+    <p>Write down your current firmware version (e.g., "V1.0.0.78" or "3.0.0.4.388_32799").</p>
+  </section>
+
+  <section>
+    <h2>⬇️ Downloading Firmware Updates</h2>
+
+    <h3>Method 1: Automatic Update (Recommended)</h3>
+
+    <p>Many modern routers can check and install updates automatically:</p>
+
+    <ol>
+      <li>In your router's firmware update section, click <strong>"Check for Updates"</strong></li>
+      <li>If an update is available, click <strong>"Update"</strong> or <strong>"Install"</strong></li>
+      <li>Wait for the download and installation to complete (5-15 minutes)</li>
+      <li>Router will reboot automatically</li>
+    </ol>
+
+    <div class="alert alert-success">
+      <strong>Enable Auto-Update:</strong> Some routers offer automatic updates. Enable this for seamless security updates (but check settings periodically to ensure DNS filtering wasn't reset).
+    </div>
+
+    <h3>Method 2: Manual Download</h3>
+
+    <p>If automatic update isn't available or working:</p>
+
+    <ol>
+      <li><strong>Visit Manufacturer's Support Site:</strong>
+        <ul>
+          <li>Netgear: <code>netgear.com/support</code></li>
+          <li>TP-Link: <code>tp-link.com/support</code></li>
+          <li>Asus: <code>asus.com/support</code></li>
+          <li>Linksys: <code>linksys.com/support</code></li>
+          <li>D-Link: <code>support.dlink.com</code></li>
+        </ul>
+      </li>
+      <li><strong>Search for Your Model:</strong> Enter exact model number (e.g., "Netgear R6700v3")</li>
+      <li><strong>Navigate to Downloads/Firmware:</strong> Look for "Downloads", "Firmware", or "Software"</li>
+      <li><strong>Verify Hardware Version:</strong> Download firmware for your specific hardware version (v1, v2, etc.)</li>
+      <li><strong>Download Latest Firmware:</strong> Save the file (usually .bin, .chk, .trx, or .zip)</li>
+    </ol>
+
+    <div class="alert alert-warning">
+      <strong>Hardware Version Matters:</strong> Installing firmware for the wrong hardware version can brick your router. Double-check the label on your router.
+    </div>
+
+    <h3>Verifying Download Authenticity</h3>
+
+    <p>Only download firmware from official manufacturer websites. Avoid third-party sites to prevent malware.</p>
+  </section>
+
+  <section>
+    <h2>💾 Backing Up Configuration</h2>
+
+    <h3>Save Your Settings</h3>
+
+    <p>Most routers allow backing up configuration to a file:</p>
+
+    <div class="backup-instructions">
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h4>Netgear</h4>
+        <p><strong>Advanced → Administration → Backup Settings</strong></p>
+        <p>Click "Back Up" to save configuration file</p>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h4>TP-Link</h4>
+        <p><strong>System Tools → Backup & Restore</strong></p>
+        <p>Click "Backup" to download configuration</p>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h4>Asus</h4>
+        <p><strong>Administration → Restore/Save/Upload Setting</strong></p>
+        <p>Click "Save Setting"</p>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h4>Linksys</h4>
+        <p><strong>Troubleshooting → Diagnostics → Backup</strong></p>
+      </div>
+    </div>
+
+    <p>Save the backup file to your computer. Most updates preserve settings, but having a backup ensures you can restore if needed.</p>
+  </section>
+
+  <section>
+    <h2>⚙️ Installing Firmware Update</h2>
+
+    <h3>Step-by-Step Update Process</h3>
+
+    <ol>
+      <li><strong>Connect Via Ethernet:</strong> Plug your computer directly into the router with an Ethernet cable</li>
+      <li><strong>Close Other Programs:</strong> Close browsers, streaming apps, or anything using the internet</li>
+      <li><strong>Access Firmware Update Page:</strong> Navigate to the firmware/update section in your router admin</li>
+      <li><strong>Choose Update File:</strong>
+        <ul>
+          <li>For automatic: Click "Check for Updates" and "Install"</li>
+          <li>For manual: Click "Browse" or "Choose File" and select the downloaded firmware file</li>
+        </ul>
+      </li>
+      <li><strong>Start Update:</strong> Click "Update", "Upload", or "Install"</li>
+      <li><strong>Wait Patiently:</strong>
+        <ul>
+          <li>Progress bar will appear (5-15 minutes)</li>
+          <li>Router lights will flash</li>
+          <li>Router will reboot (1-3 minutes)</li>
+          <li><strong>Do NOT power off or unplug the router</strong></li>
+        </ul>
+      </li>
+      <li><strong>Reconnect:</strong> After router reboots, log back into admin panel</li>
+      <li><strong>Verify Update:</strong> Check that firmware version number has changed</li>
+    </ol>
+
+    <div class="alert alert-warning">
+      <strong>Critical:</strong> Do not turn off the router, close your browser, or disconnect your computer during the update. Interrupting can permanently damage the router.
+    </div>
+
+    <h3>What to Expect</h3>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <strong>0-2 minutes:</strong> Upload firmware file to router
+      </div>
+      <div class="timeline-item">
+        <strong>2-8 minutes:</strong> Router installs update (lights may flash, progress bar shows status)
+      </div>
+      <div class="timeline-item">
+        <strong>8-10 minutes:</strong> Router reboots (all lights turn off, then back on)
+      </div>
+      <div class="timeline-item">
+        <strong>10-15 minutes:</strong> Router fully initializes and WiFi comes back online
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>✅ After Update: Verification</h2>
+
+    <h3>Post-Update Checklist</h3>
+
+    <ol>
+      <li><strong>Verify Firmware Version:</strong> Log into router admin and confirm new version number</li>
+      <li><strong>Check Internet Connection:</strong> Ensure devices can access the internet</li>
+      <li><strong>Verify DNS Filtering:</strong>
+        <ul>
+          <li>Go to <strong>WAN/Internet Settings</strong></li>
+          <li>Confirm DNS servers are still set to OpenDNS or CleanBrowsing (some updates reset this)</li>
+          <li>Test filtering: Visit <code>internetbadguys.com</code> (should be blocked by OpenDNS)</li>
+        </ul>
+      </li>
+      <li><strong>Check WiFi Settings:</strong> Verify network names and passwords are correct</li>
+      <li><strong>Test Parental Controls:</strong> If you use router-based controls, test that they still work</li>
+      <li><strong>Verify Port Forwarding:</strong> If you have port forwarding rules, confirm they're still in place</li>
+      <li><strong>Test All Devices:</strong> Connect phones, tablets, computers to ensure everything works</li>
+    </ol>
+
+    <div class="alert alert-warning">
+      <strong>DNS Settings May Reset:</strong> Firmware updates sometimes reset DNS settings to automatic/ISP defaults. Always re-check DNS configuration after updating.
+    </div>
+
+    <h3>If Settings Were Lost</h3>
+
+    <p>If the update reset your configuration:</p>
+
+    <ol>
+      <li><strong>Option 1:</strong> Restore from backup file (Administration → Restore Settings)</li>
+      <li><strong>Option 2:</strong> Manually reconfigure using your documented settings:
+        <ul>
+          <li>Set DNS servers (OpenDNS or CleanBrowsing) - see <a href="/guides/opendns-tutorial">OpenDNS Tutorial</a> or <a href="/guides/cleanbrowsing-tutorial">CleanBrowsing Tutorial</a></li>
+          <li>Reconfigure WiFi names and passwords</li>
+          <li>Re-enable parental controls</li>
+          <li>Restore port forwarding rules</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>🔧 Troubleshooting Update Issues</h2>
+
+    <h3>Update Failed or Router Not Responding</h3>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h4>Problem: "Update Failed" Error</h4>
+        <p><strong>Solutions:</strong></p>
+        <ul>
+          <li>Verify you downloaded firmware for correct model AND hardware version</li>
+          <li>Try re-downloading firmware file (file may be corrupted)</li>
+          <li>Use different browser</li>
+          <li>Disable browser extensions that might interfere</li>
+          <li>Connect via Ethernet, not WiFi</li>
+        </ul>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h4>Problem: Router Won't Respond After Update</h4>
+        <p><strong>Solutions:</strong></p>
+        <ul>
+          <li>Wait 15-20 minutes (some routers take longer to reboot)</li>
+          <li>Power cycle: Unplug router for 30 seconds, plug back in</li>
+          <li>Try accessing different admin addresses (192.168.1.1, 192.168.0.1)</li>
+          <li>Clear browser cache or try different browser</li>
+        </ul>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h4>Problem: All Lights Flashing/Blinking</h4>
+        <p><strong>Solutions:</strong></p>
+        <ul>
+          <li>If during update: <strong>DO NOT power off</strong> - this is normal, wait</li>
+          <li>If after update (15+ minutes): Router may be bricked, try recovery mode (see below)</li>
+        </ul>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h4>Problem: Can't Find Firmware Download</h4>
+        <p><strong>Solutions:</strong></p>
+        <ul>
+          <li>Some manufacturers only offer automatic updates through router interface</li>
+          <li>Contact manufacturer support for firmware file</li>
+          <li>Check if router is end-of-life (manufacturer no longer supports it)</li>
+          <li>Consider upgrading to newer router if discontinued</li>
+        </ul>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h4>Problem: Internet Works But WiFi Doesn't</h4>
+        <p><strong>Solutions:</strong></p>
+        <ul>
+          <li>WiFi settings may have reset - check network name and password</li>
+          <li>Re-enter WiFi password on all devices</li>
+          <li>Try different WiFi channel in router settings</li>
+          <li>Restore from backup if WiFi settings were lost</li>
+        </ul>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h4>Problem: DNS Filtering Stopped Working</h4>
+        <p><strong>Solutions:</strong></p>
+        <ul>
+          <li>Update likely reset DNS to automatic/ISP defaults</li>
+          <li>Go to WAN/Internet settings and re-enter OpenDNS or CleanBrowsing DNS addresses</li>
+          <li>Save settings and reboot router</li>
+          <li>Test filtering: Visit <code>internetbadguys.com</code></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🆘 Recovery Mode & Factory Reset</h2>
+
+    <h3>When to Use Recovery Mode</h3>
+
+    <p>If the router is "bricked" (won't boot, stuck in boot loop, completely unresponsive after 20+ minutes):</p>
+
+    <ol>
+      <li><strong>Enter Recovery Mode:</strong> Process varies by brand
+        <ul>
+          <li><strong>Netgear:</strong> Turn off router. Hold Reset button while powering on. Power LED blinks white. Access <code>routerlogin.net</code> or <code>192.168.1.1</code></li>
+          <li><strong>TP-Link:</strong> Similar process, hold Reset during power-on, access <code>192.168.0.1</code></li>
+          <li><strong>Asus:</strong> Hold Reset button, power on, wait for power LED to flash slowly</li>
+        </ul>
+      </li>
+      <li><strong>Upload Firmware:</strong> In recovery mode, you'll see a simple web page to upload firmware</li>
+      <li><strong>Install and Wait:</strong> Upload firmware file and wait (can take 10-15 minutes)</li>
+    </ol>
+
+    <div class="alert alert-info">
+      <strong>Check Manufacturer Support:</strong> Search "[your router model] recovery mode" for specific instructions, as process varies.
+    </div>
+
+    <h3>Factory Reset (Last Resort)</h3>
+
+    <p>If recovery mode doesn't work, try factory reset:</p>
+
+    <ol>
+      <li>Locate Reset button (usually recessed hole on back/bottom)</li>
+      <li>With router powered on, press and hold Reset button for 10-30 seconds (use paperclip)</li>
+      <li>Wait for router to reboot (5-10 minutes)</li>
+      <li>Router returns to factory defaults (default admin password, default WiFi settings)</li>
+      <li>Access router with default credentials (check label on router)</li>
+      <li>Reconfigure all settings from scratch (use your documented settings or backup file)</li>
+    </ol>
+
+    <div class="alert alert-warning">
+      <strong>Factory Reset Erases Everything:</strong> All settings (WiFi passwords, DNS filtering, parental controls, port forwarding) will be lost. Only use as last resort.
+    </div>
+  </section>
+
+  <section>
+    <h2>🚀 Alternative Firmware (Advanced)</h2>
+
+    <h3>Third-Party Firmware Options</h3>
+
+    <p>For tech-savvy users, alternative router firmware offers advanced features:</p>
+
+    <div class="alternative-firmware">
+      <div class="firmware-option">
+        <h4>OpenWrt</h4>
+        <p>Open-source Linux-based firmware with extensive package system.</p>
+        <p><strong>Benefits:</strong></p>
+        <ul>
+          <li>Advanced firewall and filtering capabilities</li>
+          <li>QoS (Quality of Service) controls</li>
+          <li>VPN server/client built-in</li>
+          <li>Extensive DNS and network control</li>
+          <li>Regular security updates</li>
+        </ul>
+        <p><strong>Difficulty:</strong> Advanced (requires technical knowledge)</p>
+        <p><strong>Website:</strong> <code>openwrt.org</code></p>
+      </div>
+
+      <div class="firmware-option">
+        <h4>DD-WRT</h4>
+        <p>Popular alternative firmware with user-friendly interface.</p>
+        <p><strong>Benefits:</strong></p>
+        <ul>
+          <li>Enhanced parental controls and access restrictions</li>
+          <li>VPN support</li>
+          <li>Advanced QoS</li>
+          <li>Detailed bandwidth monitoring</li>
+          <li>Better wireless performance</li>
+        </ul>
+        <p><strong>Difficulty:</strong> Intermediate-Advanced</p>
+        <p><strong>Website:</strong> <code>dd-wrt.com</code></p>
+      </div>
+
+      <div class="firmware-option">
+        <h4>FreshTomato</h4>
+        <p>Fork of Tomato firmware with modern features and active development.</p>
+        <p><strong>Benefits:</strong></p>
+        <ul>
+          <li>Clean, intuitive interface</li>
+          <li>Real-time bandwidth monitoring</li>
+          <li>Advanced QoS</li>
+          <li>Access restrictions and filtering</li>
+          <li>VPN support</li>
+        </ul>
+        <p><strong>Difficulty:</strong> Intermediate</p>
+        <p><strong>Website:</strong> <code>freshtomato.org</code></p>
+      </div>
+    </div>
+
+    <div class="alert alert-warning">
+      <strong>Advanced Users Only:</strong> Installing alternative firmware can void warranty and requires technical expertise. Improper installation can brick your router. Research thoroughly before attempting.
+    </div>
+
+    <h3>When to Consider Alternative Firmware</h3>
+
+    <ul>
+      <li>Your router manufacturer has discontinued support/updates</li>
+      <li>You need advanced features not available in stock firmware</li>
+      <li>You want more granular parental controls and filtering</li>
+      <li>You're comfortable with Linux and command-line interfaces</li>
+      <li>You want to extend the life of older hardware</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>📅 Maintenance Schedule</h2>
+
+    <h3>Recommended Update Frequency</h3>
+
+    <div class="schedule-table">
+      <table class="w-full border-collapse bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md text-sm">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th>Frequency</th>
+            <th>Priority</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Check for firmware updates</td>
+            <td>Every 3-6 months</td>
+            <td>High</td>
+          </tr>
+          <tr>
+            <td>Install security updates</td>
+            <td>Immediately when available</td>
+            <td>Critical</td>
+          </tr>
+          <tr>
+            <td>Backup router configuration</td>
+            <td>Before each update, or monthly</td>
+            <td>High</td>
+          </tr>
+          <tr>
+            <td>Verify DNS filtering settings</td>
+            <td>After each update, or monthly</td>
+            <td>High</td>
+          </tr>
+          <tr>
+            <td>Test parental controls</td>
+            <td>After each update, or monthly</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>Review router logs</td>
+            <td>Monthly (if available)</td>
+            <td>Low-Medium</td>
+          </tr>
+          <tr>
+            <td>Change admin password</td>
+            <td>Every 6-12 months</td>
+            <td>Medium</td>
+          </tr>
+          <tr>
+            <td>Router reboot</td>
+            <td>Monthly (improves performance)</td>
+            <td>Low</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="alert alert-success">
+      <strong>Set Reminders:</strong> Add calendar reminders to check for router updates quarterly. Many security vulnerabilities go unpatched because users forget to update.
+    </div>
+  </section>
+
+  <section>
+    <h2>❓ Frequently Asked Questions</h2>
+
+    <div class="faq">
+      <div class="faq-item">
+        <h4>Q: Will updating reset my WiFi password?</h4>
+        <p><strong>A:</strong> Usually no. Most routers preserve WiFi settings during updates. However, some updates do reset settings, which is why backing up is important.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Q: Will my DNS filtering (OpenDNS/CleanBrowsing) still work after updating?</h4>
+        <p><strong>A:</strong> Sometimes. Many firmware updates reset DNS settings to automatic/ISP defaults. Always check and re-enter DNS addresses after updating.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Q: How often should I update firmware?</h4>
+        <p><strong>A:</strong> Check every 3-6 months for routine updates. Install security updates immediately when announced. Enable automatic updates if available.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Q: Can I update over WiFi?</h4>
+        <p><strong>A:</strong> Technically possible but NOT recommended. WiFi connections can drop during the update, potentially bricking the router. Always use Ethernet cable.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Q: My router is 5+ years old. Should I update or replace?</h4>
+        <p><strong>A:</strong> If manufacturer still provides updates, update it. If discontinued (no updates for 1+ years), consider replacing for security. Modern routers support WPA3, WiFi 6, and better filtering.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Q: What if I can't find firmware for my router?</h4>
+        <p><strong>A:</strong> Your router may be discontinued. Check manufacturer website thoroughly, contact support, or consider alternative firmware (OpenWrt, DD-WRT) if supported. Otherwise, upgrade to a newer model.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Q: The update failed. Is my router ruined?</h4>
+        <p><strong>A:</strong> Not necessarily. Try recovery mode specific to your router brand. If that fails, try factory reset. Most routers can recover from failed updates if you follow the correct recovery procedure.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Q: Should I enable automatic firmware updates?</h4>
+        <p><strong>A:</strong> Pros: Ensures timely security patches without manual intervention. Cons: Updates might reset DNS filtering or other custom settings. Recommendation: Enable auto-update but check DNS settings weekly.</p>
+      </div>
+    </div>
+  </section>
+
+  <section slot="next-steps">
+    <h2>🎯 Next Steps</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+      <a href="/guides/opendns-tutorial" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>🛡️ Configure OpenDNS</h3>
+        <p>Set up free DNS filtering after updating firmware to protect your network.</p>
+      </a>
+
+      <a href="/guides/cleanbrowsing-tutorial" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>🌐 CleanBrowsing Setup</h3>
+        <p>Alternative DNS filtering with family-friendly presets.</p>
+      </a>
+
+      <a href="/guides/dns-filtering" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>📚 DNS Filtering Overview</h3>
+        <p>Understand how DNS filtering works and compare solutions.</p>
+      </a>
+
+      <a href="/guides/public-wifi-setup" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+        <h3>🏢 Public WiFi Setup</h3>
+        <p>Set up filtered WiFi for synagogues, schools, and community centers.</p>
+      </a>
+    </div>
+  </section>
+</GuideLayout>
+

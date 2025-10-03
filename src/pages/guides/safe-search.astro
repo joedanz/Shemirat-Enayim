@@ -1,0 +1,409 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import type { MetaData } from '~/types';
+
+const metadata: MetaData = {
+	title: 'SafeSearch Setup Guide',
+	description: 'Learn how to enable SafeSearch filtering on Google, Bing, DuckDuckGo, and other search engines to block explicit content from search results.',
+	canonical: 'https://shemiratenayim.org/guides/safe-search'
+};
+
+const breadcrumbItems = [
+	{ label: 'Home', href: '/' },
+	{ label: 'Protection Methods', href: '/methods' },
+	{ label: 'SafeSearch', href: '/guides/safe-search' }
+];
+---
+
+<GuideLayout
+	metadata={metadata}
+	difficulty="beginner"
+	timeEstimate="5-10 minutes"
+	prerequisites={[
+		'Access to the device or browser where filtering is needed',
+		'Admin access to supervised accounts (for enforcement)'
+	]}
+>
+	<nav slot="breadcrumb" class="mb-8">
+		<ol class="flex flex-wrap items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+			{breadcrumbItems.map((item, index) => (
+				<li class="flex items-center gap-2">
+					{index > 0 && <span class="text-gray-400">/</span>}
+					<a href={item.href} class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+						{item.label}
+					</a>
+				</li>
+			))}
+		</ol>
+	</nav>
+
+	<section class="mb-12">
+		<h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">What is SafeSearch?</h2>
+		<p class="mb-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+			SafeSearch is a built-in filtering feature offered by most major search engines that helps block explicit images, videos, and websites from appearing in search results. While not perfect, it's an essential first line of defense and takes just minutes to enable.
+		</p>
+		<p class="mb-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+			SafeSearch filters explicit sexual content, graphic violence, and other adult material. However, it's not foolproof—some inappropriate content may still slip through, and determined users can disable it unless you use enforcement methods.
+		</p>
+
+		<div class="alert-success">
+			<strong>Best for:</strong> Quick protection layer, children's devices, combining with other filtering methods for comprehensive coverage.
+		</div>
+	</section>
+
+	<section class="mb-12">
+		<h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">🔍 Google SafeSearch</h2>
+		<p class="mb-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+			Google is the most popular search engine, making SafeSearch configuration critical.
+		</p>
+
+		<h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Enable on Desktop/Laptop</h3>
+		<ol class="list-decimal list-inside mb-8 space-y-3 text-gray-700 dark:text-gray-300">
+			<li>Go to <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">google.com</a></li>
+			<li>Click Settings (bottom right) → Search settings</li>
+			<li>Scroll to "SafeSearch filters" section</li>
+			<li>Check "Turn on SafeSearch"</li>
+			<li>Scroll down and click "Save" at the bottom</li>
+		</ol>
+
+		<h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Enable on Mobile (iOS/Android)</h3>
+		<ol class="list-decimal list-inside mb-8 space-y-3 text-gray-700 dark:text-gray-300">
+			<li>Open the Google app or visit <a href="https://www.google.com" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">google.com</a> in a browser</li>
+			<li>Tap your profile icon (top right)</li>
+			<li>Tap Settings → Hide explicit results</li>
+			<li>Toggle on "Filter explicit results"</li>
+		</ol>
+
+		<h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Lock SafeSearch (Enforcement)</h3>
+		<p class="mb-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+			Without locking, users can easily disable SafeSearch. Here's how to enforce it:
+		</p>
+
+		<h4 class="text-xl font-semibold mb-3 text-gray-800 dark:text-gray-200">Method 1: Supervised Google Account (Best)</h4>
+		<ul class="list-disc list-inside mb-6 space-y-2 text-gray-700 dark:text-gray-300">
+			<li>Create a supervised Google account through <a href="/guides/android-family-link" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">Family Link</a></li>
+			<li>SafeSearch is automatically enabled and locked</li>
+			<li>Child cannot disable it</li>
+			<li>Works across all devices where they're signed in</li>
+		</ul>
+
+		<h4 class="text-xl font-semibold mb-3 text-gray-800 dark:text-gray-200">Method 2: DNS-Level Enforcement</h4>
+		<ul class="list-disc list-inside mb-6 space-y-2 text-gray-700 dark:text-gray-300">
+			<li>Use <a href="/guides/dns-filtering" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">DNS filtering</a> services that force SafeSearch</li>
+			<li>OpenDNS FamilyShield automatically enforces Google SafeSearch</li>
+			<li>CleanBrowsing Family Filter also forces SafeSearch</li>
+			<li>Works network-wide without account needed</li>
+		</ul>
+
+		<h4 class="text-xl font-semibold mb-3 text-gray-800 dark:text-gray-200">Method 3: Browser Extensions (Limited)</h4>
+		<ul class="list-disc list-inside mb-6 space-y-2 text-gray-700 dark:text-gray-300">
+			<li>Extensions like "Force SafeSearch" can enforce settings</li>
+			<li>Only works in that specific browser</li>
+			<li>Can be disabled if user has browser admin access</li>
+			<li>Not recommended as sole enforcement method</li>
+		</ul>
+
+		<div class="alert-warning">
+			<strong>Important:</strong> Simply enabling SafeSearch isn't enough for children. Use Family Link or DNS filtering to lock it and prevent them from turning it off.
+		</div>
+	</section>
+
+	<section class="mb-12">
+		<h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">🔷 Microsoft Bing SafeSearch</h2>
+
+		<h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Enable on Desktop/Laptop</h3>
+		<ol class="list-decimal list-inside mb-6 space-y-3 text-gray-700 dark:text-gray-300">
+			<li>Go to <a href="https://www.bing.com" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">bing.com</a></li>
+			<li>Click the menu icon (☰) at the top</li>
+			<li>Click Settings</li>
+			<li>Under "SafeSearch" select:
+				<ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+					<li><strong>Strict:</strong> Filters explicit text, images, and videos (recommended for children)</li>
+					<li><strong>Moderate:</strong> Filters explicit images and videos but not text</li>
+					<li><strong>Off:</strong> No filtering</li>
+				</ul>
+			</li>
+			<li>Click Save</li>
+		</ol>
+
+		<h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Enable on Mobile</h3>
+		<ol class="list-decimal list-inside mb-6 space-y-3 text-gray-700 dark:text-gray-300">
+			<li>Open Bing app or visit <a href="https://www.bing.com" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">bing.com</a></li>
+			<li>Tap menu icon (☰)</li>
+			<li>Tap Settings</li>
+			<li>Set SafeSearch to "Strict"</li>
+			<li>Save changes</li>
+		</ol>
+
+		<h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Lock Bing SafeSearch</h3>
+		<ol class="list-decimal list-inside mb-6 space-y-3 text-gray-700 dark:text-gray-300">
+			<li>After enabling Strict SafeSearch, scroll to bottom of settings</li>
+			<li>Click "Lock SafeSearch" (requires Microsoft account)</li>
+			<li>Sign in with your Microsoft account</li>
+			<li>SafeSearch is now locked for that browser/account</li>
+		</ol>
+
+		<div class="alert-info">
+			<strong>Microsoft Family Safety:</strong> If using <a href="/guides/windows-family" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">Windows Family Safety</a>, SafeSearch is automatically enforced across Microsoft services.
+		</div>
+	</section>
+
+	<section class="mb-12">
+		<h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">🦆 DuckDuckGo Safe Search</h2>
+		<p class="mb-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+			DuckDuckGo is a privacy-focused search engine that's growing in popularity.
+		</p>
+
+		<h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Enable Safe Search</h3>
+		<ol class="list-decimal list-inside mb-6 space-y-3 text-gray-700 dark:text-gray-300">
+			<li>Go to <a href="https://duckduckgo.com" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">duckduckgo.com</a></li>
+			<li>Click Settings (☰) in top right</li>
+			<li>Click "All Settings"</li>
+			<li>Under "General" tab, find "Safe Search"</li>
+			<li>Select:
+				<ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+					<li><strong>Strict:</strong> Filters explicit content (recommended)</li>
+					<li><strong>Moderate:</strong> Some filtering</li>
+					<li><strong>Off:</strong> No filtering</li>
+				</ul>
+			</li>
+			<li>Settings save automatically</li>
+		</ol>
+
+		<div class="alert-warning">
+			<strong>Limitation:</strong> DuckDuckGo doesn't offer account-based locking. Settings are stored in browser cookies, which can be easily cleared. Use DNS filtering for enforcement.
+		</div>
+	</section>
+
+	<section class="mb-12">
+		<h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">🌐 Other Search Engines</h2>
+
+		<h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Yahoo (uses Bing)</h3>
+		<ol class="list-decimal list-inside mb-6 space-y-2 text-gray-700 dark:text-gray-300">
+			<li>Go to <a href="https://www.yahoo.com" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">yahoo.com</a></li>
+			<li>Settings → Preferences</li>
+			<li>SafeSearch options (same as Bing)</li>
+			<li>Select Strict filtering</li>
+		</ol>
+
+		<h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Brave Search</h3>
+		<ol class="list-decimal list-inside mb-6 space-y-2 text-gray-700 dark:text-gray-300">
+			<li>Open Brave browser</li>
+			<li>Settings → Search engine</li>
+			<li>Manage search engines</li>
+			<li>Brave Search settings → Enable SafeSearch</li>
+		</ol>
+
+		<h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Ecosia</h3>
+		<ol class="list-decimal list-inside mb-6 space-y-2 text-gray-700 dark:text-gray-300">
+			<li>Visit <a href="https://www.ecosia.org" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">ecosia.org</a></li>
+			<li>Settings</li>
+			<li>Enable "Safe search"</li>
+		</ol>
+	</section>
+
+	<section class="mb-12">
+		<h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">🔒 Enforcement Strategies</h2>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+			<div class="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6">
+				<h3 class="text-xl font-semibold text-blue-700 dark:text-blue-300 mt-0 mb-3">1. Supervised Accounts (Best)</h3>
+				<ul class="list-disc list-inside mb-3 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+					<li>Google Family Link for Android and supervised Google accounts</li>
+					<li>Microsoft Family Safety for Windows and Microsoft services</li>
+					<li>Apple Family Sharing with Screen Time for Safari</li>
+				</ul>
+				<p class="text-sm mb-2 text-gray-700 dark:text-gray-300"><strong>Pros:</strong> Works across devices, can't be easily disabled, centrally managed</p>
+				<p class="text-sm text-gray-700 dark:text-gray-300"><strong>Cons:</strong> Requires account setup, may have age restrictions</p>
+			</div>
+
+			<div class="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6">
+				<h3 class="text-xl font-semibold text-blue-700 dark:text-blue-300 mt-0 mb-3">2. DNS Filtering (Recommended)</h3>
+				<ul class="list-disc list-inside mb-3 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+					<li>OpenDNS, CleanBrowsing, or NextDNS</li>
+					<li>Automatically forces SafeSearch on Google, Bing, and YouTube</li>
+					<li>Network-wide protection</li>
+				</ul>
+				<p class="text-sm mb-2 text-gray-700 dark:text-gray-300"><strong>Pros:</strong> No account needed, works on all devices, hard to bypass</p>
+				<p class="text-sm mb-2 text-gray-700 dark:text-gray-300"><strong>Cons:</strong> Requires router or device DNS configuration</p>
+				<p class="text-sm text-gray-700 dark:text-gray-300">See our <a href="/guides/dns-filtering" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">DNS Filtering Guide</a> for setup</p>
+			</div>
+
+			<div class="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6">
+				<h3 class="text-xl font-semibold text-blue-700 dark:text-blue-300 mt-0 mb-3">3. Device-Level Controls</h3>
+				<ul class="list-disc list-inside mb-3 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+					<li>iOS Screen Time website restrictions</li>
+					<li>Android parental controls</li>
+					<li>Windows Family Safety</li>
+					<li>macOS Parental Controls</li>
+				</ul>
+				<p class="text-sm mb-2 text-gray-700 dark:text-gray-300"><strong>Pros:</strong> Device travels with protections</p>
+				<p class="text-sm text-gray-700 dark:text-gray-300"><strong>Cons:</strong> Must configure each device</p>
+			</div>
+
+			<div class="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6">
+				<h3 class="text-xl font-semibold text-blue-700 dark:text-blue-300 mt-0 mb-3">4. Browser-Level Extensions</h3>
+				<ul class="list-disc list-inside mb-3 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+					<li>Force SafeSearch extensions</li>
+					<li>SafeSearch enforcement add-ons</li>
+					<li>Parental control browser extensions</li>
+				</ul>
+				<p class="text-sm mb-2 text-gray-700 dark:text-gray-300"><strong>Pros:</strong> Easy to install</p>
+				<p class="text-sm text-gray-700 dark:text-gray-300"><strong>Cons:</strong> Only works in one browser, easily bypassed, extensions can be disabled</p>
+			</div>
+		</div>
+
+		<div class="alert-info">
+			<strong>Layered Approach:</strong> Combine multiple methods for best protection. For example: DNS filtering (network) + supervised account (portable) + device controls (backup).
+		</div>
+	</section>
+
+	<section class="mb-12">
+		<h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">✅ Testing SafeSearch</h2>
+
+		<h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Verify It's Working</h3>
+		<ol class="list-decimal list-inside mb-6 space-y-4 text-gray-700 dark:text-gray-300">
+			<li>
+				<strong class="text-gray-900 dark:text-white">Google Test</strong>
+				<p class="mt-1">Search for potentially explicit terms. Results should be filtered. The search results page should show "SafeSearch is on" message at the top right.</p>
+			</li>
+			<li>
+				<strong class="text-gray-900 dark:text-white">Image Search Test</strong>
+				<p class="mt-1">Use Google Images to search. Explicit images should be blocked or heavily filtered.</p>
+			</li>
+			<li>
+				<strong class="text-gray-900 dark:text-white">Bing Test</strong>
+				<p class="mt-1">Check search settings show "Strict" and explicit results don't appear.</p>
+			</li>
+			<li>
+				<strong class="text-gray-900 dark:text-white">Check Lock Status</strong>
+				<p class="mt-1">Try to disable SafeSearch. If properly locked, you won't be able to turn it off without admin credentials.</p>
+			</li>
+		</ol>
+
+		<div class="alert-success">
+			<strong>Working correctly?</strong> SafeSearch should display a notice that it's enabled and filter explicit images/videos. Some text results may still appear but shouldn't contain graphic content.
+		</div>
+	</section>
+
+	<section class="mb-12">
+		<h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">❓ Common Questions</h2>
+
+		<div class="space-y-6">
+			<div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 p-5 rounded">
+				<h3 class="text-lg font-semibold text-gray-900 dark:text-white mt-0 mb-3">Does SafeSearch block all inappropriate content?</h3>
+				<p class="mb-0 text-gray-700 dark:text-gray-300 leading-relaxed">
+					No. SafeSearch significantly reduces explicit content but isn't 100% effective. New content is constantly created, and algorithms aren't perfect. It's a helpful layer but should be combined with other protections like DNS filtering and monitoring.
+				</p>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 p-5 rounded">
+				<h3 class="text-lg font-semibold text-gray-900 dark:text-white mt-0 mb-3">Can tech-savvy children bypass SafeSearch?</h3>
+				<p class="mb-0 text-gray-700 dark:text-gray-300 leading-relaxed">
+					Yes, if not properly enforced. Simply enabling it in settings can be undone in seconds. That's why enforcement through supervised accounts or DNS filtering is essential. Never rely on browser-level SafeSearch alone.
+				</p>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 p-5 rounded">
+				<h3 class="text-lg font-semibold text-gray-900 dark:text-white mt-0 mb-3">Does SafeSearch slow down searches?</h3>
+				<p class="mb-0 text-gray-700 dark:text-gray-300 leading-relaxed">
+					No. The performance impact is negligible. SafeSearch filtering happens in milliseconds and doesn't noticeably affect search speed.
+				</p>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 p-5 rounded">
+				<h3 class="text-lg font-semibold text-gray-900 dark:text-white mt-0 mb-3">Will SafeSearch block educational content?</h3>
+				<p class="mb-0 text-gray-700 dark:text-gray-300 leading-relaxed">
+					Occasionally, legitimate educational content about health, anatomy, or art may be filtered. Most search engines allow you to report false positives. Consider using supervised accounts where you can approve specific searches or sites when needed.
+				</p>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 p-5 rounded">
+				<h3 class="text-lg font-semibold text-gray-900 dark:text-white mt-0 mb-3">Does SafeSearch work in Incognito/Private mode?</h3>
+				<p class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">
+					It depends on enforcement method:
+				</p>
+				<ul class="list-disc list-inside mb-2 space-y-1 text-gray-700 dark:text-gray-300">
+					<li><strong>Browser settings:</strong> Usually doesn't work in private mode</li>
+					<li><strong>Supervised account:</strong> Works in all modes</li>
+					<li><strong>DNS filtering:</strong> Works everywhere, including private browsing</li>
+				</ul>
+				<p class="mb-0 text-gray-700 dark:text-gray-300 leading-relaxed">This is another reason to use DNS or account-based enforcement.</p>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 p-5 rounded">
+				<h3 class="text-lg font-semibold text-gray-900 dark:text-white mt-0 mb-3">Do I need SafeSearch if I have other filtering?</h3>
+				<p class="mb-0 text-gray-700 dark:text-gray-300 leading-relaxed">
+					Yes! SafeSearch is free, easy, and adds an extra layer. Even with comprehensive DNS filtering or parental control software, enabling SafeSearch provides defense-in-depth. There's no downside to having it on.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="mb-12">
+		<h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">⚖️ Pros & Cons of SafeSearch</h2>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+			<div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 border-2 border-green-300 dark:border-green-700">
+				<h3 class="text-xl font-semibold text-green-700 dark:text-green-400 mt-0 mb-4">✅ Advantages</h3>
+				<ul class="list-disc list-inside space-y-2 m-0 text-gray-700 dark:text-gray-300">
+					<li>Completely free</li>
+					<li>Takes less than 10 minutes to set up</li>
+					<li>Built into major search engines</li>
+					<li>No software to install</li>
+					<li>Minimal performance impact</li>
+					<li>Easy to understand and explain</li>
+					<li>Works on all devices with enforcement</li>
+					<li>Filters images, videos, and websites</li>
+					<li>Good first layer of protection</li>
+				</ul>
+			</div>
+			<div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 border-2 border-yellow-300 dark:border-yellow-700">
+				<h3 class="text-xl font-semibold text-yellow-800 dark:text-yellow-400 mt-0 mb-4">❌ Limitations</h3>
+				<ul class="list-disc list-inside space-y-2 m-0 text-gray-700 dark:text-gray-300">
+					<li>Not 100% effective</li>
+					<li>Easily disabled without enforcement</li>
+					<li>Only filters search results, not websites themselves</li>
+					<li>Doesn't block inappropriate sites directly entered</li>
+					<li>May occasionally over-filter legitimate content</li>
+					<li>Doesn't provide time limits or usage reports</li>
+					<li>Doesn't work on all search engines consistently</li>
+					<li>Can be bypassed with VPNs or alternative search engines</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section slot="next-steps" class="mb-12">
+		<h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">🎯 Next Steps & Related Guides</h2>
+		<p class="mb-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+			SafeSearch is an important first step, but should be part of a comprehensive protection strategy:
+		</p>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+			<a href="/guides/dns-filtering" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-lg hover:-translate-y-0.5">
+				<h3 class="text-lg font-semibold text-gray-900 dark:text-white mt-0 mb-2">🌐 DNS Filtering</h3>
+				<p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Enforce SafeSearch automatically and add network-wide filtering</p>
+			</a>
+
+			<a href="/guides/youtube-filtering" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-lg hover:-translate-y-0.5">
+				<h3 class="text-lg font-semibold text-gray-900 dark:text-white mt-0 mb-2">📺 YouTube Filtering</h3>
+				<p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Restrict Mode is YouTube's version of SafeSearch—learn to enable it</p>
+			</a>
+
+			<a href="/guides/ios-screen-time" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-lg hover:-translate-y-0.5">
+				<h3 class="text-lg font-semibold text-gray-900 dark:text-white mt-0 mb-2">📱 iOS Screen Time</h3>
+				<p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Comprehensive device controls for iPhones and iPads</p>
+			</a>
+
+			<a href="/guides/android-family-link" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-lg hover:-translate-y-0.5">
+				<h3 class="text-lg font-semibold text-gray-900 dark:text-white mt-0 mb-2">🤖 Android Family Link</h3>
+				<p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Set up supervised Google accounts with forced SafeSearch</p>
+			</a>
+		</div>
+
+		<div class="alert-info">
+			<strong>Recommended Combination:</strong> SafeSearch (search filtering) + DNS filtering (network protection) + device controls (comprehensive management) = effective protection.
+		</div>
+	</section>
+</GuideLayout>

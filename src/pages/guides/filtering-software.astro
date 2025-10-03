@@ -1,0 +1,357 @@
+---
+import GuideLayout from '~/layouts/GuideLayout.astro';
+
+const metadata = {
+	title: 'Content Filtering Software Comparison — Shemirat Enayim',
+	description: 'Comprehensive comparison of third-party parental control and content filtering software including Qustodio, Net Nanny, Norton Family, Bark, and Circle.',
+};
+---
+
+<GuideLayout
+	metadata={metadata}
+	difficulty="beginner"
+	timeEstimate="30-45 minutes setup"
+	prerequisites={[
+		'Devices to monitor (Windows, Mac, iOS, Android)',
+		'Budget for subscription ($5-15/month typically)',
+		'Email address for account creation'
+	]}
+>
+	<Fragment slot="breadcrumb">
+		<li class="flex items-center">
+			<a href="/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+				Home
+			</a>
+			<span class="mx-2 text-gray-500">/</span>
+		</li>
+		<li class="flex items-center">
+			<a href="/methods" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+				Protection Methods
+			</a>
+			<span class="mx-2 text-gray-500">/</span>
+		</li>
+		<li class="text-gray-700 dark:text-gray-300">
+			Content Filtering Software
+		</li>
+	</Fragment>
+
+	<section>
+		<h2>Why Use Filtering Software?</h2>
+		<p>
+			Third-party filtering software provides comprehensive, cross-platform protection with features beyond what free built-in parental controls offer. These paid solutions typically include advanced filtering, detailed reporting, social media monitoring, location tracking, and professional support.
+		</p>
+
+		<div class="alert alert-info">
+			<strong>When to consider paid software:</strong> Multiple children, mixed device ecosystem (iOS + Android + Windows), need for detailed monitoring, social media concerns, or when free solutions aren't sufficient.
+		</div>
+	</section>
+
+	<section>
+		<h2>🏆 Top Filtering Software Comparison</h2>
+
+		<div class="overflow-x-auto my-6">
+			<table class="w-full border-collapse bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md text-sm">
+				<thead>
+					<tr>
+						<th class="p-3 text-left border-b border-gray-200 dark:border-gray-700 bg-blue-600 dark:bg-blue-700 text-white font-semibold uppercase tracking-wider">Software</th>
+						<th class="p-3 text-left border-b border-gray-200 dark:border-gray-700 bg-blue-600 dark:bg-blue-700 text-white font-semibold uppercase tracking-wider">Cost/Year</th>
+						<th class="p-3 text-left border-b border-gray-200 dark:border-gray-700 bg-blue-600 dark:bg-blue-700 text-white font-semibold uppercase tracking-wider">Devices</th>
+						<th class="p-3 text-left border-b border-gray-200 dark:border-gray-700 bg-blue-600 dark:bg-blue-700 text-white font-semibold uppercase tracking-wider">Best Feature</th>
+						<th class="p-3 text-left border-b border-gray-200 dark:border-gray-700 bg-blue-600 dark:bg-blue-700 text-white font-semibold uppercase tracking-wider">Best For</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700"><strong>Qustodio</strong></td>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700">$55-138</td>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700">5-15</td>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700">Comprehensive all-in-one</td>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700">Most families</td>
+					</tr>
+					<tr>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700"><strong>Bark</strong></td>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700">$49-99</td>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700">Unlimited</td>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700">Social media monitoring</td>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700">Teens, social media concerns</td>
+					</tr>
+					<tr>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700"><strong>Net Nanny</strong></td>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700">$40-90</td>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700">Varies</td>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700">Strong web filtering</td>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700">Young children, strict filtering</td>
+					</tr>
+					<tr>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700"><strong>Norton Family</strong></td>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700">$50</td>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700">Unlimited</td>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700">Trusted brand, good value</td>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700">Budget-conscious families</td>
+					</tr>
+					<tr>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700"><strong>Circle (Disney)</strong></td>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700">$130 device or $10/mo</td>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700">All network</td>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700">Network-level control</td>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700">Tech-averse parents</td>
+					</tr>
+					<tr>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700"><strong>Mobicip</strong></td>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700">$50</td>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700">10-20</td>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700">Affordable, many devices</td>
+						<td class="p-3 text-left border-b border-gray-200 dark:border-gray-700">Large families</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
+
+	<section>
+		<h2>🔍 Detailed Software Reviews</h2>
+
+		<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+			<h3 class="text-blue-700 dark:text-blue-400 mt-0">Qustodio</h3>
+			<p><strong>Cost:</strong> $55/year (5 devices), $138/year (15 devices)</p>
+			<p><strong>Platforms:</strong> Windows, Mac, iOS, Android, Kindle, Chromebook</p>
+
+			<h4 class="mt-4 mb-2 text-gray-800 dark:text-gray-200">Key Features:</h4>
+			<ul class="pl-5 my-2">
+				<li class="mb-1 leading-relaxed">Advanced web filtering with 30+ categories</li>
+				<li class="mb-1 leading-relaxed">App blocking and time limits</li>
+				<li class="mb-1 leading-relaxed">Screen time management with schedules</li>
+				<li class="mb-1 leading-relaxed">Location tracking and geofencing</li>
+				<li class="mb-1 leading-relaxed">Panic button for emergencies</li>
+				<li class="mb-1 leading-relaxed">Call and SMS monitoring (Android)</li>
+				<li class="mb-1 leading-relaxed">YouTube monitoring and filtering</li>
+				<li class="mb-1 leading-relaxed">Detailed activity reports</li>
+				<li class="mb-1 leading-relaxed">Real-time alerts</li>
+			</ul>
+
+			<h4 class="mt-4 mb-2 text-gray-800 dark:text-gray-200">Pros:</h4>
+			<ul class="pl-5 my-2">
+				<li class="mb-1 leading-relaxed">Most comprehensive feature set</li>
+				<li class="mb-1 leading-relaxed">Excellent cross-platform support</li>
+				<li class="mb-1 leading-relaxed">User-friendly interface</li>
+				<li class="mb-1 leading-relaxed">Reliable and hard to bypass</li>
+				<li class="mb-1 leading-relaxed">Great customer support</li>
+			</ul>
+
+			<h4 class="mt-4 mb-2 text-gray-800 dark:text-gray-200">Cons:</h4>
+			<ul class="pl-5 my-2">
+				<li class="mb-1 leading-relaxed">More expensive than some alternatives</li>
+				<li class="mb-1 leading-relaxed">Limited social media monitoring</li>
+				<li class="mb-1 leading-relaxed">Can impact device performance</li>
+			</ul>
+
+			<p><strong>Best for:</strong> Families wanting comprehensive, reliable protection across multiple devices.</p>
+		</div>
+
+		<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+			<h3 class="text-blue-700 dark:text-blue-400 mt-0">Bark</h3>
+			<p><strong>Cost:</strong> $49/year (monitoring), $99/year (monitoring + filtering)</p>
+			<p><strong>Platforms:</strong> iOS, Android, Windows, Mac, Chromebook</p>
+
+			<h4 class="mt-4 mb-2 text-gray-800 dark:text-gray-200">Key Features:</h4>
+			<ul class="pl-5 my-2">
+				<li class="mb-1 leading-relaxed">Advanced AI-powered content monitoring</li>
+				<li class="mb-1 leading-relaxed">Social media monitoring (30+ platforms)</li>
+				<li class="mb-1 leading-relaxed">Email and text monitoring</li>
+				<li class="mb-1 leading-relaxed">Detection of cyberbullying, predators, mental health concerns</li>
+				<li class="mb-1 leading-relaxed">Smart alerts (only when concerning)</li>
+				<li class="mb-1 leading-relaxed">Screen time management</li>
+				<li class="mb-1 leading-relaxed">Web filtering</li>
+				<li class="mb-1 leading-relaxed">Location check-ins</li>
+			</ul>
+
+			<h4 class="mt-4 mb-2 text-gray-800 dark:text-gray-200">Pros:</h4>
+			<ul class="pl-5 my-2">
+				<li class="mb-1 leading-relaxed">Best-in-class social media monitoring</li>
+				<li class="mb-1 leading-relaxed">Unlimited children/devices</li>
+				<li class="mb-1 leading-relaxed">Smart alerts reduce notification fatigue</li>
+				<li class="mb-1 leading-relaxed">Detects serious issues (suicide, violence, etc.)</li>
+				<li class="mb-1 leading-relaxed">Privacy-focused (analyzes but doesn't store content)</li>
+			</ul>
+
+			<h4 class="mt-4 mb-2 text-gray-800 dark:text-gray-200">Cons:</h4>
+			<ul class="pl-5 my-2">
+				<li class="mb-1 leading-relaxed">Web filtering less comprehensive than Qustodio</li>
+				<li class="mb-1 leading-relaxed">iOS limitations due to Apple restrictions</li>
+				<li class="mb-1 leading-relaxed">Requires granting access to many accounts</li>
+			</ul>
+
+			<p><strong>Best for:</strong> Parents of teens concerned about social media, cyberbullying, or mental health issues.</p>
+		</div>
+
+		<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+			<h3 class="text-blue-700 dark:text-blue-400 mt-0">Net Nanny</h3>
+			<p><strong>Cost:</strong> $40-90/year depending on devices</p>
+			<p><strong>Platforms:</strong> Windows, Mac, iOS, Android</p>
+
+			<h4 class="mt-4 mb-2 text-gray-800 dark:text-gray-200">Key Features:</h4>
+			<ul class="pl-5 my-2">
+				<li class="mb-1 leading-relaxed">Industry-leading web filtering</li>
+				<li class="mb-1 leading-relaxed">Real-time content filtering (not category-based)</li>
+				<li class="mb-1 leading-relaxed">Profanity masking</li>
+				<li class="mb-1 leading-relaxed">App management</li>
+				<li class="mb-1 leading-relaxed">Screen time controls</li>
+				<li class="mb-1 leading-relaxed">Location tracking</li>
+				<li class="mb-1 leading-relaxed">Remote management</li>
+				<li class="mb-1 leading-relaxed">Family feed (activity timeline)</li>
+			</ul>
+
+			<h4 class="mt-4 mb-2 text-gray-800 dark:text-gray-200">Pros:</h4>
+			<ul class="pl-5 my-2">
+				<li class="mb-1 leading-relaxed">Excellent web filtering technology</li>
+				<li class="mb-1 leading-relaxed">Real-time analysis, not just blocklists</li>
+				<li class="mb-1 leading-relaxed">Trusted brand (30+ years)</li>
+				<li class="mb-1 leading-relaxed">Good for young children</li>
+			</ul>
+
+			<h4 class="mt-4 mb-2 text-gray-800 dark:text-gray-200">Cons:</h4>
+			<ul class="pl-5 my-2">
+				<li class="mb-1 leading-relaxed">No social media monitoring</li>
+				<li class="mb-1 leading-relaxed">Limited reporting compared to competitors</li>
+				<li class="mb-1 leading-relaxed">Device limit on cheaper plans</li>
+			</ul>
+
+			<p><strong>Best for:</strong> Parents prioritizing strong web filtering for young children.</p>
+		</div>
+
+		<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+			<h3 class="text-blue-700 dark:text-blue-400 mt-0">Circle (by Disney)</h3>
+			<p><strong>Cost:</strong> $10/month or $130 for hardware device</p>
+			<p><strong>Coverage:</strong> All devices on network</p>
+
+			<h4 class="mt-4 mb-2 text-gray-800 dark:text-gray-200">Key Features:</h4>
+			<ul class="pl-5 my-2">
+				<li class="mb-1 leading-relaxed">Network-level control (router connection)</li>
+				<li class="mb-1 leading-relaxed">Works on all devices automatically</li>
+				<li class="mb-1 leading-relaxed">Time limits and schedules</li>
+				<li class="mb-1 leading-relaxed">Pause internet per device</li>
+				<li class="mb-1 leading-relaxed">Filter level per device</li>
+				<li class="mb-1 leading-relaxed">Bedtime and off-time settings</li>
+				<li class="mb-1 leading-relaxed">App and website insights</li>
+			</ul>
+
+			<h4 class="mt-4 mb-2 text-gray-800 dark:text-gray-200">Pros:</h4>
+			<ul class="pl-5 my-2">
+				<li class="mb-1 leading-relaxed">Very easy to set up</li>
+				<li class="mb-1 leading-relaxed">Covers all network devices</li>
+				<li class="mb-1 leading-relaxed">Great for non-technical parents</li>
+				<li class="mb-1 leading-relaxed">No software installation needed</li>
+			</ul>
+
+			<h4 class="mt-4 mb-2 text-gray-800 dark:text-gray-200">Cons:</h4>
+			<ul class="pl-5 my-2">
+				<li class="mb-1 leading-relaxed">Doesn't work when devices leave home</li>
+				<li class="mb-1 leading-relaxed">No content monitoring or alerts</li>
+				<li class="mb-1 leading-relaxed">Can be bypassed with VPN</li>
+				<li class="mb-1 leading-relaxed">Hardware device may be outdated</li>
+			</ul>
+
+			<p><strong>Best for:</strong> Families wanting simple, network-wide time management.</p>
+		</div>
+	</section>
+
+	<section>
+		<h2>🎯 Choosing the Right Software</h2>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+			<div class="bg-gradient-to-br from-yellow-50 to-blue-50 dark:from-yellow-900/20 dark:to-blue-900/20 border-2 border-yellow-200 dark:border-yellow-700 rounded-lg p-5">
+				<h3 class="mt-0 mb-3 text-gray-900 dark:text-gray-100 text-lg">If you have young children (5-10):</h3>
+				<p><strong>Recommended:</strong> Net Nanny or Qustodio</p>
+				<p class="mb-0">Focus on strong web filtering and app controls. Social media monitoring less important.</p>
+			</div>
+
+			<div class="bg-gradient-to-br from-yellow-50 to-blue-50 dark:from-yellow-900/20 dark:to-blue-900/20 border-2 border-yellow-200 dark:border-yellow-700 rounded-lg p-5">
+				<h3 class="mt-0 mb-3 text-gray-900 dark:text-gray-100 text-lg">If you have teens (13-17):</h3>
+				<p><strong>Recommended:</strong> Bark or Qustodio</p>
+				<p class="mb-0">Social media monitoring and mental health detection become critical. Balance control with privacy.</p>
+			</div>
+
+			<div class="bg-gradient-to-br from-yellow-50 to-blue-50 dark:from-yellow-900/20 dark:to-blue-900/20 border-2 border-yellow-200 dark:border-yellow-700 rounded-lg p-5">
+				<h3 class="mt-0 mb-3 text-gray-900 dark:text-gray-100 text-lg">If you have mixed ages:</h3>
+				<p><strong>Recommended:</strong> Qustodio or Bark</p>
+				<p class="mb-0">Need flexibility to customize per child. Bark supports unlimited children.</p>
+			</div>
+
+			<div class="bg-gradient-to-br from-yellow-50 to-blue-50 dark:from-yellow-900/20 dark:to-blue-900/20 border-2 border-yellow-200 dark:border-yellow-700 rounded-lg p-5">
+				<h3 class="mt-0 mb-3 text-gray-900 dark:text-gray-100 text-lg">If you're on a budget:</h3>
+				<p><strong>Recommended:</strong> Norton Family or Mobicip</p>
+				<p class="mb-0">Good value with unlimited devices. Consider free options first (Family Link, Screen Time).</p>
+			</div>
+
+			<div class="bg-gradient-to-br from-yellow-50 to-blue-50 dark:from-yellow-900/20 dark:to-blue-900/20 border-2 border-yellow-200 dark:border-yellow-700 rounded-lg p-5">
+				<h3 class="mt-0 mb-3 text-gray-900 dark:text-gray-100 text-lg">If you're not tech-savvy:</h3>
+				<p><strong>Recommended:</strong> Circle or Norton Family</p>
+				<p class="mb-0">Simple interfaces, easy setup. Circle requires minimal configuration.</p>
+			</div>
+
+			<div class="bg-gradient-to-br from-yellow-50 to-blue-50 dark:from-yellow-900/20 dark:to-blue-900/20 border-2 border-yellow-200 dark:border-yellow-700 rounded-lg p-5">
+				<h3 class="mt-0 mb-3 text-gray-900 dark:text-gray-100 text-lg">If you have iOS + Android devices:</h3>
+				<p><strong>Recommended:</strong> Qustodio or Bark</p>
+				<p class="mb-0">Best cross-platform support. Single dashboard for all devices.</p>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<h2>⚖️ Paid vs. Free Solutions</h2>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6">
+				<h3 class="mt-0 mb-4">Free Built-In Options</h3>
+				<ul class="pl-5 mb-4">
+					<li class="mb-2 leading-relaxed">Screen Time (iOS/Mac)</li>
+					<li class="mb-2 leading-relaxed">Family Link (Android)</li>
+					<li class="mb-2 leading-relaxed">Family Safety (Windows)</li>
+					<li class="mb-2 leading-relaxed">DNS filtering services</li>
+				</ul>
+				<p><strong>Best for:</strong> Budget-conscious families, single-platform households, basic needs</p>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-6">
+				<h3 class="mt-0 mb-4">Paid Filtering Software</h3>
+				<ul class="pl-5 mb-4">
+					<li class="mb-2 leading-relaxed">Cross-platform consistency</li>
+					<li class="mb-2 leading-relaxed">Advanced features (social media monitoring, etc.)</li>
+					<li class="mb-2 leading-relaxed">Better reporting and insights</li>
+					<li class="mb-2 leading-relaxed">Professional customer support</li>
+				</ul>
+				<p><strong>Best for:</strong> Mixed device families, teens, comprehensive protection needs</p>
+			</div>
+		</div>
+
+		<div class="alert alert-info">
+			<strong>Recommendation:</strong> Start with free built-in solutions. Upgrade to paid software if you need cross-platform management, social media monitoring, or more advanced features. Don't pay for features you won't use.
+		</div>
+	</section>
+
+	<section slot="next-steps">
+		<h2>🎯 Next Steps</h2>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+			<a href="/guides/accountability-apps" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-lg hover:-translate-y-0.5">
+				<h3 class="text-lg text-gray-900 dark:text-gray-100 mt-0 mb-2">👥 Accountability Software</h3>
+				<p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Alternative approach focused on transparency vs. control</p>
+			</a>
+
+			<a href="/guides/dns-filtering" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-lg hover:-translate-y-0.5">
+				<h3 class="text-lg text-gray-900 dark:text-gray-100 mt-0 mb-2">🌐 DNS Filtering</h3>
+				<p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Free network-level protection to complement software</p>
+			</a>
+
+			<a href="/guides/android-family-link" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-lg hover:-translate-y-0.5">
+				<h3 class="text-lg text-gray-900 dark:text-gray-100 mt-0 mb-2">🆓 Free Options</h3>
+				<p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Explore comprehensive free parental controls first</p>
+			</a>
+
+			<a href="/guides/ios-screen-time" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-lg hover:-translate-y-0.5">
+				<h3 class="text-lg text-gray-900 dark:text-gray-100 mt-0 mb-2">📱 iOS Screen Time</h3>
+				<p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Free built-in protection for Apple devices</p>
+			</a>
+		</div>
+	</section>
+</GuideLayout>

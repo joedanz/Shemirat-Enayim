@@ -1,0 +1,588 @@
+---
+import GuideLayout from '../../layouts/GuideLayout.astro';
+import type { MetaData } from '~/types';
+
+const metadata: MetaData = {
+	title: 'YouTube Filtering & Safety Guide',
+	description: 'Comprehensive guide to protecting children on YouTube using Restricted Mode, YouTube Kids, supervised accounts, and third-party tools.',
+	canonical: 'https://shemiratenayim.org/guides/youtube-filtering'
+};
+
+const breadcrumbItems = [
+	{ label: 'Home', href: '/' },
+	{ label: 'Protection Methods', href: '/methods' },
+	{ label: 'YouTube Filtering', href: '/guides/youtube-filtering' }
+];
+---
+
+<GuideLayout
+	metadata={metadata}
+	difficulty="beginner"
+	timeEstimate="10-15 minutes"
+	prerequisites={[
+		'Google account (for supervised experiences)',
+		'Access to child\'s device or YouTube account'
+	]}
+>
+	<nav slot="breadcrumb" class="mb-8">
+		<ol class="flex flex-wrap items-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+			{breadcrumbItems.map((item, index) => (
+				<li class="flex items-center gap-2">
+					{index > 0 && <span class="text-gray-400">/</span>}
+					<a href={item.href} class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+						{item.label}
+					</a>
+				</li>
+			))}
+		</ol>
+	</nav>
+
+	<section class="mb-12">
+		<h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">Why YouTube Needs Special Attention</h2>
+		<p class="mb-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+			YouTube is one of the most popular platforms for children and teens, with educational content, entertainment, and creative videos. However, it also contains inappropriate content, including violence, explicit language, mature themes, and misleading information.
+		</p>
+		<p class="mb-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+			YouTube's recommendation algorithm can quickly lead viewers from benign content to inappropriate material. That's why YouTube requires special filtering strategies beyond general web filtering.
+		</p>
+
+		<div class="alert-warning">
+			<strong>Key Challenge:</strong> YouTube's vast content and AI recommendations make it difficult to fully control. A multi-layered approach combining YouTube's tools with supervision and communication is essential.
+		</div>
+	</section>
+
+	<section class="mb-12">
+		<h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">🎯 Choosing the Right Approach</h2>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5">
+				<h3 class="text-xl font-semibold text-blue-700 dark:text-blue-300 mt-0 mb-3">YouTube Kids (Ages 4-12)</h3>
+				<ul class="list-none p-0 m-0 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+					<li><strong>Age Range:</strong> Preschool to 12 years old</li>
+					<li><strong>Protection Level:</strong> Highest</li>
+					<li><strong>Content:</strong> Curated and age-appropriate only</li>
+					<li><strong>Recommendation:</strong> Best for young children</li>
+				</ul>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5">
+				<h3 class="text-xl font-semibold text-blue-700 dark:text-blue-300 mt-0 mb-3">Supervised YouTube (Ages 9-17)</h3>
+				<ul class="list-none p-0 m-0 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+					<li><strong>Age Range:</strong> 9-17 years old</li>
+					<li><strong>Protection Level:</strong> High to Medium</li>
+					<li><strong>Content:</strong> Filtered but more variety than Kids</li>
+					<li><strong>Recommendation:</strong> Best for preteens/teens</li>
+				</ul>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5">
+				<h3 class="text-xl font-semibold text-blue-700 dark:text-blue-300 mt-0 mb-3">Restricted Mode (All Ages)</h3>
+				<ul class="list-none p-0 m-0 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+					<li><strong>Age Range:</strong> Any age</li>
+					<li><strong>Protection Level:</strong> Medium</li>
+					<li><strong>Content:</strong> Filters mature content algorithmically</li>
+					<li><strong>Recommendation:</strong> Minimum baseline, combine with other methods</li>
+				</ul>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5">
+				<h3 class="text-xl font-semibold text-blue-700 dark:text-blue-300 mt-0 mb-3">Complete Blocking (Optional)</h3>
+				<ul class="list-none p-0 m-0 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+					<li><strong>Age Range:</strong> Varies by family</li>
+					<li><strong>Protection Level:</strong> Total</li>
+					<li><strong>Content:</strong> No YouTube access</li>
+					<li><strong>Recommendation:</strong> For families prioritizing other activities</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="mb-12">
+		<h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">👶 YouTube Kids (Recommended for Young Children)</h2>
+
+		<h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">What is YouTube Kids?</h3>
+		<p class="mb-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+			YouTube Kids is a separate app designed specifically for children, with content curated to be age-appropriate. It includes built-in parental controls and a simpler interface designed for kids.
+		</p>
+
+		<h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Setting Up YouTube Kids</h3>
+		<ol class="list-decimal list-inside mb-8 space-y-4 text-gray-700 dark:text-gray-300">
+			<li>
+				<strong class="text-gray-900 dark:text-white">Download YouTube Kids</strong>
+				<p class="mt-1">Available on iOS, Android, smart TVs, and game consoles. Search "YouTube Kids" in your app store.</p>
+			</li>
+			<li>
+				<strong class="text-gray-900 dark:text-white">Open the app and select profile</strong>
+				<p class="mt-1">Choose whether you're a parent or child.</p>
+			</li>
+			<li>
+				<strong class="text-gray-900 dark:text-white">Create a child profile</strong>
+				<p class="mt-1">Enter your child's name and age (affects content recommendations).</p>
+			</li>
+			<li>
+				<strong class="text-gray-900 dark:text-white">Choose content level</strong>
+				<ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+					<li><strong>Preschool (Ages 4 & Under):</strong> Simple videos for youngest viewers</li>
+					<li><strong>Younger (Ages 5-8):</strong> Broader range including songs, cartoons, crafts</li>
+					<li><strong>Older (Ages 9-12):</strong> Additional music videos, gaming, vlogs for older kids</li>
+					<li><strong>Approved Content Only:</strong> You manually approve every video/channel</li>
+				</ul>
+			</li>
+			<li>
+				<strong class="text-gray-900 dark:text-white">Set up parental controls</strong>
+				<p class="mt-1">Tap the lock icon (bottom right) and solve the multiplication problem or enter your custom passcode.</p>
+			</li>
+			<li>
+				<strong class="text-gray-900 dark:text-white">Configure settings</strong>
+				<ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+					<li>Search: Enable or disable (disable for tighter control)</li>
+					<li>Sound effects: On or off</li>
+					<li>Background play: Allow or block</li>
+					<li>Autoplay: Enable or disable next video</li>
+				</ul>
+			</li>
+			<li>
+				<strong class="text-gray-900 dark:text-white">Block specific videos or channels</strong>
+				<p class="mt-1">Tap ⋮ menu on any video → Block this video/channel. It won't appear again for that profile.</p>
+			</li>
+		</ol>
+
+		<div class="alert-success">
+			<strong>Best Practice:</strong> For children under 8, use "Approved Content Only" mode and manually build a library of safe channels. This takes more time initially but provides maximum control.
+		</div>
+
+		<h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Limitations of YouTube Kids</h3>
+		<ul class="list-disc list-inside mb-6 space-y-2 text-gray-700 dark:text-gray-300">
+			<li>Not perfect—inappropriate content occasionally slips through</li>
+			<li>Some educational content may be missing</li>
+			<li>Children can request "mature" videos be unblocked</li>
+			<li>Requires separate app (children might try to access regular YouTube)</li>
+		</ul>
+
+		<div class="alert-warning">
+			<strong>Important:</strong> Block or uninstall regular YouTube app when using YouTube Kids. Otherwise, children can simply open the main YouTube app to bypass restrictions.
+		</div>
+	</section>
+
+	<section class="mb-12">
+		<h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">🎓 Supervised YouTube Experience (Ages 9-17)</h2>
+
+		<h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">What is Supervised YouTube?</h3>
+		<p class="mb-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+			For children who've outgrown YouTube Kids but aren't ready for unrestricted YouTube, Google offers supervised experiences through Family Link. This provides access to a broader library while still filtering inappropriate content.
+		</p>
+
+		<h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Setting Up Supervised YouTube</h3>
+		<ol class="list-decimal list-inside mb-8 space-y-3 text-gray-700 dark:text-gray-300">
+			<li>
+				<strong class="text-gray-900 dark:text-white">Create a Google Account with Family Link</strong>
+				<p class="mt-1">Follow our <a href="/guides/android-family-link" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">Android Family Link guide</a> to create a supervised account for your child.</p>
+			</li>
+			<li>
+				<strong class="text-gray-900 dark:text-white">Sign your child into YouTube</strong>
+				<p class="mt-1">On their device, open YouTube app or website and sign in with their supervised Google account.</p>
+			</li>
+			<li>
+				<strong class="text-gray-900 dark:text-white">In Family Link, configure YouTube settings</strong>
+				<p class="mt-1">Open Family Link app → Your child → Settings → YouTube (or YouTube settings in content controls).</p>
+			</li>
+			<li>
+				<strong class="text-gray-900 dark:text-white">Choose supervised experience level</strong>
+				<ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+					<li><strong>Explore:</strong> Generally appropriate for ages 9+. Broad variety but excludes mature content.</li>
+					<li><strong>Explore More:</strong> Generally appropriate for ages 13+. Even wider selection with some mature themes allowed.</li>
+				</ul>
+			</li>
+			<li>
+				<strong class="text-gray-900 dark:text-white">Review additional settings</strong>
+				<ul class="list-disc list-inside ml-6 mt-2 space-y-1">
+					<li>Search and watch history</li>
+					<li>Personalized ads (can disable)</li>
+					<li>Upload, post, comment capabilities (restricted by default)</li>
+				</ul>
+			</li>
+		</ol>
+
+		<h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Features of Supervised YouTube</h3>
+		<ul class="list-disc list-inside mb-6 space-y-2 text-gray-700 dark:text-gray-300">
+			<li>Content filtered to exclude mature material</li>
+			<li>Limited social features (can't comment or upload by default)</li>
+			<li>Parental visibility into watch history</li>
+			<li>Can't change settings without parent approval</li>
+			<li>Works across all devices where they're signed in</li>
+		</ul>
+
+		<div class="alert-info">
+			<strong>Transitioning:</strong> Supervised YouTube works well for the transition from YouTube Kids to eventually regular YouTube as teens mature and demonstrate responsibility.
+		</div>
+	</section>
+
+	<section class="mb-12">
+		<h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">🔐 YouTube Restricted Mode</h2>
+
+		<h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">What is Restricted Mode?</h3>
+		<p class="mb-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+			Restricted Mode is YouTube's built-in filter that uses signals like video metadata, title, and AI analysis to screen out potentially mature content. It's not perfect, but it's a free option that takes seconds to enable.
+		</p>
+
+		<h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Enabling Restricted Mode</h3>
+
+		<h4 class="text-xl font-semibold mb-3 text-gray-800 dark:text-gray-200">On Desktop/Laptop</h4>
+		<ol class="list-decimal list-inside mb-6 space-y-2 text-gray-700 dark:text-gray-300">
+			<li>Go to <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">youtube.com</a></li>
+			<li>Click your profile picture (top right)</li>
+			<li>Click "Restricted Mode" at the bottom</li>
+			<li>Toggle "Activate Restricted Mode" on</li>
+		</ol>
+
+		<h4 class="text-xl font-semibold mb-3 text-gray-800 dark:text-gray-200">On Mobile App (iOS/Android)</h4>
+		<ol class="list-decimal list-inside mb-6 space-y-2 text-gray-700 dark:text-gray-300">
+			<li>Open YouTube app</li>
+			<li>Tap your profile picture (top right)</li>
+			<li>Tap Settings → General</li>
+			<li>Toggle "Restricted Mode" on</li>
+		</ol>
+
+		<h4 class="text-xl font-semibold mb-3 text-gray-800 dark:text-gray-200">On Smart TV/Gaming Console</h4>
+		<ol class="list-decimal list-inside mb-6 space-y-2 text-gray-700 dark:text-gray-300">
+			<li>Open YouTube app</li>
+			<li>Go to Settings (usually in sidebar menu)</li>
+			<li>Find "Restricted Mode" and turn it on</li>
+		</ol>
+
+		<h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Locking Restricted Mode</h3>
+		<p class="mb-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+			Without locking, children can simply turn off Restricted Mode:
+		</p>
+
+		<h4 class="text-xl font-semibold mb-3 text-gray-800 dark:text-gray-200">Browser-Level Locking (Limited)</h4>
+		<ol class="list-decimal list-inside mb-6 space-y-2 text-gray-700 dark:text-gray-300">
+			<li>After enabling Restricted Mode, click "Lock Restricted Mode on this browser"</li>
+			<li>Sign in to your Google account</li>
+			<li>Restricted Mode is now locked for that browser</li>
+		</ol>
+
+		<div class="alert-warning">
+			<strong>Limitation:</strong> Browser-level locking only works in that specific browser. Children can use a different browser, private browsing, or clear cookies to bypass. Use supervised accounts or DNS filtering for true enforcement.
+		</div>
+
+		<h4 class="text-xl font-semibold mb-3 text-gray-800 dark:text-gray-200">Network-Level Enforcement (Recommended)</h4>
+		<p class="mb-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+			Use DNS filtering services that force YouTube Restricted Mode:
+		</p>
+		<ul class="list-disc list-inside mb-6 space-y-2 text-gray-700 dark:text-gray-300">
+			<li><strong>OpenDNS FamilyShield:</strong> Automatically enables Restricted Mode</li>
+			<li><strong>CleanBrowsing Family Filter:</strong> Forces Restricted Mode</li>
+			<li><strong>NextDNS:</strong> Can enable Restricted Mode enforcement in settings</li>
+		</ul>
+		<p class="mb-6 text-gray-700 dark:text-gray-300">See our <a href="/guides/dns-filtering" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">DNS Filtering guide</a> for setup instructions.</p>
+	</section>
+
+	<section class="mb-12">
+		<h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">🚫 Blocking YouTube Completely</h2>
+
+		<p class="mb-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+			Some families choose to block YouTube entirely. This is a valid approach for young children or families prioritizing offline activities.
+		</p>
+
+		<h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">Device-Level Blocking</h3>
+		<ul class="list-disc list-inside mb-6 space-y-2 text-gray-700 dark:text-gray-300">
+			<li><strong>iOS Screen Time:</strong> Settings → Screen Time → Content & Privacy Restrictions → Allowed Apps → Toggle YouTube off</li>
+			<li><strong>Android Family Link:</strong> Block YouTube app in app management</li>
+			<li><strong>Windows Family Safety:</strong> Block apps and websites including YouTube</li>
+			<li><strong>Router:</strong> Block youtube.com domain (affects all devices)</li>
+		</ul>
+
+		<h3 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-white">DNS-Level Blocking</h3>
+		<p class="mb-4 text-gray-700 dark:text-gray-300 leading-relaxed">
+			Some DNS services allow complete YouTube blocking. However, this may affect legitimate educational uses. Consider:
+		</p>
+		<ul class="list-disc list-inside mb-6 space-y-2 text-gray-700 dark:text-gray-300">
+			<li>Blocking during certain hours (bedtime, homework time)</li>
+			<li>Allowing YouTube only on supervised shared devices</li>
+			<li>Using YouTube only in browser with parental supervision</li>
+		</ul>
+	</section>
+
+	<section class="mb-12">
+		<h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">🛠️ Third-Party YouTube Control Tools</h2>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+			<div class="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5">
+				<h3 class="text-xl font-semibold text-blue-700 dark:text-blue-300 mt-0 mb-2">Browser Extensions</h3>
+				<p class="text-sm mb-3 text-gray-700 dark:text-gray-300"><strong>Tools like Video Blocker, BlockTube, unhook</strong></p>
+				<ul class="list-disc list-inside mb-3 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+					<li>Block specific channels or keywords</li>
+					<li>Hide recommendations and comments</li>
+					<li>Remove distracting elements</li>
+					<li>Create whitelist of allowed channels</li>
+				</ul>
+				<p class="text-sm text-gray-700 dark:text-gray-300"><strong>Limitation:</strong> Only works in web browsers, not apps. Can be disabled if user has browser permissions.</p>
+			</div>
+
+			<div class="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5">
+				<h3 class="text-xl font-semibold text-blue-700 dark:text-blue-300 mt-0 mb-2">Parental Control Software</h3>
+				<p class="text-sm mb-3 text-gray-700 dark:text-gray-300"><strong>Options: Qustodio, Bark, Net Nanny, Circle</strong></p>
+				<ul class="list-disc list-inside mb-3 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+					<li>Monitor YouTube watch history</li>
+					<li>Alert on concerning content</li>
+					<li>Block YouTube on schedule</li>
+					<li>Set time limits for YouTube</li>
+					<li>Cross-platform protection</li>
+				</ul>
+				<p class="text-sm text-gray-700 dark:text-gray-300"><strong>Cost:</strong> Typically $5-15/month</p>
+			</div>
+
+			<div class="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5">
+				<h3 class="text-xl font-semibold text-blue-700 dark:text-blue-300 mt-0 mb-2">Alternative Frontends</h3>
+				<p class="text-sm mb-3 text-gray-700 dark:text-gray-300"><strong>Tools: Invidious, FreeTube, NewPipe</strong></p>
+				<ul class="list-disc list-inside mb-3 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+					<li>Access YouTube without recommendations</li>
+					<li>No comments section</li>
+					<li>Subscription-based viewing only</li>
+					<li>Privacy-focused</li>
+				</ul>
+				<p class="text-sm text-gray-700 dark:text-gray-300"><strong>Note:</strong> Requires technical setup. Best for older teens who can handle responsibility.</p>
+			</div>
+
+			<div class="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5">
+				<h3 class="text-xl font-semibold text-blue-700 dark:text-blue-300 mt-0 mb-2">Router-Level Scheduling</h3>
+				<p class="text-sm mb-3 text-gray-700 dark:text-gray-300"><strong>Use your router's parental controls</strong></p>
+				<ul class="list-disc list-inside mb-3 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+					<li>Block YouTube during homework hours</li>
+					<li>Limit to certain times of day</li>
+					<li>Weekend-only access</li>
+					<li>Device-specific rules</li>
+				</ul>
+				<p class="text-sm text-gray-700 dark:text-gray-300">See our <a href="/guides/router-config" class="text-blue-600 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300">Router Configuration guide</a></p>
+			</div>
+		</div>
+	</section>
+
+	<section class="mb-12">
+		<h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">👨‍👩‍👧 Best Practices & Family Guidelines</h2>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-green-200 dark:border-green-700 rounded-lg p-5">
+				<h3 class="text-xl font-semibold text-green-700 dark:text-green-400 mt-0 mb-3">🎯 Age-Appropriate Approach</h3>
+				<p class="font-semibold mb-2 mt-3 text-gray-800 dark:text-gray-200">Ages 4-8:</p>
+				<ul class="list-disc list-inside mb-3 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+					<li>YouTube Kids only, "Approved Content Only" mode</li>
+					<li>Parent curates channel list</li>
+					<li>Watch together when possible</li>
+					<li>30-minute daily limit</li>
+				</ul>
+				<p class="font-semibold mb-2 mt-3 text-gray-800 dark:text-gray-200">Ages 9-12:</p>
+				<ul class="list-disc list-inside mb-3 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+					<li>YouTube Kids "Older" or Supervised YouTube "Explore"</li>
+					<li>Regular check-ins on watch history</li>
+					<li>Discuss concerning content together</li>
+					<li>1-hour daily limit</li>
+				</ul>
+				<p class="font-semibold mb-2 mt-3 text-gray-800 dark:text-gray-200">Ages 13-17:</p>
+				<ul class="list-disc list-inside mb-0 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+					<li>Supervised YouTube "Explore More" or Restricted Mode</li>
+					<li>More independence with accountability</li>
+					<li>Open communication about content</li>
+					<li>Focus on healthy balance vs rigid limits</li>
+				</ul>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-green-200 dark:border-green-700 rounded-lg p-5">
+				<h3 class="text-xl font-semibold text-green-700 dark:text-green-400 mt-0 mb-3">🗣️ Communication Strategies</h3>
+				<ul class="list-disc list-inside space-y-2 text-sm text-gray-700 dark:text-gray-300">
+					<li>Explain <em>why</em> filtering exists, not just <em>that</em> it does</li>
+					<li>Watch YouTube together sometimes to understand their interests</li>
+					<li>Create a "safe channel" list collaboratively</li>
+					<li>Encourage them to report concerning content they encounter</li>
+					<li>Discuss critical thinking about online content</li>
+					<li>Praise good judgment when they self-regulate</li>
+				</ul>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-green-200 dark:border-green-700 rounded-lg p-5">
+				<h3 class="text-xl font-semibold text-green-700 dark:text-green-400 mt-0 mb-3">🔍 Regular Monitoring</h3>
+				<ul class="list-disc list-inside space-y-2 text-sm text-gray-700 dark:text-gray-300">
+					<li>Review watch history weekly</li>
+					<li>Check subscribed channels monthly</li>
+					<li>Ask about favorite YouTubers</li>
+					<li>Watch a few videos they recommend</li>
+					<li>Set up email notifications for concerning content (if using monitoring tools)</li>
+					<li>Adjust restrictions as they demonstrate maturity</li>
+				</ul>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-green-200 dark:border-green-700 rounded-lg p-5">
+				<h3 class="text-xl font-semibold text-green-700 dark:text-green-400 mt-0 mb-3">⚠️ Red Flags to Watch For</h3>
+				<ul class="list-disc list-inside space-y-2 text-sm text-gray-700 dark:text-gray-300">
+					<li>Obsessive watching or difficulty stopping</li>
+					<li>Hiding screens when you approach</li>
+					<li>Using inappropriate language learned from videos</li>
+					<li>Attempting to bypass restrictions repeatedly</li>
+					<li>Watching late at night (check time stamps)</li>
+					<li>Dramatic behavior changes after watching</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="mb-12">
+		<h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">❓ Troubleshooting & Common Issues</h2>
+
+		<div class="space-y-4">
+			<div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 p-4 rounded">
+				<h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 mt-0">Inappropriate content still appearing in YouTube Kids</h3>
+				<p class="mb-2 text-gray-700 dark:text-gray-300"><strong>Actions to take:</strong></p>
+				<ul class="list-disc list-inside mb-0 space-y-1 text-gray-700 dark:text-gray-300">
+					<li>Report the video/channel immediately (tap ⋮ → Report)</li>
+					<li>Block the channel from appearing again</li>
+					<li>Consider switching to "Approved Content Only" mode</li>
+					<li>Remember: No automated system is perfect, which is why supervision matters</li>
+				</ul>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 p-4 rounded">
+				<h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 mt-0">Child is using regular YouTube instead of Kids</h3>
+				<p class="mb-2 text-gray-700 dark:text-gray-300"><strong>Solutions:</strong></p>
+				<ul class="list-disc list-inside mb-0 space-y-1 text-gray-700 dark:text-gray-300">
+					<li>Uninstall or block regular YouTube app on their device</li>
+					<li>Use Screen Time (iOS) or Family Link (Android) to block YouTube app</li>
+					<li>Set up DNS filtering to redirect youtube.com to restrictions</li>
+					<li>Have a conversation about the rules and why they exist</li>
+				</ul>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 p-4 rounded">
+				<h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 mt-0">Restricted Mode keeps turning off</h3>
+				<p class="mb-2 text-gray-700 dark:text-gray-300"><strong>Why this happens:</strong></p>
+				<ul class="list-disc list-inside mb-2 space-y-1 text-gray-700 dark:text-gray-300">
+					<li>Browser cookies were cleared</li>
+					<li>Using a different browser or private browsing</li>
+					<li>Child manually disabled it</li>
+				</ul>
+				<p class="mb-2 text-gray-700 dark:text-gray-300"><strong>Solutions:</strong></p>
+				<ul class="list-disc list-inside mb-0 space-y-1 text-gray-700 dark:text-gray-300">
+					<li>Use supervised Google account (can't disable Restricted Mode)</li>
+					<li>Enable DNS-level Restricted Mode enforcement</li>
+					<li>Check browser extension isn't interfering</li>
+				</ul>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 p-4 rounded">
+				<h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 mt-0">Can't access educational content with filters enabled</h3>
+				<p class="mb-2 text-gray-700 dark:text-gray-300"><strong>Solutions:</strong></p>
+				<ul class="list-disc list-inside mb-0 space-y-1 text-gray-700 dark:text-gray-300">
+					<li>In YouTube Kids, add the specific educational channel to approved list</li>
+					<li>Use supervised YouTube "Explore More" level for older children</li>
+					<li>For legitimate educational videos, watch together or temporarily grant access</li>
+					<li>Report false positives to YouTube to improve filtering</li>
+				</ul>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 p-4 rounded">
+				<h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2 mt-0">Child watching on other people's devices</h3>
+				<p class="mb-2 text-gray-700 dark:text-gray-300"><strong>Approach:</strong></p>
+				<ul class="list-disc list-inside mb-0 space-y-1 text-gray-700 dark:text-gray-300">
+					<li>This is the hardest scenario—you can't control others' devices</li>
+					<li>Communicate your family's YouTube rules to other parents/caregivers</li>
+					<li>Teach your child to make good choices independently</li>
+					<li>Focus on education and values rather than just technical controls</li>
+					<li>Check-in after playdates: "What videos did you watch at Sam's house?"</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section class="mb-12">
+		<h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">⚖️ Pros & Cons of YouTube Safety Tools</h2>
+
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+			<div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 border-2 border-gray-200 dark:border-gray-700">
+				<h3 class="text-xl font-semibold text-blue-700 dark:text-blue-300 mt-0 mb-4 text-center">YouTube Kids</h3>
+				<h4 class="text-base font-semibold mt-0 mb-2">✅ Pros</h4>
+				<ul class="list-disc list-inside mb-3 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+					<li>Free and official Google product</li>
+					<li>Best filtering for young children</li>
+					<li>Kid-friendly interface</li>
+					<li>Parental controls built-in</li>
+				</ul>
+				<h4 class="text-base font-semibold mt-4 mb-2">❌ Cons</h4>
+				<ul class="list-disc list-inside m-0 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+					<li>Still not 100% effective</li>
+					<li>Children may outgrow it</li>
+					<li>Requires separate app (bypass risk)</li>
+					<li>Limited content compared to main YouTube</li>
+				</ul>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 border-2 border-gray-200 dark:border-gray-700">
+				<h3 class="text-xl font-semibold text-blue-700 dark:text-blue-300 mt-0 mb-4 text-center">Supervised YouTube</h3>
+				<h4 class="text-base font-semibold mt-0 mb-2">✅ Pros</h4>
+				<ul class="list-disc list-inside mb-3 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+					<li>More content than Kids</li>
+					<li>Can't be easily bypassed</li>
+					<li>Grows with child</li>
+					<li>Parental oversight of history</li>
+				</ul>
+				<h4 class="text-base font-semibold mt-4 mb-2">❌ Cons</h4>
+				<ul class="list-disc list-inside m-0 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+					<li>Requires Google account setup</li>
+					<li>Still some inappropriate content</li>
+					<li>Children may resist supervision</li>
+					<li>Stops at age 18</li>
+				</ul>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 border-2 border-gray-200 dark:border-gray-700">
+				<h3 class="text-xl font-semibold text-blue-700 dark:text-blue-300 mt-0 mb-4 text-center">Restricted Mode</h3>
+				<h4 class="text-base font-semibold mt-0 mb-2">✅ Pros</h4>
+				<ul class="list-disc list-inside mb-3 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+					<li>Quick to enable</li>
+					<li>Works immediately</li>
+					<li>No account required</li>
+					<li>Available everywhere</li>
+				</ul>
+				<h4 class="text-base font-semibold mt-4 mb-2">❌ Cons</h4>
+				<ul class="list-disc list-inside m-0 space-y-1 text-sm text-gray-700 dark:text-gray-300">
+					<li>Least effective filtering</li>
+					<li>Easily disabled</li>
+					<li>Many false negatives</li>
+					<li>Should only be a backup layer</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section slot="next-steps" class="mb-12">
+		<h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white">🎯 Next Steps & Related Guides</h2>
+		<p class="mb-6 text-gray-700 dark:text-gray-300 leading-relaxed">
+			YouTube protection works best as part of a comprehensive internet safety strategy:
+		</p>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+			<a href="/guides/android-family-link" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-lg hover:-translate-y-0.5">
+				<h3 class="text-lg font-semibold text-gray-900 dark:text-white mt-0 mb-2">🤖 Android Family Link</h3>
+				<p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Set up supervised Google accounts for YouTube and more</p>
+			</a>
+
+			<a href="/guides/dns-filtering" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-lg hover:-translate-y-0.5">
+				<h3 class="text-lg font-semibold text-gray-900 dark:text-white mt-0 mb-2">🌐 DNS Filtering</h3>
+				<p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Enforce Restricted Mode at the network level automatically</p>
+			</a>
+
+			<a href="/guides/ios-screen-time" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-lg hover:-translate-y-0.5">
+				<h3 class="text-lg font-semibold text-gray-900 dark:text-white mt-0 mb-2">📱 iOS Screen Time</h3>
+				<p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Block or limit YouTube on iPhones and iPads</p>
+			</a>
+
+			<a href="/guides/safe-search" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 dark:hover:border-blue-500 hover:shadow-lg hover:-translate-y-0.5">
+				<h3 class="text-lg font-semibold text-gray-900 dark:text-white mt-0 mb-2">🔍 SafeSearch</h3>
+				<p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Filter search results across all search engines</p>
+			</a>
+		</div>
+
+		<div class="alert-info">
+			<strong>Recommended Strategy:</strong> Use YouTube Kids/Supervised YouTube (appropriate filtering) + DNS enforcement (prevents bypass) + regular conversations (education) = balanced protection.
+		</div>
+	</section>
+</GuideLayout>

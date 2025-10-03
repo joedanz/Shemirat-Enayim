@@ -1,0 +1,277 @@
+---
+import GuideLayout from '~/layouts/GuideLayout.astro';
+
+const metadata = {
+	title: 'Guest Network Setup for Children — Shemirat Enayim',
+	description: 'Learn to set up separate WiFi guest networks with stricter filtering and controls for children\'s devices while maintaining normal access for adults.',
+};
+
+---
+
+<GuideLayout
+	metadata={metadata}
+	difficulty="intermediate"
+	timeEstimate="20-30 minutes"
+	prerequisites={[
+		'Router that supports guest networks (most modern routers)',
+		'Access to router admin panel',
+		'Understanding of basic network concepts helpful'
+	]}
+>
+
+	<Fragment slot="breadcrumb">
+		<li class="flex items-center">
+			<a href="/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+				Home
+			</a>
+			<span class="mx-2 text-gray-500">/</span>
+		</li>
+		<li class="flex items-center">
+			<a href="/methods" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+				Protection Methods
+			</a>
+			<span class="mx-2 text-gray-500">/</span>
+		</li>
+		<li class="text-gray-700 dark:text-gray-300">
+			Guest Network for Children
+		</li>
+	</Fragment>
+
+	<section>
+		<h2>What is a Guest Network?</h2>
+		<p>
+			Most modern routers allow you to create a separate "guest" WiFi network alongside your main network. While typically used for visitors, these guest networks are perfect for children's devices because you can apply different security and filtering rules without affecting adult devices.
+		</p>
+
+		<div class="alert alert-success">
+			<strong>Key Benefit:</strong> Different rules for different networks—strict filtering for kids, normal access for adults, all from one router.
+		</div>
+	</section>
+
+	<section>
+		<h2>🎯 Why Use Guest Networks for Kids?</h2>
+
+		<ul>
+			<li><strong>Separate Filtering Levels:</strong> Apply strict DNS filtering or firewall rules to children's network only</li>
+			<li><strong>Easier Management:</strong> All children's devices on one network for unified control</li>
+			<li><strong>Time-Based Controls:</strong> Schedule guest network on/off times for bedtime enforcement</li>
+			<li><strong>Bandwidth Control:</strong> Limit streaming/gaming bandwidth on kids' network</li>
+			<li><strong>Device Isolation:</strong> Kids' devices can't access main network devices (added security)</li>
+			<li><strong>Easy Monitoring:</strong> View all children's device activity in one place</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>🛠️ Setting Up a Guest Network</h2>
+
+		<h3>Step 1: Access Router Settings</h3>
+		<ol>
+			<li>Open browser and go to router's IP (usually 192.168.1.1 or 192.168.0.1)</li>
+			<li>Log in with admin credentials</li>
+			<li>Find "Guest Network", "Guest WiFi", or "Multiple SSIDs" section</li>
+		</ol>
+
+		<h3>Step 2: Enable Guest Network</h3>
+		<ol>
+			<li>Enable guest network feature</li>
+			<li>Name the network (e.g., "Family_Kids" or "Protected_WiFi")</li>
+			<li>Set a strong password (different from main network)</li>
+			<li>Choose encryption (WPA2 or WPA3)</li>
+		</ol>
+
+		<div class="alert alert-info">
+			<strong>Naming Tip:</strong> Use a neutral name like "Family2" rather than "Kids_Network" so children don't feel singled out or try to switch networks.
+		</div>
+
+		<h3>Step 3: Configure Guest Network Settings</h3>
+
+		<h4>Access Restrictions</h4>
+		<ul>
+			<li><strong>Client Isolation:</strong> Enable to prevent devices from seeing each other</li>
+			<li><strong>Access to Main Network:</strong> Disable so kids can't access main network devices</li>
+			<li><strong>Internet Only:</strong> Enable to restrict to internet access only</li>
+		</ul>
+
+		<h4>Bandwidth Controls</h4>
+		<ul>
+			<li>Limit bandwidth (if supported) to prevent excessive streaming</li>
+			<li>Set maximum speed per device</li>
+			<li>Prioritize educational traffic (QoS)</li>
+		</ul>
+
+		<h4>Schedule</h4>
+		<ul>
+			<li>Set times when guest network is active</li>
+			<li>Example: 3 PM - 8 PM on weekdays, 8 AM - 9 PM on weekends</li>
+			<li>Automatically disables during bedtime/school hours</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>🌐 Adding DNS Filtering to Guest Network</h2>
+
+		<p>The real power comes from applying filtering DNS to the guest network only:</p>
+
+		<h3>Method 1: Router-Level DNS (If Supported)</h3>
+		<ol>
+			<li>In guest network settings, look for DNS configuration</li>
+			<li>Change DNS from automatic to manual/custom</li>
+			<li>Enter filtering DNS addresses (e.g., CleanBrowsing Family):
+				<ul>
+					<li>Primary: 185.228.168.168</li>
+					<li>Secondary: 185.228.169.168</li>
+				</ul>
+			</li>
+			<li>Save settings</li>
+			<li>Main network continues using regular DNS</li>
+		</ol>
+
+		<h3>Method 2: DHCP Server Configuration</h3>
+		<p>Some routers allow different DHCP settings per network:</p>
+		<ol>
+			<li>Access DHCP settings for guest network</li>
+			<li>Configure custom DNS servers</li>
+			<li>All devices connecting to guest network receive filtering DNS automatically</li>
+		</ol>
+
+		<h3>Method 3: Per-Device DNS (Fallback)</h3>
+		<p>If router doesn't support per-network DNS:</p>
+		<ul>
+			<li>Configure DNS on each child's device manually</li>
+			<li>See our <a href="/guides/dns-filtering">DNS Filtering Guide</a> for device-specific instructions</li>
+		</ul>
+
+		<div class="alert alert-success">
+			<strong>Recommended:</strong> CleanBrowsing Family Filter or OpenDNS FamilyShield for comprehensive free filtering on children's network.
+		</div>
+	</section>
+
+	<section>
+		<h2>📱 Connecting Children's Devices</h2>
+
+		<ol>
+			<li>Connect each child's device to the new guest network</li>
+			<li>Forget/remove main network from their devices to prevent switching</li>
+			<li>For devices that remember networks: disable auto-connect to main network</li>
+			<li>Set guest network password—consider not sharing with children to prevent them from sharing it</li>
+		</ol>
+
+		<h3>Devices to Connect to Guest Network</h3>
+		<ul>
+			<li>Children's smartphones and tablets</li>
+			<li>Kids' computers/laptops</li>
+			<li>Gaming consoles</li>
+			<li>Smart TVs in kids' rooms</li>
+			<li>Any device used primarily by children</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>🔒 Security Considerations</h2>
+
+		<div class="security-tips">
+			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+				<h3>Don't Share Passwords</h3>
+				<p>Consider setting up devices yourself and not sharing the guest network password with children. This prevents them from:</p>
+				<ul>
+					<li>Sharing WiFi with friends who bypass filtering</li>
+					<li>Connecting unauthorized devices</li>
+					<li>Switching devices between networks</li>
+				</ul>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+				<h3>Monitor Connection List</h3>
+				<ul>
+					<li>Regularly check which devices are on guest network</li>
+					<li>Look for unknown devices</li>
+					<li>Ensure kids haven't switched to main network</li>
+					<li>Most routers show connected devices list</li>
+				</ul>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+				<h3>Periodic Password Changes</h3>
+				<ul>
+					<li>Change guest network password quarterly</li>
+					<li>Update all authorized devices</li>
+					<li>Prevents old devices from reconnecting</li>
+					<li>Ensures you control which devices connect</li>
+				</ul>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+				<h3>Device MAC Filtering</h3>
+				<ul>
+					<li>Create whitelist of allowed devices by MAC address</li>
+					<li>Only authorized devices can connect</li>
+					<li>Prevents children adding new devices without permission</li>
+					<li>Setting location: Advanced → MAC Filtering</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<h2>⚖️ Pros & Cons</h2>
+
+		<div class="pros-cons">
+			<div class="pros">
+				<h3>✅ Advantages</h3>
+				<ul>
+					<li>Separate rules for kids vs adults</li>
+					<li>No filtering on your devices</li>
+					<li>Centralized management</li>
+					<li>Easy time-based controls</li>
+					<li>Better security (network isolation)</li>
+					<li>Free (built into most routers)</li>
+					<li>Can combine with DNS filtering</li>
+					<li>Automatic protection for all connected devices</li>
+				</ul>
+			</div>
+			<div class="cons">
+				<h3>❌ Limitations</h3>
+				<ul>
+					<li>Only works at home</li>
+					<li>Requires router support</li>
+					<li>Kids may try to switch networks</li>
+					<li>Setup can be technical</li>
+					<li>Not all routers support per-network DNS</li>
+					<li>May reduce overall network performance</li>
+					<li>Requires monitoring and maintenance</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section slot="next-steps">
+		<h2>🎯 Next Steps</h2>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+			<a href="/guides/dns-filtering" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+				<h3>🌐 DNS Filtering</h3>
+				<p>Configure filtering DNS for your guest network</p>
+			</a>
+
+			<a href="/guides/router-config" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+				<h3>🔐 Router Configuration</h3>
+				<p>Advanced router controls and scheduling</p>
+			</a>
+
+			<a href="/guides/ios-screen-time" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+				<h3>📱 Device Controls</h3>
+				<p>Add device-level protection for mobile devices</p>
+			</a>
+
+			<a href="/guides/firewall" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+				<h3>🔥 Advanced Firewall</h3>
+				<p>More advanced network segmentation</p>
+			</a>
+		</div>
+
+		<div class="alert alert-info">
+			<strong>Complete Strategy:</strong> Guest network (home protection) + filtering DNS (content blocking) + device controls (mobile protection) + conversations (education) = comprehensive safety.
+		</div>
+	</section>
+</GuideLayout>
+

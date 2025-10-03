@@ -1,0 +1,495 @@
+---
+import GuideLayout from '~/layouts/GuideLayout.astro';
+
+const metadata = {
+	title: 'Cyberbullying Prevention and Response — Shemirat Enayim',
+	description: 'Comprehensive guide to recognizing, preventing, and responding to cyberbullying. Learn the warning signs, documentation strategies, and how to support your child through digital harassment.',
+};
+
+---
+
+<GuideLayout
+	metadata={metadata}
+	difficulty="beginner"
+	timeEstimate="20 minutes"
+	prerequisites={[
+		'Understanding of platforms your child uses',
+		'Open communication channel with your child',
+		'Awareness that cyberbullying is different from traditional bullying'
+	]}
+>
+
+	<Fragment slot="breadcrumb">
+		<li class="flex items-center">
+			<a href="/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+				Home
+			</a>
+			<span class="mx-2 text-gray-500">/</span>
+		</li>
+		<li class="flex items-center">
+			<a href="/methods" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+				Protection Methods
+			</a>
+			<span class="mx-2 text-gray-500">/</span>
+		</li>
+		<li class="text-gray-700 dark:text-gray-300">
+			Cyberbullying Prevention and Response
+		</li>
+	</Fragment>
+
+	<section>
+		<h2>Understanding Cyberbullying</h2>
+		<p>
+			Cyberbullying is bullying that takes place using electronic technology - social media, messaging apps, gaming platforms, and phones. Unlike traditional bullying that might end when the school day ends, cyberbullying is relentless, following victims home and often becoming visible to a wide audience. The digital nature makes it more damaging: it's permanent (screenshots last forever), public (humiliation is amplified), and inescapable (24/7 access).
+		</p>
+
+		<div class="alert alert-warning">
+			<strong>Statistics:</strong> 59% of US teens have experienced some form of cyberbullying. Only 1 in 10 victims tell a parent. Cyberbullying victims are 2-9 times more likely to consider suicide than non-victims.
+		</div>
+	</section>
+
+	<section>
+		<h2>🔍 What Constitutes Cyberbullying?</h2>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+				<h3>Harassment</h3>
+				<p>Repeatedly sending offensive, rude, or insulting messages</p>
+				<ul>
+					<li>Mean comments on posts</li>
+					<li>Hateful direct messages</li>
+					<li>Targeted negative replies</li>
+					<li>Spam with insults</li>
+				</ul>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+				<h3>Denigration</h3>
+				<p>Sending or posting cruel gossip or rumors to damage reputation</p>
+				<ul>
+					<li>Spreading false rumors</li>
+					<li>Sharing embarrassing information</li>
+					<li>Creating hate pages/groups</li>
+					<li>Posting altered images</li>
+				</ul>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+				<h3>Impersonation</h3>
+				<p>Pretending to be someone else to damage their reputation</p>
+				<ul>
+					<li>Fake social media accounts</li>
+					<li>Hacking accounts to post as them</li>
+					<li>Sending messages pretending to be victim</li>
+					<li>Creating parody accounts to mock</li>
+				</ul>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+				<h3>Outing & Trickery</h3>
+				<p>Sharing someone's secrets or private information publicly</p>
+				<ul>
+					<li>Posting private conversations</li>
+					<li>Revealing personal information</li>
+					<li>Sharing photos sent in confidence</li>
+					<li>Tricking someone into sharing secrets</li>
+				</ul>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+				<h3>Exclusion</h3>
+				<p>Intentionally leaving someone out of online groups or activities</p>
+				<ul>
+					<li>Removing from group chats</li>
+					<li>Blocking from gaming sessions</li>
+					<li>Unfollowing/unfriending publicly</li>
+					<li>Creating "everyone but you" events</li>
+				</ul>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+				<h3>Cyberstalking</h3>
+				<p>Repeated intense harassment and denigration that creates fear</p>
+				<ul>
+					<li>Constant messaging despite blocks</li>
+					<li>Monitoring and commenting on all activity</li>
+					<li>Threats of physical harm</li>
+					<li>Creating new accounts to continue harassment</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<h2>⚠️ Warning Signs Your Child is Being Cyberbullied</h2>
+
+		<h3>Emotional & Behavioral Changes</h3>
+		<ul>
+			<li>Appears upset, sad, or angry during or after using devices</li>
+			<li>Becomes withdrawn from family and friends</li>
+			<li>Shows reluctance to go to school or social activities</li>
+			<li>Sudden decline in grades or school performance</li>
+			<li>Changes in eating or sleeping patterns</li>
+			<li>Appears anxious or nervous around devices</li>
+			<li>Loss of interest in activities they used to enjoy</li>
+			<li>Makes comments about worthlessness or hopelessness</li>
+			<li>Avoids discussions about devices or online activity</li>
+		</ul>
+
+		<h3>Device & Online Behavior</h3>
+		<ul>
+			<li>Suddenly quits social media accounts or deletes profiles</li>
+			<li>Becomes secretive about online activities</li>
+			<li>Quickly switches screens or hides devices when you approach</li>
+			<li>Receives constant notifications that cause distress</li>
+			<li>Stops using devices they previously enjoyed</li>
+			<li>Creates new accounts or uses different names</li>
+			<li>Appears stressed when notifications arrive</li>
+		</ul>
+
+		<h3>Physical Symptoms</h3>
+		<ul>
+			<li>Frequent headaches or stomachaches</li>
+			<li>Difficulty sleeping or nightmares</li>
+			<li>Changes in appetite</li>
+			<li>Unexplained physical complaints</li>
+		</ul>
+
+		<div class="alert alert-warning">
+			<strong>Crisis Warning Signs:</strong> If your child mentions suicide, self-harm, or shows signs of severe depression, seek professional help immediately. Call 988 (Suicide & Crisis Lifeline) or take them to the emergency room.
+		</div>
+	</section>
+
+	<section>
+		<h2>🔎 Warning Signs Your Child Might Be Cyberbullying Others</h2>
+		<p>It's equally important to recognize if your child is the perpetrator:</p>
+
+		<ul>
+			<li>Quickly switches screens or hides device when you approach</li>
+			<li>Uses multiple online accounts or an account that isn't their own</li>
+			<li>Shows lack of empathy when discussing others' online experiences</li>
+			<li>Gets upset if you take away device access</li>
+			<li>Spends increasing amounts of time online</li>
+			<li>Laughs excessively while using devices without explaining why</li>
+			<li>Avoids discussions about online activities</li>
+			<li>Has friends who engage in cyberbullying</li>
+			<li>Shows increased aggression or anger</li>
+			<li>Is competitive and concerned about popularity</li>
+		</ul>
+
+		<div class="alert alert-warning">
+			<strong>If your child is bullying:</strong> Don't minimize it or dismiss it as "kids being kids." Take it seriously, impose consequences, and address the underlying issues. Many bullies have experienced bullying themselves or face other challenges.
+		</div>
+	</section>
+
+	<section>
+		<h2>🛡️ Prevention Strategies</h2>
+
+		<h3>Create Open Communication</h3>
+		<ul>
+			<li><strong>Talk early and often:</strong> Discuss cyberbullying before it happens</li>
+			<li><strong>Create safe space:</strong> "You won't get in trouble for telling me about problems"</li>
+			<li><strong>Regular check-ins:</strong> "Has anyone been mean to you or your friends online?"</li>
+			<li><strong>Listen without judging:</strong> Don't immediately react with anger or blame</li>
+			<li><strong>Validate feelings:</strong> "That sounds really hurtful" rather than "Just ignore it"</li>
+		</ul>
+
+		<h3>Teach Digital Citizenship</h3>
+		<ul>
+			<li>The "Grandma Rule": Don't post anything you wouldn't want grandma to see</li>
+			<li>Think before you post - consider how words might be received</li>
+			<li>Be a helpful bystander - support victims, don't pile on</li>
+			<li>Understand that tone is hard to convey in text</li>
+			<li>Once posted, it's permanent - even if deleted</li>
+			<li>Treat others online as you would face-to-face</li>
+		</ul>
+
+		<h3>Technical Safeguards</h3>
+		<ul>
+			<li><strong>Privacy settings:</strong> Keep all accounts private, friends-only</li>
+			<li><strong>Approve followers:</strong> Only people they know in real life</li>
+			<li><strong>Limit comments:</strong> Friends only or disable entirely</li>
+			<li><strong>Location sharing:</strong> Turn off geotagging and location services</li>
+			<li><strong>Regular reviews:</strong> Check followers, friend lists, and messages together</li>
+			<li><strong>Use real names:</strong> Makes people think twice before being cruel</li>
+		</ul>
+
+		<h3>Build Resilience</h3>
+		<ul>
+			<li>Foster offline friendships and activities</li>
+			<li>Build strong sense of self-worth (not dependent on likes/followers)</li>
+			<li>Develop coping skills for dealing with conflict</li>
+			<li>Maintain balance - online is not real life</li>
+			<li>Encourage activities where they excel and feel confident</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>📱 When Cyberbullying Happens: Immediate Response</h2>
+
+		<h3>Step 1: Stay Calm & Listen</h3>
+		<ul>
+			<li>Thank them for telling you</li>
+			<li>Listen without interrupting or minimizing</li>
+			<li>Avoid immediate reactions like "Let me call that kid's mother!"</li>
+			<li>Don't blame them or suggest they provoked it</li>
+			<li>Ask open-ended questions: "Tell me what happened"</li>
+		</ul>
+
+		<h3>Step 2: Document Everything</h3>
+		<ul>
+			<li><strong>Screenshots:</strong> Capture messages, posts, comments with dates/times</li>
+			<li><strong>Save messages:</strong> Don't delete evidence</li>
+			<li><strong>Print copies:</strong> Digital evidence can disappear</li>
+			<li><strong>Record details:</strong> Dates, times, usernames, witnesses</li>
+			<li><strong>Note impact:</strong> How it's affecting your child (evidence for school/police)</li>
+		</ul>
+
+		<h3>Step 3: Block & Report</h3>
+		<ul>
+			<li><strong>Block the bully:</strong> On all platforms where harassment occurs</li>
+			<li><strong>Report to platform:</strong> Use built-in reporting features</li>
+			<li><strong>Report to school:</strong> If it involves classmates (even if outside school hours)</li>
+			<li><strong>Don't respond:</strong> Engaging often escalates the situation</li>
+		</ul>
+
+		<h3>Step 4: Assess Severity</h3>
+		<ul>
+			<li><strong>Mild:</strong> Mean comments, temporary exclusion → Block, monitor, talk through feelings</li>
+			<li><strong>Moderate:</strong> Persistent harassment, rumors, impersonation → Involve school, document, consider counseling</li>
+			<li><strong>Severe:</strong> Threats, explicit images, physical threats, suicidal ideation → Involve police immediately</li>
+		</ul>
+
+		<div class="alert alert-info">
+			<strong>Don't retaliate:</strong> Responding with more cyberbullying makes the situation worse and can make your child look like the aggressor.
+		</div>
+	</section>
+
+	<section>
+		<h2>🏫 Working with Schools</h2>
+
+		<h3>When to Involve the School</h3>
+		<ul>
+			<li>Cyberbullying involves classmates</li>
+			<li>It's affecting your child's ability to learn</li>
+			<li>The bullying started at school or is discussed at school</li>
+			<li>Multiple students are involved</li>
+			<li>Threats of physical harm are made</li>
+		</ul>
+
+		<h3>How to Approach the School</h3>
+		<ol>
+			<li><strong>Gather evidence:</strong> Bring screenshots and documentation</li>
+			<li><strong>Know the policy:</strong> Review school's anti-bullying policy beforehand</li>
+			<li><strong>Start with guidance counselor or principal:</strong> Not the bully's parents directly</li>
+			<li><strong>Request specific actions:</strong> "What steps will the school take?"</li>
+			<li><strong>Follow up in writing:</strong> Email summary of meeting and agreed-upon actions</li>
+			<li><strong>Set timeline:</strong> "Let's meet again in two weeks to assess progress"</li>
+			<li><strong>Escalate if needed:</strong> Superintendent, school board, or Department of Education</li>
+		</ol>
+
+		<h3>What Schools Can Do</h3>
+		<ul>
+			<li>Investigate the incident</li>
+			<li>Discipline students according to policy</li>
+			<li>Separate students (class changes, seating)</li>
+			<li>Provide counseling or mediation</li>
+			<li>Monitor the situation</li>
+			<li>Educate students about cyberbullying</li>
+		</ul>
+
+		<div class="alert alert-warning">
+			<strong>Know your rights:</strong> Many states have laws requiring schools to address cyberbullying even if it occurs off-campus. Research your state's laws at stopbullying.gov.
+		</div>
+	</section>
+
+	<section>
+		<h2>👮 When to Involve Law Enforcement</h2>
+
+		<h3>Report to Police When There Are:</h3>
+		<ul>
+			<li><strong>Threats of violence:</strong> "I'm going to hurt you"</li>
+			<li><strong>Physical threats:</strong> "I know where you live"</li>
+			<li><strong>Extortion:</strong> "Pay me or I'll share this photo"</li>
+			<li><strong>Sexual exploitation:</strong> Sharing or requesting explicit images of minors</li>
+			<li><strong>Stalking:</strong> Persistent harassment causing fear</li>
+			<li><strong>Hate crimes:</strong> Targeting based on race, religion, sexual orientation, etc.</li>
+			<li><strong>Creation of fake accounts:</strong> Impersonation for harmful purposes</li>
+			<li><strong>Hacking:</strong> Unauthorized access to accounts</li>
+		</ul>
+
+		<h3>How to File a Police Report</h3>
+		<ol>
+			<li>Bring all documentation (screenshots, logs, printed evidence)</li>
+			<li>Explain the situation clearly and chronologically</li>
+			<li>Provide suspect information if known (name, school, username)</li>
+			<li>Get a copy of the report for your records</li>
+			<li>Ask about next steps and follow-up</li>
+			<li>Share report with school administrators</li>
+		</ol>
+
+		<h3>Additional Resources</h3>
+		<ul>
+			<li><strong>FBI IC3:</strong> Report cybercrimes at <a href="https://ic3.gov" target="_blank" rel="noopener">ic3.gov</a></li>
+			<li><strong>CyberTipline:</strong> Report child exploitation at <a href="https://cybertipline.org" target="_blank" rel="noopener">cybertipline.org</a></li>
+			<li><strong>State laws:</strong> Research at <a href="https://stopbullying.gov" target="_blank" rel="noopener">stopbullying.gov</a></li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>💙 Supporting Your Child Emotionally</h2>
+
+		<h3>Validate Their Feelings</h3>
+		<ul>
+			<li>"I'm so sorry this is happening to you"</li>
+			<li>"This is not your fault"</li>
+			<li>"You were right to tell me"</li>
+			<li>"I believe you"</li>
+			<li>"What you're feeling is completely normal"</li>
+		</ul>
+
+		<h3>Provide Practical Support</h3>
+		<ul>
+			<li>Help them block and report</li>
+			<li>Take screenshots for documentation</li>
+			<li>Accompany them to meet with school officials</li>
+			<li>Connect them with counselor or therapist</li>
+			<li>Maintain normal routines and activities</li>
+			<li>Encourage offline friendships</li>
+		</ul>
+
+		<h3>What NOT to Say</h3>
+		<ul>
+			<li>❌ "Just ignore it" (minimizes their pain)</li>
+			<li>❌ "What did you do to cause this?" (victim-blaming)</li>
+			<li>❌ "Kids will be kids" (dismissive)</li>
+			<li>❌ "You're too sensitive" (invalidating)</li>
+			<li>❌ "Delete your account" (punishing the victim)</li>
+			<li>❌ "I'm taking away all your devices" (isolates them further)</li>
+		</ul>
+
+		<h3>Signs They Need Professional Help</h3>
+		<ul>
+			<li>Symptoms persist for more than 2 weeks</li>
+			<li>Severe anxiety or depression</li>
+			<li>Self-harm or suicidal thoughts</li>
+			<li>Significant changes in eating or sleeping</li>
+			<li>Refusing to go to school</li>
+			<li>Panic attacks</li>
+			<li>Social withdrawal</li>
+		</ul>
+
+		<div class="alert alert-info">
+			<strong>Therapy helps:</strong> A counselor experienced in bullying can teach coping strategies, rebuild self-esteem, and process the trauma. This is not a sign of weakness - it's proactive care.
+		</div>
+	</section>
+
+	<section>
+		<h2>🤝 The Role of Bystanders</h2>
+		<p>Teach your child to be an "upstander" not a bystander:</p>
+
+		<h3>What Upstanders Can Do</h3>
+		<ul>
+			<li><strong>Don't participate:</strong> Don't like, share, or comment on cruel posts</li>
+			<li><strong>Support the victim privately:</strong> "That was really mean. Are you okay?"</li>
+			<li><strong>Report to adults:</strong> "This is happening and it's not okay"</li>
+			<li><strong>Change the subject:</strong> In group chats, redirect conversation</li>
+			<li><strong>Defend publicly (if safe):</strong> "That's not cool" or "Leave them alone"</li>
+			<li><strong>Document:</strong> Screenshot evidence if victim is too upset</li>
+		</ul>
+
+		<h3>Why Bystanders Matter</h3>
+		<ul>
+			<li>Bullying often stops when peers intervene</li>
+			<li>Support from classmates helps victims recover faster</li>
+			<li>Speaking up creates a culture where bullying isn't tolerated</li>
+			<li>Silent witnesses enable bullies</li>
+		</ul>
+	</section>
+
+	<section>
+		<h2>📋 Response Action Plan Template</h2>
+
+		<div class="action-plan">
+			<h3>Cyberbullying Response Checklist</h3>
+
+			<h4>☐ Immediate Actions (Within 24 hours)</h4>
+			<ul>
+				<li>☐ Listen to child without judgment</li>
+				<li>☐ Screenshot/document all evidence</li>
+				<li>☐ Block the bully on all platforms</li>
+				<li>☐ Report to platform using built-in tools</li>
+				<li>☐ Assess child's emotional state</li>
+				<li>☐ Keep child home from school if needed for safety</li>
+			</ul>
+
+			<h4>☐ Short-term Actions (Within 1 week)</h4>
+			<ul>
+				<li>☐ Contact school (bring documentation)</li>
+				<li>☐ Follow up with platform reports</li>
+				<li>☐ Consider filing police report if threats involved</li>
+				<li>☐ Connect with counselor or therapist</li>
+				<li>☐ Review and adjust privacy settings on all accounts</li>
+				<li>☐ Reach out to other parents (if appropriate)</li>
+			</ul>
+
+			<h4>☐ Ongoing Actions</h4>
+			<ul>
+				<li>☐ Daily check-ins with child</li>
+				<li>☐ Follow up with school weekly</li>
+				<li>☐ Attend counseling sessions</li>
+				<li>☐ Monitor for retaliation or continued harassment</li>
+				<li>☐ Encourage positive activities and friendships</li>
+				<li>☐ Keep detailed log of all incidents</li>
+			</ul>
+		</div>
+	</section>
+
+	<section slot="next-steps">
+		<h2>🎯 Additional Resources</h2>
+
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+				<h3>StopBullying.gov</h3>
+				<p>Federal government resource with state laws, prevention strategies, and how to respond</p>
+				<a href="https://www.stopbullying.gov" target="_blank" rel="noopener">Visit site →</a>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+				<h3>Cyberbullying Research Center</h3>
+				<p>Research-based information, statistics, and resources for educators and parents</p>
+				<a href="https://cyberbullying.org" target="_blank" rel="noopener">Visit site →</a>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+				<h3>Crisis Text Line</h3>
+				<p>Free 24/7 support - Text "HELLO" to 741741</p>
+				<a href="https://www.crisistextline.org" target="_blank" rel="noopener">Visit site →</a>
+			</div>
+
+			<div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+				<h3>988 Suicide & Crisis Lifeline</h3>
+				<p>24/7 call, text, or chat - Dial or text 988</p>
+				<a href="https://988lifeline.org" target="_blank" rel="noopener">Visit site →</a>
+			</div>
+		</div>
+
+		<h3>Related Guides</h3>
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+			<a href="/guides/social-media-safety" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+				<h3>📱 Social Media Safety</h3>
+				<p>Platform-specific privacy and safety settings</p>
+			</a>
+
+			<a href="/guides/age-appropriate-internet" class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-6 mb-6">
+				<h3>🎯 Age-Appropriate Internet</h3>
+				<p>Building healthy digital habits from the start</p>
+			</a>
+		</div>
+
+		<div class="alert alert-success">
+			<strong>Remember:</strong> Cyberbullying is serious and can have lasting effects, but with the right support, children can recover and develop resilience. You are not alone - resources and help are available.
+		</div>
+	</section>
+</GuideLayout>
+
