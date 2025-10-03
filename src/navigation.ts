@@ -96,6 +96,6 @@ export const footerData = {
   ],
   socialLinks: [],
   footNote: `
-    <p class="text-sm">Shemirat Enayim — Protection for the Eyes. Comprehensive guides for internet safety and digital protection.</p>
+    <p class="text-sm">Shemirat Einayim — Protection for the Eyes. Comprehensive guides for internet safety and digital protection.</p>
   `,
 };
