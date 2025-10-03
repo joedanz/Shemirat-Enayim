@@ -1,30 +1,30 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
+  name: Shemirat Enayim
+  site: 'https://shemiratenayim.org'
   base: '/'
   trailingSlash: false
 
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+  googleSiteVerificationId: null
 
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: Shemirat Enayim
+    template: '%s — Shemirat Enayim'
+  description: "Comprehensive guides for internet safety, content filtering, and digital protection for families and communities. Learn about DNS filtering, parental controls, and effective methods to create safer digital environments."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: Shemirat Enayim
     images:
       - url: '~/assets/images/default.png'
         width: 1200
         height: 628
     type: website
   twitter:
-    handle: '@arthelokyo'
-    site: '@arthelokyo'
+    handle: '@shemiratenayim'
+    site: '@shemiratenayim'
     cardType: summary_large_image
 
 i18n:
@@ -33,7 +33,7 @@ i18n:
 
 apps:
   blog:
-    isEnabled: true
+    isEnabled: false
     postsPerPage: 6
 
     post:
