@@ -238,7 +238,7 @@ const { class: className = '' } = Astro.props;
   // Wait for DOM to be ready
   document.addEventListener('DOMContentLoaded', function () {
     const searchButton = document.getElementById('search-button');
-    const searchModal = document.getElementById('search-modal');
+    const searchModal = document.getElementById('search-modal') as HTMLDialogElement | null;
     const searchClose = document.getElementById('search-close');
 
     let pagefindLoaded = false;
