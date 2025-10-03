@@ -10,46 +10,84 @@ const { class: className = '' } = Astro.props;
 	<button
 		type="button"
 		class="theme-button"
-		data-theme="light"
-		aria-label="Light theme"
-		title="Light theme"
+		aria-label="Toggle theme"
+		aria-haspopup="true"
+		aria-expanded="false"
 	>
-		<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-			<circle cx="12" cy="12" r="5"></circle>
-			<line x1="12" y1="1" x2="12" y2="3"></line>
-			<line x1="12" y1="21" x2="12" y2="23"></line>
-			<line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-			<line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-			<line x1="1" y1="12" x2="3" y2="12"></line>
-			<line x1="21" y1="12" x2="23" y2="12"></line>
-			<line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-			<line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+		<svg class="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<!-- Sun icon (light) -->
+			<g class="icon-light">
+				<circle cx="12" cy="12" r="5"></circle>
+				<line x1="12" y1="1" x2="12" y2="3"></line>
+				<line x1="12" y1="21" x2="12" y2="23"></line>
+				<line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+				<line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+				<line x1="1" y1="12" x2="3" y2="12"></line>
+				<line x1="21" y1="12" x2="23" y2="12"></line>
+				<line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+				<line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+			</g>
+			<!-- Moon icon (dark) -->
+			<g class="icon-dark" style="display: none;">
+				<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+			</g>
+			<!-- Monitor icon (system) -->
+			<g class="icon-system" style="display: none;">
+				<rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+				<line x1="8" y1="21" x2="16" y2="21"></line>
+				<line x1="12" y1="17" x2="12" y2="21"></line>
+			</g>
+		</svg>
+		<svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<polyline points="4 6 8 10 12 6"></polyline>
 		</svg>
 	</button>
-	<button
-		type="button"
-		class="theme-button"
-		data-theme="dark"
-		aria-label="Dark theme"
-		title="Dark theme"
-	>
-		<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-			<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-		</svg>
-	</button>
-	<button
-		type="button"
-		class="theme-button"
-		data-theme="system"
-		aria-label="System theme"
-		title="System theme"
-	>
-		<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-			<rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-			<line x1="8" y1="21" x2="16" y2="21"></line>
-			<line x1="12" y1="17" x2="12" y2="21"></line>
-		</svg>
-	</button>
+
+	<ul class="theme-dropdown">
+		<li>
+			<button type="button" class="theme-option" data-theme="light">
+				<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<circle cx="12" cy="12" r="5"></circle>
+					<line x1="12" y1="1" x2="12" y2="3"></line>
+					<line x1="12" y1="21" x2="12" y2="23"></line>
+					<line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+					<line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+					<line x1="1" y1="12" x2="3" y2="12"></line>
+					<line x1="21" y1="12" x2="23" y2="12"></line>
+					<line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+					<line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+				</svg>
+				<span>Light</span>
+				<svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<polyline points="20 6 9 17 4 12"></polyline>
+				</svg>
+			</button>
+		</li>
+		<li>
+			<button type="button" class="theme-option" data-theme="dark">
+				<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+				</svg>
+				<span>Dark</span>
+				<svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<polyline points="20 6 9 17 4 12"></polyline>
+				</svg>
+			</button>
+		</li>
+		<li>
+			<button type="button" class="theme-option" data-theme="system">
+				<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+					<line x1="8" y1="21" x2="16" y2="21"></line>
+					<line x1="12" y1="17" x2="12" y2="21"></line>
+				</svg>
+				<span>System</span>
+				<svg class="check-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<polyline points="20 6 9 17 4 12"></polyline>
+				</svg>
+			</button>
+		</li>
+	</ul>
 </div>
 
 <script>
@@ -86,12 +124,30 @@ const { class: className = '' } = Astro.props;
 		return 'light';
 	}
 
+	function updateThemeIcon(theme: Theme): void {
+		const themeButton = document.querySelector('[data-theme-toggle] .theme-button');
+		if (!themeButton) return;
+
+		const iconLight = themeButton.querySelector('.icon-light') as HTMLElement;
+		const iconDark = themeButton.querySelector('.icon-dark') as HTMLElement;
+		const iconSystem = themeButton.querySelector('.icon-system') as HTMLElement;
+
+		if (iconLight && iconDark && iconSystem) {
+			iconLight.style.display = theme === 'light' ? 'block' : 'none';
+			iconDark.style.display = theme === 'dark' ? 'block' : 'none';
+			iconSystem.style.display = theme === 'system' ? 'block' : 'none';
+		}
+	}
+
 	function applyTheme(theme: Theme): void {
 		const effectiveTheme = theme === 'system' ? getSystemTheme() : theme;
 		document.documentElement.setAttribute(THEME_ATTR, effectiveTheme);
 
-		// Update active button state
-		document.querySelectorAll('[data-theme-toggle] .theme-button').forEach((button) => {
+		// Update icon
+		updateThemeIcon(theme);
+
+		// Update active option state
+		document.querySelectorAll('[data-theme-toggle] .theme-option').forEach((button) => {
 			const btnTheme = button.getAttribute('data-theme');
 			if (btnTheme === theme) {
 				button.classList.add('active');
@@ -107,15 +163,42 @@ const { class: className = '' } = Astro.props;
 		applyTheme(initialTheme);
 	}
 
-	function setupThemeButtons(): void {
-		document.querySelectorAll('[data-theme-toggle] .theme-button').forEach((button) => {
-			button.addEventListener('click', () => {
-				const theme = button.getAttribute('data-theme') as Theme;
+	function setupThemeDropdown(): void {
+		const toggleContainer = document.querySelector('[data-theme-toggle]');
+		const toggleButton = toggleContainer?.querySelector('.theme-button');
+		const dropdown = toggleContainer?.querySelector('.theme-dropdown');
+
+		if (!toggleButton || !dropdown) return;
+
+		// Toggle dropdown
+		toggleButton.addEventListener('click', (e) => {
+			e.stopPropagation();
+			const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+			toggleButton.setAttribute('aria-expanded', String(!isExpanded));
+			dropdown.classList.toggle('show');
+		});
+
+		// Theme option clicks
+		const themeOptions = toggleContainer.querySelectorAll('.theme-option');
+		themeOptions.forEach((option) => {
+			option.addEventListener('click', () => {
+				const theme = option.getAttribute('data-theme') as Theme;
 				if (theme) {
 					applyTheme(theme);
 					setStoredTheme(theme);
+					dropdown.classList.remove('show');
+					toggleButton.setAttribute('aria-expanded', 'false');
 				}
 			});
+		});
+
+		// Close dropdown when clicking outside
+		document.addEventListener('click', (e) => {
+			const target = e.target as HTMLElement;
+			if (!target.closest('[data-theme-toggle]')) {
+				dropdown.classList.remove('show');
+				toggleButton.setAttribute('aria-expanded', 'false');
+			}
 		});
 	}
 
@@ -135,49 +218,38 @@ const { class: className = '' } = Astro.props;
 	// Initialize on page load
 	document.addEventListener('DOMContentLoaded', () => {
 		initTheme();
-		setupThemeButtons();
+		setupThemeDropdown();
 		watchSystemTheme();
 	});
 
 	// Re-initialize on Astro navigation
 	document.addEventListener('astro:page-load', () => {
 		initTheme();
-		setupThemeButtons();
+		setupThemeDropdown();
 	});
 </script>
 
 <style>
 	.theme-toggle {
-		display: flex;
-		align-items: center;
-		gap: var(--space-1);
-		padding: var(--space-1);
-		background: var(--color-gray-100);
-		border-radius: var(--radius-lg);
+		position: relative;
 	}
 
 	.theme-button {
 		display: flex;
 		align-items: center;
-		justify-content: center;
-		padding: var(--space-2);
+		gap: var(--space-2);
+		padding: var(--space-2) var(--space-3);
 		background: transparent;
-		border: none;
+		border: 1px solid var(--color-gray-300);
 		border-radius: var(--radius-md);
 		cursor: pointer;
-		color: var(--color-gray-600);
+		color: var(--color-gray-700);
 		transition: all var(--transition-base);
 	}
 
 	.theme-button:hover {
-		background: var(--color-gray-200);
-		color: var(--color-gray-900);
-	}
-
-	.theme-button.active {
-		background: white;
-		color: var(--color-primary-600);
-		box-shadow: var(--shadow-sm);
+		border-color: var(--color-primary-500);
+		background: var(--color-gray-50);
 	}
 
 	.theme-button:focus-visible {
@@ -185,26 +257,116 @@ const { class: className = '' } = Astro.props;
 		outline-offset: 2px;
 	}
 
-	.theme-button svg {
+	.theme-icon {
 		display: block;
 	}
 
-	/* Dark theme adjustments */
-	:global([data-theme="dark"]) .theme-toggle {
-		background: var(--color-gray-800);
+	.chevron {
+		transition: transform var(--transition-base);
 	}
 
+	.theme-button[aria-expanded="true"] .chevron {
+		transform: rotate(180deg);
+	}
+
+	/* Dropdown Menu */
+	.theme-dropdown {
+		display: none;
+		position: absolute;
+		top: calc(100% + var(--space-2));
+		right: 0;
+		min-width: 160px;
+		background-color: white;
+		border: 1px solid var(--color-gray-200);
+		border-radius: var(--radius-md);
+		box-shadow: var(--shadow-lg);
+		list-style: none;
+		padding: var(--space-2);
+		margin: 0;
+		z-index: var(--z-dropdown);
+	}
+
+	.theme-dropdown.show {
+		display: block;
+		animation: slideDown 0.2s ease forwards;
+	}
+
+	@keyframes slideDown {
+		from {
+			opacity: 0;
+			transform: translateY(-10px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.theme-dropdown li {
+		margin: 0;
+	}
+
+	.theme-option {
+		display: flex;
+		align-items: center;
+		gap: var(--space-3);
+		width: 100%;
+		padding: var(--space-2) var(--space-3);
+		background: transparent;
+		border: none;
+		border-radius: var(--radius-base);
+		cursor: pointer;
+		color: var(--color-gray-700);
+		font-size: var(--text-sm);
+		text-align: left;
+		transition: all var(--transition-base);
+	}
+
+	.theme-option:hover {
+		background-color: var(--color-primary-50);
+		color: var(--color-primary-600);
+	}
+
+	.theme-option span {
+		flex: 1;
+	}
+
+	.theme-option .check-icon {
+		opacity: 0;
+		transition: opacity var(--transition-base);
+	}
+
+	.theme-option.active .check-icon {
+		opacity: 1;
+		color: var(--color-primary-600);
+	}
+
+	/* Dark theme adjustments */
 	:global([data-theme="dark"]) .theme-button {
-		color: var(--color-gray-400);
+		border-color: var(--color-gray-600);
+		color: var(--color-gray-300);
 	}
 
 	:global([data-theme="dark"]) .theme-button:hover {
-		background: var(--color-gray-700);
-		color: var(--color-gray-100);
+		border-color: var(--color-primary-400);
+		background: var(--color-gray-800);
 	}
 
-	:global([data-theme="dark"]) .theme-button.active {
-		background: var(--color-gray-900);
+	:global([data-theme="dark"]) .theme-dropdown {
+		background-color: var(--color-gray-800);
+		border-color: var(--color-gray-700);
+	}
+
+	:global([data-theme="dark"]) .theme-option {
+		color: var(--color-gray-300);
+	}
+
+	:global([data-theme="dark"]) .theme-option:hover {
+		background-color: var(--color-gray-700);
+		color: var(--color-primary-400);
+	}
+
+	:global([data-theme="dark"]) .theme-option.active .check-icon {
 		color: var(--color-primary-400);
 	}
 </style>

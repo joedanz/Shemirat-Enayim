@@ -420,7 +420,15 @@ function isActive(href: string) {
 	}
 
 	.mobile-dropdown[hidden] {
+		display: none !important;
+	}
+
+	.mobile-nav .mobile-dropdown {
 		display: none;
+	}
+
+	.mobile-nav .mobile-dropdown:not([hidden]) {
+		display: block;
 	}
 
 	.mobile-dropdown li {
