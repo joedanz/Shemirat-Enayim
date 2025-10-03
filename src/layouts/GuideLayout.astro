@@ -73,9 +73,9 @@ const difficultyClasses = {
 
       <!-- Prerequisites -->
       {prerequisites.length > 0 && (
-        <div class="bg-blue-50 dark:bg-blue-900/20 border-l-4 border-blue-400 p-4 rounded">
-          <p class="font-semibold text-blue-800 dark:text-blue-200 mb-2">Prerequisites:</p>
-          <ul class="space-y-1 text-blue-700 dark:text-blue-300">
+        <div class="bg-blue-50 dark:bg-blue-900/50 border-l-4 border-blue-400 dark:border-blue-500 p-4 rounded">
+          <p class="font-semibold text-blue-800 dark:text-blue-100 mb-2">Prerequisites:</p>
+          <ul class="space-y-1 text-blue-700 dark:text-blue-200">
             {prerequisites.map((prereq) => (
               <li class="flex items-start gap-2">
                 <span class="mt-1">•</span>
@@ -180,26 +180,28 @@ const difficultyClasses = {
       color: rgb(127 29 29);
     }
 
-    @media (prefers-color-scheme: dark) {
-      .prose .alert-success {
-        background-color: rgb(20 83 45 / 0.2);
-        color: rgb(134 239 172);
-      }
+    .dark .prose .alert-success {
+      background-color: rgb(20 83 45 / 0.3);
+      border-left-color: rgb(34 197 94);
+      color: rgb(134 239 172);
+    }
 
-      .prose .alert-info {
-        background-color: rgb(30 58 138 / 0.2);
-        color: rgb(147 197 253);
-      }
+    .dark .prose .alert-info {
+      background-color: rgb(30 58 138 / 0.3);
+      border-left-color: rgb(59 130 246);
+      color: rgb(147 197 253);
+    }
 
-      .prose .alert-warning {
-        background-color: rgb(113 63 18 / 0.2);
-        color: rgb(253 224 71);
-      }
+    .dark .prose .alert-warning {
+      background-color: rgb(113 63 18 / 0.3);
+      border-left-color: rgb(234 179 8);
+      color: rgb(253 224 71);
+    }
 
-      .prose .alert-error {
-        background-color: rgb(127 29 29 / 0.2);
-        color: rgb(252 165 165);
-      }
+    .dark .prose .alert-error {
+      background-color: rgb(127 29 29 / 0.3);
+      border-left-color: rgb(239 68 68);
+      color: rgb(252 165 165);
     }
   </style>
 </Layout>
