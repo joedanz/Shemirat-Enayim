@@ -1,30 +1,30 @@
 site:
-  name: AstroWind
-  site: 'https://astrowind.vercel.app'
+  name: Shemirat Enayim
+  site: 'https://shemiratenayim.org'
   base: '/'
   trailingSlash: false
 
-  googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
+  googleSiteVerificationId: null # Will be configured during deployment
 
 # Default SEO metadata
 metadata:
   title:
-    default: AstroWind
-    template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+    default: 'Shemirat Enayim - Protection for the Eyes'
+    template: '%s — Shemirat Enayim'
+  description: "Comprehensive resources for parents, religious leaders, and individuals to protect their networks from inappropriate content through content filtering and internet safety solutions."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: 'Shemirat Enayim'
     images:
-      - url: '~/assets/images/default.png'
+      - url: '~/assets/images/og-image.png'
         width: 1200
         height: 628
     type: website
   twitter:
-    handle: '@arthelokyo'
-    site: '@arthelokyo'
+    handle: '@shemiratenayim'
+    site: '@shemiratenayim'
     cardType: summary_large_image
 
 i18n:
@@ -33,40 +33,56 @@ i18n:
 
 apps:
   blog:
-    isEnabled: true
+    isEnabled: false  # Disabled - this is a resource site, not a blog
     postsPerPage: 6
 
     post:
-      isEnabled: true
-      permalink: '/%slug%' # Variables: %slug%, %year%, %month%, %day%, %hour%, %minute%, %second%, %category%
-      robots:
-        index: true
-
-    list:
-      isEnabled: true
-      pathname: 'blog' # Blog main path, you can change this to "articles" (/articles)
-      robots:
-        index: true
-
-    category:
-      isEnabled: true
-      pathname: 'category' # Category main path /category/some-category, you can change this to "group" (/group/some-category)
-      robots:
-        index: true
-
-    tag:
-      isEnabled: true
-      pathname: 'tag' # Tag main path /tag/some-tag, you can change this to "topics" (/topics/some-category)
+      isEnabled: false
+      permalink: '/%slug%'
       robots:
         index: false
 
-    isRelatedPostsEnabled: true
-    relatedPostsCount: 4
+    list:
+      isEnabled: false
+      pathname: 'blog'
+      robots:
+        index: false
+
+    category:
+      isEnabled: false
+      pathname: 'category'
+      robots:
+        index: false
+
+    tag:
+      isEnabled: false
+      pathname: 'tag'
+      robots:
+        index: false
+
+    isRelatedPostsEnabled: false
+    relatedPostsCount: 0
 
 analytics:
   vendors:
     googleAnalytics:
-      id: null # or "G-XXXXXXXXXX"
+      id: null # Not using Google Analytics
+    plausible:
+      domain: 'shemiratenayim.org'  # Plausible Analytics for privacy-respecting tracking
+    # Sentry will be configured in astro.config.ts
 
 ui:
   theme: 'system' # Values: "system" | "light" | "dark" | "light:only" | "dark:only"
+
+# Shemirat Enayim specific configuration
+shemiratenayim:
+  audiences:
+    - parents
+    - organizations
+    - individuals
+  features:
+    search: true
+    newsletter: true
+    forms:
+      contact: true
+      feedback: true
