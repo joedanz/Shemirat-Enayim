@@ -1,0 +1,389 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+
+const metadata = {
+  title: 'Protection Methods — Shemirat Enayim',
+  description: 'Comprehensive guide to internet filtering and safety methods including DNS filtering, device controls, and software solutions.',
+};
+
+// Define all protection methods by category
+const networkMethods = [
+  {
+    title: 'DNS Filtering',
+    description: 'Block inappropriate content at the network level using filtering DNS servers like OpenDNS, CleanBrowsing, or NextDNS.',
+    difficulty: 'Beginner',
+    time: '15-30 min',
+    href: '/guides/dns-filtering',
+    icon: 'tabler:dns',
+  },
+  {
+    title: 'Router Configuration',
+    description: 'Configure your home router to implement filtering, access schedules, and device management.',
+    difficulty: 'Intermediate',
+    time: '30-60 min',
+    href: '/guides/router-config',
+    icon: 'tabler:router',
+  },
+  {
+    title: 'Firewall Setup',
+    description: 'Advanced network protection using hardware or software firewalls for granular control.',
+    difficulty: 'Advanced',
+    time: '1-2 hours',
+    href: '/guides/firewall',
+    icon: 'tabler:shield-lock',
+  },
+  {
+    title: 'Guest Networks',
+    description: 'Create separate, filtered WiFi networks for children or guests with different security levels.',
+    difficulty: 'Intermediate',
+    time: '20-30 min',
+    href: '/guides/guest-networks',
+    icon: 'tabler:wifi',
+  },
+];
+
+const deviceMethods = [
+  {
+    title: 'iPhone & iPad Screen Time',
+    description: "Use Apple's built-in Screen Time features to filter content, limit apps, and manage usage.",
+    difficulty: 'Beginner',
+    time: '15-20 min',
+    href: '/guides/ios-screen-time',
+    icon: 'tabler:brand-apple',
+  },
+  {
+    title: 'Android Digital Wellbeing',
+    description: "Configure Android's native parental controls and Google Family Link for comprehensive protection.",
+    difficulty: 'Beginner',
+    time: '20-30 min',
+    href: '/guides/android-family-link',
+    icon: 'tabler:brand-android',
+  },
+  {
+    title: 'Windows Family Safety',
+    description: 'Set up Microsoft Family Safety for content filtering, screen time, and activity reporting.',
+    difficulty: 'Beginner',
+    time: '20-30 min',
+    href: '/guides/windows-family',
+    icon: 'tabler:brand-windows',
+  },
+  {
+    title: 'macOS Parental Controls',
+    description: "Enable Mac's built-in parental controls and Screen Time features for filtering and time management.",
+    difficulty: 'Beginner',
+    time: '15-25 min',
+    href: '/guides/macos-controls',
+    icon: 'tabler:device-desktop',
+  },
+  {
+    title: 'Gaming Consoles',
+    description: 'Configure parental controls on PlayStation, Xbox, Nintendo Switch, and other gaming systems.',
+    difficulty: 'Beginner',
+    time: '10-20 min',
+    href: '/guides/gaming-consoles',
+    icon: 'tabler:device-gamepad',
+  },
+  {
+    title: 'Smart TV Protection',
+    description: 'Limit and filter content on smart TVs, streaming devices, and media players.',
+    difficulty: 'Intermediate',
+    time: '15-30 min',
+    href: '/guides/smart-tv',
+    icon: 'tabler:device-tv',
+  },
+];
+
+const softwareMethods = [
+  {
+    title: 'Content Filtering Software',
+    description: 'Comprehensive filtering applications like Qustodio, Net Nanny, or Norton Family for multi-device protection.',
+    difficulty: 'Beginner',
+    time: '30-45 min',
+    href: '/guides/filtering-software',
+    icon: 'tabler:filter',
+  },
+  {
+    title: 'Accountability Software',
+    description: 'Monitoring and accountability tools like Covenant Eyes, Accountable2You, or Truple for transparency.',
+    difficulty: 'Beginner',
+    time: '20-30 min',
+    href: '/guides/accountability-apps',
+    icon: 'tabler:eye-check',
+  },
+  {
+    title: 'Browser Extensions',
+    description: 'Lightweight filtering and productivity extensions for Chrome, Firefox, Safari, and Edge.',
+    difficulty: 'Beginner',
+    time: '5-10 min',
+    href: '/guides/browser-extensions',
+    icon: 'tabler:browser',
+  },
+  {
+    title: 'YouTube Restrictions',
+    description: 'Enable Restricted Mode, use YouTube Kids, or implement third-party YouTube filtering solutions.',
+    difficulty: 'Beginner',
+    time: '10-15 min',
+    href: '/guides/youtube-filtering',
+    icon: 'tabler:brand-youtube',
+  },
+  {
+    title: 'Search Engine SafeSearch',
+    description: 'Enable SafeSearch on Google, Bing, DuckDuckGo, and other search engines.',
+    difficulty: 'Beginner',
+    time: '5-10 min',
+    href: '/guides/safe-search',
+    icon: 'tabler:search',
+  },
+];
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+  <Hero>
+    <Fragment slot="title">
+      <span class="text-accent dark:text-white">Protection Methods</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Choose the right filtering and safety solutions for your needs. Internet safety works best with a layered approach.
+    </Fragment>
+  </Hero>
+
+  <!-- Content Widget **************** -->
+  <Content>
+    <Fragment slot="content">
+      <p class="text-xl text-center text-gray-700 dark:text-gray-300 max-w-4xl mx-auto">
+        Internet safety works best with a layered approach. Combine network-level protection
+        (affects all devices) with device-specific controls (targeted protection) and software
+        solutions (additional features and accountability).
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- Network-Level Protection ******* -->
+  <Features
+    id="network"
+    title="🌐 Network-Level Protection"
+    subtitle="Filter content at the router or ISP level to protect all devices on your network. Best for: Baseline protection, covering all family devices automatically."
+    items={networkMethods.map((method) => ({
+      title: method.title,
+      description: `
+        <p class="mb-3">${method.description}</p>
+        <div class="flex gap-3 flex-wrap">
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase ${
+            method.difficulty === 'Beginner'
+              ? 'bg-green-100 text-green-800'
+              : method.difficulty === 'Intermediate'
+              ? 'bg-yellow-100 text-yellow-800'
+              : 'bg-red-100 text-red-800'
+          }">${method.difficulty}</span>
+          <span class="text-sm text-gray-600">⏱️ ${method.time}</span>
+        </div>
+      `,
+      icon: method.icon,
+      callToAction: {
+        text: 'View Guide →',
+        href: method.href,
+      },
+    }))}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features>
+
+  <!-- Device-Level Controls ********** -->
+  <Features
+    id="devices"
+    title="📱 Device-Level Controls"
+    subtitle="Use built-in parental controls and features on phones, computers, and other devices. Best for: Specific device protection, especially mobile devices that leave the house."
+    items={deviceMethods.map((method) => ({
+      title: method.title,
+      description: `
+        <p class="mb-3">${method.description}</p>
+        <div class="flex gap-3 flex-wrap">
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase ${
+            method.difficulty === 'Beginner'
+              ? 'bg-green-100 text-green-800'
+              : method.difficulty === 'Intermediate'
+              ? 'bg-yellow-100 text-yellow-800'
+              : 'bg-red-100 text-red-800'
+          }">${method.difficulty}</span>
+          <span class="text-sm text-gray-600">⏱️ ${method.time}</span>
+        </div>
+      `,
+      icon: method.icon,
+      callToAction: {
+        text: 'View Guide →',
+        href: method.href,
+      },
+    }))}
+  />
+
+  <!-- Software Solutions ************* -->
+  <Features
+    id="software"
+    title="💻 Software Solutions"
+    subtitle="Third-party applications that provide filtering, monitoring, or accountability features. Best for: Additional protection layers, accountability, and detailed reporting."
+    items={softwareMethods.map((method) => ({
+      title: method.title,
+      description: `
+        <p class="mb-3">${method.description}</p>
+        <div class="flex gap-3 flex-wrap">
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase ${
+            method.difficulty === 'Beginner'
+              ? 'bg-green-100 text-green-800'
+              : method.difficulty === 'Intermediate'
+              ? 'bg-yellow-100 text-yellow-800'
+              : 'bg-red-100 text-red-800'
+          }">${method.difficulty}</span>
+          <span class="text-sm text-gray-600">⏱️ ${method.time}</span>
+        </div>
+      `,
+      icon: method.icon,
+      callToAction: {
+        text: 'View Guide →',
+        href: method.href,
+      },
+    }))}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features>
+
+  <!-- Recommended Combinations ******* -->
+  <Content>
+    <Fragment slot="content">
+      <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-4 text-center">
+        Recommended Combinations
+      </h2>
+      <p class="text-xl text-center text-gray-700 dark:text-gray-300 mb-12">
+        For maximum effectiveness, combine multiple methods. Here are proven approaches:
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Basic Family Protection -->
+        <div class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 border-2 border-blue-200 dark:border-blue-800 rounded-xl p-6">
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
+            🏠 Basic Family Protection
+          </h3>
+          <ul class="space-y-2 mb-4 text-gray-700 dark:text-gray-300">
+            <li><strong>Network:</strong> DNS filtering (OpenDNS or CleanBrowsing)</li>
+            <li><strong>Devices:</strong> Built-in parental controls on each device</li>
+          </ul>
+          <p class="text-sm text-gray-700 dark:text-gray-300 pt-3 border-t border-gray-300 dark:border-gray-700">
+            <strong>Cost:</strong> Free | <strong>Time:</strong> 1-2 hours total
+          </p>
+        </div>
+
+        <!-- Comprehensive Protection -->
+        <div class="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 border-2 border-blue-200 dark:border-blue-800 rounded-xl p-6">
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
+            🛡️ Comprehensive Protection
+          </h3>
+          <ul class="space-y-2 mb-4 text-gray-700 dark:text-gray-300">
+            <li><strong>Network:</strong> DNS filtering + router-level controls</li>
+            <li><strong>Devices:</strong> Device parental controls</li>
+            <li><strong>Software:</strong> Filtering software (Qustodio or Net Nanny)</li>
+          </ul>
+          <p class="text-sm text-gray-700 dark:text-gray-300 pt-3 border-t border-gray-300 dark:border-gray-700">
+            <strong>Cost:</strong> $10-15/month | <strong>Time:</strong> 3-4 hours setup
+          </p>
+        </div>
+
+        <!-- Individual Accountability -->
+        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 border-2 border-blue-200 dark:border-blue-800 rounded-xl p-6">
+          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
+            👤 Individual Accountability
+          </h3>
+          <ul class="space-y-2 mb-4 text-gray-700 dark:text-gray-300">
+            <li><strong>Network:</strong> Personal DNS filtering</li>
+            <li><strong>Devices:</strong> Self-imposed restrictions</li>
+            <li><strong>Software:</strong> Accountability app (Covenant Eyes or Accountable2You)</li>
+          </ul>
+          <p class="text-sm text-gray-700 dark:text-gray-300 pt-3 border-t border-gray-300 dark:border-gray-700">
+            <strong>Cost:</strong> $10-15/month | <strong>Time:</strong> 1-2 hours setup
+          </p>
+        </div>
+      </div>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Comparison Table *************** -->
+  <Content>
+    <Fragment slot="content">
+      <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-8 text-center">
+        Quick Comparison: Network vs Device vs Software
+      </h2>
+
+      <div class="overflow-x-auto">
+        <table class="w-full bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+          <thead>
+            <tr class="bg-blue-600 text-white">
+              <th class="px-4 py-3 text-left text-sm font-semibold uppercase tracking-wider">Feature</th>
+              <th class="px-4 py-3 text-left text-sm font-semibold uppercase tracking-wider">Network-Level</th>
+              <th class="px-4 py-3 text-left text-sm font-semibold uppercase tracking-wider">Device-Level</th>
+              <th class="px-4 py-3 text-left text-sm font-semibold uppercase tracking-wider">Software</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+            <tr>
+              <td class="px-4 py-3 font-semibold text-gray-900 dark:text-white">Protects all devices</td>
+              <td class="px-4 py-3 text-center text-green-600 text-xl">✓</td>
+              <td class="px-4 py-3 text-center text-gray-400 text-xl">✗</td>
+              <td class="px-4 py-3 text-center text-gray-600">✓*</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-gray-900 dark:text-white">Works outside home</td>
+              <td class="px-4 py-3 text-center text-gray-400 text-xl">✗</td>
+              <td class="px-4 py-3 text-center text-green-600 text-xl">✓</td>
+              <td class="px-4 py-3 text-center text-green-600 text-xl">✓</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-gray-900 dark:text-white">Free options available</td>
+              <td class="px-4 py-3 text-center text-green-600 text-xl">✓</td>
+              <td class="px-4 py-3 text-center text-green-600 text-xl">✓</td>
+              <td class="px-4 py-3 text-center text-gray-600">Limited</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-gray-900 dark:text-white">Easy to set up</td>
+              <td class="px-4 py-3 text-center text-green-600 text-xl">✓</td>
+              <td class="px-4 py-3 text-center text-green-600 text-xl">✓</td>
+              <td class="px-4 py-3 text-center text-gray-600">Varies</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-gray-900 dark:text-white">Detailed reporting</td>
+              <td class="px-4 py-3 text-center text-gray-600">Basic</td>
+              <td class="px-4 py-3 text-center text-gray-600">Basic</td>
+              <td class="px-4 py-3 text-center text-green-600 text-xl">✓</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-gray-900 dark:text-white">Time management</td>
+              <td class="px-4 py-3 text-center text-gray-600">Limited</td>
+              <td class="px-4 py-3 text-center text-green-600 text-xl">✓</td>
+              <td class="px-4 py-3 text-center text-green-600 text-xl">✓</td>
+            </tr>
+            <tr>
+              <td class="px-4 py-3 font-semibold text-gray-900 dark:text-white">App control</td>
+              <td class="px-4 py-3 text-center text-gray-400 text-xl">✗</td>
+              <td class="px-4 py-3 text-center text-green-600 text-xl">✓</td>
+              <td class="px-4 py-3 text-center text-green-600 text-xl">✓</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-sm text-gray-600 dark:text-gray-400 italic mt-4">
+        * With multi-device license
+      </p>
+    </Fragment>
+  </Content>
+</Layout>
