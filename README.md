@@ -154,10 +154,6 @@ Contributions are welcome! Feel free to:
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
 
-## Acknowledgements
-
-Built with [AstroWind](https://github.com/arthelokyo/astrowind) template by Arthelokyo.
-
 ---
 
 **Note:** This site provides general guidance and information. Always verify current best practices and consult with technical professionals for your specific security needs.
