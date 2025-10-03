@@ -1,0 +1,191 @@
+---
+import Button from './Button.astro';
+
+interface Props {
+	title: string;
+	subtitle?: string;
+	ctaText?: string;
+	ctaHref?: string;
+	image?: string;
+	imageAlt?: string;
+	align?: 'left' | 'center';
+	class?: string;
+}
+
+const {
+	title,
+	subtitle,
+	ctaText,
+	ctaHref,
+	image,
+	imageAlt = '',
+	align = 'center',
+	class: className = ''
+} = Astro.props;
+---
+
+<section class:list={['hero', `hero-${align}`, className]}>
+	<div class="container">
+		<div class="hero-content">
+			<div class="hero-text">
+				<h1 class="hero-title">{title}</h1>
+				{subtitle && (
+					<p class="hero-subtitle">{subtitle}</p>
+				)}
+				<slot name="content" />
+				{ctaText && ctaHref && (
+					<div class="hero-cta">
+						<Button href={ctaHref} size="lg">
+							{ctaText}
+						</Button>
+					</div>
+				)}
+				<slot name="actions" />
+			</div>
+			{image && (
+				<div class="hero-image">
+					<img
+						src={image}
+						alt={imageAlt}
+						loading="eager"
+						fetchpriority="high"
+						decoding="async"
+					/>
+				</div>
+			)}
+		</div>
+		<slot />
+	</div>
+</section>
+
+<style>
+	.hero {
+		padding: var(--space-16) 0 var(--space-12);
+		background: linear-gradient(
+			135deg,
+			var(--color-primary-50) 0%,
+			var(--color-secondary-50) 100%
+		);
+		border-bottom: 1px solid var(--color-gray-200);
+	}
+
+	.dark .hero {
+		background: linear-gradient(
+			135deg,
+			rgb(17 24 39) 0%,
+			rgb(31 41 55) 100%
+		);
+		border-bottom-color: rgb(75 85 99);
+	}
+
+	@media (min-width: 768px) {
+		.hero {
+			padding: var(--space-20) 0 var(--space-16);
+		}
+	}
+
+	.hero-content {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: var(--space-12);
+		align-items: center;
+	}
+
+	@media (min-width: 1024px) {
+		.hero-content {
+			grid-template-columns: 1fr 1fr;
+			gap: var(--space-16);
+		}
+	}
+
+	.hero-text {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-6);
+	}
+
+	/* Alignment */
+	.hero-center .hero-content {
+		text-align: center;
+	}
+
+	.hero-center .hero-text {
+		align-items: center;
+		max-width: 48rem;
+		margin: 0 auto;
+	}
+
+	.hero-left .hero-text {
+		align-items: flex-start;
+	}
+
+	/* Typography */
+	.hero-title {
+		font-size: var(--text-4xl);
+		font-weight: 800;
+		line-height: var(--leading-tight);
+		color: var(--color-gray-900);
+		margin-bottom: 0;
+	}
+
+	.dark .hero-title {
+		color: rgb(243 244 246);
+	}
+
+	@media (min-width: 768px) {
+		.hero-title {
+			font-size: var(--text-5xl);
+		}
+	}
+
+	@media (min-width: 1024px) {
+		.hero-title {
+			font-size: var(--text-6xl);
+		}
+	}
+
+	.hero-subtitle {
+		font-size: var(--text-lg);
+		line-height: var(--leading-relaxed);
+		color: var(--color-gray-700);
+		margin-bottom: 0;
+	}
+
+	.dark .hero-subtitle {
+		color: rgb(209 213 219);
+	}
+
+	@media (min-width: 768px) {
+		.hero-subtitle {
+			font-size: var(--text-xl);
+		}
+	}
+
+	.hero-cta {
+		display: flex;
+		gap: var(--space-4);
+		flex-wrap: wrap;
+	}
+
+	/* Image */
+	.hero-image {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.hero-image img {
+		width: 100%;
+		height: auto;
+		max-width: 100%;
+		border-radius: var(--radius-2xl);
+		box-shadow: var(--shadow-2xl);
+		aspect-ratio: 16 / 9; /* Prevent CLS */
+		object-fit: cover;
+	}
+
+	/* Center alignment with no image */
+	.hero-center .hero-content:not(:has(.hero-image)) {
+		grid-template-columns: 1fr;
+	}
+</style>
