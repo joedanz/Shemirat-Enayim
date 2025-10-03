@@ -18,9 +18,9 @@ metadata:
   openGraph:
     site_name: Shemirat Einayim
     images:
-      - url: '~/assets/images/default.png'
+      - url: '/og-image.svg'
         width: 1200
-        height: 628
+        height: 630
     type: website
   twitter:
     handle: '@shemiratenayim'
