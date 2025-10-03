@@ -1,0 +1,799 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import Accordion from '../components/Accordion.astro';
+import Alert from '../components/Alert.astro';
+import Button from '../components/Button.astro';
+---
+
+<Layout
+	title="Frequently Asked Questions - Shemirat Enayim"
+	description="Find answers to common questions about internet filtering, parental controls, DNS filtering, and protecting your family online."
+>
+	<Breadcrumb />
+
+	<div class="faq-container">
+		<header class="faq-header">
+			<h1>Frequently Asked Questions</h1>
+			<p class="subtitle">
+				Find answers to common questions about internet filtering and online safety. Can't find what you're looking for?
+			</p>
+			<div class="header-actions">
+				<Button href="/contact" variant="primary">Contact Us</Button>
+				<Button href="/troubleshooting" variant="secondary">Troubleshooting</Button>
+			</div>
+		</header>
+
+		<Alert type="info">
+			<strong>Quick Search:</strong> Use Ctrl+F (Cmd+F on Mac) to search for specific keywords on this page.
+		</Alert>
+
+		<div class="faq-sections">
+			<!-- General Questions -->
+			<section class="faq-section">
+				<h2 class="section-title">General Questions</h2>
+				<div class="accordion-list">
+					<Accordion title="Is internet filtering really necessary?">
+						<p>
+							Yes, internet filtering is crucial for protecting families from harmful content. Studies show that 95% of children
+							ages 8-16 have encountered inappropriate material online, often accidentally. Filtering provides multiple layers
+							of protection and helps create healthy digital boundaries.
+						</p>
+						<p>
+							However, filtering should be combined with education, open communication, and trust-building for maximum effectiveness.
+						</p>
+					</Accordion>
+
+					<Accordion title="How much does internet filtering cost?">
+						<p>There are solutions at every price point:</p>
+						<ul>
+							<li><strong>Free:</strong> DNS filtering (OpenDNS FamilyShield, CleanBrowsing), built-in device controls (iOS Screen Time, Android Family Link)</li>
+							<li><strong>$0-50/year:</strong> Premium DNS services with custom filtering</li>
+							<li><strong>$50-100/year:</strong> Filtering software like Qustodio, Net Nanny (5-10 devices)</li>
+							<li><strong>$100+/year:</strong> Accountability apps (Covenant Eyes), enterprise solutions for institutions</li>
+						</ul>
+						<p>
+							Many families find that combining free DNS filtering with built-in device controls provides excellent protection
+							without any cost.
+						</p>
+					</Accordion>
+
+					<Accordion title="Can tech-savvy kids bypass filters?">
+						<p>
+							While no solution is 100% bypass-proof, layered protection makes bypassing extremely difficult:
+						</p>
+						<ul>
+							<li>Network-level DNS filtering blocks attempts across all devices</li>
+							<li>Router-level controls prevent DNS server changes</li>
+							<li>Device-level restrictions require passwords to modify settings</li>
+							<li>Monitoring software alerts you to bypass attempts</li>
+						</ul>
+						<p>
+							The goal isn't to create an impenetrable fortress, but to make accessing inappropriate content difficult enough
+							that it's not worth the effort. Most importantly, build trust and maintain open communication about why
+							protection exists.
+						</p>
+					</Accordion>
+
+					<Accordion title="Will filtering slow down my internet?">
+						<p>
+							Modern filtering solutions have minimal impact on internet speed:
+						</p>
+						<ul>
+							<li><strong>DNS filtering:</strong> Adds 1-5ms latency (imperceptible to users)</li>
+							<li><strong>Software filtering:</strong> Uses &lt;2% CPU on modern devices</li>
+							<li><strong>Router controls:</strong> No noticeable impact with current-generation routers</li>
+						</ul>
+						<p>
+							If you experience significant slowdowns, it's usually due to misconfiguration rather than the filtering itself.
+							Check our <a href="/troubleshooting/slow-internet">slow internet troubleshooting guide</a> for solutions.
+						</p>
+					</Accordion>
+
+					<Accordion title="What's the difference between filtering and monitoring?">
+						<p>
+							<strong>Filtering</strong> proactively blocks access to inappropriate content before it can be viewed. Think
+							of it like a fence that prevents entry to dangerous areas.
+						</p>
+						<p>
+							<strong>Monitoring</strong> tracks and reports internet activity after it happens, allowing you to see what
+							was accessed. Think of it like a security camera recording what happens.
+						</p>
+						<p>
+							The most effective approach combines both: filtering to prevent most issues, and monitoring to catch what slips through and address patterns of concern.
+						</p>
+					</Accordion>
+
+					<Accordion title="At what age should I introduce internet access?">
+						<p>
+							Age recommendations vary by device type:
+						</p>
+						<ul>
+							<li><strong>Ages 3-5:</strong> Supervised tablet use with dedicated kids' apps only</li>
+							<li><strong>Ages 6-9:</strong> Supervised computer/tablet use, no smartphone</li>
+							<li><strong>Ages 10-12:</strong> Basic phone for communication, heavily filtered</li>
+							<li><strong>Ages 13-15:</strong> Smartphone with strong filtering and monitoring</li>
+							<li><strong>Ages 16+:</strong> Gradual removal of restrictions as maturity increases</li>
+						</ul>
+						<p>
+							These are guidelines, not rules. Every child develops differently. See our
+							<a href="/guides/age-appropriate-internet">age-appropriate internet guide</a> for detailed recommendations.
+						</p>
+					</Accordion>
+
+					<Accordion title="Do I need to tell my kids about the filtering?">
+						<p>
+							<strong>Yes, transparency is crucial.</strong> Hidden monitoring damages trust and can backfire when discovered.
+						</p>
+						<p>
+							Instead, frame it positively:
+						</p>
+						<ul>
+							<li>"We use filtering to protect our family, just like we lock doors and wear seatbelts"</li>
+							<li>"These tools help us all make better choices online"</li>
+							<li>"As you demonstrate maturity, we'll gradually adjust the restrictions"</li>
+						</ul>
+						<p>
+							Explain that protection exists because you care about their wellbeing, not because you don't trust them.
+						</p>
+					</Accordion>
+
+					<Accordion title="Is filtering an invasion of privacy?">
+						<p>
+							For minors, parental oversight is responsible guardianship, not privacy invasion. Courts consistently uphold
+							parents' right and responsibility to monitor children's online activity.
+						</p>
+						<p>
+							However, implement filtering with appropriate boundaries:
+						</p>
+						<ul>
+							<li>Be transparent about what's monitored and why</li>
+							<li>Respect age-appropriate privacy (don't read every text message to a 16-year-old)</li>
+							<li>Focus on patterns and red flags, not micromanaging every interaction</li>
+							<li>Gradually reduce monitoring as children demonstrate maturity</li>
+						</ul>
+						<p>
+							For adults seeking accountability, voluntary monitoring with a trusted partner is a powerful personal growth tool.
+						</p>
+					</Accordion>
+				</div>
+			</section>
+
+			<!-- Technical Questions -->
+			<section class="faq-section">
+				<h2 class="section-title">Technical Questions</h2>
+				<div class="accordion-list">
+					<Accordion title="What's the difference between DNS filtering and software filtering?">
+						<p>
+							<strong>DNS filtering</strong> blocks websites by preventing your device from finding their internet address.
+							It works at the network level, protecting all devices automatically.
+						</p>
+						<ul>
+							<li><strong>Pros:</strong> Simple setup, protects all devices, no software to install, free options available</li>
+							<li><strong>Cons:</strong> Can be bypassed with VPNs, can't filter HTTPS content, all-or-nothing approach</li>
+						</ul>
+						<p>
+							<strong>Software filtering</strong> installs programs on individual devices to analyze and block content in real-time.
+						</p>
+						<ul>
+							<li><strong>Pros:</strong> Device-specific controls, can filter HTTPS content, includes monitoring features</li>
+							<li><strong>Cons:</strong> Requires installation on each device, ongoing subscription costs, can impact performance</li>
+						</ul>
+						<p>
+							Best practice: Use both. DNS filtering as your network-wide foundation, plus software filtering on key devices
+							for granular control.
+						</p>
+					</Accordion>
+
+					<Accordion title="Why aren't my DNS changes taking effect?">
+						<p>
+							This is the most common filtering issue. Common causes:
+						</p>
+						<ol>
+							<li><strong>DNS cache:</strong> Your device is still using old DNS information. <a href="/troubleshooting/dns-not-working">Flush your DNS cache</a></li>
+							<li><strong>Multiple DNS settings:</strong> DNS set on both router AND device (device wins). Check device settings</li>
+							<li><strong>VPN or proxy:</strong> Some apps bypass your DNS settings. Check for VPN apps</li>
+							<li><strong>DNS over HTTPS (DoH):</strong> Browsers may bypass system DNS. Disable DoH in browser settings</li>
+							<li><strong>Mobile data:</strong> DNS only works on WiFi. Mobile data uses carrier DNS</li>
+						</ol>
+						<p>
+							See our complete <a href="/troubleshooting/dns-not-working">DNS troubleshooting guide</a> for step-by-step solutions.
+						</p>
+					</Accordion>
+
+					<Accordion title="How do I prevent VPN use to bypass filtering?">
+						<p>
+							VPNs are a common bypass method, but can be blocked:
+						</p>
+						<ul>
+							<li><strong>Router level:</strong> Block known VPN ports (1194, 500, 4500) and protocols</li>
+							<li><strong>Device level:</strong> Restrict app installation (iOS Screen Time, Android Family Link)</li>
+							<li><strong>DNS level:</strong> Some DNS services (NextDNS, OpenDNS) can block VPN domains</li>
+							<li><strong>Monitoring:</strong> Software like Bark alerts you when VPN apps are installed</li>
+						</ul>
+						<p>
+							For iOS devices, prevent VPN profile installation by enabling "Screen Time" and disallowing "VPN &amp; Device Management"
+							configuration changes.
+						</p>
+					</Accordion>
+
+					<Accordion title="Can filtering work with my mesh WiFi system?">
+						<p>
+							Yes! Mesh systems (Google WiFi, Eero, Orbi, etc.) fully support filtering:
+						</p>
+						<ul>
+							<li><strong>DNS filtering:</strong> Set custom DNS on the primary router/gateway (covers all mesh nodes)</li>
+							<li><strong>Built-in controls:</strong> Many mesh systems include parental controls (Eero Secure, Google WiFi Family WiFi)</li>
+							<li><strong>Guest networks:</strong> Create separate filtered networks for kids' devices</li>
+						</ul>
+						<p>
+							The mesh system acts as one unified network, so DNS changes on the main unit protect all connected devices
+							automatically.
+						</p>
+					</Accordion>
+
+					<Accordion title="What is DNS over HTTPS (DoH) and why is it a problem?">
+						<p>
+							DNS over HTTPS (DoH) encrypts DNS requests, preventing DNS filtering from working. Modern browsers like Chrome,
+							Firefox, and Edge increasingly enable DoH by default.
+						</p>
+						<p>
+							<strong>How to disable DoH:</strong>
+						</p>
+						<ul>
+							<li><strong>Chrome:</strong> Settings → Privacy → Security → Use secure DNS → Off</li>
+							<li><strong>Firefox:</strong> Settings → Privacy → Enable DNS over HTTPS → Off</li>
+							<li><strong>Edge:</strong> Settings → Privacy → Security → Use secure DNS → Off</li>
+						</ul>
+						<p>
+							Advanced option: Use router firewall rules to block DoH providers (Cloudflare 1.1.1.1, Google 8.8.8.8) and force
+							traffic through your filtering DNS.
+						</p>
+					</Accordion>
+
+					<Accordion title="How do I filter YouTube without blocking it entirely?">
+						<p>
+							YouTube filtering is challenging but achievable:
+						</p>
+						<ol>
+							<li><strong>YouTube Kids:</strong> Separate app with curated content (ages 3-12)</li>
+							<li><strong>Restricted Mode:</strong> Built-in filter (imperfect, but free). Lock it with account supervision</li>
+							<li><strong>Supervised accounts:</strong> Create child accounts under Family Link (Android) or Screen Time (iOS)</li>
+							<li><strong>Browser extensions:</strong> Video Blocker, DF YouTube blocks recommended videos</li>
+							<li><strong>Software filtering:</strong> Bark, Qustodio can block specific YouTube channels/keywords</li>
+						</ol>
+						<p>
+							Complete guide: <a href="/guides/youtube-filtering">YouTube Filtering Methods</a>
+						</p>
+					</Accordion>
+
+					<Accordion title="Will filtering work on mobile data or only WiFi?">
+						<p>
+							<strong>DNS filtering only works on WiFi</strong> because you can't control your mobile carrier's DNS servers.
+						</p>
+						<p>
+							Solutions for mobile data protection:
+						</p>
+						<ul>
+							<li><strong>Device-level controls:</strong> iOS Screen Time and Android Family Link work on both WiFi and cellular</li>
+							<li><strong>Carrier family plans:</strong> Verizon Smart Family, AT&amp;T Secure Family add filtering to mobile data</li>
+							<li><strong>Filtering apps:</strong> Qustodio, Net Nanny, Bark filter on both WiFi and cellular</li>
+							<li><strong>VPN-based filtering:</strong> NextDNS or CleanBrowsing VPN profiles filter all traffic</li>
+						</ul>
+					</Accordion>
+
+					<Accordion title="Do I need a special router for parental controls?">
+						<p>
+							No, almost any router can implement DNS filtering by changing its DNS server settings. However, routers with
+							built-in parental controls offer additional convenience:
+						</p>
+						<ul>
+							<li><strong>Basic routers:</strong> Can use DNS filtering (requires manual setup)</li>
+							<li><strong>Mid-range routers:</strong> Often include basic scheduling and device blocking</li>
+							<li><strong>Advanced routers:</strong> ASUS AiProtection, Netgear Armor, TP-Link HomeCare provide comprehensive filtering</li>
+							<li><strong>Enterprise routers:</strong> pfSense, OPNsense offer professional-grade filtering</li>
+						</ul>
+						<p>
+							If you're buying a new router, look for models with built-in parental controls for easier management.
+						</p>
+					</Accordion>
+
+					<Accordion title="Can I use multiple filtering methods together?">
+						<p>
+							Yes! Layered protection is recommended for maximum effectiveness:
+						</p>
+						<ul>
+							<li><strong>Layer 1:</strong> Network-level DNS filtering (protects all devices)</li>
+							<li><strong>Layer 2:</strong> Router parental controls (scheduling, device restrictions)</li>
+							<li><strong>Layer 3:</strong> Device-level controls (iOS Screen Time, Windows Family Safety)</li>
+							<li><strong>Layer 4:</strong> Software filtering on key devices (detailed monitoring)</li>
+							<li><strong>Layer 5:</strong> Browser extensions (additional protection)</li>
+						</ul>
+						<p>
+							Each layer catches what others might miss. If one fails, others provide backup protection.
+						</p>
+					</Accordion>
+
+					<Accordion title="What are the best free filtering options?">
+						<p>
+							Excellent free options exist that provide solid protection:
+						</p>
+						<ul>
+							<li><strong>OpenDNS FamilyShield:</strong> Pre-configured DNS filtering, blocks adult content</li>
+							<li><strong>CleanBrowsing:</strong> Three free filter levels (Security, Adult, Family)</li>
+							<li><strong>iOS Screen Time:</strong> Built-in content restrictions, app limits, communication controls</li>
+							<li><strong>Android Family Link:</strong> Device management, app approval, activity tracking</li>
+							<li><strong>Windows Family Safety:</strong> Web filtering, screen time, activity reports</li>
+							<li><strong>Google SafeSearch:</strong> Filters search results (can be enforced via DNS)</li>
+						</ul>
+						<p>
+							Combining OpenDNS FamilyShield with built-in device controls provides excellent protection at zero cost.
+						</p>
+					</Accordion>
+
+					<Accordion title="How often should I update my filtering settings?">
+						<p>
+							Regular maintenance ensures continued effectiveness:
+						</p>
+						<ul>
+							<li><strong>Weekly:</strong> Review activity reports from monitoring software</li>
+							<li><strong>Monthly:</strong> Check for router firmware updates, review blocked site logs</li>
+							<li><strong>Quarterly:</strong> Audit all device settings, ensure filters are still active</li>
+							<li><strong>Yearly:</strong> Re-evaluate age-appropriate restrictions, update family media agreement</li>
+							<li><strong>Immediately:</strong> After getting new devices, OS updates, or discovering bypass attempts</li>
+						</ul>
+						<p>
+							Check our <a href="/changelog">changelog</a> regularly for alerts about platform changes that might affect your filtering.
+						</p>
+					</Accordion>
+				</div>
+			</section>
+
+			<!-- Parent-Specific Questions -->
+			<section class="faq-section">
+				<h2 class="section-title">Questions for Parents</h2>
+				<div class="accordion-list">
+					<Accordion title="Should I give my child a smartphone?">
+						<p>
+							This depends on maturity level, not just age. Consider these factors:
+						</p>
+						<ul>
+							<li>Can they follow rules about device usage?</li>
+							<li>Do they demonstrate good judgment with screen time?</li>
+							<li>Are they responsible with current devices?</li>
+							<li>Is there a genuine need (safety, staying in touch)?</li>
+							<li>Are they prepared for social pressures and peer dynamics?</li>
+						</ul>
+						<p>
+							<strong>Alternatives to full smartphones:</strong>
+						</p>
+						<ul>
+							<li>Basic phones for calls/texts only (Gabb Phone, Light Phone)</li>
+							<li>Smartwatches with limited functionality (Gizmo Watch, Apple Watch with Family Setup)</li>
+							<li>Heavily locked-down smartphones (Bark Phone, Pinwheel)</li>
+						</ul>
+						<p>
+							If you do provide a smartphone, implement strong filtering from day one. It's much harder to add restrictions later.
+						</p>
+					</Accordion>
+
+					<Accordion title="How do I balance privacy with safety as kids get older?">
+						<p>
+							Gradually shift from protection to guidance as maturity increases:
+						</p>
+						<ul>
+							<li><strong>Ages 6-10:</strong> Full monitoring justified, minimal privacy expectations</li>
+							<li><strong>Ages 11-13:</strong> Continue monitoring but with more transparent communication</li>
+							<li><strong>Ages 14-16:</strong> Shift to spot-checking and trust-but-verify approach</li>
+							<li><strong>Ages 17+:</strong> Focus on accountability rather than monitoring</li>
+						</ul>
+						<p>
+							Have explicit conversations: "At 16, we'll reduce monitoring to weekly check-ins. At 18, we'll transition to
+							optional accountability if you want it."
+						</p>
+					</Accordion>
+
+					<Accordion title="What if my child finds inappropriate content despite filtering?">
+						<p>
+							No filter is perfect. When this happens:
+						</p>
+						<ol>
+							<li><strong>Stay calm:</strong> Your reaction sets the tone for future conversations</li>
+							<li><strong>Talk about it:</strong> Ask what they saw, how they felt, whether they sought it out</li>
+							<li><strong>Don't shame:</strong> Curiosity is normal; focus on healthy boundaries</li>
+							<li><strong>Update filters:</strong> Report the site, add it to block lists</li>
+							<li><strong>Reinforce values:</strong> Discuss why certain content isn't healthy or appropriate</li>
+						</ol>
+						<p>
+							View these moments as teaching opportunities rather than failures.
+						</p>
+					</Accordion>
+
+					<Accordion title="How much screen time is appropriate?">
+						<p>
+							American Academy of Pediatrics recommendations:
+						</p>
+						<ul>
+							<li><strong>Under 18 months:</strong> No screen time except video chatting</li>
+							<li><strong>Ages 2-5:</strong> 1 hour/day of high-quality programming</li>
+							<li><strong>Ages 6-12:</strong> 1-2 hours/day of recreational screen time</li>
+							<li><strong>Ages 13-18:</strong> 2 hours/day, with flexibility for homework/creative projects</li>
+						</ul>
+						<p>
+							Quality matters more than quantity. Educational content, video calls with family, and creative projects are
+							different from passive scrolling. See our <a href="/guides/screen-time-management">screen time management guide</a>
+							for implementation strategies.
+						</p>
+					</Accordion>
+
+					<Accordion title="Should I monitor my teen's private conversations?">
+						<p>
+							This is ethically complex. Consider this framework:
+						</p>
+						<p>
+							<strong>Do monitor:</strong>
+						</p>
+						<ul>
+							<li>Who they're communicating with (contact lists, friend requests)</li>
+							<li>Patterns of usage (late-night messaging, excessive use)</li>
+							<li>Red flags (conversations with strangers, requests for photos/personal info)</li>
+						</ul>
+						<p>
+							<strong>Don't monitor:</strong>
+						</p>
+						<ul>
+							<li>Every message with known friends (micromanaging damages trust)</li>
+							<li>Conversations without good reason (random spot-checks feel invasive)</li>
+							<li>Secret monitoring (always be transparent about what you review)</li>
+						</ul>
+						<p>
+							Use AI-powered tools like Bark that alert you to concerning language rather than showing you every message.
+						</p>
+					</Accordion>
+
+					<Accordion title="How do I enforce rules when other parents don't?">
+						<p>
+							This is challenging but manageable:
+						</p>
+						<ol>
+							<li><strong>Communicate your values:</strong> Explain to your child WHY you have rules</li>
+							<li><strong>Connect with like-minded families:</strong> Build a community with similar standards</li>
+							<li><strong>Talk to other parents:</strong> Share your approach (they may not have considered it)</li>
+							<li><strong>Compromise appropriately:</strong> Distinguish non-negotiables from flexibility</li>
+							<li><strong>Offer alternatives:</strong> Host kids at your house where rules apply</li>
+						</ol>
+						<p>
+							Frame it positively: "We're not against technology, we're for healthy technology use."
+						</p>
+					</Accordion>
+
+					<Accordion title="What are warning signs my child has seen harmful content?">
+						<p>
+							Behavioral red flags to watch for:
+						</p>
+						<ul>
+							<li>Sudden secrecy about device use</li>
+							<li>Quickly closing screens when you approach</li>
+							<li>Increased device use late at night</li>
+							<li>Changes in behavior, mood, or sleep patterns</li>
+							<li>Withdrawal from family activities</li>
+							<li>Age-inappropriate sexual knowledge or language</li>
+							<li>Increased anxiety or depression</li>
+							<li>New "friends" they can't or won't explain</li>
+						</ul>
+						<p>
+							If you notice these signs, have a gentle conversation. Professional help may be needed for significant exposure
+							to harmful content.
+						</p>
+					</Accordion>
+
+					<Accordion title="Should I filter content for myself as a parent?">
+						<p>
+							Many parents find personal filtering helpful:
+						</p>
+						<ul>
+							<li><strong>Model healthy habits:</strong> Kids imitate what they see</li>
+							<li><strong>Prevent accidental exposure:</strong> Protects you from unwanted content</li>
+							<li><strong>Accountability:</strong> Voluntary monitoring strengthens personal integrity</li>
+							<li><strong>Consistency:</strong> Rules work better when applied family-wide</li>
+						</ul>
+						<p>
+							Adults can use accountability apps like Covenant Eyes or Accountable2You with a trusted friend or spouse.
+							See our <a href="/individuals">personal accountability guide</a>.
+						</p>
+					</Accordion>
+
+					<Accordion title="How do I handle gaming and online interactions?">
+						<p>
+							Gaming requires specific protections:
+						</p>
+						<ul>
+							<li><strong>Console parental controls:</strong> Set age ratings, disable voice chat, restrict purchases</li>
+							<li><strong>Communication limits:</strong> Disable chat with strangers or all chat initially</li>
+							<li><strong>Privacy settings:</strong> Make profiles private, disable friend requests from strangers</li>
+							<li><strong>Time limits:</strong> Set daily or weekly play time limits</li>
+							<li><strong>Supervised play:</strong> Keep gaming devices in common areas</li>
+						</ul>
+						<p>
+							See our comprehensive <a href="/guides/gaming-safety">gaming safety guide</a> for platform-specific instructions.
+						</p>
+					</Accordion>
+
+					<Accordion title="What's the best way to teach kids about online safety?">
+						<p>
+							Effective online safety education includes:
+						</p>
+						<ul>
+							<li><strong>Start early:</strong> Begin conversations before giving devices</li>
+							<li><strong>Ongoing dialogue:</strong> Regular check-ins, not one-time talks</li>
+							<li><strong>Age-appropriate info:</strong> Tailor discussions to developmental level</li>
+							<li><strong>Practical scenarios:</strong> "What would you do if..." questions</li>
+							<li><strong>Emphasize reporting:</strong> Create safe space to report uncomfortable situations</li>
+							<li><strong>Teach critical thinking:</strong> How to evaluate sources, spot manipulation</li>
+						</ul>
+						<p>
+							Consider attending our <a href="/guides/community-education">community education workshops</a> or hosting one
+							at your school/religious institution.
+						</p>
+					</Accordion>
+				</div>
+			</section>
+
+			<!-- Questions for Leaders -->
+			<section class="faq-section">
+				<h2 class="section-title">Questions for Religious Leaders &amp; Institutions</h2>
+				<div class="accordion-list">
+					<Accordion title="What's our legal liability for providing filtered internet?">
+						<p>
+							Consult legal counsel for your jurisdiction, but generally:
+						</p>
+						<ul>
+							<li><strong>Good faith effort:</strong> Implementing filtering shows due diligence</li>
+							<li><strong>Acceptable Use Policy:</strong> Clear written policies protect your organization</li>
+							<li><strong>User acknowledgment:</strong> Have users agree to terms before using network</li>
+							<li><strong>No guarantees:</strong> Clearly state that filters aren't perfect</li>
+							<li><strong>Incident response plan:</strong> Document procedures for addressing violations</li>
+						</ul>
+						<p>
+							Providing filtered access is generally less risky than providing unfiltered access. See our
+							<a href="/guides/policies-guidelines">policy templates</a> to get started.
+						</p>
+					</Accordion>
+
+					<Accordion title="How do I budget for institutional filtering?">
+						<p>
+							Costs vary based on size and approach:
+						</p>
+						<p>
+							<strong>Small institutions (1-25 users):</strong>
+						</p>
+						<ul>
+							<li>Free DNS filtering + standard router: $0-200</li>
+							<li>Mesh WiFi with parental controls: $300-500</li>
+							<li>Annual monitoring software (optional): $300-1,000</li>
+						</ul>
+						<p>
+							<strong>Medium institutions (25-100 users):</strong>
+						</p>
+						<ul>
+							<li>Business-grade router with filtering: $500-1,500</li>
+							<li>Premium DNS service: $200-500/year</li>
+							<li>Enterprise filtering software: $1,000-3,000/year</li>
+						</ul>
+						<p>
+							<strong>Large institutions (100+ users):</strong>
+						</p>
+						<ul>
+							<li>Firewall appliance: $2,000-10,000</li>
+							<li>Managed filtering service: $5,000-20,000/year</li>
+							<li>IT support (if needed): varies</li>
+						</ul>
+						<p>
+							See our <a href="/guides/public-wifi-setup">institutional WiFi guide</a> for detailed recommendations.
+						</p>
+					</Accordion>
+
+					<Accordion title="How do I handle complaints about overblocking?">
+						<p>
+							Create a clear process for handling false positives:
+						</p>
+						<ol>
+							<li><strong>Establish a review committee:</strong> 2-3 trusted individuals</li>
+							<li><strong>Create request form:</strong> Users submit specific sites for review</li>
+							<li><strong>Response timeline:</strong> Commit to 48-hour review turnaround</li>
+							<li><strong>Document decisions:</strong> Keep records of what was unblocked and why</li>
+							<li><strong>Whitelist categories:</strong> Pre-approve common legitimate sites (banks, government, healthcare)</li>
+						</ol>
+						<p>
+							Communicate that filtering protects the entire community and occasional inconvenience serves the greater good.
+						</p>
+					</Accordion>
+
+					<Accordion title="Should we offer unfiltered WiFi for visitors?">
+						<p>
+							This is a balance between hospitality and values:
+						</p>
+						<p>
+							<strong>Option 1: Single filtered network</strong>
+						</p>
+						<ul>
+							<li>Simpler management</li>
+							<li>Consistent values</li>
+							<li>May frustrate visitors with legitimate needs</li>
+						</ul>
+						<p>
+							<strong>Option 2: Filtered + guest network</strong>
+						</p>
+						<ul>
+							<li>Filtered primary network for community members</li>
+							<li>Separate guest network with lighter filtering</li>
+							<li>More complex but accommodating</li>
+						</ul>
+						<p>
+							<strong>Option 3: Filtered + exception process</strong>
+						</p>
+						<ul>
+							<li>Single filtered network</li>
+							<li>Passcode-protected unfiltered access for specific cases</li>
+							<li>Requires oversight</li>
+						</ul>
+						<p>
+							Most institutions find Option 2 provides the best balance. See <a href="/guides/guest-networks">guest network setup</a>.
+						</p>
+					</Accordion>
+
+					<Accordion title="How do I educate my community about internet safety?">
+						<p>
+							Effective community education includes:
+						</p>
+						<ul>
+							<li><strong>Regular workshops:</strong> Quarterly sessions on current topics</li>
+							<li><strong>Parent panels:</strong> Experienced parents share strategies</li>
+							<li><strong>Resource library:</strong> Curated guides and printouts</li>
+							<li><strong>Open Q&amp;A sessions:</strong> Safe space for questions</li>
+							<li><strong>Youth education:</strong> Age-appropriate programs for kids/teens</li>
+							<li><strong>Expert speakers:</strong> Bring in professionals (law enforcement, therapists)</li>
+						</ul>
+						<p>
+							We provide <a href="/guides/community-education">complete workshop outlines</a> you can use directly.
+						</p>
+					</Accordion>
+
+					<Accordion title="What if community members resist filtering policies?">
+						<p>
+							Address resistance through education and dialogue:
+						</p>
+						<ul>
+							<li><strong>Present data:</strong> Share statistics on internet dangers</li>
+							<li><strong>Share testimonials:</strong> Stories from affected families (with permission)</li>
+							<li><strong>Invite feedback:</strong> Collaborative policy development increases buy-in</li>
+							<li><strong>Start gradually:</strong> Pilot program before full rollout</li>
+							<li><strong>Offer alternatives:</strong> Those who object can opt not to use institutional internet</li>
+							<li><strong>Leadership example:</strong> Leaders should model healthy digital habits</li>
+						</ul>
+						<p>
+							Frame filtering as protection, not punishment; as support for families, not distrust of community members.
+						</p>
+					</Accordion>
+				</div>
+			</section>
+		</div>
+
+		<!-- Still Need Help Section -->
+		<section class="help-section">
+			<h2>Still Have Questions?</h2>
+			<p>
+				If you didn't find the answer you were looking for, we're here to help.
+			</p>
+			<div class="help-actions">
+				<Button href="/contact" variant="primary" size="large">Contact Us</Button>
+				<Button href="/troubleshooting" variant="secondary" size="large">Troubleshooting Guides</Button>
+				<Button href="/resources" variant="outline" size="large">Browse Resources</Button>
+			</div>
+		</section>
+	</div>
+</Layout>
+
+<style>
+	.faq-container {
+		max-width: 900px;
+		margin: 0 auto;
+		padding: var(--space-6) var(--space-4);
+	}
+
+	.faq-header {
+		text-align: center;
+		margin-bottom: var(--space-8);
+	}
+
+	.faq-header h1 {
+		font-size: var(--text-4xl);
+		font-weight: 800;
+		color: var(--color-gray-900);
+		margin-bottom: var(--space-3);
+		line-height: var(--leading-tight);
+	}
+
+	.subtitle {
+		font-size: var(--text-xl);
+		color: var(--color-gray-600);
+		margin-bottom: var(--space-6);
+		line-height: var(--leading-relaxed);
+	}
+
+	.header-actions {
+		display: flex;
+		gap: var(--space-3);
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.faq-sections {
+		margin-top: var(--space-8);
+	}
+
+	.faq-section {
+		margin-bottom: var(--space-12);
+	}
+
+	.section-title {
+		font-size: var(--text-2xl);
+		font-weight: 700;
+		color: var(--color-gray-900);
+		margin-bottom: var(--space-6);
+		padding-bottom: var(--space-3);
+		border-bottom: 3px solid var(--color-primary-500);
+	}
+
+	.accordion-list {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-4);
+	}
+
+	.help-section {
+		text-align: center;
+		padding: var(--space-10) var(--space-6);
+		background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-secondary-50) 100%);
+		border-radius: var(--radius-xl);
+		margin-top: var(--space-12);
+	}
+
+	.help-section h2 {
+		font-size: var(--text-3xl);
+		font-weight: 700;
+		color: var(--color-gray-900);
+		margin-bottom: var(--space-3);
+	}
+
+	.help-section p {
+		font-size: var(--text-lg);
+		color: var(--color-gray-600);
+		margin-bottom: var(--space-6);
+	}
+
+	.help-actions {
+		display: flex;
+		gap: var(--space-3);
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	@media (max-width: 768px) {
+		.faq-header h1 {
+			font-size: var(--text-3xl);
+		}
+
+		.subtitle {
+			font-size: var(--text-lg);
+		}
+
+		.section-title {
+			font-size: var(--text-xl);
+		}
+
+		.help-section h2 {
+			font-size: var(--text-2xl);
+		}
+	}
+</style>

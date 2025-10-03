@@ -1,0 +1,549 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import Alert from '../components/Alert.astro';
+
+const currentUrl = Astro.url.pathname;
+---
+
+<Layout
+	title="Feedback & Suggestions - Shemirat Enayim"
+	description="Help us improve by sharing your feedback, reporting issues, or suggesting new features."
+>
+	<Breadcrumb />
+
+	<div class="feedback-container">
+		<header class="feedback-header">
+			<h1>Feedback & Suggestions</h1>
+			<p class="subtitle">
+				Your input helps us improve our resources and better serve families. We read every submission.
+			</p>
+		</header>
+
+		<div class="feedback-layout">
+			<div class="form-section">
+				<form class="feedback-form" id="feedbackForm">
+					<Alert type="info">
+						<strong>Privacy Note:</strong> Email is optional. Provide it only if you'd like a response. We never share your information.
+					</Alert>
+
+					<!-- Feedback Type -->
+					<div class="form-group">
+						<label for="feedbackType" class="form-label">
+							<span class="label-text">Feedback Type</span>
+							<span class="label-required">*</span>
+						</label>
+						<select id="feedbackType" name="feedbackType" class="form-select" required>
+							<option value="">Select type...</option>
+							<option value="bug">🐛 Bug Report</option>
+							<option value="feature">💡 Feature Request</option>
+							<option value="content">📝 Content Correction</option>
+							<option value="general">💬 General Feedback</option>
+							<option value="question">❓ Question</option>
+						</select>
+					</div>
+
+					<!-- Page URL (auto-populated, editable) -->
+					<div class="form-group">
+						<label for="pageUrl" class="form-label">
+							<span class="label-text">Page URL</span>
+						</label>
+						<input
+							type="url"
+							id="pageUrl"
+							name="pageUrl"
+							class="form-input"
+							placeholder="https://shemiratenayim.org/..."
+						/>
+						<p class="form-hint">Which page is this feedback about?</p>
+					</div>
+
+					<!-- Description -->
+					<div class="form-group">
+						<label for="description" class="form-label">
+							<span class="label-text">Description</span>
+							<span class="label-required">*</span>
+						</label>
+						<textarea
+							id="description"
+							name="description"
+							class="form-textarea"
+							rows="8"
+							required
+							placeholder="Please describe your feedback in detail..."
+						></textarea>
+						<p class="form-hint">
+							<span id="charCount">0</span> / 2000 characters
+						</p>
+					</div>
+
+					<!-- Email (optional) -->
+					<div class="form-group">
+						<label for="email" class="form-label">
+							<span class="label-text">Email (optional)</span>
+						</label>
+						<input
+							type="email"
+							id="email"
+							name="email"
+							class="form-input"
+							placeholder="your@email.com"
+						/>
+						<p class="form-hint">Provide if you'd like a response</p>
+					</div>
+
+					<!-- Rating (optional) -->
+					<div class="form-group">
+						<label class="form-label">
+							<span class="label-text">How helpful was this page?</span>
+						</label>
+						<div class="rating-group">
+							<input type="radio" id="rating1" name="rating" value="1" />
+							<label for="rating1" class="rating-label">⭐ 1 - Not helpful</label>
+
+							<input type="radio" id="rating2" name="rating" value="2" />
+							<label for="rating2" class="rating-label">⭐⭐ 2</label>
+
+							<input type="radio" id="rating3" name="rating" value="3" />
+							<label for="rating3" class="rating-label">⭐⭐⭐ 3</label>
+
+							<input type="radio" id="rating4" name="rating" value="4" />
+							<label for="rating4" class="rating-label">⭐⭐⭐⭐ 4</label>
+
+							<input type="radio" id="rating5" name="rating" value="5" />
+							<label for="rating5" class="rating-label">⭐⭐⭐⭐⭐ 5 - Very helpful</label>
+						</div>
+					</div>
+
+					<!-- Submit Button -->
+					<div class="form-actions">
+						<button type="submit" class="btn-primary" id="submitBtn">
+							<span>Submit Feedback</span>
+						</button>
+						<button type="reset" class="btn-secondary">
+							Clear Form
+						</button>
+					</div>
+
+					<!-- Form Messages -->
+					<div id="formMessage" class="form-message" style="display: none;"></div>
+				</form>
+			</div>
+
+			<aside class="info-section">
+				<div class="info-card">
+					<h2>💡 Tips for Good Feedback</h2>
+					<ul>
+						<li><strong>Be specific:</strong> Include details about what you experienced</li>
+						<li><strong>Be constructive:</strong> Suggest improvements when possible</li>
+						<li><strong>Include context:</strong> What were you trying to accomplish?</li>
+						<li><strong>Report bugs clearly:</strong> Steps to reproduce, expected vs. actual results</li>
+					</ul>
+				</div>
+
+				<div class="info-card">
+					<h2>📬 What Happens Next?</h2>
+					<ol>
+						<li>We review every submission within 48 hours</li>
+						<li>Bug reports are prioritized for fixes</li>
+						<li>Feature requests are evaluated for implementation</li>
+						<li>If you provided email, we may reach out for clarification</li>
+					</ol>
+				</div>
+
+				<div class="info-card">
+					<h2>🚨 Urgent Issues?</h2>
+					<p>
+						For technical problems preventing you from using filtering, see our
+						<a href="/troubleshooting">troubleshooting guides</a>.
+					</p>
+					<p>
+						For crisis situations, visit our
+						<a href="/resources/emergency">emergency resources</a>.
+					</p>
+				</div>
+
+				<div class="info-card">
+					<h2>📊 Recent Improvements</h2>
+					<p>Thanks to user feedback, we recently:</p>
+					<ul>
+						<li>Added 5 new troubleshooting guides</li>
+						<li>Improved search functionality</li>
+						<li>Created printable reference cards</li>
+						<li>Expanded FAQ with 36+ questions</li>
+					</ul>
+					<p><a href="/changelog">View full changelog →</a></p>
+				</div>
+			</aside>
+		</div>
+	</div>
+</Layout>
+
+<style>
+	.feedback-container {
+		max-width: 1400px;
+		margin: 0 auto;
+		padding: var(--space-8) var(--space-4);
+	}
+
+	.feedback-header {
+		text-align: center;
+		margin-bottom: var(--space-10);
+	}
+
+	.feedback-header h1 {
+		font-size: var(--text-4xl);
+		font-weight: 800;
+		color: var(--color-gray-900);
+		margin-bottom: var(--space-3);
+	}
+
+	.subtitle {
+		font-size: var(--text-xl);
+		color: var(--color-gray-600);
+		line-height: var(--leading-relaxed);
+	}
+
+	.feedback-layout {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		gap: var(--space-10);
+		align-items: start;
+	}
+
+	/* Form Section */
+	.form-section {
+		background: white;
+		border: 2px solid var(--color-gray-200);
+		border-radius: var(--radius-xl);
+		padding: var(--space-8);
+		box-shadow: var(--shadow-lg);
+	}
+
+	.feedback-form {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-6);
+	}
+
+	.form-group {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-2);
+	}
+
+	.form-label {
+		font-weight: 600;
+		color: var(--color-gray-900);
+		font-size: var(--text-base);
+	}
+
+	.label-text {
+		margin-right: var(--space-1);
+	}
+
+	.label-required {
+		color: var(--color-error);
+	}
+
+	.form-input,
+	.form-select,
+	.form-textarea {
+		padding: var(--space-3);
+		border: 2px solid var(--color-gray-300);
+		border-radius: var(--radius-lg);
+		font-size: var(--text-base);
+		font-family: inherit;
+		transition: all var(--transition-base);
+	}
+
+	.form-input:focus,
+	.form-select:focus,
+	.form-textarea:focus {
+		outline: none;
+		border-color: var(--color-primary-500);
+		box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+	}
+
+	.form-textarea {
+		resize: vertical;
+		min-height: 150px;
+		line-height: var(--leading-relaxed);
+	}
+
+	.form-hint {
+		font-size: var(--text-sm);
+		color: var(--color-gray-500);
+		margin: 0;
+	}
+
+	.rating-group {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-2);
+	}
+
+	.rating-group input[type="radio"] {
+		position: absolute;
+		opacity: 0;
+	}
+
+	.rating-label {
+		padding: var(--space-3) var(--space-4);
+		border: 2px solid var(--color-gray-300);
+		border-radius: var(--radius-lg);
+		cursor: pointer;
+		transition: all var(--transition-base);
+		font-weight: 500;
+	}
+
+	.rating-label:hover {
+		border-color: var(--color-primary-500);
+		background-color: var(--color-primary-50);
+	}
+
+	.rating-group input[type="radio"]:checked + .rating-label {
+		border-color: var(--color-primary-600);
+		background-color: var(--color-primary-100);
+		color: var(--color-primary-900);
+	}
+
+	.form-actions {
+		display: flex;
+		gap: var(--space-3);
+		margin-top: var(--space-4);
+	}
+
+	.btn-primary,
+	.btn-secondary {
+		padding: var(--space-3) var(--space-6);
+		border: none;
+		border-radius: var(--radius-lg);
+		font-weight: 600;
+		font-size: var(--text-base);
+		cursor: pointer;
+		transition: all var(--transition-base);
+	}
+
+	.btn-primary {
+		background-color: var(--color-primary-600);
+		color: white;
+		flex: 1;
+	}
+
+	.btn-primary:hover:not(:disabled) {
+		background-color: var(--color-primary-700);
+		transform: translateY(-1px);
+		box-shadow: var(--shadow-lg);
+	}
+
+	.btn-primary:disabled {
+		opacity: 0.6;
+		cursor: not-allowed;
+	}
+
+	.btn-secondary {
+		background-color: white;
+		color: var(--color-gray-700);
+		border: 2px solid var(--color-gray-300);
+	}
+
+	.btn-secondary:hover {
+		background-color: var(--color-gray-50);
+		border-color: var(--color-gray-400);
+	}
+
+	.form-message {
+		padding: var(--space-4);
+		border-radius: var(--radius-lg);
+		margin-top: var(--space-4);
+		font-weight: 500;
+	}
+
+	.form-message.success {
+		background-color: var(--color-secondary-50);
+		border: 2px solid var(--color-secondary-500);
+		color: var(--color-secondary-900);
+	}
+
+	.form-message.error {
+		background-color: #fef2f2;
+		border: 2px solid var(--color-error);
+		color: #7f1d1d;
+	}
+
+	/* Info Section */
+	.info-section {
+		display: flex;
+		flex-direction: column;
+		gap: var(--space-6);
+	}
+
+	.info-card {
+		background: white;
+		border: 1px solid var(--color-gray-200);
+		border-radius: var(--radius-xl);
+		padding: var(--space-6);
+		box-shadow: var(--shadow-sm);
+	}
+
+	.info-card h2 {
+		font-size: var(--text-xl);
+		font-weight: 700;
+		color: var(--color-gray-900);
+		margin: 0 0 var(--space-4) 0;
+	}
+
+	.info-card ul,
+	.info-card ol {
+		margin: 0;
+		padding-left: var(--space-6);
+	}
+
+	.info-card li {
+		margin-bottom: var(--space-2);
+		color: var(--color-gray-700);
+		line-height: var(--leading-relaxed);
+	}
+
+	.info-card p {
+		margin: 0 0 var(--space-3) 0;
+		color: var(--color-gray-700);
+		line-height: var(--leading-relaxed);
+	}
+
+	.info-card p:last-child {
+		margin-bottom: 0;
+	}
+
+	.info-card a {
+		color: var(--color-primary-600);
+		text-decoration: none;
+		font-weight: 500;
+	}
+
+	.info-card a:hover {
+		text-decoration: underline;
+	}
+
+	@media (max-width: 1024px) {
+		.feedback-layout {
+			grid-template-columns: 1fr;
+		}
+
+		.info-section {
+			order: -1;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.feedback-header h1 {
+			font-size: var(--text-3xl);
+		}
+
+		.form-section {
+			padding: var(--space-6);
+		}
+
+		.form-actions {
+			flex-direction: column;
+		}
+
+		.btn-primary,
+		.btn-secondary {
+			width: 100%;
+		}
+	}
+</style>
+
+<script>
+	// Auto-populate page URL from referrer or current page
+	const pageUrlInput = document.getElementById('pageUrl') as HTMLInputElement;
+	if (pageUrlInput) {
+		const referrer = document.referrer;
+		if (referrer && referrer.includes(window.location.hostname)) {
+			pageUrlInput.value = referrer;
+		} else {
+			pageUrlInput.value = window.location.href;
+		}
+	}
+
+	// Character counter
+	const textarea = document.getElementById('description') as HTMLTextAreaElement;
+	const charCount = document.getElementById('charCount') as HTMLElement;
+
+	if (textarea && charCount) {
+		textarea.addEventListener('input', () => {
+			const count = textarea.value.length;
+			charCount.textContent = count.toString();
+
+			if (count > 2000) {
+				charCount.style.color = 'var(--color-error)';
+				textarea.value = textarea.value.substring(0, 2000);
+			} else {
+				charCount.style.color = '';
+			}
+		});
+	}
+
+	// Form submission
+	import { trackFeedbackSubmit } from '../utils/analytics';
+
+	const form = document.getElementById('feedbackForm') as HTMLFormElement;
+	const submitBtn = document.getElementById('submitBtn') as HTMLButtonElement;
+	const formMessage = document.getElementById('formMessage') as HTMLElement;
+
+	if (form) {
+		form.addEventListener('submit', async (e) => {
+			e.preventDefault();
+
+			// Get form data
+			const formData = new FormData(form);
+			const data = Object.fromEntries(formData.entries());
+
+			// Disable submit button
+			submitBtn.disabled = true;
+			submitBtn.innerHTML = '<span>Submitting...</span>';
+
+			try {
+				// In production, this would send to your backend API
+				// For now, we'll simulate success after a delay
+				await new Promise(resolve => setTimeout(resolve, 1500));
+
+				// Track feedback submission
+				const feedbackType = data.feedbackType as string;
+				const rating = data.rating ? parseInt(data.rating as string) : undefined;
+				trackFeedbackSubmit(feedbackType, rating);
+
+				// Show success message
+				formMessage.style.display = 'block';
+				formMessage.className = 'form-message success';
+				formMessage.textContent = '✓ Thank you! Your feedback has been submitted successfully.';
+
+				// Reset form
+				form.reset();
+
+				// Log to console (in production, this would go to your backend)
+				console.log('Feedback submitted:', data);
+
+				// Scroll to message
+				formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+			} catch (error) {
+				// Show error message
+				formMessage.style.display = 'block';
+				formMessage.className = 'form-message error';
+				formMessage.textContent = '✗ Sorry, there was an error submitting your feedback. Please try again.';
+			} finally {
+				// Re-enable submit button
+				submitBtn.disabled = false;
+				submitBtn.innerHTML = '<span>Submit Feedback</span>';
+
+				// Hide message after 5 seconds
+				setTimeout(() => {
+					formMessage.style.display = 'none';
+				}, 5000);
+			}
+		});
+	}
+</script>
