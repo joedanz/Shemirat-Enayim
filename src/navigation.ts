@@ -84,8 +84,8 @@ export const footerData = {
       title: 'About',
       links: [
         { text: 'About Us', href: getPermalink('/about') },
-        { text: 'Contact', href: getPermalink('/contact') },
-        { text: 'Feedback', href: getPermalink('/feedback') },
+        // { text: 'Contact', href: getPermalink('/contact') },
+        // { text: 'Feedback', href: getPermalink('/feedback') },
       ],
     },
   ],
