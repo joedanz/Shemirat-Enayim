@@ -7,12 +7,7 @@ const { class: className = '' } = Astro.props;
 ---
 
 <div class:list={['search-container', className]}>
-  <button
-    id="search-button"
-    class="search-button"
-    aria-label="Open search"
-    aria-expanded="false"
-  >
+  <button id="search-button" class="search-button" aria-label="Open search" aria-expanded="false">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="20"
@@ -34,11 +29,7 @@ const { class: className = '' } = Astro.props;
     <div class="search-modal-content">
       <div class="search-header">
         <h2 class="search-title">Search</h2>
-        <button
-          id="search-close"
-          class="search-close"
-          aria-label="Close search"
-        >
+        <button id="search-close" class="search-close" aria-label="Close search">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -245,7 +236,7 @@ const { class: className = '' } = Astro.props;
 
 <script>
   // Wait for DOM to be ready
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     const searchButton = document.getElementById('search-button');
     const searchModal = document.getElementById('search-modal');
     const searchClose = document.getElementById('search-close');
@@ -278,7 +269,8 @@ const { class: className = '' } = Astro.props;
         const input = document.createElement('input');
         input.type = 'text';
         input.placeholder = 'Search...';
-        input.className = 'pagefind-ui__search-input w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500';
+        input.className =
+          'pagefind-ui__search-input w-full px-4 py-3 border border-gray-300 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500';
 
         const resultsDiv = document.createElement('div');
         resultsDiv.className = 'pagefind-ui__results mt-4 space-y-2';
@@ -311,7 +303,8 @@ const { class: className = '' } = Astro.props;
 
               const resultEl = document.createElement('a');
               resultEl.href = data.url;
-              resultEl.className = 'pagefind-ui__result block p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-primary-500 dark:hover:border-primary-500 transition-colors no-underline';
+              resultEl.className =
+                'pagefind-ui__result block p-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg hover:border-primary-500 dark:hover:border-primary-500 transition-colors no-underline';
 
               const title = document.createElement('div');
               title.className = 'pagefind-ui__result-title text-lg font-semibold text-gray-900 dark:text-gray-100 mb-1';
@@ -333,7 +326,8 @@ const { class: className = '' } = Astro.props;
         console.error('Failed to load Pagefind:', error);
         const container = document.getElementById('pagefind-search');
         if (container) {
-          container.innerHTML = '<p class="text-gray-500 dark:text-gray-400 py-4">Search is only available in production builds. Run <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">npm run build && npm run preview</code> to test.</p>';
+          container.innerHTML =
+            '<p class="text-gray-500 dark:text-gray-400 py-4">Search is only available in production builds. Run <code class="bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded">npm run build && npm run preview</code> to test.</p>';
         }
       }
     }

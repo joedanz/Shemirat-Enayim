@@ -13,7 +13,14 @@ const { title, description, href, icon, difficulty, class: className = '' } = As
 const Tag = href ? 'a' : 'div';
 ---
 
-<Tag href={href} class:list={['card bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700', { 'card-link': href }, className]}>
+<Tag
+  href={href}
+  class:list={[
+    'card bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700',
+    { 'card-link': href },
+    className,
+  ]}
+>
   {
     icon && (
       <div class="card-icon" aria-hidden="true">
