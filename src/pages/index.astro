@@ -125,6 +125,11 @@ const stats = [
 		border-bottom: 1px solid var(--color-gray-200);
 	}
 
+	[data-theme="dark"] .intro-section {
+		background-color: var(--color-gray-900);
+		border-bottom-color: var(--color-gray-700);
+	}
+
 	.text-center {
 		text-align: center;
 		max-width: 48rem;
@@ -166,8 +171,16 @@ const stats = [
 		background-color: var(--color-gray-50);
 	}
 
+	[data-theme="dark"] .features-section {
+		background-color: var(--color-gray-800);
+	}
+
 	.methods-section {
 		background-color: white;
+	}
+
+	[data-theme="dark"] .methods-section {
+		background-color: var(--color-gray-900);
 	}
 
 	.cta-section {
@@ -201,5 +214,14 @@ const stats = [
 		gap: var(--space-4);
 		justify-content: center;
 		flex-wrap: wrap;
+	}
+
+	/* Dark mode CTA section */
+	[data-theme="dark"] .cta-section {
+		background: linear-gradient(
+			135deg,
+			var(--color-primary-900) 0%,
+			var(--color-primary-800) 100%
+		);
 	}
 </style>

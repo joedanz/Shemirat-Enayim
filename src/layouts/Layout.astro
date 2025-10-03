@@ -63,7 +63,36 @@ const sentryDSN = import.meta.env.PUBLIC_SENTRY_DSN;
 		{ogImageURL && <meta property="twitter:image" content={ogImageURL} />}
 
 		<!-- Theme Color -->
-		<meta name="theme-color" content="#2563eb" />
+		<meta name="theme-color" content="#0284c7" />
+
+		<!-- Theme Script - MUST run before page renders to prevent flash -->
+		<script is:inline>
+			// Immediately apply theme to prevent flash
+			(function() {
+				const THEME_KEY = 'shemirat-enayim-theme';
+
+				function getStoredTheme() {
+					try {
+						const stored = localStorage.getItem(THEME_KEY);
+						if (stored === 'light' || stored === 'dark' || stored === 'system') {
+							return stored;
+						}
+					} catch {}
+					return 'system';
+				}
+
+				function getSystemTheme() {
+					if (typeof window !== 'undefined' && window.matchMedia) {
+						return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+					}
+					return 'light';
+				}
+
+				const theme = getStoredTheme();
+				const effectiveTheme = theme === 'system' ? getSystemTheme() : theme;
+				document.documentElement.setAttribute('data-theme', effectiveTheme);
+			})();
+		</script>
 
 		<!-- Plausible Analytics - Privacy-respecting analytics -->
 		{isProduction && plausibleDomain && (
@@ -139,17 +168,17 @@ const sentryDSN = import.meta.env.PUBLIC_SENTRY_DSN;
 
 	/* CSS Variables / Design Tokens */
 	:root {
-		/* Colors - Primary (Trust/Protection - Blue) */
-		--color-primary-50: #eff6ff;
-		--color-primary-100: #dbeafe;
-		--color-primary-200: #bfdbfe;
-		--color-primary-300: #93c5fd;
-		--color-primary-400: #60a5fa;
-		--color-primary-500: #3b82f6;
-		--color-primary-600: #2563eb;
-		--color-primary-700: #1d4ed8;
-		--color-primary-800: #1e40af;
-		--color-primary-900: #1e3a8a;
+		/* Colors - Primary (Trust/Protection - Vibrant Blue) */
+		--color-primary-50: #f0f9ff;
+		--color-primary-100: #e0f2fe;
+		--color-primary-200: #bae6fd;
+		--color-primary-300: #7dd3fc;
+		--color-primary-400: #38bdf8;
+		--color-primary-500: #0ea5e9;
+		--color-primary-600: #0284c7;
+		--color-primary-700: #0369a1;
+		--color-primary-800: #075985;
+		--color-primary-900: #0c4a6e;
 
 		/* Colors - Secondary (Warmth/Family - Green) */
 		--color-secondary-50: #f0fdf4;
@@ -182,28 +211,29 @@ const sentryDSN = import.meta.env.PUBLIC_SENTRY_DSN;
 		--color-info: #3b82f6;
 
 		/* Typography - Font Families */
-		--font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-		--font-serif: Georgia, 'Times New Roman', serif;
-		--font-mono: 'Monaco', 'Courier New', monospace;
+		--font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+		--font-serif: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+		--font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
 
-		/* Typography - Font Sizes */
+		/* Typography - Font Sizes (Larger, more impactful scale) */
 		--text-xs: 0.75rem;      /* 12px */
 		--text-sm: 0.875rem;     /* 14px */
 		--text-base: 1rem;       /* 16px */
 		--text-lg: 1.125rem;     /* 18px */
 		--text-xl: 1.25rem;      /* 20px */
 		--text-2xl: 1.5rem;      /* 24px */
-		--text-3xl: 1.875rem;    /* 30px */
-		--text-4xl: 2.25rem;     /* 36px */
-		--text-5xl: 3rem;        /* 48px */
-		--text-6xl: 3.75rem;     /* 60px */
+		--text-3xl: 2rem;        /* 32px - increased from 30px */
+		--text-4xl: 2.5rem;      /* 40px - increased from 36px */
+		--text-5xl: 3.5rem;      /* 56px - increased from 48px */
+		--text-6xl: 4.5rem;      /* 72px - increased from 60px */
+		--text-7xl: 5.5rem;      /* 88px - new */
 
-		/* Typography - Line Heights */
+		/* Typography - Line Heights (Improved readability) */
 		--leading-none: 1;
-		--leading-tight: 1.25;
+		--leading-tight: 1.2;
 		--leading-snug: 1.375;
-		--leading-normal: 1.5;
-		--leading-relaxed: 1.625;
+		--leading-normal: 1.6;
+		--leading-relaxed: 1.75;
 		--leading-loose: 2;
 
 		/* Spacing Scale */
@@ -426,6 +456,8 @@ const sentryDSN = import.meta.env.PUBLIC_SENTRY_DSN;
 		min-height: 100vh;
 		display: flex;
 		flex-direction: column;
+		background-color: var(--color-gray-50);
+		transition: background-color var(--transition-base), color var(--transition-base);
 	}
 
 	/* Typography Elements */
@@ -433,30 +465,155 @@ const sentryDSN = import.meta.env.PUBLIC_SENTRY_DSN;
 		font-weight: 700;
 		line-height: var(--leading-tight);
 		color: var(--color-gray-900);
-		margin-bottom: var(--space-4);
+		margin-bottom: var(--space-6);
+		letter-spacing: -0.02em;
 	}
 
-	h1 { font-size: var(--text-4xl); }
-	h2 { font-size: var(--text-3xl); }
-	h3 { font-size: var(--text-2xl); }
-	h4 { font-size: var(--text-xl); }
-	h5 { font-size: var(--text-lg); }
-	h6 { font-size: var(--text-base); }
+	h1 {
+		font-size: var(--text-4xl);
+		font-weight: 800;
+		letter-spacing: -0.025em;
+	}
+	h2 {
+		font-size: var(--text-3xl);
+		font-weight: 700;
+	}
+	h3 {
+		font-size: var(--text-2xl);
+		font-weight: 600;
+	}
+	h4 {
+		font-size: var(--text-xl);
+		font-weight: 600;
+	}
+	h5 {
+		font-size: var(--text-lg);
+		font-weight: 600;
+	}
+	h6 {
+		font-size: var(--text-base);
+		font-weight: 600;
+	}
 
 	p {
-		margin-bottom: var(--space-4);
+		margin-bottom: var(--space-6);
 		color: var(--color-gray-700);
+		line-height: var(--leading-relaxed);
+		font-size: var(--text-base);
 	}
 
 	a {
 		color: var(--color-primary-600);
 		text-decoration: none;
-		transition: color var(--transition-base);
+		transition: all var(--transition-base) ease-in-out;
 	}
 
 	a:hover {
 		color: var(--color-primary-700);
 		text-decoration: underline;
+	}
+
+	/* Smooth Scroll Behavior */
+	@media (prefers-reduced-motion: no-preference) {
+		html {
+			scroll-behavior: smooth;
+		}
+	}
+
+	/* Animation Keyframes */
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+			transform: translateY(20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	@keyframes fadeInScale {
+		from {
+			opacity: 0;
+			transform: scale(0.95);
+		}
+		to {
+			opacity: 1;
+			transform: scale(1);
+		}
+	}
+
+	@keyframes slideInLeft {
+		from {
+			opacity: 0;
+			transform: translateX(-30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	@keyframes slideInRight {
+		from {
+			opacity: 0;
+			transform: translateX(30px);
+		}
+		to {
+			opacity: 1;
+			transform: translateX(0);
+		}
+	}
+
+	@keyframes shimmer {
+		0% {
+			background-position: -1000px 0;
+		}
+		100% {
+			background-position: 1000px 0;
+		}
+	}
+
+	/* Animation Utility Classes */
+	.animate-fade-in {
+		animation: fadeIn 0.6s ease-out;
+	}
+
+	.animate-fade-in-scale {
+		animation: fadeInScale 0.5s ease-out;
+	}
+
+	.animate-slide-in-left {
+		animation: slideInLeft 0.6s ease-out;
+	}
+
+	.animate-slide-in-right {
+		animation: slideInRight 0.6s ease-out;
+	}
+
+	/* Transition Utilities */
+	.transition-all {
+		transition: all var(--transition-base) ease-in-out;
+	}
+
+	.transition-transform {
+		transition: transform var(--transition-base) ease-in-out;
+	}
+
+	.transition-colors {
+		transition: background-color var(--transition-base) ease-in-out,
+					border-color var(--transition-base) ease-in-out,
+					color var(--transition-base) ease-in-out;
+	}
+
+	/* Hover Effects */
+	.hover-lift {
+		transition: transform var(--transition-base) ease-in-out, box-shadow var(--transition-base) ease-in-out;
+	}
+
+	.hover-lift:hover {
+		transform: translateY(-4px);
+		box-shadow: var(--shadow-lg);
 	}
 
 	/* Lists */
@@ -493,14 +650,21 @@ const sentryDSN = import.meta.env.PUBLIC_SENTRY_DSN;
 	}
 
 	/* Responsive Typography */
-	@media (min-width: 768px) {
+	@media (min-width: 640px) {
 		h1 { font-size: var(--text-5xl); }
 		h2 { font-size: var(--text-4xl); }
 		h3 { font-size: var(--text-3xl); }
+		p { font-size: var(--text-lg); }
 	}
 
 	@media (min-width: 1024px) {
 		h1 { font-size: var(--text-6xl); }
+		h2 { font-size: var(--text-5xl); }
+		h3 { font-size: var(--text-4xl); }
+	}
+
+	@media (min-width: 1280px) {
+		h1 { font-size: var(--text-7xl); }
 	}
 
 	/* Print Styles */

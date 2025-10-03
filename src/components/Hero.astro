@@ -60,18 +60,59 @@ const {
 
 <style>
 	.hero {
-		padding: var(--space-16) 0 var(--space-12);
+		padding: var(--space-20) 0 var(--space-16);
 		background: linear-gradient(
 			135deg,
-			var(--color-primary-50) 0%,
-			var(--color-secondary-50) 100%
+			rgba(240, 249, 255, 0.8) 0%,
+			rgba(224, 242, 254, 0.9) 50%,
+			rgba(186, 230, 253, 0.8) 100%
 		);
 		border-bottom: 1px solid var(--color-gray-200);
+		position: relative;
+		overflow: hidden;
+	}
+
+	/* Subtle grid pattern overlay */
+	.hero::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-image:
+			linear-gradient(rgba(14, 165, 233, 0.03) 1px, transparent 1px),
+			linear-gradient(90deg, rgba(14, 165, 233, 0.03) 1px, transparent 1px);
+		background-size: 50px 50px;
+		pointer-events: none;
+	}
+
+	/* Decorative gradient orb */
+	.hero::after {
+		content: '';
+		position: absolute;
+		top: -10%;
+		right: -5%;
+		width: 600px;
+		height: 600px;
+		background: radial-gradient(circle, rgba(14, 165, 233, 0.15), transparent 70%);
+		border-radius: 50%;
+		pointer-events: none;
+		animation: float 20s ease-in-out infinite;
+	}
+
+	@keyframes float {
+		0%, 100% {
+			transform: translate(0, 0) scale(1);
+		}
+		50% {
+			transform: translate(-30px, 30px) scale(1.1);
+		}
 	}
 
 	@media (min-width: 768px) {
 		.hero {
-			padding: var(--space-20) 0 var(--space-16);
+			padding: var(--space-24) 0 var(--space-20);
 		}
 	}
 
@@ -80,6 +121,8 @@ const {
 		grid-template-columns: 1fr;
 		gap: var(--space-12);
 		align-items: center;
+		position: relative;
+		z-index: 1;
 	}
 
 	@media (min-width: 1024px) {
@@ -92,7 +135,7 @@ const {
 	.hero-text {
 		display: flex;
 		flex-direction: column;
-		gap: var(--space-6);
+		gap: var(--space-8);
 	}
 
 	/* Alignment */
@@ -102,7 +145,7 @@ const {
 
 	.hero-center .hero-text {
 		align-items: center;
-		max-width: 48rem;
+		max-width: 56rem;
 		margin: 0 auto;
 	}
 
@@ -114,33 +157,45 @@ const {
 	.hero-title {
 		font-size: var(--text-4xl);
 		font-weight: 800;
-		line-height: var(--leading-tight);
+		line-height: 1.1;
 		color: var(--color-gray-900);
 		margin-bottom: 0;
+		letter-spacing: -0.03em;
+		background: linear-gradient(135deg, var(--color-gray-900) 0%, var(--color-primary-900) 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
 	}
 
-	@media (min-width: 768px) {
+	@media (min-width: 640px) {
 		.hero-title {
 			font-size: var(--text-5xl);
 		}
 	}
 
-	@media (min-width: 1024px) {
+	@media (min-width: 768px) {
 		.hero-title {
 			font-size: var(--text-6xl);
 		}
 	}
 
+	@media (min-width: 1024px) {
+		.hero-title {
+			font-size: var(--text-7xl);
+		}
+	}
+
 	.hero-subtitle {
-		font-size: var(--text-lg);
+		font-size: var(--text-xl);
 		line-height: var(--leading-relaxed);
 		color: var(--color-gray-700);
 		margin-bottom: 0;
+		max-width: 42rem;
 	}
 
 	@media (min-width: 768px) {
 		.hero-subtitle {
-			font-size: var(--text-xl);
+			font-size: var(--text-2xl);
 		}
 	}
 
@@ -148,6 +203,7 @@ const {
 		display: flex;
 		gap: var(--space-4);
 		flex-wrap: wrap;
+		margin-top: var(--space-4);
 	}
 
 	/* Image */
@@ -155,6 +211,7 @@ const {
 		display: flex;
 		align-items: center;
 		justify-content: center;
+		animation: fadeInScale 0.8s ease-out 0.2s both;
 	}
 
 	.hero-image img {
@@ -162,7 +219,7 @@ const {
 		height: auto;
 		max-width: 100%;
 		border-radius: var(--radius-2xl);
-		box-shadow: var(--shadow-2xl);
+		box-shadow: 0 25px 50px -12px rgba(14, 165, 233, 0.25);
 		aspect-ratio: 16 / 9; /* Prevent CLS */
 		object-fit: cover;
 	}
@@ -170,5 +227,22 @@ const {
 	/* Center alignment with no image */
 	.hero-center .hero-content:not(:has(.hero-image)) {
 		grid-template-columns: 1fr;
+	}
+
+	/* Dark mode support */
+	[data-theme="dark"] .hero {
+		background: linear-gradient(
+			135deg,
+			rgba(17, 24, 39, 0.95) 0%,
+			rgba(31, 41, 55, 0.9) 50%,
+			rgba(55, 65, 81, 0.95) 100%
+		);
+	}
+
+	[data-theme="dark"] .hero-title {
+		background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-primary-400) 100%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-clip: text;
 	}
 </style>
