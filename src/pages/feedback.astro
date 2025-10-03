@@ -12,28 +12,28 @@ const currentUrl = Astro.url.pathname;
 >
 	<Breadcrumb />
 
-	<div class="feedback-container">
-		<header class="feedback-header">
-			<h1>Feedback & Suggestions</h1>
-			<p class="subtitle">
+	<div class="max-w-7xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
+		<header class="text-center mb-10">
+			<h1 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-3">Feedback & Suggestions</h1>
+			<p class="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
 				Your input helps us improve our resources and better serve families. We read every submission.
 			</p>
 		</header>
 
-		<div class="feedback-layout">
-			<div class="form-section">
-				<form class="feedback-form" id="feedbackForm">
+		<div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+			<div class="lg:col-span-2 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-8 shadow-lg">
+				<form class="flex flex-col gap-6" id="feedbackForm">
 					<Alert type="info">
 						<strong>Privacy Note:</strong> Email is optional. Provide it only if you'd like a response. We never share your information.
 					</Alert>
 
 					<!-- Feedback Type -->
-					<div class="form-group">
-						<label for="feedbackType" class="form-label">
-							<span class="label-text">Feedback Type</span>
-							<span class="label-required">*</span>
+					<div class="flex flex-col gap-2">
+						<label for="feedbackType" class="font-semibold text-gray-900 dark:text-white text-base">
+							<span class="mr-1">Feedback Type</span>
+							<span class="text-red-600">*</span>
 						</label>
-						<select id="feedbackType" name="feedbackType" class="form-select" required>
+						<select id="feedbackType" name="feedbackType" class="p-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg text-base font-sans transition-all focus:outline-none focus:border-primary-500 focus:ring-4 focus:ring-primary-100 dark:bg-gray-700 dark:text-white" required>
 							<option value="">Select type...</option>
 							<option value="bug">🐛 Bug Report</option>
 							<option value="feature">💡 Feature Request</option>
@@ -44,417 +44,140 @@ const currentUrl = Astro.url.pathname;
 					</div>
 
 					<!-- Page URL (auto-populated, editable) -->
-					<div class="form-group">
-						<label for="pageUrl" class="form-label">
-							<span class="label-text">Page URL</span>
+					<div class="flex flex-col gap-2">
+						<label for="pageUrl" class="font-semibold text-gray-900 dark:text-white text-base">
+							<span class="mr-1">Page URL</span>
 						</label>
 						<input
 							type="url"
 							id="pageUrl"
 							name="pageUrl"
-							class="form-input"
+							class="p-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg text-base font-sans transition-all focus:outline-none focus:border-primary-500 focus:ring-4 focus:ring-primary-100 dark:bg-gray-700 dark:text-white"
 							placeholder="https://shemiratenayim.org/..."
 						/>
-						<p class="form-hint">Which page is this feedback about?</p>
+						<p class="text-sm text-gray-500 dark:text-gray-400 m-0">Which page is this feedback about?</p>
 					</div>
 
 					<!-- Description -->
-					<div class="form-group">
-						<label for="description" class="form-label">
-							<span class="label-text">Description</span>
-							<span class="label-required">*</span>
+					<div class="flex flex-col gap-2">
+						<label for="description" class="font-semibold text-gray-900 dark:text-white text-base">
+							<span class="mr-1">Description</span>
+							<span class="text-red-600">*</span>
 						</label>
 						<textarea
 							id="description"
 							name="description"
-							class="form-textarea"
+							class="p-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg text-base font-sans transition-all resize-y min-h-[150px] leading-relaxed focus:outline-none focus:border-primary-500 focus:ring-4 focus:ring-primary-100 dark:bg-gray-700 dark:text-white"
 							rows="8"
 							required
 							placeholder="Please describe your feedback in detail..."
 						></textarea>
-						<p class="form-hint">
+						<p class="text-sm text-gray-500 dark:text-gray-400 m-0">
 							<span id="charCount">0</span> / 2000 characters
 						</p>
 					</div>
 
 					<!-- Email (optional) -->
-					<div class="form-group">
-						<label for="email" class="form-label">
-							<span class="label-text">Email (optional)</span>
+					<div class="flex flex-col gap-2">
+						<label for="email" class="font-semibold text-gray-900 dark:text-white text-base">
+							<span class="mr-1">Email (optional)</span>
 						</label>
 						<input
 							type="email"
 							id="email"
 							name="email"
-							class="form-input"
+							class="p-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg text-base font-sans transition-all focus:outline-none focus:border-primary-500 focus:ring-4 focus:ring-primary-100 dark:bg-gray-700 dark:text-white"
 							placeholder="your@email.com"
 						/>
-						<p class="form-hint">Provide if you'd like a response</p>
+						<p class="text-sm text-gray-500 dark:text-gray-400 m-0">Provide if you'd like a response</p>
 					</div>
 
 					<!-- Rating (optional) -->
-					<div class="form-group">
-						<label class="form-label">
-							<span class="label-text">How helpful was this page?</span>
+					<div class="flex flex-col gap-2">
+						<label class="font-semibold text-gray-900 dark:text-white text-base">
+							<span class="mr-1">How helpful was this page?</span>
 						</label>
-						<div class="rating-group">
-							<input type="radio" id="rating1" name="rating" value="1" />
-							<label for="rating1" class="rating-label">⭐ 1 - Not helpful</label>
+						<div class="flex flex-col gap-2">
+							<input type="radio" id="rating1" name="rating" value="1" class="absolute opacity-0" />
+							<label for="rating1" class="p-3 px-4 border-2 border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer transition-all font-medium hover:border-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/20 peer-checked:border-primary-600 peer-checked:bg-primary-100 dark:peer-checked:bg-primary-900/40 peer-checked:text-primary-900 dark:peer-checked:text-primary-100">⭐ 1 - Not helpful</label>
 
-							<input type="radio" id="rating2" name="rating" value="2" />
-							<label for="rating2" class="rating-label">⭐⭐ 2</label>
+							<input type="radio" id="rating2" name="rating" value="2" class="absolute opacity-0" />
+							<label for="rating2" class="p-3 px-4 border-2 border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer transition-all font-medium hover:border-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/20">⭐⭐ 2</label>
 
-							<input type="radio" id="rating3" name="rating" value="3" />
-							<label for="rating3" class="rating-label">⭐⭐⭐ 3</label>
+							<input type="radio" id="rating3" name="rating" value="3" class="absolute opacity-0" />
+							<label for="rating3" class="p-3 px-4 border-2 border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer transition-all font-medium hover:border-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/20">⭐⭐⭐ 3</label>
 
-							<input type="radio" id="rating4" name="rating" value="4" />
-							<label for="rating4" class="rating-label">⭐⭐⭐⭐ 4</label>
+							<input for="rating4" id="rating4" name="rating" value="4" class="absolute opacity-0" />
+							<label for="rating4" class="p-3 px-4 border-2 border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer transition-all font-medium hover:border-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/20">⭐⭐⭐⭐ 4</label>
 
-							<input type="radio" id="rating5" name="rating" value="5" />
-							<label for="rating5" class="rating-label">⭐⭐⭐⭐⭐ 5 - Very helpful</label>
+							<input type="radio" id="rating5" name="rating" value="5" class="absolute opacity-0" />
+							<label for="rating5" class="p-3 px-4 border-2 border-gray-300 dark:border-gray-600 rounded-lg cursor-pointer transition-all font-medium hover:border-primary-500 hover:bg-primary-50 dark:hover:bg-primary-900/20">⭐⭐⭐⭐⭐ 5 - Very helpful</label>
 						</div>
 					</div>
 
 					<!-- Submit Button -->
-					<div class="form-actions">
-						<button type="submit" class="btn-primary" id="submitBtn">
+					<div class="flex gap-3 mt-4">
+						<button type="submit" class="flex-1 p-3 px-6 border-none rounded-lg font-semibold text-base cursor-pointer transition-all bg-primary-600 hover:bg-primary-700 text-white disabled:opacity-60 disabled:cursor-not-allowed hover:enabled:-translate-y-px hover:enabled:shadow-lg" id="submitBtn">
 							<span>Submit Feedback</span>
 						</button>
-						<button type="reset" class="btn-secondary">
+						<button type="reset" class="p-3 px-6 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 border-2 border-gray-300 dark:border-gray-600 rounded-lg font-semibold text-base cursor-pointer transition-all hover:bg-gray-50 dark:hover:bg-gray-600 hover:border-gray-400 dark:hover:border-gray-500">
 							Clear Form
 						</button>
 					</div>
 
 					<!-- Form Messages -->
-					<div id="formMessage" class="form-message" style="display: none;"></div>
+					<div id="formMessage" class="hidden p-4 rounded-lg mt-4 font-medium"></div>
 				</form>
 			</div>
 
-			<aside class="info-section">
-				<div class="info-card">
-					<h2>💡 Tips for Good Feedback</h2>
-					<ul>
-						<li><strong>Be specific:</strong> Include details about what you experienced</li>
-						<li><strong>Be constructive:</strong> Suggest improvements when possible</li>
-						<li><strong>Include context:</strong> What were you trying to accomplish?</li>
-						<li><strong>Report bugs clearly:</strong> Steps to reproduce, expected vs. actual results</li>
+			<aside class="flex flex-col gap-6">
+				<div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm">
+					<h2 class="text-xl font-bold text-gray-900 dark:text-white m-0 mb-4">💡 Tips for Good Feedback</h2>
+					<ul class="m-0 pl-6">
+						<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed"><strong>Be specific:</strong> Include details about what you experienced</li>
+						<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed"><strong>Be constructive:</strong> Suggest improvements when possible</li>
+						<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed"><strong>Include context:</strong> What were you trying to accomplish?</li>
+						<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed"><strong>Report bugs clearly:</strong> Steps to reproduce, expected vs. actual results</li>
 					</ul>
 				</div>
 
-				<div class="info-card">
-					<h2>📬 What Happens Next?</h2>
-					<ol>
-						<li>We review every submission within 48 hours</li>
-						<li>Bug reports are prioritized for fixes</li>
-						<li>Feature requests are evaluated for implementation</li>
-						<li>If you provided email, we may reach out for clarification</li>
+				<div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm">
+					<h2 class="text-xl font-bold text-gray-900 dark:text-white m-0 mb-4">📬 What Happens Next?</h2>
+					<ol class="m-0 pl-6">
+						<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">We review every submission within 48 hours</li>
+						<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Bug reports are prioritized for fixes</li>
+						<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Feature requests are evaluated for implementation</li>
+						<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">If you provided email, we may reach out for clarification</li>
 					</ol>
 				</div>
 
-				<div class="info-card">
-					<h2>🚨 Urgent Issues?</h2>
-					<p>
+				<div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm">
+					<h2 class="text-xl font-bold text-gray-900 dark:text-white m-0 mb-4">🚨 Urgent Issues?</h2>
+					<p class="m-0 mb-3 text-gray-700 dark:text-gray-300 leading-relaxed">
 						For technical problems preventing you from using filtering, see our
-						<a href="/troubleshooting">troubleshooting guides</a>.
+						<a href="/troubleshooting" class="text-primary-600 dark:text-primary-400 no-underline font-medium hover:underline">troubleshooting guides</a>.
 					</p>
-					<p>
+					<p class="m-0 mb-3 text-gray-700 dark:text-gray-300 leading-relaxed">
 						For crisis situations, visit our
-						<a href="/resources/emergency">emergency resources</a>.
+						<a href="/resources/emergency" class="text-primary-600 dark:text-primary-400 no-underline font-medium hover:underline">emergency resources</a>.
 					</p>
 				</div>
 
-				<div class="info-card">
-					<h2>📊 Recent Improvements</h2>
-					<p>Thanks to user feedback, we recently:</p>
-					<ul>
-						<li>Added 5 new troubleshooting guides</li>
-						<li>Improved search functionality</li>
-						<li>Created printable reference cards</li>
-						<li>Expanded FAQ with 36+ questions</li>
+				<div class="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-6 shadow-sm">
+					<h2 class="text-xl font-bold text-gray-900 dark:text-white m-0 mb-4">📊 Recent Improvements</h2>
+					<p class="m-0 mb-3 text-gray-700 dark:text-gray-300 leading-relaxed">Thanks to user feedback, we recently:</p>
+					<ul class="m-0 pl-6">
+						<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Added 5 new troubleshooting guides</li>
+						<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Improved search functionality</li>
+						<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Created printable reference cards</li>
+						<li class="mb-2 text-gray-700 dark:text-gray-300 leading-relaxed">Expanded FAQ with 36+ questions</li>
 					</ul>
-					<p><a href="/changelog">View full changelog →</a></p>
+					<p class="m-0 mb-0 text-gray-700 dark:text-gray-300 leading-relaxed"><a href="/changelog" class="text-primary-600 dark:text-primary-400 no-underline font-medium hover:underline">View full changelog →</a></p>
 				</div>
 			</aside>
 		</div>
 	</div>
 </Layout>
-
-<style>
-	.feedback-container {
-		max-width: 1400px;
-		margin: 0 auto;
-		padding: var(--space-8) var(--space-4);
-	}
-
-	.feedback-header {
-		text-align: center;
-		margin-bottom: var(--space-10);
-	}
-
-	.feedback-header h1 {
-		font-size: var(--text-4xl);
-		font-weight: 800;
-		color: var(--color-gray-900);
-		margin-bottom: var(--space-3);
-	}
-
-	.subtitle {
-		font-size: var(--text-xl);
-		color: var(--color-gray-600);
-		line-height: var(--leading-relaxed);
-	}
-
-	.feedback-layout {
-		display: grid;
-		grid-template-columns: 2fr 1fr;
-		gap: var(--space-10);
-		align-items: start;
-	}
-
-	/* Form Section */
-	.form-section {
-		background: white;
-		border: 2px solid var(--color-gray-200);
-		border-radius: var(--radius-xl);
-		padding: var(--space-8);
-		box-shadow: var(--shadow-lg);
-	}
-
-	.feedback-form {
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-6);
-	}
-
-	.form-group {
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-2);
-	}
-
-	.form-label {
-		font-weight: 600;
-		color: var(--color-gray-900);
-		font-size: var(--text-base);
-	}
-
-	.label-text {
-		margin-right: var(--space-1);
-	}
-
-	.label-required {
-		color: var(--color-error);
-	}
-
-	.form-input,
-	.form-select,
-	.form-textarea {
-		padding: var(--space-3);
-		border: 2px solid var(--color-gray-300);
-		border-radius: var(--radius-lg);
-		font-size: var(--text-base);
-		font-family: inherit;
-		transition: all var(--transition-base);
-	}
-
-	.form-input:focus,
-	.form-select:focus,
-	.form-textarea:focus {
-		outline: none;
-		border-color: var(--color-primary-500);
-		box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
-	}
-
-	.form-textarea {
-		resize: vertical;
-		min-height: 150px;
-		line-height: var(--leading-relaxed);
-	}
-
-	.form-hint {
-		font-size: var(--text-sm);
-		color: var(--color-gray-500);
-		margin: 0;
-	}
-
-	.rating-group {
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-2);
-	}
-
-	.rating-group input[type="radio"] {
-		position: absolute;
-		opacity: 0;
-	}
-
-	.rating-label {
-		padding: var(--space-3) var(--space-4);
-		border: 2px solid var(--color-gray-300);
-		border-radius: var(--radius-lg);
-		cursor: pointer;
-		transition: all var(--transition-base);
-		font-weight: 500;
-	}
-
-	.rating-label:hover {
-		border-color: var(--color-primary-500);
-		background-color: var(--color-primary-50);
-	}
-
-	.rating-group input[type="radio"]:checked + .rating-label {
-		border-color: var(--color-primary-600);
-		background-color: var(--color-primary-100);
-		color: var(--color-primary-900);
-	}
-
-	.form-actions {
-		display: flex;
-		gap: var(--space-3);
-		margin-top: var(--space-4);
-	}
-
-	.btn-primary,
-	.btn-secondary {
-		padding: var(--space-3) var(--space-6);
-		border: none;
-		border-radius: var(--radius-lg);
-		font-weight: 600;
-		font-size: var(--text-base);
-		cursor: pointer;
-		transition: all var(--transition-base);
-	}
-
-	.btn-primary {
-		background-color: var(--color-primary-600);
-		color: white;
-		flex: 1;
-	}
-
-	.btn-primary:hover:not(:disabled) {
-		background-color: var(--color-primary-700);
-		transform: translateY(-1px);
-		box-shadow: var(--shadow-lg);
-	}
-
-	.btn-primary:disabled {
-		opacity: 0.6;
-		cursor: not-allowed;
-	}
-
-	.btn-secondary {
-		background-color: white;
-		color: var(--color-gray-700);
-		border: 2px solid var(--color-gray-300);
-	}
-
-	.btn-secondary:hover {
-		background-color: var(--color-gray-50);
-		border-color: var(--color-gray-400);
-	}
-
-	.form-message {
-		padding: var(--space-4);
-		border-radius: var(--radius-lg);
-		margin-top: var(--space-4);
-		font-weight: 500;
-	}
-
-	.form-message.success {
-		background-color: var(--color-secondary-50);
-		border: 2px solid var(--color-secondary-500);
-		color: var(--color-secondary-900);
-	}
-
-	.form-message.error {
-		background-color: #fef2f2;
-		border: 2px solid var(--color-error);
-		color: #7f1d1d;
-	}
-
-	/* Info Section */
-	.info-section {
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-6);
-	}
-
-	.info-card {
-		background: white;
-		border: 1px solid var(--color-gray-200);
-		border-radius: var(--radius-xl);
-		padding: var(--space-6);
-		box-shadow: var(--shadow-sm);
-	}
-
-	.info-card h2 {
-		font-size: var(--text-xl);
-		font-weight: 700;
-		color: var(--color-gray-900);
-		margin: 0 0 var(--space-4) 0;
-	}
-
-	.info-card ul,
-	.info-card ol {
-		margin: 0;
-		padding-left: var(--space-6);
-	}
-
-	.info-card li {
-		margin-bottom: var(--space-2);
-		color: var(--color-gray-700);
-		line-height: var(--leading-relaxed);
-	}
-
-	.info-card p {
-		margin: 0 0 var(--space-3) 0;
-		color: var(--color-gray-700);
-		line-height: var(--leading-relaxed);
-	}
-
-	.info-card p:last-child {
-		margin-bottom: 0;
-	}
-
-	.info-card a {
-		color: var(--color-primary-600);
-		text-decoration: none;
-		font-weight: 500;
-	}
-
-	.info-card a:hover {
-		text-decoration: underline;
-	}
-
-	@media (max-width: 1024px) {
-		.feedback-layout {
-			grid-template-columns: 1fr;
-		}
-
-		.info-section {
-			order: -1;
-		}
-	}
-
-	@media (max-width: 768px) {
-		.feedback-header h1 {
-			font-size: var(--text-3xl);
-		}
-
-		.form-section {
-			padding: var(--space-6);
-		}
-
-		.form-actions {
-			flex-direction: column;
-		}
-
-		.btn-primary,
-		.btn-secondary {
-			width: 100%;
-		}
-	}
-</style>
 
 <script>
 	// Auto-populate page URL from referrer or current page
@@ -517,7 +240,7 @@ const currentUrl = Astro.url.pathname;
 
 				// Show success message
 				formMessage.style.display = 'block';
-				formMessage.className = 'form-message success';
+				formMessage.className = 'block p-4 rounded-lg mt-4 font-medium bg-secondary-50 border-2 border-secondary-500 text-secondary-900';
 				formMessage.textContent = '✓ Thank you! Your feedback has been submitted successfully.';
 
 				// Reset form
@@ -532,7 +255,7 @@ const currentUrl = Astro.url.pathname;
 			} catch (error) {
 				// Show error message
 				formMessage.style.display = 'block';
-				formMessage.className = 'form-message error';
+				formMessage.className = 'block p-4 rounded-lg mt-4 font-medium bg-red-50 border-2 border-red-500 text-red-900';
 				formMessage.textContent = '✗ Sorry, there was an error submitting your feedback. Please try again.';
 			} finally {
 				// Re-enable submit button

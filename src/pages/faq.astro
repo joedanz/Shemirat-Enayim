@@ -12,13 +12,13 @@ import Button from '../components/Button.astro';
 >
 	<Breadcrumb />
 
-	<div class="faq-container">
-		<header class="faq-header">
-			<h1>Frequently Asked Questions</h1>
-			<p class="subtitle">
+	<div class="max-w-4xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
+		<header class="text-center mb-8">
+			<h1 class="text-4xl font-extrabold text-gray-900 dark:text-white mb-3 leading-tight">Frequently Asked Questions</h1>
+			<p class="text-xl text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
 				Find answers to common questions about internet filtering and online safety. Can't find what you're looking for?
 			</p>
-			<div class="header-actions">
+			<div class="flex gap-3 justify-center flex-wrap">
 				<Button href="/contact" variant="primary">Contact Us</Button>
 				<Button href="/troubleshooting" variant="secondary">Troubleshooting</Button>
 			</div>
@@ -28,11 +28,11 @@ import Button from '../components/Button.astro';
 			<strong>Quick Search:</strong> Use Ctrl+F (Cmd+F on Mac) to search for specific keywords on this page.
 		</Alert>
 
-		<div class="faq-sections">
+		<div class="mt-8">
 			<!-- General Questions -->
-			<section class="faq-section">
-				<h2 class="section-title">General Questions</h2>
-				<div class="accordion-list">
+			<section class="mb-12">
+				<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b-4 border-primary-500">General Questions</h2>
+				<div class="flex flex-col gap-4">
 					<Accordion title="Is internet filtering really necessary?">
 						<p>
 							Yes, internet filtering is crucial for protecting families from harmful content. Studies show that 95% of children
@@ -160,9 +160,9 @@ import Button from '../components/Button.astro';
 			</section>
 
 			<!-- Technical Questions -->
-			<section class="faq-section">
-				<h2 class="section-title">Technical Questions</h2>
-				<div class="accordion-list">
+			<section class="mb-12">
+				<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b-4 border-primary-500">Technical Questions</h2>
+				<div class="flex flex-col gap-4">
 					<Accordion title="What's the difference between DNS filtering and software filtering?">
 						<p>
 							<strong>DNS filtering</strong> blocks websites by preventing your device from finding their internet address.
@@ -350,9 +350,9 @@ import Button from '../components/Button.astro';
 			</section>
 
 			<!-- Parent-Specific Questions -->
-			<section class="faq-section">
-				<h2 class="section-title">Questions for Parents</h2>
-				<div class="accordion-list">
+			<section class="mb-12">
+				<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b-4 border-primary-500">Questions for Parents</h2>
+				<div class="flex flex-col gap-4">
 					<Accordion title="Should I give my child a smartphone?">
 						<p>
 							This depends on maturity level, not just age. Consider these factors:
@@ -540,9 +540,9 @@ import Button from '../components/Button.astro';
 			</section>
 
 			<!-- Questions for Leaders -->
-			<section class="faq-section">
-				<h2 class="section-title">Questions for Religious Leaders &amp; Institutions</h2>
-				<div class="accordion-list">
+			<section class="mb-12">
+				<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 pb-3 border-b-4 border-primary-500">Questions for Religious Leaders &amp; Institutions</h2>
+				<div class="flex flex-col gap-4">
 					<Accordion title="What's our legal liability for providing filtered internet?">
 						<p>
 							Consult legal counsel for your jurisdiction, but generally:
@@ -680,12 +680,12 @@ import Button from '../components/Button.astro';
 		</div>
 
 		<!-- Still Need Help Section -->
-		<section class="help-section">
-			<h2>Still Have Questions?</h2>
-			<p>
+		<section class="text-center p-10 px-6 bg-gradient-to-br from-primary-50 to-secondary-50 rounded-xl mt-12">
+			<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">Still Have Questions?</h2>
+			<p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
 				If you didn't find the answer you were looking for, we're here to help.
 			</p>
-			<div class="help-actions">
+			<div class="flex gap-3 justify-center flex-wrap">
 				<Button href="/contact" variant="primary" size="large">Contact Us</Button>
 				<Button href="/troubleshooting" variant="secondary" size="large">Troubleshooting Guides</Button>
 				<Button href="/resources" variant="outline" size="large">Browse Resources</Button>
@@ -693,107 +693,3 @@ import Button from '../components/Button.astro';
 		</section>
 	</div>
 </Layout>
-
-<style>
-	.faq-container {
-		max-width: 900px;
-		margin: 0 auto;
-		padding: var(--space-6) var(--space-4);
-	}
-
-	.faq-header {
-		text-align: center;
-		margin-bottom: var(--space-8);
-	}
-
-	.faq-header h1 {
-		font-size: var(--text-4xl);
-		font-weight: 800;
-		color: var(--color-gray-900);
-		margin-bottom: var(--space-3);
-		line-height: var(--leading-tight);
-	}
-
-	.subtitle {
-		font-size: var(--text-xl);
-		color: var(--color-gray-600);
-		margin-bottom: var(--space-6);
-		line-height: var(--leading-relaxed);
-	}
-
-	.header-actions {
-		display: flex;
-		gap: var(--space-3);
-		justify-content: center;
-		flex-wrap: wrap;
-	}
-
-	.faq-sections {
-		margin-top: var(--space-8);
-	}
-
-	.faq-section {
-		margin-bottom: var(--space-12);
-	}
-
-	.section-title {
-		font-size: var(--text-2xl);
-		font-weight: 700;
-		color: var(--color-gray-900);
-		margin-bottom: var(--space-6);
-		padding-bottom: var(--space-3);
-		border-bottom: 3px solid var(--color-primary-500);
-	}
-
-	.accordion-list {
-		display: flex;
-		flex-direction: column;
-		gap: var(--space-4);
-	}
-
-	.help-section {
-		text-align: center;
-		padding: var(--space-10) var(--space-6);
-		background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-secondary-50) 100%);
-		border-radius: var(--radius-xl);
-		margin-top: var(--space-12);
-	}
-
-	.help-section h2 {
-		font-size: var(--text-3xl);
-		font-weight: 700;
-		color: var(--color-gray-900);
-		margin-bottom: var(--space-3);
-	}
-
-	.help-section p {
-		font-size: var(--text-lg);
-		color: var(--color-gray-600);
-		margin-bottom: var(--space-6);
-	}
-
-	.help-actions {
-		display: flex;
-		gap: var(--space-3);
-		justify-content: center;
-		flex-wrap: wrap;
-	}
-
-	@media (max-width: 768px) {
-		.faq-header h1 {
-			font-size: var(--text-3xl);
-		}
-
-		.subtitle {
-			font-size: var(--text-lg);
-		}
-
-		.section-title {
-			font-size: var(--text-xl);
-		}
-
-		.help-section h2 {
-			font-size: var(--text-2xl);
-		}
-	}
-</style>
