@@ -17,7 +17,7 @@ const networkMethods = [
     difficulty: 'Beginner',
     time: '15-30 min',
     href: '/guides/dns-filtering',
-    icon: 'tabler:dns',
+    icon: 'tabler:network',
   },
   {
     title: 'Router Configuration',
@@ -256,16 +256,17 @@ const softwareMethods = [
   </Features>
 
   <!-- Recommended Combinations ******* -->
-  <Content>
-    <Fragment slot="content">
+  <section class="px-4 py-16 sm:px-6 mx-auto lg:px-8 lg:py-20 max-w-7xl">
+    <div class="mb-12">
       <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-4 text-center">
         Recommended Combinations
       </h2>
-      <p class="text-xl text-center text-gray-700 dark:text-gray-300 mb-12">
+      <p class="text-xl text-center text-gray-700 dark:text-gray-300">
         For maximum effectiveness, combine multiple methods. Here are proven approaches:
       </p>
+    </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Basic Family Protection -->
         <div class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 border-2 border-blue-200 dark:border-blue-800 rounded-xl p-6">
           <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
@@ -309,13 +310,8 @@ const softwareMethods = [
             <strong>Cost:</strong> $10-15/month | <strong>Time:</strong> 1-2 hours setup
           </p>
         </div>
-      </div>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
+    </div>
+  </section>
 
   <!-- Comparison Table *************** -->
   <Content>
