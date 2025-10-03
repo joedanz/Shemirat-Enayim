@@ -1,0 +1,306 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Features from '~/components/widgets/Features.astro';
+import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Resources for Parents — Shemirat Enayim',
+  description: 'Comprehensive internet safety guidance for parents to protect their children online with age-appropriate filters and family strategies.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+  <Hero>
+    <Fragment slot="title">
+      Resources for <span class="text-accent dark:text-white">Parents</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Comprehensive internet safety guidance to protect your children online with age-appropriate filters and family strategies.
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+  <Note>
+    <Fragment slot="title">
+      New to internet safety?
+    </Fragment>
+    Start with our <a href="/guides/age-appropriate-internet" class="text-blue-600 hover:underline">Age-Appropriate Internet Guide</a> for a step-by-step introduction.
+  </Note>
+
+  <!-- Content Widget **************** -->
+  <Content>
+    <Fragment slot="content">
+      <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-4">
+        Why Internet Safety Matters for Families
+      </h2>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+        In today's digital world, children have unprecedented access to information and communication.
+        While technology offers incredible learning opportunities, it also presents risks that parents
+        need to understand and address.
+      </p>
+      <p class="text-lg text-gray-700 dark:text-gray-300">
+        Effective internet safety isn't just about blocking content — it's about creating a healthy
+        digital environment that combines technical protections with open communication, education,
+        and age-appropriate boundaries.
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+  <Steps
+    title="Getting Started: Your First Steps"
+    subtitle="Protecting your family online can feel overwhelming, but you don't have to do everything at once. Start with these foundational steps:"
+    items={[
+      {
+        title: 'Assess your current situation',
+        description:
+          'Make a list of all devices your children use — phones, tablets, computers, gaming consoles, smart TVs.',
+        icon: 'tabler:list-check',
+      },
+      {
+        title: 'Choose your protection strategy',
+        description:
+          'Decide between network-level filtering (protects all devices), device-level controls (protects specific devices), or a combination of both.',
+        icon: 'tabler:shield',
+      },
+      {
+        title: 'Start with the easiest wins',
+        description:
+          'Enable built-in parental controls on devices and set up basic DNS filtering on your home network.',
+        icon: 'tabler:bolt',
+      },
+      {
+        title: 'Have age-appropriate conversations',
+        description:
+          'Talk with your children about why these protections exist and what healthy internet use looks like.',
+        icon: 'tabler:messages',
+      },
+      {
+        title: 'Review and adjust regularly',
+        description:
+          'As your children grow and technology changes, revisit your approach every few months.',
+        icon: 'tabler:refresh',
+      },
+    ]}
+  />
+
+  <!-- Features Widget *************** -->
+  <Features
+    title="Protection by Age Group"
+    subtitle="Different ages require different approaches. Here's a general framework:"
+    items={[
+      {
+        title: 'Young Children (Ages 5-8)',
+        description: `
+          <ul class="text-left space-y-1">
+            <li>• Heavily restricted, curated content only</li>
+            <li>• Direct supervision during all screen time</li>
+            <li>• Kid-specific apps and platforms (YouTube Kids, PBS Kids)</li>
+            <li>• No social media or messaging</li>
+            <li>• Time limits: 1-2 hours per day maximum</li>
+          </ul>
+        `,
+        icon: 'tabler:baby-carriage',
+      },
+      {
+        title: 'Preteens (Ages 9-12)',
+        description: `
+          <ul class="text-left space-y-1">
+            <li>• Filtered content with some educational freedom</li>
+            <li>• Supervised social media (if any) with parental oversight</li>
+            <li>• Check-ins before and after screen time</li>
+            <li>• Gaming with age-appropriate ratings</li>
+            <li>• Time limits: 2-3 hours per day with breaks</li>
+          </ul>
+        `,
+        icon: 'tabler:user',
+      },
+      {
+        title: 'Teenagers (Ages 13-17)',
+        description: `
+          <ul class="text-left space-y-1">
+            <li>• Filtered content with increased autonomy</li>
+            <li>• Social media with clear expectations and boundaries</li>
+            <li>• Open conversations about online risks and experiences</li>
+            <li>• Accountability rather than just restriction</li>
+            <li>• Flexible time limits based on responsibility</li>
+          </ul>
+        `,
+        icon: 'tabler:users',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features>
+
+  <!-- Features Widget *************** -->
+  <Features
+    title="Types of Protection"
+    subtitle="Modern internet safety requires a layered approach. Here are the main categories:"
+    items={[
+      {
+        title: 'Network-Level Protection',
+        description:
+          'DNS filtering and router settings that protect all devices connected to your home WiFi.',
+        icon: 'tabler:network',
+        callToAction: {
+          text: 'Learn More',
+          href: '/methods#network',
+        },
+      },
+      {
+        title: 'Device Controls',
+        description:
+          'Built-in parental controls on phones, tablets, computers, and gaming consoles.',
+        icon: 'tabler:device-tablet',
+        callToAction: {
+          text: 'View Guides',
+          href: '/methods#devices',
+        },
+      },
+      {
+        title: 'Software Solutions',
+        description:
+          'Third-party filtering software and monitoring applications for additional protection.',
+        icon: 'tabler:apps',
+        callToAction: {
+          text: 'Explore Software',
+          href: '/methods#software',
+        },
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+  <Content>
+    <Fragment slot="content">
+      <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-6">
+        Common Challenges and Solutions
+      </h2>
+
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-2">Challenge: Kids bypassing filters</h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            <strong>Solution:</strong> Use multiple layers of protection (network + device + app level).
+            Combine technical controls with conversations about why protections exist. Make bypassing
+            filters a serious family rule with clear consequences.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-2">Challenge: Age-appropriate content varies by child</h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            <strong>Solution:</strong> Create separate user profiles or accounts for each child with
+            age-appropriate settings. Many platforms (Windows, iOS, Android) support multiple child accounts
+            with different restriction levels.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-2">Challenge: Balancing protection with trust</h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            <strong>Solution:</strong> As children mature, gradually shift from restriction to accountability.
+            Use monitoring and accountability software that creates transparency rather than just blocking.
+            Have regular conversations about their online experiences.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-2">Challenge: Different devices need different approaches</h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            <strong>Solution:</strong> Start with network-level DNS filtering for baseline protection across
+            all devices. Then add device-specific controls for phones and tablets that leave the house.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-2">Challenge: Keeping up with new apps and platforms</h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            <strong>Solution:</strong> Establish a family rule that new apps must be approved before installation.
+            Use device management features to control app downloads. Stay informed through resources like
+            Common Sense Media.
+          </p>
+        </div>
+      </div>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+  <Content>
+    <Fragment slot="content">
+      <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-6">
+        Recommended Solutions for Parents
+      </h2>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+        Based on ease of use, effectiveness, and family-friendliness, here are our top recommendations:
+      </p>
+
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-3">Best for Beginners</h3>
+          <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+            <li><strong>DNS Filtering:</strong> CleanBrowsing or OpenDNS Family Shield (free, easy setup)</li>
+            <li><strong>iPhone/iPad:</strong> Built-in Screen Time controls</li>
+            <li><strong>Android:</strong> Google Family Link</li>
+            <li><strong>Windows:</strong> Microsoft Family Safety</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-3">Best Comprehensive Solution</h3>
+          <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+            <li><strong>Network + Devices:</strong> Circle Home Plus or Bark</li>
+            <li>Provides filtering, time limits, and monitoring across all devices</li>
+            <li>Monthly subscription required but covers the whole family</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-3">Best for Maximum Protection</h3>
+          <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+            <li>Combine DNS filtering (network level) + built-in device controls + monitoring software</li>
+            <li>Creates multiple layers that work together</li>
+            <li>More complex to set up but most effective</li>
+          </ul>
+        </div>
+      </div>
+    </Fragment>
+  </Content>
+
+  <!-- CallToAction Widget *********** -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'View All Protection Methods',
+        href: '/methods',
+      },
+      {
+        variant: 'secondary',
+        text: 'Browse Setup Guides',
+        href: '/resources',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Ready to implement protection?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Browse our step-by-step guides for your specific devices and needs.
+    </Fragment>
+  </CallToAction>
+</Layout>
