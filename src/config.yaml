@@ -18,7 +18,7 @@ metadata:
   openGraph:
     site_name: Shemirat Einayim
     images:
-      - url: '/og-image.svg'
+      - url: '~/assets/images/og-image.svg'
         width: 1200
         height: 630
     type: website
