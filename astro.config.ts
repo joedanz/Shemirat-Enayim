@@ -95,6 +95,7 @@ export default defineConfig({
       cssMinify: true,
       minify: 'esbuild',
       rollupOptions: {
+        external: ['/pagefind/pagefind.js'],
         output: {
           manualChunks: {
             search: ['fuse.js'],
