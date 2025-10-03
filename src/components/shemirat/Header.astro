@@ -1,0 +1,296 @@
+---
+/**
+ * Header Component - Shemirat Enayim
+ * Tailwind CSS version with sticky navigation and dropdowns
+ * Features: Mobile menu, desktop dropdowns, theme toggle, search
+ */
+
+import ThemeToggle from './ThemeToggle.astro';
+import SearchBar from './SearchBar.astro';
+
+interface Props {
+	currentPath?: string;
+}
+
+const { currentPath = '/' } = Astro.props;
+
+interface NavItem {
+	label: string;
+	href: string;
+	submenu?: { label: string; href: string }[];
+}
+
+const navItems: NavItem[] = [
+	{ label: 'Parents', href: '/parents' },
+	{ label: 'Organizations', href: '/leaders' },
+	{ label: 'Individuals', href: '/individuals' },
+	{
+		label: 'Methods',
+		href: '/methods',
+		submenu: [
+			{ label: 'Network-Level', href: '/methods#network' },
+			{ label: 'Device Controls', href: '/methods#devices' },
+			{ label: 'Software Solutions', href: '/methods#software' }
+		]
+	},
+	{
+		label: 'Resources',
+		href: '/resources',
+		submenu: [
+			{ label: 'Setup Guides', href: '/resources#guides' },
+			{ label: 'Recommended Tools', href: '/resources#tools' },
+			{ label: 'Glossary', href: '/resources#glossary' }
+		]
+	}
+];
+
+function isActive(href: string) {
+	return currentPath === href || currentPath.startsWith(href + '/');
+}
+---
+
+<header
+	class="sticky top-0 z-sticky bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-b border-gray-200/80 dark:border-gray-700/80 shadow-sm transition-all"
+>
+	<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="flex items-center justify-between py-5 gap-6">
+			<!-- Logo -->
+			<a
+				href="/"
+				class="flex flex-col no-underline text-gray-900 dark:text-gray-50 transition-all hover:-translate-y-0.5 hover:opacity-90 hover:no-underline"
+			>
+				<span
+					class="text-xl font-extrabold leading-tight bg-gradient-to-br from-brand-600 to-brand-800 dark:from-brand-400 dark:to-brand-600 bg-clip-text text-transparent -tracking-[0.01em]"
+				>
+					Shemirat Enayim
+				</span>
+				<span class="text-xs text-gray-600 dark:text-gray-400 italic mt-0.5">
+					Protection for the Eyes
+				</span>
+			</a>
+
+			<!-- Desktop Navigation -->
+			<nav class="hidden md:block flex-1" aria-label="Main navigation">
+				<ul class="flex list-none p-0 m-0 gap-2 justify-end">
+					{navItems.map((item) => (
+						<li class:list={['m-0 relative', item.submenu && 'has-dropdown']}>
+							<a
+								href={item.href}
+								class:list={[
+									'flex items-center gap-1 px-4 py-2 text-base font-medium no-underline rounded-md transition-all',
+									isActive(item.href)
+										? 'text-brand-600 bg-brand-100 dark:text-brand-400 dark:bg-brand-950 font-semibold'
+										: 'text-gray-700 dark:text-gray-300 hover:text-brand-600 hover:bg-brand-50 dark:hover:text-brand-400 dark:hover:bg-brand-950/50 hover:no-underline',
+								]}
+								aria-current={isActive(item.href) ? 'page' : undefined}
+							>
+								{item.label}
+								{item.submenu && (
+									<svg class="chevron w-4 h-4 transition-transform" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+										<polyline points="4 6 8 10 12 6"></polyline>
+									</svg>
+								)}
+							</a>
+							{item.submenu && (
+								<ul class="dropdown hidden absolute top-full left-0 min-w-[200px] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-md shadow-lg list-none p-2 mt-1 z-dropdown">
+									{item.submenu.map((subitem) => (
+										<li class="m-0">
+											<a
+												href={subitem.href}
+												class="block px-3 py-2 text-sm text-gray-700 dark:text-gray-300 no-underline rounded transition-all hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-brand-950 dark:hover:text-brand-400 hover:no-underline"
+											>
+												{subitem.label}
+											</a>
+										</li>
+									))}
+								</ul>
+							)}
+						</li>
+					))}
+				</ul>
+			</nav>
+
+			<!-- Header Actions -->
+			<div class="flex items-center gap-3">
+				<ThemeToggle class="hidden md:flex" />
+				<SearchBar class="hidden md:block" />
+			</div>
+
+			<!-- Mobile Menu Toggle -->
+			<button
+				class="mobile-menu-toggle flex md:hidden items-center justify-center p-2 bg-transparent border-0 text-gray-700 dark:text-gray-300 cursor-pointer rounded-md transition-all hover:bg-gray-100 hover:text-brand-600 dark:hover:bg-gray-800 dark:hover:text-brand-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500"
+				aria-label="Toggle menu"
+				aria-expanded="false"
+			>
+				<svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<line x1="3" y1="12" x2="21" y2="12"></line>
+					<line x1="3" y1="6" x2="21" y2="6"></line>
+					<line x1="3" y1="18" x2="21" y2="18"></line>
+				</svg>
+			</button>
+		</div>
+	</div>
+
+	<!-- Mobile Navigation -->
+	<nav class="mobile-nav block md:hidden border-t border-gray-200 dark:border-gray-700 py-4" aria-label="Mobile navigation" hidden>
+		<ul class="list-none p-0 m-0 flex flex-col gap-1 px-4">
+			{navItems.map((item) => (
+				<li class:list={['m-0', item.submenu && 'has-dropdown relative']}>
+					<a
+						href={item.href}
+						class:list={[
+							'block px-4 py-3 text-lg no-underline rounded-md transition-all',
+							isActive(item.href)
+								? 'text-brand-600 bg-brand-100 dark:text-brand-400 dark:bg-brand-950 font-semibold'
+								: 'text-gray-700 dark:text-gray-300 hover:text-brand-600 hover:bg-brand-50 dark:hover:text-brand-400 dark:hover:bg-brand-950/50 hover:no-underline',
+						]}
+						aria-current={isActive(item.href) ? 'page' : undefined}
+					>
+						{item.label}
+					</a>
+					{item.submenu && (
+						<>
+							<button
+								class="mobile-dropdown-toggle absolute right-4 top-1/2 -translate-y-1/2 bg-transparent border-0 p-2 text-gray-600 dark:text-gray-400 cursor-pointer rounded transition-all hover:bg-gray-100 hover:text-brand-600 dark:hover:bg-gray-800 dark:hover:text-brand-400"
+								aria-label={`Toggle ${item.label} submenu`}
+								aria-expanded="false"
+							>
+								<svg class="w-5 h-5 transition-transform" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2">
+									<polyline points="6 8 10 12 14 8"></polyline>
+								</svg>
+							</button>
+							<ul class="mobile-dropdown hidden list-none pl-8 pr-0 py-2 m-2 bg-gray-50 dark:bg-gray-700 rounded-md">
+								{item.submenu.map((subitem) => (
+									<li class="m-0">
+										<a
+											href={subitem.href}
+											class="block px-4 py-3 text-base text-gray-700 dark:text-gray-300 no-underline transition-all hover:bg-brand-50 hover:text-brand-600 dark:hover:bg-brand-950 dark:hover:text-brand-400 hover:no-underline"
+										>
+											{subitem.label}
+										</a>
+									</li>
+								))}
+							</ul>
+						</>
+					)}
+				</li>
+			))}
+		</ul>
+	</nav>
+</header>
+
+<style>
+	/* Dropdown animation */
+	.dropdown.show {
+		display: block;
+		animation: slideDown 0.2s ease forwards;
+	}
+
+	@keyframes slideDown {
+		from {
+			opacity: 0;
+			transform: translateY(-10px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	/* Mobile dropdown expanded state */
+	.mobile-dropdown:not([hidden]) {
+		display: block !important;
+	}
+
+	.mobile-dropdown-toggle[aria-expanded="true"] svg {
+		transform: rotate(180deg);
+	}
+
+	/* Gradient text fallback */
+	@supports (background-clip: text) or (-webkit-background-clip: text) {
+		.bg-clip-text {
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+		}
+	}
+</style>
+
+<script>
+	// Desktop dropdown functionality
+	function initDesktopDropdowns() {
+		const dropdownItems = document.querySelectorAll('.has-dropdown');
+
+		dropdownItems.forEach((item) => {
+			const link = item.querySelector('a');
+			const dropdown = item.querySelector('.dropdown');
+
+			if (!link || !dropdown || window.innerWidth < 768) return;
+
+			// Click to toggle
+			link.addEventListener('click', (e) => {
+				e.preventDefault();
+
+				// Close all other dropdowns
+				document.querySelectorAll('.dropdown.show').forEach((dd) => {
+					if (dd !== dropdown) {
+						dd.classList.remove('show');
+					}
+				});
+
+				// Toggle this dropdown
+				dropdown.classList.toggle('show');
+			});
+		});
+
+		// Close dropdowns when clicking outside
+		document.addEventListener('click', (e) => {
+			const target = e.target as HTMLElement;
+			if (!target.closest('.has-dropdown')) {
+				document.querySelectorAll('.dropdown.show').forEach((dd) => {
+					dd.classList.remove('show');
+				});
+			}
+		});
+	}
+
+	// Mobile menu functionality
+	function initMobileMenu() {
+		const toggleButton = document.querySelector('.mobile-menu-toggle');
+		const mobileNav = document.querySelector('.mobile-nav');
+
+		if (toggleButton && mobileNav) {
+			toggleButton.addEventListener('click', () => {
+				const isExpanded = toggleButton.getAttribute('aria-expanded') === 'true';
+				toggleButton.setAttribute('aria-expanded', String(!isExpanded));
+				mobileNav.hidden = isExpanded;
+			});
+		}
+
+		// Mobile dropdown toggles
+		const dropdownToggles = document.querySelectorAll('.mobile-dropdown-toggle');
+		dropdownToggles.forEach((toggle) => {
+			toggle.addEventListener('click', () => {
+				const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+				toggle.setAttribute('aria-expanded', String(!isExpanded));
+
+				const dropdown = toggle.nextElementSibling as HTMLElement;
+				if (dropdown && dropdown.classList.contains('mobile-dropdown')) {
+					dropdown.hidden = isExpanded;
+				}
+			});
+		});
+	}
+
+	// Initialize on page load
+	document.addEventListener('DOMContentLoaded', () => {
+		initDesktopDropdowns();
+		initMobileMenu();
+	});
+
+	// Re-initialize on navigation (for SPA-like behavior)
+	document.addEventListener('astro:page-load', () => {
+		initDesktopDropdowns();
+		initMobileMenu();
+	});
+</script>

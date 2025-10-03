@@ -1,0 +1,193 @@
+---
+/**
+ * NewsletterSignup Component - Shemirat Enayim
+ * Tailwind CSS version with multiple variants
+ * Features: Inline, card, footer variants with form handling
+ */
+
+interface Props {
+	variant?: 'inline' | 'card' | 'footer';
+	class?: string;
+}
+
+const { variant = 'inline', class: className = '' } = Astro.props;
+---
+
+<div
+	class:list={[
+		'w-full',
+		variant === 'inline' && [
+			'bg-gradient-to-br from-brand-50 to-green-50',
+			'p-8 rounded-2xl border-2 border-brand-200',
+		],
+		variant === 'card' && [
+			'bg-white dark:bg-gray-800',
+			'p-8 rounded-2xl border-2 border-gray-200 dark:border-gray-700',
+			'shadow-lg text-center',
+		],
+		variant === 'footer' && 'bg-transparent p-0',
+		className,
+	]}
+>
+	<div class:list={['mb-6', variant === 'footer' && 'mb-4']}>
+		{variant === 'card' && <div class="text-5xl mb-4">📬</div>}
+
+		<div>
+			<h3
+				class:list={[
+					'font-bold m-0 mb-2',
+					variant === 'footer'
+						? 'text-lg text-white'
+						: 'text-2xl text-gray-900 dark:text-gray-50',
+				]}
+			>
+				{variant === 'footer' ? 'Stay Updated' : 'Get Monthly Updates'}
+			</h3>
+			<p
+				class:list={[
+					'leading-relaxed m-0',
+					variant === 'footer'
+						? 'text-sm text-white/80'
+						: 'text-base text-gray-600 dark:text-gray-400',
+				]}
+			>
+				{variant === 'footer'
+					? 'New guides, platform updates & online safety tips'
+					: 'New filtering guides, platform updates, and online safety tips delivered monthly.'}
+			</p>
+		</div>
+	</div>
+
+	<form class="max-w-lg mx-auto" data-newsletter-form>
+		<div class:list={['flex gap-2', 'max-md:flex-col']}>
+			<input
+				type="email"
+				name="email"
+				placeholder="your@email.com"
+				required
+				class="flex-1 px-4 py-3 border-2 border-gray-300 dark:border-gray-600 rounded-lg text-base transition-all focus:outline-none focus:border-brand-500 focus:ring-4 focus:ring-brand-500/10 dark:bg-gray-800 dark:text-white"
+				aria-label="Email address"
+			/>
+			<button
+				type="submit"
+				class="px-5 py-3 bg-brand-600 text-white border-0 rounded-lg font-semibold cursor-pointer transition-all flex items-center gap-2 whitespace-nowrap hover:bg-brand-700 hover:-translate-y-0.5 hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed disabled:transform-none max-md:w-full max-md:justify-center"
+			>
+				<span class="button-text flex-1 max-md:flex-initial">Subscribe</span>
+				<span class="button-icon">→</span>
+			</button>
+		</div>
+
+		<p
+			class:list={[
+				'text-xs text-center m-0 mt-3',
+				variant === 'footer' ? 'text-white/70' : 'text-gray-500 dark:text-gray-400',
+			]}
+		>
+			We respect your privacy. Unsubscribe anytime. No spam.
+		</p>
+
+		<div
+			class="newsletter-message hidden mt-3 px-3 py-3 rounded-lg text-center text-sm font-medium"
+			data-newsletter-message
+		></div>
+	</form>
+</div>
+
+<style>
+	.newsletter-message.success {
+		display: block;
+		background-color: #f0fdf4;
+		color: #14532d;
+		border: 1px solid #22c55e;
+	}
+
+	:global(.dark) .newsletter-message.success {
+		background-color: #14532d;
+		color: #f0fdf4;
+	}
+
+	.newsletter-message.error {
+		display: block;
+		background-color: #fef2f2;
+		color: #7f1d1d;
+		border: 1px solid #ef4444;
+	}
+
+	:global(.dark) .newsletter-message.error {
+		background-color: #7f1d1d;
+		color: #fef2f2;
+	}
+</style>
+
+<script>
+	// Newsletter form submission
+	function initNewsletterForms() {
+		const forms = document.querySelectorAll('[data-newsletter-form]');
+
+		forms.forEach((form) => {
+			form.addEventListener('submit', async (e) => {
+				e.preventDefault();
+
+				const formElement = form as HTMLFormElement;
+				const input = formElement.querySelector('input[type="email"]') as HTMLInputElement;
+				const button = formElement.querySelector('button[type="submit"]') as HTMLButtonElement;
+				const message = formElement.querySelector('[data-newsletter-message]') as HTMLElement;
+
+				const email = input.value.trim();
+				if (!email) return;
+
+				// Disable form
+				button.disabled = true;
+				button.innerHTML = '<span>Subscribing...</span>';
+
+				try {
+					// In production, this would call your email service API
+					// (e.g., Mailchimp, ConvertKit, Buttondown)
+					await new Promise(resolve => setTimeout(resolve, 1000));
+
+					// Simulate success
+					const success = true;
+
+					if (success) {
+						// Show success message
+						message.className = 'newsletter-message success';
+						message.textContent = '✓ Success! Check your email to confirm your subscription.';
+
+						// Reset form
+						formElement.reset();
+
+						// Log to console (in production, this would go to your email service)
+						console.log('Newsletter subscription:', email);
+
+						// Hide message after 5 seconds
+						setTimeout(() => {
+							message.className = 'newsletter-message hidden';
+						}, 5000);
+					}
+				} catch (error) {
+					// Show error message
+					message.className = 'newsletter-message error';
+					message.textContent = '✗ Something went wrong. Please try again.';
+
+					setTimeout(() => {
+						message.className = 'newsletter-message hidden';
+					}, 5000);
+				} finally {
+					// Re-enable button
+					button.disabled = false;
+					button.innerHTML = '<span class="button-text flex-1 max-md:flex-initial">Subscribe</span><span class="button-icon">→</span>';
+				}
+			});
+		});
+	}
+
+	// Initialize on page load
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', initNewsletterForms);
+	} else {
+		initNewsletterForms();
+	}
+
+	// Re-initialize on navigation
+	document.addEventListener('astro:page-load', initNewsletterForms);
+</script>

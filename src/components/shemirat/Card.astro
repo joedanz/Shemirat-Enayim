@@ -1,0 +1,116 @@
+---
+/**
+ * Card Component - Shemirat Enayim
+ * Tailwind CSS version of the original card component
+ * Features: Gradient accent, hover effects, icon support, dark mode
+ */
+
+interface Props {
+	title: string;
+	description?: string;
+	href?: string;
+	icon?: string;
+	class?: string;
+}
+
+const {
+	title,
+	description,
+	href,
+	icon,
+	class: className = ''
+} = Astro.props;
+
+const Tag = href ? 'a' : 'div';
+---
+
+<Tag
+	href={href}
+	class:list={[
+		// Base card styles
+		'flex flex-col h-full relative overflow-hidden',
+		'bg-white dark:bg-gray-800',
+		'border border-gray-200 dark:border-gray-700',
+		'rounded-2xl p-8 shadow-sm',
+		'transition-all duration-slow ease-out',
+
+		// Hover styles (if href exists)
+		href && [
+			'cursor-pointer',
+			'hover:-translate-y-1',
+			'hover:border-brand-200 dark:hover:border-brand-700',
+			'hover:shadow-[0_20px_25px_-5px_rgba(14,165,233,0.1),0_10px_10px_-5px_rgba(14,165,233,0.04)]',
+			'dark:hover:shadow-[0_20px_25px_-5px_rgba(14,165,233,0.2),0_10px_10px_-5px_rgba(14,165,233,0.1)]',
+		],
+
+		// Focus styles
+		href && 'focus-visible:outline-brand-500 focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-2',
+
+		// Custom classes
+		className
+	]}
+>
+	<!-- Gradient accent bar (shows on hover) -->
+	{href && (
+		<div
+			class="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-brand-500 to-brand-300 opacity-0 group-hover:opacity-100 transition-opacity"
+			aria-hidden="true"
+		></div>
+	)}
+
+	<!-- Icon -->
+	{icon && (
+		<div
+			class="text-4xl mb-5 text-brand-600 dark:text-brand-400 transition-transform duration-200"
+			class:list={href && 'group-hover:scale-105'}
+			aria-hidden="true"
+		>
+			<Icon name={`tabler:${icon}`} class="w-12 h-12" />
+		</div>
+	)}
+
+	<!-- Content -->
+	<div class="flex-1">
+		<h3
+			class="text-2xl font-bold text-gray-900 dark:text-gray-50 mb-4 leading-tight transition-colors"
+			class:list={href && 'group-hover:text-brand-600 dark:group-hover:text-brand-400'}
+		>
+			{title}
+		</h3>
+
+		{description && (
+			<p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed mb-0">
+				{description}
+			</p>
+		)}
+
+		<slot />
+	</div>
+
+	<!-- Arrow indicator (for links) -->
+	{href && (
+		<div
+			class="flex items-center justify-end text-2xl text-gray-400 dark:text-gray-500 mt-5 font-semibold transition-all duration-slow group-hover:translate-x-1.5 group-hover:text-brand-600 dark:group-hover:text-brand-400"
+			aria-hidden="true"
+		>
+			→
+		</div>
+	)}
+</Tag>
+
+<script>
+	// Add group class to card links for group-hover to work
+	document.querySelectorAll('a.flex.flex-col').forEach((card) => {
+		if (card.getAttribute('href')) {
+			card.classList.add('group');
+		}
+	});
+</script>
+
+<style>
+	/* Cubic bezier for smooth transitions */
+	:global(.duration-slow) {
+		transition-duration: 300ms;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	}
+</style>

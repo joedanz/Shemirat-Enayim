@@ -1,0 +1,147 @@
+---
+/**
+ * Hero Component - Shemirat Enayim
+ * Tailwind CSS version with gradient background and animations
+ * Features: Flexible content slots, image support, responsive design
+ */
+
+import Button from './Button.astro';
+
+interface Props {
+	title?: string;
+	subtitle?: string;
+	tagline?: string;
+	ctaText?: string;
+	ctaHref?: string;
+	image?: string;
+	imageAlt?: string;
+	align?: 'left' | 'center';
+	class?: string;
+}
+
+const {
+	title,
+	subtitle,
+	tagline,
+	ctaText,
+	ctaHref,
+	image,
+	imageAlt = '',
+	align = 'center',
+	class: className = ''
+} = Astro.props;
+---
+
+<section
+	class:list={[
+		'relative overflow-hidden',
+		'pt-20 pb-16 md:pt-24 md:pb-20',
+		'bg-gradient-to-br from-brand-50/80 via-brand-100/90 to-brand-200/80',
+		'dark:from-gray-900/95 dark:via-gray-800/90 dark:to-gray-700/95',
+		'border-b border-gray-200 dark:border-gray-700',
+		className
+	]}
+>
+	<!-- Grid pattern overlay -->
+	<div
+		class="absolute inset-0 bg-grid-pattern opacity-30 dark:opacity-10"
+		style="background-image: linear-gradient(rgba(14, 165, 233, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(14, 165, 233, 0.03) 1px, transparent 1px); background-size: 50px 50px;"
+		aria-hidden="true"
+	></div>
+
+	<!-- Decorative gradient orb -->
+	<div
+		class="absolute -top-[10%] -right-[5%] w-[600px] h-[600px] rounded-full opacity-100 pointer-events-none animate-float"
+		style="background: radial-gradient(circle, rgba(14, 165, 233, 0.15), transparent 70%);"
+		aria-hidden="true"
+	></div>
+
+	<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+		<div
+			class:list={[
+				'grid grid-cols-1 gap-12 items-center',
+				image && 'lg:grid-cols-2 lg:gap-16',
+			]}
+		>
+			<!-- Hero Text -->
+			<div
+				class:list={[
+					'flex flex-col gap-8',
+					align === 'center' && !image && 'items-center text-center max-w-4xl mx-auto',
+					align === 'left' && 'items-start text-left',
+				]}
+			>
+				{tagline && (
+					<p class="text-base font-bold tracking-wide uppercase text-brand-600 dark:text-brand-400">
+						{tagline}
+					</p>
+				)}
+
+				<h1
+					class:list={[
+						'text-4xl sm:text-5xl md:text-6xl lg:text-7xl',
+						'font-extrabold leading-tight tracking-tight',
+						'mb-0 -tracking-[0.03em]',
+						'bg-gradient-to-br from-gray-900 to-brand-900',
+						'dark:from-gray-50 dark:to-brand-400',
+						'bg-clip-text text-transparent',
+					]}
+				>
+					{title}
+				</h1>
+				<slot name="title" />
+
+				{subtitle && (
+					<p
+						class:list={[
+							'text-xl md:text-2xl',
+							'leading-relaxed',
+							'text-gray-700 dark:text-gray-300',
+							'mb-0 max-w-2xl',
+						]}
+					>
+						{subtitle}
+					</p>
+				)}
+				<slot name="content" />
+
+				{ctaText && ctaHref && (
+					<div class="flex gap-4 flex-wrap mt-4">
+						<Button href={ctaHref} size="lg" variant="primary">
+							{ctaText}
+						</Button>
+					</div>
+				)}
+				<slot name="actions" />
+			</div>
+
+			<!-- Hero Image -->
+			{image && (
+				<div class="flex items-center justify-center animate-fade">
+					<img
+						src={image}
+						alt={imageAlt}
+						loading="eager"
+						fetchpriority="high"
+						decoding="async"
+						class="w-full h-auto max-w-full rounded-2xl shadow-[0_25px_50px_-12px_rgba(14,165,233,0.25)] object-cover aspect-video"
+					/>
+				</div>
+			)}
+			<slot name="image" />
+		</div>
+
+		<slot />
+	</div>
+</section>
+
+<style>
+	/* Ensure gradient text works in all browsers */
+	@supports (background-clip: text) or (-webkit-background-clip: text) {
+		h1 {
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+		}
+	}
+</style>

@@ -1,0 +1,313 @@
+---
+/**
+ * SearchBar Component - Shemirat Enayim
+ * Tailwind CSS version with modal and fuzzy search
+ * Features: Keyboard shortcuts, fuse.js integration, lazy loading
+ */
+
+interface Props {
+	class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<div class:list={['relative', className]}>
+	<button
+		class="flex items-center gap-2 px-3 py-2 min-w-[200px] bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-600 dark:text-gray-300 cursor-pointer transition-all text-sm hover:border-brand-500 hover:bg-gray-50 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500 max-md:min-w-0"
+		type="button"
+		aria-label="Open search"
+		data-search-trigger
+	>
+		<svg class="text-gray-500 dark:text-gray-400 w-5 h-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<circle cx="8.5" cy="8.5" r="5.5"></circle>
+			<line x1="12.5" y1="12.5" x2="16" y2="16"></line>
+		</svg>
+		<span class="flex-1 text-left max-md:hidden">Search</span>
+		<kbd class="flex gap-1 max-md:hidden">
+			<span class="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded text-xs font-sans leading-none">⌘</span>
+			<span class="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded text-xs font-sans leading-none">K</span>
+		</kbd>
+	</button>
+	<noscript>
+		<div class="absolute top-full right-0 mt-2 px-4 py-3 bg-yellow-100 text-black rounded-lg text-sm whitespace-nowrap shadow-lg z-popover">
+			Search requires JavaScript. Try browser search (Ctrl/Cmd+F) or browse our <a href="/resources" class="text-black underline font-semibold">resources</a>.
+		</div>
+	</noscript>
+</div>
+
+<!-- Search Modal -->
+<div class="hidden fixed inset-0 z-[9999] items-start justify-center pt-20 px-4 max-md:pt-4 animate-fade" data-search-modal>
+	<div class="absolute inset-0 bg-black/60 backdrop-blur-sm" data-search-close></div>
+	<div class="relative w-full max-w-2xl bg-white dark:bg-gray-800 rounded-xl shadow-2xl overflow-hidden animate-slide-down">
+		<!-- Header -->
+		<div class="flex items-center gap-3 px-4 py-4 border-b border-gray-200 dark:border-gray-700">
+			<svg class="text-gray-500 dark:text-gray-400 flex-shrink-0 w-5 h-5" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+				<circle cx="8.5" cy="8.5" r="5.5"></circle>
+				<line x1="12.5" y1="12.5" x2="16" y2="16"></line>
+			</svg>
+			<input
+				type="text"
+				class="flex-1 border-0 bg-transparent text-lg text-gray-900 dark:text-gray-100 outline-none placeholder:text-gray-400 dark:placeholder:text-gray-500"
+				placeholder="Search guides, FAQs, and resources..."
+				aria-label="Search"
+				data-search-input
+			/>
+			<button
+				class="flex-shrink-0 p-2 bg-transparent border-0 text-gray-500 dark:text-gray-400 cursor-pointer rounded transition-all hover:bg-gray-100 dark:hover:bg-gray-700 hover:text-gray-900 dark:hover:text-gray-100"
+				type="button"
+				aria-label="Close search"
+				data-search-close
+			>
+				<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+					<line x1="5" y1="5" x2="15" y2="15"></line>
+					<line x1="15" y1="5" x2="5" y2="15"></line>
+				</svg>
+			</button>
+		</div>
+
+		<!-- Results -->
+		<div class="max-h-[400px] max-md:max-h-[60vh] overflow-y-auto" data-search-results>
+			<div class="py-10 px-4 text-center text-gray-500 dark:text-gray-400">
+				<p>Start typing to search...</p>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<div class="px-4 py-3 border-t border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+			<div class="flex gap-4 text-xs text-gray-600 dark:text-gray-400 items-center">
+				<kbd class="px-1.5 py-0.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded font-sans text-xs">↑</kbd>
+				<kbd class="px-1.5 py-0.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded font-sans text-xs">↓</kbd>
+				<span>to navigate</span>
+				<kbd class="px-1.5 py-0.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded font-sans text-xs">↵</kbd>
+				<span>to select</span>
+				<kbd class="px-1.5 py-0.5 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded font-sans text-xs">ESC</kbd>
+				<span>to close</span>
+			</div>
+		</div>
+	</div>
+</div>
+
+<style>
+	[data-search-modal][data-open="true"] {
+		display: flex;
+	}
+
+	@keyframes fadeIn {
+		from { opacity: 0; }
+		to { opacity: 1; }
+	}
+
+	@keyframes slideDown {
+		from {
+			opacity: 0;
+			transform: translateY(-20px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
+	}
+
+	.animate-fade {
+		animation: fadeIn 0.2s ease-out;
+	}
+
+	.animate-slide-down {
+		animation: slideDown 0.2s ease-out;
+	}
+
+	.search-result-item {
+		display: block;
+		padding: 1rem;
+		border-bottom: 1px solid rgb(243 244 246);
+		text-decoration: none;
+		transition: background-color 0.2s;
+	}
+
+	:global(.dark) .search-result-item {
+		border-bottom-color: rgb(55 65 81);
+	}
+
+	.search-result-item:hover,
+	.search-result-item[data-selected="true"] {
+		background-color: rgb(240 249 255);
+	}
+
+	:global(.dark) .search-result-item:hover,
+	:global(.dark) .search-result-item[data-selected="true"] {
+		background-color: rgb(12 74 110);
+	}
+</style>
+
+<script>
+	// Lazy-loaded Fuse.js instance
+	let Fuse: any = null;
+	let fuse: any = null;
+	let searchData: any[] = [];
+	let searchInitialized = false;
+
+	// DOM elements
+	const modal = document.querySelector('[data-search-modal]') as HTMLElement;
+	const trigger = document.querySelector('[data-search-trigger]') as HTMLButtonElement;
+	const input = document.querySelector('[data-search-input]') as HTMLInputElement;
+	const results = document.querySelector('[data-search-results]') as HTMLElement;
+	const closeButtons = document.querySelectorAll('[data-search-close]');
+
+	let selectedIndex = -1;
+
+	// Initialize search data (lazy-loaded)
+	async function initSearch() {
+		if (searchInitialized) return;
+		searchInitialized = true;
+
+		try {
+			// Dynamically import Fuse.js only when needed
+			const fuseModule = await import('fuse.js');
+			Fuse = fuseModule.default;
+
+			// Create search data from pages
+			searchData = [
+				// Main pages
+				{ title: 'Home', description: 'Comprehensive resources for protecting your family online', path: '/', category: 'Main' },
+				{ title: 'For Parents', description: 'Protect your children with comprehensive filtering and monitoring solutions', path: '/parents', category: 'Main' },
+				{ title: 'For Organizations', description: 'Institutional filtering solutions for religious and community organizations', path: '/leaders', category: 'Main' },
+				{ title: 'For Individuals', description: 'Personal accountability and filtering for self-protection', path: '/individuals', category: 'Main' },
+				{ title: 'Protection Methods', description: 'Comprehensive catalog of filtering and protection solutions', path: '/methods', category: 'Main' },
+				{ title: 'Resources', description: 'Tools library, glossary, and external resources', path: '/resources', category: 'Main' },
+				{ title: 'FAQ', description: 'Frequently asked questions about internet filtering and online safety', path: '/faq', category: 'Support' },
+			];
+
+			// Initialize Fuse with options
+			fuse = new Fuse(searchData, {
+				keys: ['title', 'description', 'category'],
+				threshold: 0.3,
+				includeScore: true,
+				minMatchCharLength: 2
+			});
+		} catch (error) {
+			console.error('Failed to initialize search:', error);
+		}
+	}
+
+	// Open modal
+	async function openModal() {
+		modal.setAttribute('data-open', 'true');
+		input.focus();
+		document.body.style.overflow = 'hidden';
+
+		// Initialize search on first open (lazy loading)
+		if (!searchInitialized) {
+			results.innerHTML = '<div class="py-8 px-4 text-center text-gray-500 dark:text-gray-400"><p>Loading search...</p></div>';
+			await initSearch();
+			results.innerHTML = '<div class="py-10 px-4 text-center text-gray-500 dark:text-gray-400"><p>Start typing to search...</p></div>';
+		}
+	}
+
+	// Close modal
+	function closeModal() {
+		modal.setAttribute('data-open', 'false');
+		input.value = '';
+		results.innerHTML = '<div class="py-10 px-4 text-center text-gray-500 dark:text-gray-400"><p>Start typing to search...</p></div>';
+		selectedIndex = -1;
+		document.body.style.overflow = '';
+	}
+
+	// Perform search
+	function performSearch(query: string) {
+		if (!fuse || query.trim().length === 0) {
+			results.innerHTML = '<div class="py-10 px-4 text-center text-gray-500 dark:text-gray-400"><p>Start typing to search...</p></div>';
+			return;
+		}
+
+		const searchResults = fuse.search(query);
+
+		if (searchResults.length === 0) {
+			results.innerHTML = '<div class="py-8 px-4 text-center text-gray-500 dark:text-gray-400"><p>No results found for "' + query + '"</p></div>';
+			return;
+		}
+
+		selectedIndex = -1;
+		renderResults(searchResults);
+	}
+
+	// Render results
+	function renderResults(searchResults: any[]) {
+		const html = searchResults.slice(0, 10).map((result, index) => {
+			const item = result.item;
+			return `
+				<a
+					href="${item.path}"
+					class="search-result-item"
+					data-index="${index}"
+				>
+					<div class="text-base font-semibold text-gray-900 dark:text-gray-100 mb-1">${item.title}</div>
+					<div class="text-sm text-gray-600 dark:text-gray-400 leading-snug mb-1">${item.description}</div>
+					<div class="text-xs text-brand-600 dark:text-brand-400">${item.category} • ${item.path}</div>
+				</a>
+			`;
+		}).join('');
+
+		results.innerHTML = html;
+	}
+
+	// Handle keyboard navigation
+	function handleKeyboardNavigation(e: KeyboardEvent) {
+		const items = results.querySelectorAll('.search-result-item');
+
+		if (e.key === 'ArrowDown') {
+			e.preventDefault();
+			selectedIndex = Math.min(selectedIndex + 1, items.length - 1);
+			updateSelection(items);
+		} else if (e.key === 'ArrowUp') {
+			e.preventDefault();
+			selectedIndex = Math.max(selectedIndex - 1, -1);
+			updateSelection(items);
+		} else if (e.key === 'Enter' && selectedIndex >= 0) {
+			e.preventDefault();
+			(items[selectedIndex] as HTMLAnchorElement).click();
+		} else if (e.key === 'Escape') {
+			e.preventDefault();
+			closeModal();
+		}
+	}
+
+	// Update selection visual
+	function updateSelection(items: NodeListOf<Element>) {
+		items.forEach((item, index) => {
+			if (index === selectedIndex) {
+				item.setAttribute('data-selected', 'true');
+				item.scrollIntoView({ block: 'nearest' });
+			} else {
+				item.removeAttribute('data-selected');
+			}
+		});
+	}
+
+	// Event listeners
+	trigger?.addEventListener('click', openModal);
+	closeButtons.forEach(btn => btn.addEventListener('click', closeModal));
+	input?.addEventListener('input', (e) => {
+		const query = (e.target as HTMLInputElement).value;
+		performSearch(query);
+	});
+	input?.addEventListener('keydown', handleKeyboardNavigation);
+
+	// Keyboard shortcut (Cmd/Ctrl + K)
+	document.addEventListener('keydown', (e) => {
+		if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+			e.preventDefault();
+			if (modal.getAttribute('data-open') === 'true') {
+				closeModal();
+			} else {
+				openModal();
+			}
+		}
+	});
+
+	// Re-initialize on Astro navigation
+	document.addEventListener('astro:page-load', () => {
+		trigger?.addEventListener('click', openModal);
+		closeButtons.forEach(btn => btn.addEventListener('click', closeModal));
+	});
+</script>

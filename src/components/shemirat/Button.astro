@@ -1,0 +1,121 @@
+---
+/**
+ * Button Component - Shemirat Enayim
+ * Tailwind CSS version with analytics tracking support
+ * Features: Multiple variants, sizes, focus states, disabled states
+ */
+
+interface Props {
+	href?: string;
+	variant?: 'primary' | 'secondary' | 'outline';
+	size?: 'sm' | 'md' | 'lg';
+	class?: string;
+	disabled?: boolean;
+	type?: 'button' | 'submit' | 'reset';
+	// Analytics tracking props (optional)
+	trackEvent?: string; // Event name to track on click
+	trackLocation?: string; // Where the button is located (e.g., "hero", "guide-end")
+	trackType?: string; // Type of CTA (e.g., "download", "contact", "guide")
+}
+
+const {
+	href,
+	variant = 'primary',
+	size = 'md',
+	class: className = '',
+	disabled = false,
+	type = 'button',
+	trackEvent,
+	trackLocation,
+	trackType,
+	...rest
+} = Astro.props;
+
+const Tag = href ? 'a' : 'button';
+
+// Base button styles
+const baseStyles = [
+	'inline-flex items-center justify-center',
+	'font-semibold no-underline',
+	'border-2 border-transparent',
+	'rounded-lg',
+	'cursor-pointer',
+	'transition-all duration-200 ease-out',
+	'font-sans whitespace-nowrap',
+	'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2',
+	'focus-visible:outline-brand-500',
+];
+
+// Disabled styles
+const disabledStyles = disabled && [
+	'opacity-50 cursor-not-allowed',
+	'hover:transform-none hover:shadow-none',
+];
+
+// Size variants
+const sizeStyles = {
+	sm: 'text-sm px-4 py-2 gap-2',
+	md: 'text-base px-6 py-3 gap-2',
+	lg: 'text-lg px-8 py-4 gap-3',
+};
+
+// Variant styles
+const variantStyles = {
+	primary: [
+		'bg-brand-600 text-white border-brand-600',
+		!disabled && 'hover:bg-brand-700 hover:border-brand-700 hover:-translate-y-0.5 hover:shadow-md',
+		!disabled && 'active:translate-y-0 active:shadow-sm',
+	],
+	secondary: [
+		'bg-green-600 text-white border-green-600',
+		!disabled && 'hover:bg-green-700 hover:border-green-700 hover:-translate-y-0.5 hover:shadow-md',
+		!disabled && 'active:translate-y-0 active:shadow-sm',
+	],
+	outline: [
+		'bg-transparent text-brand-600 border-brand-600',
+		!disabled && 'hover:bg-brand-50 hover:text-brand-700 hover:border-brand-700',
+		!disabled && 'active:bg-brand-100',
+		'dark:text-brand-400 dark:border-brand-400',
+		!disabled && 'dark:hover:bg-brand-950 dark:hover:text-brand-300 dark:hover:border-brand-300',
+		!disabled && 'dark:active:bg-brand-900',
+	],
+};
+---
+
+<Tag
+	href={href}
+	type={!href ? type : undefined}
+	disabled={disabled}
+	class:list={[
+		baseStyles,
+		sizeStyles[size],
+		variantStyles[variant],
+		disabledStyles,
+		className
+	]}
+	data-track-event={trackEvent}
+	data-track-location={trackLocation}
+	data-track-type={trackType}
+	{...rest}
+>
+	<slot />
+</Tag>
+
+{(trackEvent || trackLocation || trackType) && (
+	<script>
+		import { trackCTAClick } from '../../utils/analytics';
+
+		document.querySelectorAll('[data-track-event]').forEach(button => {
+			button.addEventListener('click', function() {
+				const eventName = this.getAttribute('data-track-event');
+				const location = this.getAttribute('data-track-location');
+				const type = this.getAttribute('data-track-type');
+				const text = this.textContent?.trim() || '';
+
+				if (eventName) {
+					trackCTAClick(text, location || 'unknown', type);
+				}
+			});
+		});
+	</script>
+)}
