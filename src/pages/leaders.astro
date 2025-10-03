@@ -1,0 +1,324 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Content from '~/components/widgets/Content.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'Resources for Organizations — Shemirat Enayim',
+  description: 'Comprehensive guidance for organizations and community administrators to implement filtered networks and support members in digital safety.',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+  <Hero>
+    <Fragment slot="title">
+      Resources for <span class="text-accent dark:text-white">Organizations</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Comprehensive guidance for community administrators to implement filtered networks and support members in digital safety.
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+  <Note>
+    <Fragment slot="title">
+      Setting up a filtered network for your community?
+    </Fragment>
+    Start with our <a href="/guides/public-wifi-setup" class="text-blue-600 hover:underline">Community WiFi Setup Guide</a>.
+  </Note>
+
+  <!-- Content Widget **************** -->
+  <Content>
+    <Fragment slot="content">
+      <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-4">
+        Your Role in Community Digital Safety
+      </h2>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+        As a community organization, you play a vital role in creating safe digital
+        environments for your members and supporting families in their internet safety journey.
+        Whether managing a synagogue, school, community center, or study hall, implementing appropriate
+        filtering and providing guidance can make a significant difference.
+      </p>
+      <p class="text-lg text-gray-700 dark:text-gray-300">
+        This page provides practical resources for setting up filtered networks, managing shared computer
+        spaces, and supporting your members with their home internet safety needs.
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- Features Widget *************** -->
+  <Features
+    title="Setting Up Filtered Public WiFi"
+    subtitle="Providing filtered WiFi for your community is one of the most impactful steps you can take"
+    items={[
+      {
+        title: 'Basic: DNS Filtering',
+        description: `
+          <p class="mb-2"><strong>Cost:</strong> Free to $10/month</p>
+          <p class="mb-2"><strong>Difficulty:</strong> Easy</p>
+          <p class="mb-2"><strong>Best for:</strong> Small communities, limited budget</p>
+          <p>Configure your router to use filtering DNS servers like OpenDNS, CleanBrowsing,
+          or NextDNS. Provides network-wide filtering with minimal setup.</p>
+        `,
+        icon: 'tabler:shield-check',
+      },
+      {
+        title: 'Intermediate: Hardware Solution',
+        description: `
+          <p class="mb-2"><strong>Cost:</strong> $200-$500 one-time</p>
+          <p class="mb-2"><strong>Difficulty:</strong> Moderate</p>
+          <p class="mb-2"><strong>Best for:</strong> Medium-sized communities</p>
+          <p>Dedicated filtering appliance (like Firewalla or Untangle) between your modem and
+          network. Provides more control and reporting.</p>
+        `,
+        icon: 'tabler:server',
+      },
+      {
+        title: 'Advanced: Enterprise Solution',
+        description: `
+          <p class="mb-2"><strong>Cost:</strong> $50-200/month</p>
+          <p class="mb-2"><strong>Difficulty:</strong> Advanced (may need IT support)</p>
+          <p class="mb-2"><strong>Best for:</strong> Large institutions, schools</p>
+          <p>Professional content filtering service (like Cisco Umbrella or Lightspeed Systems).
+          Includes detailed reporting, multiple WiFi networks, and support.</p>
+        `,
+        icon: 'tabler:building-castle',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features>
+
+  <!-- Content Widget **************** -->
+  <Content>
+    <Fragment slot="content">
+      <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-4">
+        Benefits of Filtered Community WiFi
+      </h2>
+      <ul class="space-y-2 text-lg text-gray-700 dark:text-gray-300">
+        <li>• Protects community members using your facility's internet</li>
+        <li>• Creates a safe environment for children and families</li>
+        <li>• Demonstrates your community's commitment to digital safety</li>
+        <li>• Reduces liability concerns</li>
+        <li>• Supports families who may not have filtering at home</li>
+      </ul>
+      <p class="mt-6 text-lg text-gray-700 dark:text-gray-300">
+        <strong>Recommendation:</strong> Start with DNS filtering for immediate protection, then consider
+        upgrading as your needs grow.
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+  <Steps
+    title="Managing Computer Labs and Libraries"
+    subtitle="Shared computer spaces require additional considerations beyond network filtering"
+    items={[
+      {
+        title: 'Physical Setup',
+        description: `
+          <ul class="text-left space-y-2">
+            <li><strong>Visibility:</strong> Position monitors so staff can see screens</li>
+            <li><strong>Privacy balance:</strong> Maintain supervision without surveillance</li>
+            <li><strong>Signage:</strong> Post clear acceptable use policies</li>
+            <li><strong>Time limits:</strong> Use booking systems to manage access fairly</li>
+          </ul>
+        `,
+        icon: 'tabler:layout',
+      },
+      {
+        title: 'Computer Configuration',
+        description: `
+          <ul class="text-left space-y-2">
+            <li>Use guest/restricted accounts that reset between sessions (Deep Freeze)</li>
+            <li>Disable USB ports if possible to prevent bypass tools</li>
+            <li>Set browsers to clear history and cache on exit</li>
+            <li>Configure local filtering software in addition to network filtering</li>
+            <li>Disable system administrator access for regular users</li>
+          </ul>
+        `,
+        icon: 'tabler:settings',
+      },
+      {
+        title: 'Policy Development',
+        description: `
+          <ul class="text-left space-y-2">
+            <li>Create a clear acceptable use policy</li>
+            <li>Specify that filtering is in place and bypass attempts are prohibited</li>
+            <li>Define consequences for policy violations</li>
+            <li>Post policies visibly near computers</li>
+            <li>Require acknowledgment of policies (signature or checkbox)</li>
+          </ul>
+        `,
+        icon: 'tabler:file-check',
+      },
+    ]}
+  />
+
+  <!-- Features Widget *************** -->
+  <Features
+    title="Supporting Families"
+    subtitle="Beyond providing filtered infrastructure, you can support families in their home internet safety efforts"
+    items={[
+      {
+        title: 'Education and Awareness',
+        description: `
+          <ul class="text-left space-y-2">
+            <li>• Host workshops or information sessions for parents</li>
+            <li>• Distribute guides and resources (you can link to or print materials from this site)</li>
+            <li>• Invite experts to speak about digital safety</li>
+            <li>• Create a resource library with recommended tools and guides</li>
+          </ul>
+        `,
+        icon: 'tabler:school',
+      },
+      {
+        title: 'Community Support',
+        description: `
+          <ul class="text-left space-y-2">
+            <li>• Establish a committee or point person for digital safety questions</li>
+            <li>• Offer tech support hours for families implementing filtering</li>
+            <li>• Create a peer support network where families can share experiences</li>
+            <li>• Recognize and celebrate families taking proactive steps</li>
+          </ul>
+        `,
+        icon: 'tabler:users-group',
+      },
+      {
+        title: 'Youth Engagement',
+        description: `
+          <ul class="text-left space-y-2">
+            <li>• Teach age-appropriate digital literacy and safety</li>
+            <li>• Create opportunities for supervised, constructive technology use</li>
+            <li>• Develop mentorship programs where older youth help younger ones</li>
+            <li>• Discuss digital challenges openly in age-appropriate forums</li>
+          </ul>
+        `,
+        icon: 'tabler:users',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+  <Content>
+    <Fragment slot="content">
+      <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-6">
+        Balancing Access with Protection
+      </h2>
+      <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+        One of the biggest challenges is maintaining appropriate access while providing protection:
+      </p>
+
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-2">Whitelist Approach</h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            For environments with young children or high-security needs, allow only approved websites.
+            More restrictive but requires ongoing maintenance of allowed sites.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-2">Blacklist Approach</h3>
+          <p class="text-gray-700 dark:text-gray-300">
+            Block known problematic categories and sites while allowing general access.
+            Less restrictive but requires good filtering technology.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-2">Tiered Access</h3>
+          <p class="text-gray-700 dark:text-gray-300 mb-3">
+            Offer different WiFi networks or computer settings for different groups:
+          </p>
+          <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+            <li><strong>Children's network:</strong> Heavily filtered, whitelist approach</li>
+            <li><strong>General network:</strong> Moderately filtered, blacklist approach</li>
+            <li><strong>Study/research network:</strong> Lighter filtering for adult study (optional)</li>
+          </ul>
+        </div>
+
+        <div class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-400 p-4 rounded">
+          <p class="text-yellow-800 dark:text-yellow-200">
+            <strong>Important:</strong> Consult with your organization's leadership to ensure
+            your filtering approach aligns with your community's values and standards.
+          </p>
+        </div>
+      </div>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+  <Content>
+    <Fragment slot="content">
+      <h2 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-6">
+        Recommended Solutions for Communities
+      </h2>
+
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-3">Best for Small Communities (Budget-Friendly)</h3>
+          <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+            <li><strong>DNS Filtering:</strong> CleanBrowsing or OpenDNS</li>
+            <li><strong>Cost:</strong> Free or $10/month</li>
+            <li>Simple router configuration, no additional hardware needed</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-3">Best for Medium Communities (Balanced)</h3>
+          <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+            <li><strong>Hardware:</strong> Firewalla Purple or Untangle</li>
+            <li><strong>Cost:</strong> $300-500 one-time + optional subscription</li>
+            <li>More control, reporting, and customization</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-3">Best for Large Institutions (Comprehensive)</h3>
+          <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+            <li><strong>Enterprise:</strong> Cisco Umbrella, Lightspeed, or ContentKeeper</li>
+            <li><strong>Cost:</strong> $100-300/month depending on size</li>
+            <li>Professional features, support, and reporting</li>
+          </ul>
+        </div>
+      </div>
+    </Fragment>
+  </Content>
+
+  <!-- CallToAction Widget *********** -->
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'View Setup Guides',
+        href: '/methods',
+      },
+      {
+        variant: 'secondary',
+        text: 'Policy Templates',
+        href: '/guides/policies-guidelines',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      Ready to implement filtering for your community?
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Explore our detailed setup guides and technical documentation to get started.
+    </Fragment>
+  </CallToAction>
+</Layout>
