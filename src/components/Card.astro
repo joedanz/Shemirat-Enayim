@@ -13,7 +13,7 @@ const { title, description, href, icon, difficulty, class: className = '' } = As
 const Tag = href ? 'a' : 'div';
 ---
 
-<Tag href={href} class:list={['card', { 'card-link': href }, className]}>
+<Tag href={href} class:list={['card bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700', { 'card-link': href }, className]}>
   {
     icon && (
       <div class="card-icon" aria-hidden="true">
@@ -22,14 +22,14 @@ const Tag = href ? 'a' : 'div';
     )
   }
   <div class="card-content">
-    <h3 class="card-title">{title}</h3>
-    {description && <p class="card-description">{description}</p>}
+    <h3 class="card-title text-gray-900 dark:text-gray-100">{title}</h3>
+    {description && <p class="card-description text-gray-600 dark:text-gray-300">{description}</p>}
     {difficulty && <span class="card-difficulty">{difficulty}</span>}
     <slot />
   </div>
   {
     href && (
-      <div class="card-arrow" aria-hidden="true">
+      <div class="card-arrow text-gray-400 dark:text-gray-600" aria-hidden="true">
         →
       </div>
     )
@@ -40,8 +40,6 @@ const Tag = href ? 'a' : 'div';
   .card {
     display: flex;
     flex-direction: column;
-    background-color: white;
-    border: 1px solid var(--color-gray-200);
     border-radius: var(--radius-xl);
     padding: var(--space-6);
     box-shadow: var(--shadow-sm);
@@ -49,11 +47,6 @@ const Tag = href ? 'a' : 'div';
     text-decoration: none;
     color: inherit;
     height: 100%;
-  }
-
-  .dark .card {
-    background-color: rgb(31 41 55);
-    border-color: rgb(75 85 99);
   }
 
   .card:hover {
@@ -71,7 +64,7 @@ const Tag = href ? 'a' : 'div';
     transform: translateY(-2px);
   }
 
-  .dark .card-link:hover {
+  :global(.dark) .card-link:hover {
     border-color: var(--color-primary-600);
   }
 
@@ -79,7 +72,7 @@ const Tag = href ? 'a' : 'div';
     color: var(--color-primary-600);
   }
 
-  .dark .card-link:hover .card-title {
+  :global(.dark) .card-link:hover .card-title {
     color: var(--color-primary-400);
   }
 
@@ -88,7 +81,7 @@ const Tag = href ? 'a' : 'div';
     color: var(--color-primary-600);
   }
 
-  .dark .card-link:hover .card-arrow {
+  :global(.dark) .card-link:hover .card-arrow {
     color: var(--color-primary-400);
   }
 
@@ -104,24 +97,14 @@ const Tag = href ? 'a' : 'div';
   .card-title {
     font-size: var(--text-xl);
     font-weight: 700;
-    color: var(--color-gray-900);
     margin-bottom: var(--space-3);
     transition: color var(--transition-base);
   }
 
-  .dark .card-title {
-    color: rgb(243 244 246);
-  }
-
   .card-description {
     font-size: var(--text-base);
-    color: var(--color-gray-600);
     line-height: var(--leading-relaxed);
     margin-bottom: 0;
-  }
-
-  .dark .card-description {
-    color: rgb(209 213 219);
   }
 
   .card-difficulty {
@@ -135,7 +118,7 @@ const Tag = href ? 'a' : 'div';
     margin-top: var(--space-2);
   }
 
-  .dark .card-difficulty {
+  :global(.dark) .card-difficulty {
     color: var(--color-primary-300);
     background-color: var(--color-primary-900);
   }
@@ -145,13 +128,8 @@ const Tag = href ? 'a' : 'div';
     align-items: center;
     justify-content: flex-end;
     font-size: var(--text-2xl);
-    color: var(--color-gray-400);
     margin-top: var(--space-4);
     transition: all var(--transition-base);
-  }
-
-  .dark .card-arrow {
-    color: rgb(107 114 128);
   }
 
   /* Focus styles for accessibility */

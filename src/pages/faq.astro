@@ -1,16 +1,20 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/PageLayout.astro';
 import Breadcrumb from '../components/Breadcrumb.astro';
 import Accordion from '../components/Accordion.astro';
 import Alert from '../components/Alert.astro';
 import Button from '../components/Button.astro';
+
+const metadata = {
+  title: 'Frequently Asked Questions',
+  description: 'Find answers to common questions about internet filtering, parental controls, DNS filtering, and protecting your family online.',
+};
 ---
 
-<Layout
-  title="Frequently Asked Questions"
-  description="Find answers to common questions about internet filtering, parental controls, DNS filtering, and protecting your family online."
->
-  <Breadcrumb />
+<Layout metadata={metadata}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb />
+  </div>
 
   <div class="max-w-4xl mx-auto px-4 py-6 sm:px-6 lg:px-8">
     <header class="text-center mb-8">
@@ -365,10 +369,6 @@ import Button from '../components/Button.astro';
                 <strong>Immediately:</strong> After getting new devices, OS updates, or discovering bypass attempts
               </li>
             </ul>
-            <p>
-              Check our <a href="/changelog">changelog</a> regularly for alerts about platform changes that might affect
-              your filtering.
-            </p>
           </Accordion>
         </div>
       </section>

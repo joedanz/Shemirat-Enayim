@@ -1,14 +1,18 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from '../../layouts/PageLayout.astro';
 import Breadcrumb from '../../components/Breadcrumb.astro';
 import Alert from '../../components/Alert.astro';
+
+const metadata = {
+  title: 'Emergency Contact Resources',
+  description: 'Critical crisis hotlines, cyberbullying resources, exploitation reporting, and mental health support for immediate help.',
+};
 ---
 
-<Layout
-  title="Emergency Contact Resources"
-  description="Critical crisis hotlines, cyberbullying resources, exploitation reporting, and mental health support for immediate help."
->
-  <Breadcrumb />
+<Layout metadata={metadata}>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+    <Breadcrumb />
+  </div>
 
   <div class="max-w-6xl mx-auto px-4 py-8 sm:px-6 lg:px-8">
     <header class="text-center mb-8">
@@ -27,153 +31,6 @@ import Alert from '../../components/Alert.astro';
       <strong>Life-Threatening Emergency:</strong> If you or someone else is in immediate danger, call 911 or your local
       emergency number immediately.
     </Alert>
-
-    <section class="mt-12">
-      <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">🆘 Crisis Hotlines</h2>
-      <p class="text-lg text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-        Free, confidential support available 24/7. You don't have to face a crisis alone.
-      </p>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div
-          class="bg-white dark:bg-gray-800 border-2 border-red-500 dark:border-red-600 rounded-xl p-6 transition-all duration-200 hover:border-red-600 dark:hover:border-red-500 hover:shadow-xl hover:-translate-y-0.5 bg-gradient-to-br from-red-50 to-white dark:from-red-950 dark:to-gray-800"
-        >
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">National Suicide Prevention Lifeline</h3>
-          <div class="flex flex-col gap-2 mb-4">
-            <a
-              href="tel:988"
-              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
-              >Call: 988</a
-            >
-            <a
-              href="sms:988"
-              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
-              >Text: 988</a
-            >
-            <a
-              href="https://988lifeline.org/chat"
-              target="_blank"
-              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
-              >Chat: 988lifeline.org</a
-            >
-          </div>
-          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-            24/7 crisis support for suicide prevention and mental health emergencies. Confidential and free.
-          </p>
-          <div class="text-sm text-gray-500 dark:text-gray-400 italic">Available in English & Spanish</div>
-        </div>
-
-        <div
-          class="bg-white dark:bg-gray-800 border-2 border-red-500 dark:border-red-600 rounded-xl p-6 transition-all duration-200 hover:border-red-600 dark:hover:border-red-500 hover:shadow-xl hover:-translate-y-0.5 bg-gradient-to-br from-red-50 to-white dark:from-red-950 dark:to-gray-800"
-        >
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Crisis Text Line</h3>
-          <div class="flex flex-col gap-2 mb-4">
-            <a
-              href="sms:741741"
-              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
-              >Text HOME to 741741</a
-            >
-          </div>
-          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-            24/7 crisis support via text message. Connect with a trained crisis counselor in minutes.
-          </p>
-          <div class="text-sm text-gray-500 dark:text-gray-400 italic">
-            Available in English & Spanish (text HOLA to 741741)
-          </div>
-        </div>
-
-        <div
-          class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5"
-        >
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">SAMHSA National Helpline</h3>
-          <div class="flex flex-col gap-2 mb-4">
-            <a
-              href="tel:1-800-662-4357"
-              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
-              >1-800-662-HELP (4357)</a
-            >
-          </div>
-          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-            Substance Abuse and Mental Health Services Administration. 24/7 treatment referral and information service.
-          </p>
-        </div>
-
-        <div
-          class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5"
-        >
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Teen Line</h3>
-          <div class="flex flex-col gap-2 mb-4">
-            <a
-              href="tel:1-800-852-8336"
-              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
-              >1-800-TLC-TEEN (1-800-852-8336)</a
-            >
-            <a
-              href="sms:839863"
-              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
-              >Text TEEN to 839863</a
-            >
-          </div>
-          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-            Teens helping teens. Call 6pm-10pm PT or text anytime. Operated by teen volunteers under adult supervision.
-          </p>
-        </div>
-
-        <div
-          class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5"
-        >
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">The Trevor Project (LGBTQ+ Youth)</h3>
-          <div class="flex flex-col gap-2 mb-4">
-            <a
-              href="tel:1-866-488-7386"
-              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
-              >1-866-488-7386</a
-            >
-            <a
-              href="sms:678678"
-              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
-              >Text START to 678678</a
-            >
-            <a
-              href="https://www.thetrevorproject.org/get-help"
-              target="_blank"
-              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
-              >Chat: thetrevorproject.org</a
-            >
-          </div>
-          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-            Crisis intervention and suicide prevention services for LGBTQ+ young people under 25.
-          </p>
-        </div>
-
-        <div
-          class="bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-6 transition-all duration-200 hover:border-blue-500 dark:hover:border-blue-400 hover:shadow-xl hover:-translate-y-0.5"
-        >
-          <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Veterans Crisis Line</h3>
-          <div class="flex flex-col gap-2 mb-4">
-            <a
-              href="tel:988"
-              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
-              >Call: 988, Press 1</a
-            >
-            <a
-              href="sms:838255"
-              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
-              >Text: 838255</a
-            >
-            <a
-              href="https://www.veteranscrisisline.net/get-help-now/chat"
-              target="_blank"
-              class="inline-block px-4 py-3 bg-blue-600 dark:bg-blue-500 text-white no-underline rounded-lg font-semibold text-center transition-all duration-200 hover:bg-blue-700 dark:hover:bg-blue-600 hover:scale-105"
-              >Chat: veteranscrisisline.net</a
-            >
-          </div>
-          <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
-            24/7 confidential support for veterans, service members, National Guard, Reserve, and their families.
-          </p>
-        </div>
-      </div>
-    </section>
 
     <section class="mt-12">
       <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-3">🛡️ Cyberbullying & Online Harassment</h2>
