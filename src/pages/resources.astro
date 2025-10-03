@@ -1,25 +1,22 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Hero from '../components/Hero.astro';
-import Card from '../components/Card.astro';
-import Alert from '../components/Alert.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Hero from '~/components/widgets/Hero.astro';
 
-const currentPath = Astro.url.pathname;
+const metadata = {
+	title: 'Resources — Shemirat Enayim',
+	description: 'Comprehensive library of guides, tools, and resources for internet safety and content filtering.',
+};
 ---
 
-<Layout
-	title="Resources - Shemirat Enayim"
-	description="Comprehensive library of guides, tools, and resources for internet safety and content filtering."
->
-	<Header currentPath={currentPath} />
-
-	<Hero
-		title="Resource Library"
-		subtitle="Guides, tools, and references to support your internet safety journey"
-		align="center"
-	/>
+<Layout metadata={metadata}>
+	<Hero>
+		<Fragment slot="title">
+			Resource <span class="text-accent dark:text-white">Library</span>
+		</Fragment>
+		<Fragment slot="subtitle">
+			Guides, tools, and references to support your internet safety journey
+		</Fragment>
+	</Hero>
 
 	<main class="resources-main">
 		<div class="container">
@@ -67,42 +64,36 @@ const currentPath = Astro.url.pathname;
 				</p>
 
 				<div class="resource-grid">
-					<Card
-						title="Getting Started for Parents"
-						description="Complete beginner's guide to protecting your family online with practical first steps."
-						href="/guides/age-appropriate-internet"
-					/>
-					<Card
-						title="DNS Filtering Setup"
-						description="Configure DNS filtering on your router or devices for network-wide protection."
-						href="/guides/dns-filtering"
-					/>
-					<Card
-						title="iPhone Screen Time Guide"
-						description="Complete walkthrough of Apple's Screen Time features for parental controls."
-						href="/guides/ios-screen-time"
-					/>
-					<Card
-						title="Android Family Link Setup"
-						description="Set up Google Family Link for comprehensive Android parental controls."
-						href="/guides/android-family-link"
-					/>
-					<Card
-						title="Router Configuration"
-						description="Configure your home router for filtering, schedules, and device management."
-						href="/guides/router-config"
-					/>
-					<Card
-						title="Community WiFi Setup"
-						description="Implement filtered public WiFi for religious communities and institutions."
-						href="/guides/public-wifi-setup"
-					/>
+					<a href="/guides/age-appropriate-internet" class="resource-card">
+						<h3>Getting Started for Parents</h3>
+						<p>Complete beginner's guide to protecting your family online with practical first steps.</p>
+					</a>
+					<a href="/guides/dns-filtering" class="resource-card">
+						<h3>DNS Filtering Setup</h3>
+						<p>Configure DNS filtering on your router or devices for network-wide protection.</p>
+					</a>
+					<a href="/guides/ios-screen-time" class="resource-card">
+						<h3>iPhone Screen Time Guide</h3>
+						<p>Complete walkthrough of Apple's Screen Time features for parental controls.</p>
+					</a>
+					<a href="/guides/android-family-link" class="resource-card">
+						<h3>Android Family Link Setup</h3>
+						<p>Set up Google Family Link for comprehensive Android parental controls.</p>
+					</a>
+					<a href="/guides/router-config" class="resource-card">
+						<h3>Router Configuration</h3>
+						<p>Configure your home router for filtering, schedules, and device management.</p>
+					</a>
+					<a href="/guides/public-wifi-setup" class="resource-card">
+						<h3>Community WiFi Setup</h3>
+						<p>Implement filtered public WiFi for religious communities and institutions.</p>
+					</a>
 				</div>
 
-				<Alert type="info">
+				<div class="bg-blue-50 dark:bg-blue-900/30 border border-blue-200 dark:border-blue-700 text-blue-900 dark:text-blue-100 p-4 rounded-lg">
 					<strong>Note:</strong> Detailed guides are currently being developed. Check back soon or
-					<a href="/contact">contact us</a> if you need specific guidance right away.
-				</Alert>
+					<a href="/contact" class="text-blue-700 dark:text-blue-300 underline hover:text-blue-800 dark:hover:text-blue-200">contact us</a> if you need specific guidance right away.
+				</div>
 			</section>
 
 			<!-- Recommended Tools -->
@@ -309,10 +300,10 @@ const currentPath = Astro.url.pathname;
 					Print-friendly guides and quick-reference materials.
 				</p>
 
-				<Alert type="warning">
+				<div class="bg-orange-50 dark:bg-orange-900/30 border border-orange-200 dark:border-orange-700 text-orange-900 dark:text-orange-100 p-4 rounded-lg">
 					<strong>Coming Soon:</strong> Downloadable PDF guides, quick-reference cards, and printable
 					checklists are currently in development.
-				</Alert>
+				</div>
 
 				<div class="downloads-preview">
 					<ul>
@@ -327,8 +318,6 @@ const currentPath = Astro.url.pathname;
 			</section>
 		</div>
 	</main>
-
-	<Footer />
 </Layout>
 
 <style>
@@ -466,6 +455,50 @@ const currentPath = Astro.url.pathname;
 		.resource-grid {
 			grid-template-columns: repeat(3, 1fr);
 		}
+	}
+
+	.resource-card {
+		display: block;
+		background: white;
+		border: 2px solid var(--color-gray-200);
+		border-radius: var(--radius-lg);
+		padding: var(--space-6);
+		text-decoration: none;
+		transition: all var(--transition-base);
+	}
+
+	.dark .resource-card {
+		background: rgb(31 41 55);
+		border-color: rgb(75 85 99);
+	}
+
+	.resource-card:hover {
+		border-color: var(--color-primary-400);
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-lg);
+		text-decoration: none;
+	}
+
+	.resource-card h3 {
+		font-size: var(--text-xl);
+		font-weight: 700;
+		color: var(--color-gray-900);
+		margin-bottom: var(--space-2);
+	}
+
+	.dark .resource-card h3 {
+		color: rgb(243 244 246);
+	}
+
+	.resource-card p {
+		font-size: var(--text-sm);
+		color: var(--color-gray-700);
+		line-height: var(--leading-relaxed);
+		margin: 0;
+	}
+
+	.dark .resource-card p {
+		color: rgb(209 213 219);
 	}
 
 	/* Tools */

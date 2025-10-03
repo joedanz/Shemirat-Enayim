@@ -1,0 +1,55 @@
+---
+interface BreadcrumbItem {
+	label: string;
+	href?: string;
+}
+
+interface Props {
+	items?: BreadcrumbItem[];
+	class?: string;
+}
+
+const { items, class: className = '' } = Astro.props;
+
+// Auto-generate from URL if items not provided
+function capitalize(str: string): string {
+	return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+let breadcrumbs: BreadcrumbItem[] = items || [];
+
+if (!items && Astro.url.pathname !== '/') {
+	const parts = Astro.url.pathname.split('/').filter(Boolean);
+	breadcrumbs = [
+		{ label: 'Home', href: '/' },
+		...parts.map((part, index) => ({
+			label: part.split('-').map(capitalize).join(' '),
+			href: index === parts.length - 1 ? undefined : '/' + parts.slice(0, index + 1).join('/')
+		}))
+	];
+}
+---
+
+{breadcrumbs.length > 0 && (
+	<nav aria-label="Breadcrumb" class:list={['text-sm text-gray-600 dark:text-gray-400 mb-4', className]}>
+		<ol itemscope itemtype="https://schema.org/BreadcrumbList" class="flex flex-wrap items-center gap-2 list-none p-0 m-0">
+			{breadcrumbs.map((item, index) => (
+				<li
+					itemprop="itemListElement"
+					itemscope
+					itemtype="https://schema.org/ListItem"
+					class="flex items-center gap-2 m-0 after:content-['/'] after:text-gray-400 dark:after:text-gray-600 last:after:content-none"
+				>
+					{item.href ? (
+						<a href={item.href} itemprop="item" class="text-gray-600 dark:text-gray-400 no-underline hover:text-primary-600 dark:hover:text-primary-400 hover:underline transition-colors">
+							<span itemprop="name">{item.label}</span>
+						</a>
+					) : (
+						<span itemprop="name" aria-current="page" class="text-gray-900 dark:text-gray-100 font-medium">{item.label}</span>
+					)}
+					<meta itemprop="position" content={String(index + 1)} />
+				</li>
+			))}
+		</ol>
+	</nav>
+)}

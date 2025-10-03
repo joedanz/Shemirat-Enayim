@@ -1,0 +1,43 @@
+---
+interface Props {
+	title: string;
+	defaultOpen?: boolean;
+	class?: string;
+}
+
+const {
+	title,
+	defaultOpen = false,
+	class: className = ''
+} = Astro.props;
+---
+
+<details class:list={['group border border-gray-200 dark:border-gray-700 rounded-lg bg-white dark:bg-gray-800 hover:border-primary-300 dark:hover:border-primary-600 hover:shadow-sm transition-all', className]} open={defaultOpen}>
+	<summary class="w-full flex items-center justify-between gap-3 p-4 cursor-pointer list-none hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-all focus-visible:outline-2 focus-visible:outline-primary-500 focus-visible:outline-offset-2 focus-visible:bg-gray-50 dark:focus-visible:bg-gray-700/50">
+		<span class="flex-1 font-semibold text-lg text-gray-900 dark:text-gray-100 leading-snug">{title}</span>
+		<svg
+			class="flex-shrink-0 text-primary-600 dark:text-primary-400 transition-transform group-open:rotate-180"
+			width="20"
+			height="20"
+			viewBox="0 0 20 20"
+			fill="none"
+			stroke="currentColor"
+			stroke-width="2"
+			stroke-linecap="round"
+			stroke-linejoin="round"
+			aria-hidden="true"
+		>
+			<polyline points="6 9 12 15 18 9"></polyline>
+		</svg>
+	</summary>
+	<div class="overflow-hidden">
+		<div class="px-4 pb-4 text-gray-700 dark:text-gray-300 leading-relaxed prose prose-sm dark:prose-invert max-w-none
+		             prose-p:last:mb-0
+		             prose-ul:ml-5 prose-ul:mb-3 prose-ol:ml-5 prose-ol:mb-3
+		             prose-li:mb-2
+		             prose-a:text-primary-600 dark:prose-a:text-primary-400 prose-a:underline hover:prose-a:text-primary-700 dark:hover:prose-a:text-primary-300 prose-a:transition-colors
+		             prose-code:bg-gray-100 dark:prose-code:bg-gray-700 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:font-mono">
+			<slot />
+		</div>
+	</div>
+</details>
