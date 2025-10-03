@@ -1,0 +1,388 @@
+---
+import GuideLayout from '~/layouts/GuideLayout.astro';
+
+const metadata = {
+  title: 'macOS Parental Controls Setup Guide — Shemirat Enayim',
+  description: 'Complete guide to setting up Screen Time and parental controls on Mac computers to protect children with content filtering and usage limits.',
+};
+---
+
+<GuideLayout
+  metadata={metadata}
+  difficulty="beginner"
+  timeEstimate="15-25 minutes"
+  prerequisites={[
+    'Mac running macOS Catalina (10.15) or later',
+    'Administrator access to the Mac',
+    'Apple ID (optional but recommended)'
+  ]}
+>
+  <Fragment slot="breadcrumb">
+    <li class="flex items-center">
+      <a href="/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+        Home
+      </a>
+      <span class="mx-2 text-gray-500">/</span>
+    </li>
+    <li class="flex items-center">
+      <a href="/methods" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+        Protection Methods
+      </a>
+      <span class="mx-2 text-gray-500">/</span>
+    </li>
+    <li class="text-gray-700 dark:text-gray-300">
+      macOS Parental Controls
+    </li>
+  </Fragment>
+
+  <section>
+    <h2>macOS Parental Controls Overview</h2>
+    <p>
+      macOS includes powerful built-in parental controls through Screen Time (macOS Catalina and later) or the legacy Parental Controls system (older versions). These free tools allow you to filter content, limit apps, manage screen time, and monitor usage on your child's Mac.
+    </p>
+    <p>
+      Screen Time on Mac integrates with iOS/iPadOS Screen Time, allowing unified management across all Apple devices in your family.
+    </p>
+
+    <div class="alert alert-success">
+      <strong>Best for:</strong> Families with Macs, Apple ecosystem users, free comprehensive controls, unified management with iOS devices.
+    </div>
+  </section>
+
+  <section>
+    <h2>🔐 Creating a Managed Account</h2>
+
+    <h3>Step 1: Create a Standard User Account</h3>
+    <ol>
+      <li>Open System Settings (or System Preferences on older macOS)</li>
+      <li>Click Users & Groups (may need to click lock icon and authenticate)</li>
+      <li>Click the + button to add a new user</li>
+      <li>Choose "Standard" account type (not Administrator)</li>
+      <li>Enter the child's name and account details</li>
+      <li>Create a password (optional: let child create their own)</li>
+      <li>Optionally add Apple ID for Family Sharing integration</li>
+      <li>Click "Create User"</li>
+    </ol>
+
+    <div class="alert alert-warning">
+      <strong>Important:</strong> Never give a child an Administrator account. Standard accounts prevent them from installing software, changing system settings, or disabling parental controls.
+    </div>
+
+    <h3>Step 2: Enable Parental Controls</h3>
+    <ol>
+      <li>In Users & Groups, select the child's account</li>
+      <li>Check "Enable parental controls"</li>
+      <li>Click "Open Parental Controls..." (or "Manage Parental Controls")</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>⏰ Screen Time Setup (macOS Catalina+)</h2>
+
+    <h3>Access Screen Time</h3>
+    <ol>
+      <li>Open System Settings → Screen Time</li>
+      <li>If managing a child's account, click "Options" and turn on Screen Time</li>
+      <li>Choose "This is my child's Mac"</li>
+    </ol>
+
+    <h3>Downtime</h3>
+    <ol>
+      <li>Click "Downtime" in the sidebar</li>
+      <li>Turn on Downtime</li>
+      <li>Set schedule (e.g., 8 PM to 7 AM for bedtime)</li>
+      <li>Choose "Every Day" or "Custom" for different weekday/weekend schedules</li>
+      <li>During downtime, only allowed apps and phone calls (FaceTime) work</li>
+    </ol>
+
+    <h3>App Limits</h3>
+    <ol>
+      <li>Click "App Limits"</li>
+      <li>Click + to add a limit</li>
+      <li>Select app categories or individual apps</li>
+      <li>Set daily time allowance (e.g., 2 hours for Games)</li>
+      <li>Choose which days the limit applies</li>
+    </ol>
+
+    <h3>Always Allowed</h3>
+    <ol>
+      <li>Click "Always Allowed"</li>
+      <li>Choose apps that work even during Downtime</li>
+      <li>Recommended: Messages, FaceTime, educational apps</li>
+    </ol>
+
+    <h3>Communication Limits</h3>
+    <ol>
+      <li>Manage who your child can communicate with via Messages and FaceTime</li>
+      <li>Restrict during screen time or always</li>
+      <li>Require approval for new contacts (with Family Sharing)</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>🔒 Content & Privacy Restrictions</h2>
+
+    <h3>Accessing Restrictions</h3>
+    <ol>
+      <li>In Screen Time, click "Content & Privacy"</li>
+      <li>Turn on "Content & Privacy Restrictions"</li>
+    </ol>
+
+    <h3>Apps</h3>
+    <ul>
+      <li>Control which apps can be used (Mail, Safari, Camera, etc.)</li>
+      <li>Turn off apps you want to hide/block</li>
+    </ul>
+
+    <h3>Web Content (Safari)</h3>
+    <ul>
+      <li><strong>Unrestricted Access:</strong> No filtering (not recommended for children)</li>
+      <li><strong>Limit Adult Websites:</strong> Automatic filtering with manual exceptions</li>
+      <li><strong>Allowed Websites Only:</strong> Whitelist mode (most restrictive)</li>
+    </ul>
+
+    <div class="alert alert-info">
+      <strong>Recommendation:</strong> Use "Limit Adult Websites" and add educational sites to the allowed list. For young children, consider "Allowed Websites Only."
+    </div>
+
+    <h3>Siri</h3>
+    <ul>
+      <li>Disable Siri web searches</li>
+      <li>Block explicit language</li>
+    </ul>
+
+    <h3>Game Center</h3>
+    <ul>
+      <li>Disable multiplayer games</li>
+      <li>Prevent adding friends</li>
+      <li>Disable screen recording</li>
+    </ul>
+
+    <h3>Store Purchases</h3>
+    <ul>
+      <li>Require password for purchases</li>
+      <li>Prevent in-app purchases</li>
+      <li>Block app installation/deletion</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🌐 Additional Content Filters</h2>
+
+    <h3>Parental Controls (Classic Method)</h3>
+    <p>For older macOS or additional controls:</p>
+    <ol>
+      <li>System Preferences → Parental Controls</li>
+      <li>Select child's account</li>
+      <li>Configure tabs:
+        <ul>
+          <li><strong>Apps:</strong> Limit which apps can be used, set age ratings</li>
+          <li><strong>Web:</strong> Website restrictions</li>
+          <li><strong>Stores:</strong> Disable iTunes Store, restrict content</li>
+          <li><strong>Time:</strong> Weekday and weekend time limits</li>
+          <li><strong>Privacy:</strong> Manage location services, contacts access</li>
+          <li><strong>Other:</strong> Disable camera, prevent modification of Dock</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>👨‍👩‍👧‍👦 Family Sharing Integration</h2>
+
+    <h3>Benefits of Family Sharing</h3>
+    <ul>
+      <li>Manage child's Screen Time from your own Mac or iOS device</li>
+      <li>Share purchased apps, music, and subscriptions</li>
+      <li>"Ask to Buy" for purchase approvals</li>
+      <li>Location sharing for safety</li>
+      <li>Unified Screen Time reports across devices</li>
+    </ul>
+
+    <h3>Setting Up Family Sharing</h3>
+    <ol>
+      <li>System Settings → Family (or Family Sharing)</li>
+      <li>Click "Set Up Your Family" or "Add Family Member"</li>
+      <li>Invite family members or create child accounts</li>
+      <li>Enable Screen Time for family members</li>
+      <li>Configure settings from your device</li>
+    </ol>
+
+    <p>See our <a href="/guides/ios-screen-time">iOS Screen Time guide</a> for detailed Family Sharing setup.</p>
+  </section>
+
+  <section>
+    <h2>📊 Activity Reports</h2>
+
+    <h3>Viewing Usage</h3>
+    <ol>
+      <li>Open Screen Time in System Settings</li>
+      <li>View dashboard showing:
+        <ul>
+          <li>Total screen time and daily average</li>
+          <li>Most used apps</li>
+          <li>Number of pickups and notifications</li>
+        </ul>
+      </li>
+      <li>Click "See All Activity" for detailed reports</li>
+    </ol>
+
+    <h3>Parental Controls Logs</h3>
+    <ol>
+      <li>In Parental Controls (classic), click "Logs"</li>
+      <li>View websites visited, apps used, blocked attempts</li>
+      <li>Export logs for review</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>🔧 Best Practices</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+      <div class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5">
+        <h3 class="mt-0 mb-3 text-gray-900 dark:text-white">🎯 Age-Appropriate Settings</h3>
+        <ul class="m-0 pl-5">
+          <li class="mb-2 leading-relaxed"><strong>Ages 5-8:</strong> Allowed websites only, limited apps, 1-2 hour limits</li>
+          <li class="mb-2 leading-relaxed"><strong>Ages 9-12:</strong> Limit adult websites, app limits, 2-3 hour daily limit</li>
+          <li class="mb-2 leading-relaxed"><strong>Ages 13+:</strong> Automatic filtering, focus on downtime and balance</li>
+        </ul>
+      </div>
+
+      <div class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5">
+        <h3 class="mt-0 mb-3 text-gray-900 dark:text-white">🛡️ Security Measures</h3>
+        <ul class="m-0 pl-5">
+          <li class="mb-2 leading-relaxed">Password-protect your admin account</li>
+          <li class="mb-2 leading-relaxed">Use Screen Time passcode (4-digit code to change settings)</li>
+          <li class="mb-2 leading-relaxed">Enable FileVault disk encryption</li>
+          <li class="mb-2 leading-relaxed">Keep macOS updated</li>
+          <li class="mb-2 leading-relaxed">Regularly check for new user accounts</li>
+        </ul>
+      </div>
+
+      <div class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5">
+        <h3 class="mt-0 mb-3 text-gray-900 dark:text-white">🗣️ Communication</h3>
+        <ul class="m-0 pl-5">
+          <li class="mb-2 leading-relaxed">Explain why limits exist</li>
+          <li class="mb-2 leading-relaxed">Review settings together</li>
+          <li class="mb-2 leading-relaxed">Adjust based on responsibility demonstrated</li>
+          <li class="mb-2 leading-relaxed">Use reports as conversation starters</li>
+          <li class="mb-2 leading-relaxed">Balance control with trust</li>
+        </ul>
+      </div>
+
+      <div class="bg-gradient-to-br from-blue-50 to-green-50 dark:from-blue-900/20 dark:to-green-900/20 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-5">
+        <h3 class="mt-0 mb-3 text-gray-900 dark:text-white">⚙️ Technical Tips</h3>
+        <ul class="m-0 pl-5">
+          <li class="mb-2 leading-relaxed">Combine with <a href="/guides/dns-filtering">DNS filtering</a> for browser-independent protection</li>
+          <li class="mb-2 leading-relaxed">Consider disabling Guest User account</li>
+          <li class="mb-2 leading-relaxed">Block or monitor third-party browsers</li>
+          <li class="mb-2 leading-relaxed">Use Fast User Switching for easy account changes</li>
+          <li class="mb-2 leading-relaxed">Back up settings before major macOS updates</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>❓ Troubleshooting</h2>
+
+    <div class="grid gap-4 my-6">
+      <div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 dark:border-blue-400 p-4 rounded">
+        <h3 class="text-lg text-gray-900 dark:text-white mb-2 mt-0">Child using another user account or Guest account</h3>
+        <p class="text-gray-700 dark:text-gray-300 font-semibold">Solutions:</p>
+        <ul class="pl-5 mt-2 text-gray-700 dark:text-gray-300">
+          <li class="mb-1">Disable Guest User: System Settings → Users & Groups → Turn off Guest User</li>
+          <li class="mb-1">Password-protect all other accounts</li>
+          <li class="mb-1">Check for unauthorized accounts regularly</li>
+          <li class="mb-1">Use auto-login for child's account only</li>
+        </ul>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 dark:border-blue-400 p-4 rounded">
+        <h3 class="text-lg text-gray-900 dark:text-white mb-2 mt-0">Screen Time settings not syncing across devices</h3>
+        <p class="text-gray-700 dark:text-gray-300 font-semibold">Solutions:</p>
+        <ul class="pl-5 mt-2 text-gray-700 dark:text-gray-300">
+          <li class="mb-1">Ensure all devices are signed into iCloud with same Apple ID</li>
+          <li class="mb-1">Check internet connection</li>
+          <li class="mb-1">Turn Screen Time off and on again on all devices</li>
+          <li class="mb-1">Verify "Share Across Devices" is enabled</li>
+        </ul>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 dark:border-blue-400 p-4 rounded">
+        <h3 class="text-lg text-gray-900 dark:text-white mb-2 mt-0">Legitimate educational sites being blocked</h3>
+        <p class="mb-0 text-gray-700 dark:text-gray-300"><strong>Solution:</strong> Add sites to "Always Allow" list in Content & Privacy → Web Content. You can also temporarily grant access or adjust filtering level.</p>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 dark:border-blue-400 p-4 rounded">
+        <h3 class="text-lg text-gray-900 dark:text-white mb-2 mt-0">Forgot Screen Time passcode</h3>
+        <p class="text-gray-700 dark:text-gray-300 font-semibold">Solutions:</p>
+        <ul class="pl-5 mt-2 text-gray-700 dark:text-gray-300">
+          <li class="mb-1">Use Apple ID password to reset (if set up)</li>
+          <li class="mb-1">May require contacting Apple Support</li>
+          <li class="mb-1">Prevention: Store passcode securely</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>⚖️ Pros & Cons</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-green-300 dark:border-green-700 rounded-lg p-6">
+        <h3 class="text-green-700 dark:text-green-400 mt-0">✅ Advantages</h3>
+        <ul class="m-0 pl-5">
+          <li class="mb-2 leading-relaxed">Completely free, built into macOS</li>
+          <li class="mb-2 leading-relaxed">Comprehensive controls</li>
+          <li class="mb-2 leading-relaxed">Integrates with iOS/iPadOS Screen Time</li>
+          <li class="mb-2 leading-relaxed">Easy to set up and manage</li>
+          <li class="mb-2 leading-relaxed">Works across all Apple devices with Family Sharing</li>
+          <li class="mb-2 leading-relaxed">Activity reports included</li>
+          <li class="mb-2 leading-relaxed">Can't be uninstalled</li>
+          <li class="mb-2 leading-relaxed">Regular updates from Apple</li>
+          <li class="mb-2 leading-relaxed">Privacy-focused (data stays local)</li>
+        </ul>
+      </div>
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-yellow-300 dark:border-yellow-700 rounded-lg p-6">
+        <h3 class="text-yellow-800 dark:text-yellow-400 mt-0">❌ Limitations</h3>
+        <ul class="m-0 pl-5">
+          <li class="mb-2 leading-relaxed">Only works on macOS devices</li>
+          <li class="mb-2 leading-relaxed">Safari-focused (third-party browsers harder to filter)</li>
+          <li class="mb-2 leading-relaxed">Can be bypassed with admin access</li>
+          <li class="mb-2 leading-relaxed">Web filtering is basic</li>
+          <li class="mb-2 leading-relaxed">No social media monitoring</li>
+          <li class="mb-2 leading-relaxed">Requires macOS Catalina+ for Screen Time</li>
+          <li class="mb-2 leading-relaxed">Limited reporting compared to paid solutions</li>
+          <li class="mb-2 leading-relaxed">No keystroke logging or advanced monitoring</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <Fragment slot="footer">
+    <h2>🎯 Next Steps</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+      <a href="/guides/dns-filtering" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+        <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">🌐 DNS Filtering</h3>
+        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Add network-level filtering for all browsers</p>
+      </a>
+
+      <a href="/guides/ios-screen-time" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+        <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">📱 iOS Screen Time</h3>
+        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Unified Screen Time across Mac, iPhone, and iPad</p>
+      </a>
+
+      <a href="/guides/filtering-software" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+        <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">💻 Filtering Software</h3>
+        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Advanced monitoring and cross-platform protection</p>
+      </a>
+
+      <a href="/guides/router-config" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+        <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">🔐 Router Configuration</h3>
+        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Network-wide scheduling and device management</p>
+      </a>
+    </div>
+  </Fragment>
+</GuideLayout>
