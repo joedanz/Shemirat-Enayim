@@ -1,0 +1,412 @@
+---
+import GuideLayout from '~/layouts/GuideLayout.astro';
+
+const metadata = {
+  title: 'Router Configuration for Parental Controls — Shemirat Enayim',
+  description: 'Learn to configure your home router for network-wide parental controls including scheduling, device management, and access restrictions.',
+};
+---
+
+<GuideLayout
+  metadata={metadata}
+  difficulty="intermediate"
+  timeEstimate="30-60 minutes"
+  prerequisites={[
+    'Access to your router admin panel',
+    'Router admin username and password',
+    'Basic understanding of your network setup',
+    'List of devices to manage (MAC addresses helpful)'
+  ]}
+>
+  <Fragment slot="breadcrumb">
+    <li class="flex items-center">
+      <a href="/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+        Home
+      </a>
+      <span class="mx-2 text-gray-500">/</span>
+    </li>
+    <li class="flex items-center">
+      <a href="/methods" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+        Protection Methods
+      </a>
+      <span class="mx-2 text-gray-500">/</span>
+    </li>
+    <li class="text-gray-700 dark:text-gray-300">
+      Router Configuration
+    </li>
+  </Fragment>
+
+  <section>
+    <h2>Why Configure Your Router?</h2>
+    <p>
+      Your router is the gateway to the internet for every device in your home. By configuring parental controls at the router level, you can enforce restrictions network-wide without configuring each device individually. This provides a powerful baseline of protection that's harder to bypass.
+    </p>
+
+    <div class="alert alert-success">
+      <strong>Best for:</strong> Network-wide protection, time-based controls, device management, backup layer to device-level controls.
+    </div>
+  </section>
+
+  <section>
+    <h2>🔐 Accessing Your Router</h2>
+
+    <h3>Finding Your Router's IP Address</h3>
+    <ul>
+      <li><strong>Windows:</strong> Open Command Prompt and type <code>ipconfig</code>. Look for "Default Gateway"</li>
+      <li><strong>Mac:</strong> System Settings → Network → Advanced → TCP/IP. Look for "Router"</li>
+      <li><strong>Common addresses:</strong> 192.168.1.1, 192.168.0.1, 192.168.1.254, or 10.0.0.1</li>
+      <li><strong>Check router label:</strong> Many routers have the address printed on a sticker</li>
+    </ul>
+
+    <h3>Logging In</h3>
+    <ol>
+      <li>Open a web browser</li>
+      <li>Type the router's IP address in the address bar</li>
+      <li>Enter admin username and password</li>
+      <li>Common defaults (if you haven't changed them):
+        <ul>
+          <li>admin/admin</li>
+          <li>admin/password</li>
+          <li>admin/(blank)</li>
+          <li>Check router label or manual</li>
+        </ul>
+      </li>
+    </ol>
+
+    <div class="alert alert-warning">
+      <strong>Security Reminder:</strong> If you're still using the default admin password, change it immediately! Default passwords are publicly known and a security risk.
+    </div>
+  </section>
+
+  <section>
+    <h2>⏰ Setting Up Access Schedules</h2>
+
+    <h3>Finding Access Control Features</h3>
+    <p>Location varies by router brand. Look for sections named:</p>
+    <ul>
+      <li>Parental Controls</li>
+      <li>Access Control / Access Schedule</li>
+      <li>Time Restrictions</li>
+      <li>Family Shield / Family Protection</li>
+      <li>Device Management</li>
+    </ul>
+
+    <h3>Configuring Time Schedules</h3>
+    <ol>
+      <li>Enable access control or parental controls</li>
+      <li>Select devices to manage (by name or MAC address)</li>
+      <li>Set allowed internet access times:
+        <ul>
+          <li>Weekdays: e.g., 6 AM-8 AM, 4 PM-8 PM</li>
+          <li>Weekends: e.g., 8 AM-9 PM</li>
+          <li>Bedtime blocking: e.g., 9 PM-7 AM</li>
+        </ul>
+      </li>
+      <li>Save and apply changes</li>
+    </ol>
+
+    <div class="alert alert-info">
+      <strong>Strategy:</strong> Block during homework time (e.g., 4-6 PM), late night (9 PM+), and early morning. Allow access for legitimate use during appropriate hours.
+    </div>
+  </section>
+
+  <section>
+    <h2>📱 Device Management</h2>
+
+    <h3>Identifying Devices</h3>
+    <ol>
+      <li>Find "Connected Devices", "Device List", or "DHCP Client List"</li>
+      <li>View all devices currently connected to your network</li>
+      <li>Identify each device:
+        <ul>
+          <li>Check device name (often shows up automatically)</li>
+          <li>Match MAC addresses (Settings → About on phones/tablets)</li>
+          <li>Use IP addresses to identify computers</li>
+        </ul>
+      </li>
+      <li>Rename devices for easy identification (e.g., "Emma-iPhone", "Kitchen-Tablet")</li>
+    </ol>
+
+    <h3>Blocking Specific Devices</h3>
+    <ol>
+      <li>Select device from the list</li>
+      <li>Enable "Block" or "Pause Internet"</li>
+      <li>Some routers allow scheduling (block only at certain times)</li>
+      <li>Save changes</li>
+    </ol>
+
+    <h3>Bandwidth Control</h3>
+    <p>Some routers allow limiting bandwidth per device:</p>
+    <ul>
+      <li>Prevents excessive streaming/downloading</li>
+      <li>Ensures fair network access</li>
+      <li>Can prioritize homework/work devices</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🌐 DNS-Based Filtering at Router Level</h2>
+
+    <h3>Why Configure DNS on Router?</h3>
+    <p>
+      Configuring filtering DNS servers at the router level protects all devices automatically. See our <a href="/guides/dns-filtering">DNS Filtering Guide</a> for detailed DNS provider information.
+    </p>
+
+    <h3>Changing Router DNS</h3>
+    <ol>
+      <li>Find "Internet", "WAN", or "Network Settings" section</li>
+      <li>Look for "DNS" or "DNS Server" settings</li>
+      <li>Change from "Automatic" or "ISP" to "Manual" or "Custom"</li>
+      <li>Enter filtering DNS addresses (e.g., CleanBrowsing Family Filter):
+        <ul>
+          <li>Primary: 185.228.168.168</li>
+          <li>Secondary: 185.228.169.168</li>
+        </ul>
+      </li>
+      <li>Save and reboot router</li>
+      <li>Restart connected devices or reconnect to WiFi</li>
+    </ol>
+
+    <div class="alert alert-success">
+      <strong>Benefit:</strong> DNS filtering at the router protects all devices—computers, phones, tablets, gaming consoles, smart TVs—automatically.
+    </div>
+  </section>
+
+  <section>
+    <h2>🔒 Router-Specific Guides</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-6">
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-4">
+        <h3 class="text-blue-700 dark:text-blue-400 mt-0 mb-3 text-lg">Netgear (with Disney Circle)</h3>
+        <ul class="m-0 pl-5">
+          <li class="mb-1 text-sm leading-relaxed">Advanced parental controls built-in</li>
+          <li class="mb-1 text-sm leading-relaxed">App and website filtering</li>
+          <li class="mb-1 text-sm leading-relaxed">Time limits and rewards</li>
+          <li class="mb-1 text-sm leading-relaxed">Location: Advanced → Disney Circle or netgear.com/landings/circle</li>
+        </ul>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-4">
+        <h3 class="text-blue-700 dark:text-blue-400 mt-0 mb-3 text-lg">TP-Link</h3>
+        <ul class="m-0 pl-5">
+          <li class="mb-1 text-sm leading-relaxed">Access Control under Security or Advanced</li>
+          <li class="mb-1 text-sm leading-relaxed">Tether app for mobile management</li>
+          <li class="mb-1 text-sm leading-relaxed">URL filtering and keyword blocking</li>
+          <li class="mb-1 text-sm leading-relaxed">Time-based access control</li>
+        </ul>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-4">
+        <h3 class="text-blue-700 dark:text-blue-400 mt-0 mb-3 text-lg">Asus</h3>
+        <ul class="m-0 pl-5">
+          <li class="mb-1 text-sm leading-relaxed">AiProtection with parental controls</li>
+          <li class="mb-1 text-sm leading-relaxed">Time scheduling per device</li>
+          <li class="mb-1 text-sm leading-relaxed">Content filtering categories</li>
+          <li class="mb-1 text-sm leading-relaxed">Location: General → Parental Controls</li>
+        </ul>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-4">
+        <h3 class="text-blue-700 dark:text-blue-400 mt-0 mb-3 text-lg">Linksys</h3>
+        <ul class="m-0 pl-5">
+          <li class="mb-1 text-sm leading-relaxed">Parental Controls section</li>
+          <li class="mb-1 text-sm leading-relaxed">Device blocking and scheduling</li>
+          <li class="mb-1 text-sm leading-relaxed">Website blocking by keyword or URL</li>
+          <li class="mb-1 text-sm leading-relaxed">Smart WiFi app for remote management</li>
+        </ul>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-4">
+        <h3 class="text-blue-700 dark:text-blue-400 mt-0 mb-3 text-lg">Google WiFi / Nest WiFi</h3>
+        <ul class="m-0 pl-5">
+          <li class="mb-1 text-sm leading-relaxed">Family WiFi features in Google Home app</li>
+          <li class="mb-1 text-sm leading-relaxed">Per-device pause and scheduling</li>
+          <li class="mb-1 text-sm leading-relaxed">SafeSearch enforcement</li>
+          <li class="mb-1 text-sm leading-relaxed">Very user-friendly mobile interface</li>
+        </ul>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-4">
+        <h3 class="text-blue-700 dark:text-blue-400 mt-0 mb-3 text-lg">Eero</h3>
+        <ul class="m-0 pl-5">
+          <li class="mb-1 text-sm leading-relaxed">Eero Secure (subscription required for parental controls)</li>
+          <li class="mb-1 text-sm leading-relaxed">Content filtering and ad blocking</li>
+          <li class="mb-1 text-sm leading-relaxed">Time-based access</li>
+          <li class="mb-1 text-sm leading-relaxed">Managed via Eero app</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🛠️ Advanced Router Features</h2>
+
+    <h3>Guest Network for Children</h3>
+    <ul>
+      <li>Create a separate WiFi network for children's devices</li>
+      <li>Apply stricter filtering to guest network</li>
+      <li>Isolates kids' devices from main network</li>
+      <li>See our <a href="/guides/guest-networks">Guest Networks Guide</a></li>
+    </ul>
+
+    <h3>VPN Blocking</h3>
+    <p>Prevent children from using VPNs to bypass restrictions:</p>
+    <ul>
+      <li>Block common VPN ports (UDP 500, UDP 4500, TCP 1723)</li>
+      <li>Use Deep Packet Inspection (DPI) if available</li>
+      <li>Block known VPN service IPs (advanced)</li>
+      <li>Note: This is technically complex and may affect legitimate uses</li>
+    </ul>
+
+    <h3>Firewall Rules</h3>
+    <ul>
+      <li>Block specific websites or IP addresses</li>
+      <li>Create allow/deny rules per device</li>
+      <li>Requires knowledge of domains and IPs</li>
+    </ul>
+
+    <h3>Quality of Service (QoS)</h3>
+    <ul>
+      <li>Prioritize educational/work traffic</li>
+      <li>Limit streaming bandwidth for entertainment devices</li>
+      <li>Ensure video calls and homework aren't interrupted</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>📋 Router Security Checklist</h2>
+
+    <div class="bg-green-50 dark:bg-green-900/20 border-2 border-green-200 dark:border-green-700 rounded-lg p-6 my-6">
+      <ul class="m-0 pl-2 list-none">
+        <li class="mb-3 text-base leading-relaxed pl-2">✓ Change default admin username and password</li>
+        <li class="mb-3 text-base leading-relaxed pl-2">✓ Update router firmware to latest version</li>
+        <li class="mb-3 text-base leading-relaxed pl-2">✓ Disable WPS (WiFi Protected Setup) - security vulnerability</li>
+        <li class="mb-3 text-base leading-relaxed pl-2">✓ Use WPA3 or WPA2 encryption (not WEP or WPA)</li>
+        <li class="mb-3 text-base leading-relaxed pl-2">✓ Create strong WiFi password (12+ characters)</li>
+        <li class="mb-3 text-base leading-relaxed pl-2">✓ Disable remote management unless needed</li>
+        <li class="mb-3 text-base leading-relaxed pl-2">✓ Change default SSID (network name) to something unique</li>
+        <li class="mb-3 text-base leading-relaxed pl-2">✓ Disable UPnP if not needed</li>
+        <li class="mb-3 text-base leading-relaxed pl-2">✓ Enable router firewall</li>
+        <li class="mb-3 text-base leading-relaxed pl-2">✓ Review connected devices list regularly</li>
+      </ul>
+    </div>
+
+    <div class="alert alert-warning">
+      <strong>Security is Essential:</strong> An insecure router defeats parental controls. Children (or neighbors) can access admin panel and disable restrictions if not properly secured.
+    </div>
+  </section>
+
+  <section>
+    <h2>❓ Troubleshooting</h2>
+
+    <div class="grid gap-4 my-6">
+      <div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 dark:border-blue-400 p-4 rounded">
+        <h3 class="text-lg text-gray-900 dark:text-white mb-2 mt-0">Can't access router admin panel</h3>
+        <p class="text-gray-700 dark:text-gray-300 font-semibold">Solutions:</p>
+        <ul class="pl-5 mt-2 text-gray-700 dark:text-gray-300">
+          <li class="mb-1">Verify you're connected to your network (not guest network)</li>
+          <li class="mb-1">Try different common IP addresses</li>
+          <li class="mb-1">Check router label for correct address</li>
+          <li class="mb-1">Reset router to factory defaults (last resort - will erase settings)</li>
+        </ul>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 dark:border-blue-400 p-4 rounded">
+        <h3 class="text-lg text-gray-900 dark:text-white mb-2 mt-0">Forgot router admin password</h3>
+        <p class="text-gray-700 dark:text-gray-300 font-semibold">Solutions:</p>
+        <ul class="pl-5 mt-2 text-gray-700 dark:text-gray-300">
+          <li class="mb-1">Try default passwords for your router model</li>
+          <li class="mb-1">Check if password is on router label</li>
+          <li class="mb-1">Factory reset router (hold reset button 10-30 seconds)</li>
+          <li class="mb-1">Reconfigure all settings after reset</li>
+        </ul>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 dark:border-blue-400 p-4 rounded">
+        <h3 class="text-lg text-gray-900 dark:text-white mb-2 mt-0">Time schedules not working properly</h3>
+        <p class="text-gray-700 dark:text-gray-300 font-semibold">Check:</p>
+        <ul class="pl-5 mt-2 text-gray-700 dark:text-gray-300">
+          <li class="mb-1">Router time/timezone settings are correct</li>
+          <li class="mb-1">Devices are correctly identified in schedule</li>
+          <li class="mb-1">Schedule is enabled/active</li>
+          <li class="mb-1">Router firmware is up to date</li>
+          <li class="mb-1">Child isn't using a device you haven't added to schedule</li>
+        </ul>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 dark:border-blue-400 p-4 rounded">
+        <h3 class="text-lg text-gray-900 dark:text-white mb-2 mt-0">Child bypassing restrictions with new device</h3>
+        <p class="text-gray-700 dark:text-gray-300 font-semibold">Solutions:</p>
+        <ul class="pl-5 mt-2 text-gray-700 dark:text-gray-300">
+          <li class="mb-1">Enable "Block all new devices" or whitelist-only mode</li>
+          <li class="mb-1">Check connected devices list daily</li>
+          <li class="mb-1">Set router to require approval for new devices</li>
+          <li class="mb-1">Have conversation about respecting family rules</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>⚖️ Pros & Cons</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-green-300 dark:border-green-700 rounded-lg p-6">
+        <h3 class="text-green-700 dark:text-green-400 mt-0">✅ Advantages</h3>
+        <ul class="m-0 pl-5">
+          <li class="mb-2 leading-relaxed">Protects all devices on network</li>
+          <li class="mb-2 leading-relaxed">No software to install on devices</li>
+          <li class="mb-2 leading-relaxed">Harder to bypass than device-level controls</li>
+          <li class="mb-2 leading-relaxed">Time-based access control</li>
+          <li class="mb-2 leading-relaxed">Centralized management</li>
+          <li class="mb-2 leading-relaxed">Works across platforms (iOS, Android, Windows, etc.)</li>
+          <li class="mb-2 leading-relaxed">Can combine with DNS filtering</li>
+          <li class="mb-2 leading-relaxed">Usually free (built into router)</li>
+        </ul>
+      </div>
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-yellow-300 dark:border-yellow-700 rounded-lg p-6">
+        <h3 class="text-yellow-800 dark:text-yellow-400 mt-0">❌ Limitations</h3>
+        <ul class="m-0 pl-5">
+          <li class="mb-2 leading-relaxed">Doesn't protect devices on cellular/outside networks</li>
+          <li class="mb-2 leading-relaxed">Features vary greatly by router brand/model</li>
+          <li class="mb-2 leading-relaxed">Can be complex to configure</li>
+          <li class="mb-2 leading-relaxed">No content monitoring or reporting (usually)</li>
+          <li class="mb-2 leading-relaxed">May require firmware updates</li>
+          <li class="mb-2 leading-relaxed">Can be bypassed with VPN or alternate DNS</li>
+          <li class="mb-2 leading-relaxed">All-or-nothing for time blocking</li>
+          <li class="mb-2 leading-relaxed">Old routers may lack parental control features</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <Fragment slot="footer">
+    <h2>🎯 Next Steps</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+      <a href="/guides/dns-filtering" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+        <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">🌐 DNS Filtering</h3>
+        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Configure DNS filtering at router level for content protection</p>
+      </a>
+
+      <a href="/guides/guest-networks" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+        <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">📡 Guest Networks</h3>
+        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Create filtered WiFi networks for children's devices</p>
+      </a>
+
+      <a href="/guides/ios-screen-time" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+        <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">📱 Device Controls</h3>
+        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Add device-level protection for mobile devices</p>
+      </a>
+
+      <a href="/guides/firewall" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+        <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">🔥 Advanced Firewall</h3>
+        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">More advanced network protection for tech-savvy families</p>
+      </a>
+    </div>
+
+    <div class="alert alert-info">
+      <strong>Layered Approach:</strong> Router controls (time management) + DNS filtering (content blocking) + device controls (mobile protection) = comprehensive coverage.
+    </div>
+  </Fragment>
+</GuideLayout>

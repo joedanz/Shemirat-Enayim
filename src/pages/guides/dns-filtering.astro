@@ -1,0 +1,382 @@
+---
+import GuideLayout from '~/layouts/GuideLayout.astro';
+
+const metadata = {
+  title: 'DNS Filtering Setup Guide — Shemirat Enayim',
+  description: 'Learn how to set up DNS filtering to block inappropriate content at the network level using services like OpenDNS, CleanBrowsing, and NextDNS.',
+};
+---
+
+<GuideLayout
+  metadata={metadata}
+  difficulty="beginner"
+  timeEstimate="15-30 minutes"
+  prerequisites={[
+    "Access to your device's network settings or router admin panel",
+    "Basic understanding of your home network setup"
+  ]}
+>
+  <Fragment slot="breadcrumb">
+    <li class="flex items-center">
+      <a href="/" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+        Home
+      </a>
+      <span class="mx-2 text-gray-500">/</span>
+    </li>
+    <li class="flex items-center">
+      <a href="/methods" class="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+        Protection Methods
+      </a>
+      <span class="mx-2 text-gray-500">/</span>
+    </li>
+    <li class="text-gray-700 dark:text-gray-300">
+      DNS Filtering
+    </li>
+  </Fragment>
+
+  <section>
+    <h2>What is DNS Filtering?</h2>
+    <p>
+      DNS (Domain Name System) filtering is one of the most effective and easiest ways to protect your entire network from inappropriate content. DNS acts like the internet's phone book, translating website names (like google.com) into IP addresses that computers can understand.
+    </p>
+    <p>
+      By using a filtering DNS service instead of your default ISP's DNS, you can automatically block access to millions of inappropriate websites before they even load. This works across all devices on your network without installing any software.
+    </p>
+
+    <div class="alert alert-success">
+      <strong>Best for:</strong> Families wanting baseline protection for all devices, blocking at the network level, set-it-and-forget-it solutions.
+    </div>
+  </section>
+
+  <section>
+    <h2>🆚 Comparing DNS Filtering Services</h2>
+    <p>
+      Here are the most popular DNS filtering services for family protection:
+    </p>
+
+    <div class="overflow-x-auto my-6">
+      <table>
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Cost</th>
+            <th>Filtering Levels</th>
+            <th>Custom Lists</th>
+            <th>Best For</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>OpenDNS Home</strong></td>
+            <td>Free</td>
+            <td>3 levels</td>
+            <td>✓ (with account)</td>
+            <td>Families wanting free, reliable filtering</td>
+          </tr>
+          <tr>
+            <td><strong>CleanBrowsing</strong></td>
+            <td>Free + Paid ($5/mo)</td>
+            <td>3 free levels, custom in paid</td>
+            <td>✓ (paid only)</td>
+            <td>Families with varied filtering needs</td>
+          </tr>
+          <tr>
+            <td><strong>NextDNS</strong></td>
+            <td>Free (300k queries/mo) then $2/mo</td>
+            <td>Highly customizable</td>
+            <td>✓ (extensive)</td>
+            <td>Tech-savvy users wanting control</td>
+          </tr>
+          <tr>
+            <td><strong>Cloudflare for Families</strong></td>
+            <td>Free</td>
+            <td>2 levels (malware, malware+adult)</td>
+            <td>✗</td>
+            <td>Basic filtering with privacy focus</td>
+          </tr>
+          <tr>
+            <td><strong>Quad9</strong></td>
+            <td>Free</td>
+            <td>Security focus</td>
+            <td>Limited</td>
+            <td>Security-first, basic filtering</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="alert alert-info">
+      <strong>Our Recommendation:</strong> Start with CleanBrowsing's free family filter or OpenDNS Home. Both are easy to set up, reliable, and don't require payment. Upgrade to NextDNS if you want detailed logs and custom blocking rules.
+    </div>
+  </section>
+
+  <section>
+    <h2>📋 Setup Methods</h2>
+    <p>
+      You can set up DNS filtering in two ways:
+    </p>
+    <ul>
+      <li><strong>Device-Level:</strong> Configure DNS on each device individually. Protection travels with the device.</li>
+      <li><strong>Router-Level:</strong> Configure DNS once at your router. All devices on your network are automatically protected.</li>
+    </ul>
+    <div class="alert alert-warning">
+      <strong>Recommended approach:</strong> Set up DNS filtering at the router level for home protection, AND on mobile devices so they're protected when away from home.
+    </div>
+  </section>
+
+  <section>
+    <h2>🏠 Router-Level Setup (Protects All Devices)</h2>
+
+    <h3>DNS Server Addresses</h3>
+    <p>First, choose a DNS service and note its server addresses:</p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 my-6">
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-4 text-center">
+        <h4 class="text-base text-gray-900 dark:text-white mb-3">OpenDNS Home (FamilyShield)</h4>
+        <code class="block font-mono text-lg font-semibold text-blue-700 dark:text-blue-400 bg-white dark:bg-gray-900 p-2 rounded my-2">208.67.222.123</code>
+        <code class="block font-mono text-lg font-semibold text-blue-700 dark:text-blue-400 bg-white dark:bg-gray-900 p-2 rounded my-2">208.67.220.123</code>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-4 text-center">
+        <h4 class="text-base text-gray-900 dark:text-white mb-3">CleanBrowsing (Family Filter)</h4>
+        <code class="block font-mono text-lg font-semibold text-blue-700 dark:text-blue-400 bg-white dark:bg-gray-900 p-2 rounded my-2">185.228.168.168</code>
+        <code class="block font-mono text-lg font-semibold text-blue-700 dark:text-blue-400 bg-white dark:bg-gray-900 p-2 rounded my-2">185.228.169.168</code>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-blue-200 dark:border-blue-700 rounded-lg p-4 text-center">
+        <h4 class="text-base text-gray-900 dark:text-white mb-3">Cloudflare for Families (Malware & Adult)</h4>
+        <code class="block font-mono text-lg font-semibold text-blue-700 dark:text-blue-400 bg-white dark:bg-gray-900 p-2 rounded my-2">1.1.1.3</code>
+        <code class="block font-mono text-lg font-semibold text-blue-700 dark:text-blue-400 bg-white dark:bg-gray-900 p-2 rounded my-2">1.0.0.3</code>
+      </div>
+    </div>
+
+    <h3>Configuration Steps</h3>
+    <ol>
+      <li>
+        <strong>Access your router's admin panel</strong>
+        <p>Open a web browser and type your router's IP address (usually <code>192.168.1.1</code> or <code>192.168.0.1</code>). Check the sticker on your router if unsure.</p>
+      </li>
+      <li>
+        <strong>Log in with your admin credentials</strong>
+        <p>Use the username and password printed on your router or the ones you set during initial setup. Common defaults: <code>admin/admin</code> or <code>admin/password</code>.</p>
+      </li>
+      <li>
+        <strong>Find the DNS settings</strong>
+        <p>Look for sections labeled "Internet", "WAN", "DNS", "Network Settings", or "DHCP Settings". The exact location varies by router brand.</p>
+      </li>
+      <li>
+        <strong>Change the DNS servers</strong>
+        <p>Replace the existing DNS server addresses with your chosen filtering DNS addresses. Enter the Primary and Secondary DNS addresses.</p>
+      </li>
+      <li>
+        <strong>Save and reboot</strong>
+        <p>Save your changes and reboot your router for the changes to take effect. Most routers will do this automatically.</p>
+      </li>
+      <li>
+        <strong>Restart your devices</strong>
+        <p>For immediate effect, restart your connected devices or disconnect/reconnect from WiFi.</p>
+      </li>
+    </ol>
+
+    <div class="alert alert-warning">
+      <strong>Important:</strong> Write down your original DNS addresses before changing them, in case you need to revert the changes.
+    </div>
+  </section>
+
+  <section>
+    <h2>📱 Device-Level Setup</h2>
+
+    <h3>Windows 10/11</h3>
+    <ol>
+      <li>Open Settings → Network & Internet</li>
+      <li>Click your connection (WiFi or Ethernet)</li>
+      <li>Click "Edit" next to IP assignment</li>
+      <li>Choose "Manual" and enable IPv4</li>
+      <li>Enter the DNS addresses in "Preferred DNS" and "Alternate DNS"</li>
+      <li>Click Save</li>
+    </ol>
+
+    <h3>macOS</h3>
+    <ol>
+      <li>Open System Settings (or System Preferences)</li>
+      <li>Go to Network</li>
+      <li>Select your connection and click Details (or Advanced)</li>
+      <li>Click the DNS tab</li>
+      <li>Click the + button and add both DNS addresses</li>
+      <li>Click OK and Apply</li>
+    </ol>
+
+    <h3>iPhone & iPad (iOS/iPadOS)</h3>
+    <ol>
+      <li>Open Settings → WiFi</li>
+      <li>Tap the (i) button next to your network</li>
+      <li>Scroll down and tap "Configure DNS"</li>
+      <li>Tap "Manual"</li>
+      <li>Remove existing servers and add the new DNS addresses</li>
+      <li>Tap Save</li>
+    </ol>
+
+    <div class="alert alert-info">
+      <strong>Note:</strong> iOS requires DNS configuration per WiFi network. For cellular data protection, consider using a DNS profile or VPN app.
+    </div>
+
+    <h3>Android</h3>
+    <ol>
+      <li>Open Settings → Network & Internet (or Connections)</li>
+      <li>Tap WiFi and long-press your network</li>
+      <li>Tap "Modify Network" or "Manage Network Settings"</li>
+      <li>Show Advanced Options</li>
+      <li>Change IP Settings to "Static"</li>
+      <li>Enter the DNS addresses in DNS 1 and DNS 2 fields</li>
+      <li>Save changes</li>
+    </ol>
+
+    <div class="alert alert-info">
+      <strong>Android 9+:</strong> You can use "Private DNS" feature. Go to Settings → Network & Internet → Private DNS and enter a DNS-over-TLS hostname (e.g., <code>family-filter.cleanbrowsing.org</code>).
+    </div>
+  </section>
+
+  <section>
+    <h2>✅ Testing Your Setup</h2>
+    <p>After configuring DNS filtering, verify it's working properly:</p>
+
+    <ol>
+      <li>
+        <strong>Check your DNS server</strong>
+        <p>Visit <a href="https://dnsleaktest.com" target="_blank" rel="noopener noreferrer">dnsleaktest.com</a> or <a href="https://www.whatsmydns.net" target="_blank" rel="noopener noreferrer">whatsmydns.net</a> to confirm you're using the correct DNS servers.</p>
+      </li>
+      <li>
+        <strong>Test filtering</strong>
+        <p>Try visiting a test blocked site. Most DNS providers have test domains. For example, OpenDNS uses <code>internetbadguys.com</code>. You should see a block page.</p>
+      </li>
+      <li>
+        <strong>Test normal browsing</strong>
+        <p>Make sure legitimate websites load properly. Test a few popular sites to ensure nothing is over-blocked.</p>
+      </li>
+    </ol>
+
+    <div class="alert alert-success">
+      <strong>Success!</strong> If you see a block page on inappropriate sites and normal sites load correctly, your DNS filtering is working.
+    </div>
+  </section>
+
+  <section>
+    <h2>🔧 Advanced Configuration</h2>
+
+    <h3>Creating a Free OpenDNS Account</h3>
+    <ol>
+      <li>Sign up at <a href="https://signup.opendns.com" target="_blank" rel="noopener noreferrer">signup.opendns.com</a></li>
+      <li>Add your home network (it will detect your IP address)</li>
+      <li>Customize filtering levels and categories</li>
+      <li>Add individual sites to allow or block</li>
+      <li>View browsing statistics and logs</li>
+    </ol>
+
+    <h3>NextDNS Custom Configuration</h3>
+    <ol>
+      <li>Create account at <a href="https://nextdns.io" target="_blank" rel="noopener noreferrer">nextdns.io</a></li>
+      <li>Set up a configuration profile</li>
+      <li>Choose blocklists (ads, trackers, adult content, gambling, etc.)</li>
+      <li>Add custom allow/block lists</li>
+      <li>Use your unique DNS addresses provided</li>
+      <li>Review detailed analytics and query logs</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>❓ Troubleshooting Common Issues</h2>
+
+    <div class="grid gap-4 my-6">
+      <div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 dark:border-blue-400 p-4 rounded">
+        <h3 class="text-lg text-gray-900 dark:text-white mb-2 mt-0">Websites are loading very slowly</h3>
+        <p class="mb-0 text-gray-700 dark:text-gray-300"><strong>Solution:</strong> The DNS server might be too far from your location. Try a different DNS service or use your ISP's DNS as secondary.</p>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 dark:border-blue-400 p-4 rounded">
+        <h3 class="text-lg text-gray-900 dark:text-white mb-2 mt-0">Some sites are over-blocked</h3>
+        <p class="mb-0 text-gray-700 dark:text-gray-300"><strong>Solution:</strong> Create an account with your DNS provider and add the sites to your allow list. Or switch to a less restrictive filtering level.</p>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 dark:border-blue-400 p-4 rounded">
+        <h3 class="text-lg text-gray-900 dark:text-white mb-2 mt-0">Filtering isn't working</h3>
+        <p class="mb-0 text-gray-700 dark:text-gray-300"><strong>Solution:</strong> Clear your device's DNS cache. Windows: <code>ipconfig /flushdns</code>, Mac: <code>sudo dscacheutil -flushcache</code>, or restart the device.</p>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 dark:border-blue-400 p-4 rounded">
+        <h3 class="text-lg text-gray-900 dark:text-white mb-2 mt-0">Works at home but not on mobile data</h3>
+        <p class="mb-0 text-gray-700 dark:text-gray-300"><strong>Solution:</strong> DNS filtering set at the router only works on your home network. Configure DNS on the device itself or use a DNS profile/VPN for cellular protection.</p>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-800 border-l-4 border-blue-500 dark:border-blue-400 p-4 rounded">
+        <h3 class="text-lg text-gray-900 dark:text-white mb-2 mt-0">Someone bypassed the filtering with VPN</h3>
+        <p class="mb-0 text-gray-700 dark:text-gray-300"><strong>Solution:</strong> DNS filtering can be bypassed by VPNs or alternative DNS apps. Combine with device restrictions to block VPN apps, or use router-level VPN blocking.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>⚖️ Pros & Cons of DNS Filtering</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 my-6">
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-green-300 dark:border-green-700 rounded-lg p-6">
+        <h3 class="text-green-700 dark:text-green-400 mt-0">✅ Advantages</h3>
+        <ul class="m-0 pl-5">
+          <li class="mb-2 leading-relaxed">Protects all devices on your network automatically</li>
+          <li class="mb-2 leading-relaxed">No software to install on each device</li>
+          <li class="mb-2 leading-relaxed">Free options available</li>
+          <li class="mb-2 leading-relaxed">Very easy to set up (15-30 minutes)</li>
+          <li class="mb-2 leading-relaxed">Blocks sites before they load (faster and safer)</li>
+          <li class="mb-2 leading-relaxed">Works across all apps and browsers</li>
+          <li class="mb-2 leading-relaxed">Minimal performance impact</li>
+          <li class="mb-2 leading-relaxed">Can be configured on devices for mobile protection</li>
+        </ul>
+      </div>
+      <div class="bg-gray-50 dark:bg-gray-800 border-2 border-yellow-300 dark:border-yellow-700 rounded-lg p-6">
+        <h3 class="text-yellow-800 dark:text-yellow-400 mt-0">❌ Limitations</h3>
+        <ul class="m-0 pl-5">
+          <li class="mb-2 leading-relaxed">Doesn't work on mobile/cellular data (unless configured per device)</li>
+          <li class="mb-2 leading-relaxed">Can be bypassed by changing DNS settings (combine with device restrictions)</li>
+          <li class="mb-2 leading-relaxed">Can be bypassed with VPNs</li>
+          <li class="mb-2 leading-relaxed">No time limits or scheduling</li>
+          <li class="mb-2 leading-relaxed">Basic reporting (unless using paid plans)</li>
+          <li class="mb-2 leading-relaxed">Doesn't filter HTTPS content within sites</li>
+          <li class="mb-2 leading-relaxed">May occasionally over-block legitimate content</li>
+          <li class="mb-2 leading-relaxed">Doesn't control apps or screen time</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <Fragment slot="footer">
+    <h2>🎯 Next Steps & Related Guides</h2>
+    <p>
+      DNS filtering provides excellent baseline protection, but works best as part of a layered approach:
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+      <a href="/guides/router-config" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+        <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">🔐 Router Configuration</h3>
+        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Add time limits and device management at the router level</p>
+      </a>
+
+      <a href="/guides/ios-screen-time" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+        <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">📱 iOS Screen Time</h3>
+        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Add device-level controls for iPhones and iPads</p>
+      </a>
+
+      <a href="/guides/android-family-link" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+        <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">🤖 Android Family Link</h3>
+        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Set up parental controls on Android devices</p>
+      </a>
+
+      <a href="/guides/filtering-software" class="block bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-lg p-5 no-underline transition-all hover:border-blue-400 hover:shadow-lg hover:-translate-y-0.5">
+        <h3 class="text-lg text-gray-900 dark:text-white mt-0 mb-2">💻 Filtering Software</h3>
+        <p class="text-gray-600 dark:text-gray-400 m-0 text-sm">Add reporting and advanced features with dedicated software</p>
+      </a>
+    </div>
+
+    <div class="alert alert-info">
+      <strong>Complete Protection Strategy:</strong> Combine DNS filtering (network-level) + device parental controls + accountability software for comprehensive protection.
+    </div>
+  </Fragment>
+</GuideLayout>
