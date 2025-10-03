@@ -1,48 +1,169 @@
 ---
-import '~/assets/styles/tailwind.css';
+/**
+ * Base Layout - Shemirat Enayim
+ * Tailwind CSS version with theme management and analytics
+ * Features: SEO meta tags, theme script, analytics integration
+ */
 
-import { I18N } from 'astrowind:config';
-
-import CommonMeta from '~/components/common/CommonMeta.astro';
-import Favicons from '~/components/Favicons.astro';
-import CustomStyles from '~/components/CustomStyles.astro';
-import ApplyColorMode from '~/components/common/ApplyColorMode.astro';
-import Metadata from '~/components/common/Metadata.astro';
-import SiteVerification from '~/components/common/SiteVerification.astro';
-import Analytics from '~/components/common/Analytics.astro';
-import BasicScripts from '~/components/common/BasicScripts.astro';
-
-// Comment the line below to disable View Transitions
-import { ClientRouter } from 'astro:transitions';
-
-import type { MetaData as MetaDataType } from '~/types';
-
-export interface Props {
-  metadata?: MetaDataType;
+interface Props {
+	title?: string;
+	description?: string;
+	image?: string;
+	// Analytics metadata
+	pageType?: 'home' | 'guide' | 'resource' | 'support' | 'general';
+	audience?: 'parents' | 'leaders' | 'individuals' | 'general';
+	category?: 'network' | 'device' | 'software' | 'education' | 'other';
 }
 
-const { metadata = {} } = Astro.props;
-const { language, textDirection } = I18N;
+const {
+	title = 'Shemirat Enayim - Protection for the Eyes',
+	description = 'Comprehensive resources for parents, religious leaders, and individuals to protect their networks from inappropriate content through content filtering and internet safety solutions.',
+	image = '/og-image.svg',
+	pageType = 'general',
+	audience = 'general',
+	category = 'other'
+} = Astro.props;
+
+const canonicalURL = Astro.site ? new URL(Astro.url.pathname, Astro.site) : undefined;
+const ogImageURL = Astro.site ? new URL(image, Astro.site) : undefined;
+
+// Analytics & Monitoring Configuration
+const isProduction = import.meta.env.PUBLIC_ENV === 'production';
+const plausibleDomain = import.meta.env.PUBLIC_PLAUSIBLE_DOMAIN;
+const sentryDSN = import.meta.env.PUBLIC_SENTRY_DSN;
 ---
 
 <!doctype html>
-<html lang={language} dir={textDirection} class="2xl:text-[20px]">
-  <head>
-    <CommonMeta />
-    <Favicons />
-    <CustomStyles />
-    <ApplyColorMode />
-    <Metadata {...metadata} />
-    <SiteVerification />
-    <Analytics />
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Comment the line below to disable View Transitions -->
-    <ClientRouter fallback="swap" />
-  </head>
+		<!-- Preconnect to CDNs for faster resource loading -->
+		<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
 
-  <body class="antialiased text-default bg-page tracking-tight">
-    <slot />
+		<!-- Favicon -->
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <BasicScripts />
-  </body>
+		{canonicalURL && <link rel="canonical" href={canonicalURL} />}
+		<meta name="generator" content={Astro.generator} />
+
+		<!-- Primary Meta Tags -->
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="description" content={description} />
+		<meta name="keywords" content="internet safety, content filtering, parental controls, DNS filtering, network protection, web filtering, family safety, screen time" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		{canonicalURL && <meta property="og:url" content={canonicalURL} />}
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		{ogImageURL && <meta property="og:image" content={ogImageURL} />}
+
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		{canonicalURL && <meta property="twitter:url" content={canonicalURL} />}
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		{ogImageURL && <meta property="twitter:image" content={ogImageURL} />}
+
+		<!-- Theme Color -->
+		<meta name="theme-color" content="#0284c7" />
+
+		<!-- Theme Script - MUST run before page renders to prevent FOUC -->
+		<script is:inline>
+			// Immediately apply theme to prevent flash
+			(function() {
+				const THEME_KEY = 'shemirat-enayim-theme';
+
+				function getStoredTheme() {
+					try {
+						const stored = localStorage.getItem(THEME_KEY);
+						if (stored === 'light' || stored === 'dark' || stored === 'system') {
+							return stored;
+						}
+					} catch {}
+					return 'system';
+				}
+
+				function getSystemTheme() {
+					if (typeof window !== 'undefined' && window.matchMedia) {
+						return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+					}
+					return 'light';
+				}
+
+				const theme = getStoredTheme();
+				const effectiveTheme = theme === 'system' ? getSystemTheme() : theme;
+
+				// Set data-theme for compatibility
+				document.documentElement.setAttribute('data-theme', effectiveTheme);
+
+				// Add dark class for Tailwind
+				if (effectiveTheme === 'dark') {
+					document.documentElement.classList.add('dark');
+				}
+			})();
+		</script>
+
+		<!-- Plausible Analytics - Privacy-respecting analytics -->
+		{isProduction && plausibleDomain && (
+			<script defer data-domain={plausibleDomain} src="https://plausible.io/js/script.js"></script>
+		)}
+
+		<!-- Sentry Error Monitoring - Client-side error tracking -->
+		{isProduction && sentryDSN && (
+			<script>
+				window.sentryConfig = {
+					dsn: "{sentryDSN}",
+					environment: "production",
+					tracesSampleRate: 1.0,
+					integrations: [],
+				};
+			</script>
+		)}
+	</head>
+	<body
+		class="min-h-screen flex flex-col bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-50 transition-colors duration-200"
+		data-page-type={pageType}
+		data-audience={audience}
+		data-category={category}
+	>
+		<noscript>
+			<div class="bg-yellow-100 border-2 border-yellow-600 p-4 text-center font-semibold">
+				⚠️ Some features require JavaScript. For the best experience, please enable JavaScript in your browser.
+			</div>
+		</noscript>
+
+		<slot />
+
+		<!-- Performance Monitoring - Core Web Vitals tracking -->
+		{isProduction && (
+			<script>
+				import { initPerformanceMonitoring } from '../scripts/performance-monitor';
+				// Initialize performance monitoring when page loads
+				initPerformanceMonitoring();
+			</script>
+		)}
+
+		<!-- Page metadata for analytics -->
+		<script>
+			// Send custom page properties to Plausible on pageview
+			const pageType = document.body.getAttribute('data-page-type');
+			const audience = document.body.getAttribute('data-audience');
+			const category = document.body.getAttribute('data-category');
+
+			// Plausible automatically tracks pageviews, but we can send custom properties
+			if (typeof window.plausible === 'function') {
+				window.plausible('pageview', {
+					props: {
+						pageType,
+						audience,
+						category
+					}
+				});
+			}
+		</script>
+	</body>
 </html>
