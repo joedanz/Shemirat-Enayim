@@ -1,9 +1,2 @@
-# Allow all crawlers
 User-agent: *
-Allow: /
-
-# Disallow search results to avoid duplicate content
-Disallow: /search
-
-# Sitemap location (update when sitemap is generated)
-# Sitemap: https://shemiratenayim.org/sitemap.xml
+Disallow:
