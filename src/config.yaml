@@ -1,5 +1,5 @@
 site:
-  name: Shemirat Enayim
+  name: Shemirat Einayim
   site: 'https://shemiratenayim.org'
   base: '/'
   trailingSlash: false
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: Shemirat Enayim
-    template: '%s — Shemirat Enayim'
+    default: Shemirat Einayim
+    template: '%s — Shemirat Einayim'
   description: "Comprehensive guides for internet safety, content filtering, and digital protection for families and communities. Learn about DNS filtering, parental controls, and effective methods to create safer digital environments."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: Shemirat Enayim
+    site_name: Shemirat Einayim
     images:
       - url: '~/assets/images/default.png'
         width: 1200
